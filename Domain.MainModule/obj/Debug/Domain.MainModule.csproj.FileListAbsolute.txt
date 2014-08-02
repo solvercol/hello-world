@@ -1,0 +1,73 @@
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Domain.MainModule\bin\Debug\Domain.MainModule.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Domain.MainModule\bin\Debug\Domain.MainModule.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Domain.MainModule\bin\Debug\Domain.Core.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Domain.MainModule\bin\Debug\Domain.Core.Entities.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Domain.MainModule\bin\Debug\Domain.MainModules.Entities.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Domain.MainModule\bin\Debug\Infrastructure.CrossCutting.NetFramework.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Domain.MainModule\bin\Debug\Infrastructure.CrossCutting.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Domain.MainModule\bin\Debug\log4net.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Domain.MainModule\bin\Debug\Domain.Core.Entities.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Domain.MainModule\bin\Debug\Domain.Core.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Domain.MainModule\bin\Debug\Domain.MainModules.Entities.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Domain.MainModule\bin\Debug\Infrastructure.CrossCutting.NetFramework.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Domain.MainModule\bin\Debug\Infrastructure.CrossCutting.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Domain.MainModule\obj\Debug\ResolveAssemblyReference.cache
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Domain.MainModule\obj\Debug\Domain.MainModule.Resources.Messages.resources
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Domain.MainModule\obj\Debug\GenerateResource.read.1.tlog
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Domain.MainModule\obj\Debug\GenerateResource.write.1.tlog
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Domain.MainModule\obj\Debug\Domain.MainModule.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Domain.MainModule\obj\Debug\Domain.MainModule.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Domain.MainModule\bin\Debug\Domain.MainModule.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Domain.MainModule\bin\Debug\Domain.MainModule.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Domain.MainModule\bin\Debug\Domain.Core.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Domain.MainModule\bin\Debug\Domain.Core.Entities.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Domain.MainModule\bin\Debug\Domain.MainModules.Entities.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Domain.MainModule\bin\Debug\Infrastructure.CrossCutting.NetFramework.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Domain.MainModule\bin\Debug\Infrastructure.CrossCutting.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Domain.MainModule\bin\Debug\log4net.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Domain.MainModule\bin\Debug\Domain.Core.Entities.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Domain.MainModule\bin\Debug\Domain.Core.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Domain.MainModule\bin\Debug\Domain.MainModules.Entities.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Domain.MainModule\bin\Debug\Infrastructure.CrossCutting.NetFramework.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Domain.MainModule\bin\Debug\Infrastructure.CrossCutting.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Domain.MainModule\obj\Debug\Domain.MainModule.csprojResolveAssemblyReference.cache
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Domain.MainModule\obj\Debug\Domain.MainModule.Resources.Messages.resources
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Domain.MainModule\obj\Debug\Domain.MainModule.csproj.GenerateResource.Cache
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Domain.MainModule\obj\Debug\Domain.MainModule.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Domain.MainModule\obj\Debug\Domain.MainModule.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Domain.MainModule\bin\Debug\Domain.MainModule.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Domain.MainModule\bin\Debug\Domain.MainModule.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Domain.MainModule\bin\Debug\Domain.Core.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Domain.MainModule\bin\Debug\Domain.Core.Entities.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Domain.MainModule\bin\Debug\Domain.MainModules.Entities.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Domain.MainModule\bin\Debug\Infrastructure.CrossCutting.NetFramework.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Domain.MainModule\bin\Debug\Infrastructure.CrossCutting.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Domain.MainModule\bin\Debug\log4net.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Domain.MainModule\bin\Debug\Domain.Core.Entities.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Domain.MainModule\bin\Debug\Domain.Core.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Domain.MainModule\bin\Debug\Domain.MainModules.Entities.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Domain.MainModule\bin\Debug\Infrastructure.CrossCutting.NetFramework.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Domain.MainModule\bin\Debug\Infrastructure.CrossCutting.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Domain.MainModule\obj\Debug\Domain.MainModule.csprojResolveAssemblyReference.cache
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Domain.MainModule\obj\Debug\Domain.MainModule.Resources.Messages.resources
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Domain.MainModule\obj\Debug\Domain.MainModule.csproj.GenerateResource.Cache
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Domain.MainModule\obj\Debug\Domain.MainModule.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Domain.MainModule\obj\Debug\Domain.MainModule.pdb
+E:\DEV\Sika\Dev\V1\Domain.MainModule\bin\Debug\Domain.MainModule.dll
+E:\DEV\Sika\Dev\V1\Domain.MainModule\bin\Debug\Domain.MainModule.pdb
+E:\DEV\Sika\Dev\V1\Domain.MainModule\bin\Debug\Domain.Core.dll
+E:\DEV\Sika\Dev\V1\Domain.MainModule\bin\Debug\Domain.Core.Entities.dll
+E:\DEV\Sika\Dev\V1\Domain.MainModule\bin\Debug\Domain.MainModules.Entities.dll
+E:\DEV\Sika\Dev\V1\Domain.MainModule\bin\Debug\Infrastructure.CrossCutting.NetFramework.dll
+E:\DEV\Sika\Dev\V1\Domain.MainModule\bin\Debug\Infrastructure.CrossCutting.dll
+E:\DEV\Sika\Dev\V1\Domain.MainModule\bin\Debug\log4net.dll
+E:\DEV\Sika\Dev\V1\Domain.MainModule\bin\Debug\Domain.Core.Entities.pdb
+E:\DEV\Sika\Dev\V1\Domain.MainModule\bin\Debug\Domain.Core.pdb
+E:\DEV\Sika\Dev\V1\Domain.MainModule\bin\Debug\Domain.MainModules.Entities.pdb
+E:\DEV\Sika\Dev\V1\Domain.MainModule\bin\Debug\Infrastructure.CrossCutting.NetFramework.pdb
+E:\DEV\Sika\Dev\V1\Domain.MainModule\bin\Debug\Infrastructure.CrossCutting.pdb
+E:\DEV\Sika\Dev\V1\Domain.MainModule\obj\Debug\Domain.MainModule.csprojResolveAssemblyReference.cache
+E:\DEV\Sika\Dev\V1\Domain.MainModule\obj\Debug\Domain.MainModule.Resources.Messages.resources
+E:\DEV\Sika\Dev\V1\Domain.MainModule\obj\Debug\Domain.MainModule.csproj.GenerateResource.Cache
+E:\DEV\Sika\Dev\V1\Domain.MainModule\obj\Debug\Domain.MainModule.dll
+E:\DEV\Sika\Dev\V1\Domain.MainModule\obj\Debug\Domain.MainModule.pdb
