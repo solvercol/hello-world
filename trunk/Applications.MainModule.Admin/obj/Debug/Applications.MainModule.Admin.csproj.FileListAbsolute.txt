@@ -1,0 +1,60 @@
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Applications.MainModule.Admin\bin\Debug\Applications.MainModule.Admin.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Applications.MainModule.Admin\bin\Debug\Applications.MainModule.Admin.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Applications.MainModule.Admin\bin\Debug\Domain.Core.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Applications.MainModule.Admin\bin\Debug\Domain.Core.Entities.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Applications.MainModule.Admin\bin\Debug\Domain.MainModule.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Applications.MainModule.Admin\bin\Debug\Domain.MainModules.Entities.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Applications.MainModule.Admin\bin\Debug\Infrastructure.CrossCutting.NetFramework.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Applications.MainModule.Admin\bin\Debug\Infrastructure.CrossCutting.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Applications.MainModule.Admin\bin\Debug\log4net.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Applications.MainModule.Admin\bin\Debug\Domain.Core.Entities.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Applications.MainModule.Admin\bin\Debug\Domain.Core.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Applications.MainModule.Admin\bin\Debug\Domain.MainModules.Entities.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Applications.MainModule.Admin\bin\Debug\Domain.MainModule.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Applications.MainModule.Admin\bin\Debug\Infrastructure.CrossCutting.NetFramework.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Applications.MainModule.Admin\bin\Debug\Infrastructure.CrossCutting.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Applications.MainModule.Admin\obj\Debug\Applications.MainModule.Admin.csprojResolveAssemblyReference.cache
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Applications.MainModule.Admin\obj\Debug\Applications.MainModule.Admin.Resources.Messages.resources
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Applications.MainModule.Admin\obj\Debug\Applications.MainModule.Admin.csproj.GenerateResource.Cache
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Applications.MainModule.Admin\obj\Debug\Applications.MainModule.Admin.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Applications.MainModule.Admin\obj\Debug\Applications.MainModule.Admin.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Applications.MainModule.Admin\bin\Debug\Applications.MainModule.Admin.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Applications.MainModule.Admin\bin\Debug\Applications.MainModule.Admin.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Applications.MainModule.Admin\bin\Debug\Domain.Core.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Applications.MainModule.Admin\bin\Debug\Domain.Core.Entities.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Applications.MainModule.Admin\bin\Debug\Domain.MainModule.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Applications.MainModule.Admin\bin\Debug\Domain.MainModules.Entities.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Applications.MainModule.Admin\bin\Debug\Infrastructure.CrossCutting.NetFramework.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Applications.MainModule.Admin\bin\Debug\Infrastructure.CrossCutting.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Applications.MainModule.Admin\bin\Debug\log4net.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Applications.MainModule.Admin\bin\Debug\Domain.Core.Entities.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Applications.MainModule.Admin\bin\Debug\Domain.Core.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Applications.MainModule.Admin\bin\Debug\Domain.MainModules.Entities.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Applications.MainModule.Admin\bin\Debug\Domain.MainModule.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Applications.MainModule.Admin\bin\Debug\Infrastructure.CrossCutting.NetFramework.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Applications.MainModule.Admin\bin\Debug\Infrastructure.CrossCutting.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Applications.MainModule.Admin\obj\Debug\Applications.MainModule.Admin.csprojResolveAssemblyReference.cache
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Applications.MainModule.Admin\obj\Debug\Applications.MainModule.Admin.Resources.Messages.resources
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Applications.MainModule.Admin\obj\Debug\Applications.MainModule.Admin.csproj.GenerateResource.Cache
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Applications.MainModule.Admin\obj\Debug\Applications.MainModule.Admin.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Applications.MainModule.Admin\obj\Debug\Applications.MainModule.Admin.pdb
+E:\DEV\Sika\Dev\V1\Applications.MainModule.Admin\bin\Debug\Applications.MainModule.Admin.dll
+E:\DEV\Sika\Dev\V1\Applications.MainModule.Admin\bin\Debug\Applications.MainModule.Admin.pdb
+E:\DEV\Sika\Dev\V1\Applications.MainModule.Admin\bin\Debug\Domain.Core.dll
+E:\DEV\Sika\Dev\V1\Applications.MainModule.Admin\bin\Debug\Domain.Core.Entities.dll
+E:\DEV\Sika\Dev\V1\Applications.MainModule.Admin\bin\Debug\Domain.MainModule.dll
+E:\DEV\Sika\Dev\V1\Applications.MainModule.Admin\bin\Debug\Domain.MainModules.Entities.dll
+E:\DEV\Sika\Dev\V1\Applications.MainModule.Admin\bin\Debug\Infrastructure.CrossCutting.NetFramework.dll
+E:\DEV\Sika\Dev\V1\Applications.MainModule.Admin\bin\Debug\Infrastructure.CrossCutting.dll
+E:\DEV\Sika\Dev\V1\Applications.MainModule.Admin\bin\Debug\log4net.dll
+E:\DEV\Sika\Dev\V1\Applications.MainModule.Admin\bin\Debug\Domain.Core.Entities.pdb
+E:\DEV\Sika\Dev\V1\Applications.MainModule.Admin\bin\Debug\Domain.Core.pdb
+E:\DEV\Sika\Dev\V1\Applications.MainModule.Admin\bin\Debug\Domain.MainModules.Entities.pdb
+E:\DEV\Sika\Dev\V1\Applications.MainModule.Admin\bin\Debug\Domain.MainModule.pdb
+E:\DEV\Sika\Dev\V1\Applications.MainModule.Admin\bin\Debug\Infrastructure.CrossCutting.NetFramework.pdb
+E:\DEV\Sika\Dev\V1\Applications.MainModule.Admin\bin\Debug\Infrastructure.CrossCutting.pdb
+E:\DEV\Sika\Dev\V1\Applications.MainModule.Admin\obj\Debug\Applications.MainModule.Admin.csprojResolveAssemblyReference.cache
+E:\DEV\Sika\Dev\V1\Applications.MainModule.Admin\obj\Debug\Applications.MainModule.Admin.Resources.Messages.resources
+E:\DEV\Sika\Dev\V1\Applications.MainModule.Admin\obj\Debug\Applications.MainModule.Admin.csproj.GenerateResource.Cache
+E:\DEV\Sika\Dev\V1\Applications.MainModule.Admin\obj\Debug\Applications.MainModule.Admin.dll
+E:\DEV\Sika\Dev\V1\Applications.MainModule.Admin\obj\Debug\Applications.MainModule.Admin.pdb
