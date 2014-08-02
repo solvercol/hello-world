@@ -1,0 +1,100 @@
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Infraestructure.CrossCutting.Security\bin\Debug\Infraestructure.CrossCutting.Security.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Infraestructure.CrossCutting.Security\bin\Debug\Infraestructure.CrossCutting.Security.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Infraestructure.CrossCutting.Security\bin\Debug\Domain.Core.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Infraestructure.CrossCutting.Security\bin\Debug\Domain.Core.Entities.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Infraestructure.CrossCutting.Security\bin\Debug\Domain.MainModule.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Infraestructure.CrossCutting.Security\bin\Debug\Domain.MainModules.Entities.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Infraestructure.CrossCutting.Security\bin\Debug\Infrastructure.CrossCutting.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Infraestructure.CrossCutting.Security\bin\Debug\Infrastructure.CrossCutting.NetFramework.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Infraestructure.CrossCutting.Security\bin\Debug\log4net.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Infraestructure.CrossCutting.Security\bin\Debug\Domain.Core.Entities.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Infraestructure.CrossCutting.Security\bin\Debug\Domain.Core.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Infraestructure.CrossCutting.Security\bin\Debug\Domain.MainModules.Entities.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Infraestructure.CrossCutting.Security\bin\Debug\Domain.MainModule.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Infraestructure.CrossCutting.Security\bin\Debug\Infrastructure.CrossCutting.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Infraestructure.CrossCutting.Security\bin\Debug\Infrastructure.CrossCutting.NetFramework.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Infraestructure.CrossCutting.Security\obj\Debug\ResolveAssemblyReference.cache
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Infraestructure.CrossCutting.Security\obj\Debug\Infraestructure.CrossCutting.Security.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Infraestructure.CrossCutting.Security\obj\Debug\Infraestructure.CrossCutting.Security.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Infraestructure.CrossCutting.Security\bin\Debug\Infraestructure.CrossCutting.Security.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Infraestructure.CrossCutting.Security\bin\Debug\Infraestructure.CrossCutting.Security.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Infraestructure.CrossCutting.Security\bin\Debug\Domain.Core.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Infraestructure.CrossCutting.Security\bin\Debug\Domain.Core.Entities.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Infraestructure.CrossCutting.Security\bin\Debug\Domain.MainModule.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Infraestructure.CrossCutting.Security\bin\Debug\Domain.MainModules.Entities.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Infraestructure.CrossCutting.Security\bin\Debug\Infrastructure.CrossCutting.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Infraestructure.CrossCutting.Security\bin\Debug\Infrastructure.CrossCutting.NetFramework.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Infraestructure.CrossCutting.Security\bin\Debug\log4net.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Infraestructure.CrossCutting.Security\bin\Debug\Domain.Core.Entities.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Infraestructure.CrossCutting.Security\bin\Debug\Domain.Core.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Infraestructure.CrossCutting.Security\bin\Debug\Domain.MainModules.Entities.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Infraestructure.CrossCutting.Security\bin\Debug\Domain.MainModule.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Infraestructure.CrossCutting.Security\bin\Debug\Infrastructure.CrossCutting.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Infraestructure.CrossCutting.Security\bin\Debug\Infrastructure.CrossCutting.NetFramework.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Infraestructure.CrossCutting.Security\obj\Debug\Infraestructure.CrossCutting.Security.csprojResolveAssemblyReference.cache
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Infraestructure.CrossCutting.Security\obj\Debug\Infraestructure.CrossCutting.Security.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Infraestructure.CrossCutting.Security\obj\Debug\Infraestructure.CrossCutting.Security.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Infraestructure.CrossCutting.Security\bin\Debug\Applications.MainModule.Pedidos.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Infraestructure.CrossCutting.Security\bin\Debug\Domain.MainModule.Pedidos.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Infraestructure.CrossCutting.Security\bin\Debug\Application.MainModule.SqlServices.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Infraestructure.CrossCutting.Security\bin\Debug\Infraestructure.Data.Core.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Infraestructure.CrossCutting.Security\bin\Debug\Applications.MainModule.Pedidos.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Infraestructure.CrossCutting.Security\bin\Debug\Domain.MainModule.Pedidos.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Infraestructure.CrossCutting.Security\bin\Debug\Application.MainModule.SqlServices.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Infraestructure.CrossCutting.Security\bin\Debug\Infraestructure.Data.Core.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Infraestructure.CrossCutting.Security\obj\Debug\Infraestructure.CrossCutting.Security.Message.resources
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Infraestructure.CrossCutting.Security\obj\Debug\Infraestructure.CrossCutting.Security.csproj.GenerateResource.Cache
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Infraestructure.CrossCutting.Security\bin\Debug\Applications.MainModule.Admin.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Infraestructure.CrossCutting.Security\bin\Debug\Applications.MainModule.Admin.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Infraestructure.CrossCutting.Security\bin\Debug\Infraestructure.CrossCutting.Security.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Infraestructure.CrossCutting.Security\bin\Debug\Infraestructure.CrossCutting.Security.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Infraestructure.CrossCutting.Security\bin\Debug\Application.MainModule.Documentos.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Infraestructure.CrossCutting.Security\bin\Debug\Applications.MainModule.Admin.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Infraestructure.CrossCutting.Security\bin\Debug\Domain.Core.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Infraestructure.CrossCutting.Security\bin\Debug\Domain.Core.Entities.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Infraestructure.CrossCutting.Security\bin\Debug\Domain.MainModule.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Infraestructure.CrossCutting.Security\bin\Debug\Domain.MainModules.Entities.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Infraestructure.CrossCutting.Security\bin\Debug\Infrastructure.CrossCutting.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Infraestructure.CrossCutting.Security\bin\Debug\Infrastructure.CrossCutting.NetFramework.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Infraestructure.CrossCutting.Security\bin\Debug\Domain.MainModule.Documentos.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Infraestructure.CrossCutting.Security\bin\Debug\log4net.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Infraestructure.CrossCutting.Security\bin\Debug\Applications.MainModule.Admin.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Infraestructure.CrossCutting.Security\bin\Debug\Application.MainModule.Documentos.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Infraestructure.CrossCutting.Security\bin\Debug\Domain.Core.Entities.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Infraestructure.CrossCutting.Security\bin\Debug\Domain.Core.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Infraestructure.CrossCutting.Security\bin\Debug\Domain.MainModules.Entities.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Infraestructure.CrossCutting.Security\bin\Debug\Domain.MainModule.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Infraestructure.CrossCutting.Security\bin\Debug\Infrastructure.CrossCutting.NetFramework.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Infraestructure.CrossCutting.Security\bin\Debug\Infrastructure.CrossCutting.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Infraestructure.CrossCutting.Security\bin\Debug\Domain.MainModule.Documentos.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Infraestructure.CrossCutting.Security\obj\Debug\Infraestructure.CrossCutting.Security.csprojResolveAssemblyReference.cache
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Infraestructure.CrossCutting.Security\obj\Debug\Infraestructure.CrossCutting.Security.Message.resources
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Infraestructure.CrossCutting.Security\obj\Debug\Infraestructure.CrossCutting.Security.csproj.GenerateResource.Cache
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Infraestructure.CrossCutting.Security\obj\Debug\Infraestructure.CrossCutting.Security.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Infraestructure.CrossCutting.Security\obj\Debug\Infraestructure.CrossCutting.Security.pdb
+E:\DEV\Sika\Dev\V1\Infraestructure.CrossCutting.Security\bin\Debug\Infraestructure.CrossCutting.Security.dll
+E:\DEV\Sika\Dev\V1\Infraestructure.CrossCutting.Security\bin\Debug\Infraestructure.CrossCutting.Security.pdb
+E:\DEV\Sika\Dev\V1\Infraestructure.CrossCutting.Security\bin\Debug\Application.MainModule.Documentos.dll
+E:\DEV\Sika\Dev\V1\Infraestructure.CrossCutting.Security\bin\Debug\Applications.MainModule.Admin.dll
+E:\DEV\Sika\Dev\V1\Infraestructure.CrossCutting.Security\bin\Debug\Domain.Core.dll
+E:\DEV\Sika\Dev\V1\Infraestructure.CrossCutting.Security\bin\Debug\Domain.Core.Entities.dll
+E:\DEV\Sika\Dev\V1\Infraestructure.CrossCutting.Security\bin\Debug\Domain.MainModule.dll
+E:\DEV\Sika\Dev\V1\Infraestructure.CrossCutting.Security\bin\Debug\Domain.MainModules.Entities.dll
+E:\DEV\Sika\Dev\V1\Infraestructure.CrossCutting.Security\bin\Debug\Infrastructure.CrossCutting.dll
+E:\DEV\Sika\Dev\V1\Infraestructure.CrossCutting.Security\bin\Debug\Infrastructure.CrossCutting.NetFramework.dll
+E:\DEV\Sika\Dev\V1\Infraestructure.CrossCutting.Security\bin\Debug\Domain.MainModule.Documentos.dll
+E:\DEV\Sika\Dev\V1\Infraestructure.CrossCutting.Security\bin\Debug\log4net.dll
+E:\DEV\Sika\Dev\V1\Infraestructure.CrossCutting.Security\bin\Debug\Applications.MainModule.Admin.pdb
+E:\DEV\Sika\Dev\V1\Infraestructure.CrossCutting.Security\bin\Debug\Application.MainModule.Documentos.pdb
+E:\DEV\Sika\Dev\V1\Infraestructure.CrossCutting.Security\bin\Debug\Domain.Core.Entities.pdb
+E:\DEV\Sika\Dev\V1\Infraestructure.CrossCutting.Security\bin\Debug\Domain.Core.pdb
+E:\DEV\Sika\Dev\V1\Infraestructure.CrossCutting.Security\bin\Debug\Domain.MainModules.Entities.pdb
+E:\DEV\Sika\Dev\V1\Infraestructure.CrossCutting.Security\bin\Debug\Domain.MainModule.pdb
+E:\DEV\Sika\Dev\V1\Infraestructure.CrossCutting.Security\bin\Debug\Infrastructure.CrossCutting.NetFramework.pdb
+E:\DEV\Sika\Dev\V1\Infraestructure.CrossCutting.Security\bin\Debug\Infrastructure.CrossCutting.pdb
+E:\DEV\Sika\Dev\V1\Infraestructure.CrossCutting.Security\bin\Debug\Domain.MainModule.Documentos.pdb
+E:\DEV\Sika\Dev\V1\Infraestructure.CrossCutting.Security\obj\Debug\Infraestructure.CrossCutting.Security.csprojResolveAssemblyReference.cache
+E:\DEV\Sika\Dev\V1\Infraestructure.CrossCutting.Security\obj\Debug\Infraestructure.CrossCutting.Security.Message.resources
+E:\DEV\Sika\Dev\V1\Infraestructure.CrossCutting.Security\obj\Debug\Infraestructure.CrossCutting.Security.csproj.GenerateResource.Cache
+E:\DEV\Sika\Dev\V1\Infraestructure.CrossCutting.Security\obj\Debug\Infraestructure.CrossCutting.Security.dll
+E:\DEV\Sika\Dev\V1\Infraestructure.CrossCutting.Security\obj\Debug\Infraestructure.CrossCutting.Security.pdb
