@@ -1,0 +1,21 @@
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\ServiceAgents\bin\Debug\ServiceAgents.dll.config
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\ServiceAgents\bin\Debug\ServiceAgents.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\ServiceAgents\bin\Debug\ServiceAgents.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\ServiceAgents\obj\Debug\ResolveAssemblyReference.cache
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\ServiceAgents\obj\Debug\ServiceAgents.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\ServiceAgents\obj\Debug\ServiceAgents.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\ServiceAgents\bin\Debug\ServiceAgents.dll.config
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\ServiceAgents\bin\Debug\ServiceAgents.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\ServiceAgents\bin\Debug\ServiceAgents.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\ServiceAgents\obj\Debug\ServiceAgents.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\ServiceAgents\obj\Debug\ServiceAgents.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\ServiceAgents\bin\Debug\ServiceAgents.dll.config
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\ServiceAgents\bin\Debug\ServiceAgents.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\ServiceAgents\bin\Debug\ServiceAgents.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\ServiceAgents\obj\Debug\ServiceAgents.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\ServiceAgents\obj\Debug\ServiceAgents.pdb
+E:\DEV\Sika\Dev\V1\ServiceAgents\bin\Debug\ServiceAgents.dll.config
+E:\DEV\Sika\Dev\V1\ServiceAgents\bin\Debug\ServiceAgents.dll
+E:\DEV\Sika\Dev\V1\ServiceAgents\bin\Debug\ServiceAgents.pdb
+E:\DEV\Sika\Dev\V1\ServiceAgents\obj\Debug\ServiceAgents.dll
+E:\DEV\Sika\Dev\V1\ServiceAgents\obj\Debug\ServiceAgents.pdb
