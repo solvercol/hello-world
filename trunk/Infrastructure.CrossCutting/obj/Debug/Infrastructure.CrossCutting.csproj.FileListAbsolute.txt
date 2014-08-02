@@ -1,0 +1,20 @@
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Infrastructure.CrossCutting\bin\Debug\Infrastructure.CrossCutting.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Infrastructure.CrossCutting\bin\Debug\Infrastructure.CrossCutting.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Infrastructure.CrossCutting\obj\Debug\ResolveAssemblyReference.cache
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Infrastructure.CrossCutting\obj\Debug\Infrastructure.CrossCutting.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Infrastructure.CrossCutting\obj\Debug\Infrastructure.CrossCutting.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Infrastructure.CrossCutting\bin\Debug\Infrastructure.CrossCutting.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Infrastructure.CrossCutting\bin\Debug\Infrastructure.CrossCutting.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Infrastructure.CrossCutting\obj\Debug\Infrastructure.CrossCutting.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Infrastructure.CrossCutting\obj\Debug\Infrastructure.CrossCutting.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Infrastructure.CrossCutting\obj\Debug\Infrastructure.CrossCutting.csprojResolveAssemblyReference.cache
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Infrastructure.CrossCutting\bin\Debug\Infrastructure.CrossCutting.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Infrastructure.CrossCutting\bin\Debug\Infrastructure.CrossCutting.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Infrastructure.CrossCutting\obj\Debug\Infrastructure.CrossCutting.csprojResolveAssemblyReference.cache
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Infrastructure.CrossCutting\obj\Debug\Infrastructure.CrossCutting.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Infrastructure.CrossCutting\obj\Debug\Infrastructure.CrossCutting.pdb
+E:\DEV\Sika\Dev\V1\Infrastructure.CrossCutting\bin\Debug\Infrastructure.CrossCutting.dll
+E:\DEV\Sika\Dev\V1\Infrastructure.CrossCutting\bin\Debug\Infrastructure.CrossCutting.pdb
+E:\DEV\Sika\Dev\V1\Infrastructure.CrossCutting\obj\Debug\Infrastructure.CrossCutting.csprojResolveAssemblyReference.cache
+E:\DEV\Sika\Dev\V1\Infrastructure.CrossCutting\obj\Debug\Infrastructure.CrossCutting.dll
+E:\DEV\Sika\Dev\V1\Infrastructure.CrossCutting\obj\Debug\Infrastructure.CrossCutting.pdb
