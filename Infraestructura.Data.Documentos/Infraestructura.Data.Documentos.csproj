@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0CB33529-BB25-45E8-B6F5-13CCA506805E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Infraestructura.Data.Documentos</RootNamespace>
+    <AssemblyName>Infraestructura.Data.Documentos</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Domain.MainModules.Entities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Domain.MainModules.Entities\bin\Debug\Domain.MainModules.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Infraestructure.Data.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Infraestructure.Data.Core\bin\Debug\Infraestructure.Data.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Infrastructure.Data.MainModule, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Infrastructure.Data.MainModule\bin\Debug\Infrastructure.Data.MainModule.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\TBL_ModuloDocumentos_CategoriasRepository.cs" />
+    <Compile Include="Repositories\TBL_ModuloDocumentos_DocumentoRepository.cs" />
+    <Compile Include="Repositories\TBL_ModuloDocumentos_EstadosRepository.cs" />
+    <Compile Include="Repositories\TBL_ModuloDocumentos_HistorialDocumentoRepository.cs" />
+    <Compile Include="Repositories\TBL_ModuloDocumentos_LogCambiosRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain.Core.Entities\Domain.Core.Entities.csproj">
+      <Project>{A1708898-8F15-4D62-99E0-293334E740C2}</Project>
+      <Name>Domain.Core.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.Core\Domain.Core.csproj">
+      <Project>{94FCB1C4-2C52-4D9D-A07B-F01AC38CF88E}</Project>
+      <Name>Domain.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.MainModule.Documentos\Domain.MainModule.Documentos.csproj">
+      <Project>{314457B6-C0E8-45F3-89AE-32A1CD4438B3}</Project>
+      <Name>Domain.MainModule.Documentos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure.CrossCutting\Infrastructure.CrossCutting.csproj">
+      <Project>{1063AE74-49D5-4D8A-B6A3-2C38349F55BF}</Project>
+      <Name>Infrastructure.CrossCutting</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /s /y "$(TargetDir)Infraestructura.Data.Documentos*.dll" "$(SolutionDir)"Web\bin\</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
