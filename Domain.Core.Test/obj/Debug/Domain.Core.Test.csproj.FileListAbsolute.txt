@@ -1,0 +1,20 @@
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Domain.Core.Test\bin\Debug\Domain.Core.Test.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Domain.Core.Test\bin\Debug\Domain.Core.Test.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Domain.Core.Test\obj\Debug\ResolveAssemblyReference.cache
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Domain.Core.Test\obj\Debug\Domain.Core.Test.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\Domain.Core.Test\obj\Debug\Domain.Core.Test.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Domain.Core.Test\bin\Debug\Domain.Core.Test.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Domain.Core.Test\bin\Debug\Domain.Core.Test.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Domain.Core.Test\obj\Debug\Domain.Core.Test.csprojResolveAssemblyReference.cache
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Domain.Core.Test\obj\Debug\Domain.Core.Test.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Domain.Core.Test\obj\Debug\Domain.Core.Test.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Domain.Core.Test\bin\Debug\Domain.Core.Test.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Domain.Core.Test\bin\Debug\Domain.Core.Test.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Domain.Core.Test\obj\Debug\Domain.Core.Test.csprojResolveAssemblyReference.cache
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Domain.Core.Test\obj\Debug\Domain.Core.Test.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Domain.Core.Test\obj\Debug\Domain.Core.Test.pdb
+E:\DEV\Sika\Dev\V1\Domain.Core.Test\bin\Debug\Domain.Core.Test.dll
+E:\DEV\Sika\Dev\V1\Domain.Core.Test\bin\Debug\Domain.Core.Test.pdb
+E:\DEV\Sika\Dev\V1\Domain.Core.Test\obj\Debug\Domain.Core.Test.csprojResolveAssemblyReference.cache
+E:\DEV\Sika\Dev\V1\Domain.Core.Test\obj\Debug\Domain.Core.Test.dll
+E:\DEV\Sika\Dev\V1\Domain.Core.Test\obj\Debug\Domain.Core.Test.pdb
