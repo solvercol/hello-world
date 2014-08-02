@@ -1,0 +1,89 @@
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\SIKA\Presenters.Documentos\bin\Debug\Presenters.Documentos.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\SIKA\Presenters.Documentos\bin\Debug\Presenters.Documentos.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\SIKA\Presenters.Documentos\obj\Debug\Presenters.Documentos.Message.resources
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\SIKA\Presenters.Documentos\obj\Debug\Presenters.Documentos.csproj.GenerateResource.Cache
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\SIKA\Presenters.Documentos\obj\Debug\Presenters.Documentos.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\SIKA\Presenters.Documentos\obj\Debug\Presenters.Documentos.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\DESARROLLO\SIKA\Presenters.Documentos\bin\Debug\Presenters.Documentos.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\DESARROLLO\SIKA\Presenters.Documentos\bin\Debug\Presenters.Documentos.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\DESARROLLO\SIKA\Presenters.Documentos\bin\Debug\Domain.Core.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\DESARROLLO\SIKA\Presenters.Documentos\obj\Debug\Presenters.Documentos.Message.resources
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\DESARROLLO\SIKA\Presenters.Documentos\obj\Debug\Presenters.Documentos.csproj.GenerateResource.Cache
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\DESARROLLO\SIKA\Presenters.Documentos\obj\Debug\Presenters.Documentos.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\DESARROLLO\SIKA\Presenters.Documentos\obj\Debug\Presenters.Documentos.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\DESARROLLO\SIKA\Presenters.Documentos\bin\Debug\Domain.MainModules.Entities.dll
+D:\GoogleDriveFreddy\ENTERPRISES\Solver\Sika\SIKA\Presenters.Documentos\bin\Debug\Presenters.Documentos.dll
+D:\GoogleDriveFreddy\ENTERPRISES\Solver\Sika\SIKA\Presenters.Documentos\bin\Debug\Presenters.Documentos.pdb
+D:\GoogleDriveFreddy\ENTERPRISES\Solver\Sika\SIKA\Presenters.Documentos\bin\Debug\Application.Core.dll
+D:\GoogleDriveFreddy\ENTERPRISES\Solver\Sika\SIKA\Presenters.Documentos\bin\Debug\Application.MainModule.Documentos.dll
+D:\GoogleDriveFreddy\ENTERPRISES\Solver\Sika\SIKA\Presenters.Documentos\bin\Debug\Applications.MainModule.Admin.dll
+D:\GoogleDriveFreddy\ENTERPRISES\Solver\Sika\SIKA\Presenters.Documentos\bin\Debug\Domain.Core.dll
+D:\GoogleDriveFreddy\ENTERPRISES\Solver\Sika\SIKA\Presenters.Documentos\bin\Debug\Domain.Core.Entities.dll
+D:\GoogleDriveFreddy\ENTERPRISES\Solver\Sika\SIKA\Presenters.Documentos\bin\Debug\Domain.MainModules.Entities.dll
+D:\GoogleDriveFreddy\ENTERPRISES\Solver\Sika\SIKA\Presenters.Documentos\bin\Debug\Infrastructure.CrossCutting.NetFramework.dll
+D:\GoogleDriveFreddy\ENTERPRISES\Solver\Sika\SIKA\Presenters.Documentos\bin\Debug\Domain.MainModule.Documentos.dll
+D:\GoogleDriveFreddy\ENTERPRISES\Solver\Sika\SIKA\Presenters.Documentos\bin\Debug\Domain.MainModule.dll
+D:\GoogleDriveFreddy\ENTERPRISES\Solver\Sika\SIKA\Presenters.Documentos\bin\Debug\Infrastructure.CrossCutting.dll
+D:\GoogleDriveFreddy\ENTERPRISES\Solver\Sika\SIKA\Presenters.Documentos\bin\Debug\log4net.dll
+D:\GoogleDriveFreddy\ENTERPRISES\Solver\Sika\SIKA\Presenters.Documentos\bin\Debug\Application.MainModule.Documentos.pdb
+D:\GoogleDriveFreddy\ENTERPRISES\Solver\Sika\SIKA\Presenters.Documentos\bin\Debug\Applications.MainModule.Admin.pdb
+D:\GoogleDriveFreddy\ENTERPRISES\Solver\Sika\SIKA\Presenters.Documentos\bin\Debug\Domain.Core.Entities.pdb
+D:\GoogleDriveFreddy\ENTERPRISES\Solver\Sika\SIKA\Presenters.Documentos\bin\Debug\Infrastructure.CrossCutting.NetFramework.pdb
+D:\GoogleDriveFreddy\ENTERPRISES\Solver\Sika\SIKA\Presenters.Documentos\bin\Debug\Domain.MainModule.Documentos.pdb
+D:\GoogleDriveFreddy\ENTERPRISES\Solver\Sika\SIKA\Presenters.Documentos\bin\Debug\Domain.MainModule.pdb
+D:\GoogleDriveFreddy\ENTERPRISES\Solver\Sika\SIKA\Presenters.Documentos\bin\Debug\Infrastructure.CrossCutting.pdb
+D:\GoogleDriveFreddy\ENTERPRISES\Solver\Sika\SIKA\Presenters.Documentos\obj\Debug\Presenters.Documentos.csprojResolveAssemblyReference.cache
+D:\GoogleDriveFreddy\ENTERPRISES\Solver\Sika\SIKA\Presenters.Documentos\obj\Debug\Presenters.Documentos.Message.resources
+D:\GoogleDriveFreddy\ENTERPRISES\Solver\Sika\SIKA\Presenters.Documentos\obj\Debug\Presenters.Documentos.csproj.GenerateResource.Cache
+D:\GoogleDriveFreddy\ENTERPRISES\Solver\Sika\SIKA\Presenters.Documentos\obj\Debug\Presenters.Documentos.dll
+D:\GoogleDriveFreddy\ENTERPRISES\Solver\Sika\SIKA\Presenters.Documentos\obj\Debug\Presenters.Documentos.pdb
+E:\DEV\Sika\Dev\App\SIKA\Presenters.Documentos\bin\Debug\Presenters.Documentos.dll
+E:\DEV\Sika\Dev\App\SIKA\Presenters.Documentos\bin\Debug\Presenters.Documentos.pdb
+E:\DEV\Sika\Dev\App\SIKA\Presenters.Documentos\bin\Debug\Application.Core.dll
+E:\DEV\Sika\Dev\App\SIKA\Presenters.Documentos\bin\Debug\Application.MainModule.Documentos.dll
+E:\DEV\Sika\Dev\App\SIKA\Presenters.Documentos\bin\Debug\Applications.MainModule.Admin.dll
+E:\DEV\Sika\Dev\App\SIKA\Presenters.Documentos\bin\Debug\Domain.Core.dll
+E:\DEV\Sika\Dev\App\SIKA\Presenters.Documentos\bin\Debug\Domain.Core.Entities.dll
+E:\DEV\Sika\Dev\App\SIKA\Presenters.Documentos\bin\Debug\Domain.MainModules.Entities.dll
+E:\DEV\Sika\Dev\App\SIKA\Presenters.Documentos\bin\Debug\Infrastructure.CrossCutting.NetFramework.dll
+E:\DEV\Sika\Dev\App\SIKA\Presenters.Documentos\bin\Debug\Domain.MainModule.Documentos.dll
+E:\DEV\Sika\Dev\App\SIKA\Presenters.Documentos\bin\Debug\Domain.MainModule.dll
+E:\DEV\Sika\Dev\App\SIKA\Presenters.Documentos\bin\Debug\Infrastructure.CrossCutting.dll
+E:\DEV\Sika\Dev\App\SIKA\Presenters.Documentos\bin\Debug\log4net.dll
+E:\DEV\Sika\Dev\App\SIKA\Presenters.Documentos\bin\Debug\Application.MainModule.Documentos.pdb
+E:\DEV\Sika\Dev\App\SIKA\Presenters.Documentos\bin\Debug\Applications.MainModule.Admin.pdb
+E:\DEV\Sika\Dev\App\SIKA\Presenters.Documentos\bin\Debug\Domain.Core.Entities.pdb
+E:\DEV\Sika\Dev\App\SIKA\Presenters.Documentos\bin\Debug\Infrastructure.CrossCutting.NetFramework.pdb
+E:\DEV\Sika\Dev\App\SIKA\Presenters.Documentos\bin\Debug\Domain.MainModule.Documentos.pdb
+E:\DEV\Sika\Dev\App\SIKA\Presenters.Documentos\bin\Debug\Domain.MainModule.pdb
+E:\DEV\Sika\Dev\App\SIKA\Presenters.Documentos\bin\Debug\Infrastructure.CrossCutting.pdb
+E:\DEV\Sika\Dev\App\SIKA\Presenters.Documentos\obj\Debug\Presenters.Documentos.csprojResolveAssemblyReference.cache
+E:\DEV\Sika\Dev\App\SIKA\Presenters.Documentos\obj\Debug\Presenters.Documentos.Message.resources
+E:\DEV\Sika\Dev\App\SIKA\Presenters.Documentos\obj\Debug\Presenters.Documentos.csproj.GenerateResource.Cache
+E:\DEV\Sika\Dev\App\SIKA\Presenters.Documentos\obj\Debug\Presenters.Documentos.dll
+E:\DEV\Sika\Dev\App\SIKA\Presenters.Documentos\obj\Debug\Presenters.Documentos.pdb
+E:\DEV\Sika\Dev\V1\Presenters.Documentos\bin\Debug\Presenters.Documentos.dll
+E:\DEV\Sika\Dev\V1\Presenters.Documentos\bin\Debug\Presenters.Documentos.pdb
+E:\DEV\Sika\Dev\V1\Presenters.Documentos\bin\Debug\Application.MainModule.Documentos.dll
+E:\DEV\Sika\Dev\V1\Presenters.Documentos\bin\Debug\Applications.MainModule.Admin.dll
+E:\DEV\Sika\Dev\V1\Presenters.Documentos\bin\Debug\Domain.Core.Entities.dll
+E:\DEV\Sika\Dev\V1\Presenters.Documentos\bin\Debug\Infrastructure.CrossCutting.NetFramework.dll
+E:\DEV\Sika\Dev\V1\Presenters.Documentos\bin\Debug\Domain.MainModule.Documentos.dll
+E:\DEV\Sika\Dev\V1\Presenters.Documentos\bin\Debug\Domain.MainModule.dll
+E:\DEV\Sika\Dev\V1\Presenters.Documentos\bin\Debug\Infrastructure.CrossCutting.dll
+E:\DEV\Sika\Dev\V1\Presenters.Documentos\bin\Debug\log4net.dll
+E:\DEV\Sika\Dev\V1\Presenters.Documentos\bin\Debug\Application.MainModule.Documentos.pdb
+E:\DEV\Sika\Dev\V1\Presenters.Documentos\bin\Debug\Applications.MainModule.Admin.pdb
+E:\DEV\Sika\Dev\V1\Presenters.Documentos\bin\Debug\Domain.Core.Entities.pdb
+E:\DEV\Sika\Dev\V1\Presenters.Documentos\bin\Debug\Infrastructure.CrossCutting.NetFramework.pdb
+E:\DEV\Sika\Dev\V1\Presenters.Documentos\bin\Debug\Application.Core.pdb
+E:\DEV\Sika\Dev\V1\Presenters.Documentos\bin\Debug\Domain.Core.pdb
+E:\DEV\Sika\Dev\V1\Presenters.Documentos\bin\Debug\Domain.MainModules.Entities.pdb
+E:\DEV\Sika\Dev\V1\Presenters.Documentos\bin\Debug\Domain.MainModule.Documentos.pdb
+E:\DEV\Sika\Dev\V1\Presenters.Documentos\bin\Debug\Domain.MainModule.pdb
+E:\DEV\Sika\Dev\V1\Presenters.Documentos\bin\Debug\Infrastructure.CrossCutting.pdb
+E:\DEV\Sika\Dev\V1\Presenters.Documentos\obj\Debug\Presenters.Documentos.csprojResolveAssemblyReference.cache
+E:\DEV\Sika\Dev\V1\Presenters.Documentos\obj\Debug\Presenters.Documentos.Message.resources
+E:\DEV\Sika\Dev\V1\Presenters.Documentos\obj\Debug\Presenters.Documentos.csproj.GenerateResource.Cache
+E:\DEV\Sika\Dev\V1\Presenters.Documentos\obj\Debug\Presenters.Documentos.dll
+E:\DEV\Sika\Dev\V1\Presenters.Documentos\obj\Debug\Presenters.Documentos.pdb
