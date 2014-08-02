@@ -1,0 +1,586 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SolutionFrameworkMainModelStoreContainer" CdmEntityContainer="MainModuleContext">
+    <EntitySetMapping Name="TBL_Admin_Ciudades">
+      <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_Admin_Ciudades">
+        <MappingFragment StoreEntitySet="TBL_Admin_Ciudades">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="IdDepartamento" ColumnName="IdDepartamento" />
+          <ScalarProperty Name="IdCiudad" ColumnName="IdCiudad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Admin_ConfiguracionServidores">
+      <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_Admin_ConfiguracionServidores">
+        <MappingFragment StoreEntitySet="TBL_Admin_ConfiguracionServidores">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ModifiOn" ColumnName="ModifiOn" />
+          <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+          <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="BaseDatos" ColumnName="BaseDatos" />
+          <ScalarProperty Name="NombreServidor" ColumnName="NombreServidor" />
+          <ScalarProperty Name="NombreParametro" ColumnName="NombreParametro" />
+          <ScalarProperty Name="IdConfiguracion" ColumnName="IdConfiguracion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Admin_Departamentos">
+      <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_Admin_Departamentos">
+        <MappingFragment StoreEntitySet="TBL_Admin_Departamentos">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="IdPais" ColumnName="IdPais" />
+          <ScalarProperty Name="IdDepartamento" ColumnName="IdDepartamento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Admin_DescripcionesTipoProducto">
+      <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_Admin_DescripcionesTipoProducto">
+        <MappingFragment StoreEntitySet="TBL_Admin_DescripcionesTipoProducto">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="IdDescripcion" ColumnName="IdDescripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Admin_DiasAnticipados">
+      <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_Admin_DiasAnticipados">
+        <MappingFragment StoreEntitySet="TBL_Admin_DiasAnticipados">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Admin_EstadosProceso">
+      <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_Admin_EstadosProceso">
+        <MappingFragment StoreEntitySet="TBL_Admin_EstadosProceso">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="TipoModulo" ColumnName="TipoModulo" />
+          <ScalarProperty Name="ValidarCategorias" ColumnName="ValidarCategorias" />
+          <ScalarProperty Name="RolAdjuntardocumentos" ColumnName="RolAdjuntardocumentos" />
+          <ScalarProperty Name="PermiteAdjuntarAnexos" ColumnName="PermiteAdjuntarAnexos" />
+          <ScalarProperty Name="PermiteProgActividades" ColumnName="PermiteProgActividades" />
+          <ScalarProperty Name="PermiteComentar" ColumnName="PermiteComentar" />
+          <ScalarProperty Name="PermiteEdicionCampos" ColumnName="PermiteEdicionCampos" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Admin_ModuleRepository">
+      <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_Admin_ModuleRepository">
+        <MappingFragment StoreEntitySet="TBL_Admin_ModuleRepository">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="lifestyle" ColumnName="lifestyle" />
+          <ScalarProperty Name="classtype" ColumnName="classtype" />
+          <ScalarProperty Name="RepositoryType" ColumnName="RepositoryType" />
+          <ScalarProperty Name="Repositorykey" ColumnName="Repositorykey" />
+          <ScalarProperty Name="IdModuleType" ColumnName="IdModuleType" />
+          <ScalarProperty Name="IdModuleRepository" ColumnName="IdModuleRepository" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Admin_ModuleService">
+      <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_Admin_ModuleService">
+        <MappingFragment StoreEntitySet="TBL_Admin_ModuleService">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="lifestyle" ColumnName="lifestyle" />
+          <ScalarProperty Name="classtype" ColumnName="classtype" />
+          <ScalarProperty Name="servicetype" ColumnName="servicetype" />
+          <ScalarProperty Name="servicekey" ColumnName="servicekey" />
+          <ScalarProperty Name="IdModuleType" ColumnName="IdModuleType" />
+          <ScalarProperty Name="IdModuleServices" ColumnName="IdModuleServices" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Admin_ModuleType">
+      <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_Admin_ModuleType">
+        <MappingFragment StoreEntitySet="TBL_Admin_ModuleType">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="AutoActivar" ColumnName="AutoActivar" />
+          <ScalarProperty Name="PathEdicion" ColumnName="PathEdicion" />
+          <ScalarProperty Name="path" ColumnName="path" />
+          <ScalarProperty Name="NombreClase" ColumnName="NombreClase" />
+          <ScalarProperty Name="NombreEnsamblado" ColumnName="NombreEnsamblado" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="IdModuleType" ColumnName="IdModuleType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Admin_ModuleVersion">
+      <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_Admin_ModuleVersion">
+        <MappingFragment StoreEntitySet="TBL_Admin_ModuleVersion">
+          <ScalarProperty Name="patch" ColumnName="patch" />
+          <ScalarProperty Name="minor" ColumnName="minor" />
+          <ScalarProperty Name="major" ColumnName="major" />
+          <ScalarProperty Name="assembly" ColumnName="assembly" />
+          <ScalarProperty Name="versionid" ColumnName="versionid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Admin_Modulos">
+      <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_Admin_Modulos">
+        <MappingFragment StoreEntitySet="TBL_Admin_Modulos">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="PathFormPreView" ColumnName="PathFormPreView" />
+          <ScalarProperty Name="ShowInMenu" ColumnName="ShowInMenu" />
+          <ScalarProperty Name="ImageDisabled" ColumnName="ImageDisabled" />
+          <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="NombreModulo" ColumnName="NombreModulo" />
+          <ScalarProperty Name="IdModulo" ColumnName="IdModulo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Admin_Monedas">
+      <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_Admin_Monedas">
+        <MappingFragment StoreEntitySet="TBL_Admin_Monedas">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CodigoContable" ColumnName="CodigoContable" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="CodigoMoneda" ColumnName="CodigoMoneda" />
+          <ScalarProperty Name="IdMoneda" ColumnName="IdMoneda" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Admin_OpcionesMenu">
+      <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_Admin_OpcionesMenu">
+        <MappingFragment StoreEntitySet="TBL_Admin_OpcionesMenu">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="Icono" ColumnName="Icono" />
+          <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="ShowMainMenu" ColumnName="ShowMainMenu" />
+          <ScalarProperty Name="ShowSecondMenu" ColumnName="ShowSecondMenu" />
+          <ScalarProperty Name="Posicion" ColumnName="Posicion" />
+          <ScalarProperty Name="TituloOpcion" ColumnName="TituloOpcion" />
+          <ScalarProperty Name="AplicationId" ColumnName="AplicationId" />
+          <ScalarProperty Name="IdopcionPadre" ColumnName="IdopcionPadre" />
+          <ScalarProperty Name="IdOpcionMenu" ColumnName="IdOpcionMenu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Admin_OptionList">
+      <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_Admin_OptionList">
+        <MappingFragment StoreEntitySet="TBL_Admin_OptionList">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Key" ColumnName="Key" />
+          <ScalarProperty Name="IdModule" ColumnName="IdModule" />
+          <ScalarProperty Name="IdOpcion" ColumnName="IdOpcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Admin_Paises">
+      <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_Admin_Paises">
+        <MappingFragment StoreEntitySet="TBL_Admin_Paises">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Globalizacion" ColumnName="Globalizacion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="IdPais" ColumnName="IdPais" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Admin_PaisMoneda">
+      <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_Admin_PaisMoneda">
+        <MappingFragment StoreEntitySet="TBL_Admin_PaisMoneda">
+          <ScalarProperty Name="MonedaLocal" ColumnName="MonedaLocal" />
+          <ScalarProperty Name="IdPais" ColumnName="IdPais" />
+          <ScalarProperty Name="IdMoneda" ColumnName="IdMoneda" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Admin_Plantillas">
+      <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_Admin_Plantillas">
+        <MappingFragment StoreEntitySet="TBL_Admin_Plantillas">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Contenido" ColumnName="Contenido" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="IdPais" ColumnName="IdPais" />
+          <ScalarProperty Name="IdPlantilla" ColumnName="IdPlantilla" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Admin_Roles">
+      <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_Admin_Roles">
+        <MappingFragment StoreEntitySet="TBL_Admin_Roles">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="IsGroup" ColumnName="IsGroup" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="NombreRol" ColumnName="NombreRol" />
+          <ScalarProperty Name="IdRol" ColumnName="IdRol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Admin_Secciones">
+      <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_Admin_Secciones">
+        <MappingFragment StoreEntitySet="TBL_Admin_Secciones">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ShowInEdit" ColumnName="ShowInEdit" />
+          <ScalarProperty Name="ShowPreview" ColumnName="ShowPreview" />
+          <ScalarProperty Name="PathEdit" ColumnName="PathEdit" />
+          <ScalarProperty Name="PathPreview" ColumnName="PathPreview" />
+          <ScalarProperty Name="TituloEdit" ColumnName="TituloEdit" />
+          <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+          <ScalarProperty Name="Posicion" ColumnName="Posicion" />
+          <ScalarProperty Name="IdModule" ColumnName="IdModule" />
+          <ScalarProperty Name="IdSeccion" ColumnName="IdSeccion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Admin_SistemaNotificaciones">
+      <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_Admin_SistemaNotificaciones">
+        <MappingFragment StoreEntitySet="TBL_Admin_SistemaNotificaciones">
+          <ScalarProperty Name="Contenido" ColumnName="Contenido" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Visitado" ColumnName="Visitado" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Modulo" ColumnName="Modulo" />
+          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+          <ScalarProperty Name="IdNotificacion" ColumnName="IdNotificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Admin_TypeByModules">
+      <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_Admin_TypeByModules">
+        <MappingFragment StoreEntitySet="TBL_Admin_TypeByModules">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Placeholder" ColumnName="Placeholder" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="MostrarTitulo" ColumnName="MostrarTitulo" />
+          <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+          <ScalarProperty Name="IdModuleType" ColumnName="IdModuleType" />
+          <ScalarProperty Name="IdModulo" ColumnName="IdModulo" />
+          <ScalarProperty Name="OID" ColumnName="OID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Admin_Usuarios">
+      <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_Admin_Usuarios">
+        <MappingFragment StoreEntitySet="TBL_Admin_Usuarios">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="lastip" ColumnName="lastip" />
+          <ScalarProperty Name="lastlogin" ColumnName="lastlogin" />
+          <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="CodigoUser" ColumnName="CodigoUser" />
+          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_ModuloDocumentos_Categorias">
+      <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_ModuloDocumentos_Categorias">
+        <MappingFragment StoreEntitySet="TBL_ModuloDocumentos_Categorias">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Nivel" ColumnName="Nivel" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_ModuloDocumentos_Estados">
+      <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_ModuloDocumentos_Estados">
+        <MappingFragment StoreEntitySet="TBL_ModuloDocumentos_Estados">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_ModuloPlanAccion_BancoActividades">
+      <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_ModuloPlanAccion_BancoActividades">
+        <MappingFragment StoreEntitySet="TBL_ModuloPlanAccion_BancoActividades">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="RespuestaObligatoria" ColumnName="RespuestaObligatoria" />
+          <ScalarProperty Name="ComentariosObligatorios" ColumnName="ComentariosObligatorios" />
+          <ScalarProperty Name="ValoresRespuesta" ColumnName="ValoresRespuesta" />
+          <ScalarProperty Name="TipoRespuesta" ColumnName="TipoRespuesta" />
+          <ScalarProperty Name="TieneAnexo" ColumnName="TieneAnexo" />
+          <ScalarProperty Name="Pregunta" ColumnName="Pregunta" />
+          <ScalarProperty Name="TienePregunta" ColumnName="TienePregunta" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="IdActividad" ColumnName="IdActividad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_ModuloPlanAccion_Categorias">
+      <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_ModuloPlanAccion_Categorias">
+        <MappingFragment StoreEntitySet="TBL_ModuloPlanAccion_Categorias">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="NumeroMinimoAct" ColumnName="NumeroMinimoAct" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Secuencia" ColumnName="Secuencia" />
+          <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_ModuloPlanAccion_ConfiguracionActividades">
+      <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_ModuloPlanAccion_ConfiguracionActividades">
+        <MappingFragment StoreEntitySet="TBL_ModuloPlanAccion_ConfiguracionActividades">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="PreProgramar" ColumnName="PreProgramar" />
+          <ScalarProperty Name="NumeroDiasHabiles" ColumnName="NumeroDiasHabiles" />
+          <ScalarProperty Name="RolExclusivo" ColumnName="RolExclusivo" />
+          <ScalarProperty Name="Exclusivo" ColumnName="Exclusivo" />
+          <ScalarProperty Name="EsFinal" ColumnName="EsFinal" />
+          <ScalarProperty Name="Secuencia" ColumnName="Secuencia" />
+          <ScalarProperty Name="Oblogatorio" ColumnName="Oblogatorio" />
+          <ScalarProperty Name="IdActividad" ColumnName="IdActividad" />
+          <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+          <ScalarProperty Name="IdConfiguracion" ColumnName="IdConfiguracion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_ModuloWorkFlow_CamposValidacion">
+      <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_ModuloWorkFlow_CamposValidacion">
+        <MappingFragment StoreEntitySet="TBL_ModuloWorkFlow_CamposValidacion">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="MensajeValidacion" ColumnName="MensajeValidacion" />
+          <ScalarProperty Name="ReglaDependencia" ColumnName="ReglaDependencia" />
+          <ScalarProperty Name="CampoDependencia" ColumnName="CampoDependencia" />
+          <ScalarProperty Name="ReglaValidacion" ColumnName="ReglaValidacion" />
+          <ScalarProperty Name="TipoValidacion" ColumnName="TipoValidacion" />
+          <ScalarProperty Name="CampoValidar" ColumnName="CampoValidar" />
+          <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+          <ScalarProperty Name="IdRequerido" ColumnName="IdRequerido" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_ModuloWorkFlow_Rutas">
+      <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_ModuloWorkFlow_Rutas">
+        <MappingFragment StoreEntitySet="TBL_ModuloWorkFlow_Rutas">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="TipoModulo" ColumnName="TipoModulo" />
+          <ScalarProperty Name="RolResponsableActual" ColumnName="RolResponsableActual" />
+          <ScalarProperty Name="SiguienteEstado" ColumnName="SiguienteEstado" />
+          <ScalarProperty Name="BotonAccionesRutas" ColumnName="BotonAccionesRutas" />
+          <ScalarProperty Name="ValidaRequeridos" ColumnName="ValidaRequeridos" />
+          <ScalarProperty Name="FormulaValidacion" ColumnName="FormulaValidacion" />
+          <ScalarProperty Name="Rol" ColumnName="Rol" />
+          <ScalarProperty Name="Secuencia" ColumnName="Secuencia" />
+          <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+          <ScalarProperty Name="IdRuta" ColumnName="IdRuta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_ModuloWorkFlow_ValidacionesSalida">
+      <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_ModuloWorkFlow_ValidacionesSalida">
+        <MappingFragment StoreEntitySet="TBL_ModuloWorkFlow_ValidacionesSalida">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="TipoAccion" ColumnName="TipoAccion" />
+          <ScalarProperty Name="NombreMetodo" ColumnName="NombreMetodo" />
+          <ScalarProperty Name="NombreEnsamblado" ColumnName="NombreEnsamblado" />
+          <ScalarProperty Name="IdRuta" ColumnName="IdRuta" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="TBL_Admin_ResponsablesAprobacion" TypeName="SolutionFramework.MainModel.TBL_Admin_ResponsablesAprobacion" StoreEntitySet="TBL_Admin_ResponsablesAprobacion">
+      <EndProperty Name="TBL_Admin_Usuarios">
+        <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+      </EndProperty>
+      <EndProperty Name="TBL_Admin_Roles">
+        <ScalarProperty Name="IdRol" ColumnName="IdRol" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TBL_Admin_RolesPorOpcionMenu" TypeName="SolutionFramework.MainModel.TBL_Admin_RolesPorOpcionMenu" StoreEntitySet="TBL_Admin_RolesPorOpcionMenu">
+      <EndProperty Name="TBL_Admin_Roles">
+        <ScalarProperty Name="IdRol" ColumnName="IdRol" />
+      </EndProperty>
+      <EndProperty Name="TBL_Admin_OpcionesMenu">
+        <ScalarProperty Name="IdOpcionMenu" ColumnName="IdopcionMenu" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TBL_Admin_UsuariosByRol" TypeName="SolutionFramework.MainModel.TBL_Admin_UsuariosByRol" StoreEntitySet="TBL_Admin_UsuariosByRol">
+      <EndProperty Name="TBL_Admin_Usuarios">
+        <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+      </EndProperty>
+      <EndProperty Name="TBL_Admin_Roles">
+        <ScalarProperty Name="IdRol" ColumnName="IdRol" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="TBL_ModuloDocumentos_Documento">
+      <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_ModuloDocumentos_Documento">
+        <MappingFragment StoreEntitySet="TBL_ModuloDocumentos_Documento">
+          <ScalarProperty Name="NombreArchivo" ColumnName="NombreArchivo" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="IdUsuarioModificacion" ColumnName="IdUsuarioModificacion" />
+          <ScalarProperty Name="IdUsuarioCreacion" ColumnName="IdUsuarioCreacion" />
+          <ScalarProperty Name="IdUsuarioResponsable" ColumnName="IdUsuarioResponsable" />
+          <ScalarProperty Name="IdTipo" ColumnName="IdTipo" />
+          <ScalarProperty Name="IdSubCategoria" ColumnName="IdSubCategoria" />
+          <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+          <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Archivo" ColumnName="Archivo" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+          <ScalarProperty Name="IdDocumento" ColumnName="IdDocumento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_ModuloDocumentos_HistorialDocumento">
+      <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_ModuloDocumentos_HistorialDocumento">
+        <MappingFragment StoreEntitySet="TBL_ModuloDocumentos_HistorialDocumento">
+          <ScalarProperty Name="NombreArchivo" ColumnName="NombreArchivo" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="IdUsuarioModificacion" ColumnName="IdUsuarioModificacion" />
+          <ScalarProperty Name="IdUsuarioCreacion" ColumnName="IdUsuarioCreacion" />
+          <ScalarProperty Name="IdUsuarioResposable" ColumnName="IdUsuarioResposable" />
+          <ScalarProperty Name="IdTipo" ColumnName="IdTipo" />
+          <ScalarProperty Name="IdSubCategoria" ColumnName="IdSubCategoria" />
+          <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+          <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Archivo" ColumnName="Archivo" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+          <ScalarProperty Name="IdDocumento" ColumnName="IdDocumento" />
+          <ScalarProperty Name="IdHistorial" ColumnName="IdHistorial" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_ModuloDocumentos_LogCambios">
+      <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_ModuloDocumentos_LogCambios">
+        <MappingFragment StoreEntitySet="TBL_ModuloDocumentos_LogCambios">
+          <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="IdHistorial" ColumnName="IdHistorial" />
+          <ScalarProperty Name="IdDocumento" ColumnName="IdDocumento" />
+          <ScalarProperty Name="IdLog" ColumnName="IdLog" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
