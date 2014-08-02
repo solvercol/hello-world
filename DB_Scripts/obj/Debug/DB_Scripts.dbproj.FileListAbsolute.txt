@@ -1,0 +1,24 @@
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\DB_Scripts\sql\debug\DB_Scripts_Database.sqlsettings
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\DB_Scripts\sql\debug\DB_Scripts_Database.sqldeployment
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\DB_Scripts\sql\debug\DB_Scripts_Database.sqlcmdvars
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\DB_Scripts\sql\debug\DB_Scripts.deploymanifest
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\DB_Scripts\sql\debug\DB_Scripts.dbschema
+D:\PROYECTOS\SOLVER DE COLOMBIA\PRICEWATERHOUSE\PWCV3\SIAC\DB_Scripts\obj\Debug\DB_Scripts.dbschema
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\DB_Scripts\sql\debug\DB_Scripts_Database.sqlsettings
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\DB_Scripts\sql\debug\DB_Scripts_Database.sqldeployment
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\DB_Scripts\sql\debug\DB_Scripts_Database.sqlcmdvars
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\DB_Scripts\sql\debug\DB_Scripts.deploymanifest
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\DB_Scripts\sql\debug\DB_Scripts.dbschema
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\DB_Scripts\obj\Debug\DB_Scripts.dbschema
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\DB_Scripts\sql\debug\DB_Scripts_Database.sqlsettings
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\DB_Scripts\sql\debug\DB_Scripts_Database.sqldeployment
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\DB_Scripts\sql\debug\DB_Scripts_Database.sqlcmdvars
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\DB_Scripts\sql\debug\DB_Scripts.deploymanifest
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\DB_Scripts\sql\debug\DB_Scripts.dbschema
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\DB_Scripts\obj\Debug\DB_Scripts.dbschema
+E:\DEV\Sika\Dev\V1\DB_Scripts\sql\debug\DB_Scripts_Database.sqlsettings
+E:\DEV\Sika\Dev\V1\DB_Scripts\sql\debug\DB_Scripts_Database.sqldeployment
+E:\DEV\Sika\Dev\V1\DB_Scripts\sql\debug\DB_Scripts_Database.sqlcmdvars
+E:\DEV\Sika\Dev\V1\DB_Scripts\sql\debug\DB_Scripts.deploymanifest
+E:\DEV\Sika\Dev\V1\DB_Scripts\sql\debug\DB_Scripts.dbschema
+E:\DEV\Sika\Dev\V1\DB_Scripts\obj\Debug\DB_Scripts.dbschema
