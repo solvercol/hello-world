@@ -1,0 +1,1262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SolutionFramework.MainModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="SolutionFrameworkMainModelStoreContainer">
+    <EntitySet Name="TBL_Admin_Ciudades" EntityType="SolutionFramework.MainModel.Store.TBL_Admin_Ciudades" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_Admin_ConfiguracionServidores" EntityType="SolutionFramework.MainModel.Store.TBL_Admin_ConfiguracionServidores" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_Admin_Departamentos" EntityType="SolutionFramework.MainModel.Store.TBL_Admin_Departamentos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_Admin_DescripcionesTipoProducto" EntityType="SolutionFramework.MainModel.Store.TBL_Admin_DescripcionesTipoProducto" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_Admin_DiasAnticipados" EntityType="SolutionFramework.MainModel.Store.TBL_Admin_DiasAnticipados" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_Admin_EstadosProceso" EntityType="SolutionFramework.MainModel.Store.TBL_Admin_EstadosProceso" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_Admin_ModuleRepository" EntityType="SolutionFramework.MainModel.Store.TBL_Admin_ModuleRepository" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_Admin_ModuleService" EntityType="SolutionFramework.MainModel.Store.TBL_Admin_ModuleService" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_Admin_ModuleType" EntityType="SolutionFramework.MainModel.Store.TBL_Admin_ModuleType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_Admin_ModuleVersion" EntityType="SolutionFramework.MainModel.Store.TBL_Admin_ModuleVersion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_Admin_Modulos" EntityType="SolutionFramework.MainModel.Store.TBL_Admin_Modulos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_Admin_Monedas" EntityType="SolutionFramework.MainModel.Store.TBL_Admin_Monedas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_Admin_OpcionesMenu" EntityType="SolutionFramework.MainModel.Store.TBL_Admin_OpcionesMenu" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_Admin_OptionList" EntityType="SolutionFramework.MainModel.Store.TBL_Admin_OptionList" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_Admin_Paises" EntityType="SolutionFramework.MainModel.Store.TBL_Admin_Paises" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_Admin_PaisMoneda" EntityType="SolutionFramework.MainModel.Store.TBL_Admin_PaisMoneda" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_Admin_Plantillas" EntityType="SolutionFramework.MainModel.Store.TBL_Admin_Plantillas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_Admin_ResponsablesAprobacion" EntityType="SolutionFramework.MainModel.Store.TBL_Admin_ResponsablesAprobacion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_Admin_Roles" EntityType="SolutionFramework.MainModel.Store.TBL_Admin_Roles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_Admin_RolesPorOpcionMenu" EntityType="SolutionFramework.MainModel.Store.TBL_Admin_RolesPorOpcionMenu" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_Admin_Secciones" EntityType="SolutionFramework.MainModel.Store.TBL_Admin_Secciones" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_Admin_SistemaNotificaciones" EntityType="SolutionFramework.MainModel.Store.TBL_Admin_SistemaNotificaciones" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_Admin_TypeByModules" EntityType="SolutionFramework.MainModel.Store.TBL_Admin_TypeByModules" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_Admin_Usuarios" EntityType="SolutionFramework.MainModel.Store.TBL_Admin_Usuarios" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_Admin_UsuariosByRol" EntityType="SolutionFramework.MainModel.Store.TBL_Admin_UsuariosByRol" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_ModuloDocumentos_Categorias" EntityType="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_Categorias" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_ModuloDocumentos_Documento" EntityType="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_Documento" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_ModuloDocumentos_Estados" EntityType="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_Estados" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_ModuloDocumentos_HistorialDocumento" EntityType="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_HistorialDocumento" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_ModuloDocumentos_LogCambios" EntityType="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_LogCambios" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_ModuloPlanAccion_BancoActividades" EntityType="SolutionFramework.MainModel.Store.TBL_ModuloPlanAccion_BancoActividades" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_ModuloPlanAccion_Categorias" EntityType="SolutionFramework.MainModel.Store.TBL_ModuloPlanAccion_Categorias" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_ModuloPlanAccion_ConfiguracionActividades" EntityType="SolutionFramework.MainModel.Store.TBL_ModuloPlanAccion_ConfiguracionActividades" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_ModuloWorkFlow_CamposValidacion" EntityType="SolutionFramework.MainModel.Store.TBL_ModuloWorkFlow_CamposValidacion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_ModuloWorkFlow_Rutas" EntityType="SolutionFramework.MainModel.Store.TBL_ModuloWorkFlow_Rutas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_ModuloWorkFlow_ValidacionesSalida" EntityType="SolutionFramework.MainModel.Store.TBL_ModuloWorkFlow_ValidacionesSalida" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_TBL_Admin_Ciudades_TBL_Admin_Departamentos" Association="SolutionFramework.MainModel.Store.FK_TBL_Admin_Ciudades_TBL_Admin_Departamentos">
+      <End Role="TBL_Admin_Departamentos" EntitySet="TBL_Admin_Departamentos" />
+      <End Role="TBL_Admin_Ciudades" EntitySet="TBL_Admin_Ciudades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Admin_Departamentos_TBL_Admin_Paises" Association="SolutionFramework.MainModel.Store.FK_TBL_Admin_Departamentos_TBL_Admin_Paises">
+      <End Role="TBL_Admin_Paises" EntitySet="TBL_Admin_Paises" />
+      <End Role="TBL_Admin_Departamentos" EntitySet="TBL_Admin_Departamentos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Admin_ModuleRepository_TBL_Admin_ModuleType" Association="SolutionFramework.MainModel.Store.FK_TBL_Admin_ModuleRepository_TBL_Admin_ModuleType">
+      <End Role="TBL_Admin_ModuleType" EntitySet="TBL_Admin_ModuleType" />
+      <End Role="TBL_Admin_ModuleRepository" EntitySet="TBL_Admin_ModuleRepository" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Admin_ResponsablesAprobacion_TBL_Admin_Roles" Association="SolutionFramework.MainModel.Store.FK_TBL_Admin_ResponsablesAprobacion_TBL_Admin_Roles">
+      <End Role="TBL_Admin_Roles" EntitySet="TBL_Admin_Roles" />
+      <End Role="TBL_Admin_ResponsablesAprobacion" EntitySet="TBL_Admin_ResponsablesAprobacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Admin_ResponsablesAprobacion_TBL_Admin_Usuarios" Association="SolutionFramework.MainModel.Store.FK_TBL_Admin_ResponsablesAprobacion_TBL_Admin_Usuarios">
+      <End Role="TBL_Admin_Usuarios" EntitySet="TBL_Admin_Usuarios" />
+      <End Role="TBL_Admin_ResponsablesAprobacion" EntitySet="TBL_Admin_ResponsablesAprobacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Admin_Secciones_TBL_Admin_Modulos" Association="SolutionFramework.MainModel.Store.FK_TBL_Admin_Secciones_TBL_Admin_Modulos">
+      <End Role="TBL_Admin_Modulos" EntitySet="TBL_Admin_Modulos" />
+      <End Role="TBL_Admin_Secciones" EntitySet="TBL_Admin_Secciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Admin_SistemaNotificaciones_TBL_Admin_Usuarios" Association="SolutionFramework.MainModel.Store.FK_TBL_Admin_SistemaNotificaciones_TBL_Admin_Usuarios">
+      <End Role="TBL_Admin_Usuarios" EntitySet="TBL_Admin_Usuarios" />
+      <End Role="TBL_Admin_SistemaNotificaciones" EntitySet="TBL_Admin_SistemaNotificaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Admin_UsuariosByRol_TBL_Admin_Roles" Association="SolutionFramework.MainModel.Store.FK_TBL_Admin_UsuariosByRol_TBL_Admin_Roles">
+      <End Role="TBL_Admin_Roles" EntitySet="TBL_Admin_Roles" />
+      <End Role="TBL_Admin_UsuariosByRol" EntitySet="TBL_Admin_UsuariosByRol" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Admin_UsuariosByRol_TBL_Admin_Usuarios" Association="SolutionFramework.MainModel.Store.FK_TBL_Admin_UsuariosByRol_TBL_Admin_Usuarios">
+      <End Role="TBL_Admin_Usuarios" EntitySet="TBL_Admin_Usuarios" />
+      <End Role="TBL_Admin_UsuariosByRol" EntitySet="TBL_Admin_UsuariosByRol" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Maestra_Admin_PaisMoneda_TBL_Maestra_Admin_Monedas" Association="SolutionFramework.MainModel.Store.FK_TBL_Maestra_Admin_PaisMoneda_TBL_Maestra_Admin_Monedas">
+      <End Role="TBL_Admin_Monedas" EntitySet="TBL_Admin_Monedas" />
+      <End Role="TBL_Admin_PaisMoneda" EntitySet="TBL_Admin_PaisMoneda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Maestra_Admin_PaisMoneda_TBL_Maestra_Paises" Association="SolutionFramework.MainModel.Store.FK_TBL_Maestra_Admin_PaisMoneda_TBL_Maestra_Paises">
+      <End Role="TBL_Admin_Paises" EntitySet="TBL_Admin_Paises" />
+      <End Role="TBL_Admin_PaisMoneda" EntitySet="TBL_Admin_PaisMoneda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Maestra_ModuleService_TBL_Maestra_ModuleType" Association="SolutionFramework.MainModel.Store.FK_TBL_Maestra_ModuleService_TBL_Maestra_ModuleType">
+      <End Role="TBL_Admin_ModuleType" EntitySet="TBL_Admin_ModuleType" />
+      <End Role="TBL_Admin_ModuleService" EntitySet="TBL_Admin_ModuleService" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Maestra_OpcionesMenu_TBL_Maestra_Modulos" Association="SolutionFramework.MainModel.Store.FK_TBL_Maestra_OpcionesMenu_TBL_Maestra_Modulos">
+      <End Role="TBL_Admin_Modulos" EntitySet="TBL_Admin_Modulos" />
+      <End Role="TBL_Admin_OpcionesMenu" EntitySet="TBL_Admin_OpcionesMenu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Maestra_OpcionesMenu_TBL_Maestra_OpcionesMenu" Association="SolutionFramework.MainModel.Store.FK_TBL_Maestra_OpcionesMenu_TBL_Maestra_OpcionesMenu">
+      <End Role="TBL_Admin_OpcionesMenu" EntitySet="TBL_Admin_OpcionesMenu" />
+      <End Role="TBL_Admin_OpcionesMenu1" EntitySet="TBL_Admin_OpcionesMenu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Maestra_Plantillas_TBL_Maestra_Paises" Association="SolutionFramework.MainModel.Store.FK_TBL_Maestra_Plantillas_TBL_Maestra_Paises">
+      <End Role="TBL_Admin_Paises" EntitySet="TBL_Admin_Paises" />
+      <End Role="TBL_Admin_Plantillas" EntitySet="TBL_Admin_Plantillas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Maestra_Propuestas_RutasPorestado_TBL_Maestra_Propuestas_EstadosPropuesta" Association="SolutionFramework.MainModel.Store.FK_TBL_Maestra_Propuestas_RutasPorestado_TBL_Maestra_Propuestas_EstadosPropuesta">
+      <End Role="TBL_Admin_EstadosProceso" EntitySet="TBL_Admin_EstadosProceso" />
+      <End Role="TBL_ModuloWorkFlow_Rutas" EntitySet="TBL_ModuloWorkFlow_Rutas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Maestra_RolesPorOpcionMenu_TBL_Maestra_OpcionesMenu" Association="SolutionFramework.MainModel.Store.FK_TBL_Maestra_RolesPorOpcionMenu_TBL_Maestra_OpcionesMenu">
+      <End Role="TBL_Admin_OpcionesMenu" EntitySet="TBL_Admin_OpcionesMenu" />
+      <End Role="TBL_Admin_RolesPorOpcionMenu" EntitySet="TBL_Admin_RolesPorOpcionMenu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Maestra_RolesPorOpcionMenu_TBL_Maestra_Roles" Association="SolutionFramework.MainModel.Store.FK_TBL_Maestra_RolesPorOpcionMenu_TBL_Maestra_Roles">
+      <End Role="TBL_Admin_Roles" EntitySet="TBL_Admin_Roles" />
+      <End Role="TBL_Admin_RolesPorOpcionMenu" EntitySet="TBL_Admin_RolesPorOpcionMenu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Maestra_Secciones_TBL_Maestra_ModuleType" Association="SolutionFramework.MainModel.Store.FK_TBL_Maestra_Secciones_TBL_Maestra_ModuleType">
+      <End Role="TBL_Admin_ModuleType" EntitySet="TBL_Admin_ModuleType" />
+      <End Role="TBL_Admin_TypeByModules" EntitySet="TBL_Admin_TypeByModules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Maestra_Secciones_TBL_Maestra_Modulos" Association="SolutionFramework.MainModel.Store.FK_TBL_Maestra_Secciones_TBL_Maestra_Modulos">
+      <End Role="TBL_Admin_Modulos" EntitySet="TBL_Admin_Modulos" />
+      <End Role="TBL_Admin_TypeByModules" EntitySet="TBL_Admin_TypeByModules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_ModuloDocumentos_Documento_TBL_Admin_Usuarios" Association="SolutionFramework.MainModel.Store.FK_TBL_ModuloDocumentos_Documento_TBL_Admin_Usuarios">
+      <End Role="TBL_Admin_Usuarios" EntitySet="TBL_Admin_Usuarios" />
+      <End Role="TBL_ModuloDocumentos_Documento" EntitySet="TBL_ModuloDocumentos_Documento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_ModuloDocumentos_Documento_TBL_Admin_Usuarios1" Association="SolutionFramework.MainModel.Store.FK_TBL_ModuloDocumentos_Documento_TBL_Admin_Usuarios1">
+      <End Role="TBL_Admin_Usuarios" EntitySet="TBL_Admin_Usuarios" />
+      <End Role="TBL_ModuloDocumentos_Documento" EntitySet="TBL_ModuloDocumentos_Documento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_ModuloDocumentos_Documento_TBL_Admin_Usuarios2" Association="SolutionFramework.MainModel.Store.FK_TBL_ModuloDocumentos_Documento_TBL_Admin_Usuarios2">
+      <End Role="TBL_Admin_Usuarios" EntitySet="TBL_Admin_Usuarios" />
+      <End Role="TBL_ModuloDocumentos_Documento" EntitySet="TBL_ModuloDocumentos_Documento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_ModuloDocumentos_Documento_TBL_ModuloDocumentos_Categorias" Association="SolutionFramework.MainModel.Store.FK_TBL_ModuloDocumentos_Documento_TBL_ModuloDocumentos_Categorias">
+      <End Role="TBL_ModuloDocumentos_Categorias" EntitySet="TBL_ModuloDocumentos_Categorias" />
+      <End Role="TBL_ModuloDocumentos_Documento" EntitySet="TBL_ModuloDocumentos_Documento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_ModuloDocumentos_Documento_TBL_ModuloDocumentos_Categorias1" Association="SolutionFramework.MainModel.Store.FK_TBL_ModuloDocumentos_Documento_TBL_ModuloDocumentos_Categorias1">
+      <End Role="TBL_ModuloDocumentos_Categorias" EntitySet="TBL_ModuloDocumentos_Categorias" />
+      <End Role="TBL_ModuloDocumentos_Documento" EntitySet="TBL_ModuloDocumentos_Documento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_ModuloDocumentos_Documento_TBL_ModuloDocumentos_Categorias2" Association="SolutionFramework.MainModel.Store.FK_TBL_ModuloDocumentos_Documento_TBL_ModuloDocumentos_Categorias2">
+      <End Role="TBL_ModuloDocumentos_Categorias" EntitySet="TBL_ModuloDocumentos_Categorias" />
+      <End Role="TBL_ModuloDocumentos_Documento" EntitySet="TBL_ModuloDocumentos_Documento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_ModuloDocumentos_Documento_TBL_ModuloDocumentos_Estados" Association="SolutionFramework.MainModel.Store.FK_TBL_ModuloDocumentos_Documento_TBL_ModuloDocumentos_Estados">
+      <End Role="TBL_ModuloDocumentos_Estados" EntitySet="TBL_ModuloDocumentos_Estados" />
+      <End Role="TBL_ModuloDocumentos_Documento" EntitySet="TBL_ModuloDocumentos_Documento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_Admin_Usuarios" Association="SolutionFramework.MainModel.Store.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_Admin_Usuarios">
+      <End Role="TBL_Admin_Usuarios" EntitySet="TBL_Admin_Usuarios" />
+      <End Role="TBL_ModuloDocumentos_HistorialDocumento" EntitySet="TBL_ModuloDocumentos_HistorialDocumento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_Admin_Usuarios1" Association="SolutionFramework.MainModel.Store.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_Admin_Usuarios1">
+      <End Role="TBL_Admin_Usuarios" EntitySet="TBL_Admin_Usuarios" />
+      <End Role="TBL_ModuloDocumentos_HistorialDocumento" EntitySet="TBL_ModuloDocumentos_HistorialDocumento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_Admin_Usuarios2" Association="SolutionFramework.MainModel.Store.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_Admin_Usuarios2">
+      <End Role="TBL_Admin_Usuarios" EntitySet="TBL_Admin_Usuarios" />
+      <End Role="TBL_ModuloDocumentos_HistorialDocumento" EntitySet="TBL_ModuloDocumentos_HistorialDocumento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Categorias" Association="SolutionFramework.MainModel.Store.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Categorias">
+      <End Role="TBL_ModuloDocumentos_Categorias" EntitySet="TBL_ModuloDocumentos_Categorias" />
+      <End Role="TBL_ModuloDocumentos_HistorialDocumento" EntitySet="TBL_ModuloDocumentos_HistorialDocumento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Categorias1" Association="SolutionFramework.MainModel.Store.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Categorias1">
+      <End Role="TBL_ModuloDocumentos_Categorias" EntitySet="TBL_ModuloDocumentos_Categorias" />
+      <End Role="TBL_ModuloDocumentos_HistorialDocumento" EntitySet="TBL_ModuloDocumentos_HistorialDocumento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Categorias2" Association="SolutionFramework.MainModel.Store.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Categorias2">
+      <End Role="TBL_ModuloDocumentos_Categorias" EntitySet="TBL_ModuloDocumentos_Categorias" />
+      <End Role="TBL_ModuloDocumentos_HistorialDocumento" EntitySet="TBL_ModuloDocumentos_HistorialDocumento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Documento" Association="SolutionFramework.MainModel.Store.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Documento">
+      <End Role="TBL_ModuloDocumentos_Documento" EntitySet="TBL_ModuloDocumentos_Documento" />
+      <End Role="TBL_ModuloDocumentos_HistorialDocumento" EntitySet="TBL_ModuloDocumentos_HistorialDocumento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Estados" Association="SolutionFramework.MainModel.Store.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Estados">
+      <End Role="TBL_ModuloDocumentos_Estados" EntitySet="TBL_ModuloDocumentos_Estados" />
+      <End Role="TBL_ModuloDocumentos_HistorialDocumento" EntitySet="TBL_ModuloDocumentos_HistorialDocumento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_ModuloDocumentos_LogCambios_TBL_ModuloDocumentos_Documento" Association="SolutionFramework.MainModel.Store.FK_TBL_ModuloDocumentos_LogCambios_TBL_ModuloDocumentos_Documento">
+      <End Role="TBL_ModuloDocumentos_Documento" EntitySet="TBL_ModuloDocumentos_Documento" />
+      <End Role="TBL_ModuloDocumentos_LogCambios" EntitySet="TBL_ModuloDocumentos_LogCambios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_ModuloDocumentos_LogCambios_TBL_ModuloDocumentos_HistorialDocumento" Association="SolutionFramework.MainModel.Store.FK_TBL_ModuloDocumentos_LogCambios_TBL_ModuloDocumentos_HistorialDocumento">
+      <End Role="TBL_ModuloDocumentos_HistorialDocumento" EntitySet="TBL_ModuloDocumentos_HistorialDocumento" />
+      <End Role="TBL_ModuloDocumentos_LogCambios" EntitySet="TBL_ModuloDocumentos_LogCambios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_BancoActividades" Association="SolutionFramework.MainModel.Store.FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_BancoActividades">
+      <End Role="TBL_ModuloPlanAccion_BancoActividades" EntitySet="TBL_ModuloPlanAccion_BancoActividades" />
+      <End Role="TBL_ModuloPlanAccion_ConfiguracionActividades" EntitySet="TBL_ModuloPlanAccion_ConfiguracionActividades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_Categorias" Association="SolutionFramework.MainModel.Store.FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_Categorias">
+      <End Role="TBL_ModuloPlanAccion_Categorias" EntitySet="TBL_ModuloPlanAccion_Categorias" />
+      <End Role="TBL_ModuloPlanAccion_ConfiguracionActividades" EntitySet="TBL_ModuloPlanAccion_ConfiguracionActividades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_ModuloWorkFlow_CamposValidacion_TBL_Admin_EstadosProceso" Association="SolutionFramework.MainModel.Store.FK_TBL_ModuloWorkFlow_CamposValidacion_TBL_Admin_EstadosProceso">
+      <End Role="TBL_Admin_EstadosProceso" EntitySet="TBL_Admin_EstadosProceso" />
+      <End Role="TBL_ModuloWorkFlow_CamposValidacion" EntitySet="TBL_ModuloWorkFlow_CamposValidacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_ModuloWorkFlow_Rutas_TBL_Admin_EstadosProceso" Association="SolutionFramework.MainModel.Store.FK_TBL_ModuloWorkFlow_Rutas_TBL_Admin_EstadosProceso">
+      <End Role="TBL_Admin_EstadosProceso" EntitySet="TBL_Admin_EstadosProceso" />
+      <End Role="TBL_ModuloWorkFlow_Rutas" EntitySet="TBL_ModuloWorkFlow_Rutas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_ModuloWorkFlow_ValidacionesSalida_TBL_ModuloWorkFlow_Rutas" Association="SolutionFramework.MainModel.Store.FK_TBL_ModuloWorkFlow_ValidacionesSalida_TBL_ModuloWorkFlow_Rutas">
+      <End Role="TBL_ModuloWorkFlow_Rutas" EntitySet="TBL_ModuloWorkFlow_Rutas" />
+      <End Role="TBL_ModuloWorkFlow_ValidacionesSalida" EntitySet="TBL_ModuloWorkFlow_ValidacionesSalida" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="TBL_Admin_Ciudades">
+    <Key>
+      <PropertyRef Name="IdCiudad" />
+    </Key>
+    <Property Name="IdCiudad" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IdDepartamento" Type="int" Nullable="false" />
+    <Property Name="Codigo" Type="varchar" MaxLength="12" />
+    <Property Name="Nombre" Type="varchar" MaxLength="200" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="30" />
+    <Property Name="CreateOn" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="30" />
+    <Property Name="ModifiedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBL_Admin_ConfiguracionServidores">
+    <Key>
+      <PropertyRef Name="IdConfiguracion" />
+    </Key>
+    <Property Name="IdConfiguracion" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NombreParametro" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="NombreServidor" Type="varchar" MaxLength="50" />
+    <Property Name="BaseDatos" Type="varchar" MaxLength="50" />
+    <Property Name="Usuario" Type="varchar" MaxLength="50" />
+    <Property Name="Contrasena" Type="varchar" MaxLength="50" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="10" />
+    <Property Name="CreateOn" Type="datetime" />
+    <Property Name="ModifyBy" Type="varchar" MaxLength="10" />
+    <Property Name="ModifiOn" Type="datetime" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_Admin_Departamentos">
+    <Key>
+      <PropertyRef Name="IdDepartamento" />
+    </Key>
+    <Property Name="IdDepartamento" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IdPais" Type="int" Nullable="false" />
+    <Property Name="Codigo" Type="varchar" Nullable="false" MaxLength="12" />
+    <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="128" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="30" />
+    <Property Name="CreateOn" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="30" />
+    <Property Name="ModifiedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBL_Admin_DescripcionesTipoProducto">
+    <Key>
+      <PropertyRef Name="IdDescripcion" />
+    </Key>
+    <Property Name="IdDescripcion" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Codigo" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="500" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="30" />
+    <Property Name="CreateOn" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="30" />
+    <Property Name="ModifiedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBL_Admin_DiasAnticipados">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Codigo" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="250" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="30" />
+    <Property Name="CreateOn" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="30" />
+    <Property Name="ModifiedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBL_Admin_EstadosProceso">
+    <Key>
+      <PropertyRef Name="IdEstado" />
+    </Key>
+    <Property Name="IdEstado" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Estado" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="PermiteEdicionCampos" Type="bit" />
+    <Property Name="PermiteComentar" Type="bit" />
+    <Property Name="PermiteProgActividades" Type="bit" />
+    <Property Name="PermiteAdjuntarAnexos" Type="bit" />
+    <Property Name="RolAdjuntardocumentos" Type="varchar" MaxLength="50" />
+    <Property Name="ValidarCategorias" Type="varchar" MaxLength="250" />
+    <Property Name="TipoModulo" Type="int" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="30" />
+    <Property Name="CreateOn" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="30" />
+    <Property Name="ModifiedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBL_Admin_ModuleRepository">
+    <Key>
+      <PropertyRef Name="IdModuleRepository" />
+    </Key>
+    <Property Name="IdModuleRepository" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IdModuleType" Type="int" Nullable="false" />
+    <Property Name="Repositorykey" Type="varchar" Nullable="false" MaxLength="350" />
+    <Property Name="RepositoryType" Type="varchar" Nullable="false" MaxLength="350" />
+    <Property Name="classtype" Type="varchar" Nullable="false" MaxLength="350" />
+    <Property Name="lifestyle" Type="varchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_Admin_ModuleService">
+    <Key>
+      <PropertyRef Name="IdModuleServices" />
+    </Key>
+    <Property Name="IdModuleServices" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IdModuleType" Type="int" Nullable="false" />
+    <Property Name="servicekey" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="servicetype" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="classtype" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="lifestyle" Type="nvarchar" MaxLength="10" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_Admin_ModuleType">
+    <Key>
+      <PropertyRef Name="IdModuleType" />
+    </Key>
+    <Property Name="IdModuleType" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="NombreEnsamblado" Type="nvarchar" MaxLength="100" />
+    <Property Name="NombreClase" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="path" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="PathEdicion" Type="nvarchar" MaxLength="255" />
+    <Property Name="AutoActivar" Type="bit" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="30" />
+    <Property Name="CreateOn" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="30" />
+    <Property Name="ModifiedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBL_Admin_ModuleVersion">
+    <Key>
+      <PropertyRef Name="versionid" />
+    </Key>
+    <Property Name="versionid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="assembly" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="major" Type="int" Nullable="false" />
+    <Property Name="minor" Type="int" Nullable="false" />
+    <Property Name="patch" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_Admin_Modulos">
+    <Key>
+      <PropertyRef Name="IdModulo" />
+    </Key>
+    <Property Name="IdModulo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NombreModulo" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="250" />
+    <Property Name="Imagen" Type="varchar" MaxLength="250" />
+    <Property Name="ImageDisabled" Type="varchar" MaxLength="250" />
+    <Property Name="ShowInMenu" Type="bit" />
+    <Property Name="PathFormPreView" Type="varchar" MaxLength="150" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="30" />
+    <Property Name="CreateOn" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="30" />
+    <Property Name="ModifiedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBL_Admin_Monedas">
+    <Key>
+      <PropertyRef Name="IdMoneda" />
+    </Key>
+    <Property Name="IdMoneda" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CodigoMoneda" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="100" />
+    <Property Name="CodigoContable" Type="varchar" MaxLength="10" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="30" />
+    <Property Name="CreateOn" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="30" />
+    <Property Name="ModifiedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBL_Admin_OpcionesMenu">
+    <Key>
+      <PropertyRef Name="IdOpcionMenu" />
+    </Key>
+    <Property Name="IdOpcionMenu" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IdopcionPadre" Type="int" />
+    <Property Name="AplicationId" Type="int" />
+    <Property Name="TituloOpcion" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Posicion" Type="int" Nullable="false" />
+    <Property Name="ShowSecondMenu" Type="bit" Nullable="false" />
+    <Property Name="ShowMainMenu" Type="bit" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+    <Property Name="LinkUrl" Type="varchar" MaxLength="250" />
+    <Property Name="Icono" Type="varchar" MaxLength="250" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="30" />
+    <Property Name="CreateOn" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="30" />
+    <Property Name="ModifiedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBL_Admin_OptionList">
+    <Key>
+      <PropertyRef Name="IdOpcion" />
+    </Key>
+    <Property Name="IdOpcion" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IdModule" Type="int" />
+    <Property Name="Key" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Value" Type="text" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="30" />
+    <Property Name="CreateOn" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="30" />
+    <Property Name="ModifiedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBL_Admin_Paises">
+    <Key>
+      <PropertyRef Name="IdPais" />
+    </Key>
+    <Property Name="IdPais" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Codigo" Type="varchar" Nullable="false" MaxLength="12" />
+    <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="128" />
+    <Property Name="Globalizacion" Type="varchar" MaxLength="10" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="30" />
+    <Property Name="CreateOn" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="30" />
+    <Property Name="ModifiedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBL_Admin_PaisMoneda">
+    <Key>
+      <PropertyRef Name="IdMoneda" />
+      <PropertyRef Name="IdPais" />
+    </Key>
+    <Property Name="IdMoneda" Type="int" Nullable="false" />
+    <Property Name="IdPais" Type="int" Nullable="false" />
+    <Property Name="MonedaLocal" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_Admin_Plantillas">
+    <Key>
+      <PropertyRef Name="IdPlantilla" />
+    </Key>
+    <Property Name="IdPlantilla" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IdPais" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Codigo" Type="varchar" MaxLength="50" />
+    <Property Name="Contenido" Type="image" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="30" />
+    <Property Name="CreateOn" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="30" />
+    <Property Name="ModifiedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBL_Admin_ResponsablesAprobacion">
+    <Key>
+      <PropertyRef Name="IdRol" />
+      <PropertyRef Name="IdUser" />
+    </Key>
+    <Property Name="IdRol" Type="int" Nullable="false" />
+    <Property Name="IdUser" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_Admin_Roles">
+    <Key>
+      <PropertyRef Name="IdRol" />
+    </Key>
+    <Property Name="IdRol" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NombreRol" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+    <Property Name="IsGroup" Type="bit" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="30" />
+    <Property Name="CreateOn" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="30" />
+    <Property Name="ModifiedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBL_Admin_RolesPorOpcionMenu">
+    <Key>
+      <PropertyRef Name="IdRol" />
+      <PropertyRef Name="IdopcionMenu" />
+    </Key>
+    <Property Name="IdRol" Type="int" Nullable="false" />
+    <Property Name="IdopcionMenu" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_Admin_Secciones">
+    <Key>
+      <PropertyRef Name="IdSeccion" />
+    </Key>
+    <Property Name="IdSeccion" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IdModule" Type="int" Nullable="false" />
+    <Property Name="Posicion" Type="int" Nullable="false" />
+    <Property Name="Titulo" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="TituloEdit" Type="varchar" MaxLength="50" />
+    <Property Name="PathPreview" Type="varchar" Nullable="false" MaxLength="350" />
+    <Property Name="PathEdit" Type="varchar" Nullable="false" MaxLength="350" />
+    <Property Name="ShowPreview" Type="bit" />
+    <Property Name="ShowInEdit" Type="bit" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="30" />
+    <Property Name="CreateOn" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="30" />
+    <Property Name="ModifiedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBL_Admin_SistemaNotificaciones">
+    <Key>
+      <PropertyRef Name="IdNotificacion" />
+    </Key>
+    <Property Name="IdNotificacion" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IdUser" Type="int" Nullable="false" />
+    <Property Name="Modulo" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Subject" Type="text" Nullable="false" />
+    <Property Name="Url" Type="varchar" MaxLength="500" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="Visitado" Type="bit" Nullable="false" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="30" />
+    <Property Name="CreateOn" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="30" />
+    <Property Name="ModifiedOn" Type="datetime" />
+    <Property Name="Contenido" Type="image" />
+  </EntityType>
+  <EntityType Name="TBL_Admin_TypeByModules">
+    <Key>
+      <PropertyRef Name="OID" />
+    </Key>
+    <Property Name="OID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IdModulo" Type="int" />
+    <Property Name="IdModuleType" Type="int" Nullable="false" />
+    <Property Name="Titulo" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="MostrarTitulo" Type="bit" Nullable="false" />
+    <Property Name="position" Type="int" Nullable="false" />
+    <Property Name="Placeholder" Type="varchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="30" />
+    <Property Name="CreateOn" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="30" />
+    <Property Name="ModifiedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBL_Admin_Usuarios">
+    <Key>
+      <PropertyRef Name="IdUser" />
+    </Key>
+    <Property Name="IdUser" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CodigoUser" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="Nombres" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="FechaIngreso" Type="datetime" Nullable="false" />
+    <Property Name="lastlogin" Type="datetime" />
+    <Property Name="lastip" Type="varchar" MaxLength="20" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="30" />
+    <Property Name="CreateOn" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="30" />
+    <Property Name="ModifiedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBL_Admin_UsuariosByRol">
+    <Key>
+      <PropertyRef Name="IdRol" />
+      <PropertyRef Name="IdUser" />
+    </Key>
+    <Property Name="IdRol" Type="int" Nullable="false" />
+    <Property Name="IdUser" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_ModuloDocumentos_Categorias">
+    <Key>
+      <PropertyRef Name="IdCategoria" />
+    </Key>
+    <Property Name="IdCategoria" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="512" />
+    <Property Name="Nivel" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreateOn" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_ModuloDocumentos_Documento">
+    <Key>
+      <PropertyRef Name="IdDocumento" />
+    </Key>
+    <Property Name="IdDocumento" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Titulo" Type="varchar" Nullable="false" MaxLength="512" />
+    <Property Name="Observaciones" Type="varchar" Nullable="false" MaxLength="512" />
+    <Property Name="Archivo" Type="image" Nullable="false" />
+    <Property Name="Version" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="IdEstado" Type="int" />
+    <Property Name="IdCategoria" Type="int" Nullable="false" />
+    <Property Name="IdSubCategoria" Type="int" Nullable="false" />
+    <Property Name="IdTipo" Type="int" Nullable="false" />
+    <Property Name="IdUsuarioResponsable" Type="int" Nullable="false" />
+    <Property Name="IdUsuarioCreacion" Type="int" Nullable="false" />
+    <Property Name="IdUsuarioModificacion" Type="int" Nullable="false" />
+    <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="FechaModificacion" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="int" Nullable="false" />
+    <Property Name="CreateOn" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="int" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+    <Property Name="NombreArchivo" Type="varchar" Nullable="false" MaxLength="512" />
+  </EntityType>
+  <EntityType Name="TBL_ModuloDocumentos_Estados">
+    <Key>
+      <PropertyRef Name="IdEstado" />
+    </Key>
+    <Property Name="IdEstado" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Codigo" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="512" />
+    <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="512" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreateOn" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_ModuloDocumentos_HistorialDocumento">
+    <Key>
+      <PropertyRef Name="IdHistorial" />
+    </Key>
+    <Property Name="IdHistorial" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IdDocumento" Type="int" Nullable="false" />
+    <Property Name="Titulo" Type="varchar" Nullable="false" MaxLength="512" />
+    <Property Name="Observaciones" Type="varchar" Nullable="false" MaxLength="512" />
+    <Property Name="Archivo" Type="image" Nullable="false" />
+    <Property Name="Version" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="IdCategoria" Type="int" Nullable="false" />
+    <Property Name="IdEstado" Type="int" Nullable="false" />
+    <Property Name="IdSubCategoria" Type="int" Nullable="false" />
+    <Property Name="IdTipo" Type="int" Nullable="false" />
+    <Property Name="IdUsuarioResposable" Type="int" Nullable="false" />
+    <Property Name="IdUsuarioCreacion" Type="int" Nullable="false" />
+    <Property Name="IdUsuarioModificacion" Type="int" Nullable="false" />
+    <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreateOn" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+    <Property Name="NombreArchivo" Type="varchar" Nullable="false" MaxLength="512" />
+  </EntityType>
+  <EntityType Name="TBL_ModuloDocumentos_LogCambios">
+    <Key>
+      <PropertyRef Name="IdLog" />
+    </Key>
+    <Property Name="IdLog" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IdDocumento" Type="int" Nullable="false" />
+    <Property Name="IdHistorial" Type="decimal" />
+    <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="512" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="CreateOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_ModuloPlanAccion_BancoActividades">
+    <Key>
+      <PropertyRef Name="IdActividad" />
+    </Key>
+    <Property Name="IdActividad" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Codigo" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="250" />
+    <Property Name="TienePregunta" Type="bit" Nullable="false" />
+    <Property Name="Pregunta" Type="varchar" MaxLength="250" />
+    <Property Name="TieneAnexo" Type="bit" Nullable="false" />
+    <Property Name="TipoRespuesta" Type="varchar" MaxLength="50" />
+    <Property Name="ValoresRespuesta" Type="varchar" MaxLength="350" />
+    <Property Name="ComentariosObligatorios" Type="bit" />
+    <Property Name="RespuestaObligatoria" Type="varchar" MaxLength="10" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="30" />
+    <Property Name="CreateOn" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="30" />
+    <Property Name="ModifiedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBL_ModuloPlanAccion_Categorias">
+    <Key>
+      <PropertyRef Name="IdCategoria" />
+    </Key>
+    <Property Name="IdCategoria" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Secuencia" Type="int" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="NumeroMinimoAct" Type="int" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="30" />
+    <Property Name="CreateOn" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="30" />
+    <Property Name="ModifiedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBL_ModuloPlanAccion_ConfiguracionActividades">
+    <Key>
+      <PropertyRef Name="IdConfiguracion" />
+    </Key>
+    <Property Name="IdConfiguracion" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IdCategoria" Type="int" Nullable="false" />
+    <Property Name="IdActividad" Type="int" Nullable="false" />
+    <Property Name="Oblogatorio" Type="bit" Nullable="false" />
+    <Property Name="Secuencia" Type="int" Nullable="false" />
+    <Property Name="EsFinal" Type="bit" Nullable="false" />
+    <Property Name="Exclusivo" Type="bit" />
+    <Property Name="RolExclusivo" Type="varchar" MaxLength="50" />
+    <Property Name="NumeroDiasHabiles" Type="int" />
+    <Property Name="PreProgramar" Type="bit" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="30" />
+    <Property Name="CreateOn" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="30" />
+    <Property Name="ModifiedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBL_ModuloWorkFlow_CamposValidacion">
+    <Key>
+      <PropertyRef Name="IdRequerido" />
+    </Key>
+    <Property Name="IdRequerido" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IdEstado" Type="int" Nullable="false" />
+    <Property Name="CampoValidar" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="TipoValidacion" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="ReglaValidacion" Type="text" Nullable="false" />
+    <Property Name="CampoDependencia" Type="varchar" MaxLength="50" />
+    <Property Name="ReglaDependencia" Type="text" />
+    <Property Name="MensajeValidacion" Type="text" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="30" />
+    <Property Name="CreateOn" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="30" />
+    <Property Name="ModifiedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBL_ModuloWorkFlow_Rutas">
+    <Key>
+      <PropertyRef Name="IdRuta" />
+    </Key>
+    <Property Name="IdRuta" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IdEstado" Type="int" Nullable="false" />
+    <Property Name="Secuencia" Type="int" />
+    <Property Name="Rol" Type="varchar" MaxLength="50" />
+    <Property Name="FormulaValidacion" Type="text" />
+    <Property Name="ValidaRequeridos" Type="bit" Nullable="false" />
+    <Property Name="BotonAccionesRutas" Type="varchar" MaxLength="50" />
+    <Property Name="SiguienteEstado" Type="int" />
+    <Property Name="RolResponsableActual" Type="varchar" MaxLength="500" />
+    <Property Name="TipoModulo" Type="varchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="30" />
+    <Property Name="CreateOn" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="30" />
+    <Property Name="ModifiedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBL_ModuloWorkFlow_ValidacionesSalida">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IdRuta" Type="int" Nullable="false" />
+    <Property Name="NombreEnsamblado" Type="varchar" MaxLength="500" />
+    <Property Name="NombreMetodo" Type="varchar" MaxLength="500" />
+    <Property Name="TipoAccion" Type="varchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="30" />
+    <Property Name="CreateOn" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="30" />
+    <Property Name="ModifiedOn" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_TBL_Admin_Ciudades_TBL_Admin_Departamentos">
+    <End Role="TBL_Admin_Departamentos" Type="SolutionFramework.MainModel.Store.TBL_Admin_Departamentos" Multiplicity="1" />
+    <End Role="TBL_Admin_Ciudades" Type="SolutionFramework.MainModel.Store.TBL_Admin_Ciudades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Admin_Departamentos">
+        <PropertyRef Name="IdDepartamento" />
+      </Principal>
+      <Dependent Role="TBL_Admin_Ciudades">
+        <PropertyRef Name="IdDepartamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Admin_Departamentos_TBL_Admin_Paises">
+    <End Role="TBL_Admin_Paises" Type="SolutionFramework.MainModel.Store.TBL_Admin_Paises" Multiplicity="1" />
+    <End Role="TBL_Admin_Departamentos" Type="SolutionFramework.MainModel.Store.TBL_Admin_Departamentos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Admin_Paises">
+        <PropertyRef Name="IdPais" />
+      </Principal>
+      <Dependent Role="TBL_Admin_Departamentos">
+        <PropertyRef Name="IdPais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Admin_ModuleRepository_TBL_Admin_ModuleType">
+    <End Role="TBL_Admin_ModuleType" Type="SolutionFramework.MainModel.Store.TBL_Admin_ModuleType" Multiplicity="1" />
+    <End Role="TBL_Admin_ModuleRepository" Type="SolutionFramework.MainModel.Store.TBL_Admin_ModuleRepository" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Admin_ModuleType">
+        <PropertyRef Name="IdModuleType" />
+      </Principal>
+      <Dependent Role="TBL_Admin_ModuleRepository">
+        <PropertyRef Name="IdModuleType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Admin_ResponsablesAprobacion_TBL_Admin_Roles">
+    <End Role="TBL_Admin_Roles" Type="SolutionFramework.MainModel.Store.TBL_Admin_Roles" Multiplicity="1" />
+    <End Role="TBL_Admin_ResponsablesAprobacion" Type="SolutionFramework.MainModel.Store.TBL_Admin_ResponsablesAprobacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Admin_Roles">
+        <PropertyRef Name="IdRol" />
+      </Principal>
+      <Dependent Role="TBL_Admin_ResponsablesAprobacion">
+        <PropertyRef Name="IdRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Admin_ResponsablesAprobacion_TBL_Admin_Usuarios">
+    <End Role="TBL_Admin_Usuarios" Type="SolutionFramework.MainModel.Store.TBL_Admin_Usuarios" Multiplicity="1" />
+    <End Role="TBL_Admin_ResponsablesAprobacion" Type="SolutionFramework.MainModel.Store.TBL_Admin_ResponsablesAprobacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Admin_Usuarios">
+        <PropertyRef Name="IdUser" />
+      </Principal>
+      <Dependent Role="TBL_Admin_ResponsablesAprobacion">
+        <PropertyRef Name="IdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Admin_Secciones_TBL_Admin_Modulos">
+    <End Role="TBL_Admin_Modulos" Type="SolutionFramework.MainModel.Store.TBL_Admin_Modulos" Multiplicity="1" />
+    <End Role="TBL_Admin_Secciones" Type="SolutionFramework.MainModel.Store.TBL_Admin_Secciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Admin_Modulos">
+        <PropertyRef Name="IdModulo" />
+      </Principal>
+      <Dependent Role="TBL_Admin_Secciones">
+        <PropertyRef Name="IdModule" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Admin_SistemaNotificaciones_TBL_Admin_Usuarios">
+    <End Role="TBL_Admin_Usuarios" Type="SolutionFramework.MainModel.Store.TBL_Admin_Usuarios" Multiplicity="1" />
+    <End Role="TBL_Admin_SistemaNotificaciones" Type="SolutionFramework.MainModel.Store.TBL_Admin_SistemaNotificaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Admin_Usuarios">
+        <PropertyRef Name="IdUser" />
+      </Principal>
+      <Dependent Role="TBL_Admin_SistemaNotificaciones">
+        <PropertyRef Name="IdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Admin_UsuariosByRol_TBL_Admin_Roles">
+    <End Role="TBL_Admin_Roles" Type="SolutionFramework.MainModel.Store.TBL_Admin_Roles" Multiplicity="1" />
+    <End Role="TBL_Admin_UsuariosByRol" Type="SolutionFramework.MainModel.Store.TBL_Admin_UsuariosByRol" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Admin_Roles">
+        <PropertyRef Name="IdRol" />
+      </Principal>
+      <Dependent Role="TBL_Admin_UsuariosByRol">
+        <PropertyRef Name="IdRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Admin_UsuariosByRol_TBL_Admin_Usuarios">
+    <End Role="TBL_Admin_Usuarios" Type="SolutionFramework.MainModel.Store.TBL_Admin_Usuarios" Multiplicity="1" />
+    <End Role="TBL_Admin_UsuariosByRol" Type="SolutionFramework.MainModel.Store.TBL_Admin_UsuariosByRol" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Admin_Usuarios">
+        <PropertyRef Name="IdUser" />
+      </Principal>
+      <Dependent Role="TBL_Admin_UsuariosByRol">
+        <PropertyRef Name="IdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Maestra_Admin_PaisMoneda_TBL_Maestra_Admin_Monedas">
+    <End Role="TBL_Admin_Monedas" Type="SolutionFramework.MainModel.Store.TBL_Admin_Monedas" Multiplicity="1" />
+    <End Role="TBL_Admin_PaisMoneda" Type="SolutionFramework.MainModel.Store.TBL_Admin_PaisMoneda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Admin_Monedas">
+        <PropertyRef Name="IdMoneda" />
+      </Principal>
+      <Dependent Role="TBL_Admin_PaisMoneda">
+        <PropertyRef Name="IdMoneda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Maestra_Admin_PaisMoneda_TBL_Maestra_Paises">
+    <End Role="TBL_Admin_Paises" Type="SolutionFramework.MainModel.Store.TBL_Admin_Paises" Multiplicity="1" />
+    <End Role="TBL_Admin_PaisMoneda" Type="SolutionFramework.MainModel.Store.TBL_Admin_PaisMoneda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Admin_Paises">
+        <PropertyRef Name="IdPais" />
+      </Principal>
+      <Dependent Role="TBL_Admin_PaisMoneda">
+        <PropertyRef Name="IdPais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Maestra_ModuleService_TBL_Maestra_ModuleType">
+    <End Role="TBL_Admin_ModuleType" Type="SolutionFramework.MainModel.Store.TBL_Admin_ModuleType" Multiplicity="1" />
+    <End Role="TBL_Admin_ModuleService" Type="SolutionFramework.MainModel.Store.TBL_Admin_ModuleService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Admin_ModuleType">
+        <PropertyRef Name="IdModuleType" />
+      </Principal>
+      <Dependent Role="TBL_Admin_ModuleService">
+        <PropertyRef Name="IdModuleType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Maestra_OpcionesMenu_TBL_Maestra_Modulos">
+    <End Role="TBL_Admin_Modulos" Type="SolutionFramework.MainModel.Store.TBL_Admin_Modulos" Multiplicity="0..1" />
+    <End Role="TBL_Admin_OpcionesMenu" Type="SolutionFramework.MainModel.Store.TBL_Admin_OpcionesMenu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Admin_Modulos">
+        <PropertyRef Name="IdModulo" />
+      </Principal>
+      <Dependent Role="TBL_Admin_OpcionesMenu">
+        <PropertyRef Name="AplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Maestra_OpcionesMenu_TBL_Maestra_OpcionesMenu">
+    <End Role="TBL_Admin_OpcionesMenu" Type="SolutionFramework.MainModel.Store.TBL_Admin_OpcionesMenu" Multiplicity="0..1" />
+    <End Role="TBL_Admin_OpcionesMenu1" Type="SolutionFramework.MainModel.Store.TBL_Admin_OpcionesMenu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Admin_OpcionesMenu">
+        <PropertyRef Name="IdOpcionMenu" />
+      </Principal>
+      <Dependent Role="TBL_Admin_OpcionesMenu1">
+        <PropertyRef Name="IdopcionPadre" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Maestra_Plantillas_TBL_Maestra_Paises">
+    <End Role="TBL_Admin_Paises" Type="SolutionFramework.MainModel.Store.TBL_Admin_Paises" Multiplicity="1" />
+    <End Role="TBL_Admin_Plantillas" Type="SolutionFramework.MainModel.Store.TBL_Admin_Plantillas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Admin_Paises">
+        <PropertyRef Name="IdPais" />
+      </Principal>
+      <Dependent Role="TBL_Admin_Plantillas">
+        <PropertyRef Name="IdPais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Maestra_Propuestas_RutasPorestado_TBL_Maestra_Propuestas_EstadosPropuesta">
+    <End Role="TBL_Admin_EstadosProceso" Type="SolutionFramework.MainModel.Store.TBL_Admin_EstadosProceso" Multiplicity="1" />
+    <End Role="TBL_ModuloWorkFlow_Rutas" Type="SolutionFramework.MainModel.Store.TBL_ModuloWorkFlow_Rutas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Admin_EstadosProceso">
+        <PropertyRef Name="IdEstado" />
+      </Principal>
+      <Dependent Role="TBL_ModuloWorkFlow_Rutas">
+        <PropertyRef Name="IdEstado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Maestra_RolesPorOpcionMenu_TBL_Maestra_OpcionesMenu">
+    <End Role="TBL_Admin_OpcionesMenu" Type="SolutionFramework.MainModel.Store.TBL_Admin_OpcionesMenu" Multiplicity="1" />
+    <End Role="TBL_Admin_RolesPorOpcionMenu" Type="SolutionFramework.MainModel.Store.TBL_Admin_RolesPorOpcionMenu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Admin_OpcionesMenu">
+        <PropertyRef Name="IdOpcionMenu" />
+      </Principal>
+      <Dependent Role="TBL_Admin_RolesPorOpcionMenu">
+        <PropertyRef Name="IdopcionMenu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Maestra_RolesPorOpcionMenu_TBL_Maestra_Roles">
+    <End Role="TBL_Admin_Roles" Type="SolutionFramework.MainModel.Store.TBL_Admin_Roles" Multiplicity="1" />
+    <End Role="TBL_Admin_RolesPorOpcionMenu" Type="SolutionFramework.MainModel.Store.TBL_Admin_RolesPorOpcionMenu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Admin_Roles">
+        <PropertyRef Name="IdRol" />
+      </Principal>
+      <Dependent Role="TBL_Admin_RolesPorOpcionMenu">
+        <PropertyRef Name="IdRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Maestra_Secciones_TBL_Maestra_ModuleType">
+    <End Role="TBL_Admin_ModuleType" Type="SolutionFramework.MainModel.Store.TBL_Admin_ModuleType" Multiplicity="1" />
+    <End Role="TBL_Admin_TypeByModules" Type="SolutionFramework.MainModel.Store.TBL_Admin_TypeByModules" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Admin_ModuleType">
+        <PropertyRef Name="IdModuleType" />
+      </Principal>
+      <Dependent Role="TBL_Admin_TypeByModules">
+        <PropertyRef Name="IdModuleType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Maestra_Secciones_TBL_Maestra_Modulos">
+    <End Role="TBL_Admin_Modulos" Type="SolutionFramework.MainModel.Store.TBL_Admin_Modulos" Multiplicity="0..1" />
+    <End Role="TBL_Admin_TypeByModules" Type="SolutionFramework.MainModel.Store.TBL_Admin_TypeByModules" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Admin_Modulos">
+        <PropertyRef Name="IdModulo" />
+      </Principal>
+      <Dependent Role="TBL_Admin_TypeByModules">
+        <PropertyRef Name="IdModulo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_ModuloDocumentos_Documento_TBL_Admin_Usuarios">
+    <End Role="TBL_Admin_Usuarios" Type="SolutionFramework.MainModel.Store.TBL_Admin_Usuarios" Multiplicity="1" />
+    <End Role="TBL_ModuloDocumentos_Documento" Type="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_Documento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Admin_Usuarios">
+        <PropertyRef Name="IdUser" />
+      </Principal>
+      <Dependent Role="TBL_ModuloDocumentos_Documento">
+        <PropertyRef Name="IdUsuarioResponsable" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_ModuloDocumentos_Documento_TBL_Admin_Usuarios1">
+    <End Role="TBL_Admin_Usuarios" Type="SolutionFramework.MainModel.Store.TBL_Admin_Usuarios" Multiplicity="1" />
+    <End Role="TBL_ModuloDocumentos_Documento" Type="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_Documento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Admin_Usuarios">
+        <PropertyRef Name="IdUser" />
+      </Principal>
+      <Dependent Role="TBL_ModuloDocumentos_Documento">
+        <PropertyRef Name="IdUsuarioCreacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_ModuloDocumentos_Documento_TBL_Admin_Usuarios2">
+    <End Role="TBL_Admin_Usuarios" Type="SolutionFramework.MainModel.Store.TBL_Admin_Usuarios" Multiplicity="1" />
+    <End Role="TBL_ModuloDocumentos_Documento" Type="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_Documento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Admin_Usuarios">
+        <PropertyRef Name="IdUser" />
+      </Principal>
+      <Dependent Role="TBL_ModuloDocumentos_Documento">
+        <PropertyRef Name="IdUsuarioModificacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_ModuloDocumentos_Documento_TBL_ModuloDocumentos_Categorias">
+    <End Role="TBL_ModuloDocumentos_Categorias" Type="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_Categorias" Multiplicity="1" />
+    <End Role="TBL_ModuloDocumentos_Documento" Type="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_Documento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_ModuloDocumentos_Categorias">
+        <PropertyRef Name="IdCategoria" />
+      </Principal>
+      <Dependent Role="TBL_ModuloDocumentos_Documento">
+        <PropertyRef Name="IdCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_ModuloDocumentos_Documento_TBL_ModuloDocumentos_Categorias1">
+    <End Role="TBL_ModuloDocumentos_Categorias" Type="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_Categorias" Multiplicity="1" />
+    <End Role="TBL_ModuloDocumentos_Documento" Type="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_Documento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_ModuloDocumentos_Categorias">
+        <PropertyRef Name="IdCategoria" />
+      </Principal>
+      <Dependent Role="TBL_ModuloDocumentos_Documento">
+        <PropertyRef Name="IdSubCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_ModuloDocumentos_Documento_TBL_ModuloDocumentos_Categorias2">
+    <End Role="TBL_ModuloDocumentos_Categorias" Type="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_Categorias" Multiplicity="1" />
+    <End Role="TBL_ModuloDocumentos_Documento" Type="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_Documento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_ModuloDocumentos_Categorias">
+        <PropertyRef Name="IdCategoria" />
+      </Principal>
+      <Dependent Role="TBL_ModuloDocumentos_Documento">
+        <PropertyRef Name="IdTipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_ModuloDocumentos_Documento_TBL_ModuloDocumentos_Estados">
+    <End Role="TBL_ModuloDocumentos_Estados" Type="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_Estados" Multiplicity="0..1" />
+    <End Role="TBL_ModuloDocumentos_Documento" Type="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_Documento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_ModuloDocumentos_Estados">
+        <PropertyRef Name="IdEstado" />
+      </Principal>
+      <Dependent Role="TBL_ModuloDocumentos_Documento">
+        <PropertyRef Name="IdEstado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_Admin_Usuarios">
+    <End Role="TBL_Admin_Usuarios" Type="SolutionFramework.MainModel.Store.TBL_Admin_Usuarios" Multiplicity="1" />
+    <End Role="TBL_ModuloDocumentos_HistorialDocumento" Type="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_HistorialDocumento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Admin_Usuarios">
+        <PropertyRef Name="IdUser" />
+      </Principal>
+      <Dependent Role="TBL_ModuloDocumentos_HistorialDocumento">
+        <PropertyRef Name="IdUsuarioResposable" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_Admin_Usuarios1">
+    <End Role="TBL_Admin_Usuarios" Type="SolutionFramework.MainModel.Store.TBL_Admin_Usuarios" Multiplicity="1" />
+    <End Role="TBL_ModuloDocumentos_HistorialDocumento" Type="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_HistorialDocumento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Admin_Usuarios">
+        <PropertyRef Name="IdUser" />
+      </Principal>
+      <Dependent Role="TBL_ModuloDocumentos_HistorialDocumento">
+        <PropertyRef Name="IdUsuarioCreacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_Admin_Usuarios2">
+    <End Role="TBL_Admin_Usuarios" Type="SolutionFramework.MainModel.Store.TBL_Admin_Usuarios" Multiplicity="1" />
+    <End Role="TBL_ModuloDocumentos_HistorialDocumento" Type="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_HistorialDocumento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Admin_Usuarios">
+        <PropertyRef Name="IdUser" />
+      </Principal>
+      <Dependent Role="TBL_ModuloDocumentos_HistorialDocumento">
+        <PropertyRef Name="IdUsuarioModificacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Categorias">
+    <End Role="TBL_ModuloDocumentos_Categorias" Type="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_Categorias" Multiplicity="1" />
+    <End Role="TBL_ModuloDocumentos_HistorialDocumento" Type="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_HistorialDocumento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_ModuloDocumentos_Categorias">
+        <PropertyRef Name="IdCategoria" />
+      </Principal>
+      <Dependent Role="TBL_ModuloDocumentos_HistorialDocumento">
+        <PropertyRef Name="IdCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Categorias1">
+    <End Role="TBL_ModuloDocumentos_Categorias" Type="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_Categorias" Multiplicity="1" />
+    <End Role="TBL_ModuloDocumentos_HistorialDocumento" Type="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_HistorialDocumento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_ModuloDocumentos_Categorias">
+        <PropertyRef Name="IdCategoria" />
+      </Principal>
+      <Dependent Role="TBL_ModuloDocumentos_HistorialDocumento">
+        <PropertyRef Name="IdSubCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Categorias2">
+    <End Role="TBL_ModuloDocumentos_Categorias" Type="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_Categorias" Multiplicity="1" />
+    <End Role="TBL_ModuloDocumentos_HistorialDocumento" Type="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_HistorialDocumento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_ModuloDocumentos_Categorias">
+        <PropertyRef Name="IdCategoria" />
+      </Principal>
+      <Dependent Role="TBL_ModuloDocumentos_HistorialDocumento">
+        <PropertyRef Name="IdTipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Documento">
+    <End Role="TBL_ModuloDocumentos_Documento" Type="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_Documento" Multiplicity="1" />
+    <End Role="TBL_ModuloDocumentos_HistorialDocumento" Type="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_HistorialDocumento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_ModuloDocumentos_Documento">
+        <PropertyRef Name="IdDocumento" />
+      </Principal>
+      <Dependent Role="TBL_ModuloDocumentos_HistorialDocumento">
+        <PropertyRef Name="IdDocumento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Estados">
+    <End Role="TBL_ModuloDocumentos_Estados" Type="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_Estados" Multiplicity="1" />
+    <End Role="TBL_ModuloDocumentos_HistorialDocumento" Type="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_HistorialDocumento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_ModuloDocumentos_Estados">
+        <PropertyRef Name="IdEstado" />
+      </Principal>
+      <Dependent Role="TBL_ModuloDocumentos_HistorialDocumento">
+        <PropertyRef Name="IdEstado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_ModuloDocumentos_LogCambios_TBL_ModuloDocumentos_Documento">
+    <End Role="TBL_ModuloDocumentos_Documento" Type="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_Documento" Multiplicity="1" />
+    <End Role="TBL_ModuloDocumentos_LogCambios" Type="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_LogCambios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_ModuloDocumentos_Documento">
+        <PropertyRef Name="IdDocumento" />
+      </Principal>
+      <Dependent Role="TBL_ModuloDocumentos_LogCambios">
+        <PropertyRef Name="IdDocumento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_ModuloDocumentos_LogCambios_TBL_ModuloDocumentos_HistorialDocumento">
+    <End Role="TBL_ModuloDocumentos_HistorialDocumento" Type="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_HistorialDocumento" Multiplicity="0..1" />
+    <End Role="TBL_ModuloDocumentos_LogCambios" Type="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_LogCambios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_ModuloDocumentos_HistorialDocumento">
+        <PropertyRef Name="IdHistorial" />
+      </Principal>
+      <Dependent Role="TBL_ModuloDocumentos_LogCambios">
+        <PropertyRef Name="IdHistorial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_BancoActividades">
+    <End Role="TBL_ModuloPlanAccion_BancoActividades" Type="SolutionFramework.MainModel.Store.TBL_ModuloPlanAccion_BancoActividades" Multiplicity="1" />
+    <End Role="TBL_ModuloPlanAccion_ConfiguracionActividades" Type="SolutionFramework.MainModel.Store.TBL_ModuloPlanAccion_ConfiguracionActividades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_ModuloPlanAccion_BancoActividades">
+        <PropertyRef Name="IdActividad" />
+      </Principal>
+      <Dependent Role="TBL_ModuloPlanAccion_ConfiguracionActividades">
+        <PropertyRef Name="IdActividad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_Categorias">
+    <End Role="TBL_ModuloPlanAccion_Categorias" Type="SolutionFramework.MainModel.Store.TBL_ModuloPlanAccion_Categorias" Multiplicity="1" />
+    <End Role="TBL_ModuloPlanAccion_ConfiguracionActividades" Type="SolutionFramework.MainModel.Store.TBL_ModuloPlanAccion_ConfiguracionActividades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_ModuloPlanAccion_Categorias">
+        <PropertyRef Name="IdCategoria" />
+      </Principal>
+      <Dependent Role="TBL_ModuloPlanAccion_ConfiguracionActividades">
+        <PropertyRef Name="IdCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_ModuloWorkFlow_CamposValidacion_TBL_Admin_EstadosProceso">
+    <End Role="TBL_Admin_EstadosProceso" Type="SolutionFramework.MainModel.Store.TBL_Admin_EstadosProceso" Multiplicity="1" />
+    <End Role="TBL_ModuloWorkFlow_CamposValidacion" Type="SolutionFramework.MainModel.Store.TBL_ModuloWorkFlow_CamposValidacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Admin_EstadosProceso">
+        <PropertyRef Name="IdEstado" />
+      </Principal>
+      <Dependent Role="TBL_ModuloWorkFlow_CamposValidacion">
+        <PropertyRef Name="IdEstado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_ModuloWorkFlow_Rutas_TBL_Admin_EstadosProceso">
+    <End Role="TBL_Admin_EstadosProceso" Type="SolutionFramework.MainModel.Store.TBL_Admin_EstadosProceso" Multiplicity="0..1" />
+    <End Role="TBL_ModuloWorkFlow_Rutas" Type="SolutionFramework.MainModel.Store.TBL_ModuloWorkFlow_Rutas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Admin_EstadosProceso">
+        <PropertyRef Name="IdEstado" />
+      </Principal>
+      <Dependent Role="TBL_ModuloWorkFlow_Rutas">
+        <PropertyRef Name="SiguienteEstado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_ModuloWorkFlow_ValidacionesSalida_TBL_ModuloWorkFlow_Rutas">
+    <End Role="TBL_ModuloWorkFlow_Rutas" Type="SolutionFramework.MainModel.Store.TBL_ModuloWorkFlow_Rutas" Multiplicity="1" />
+    <End Role="TBL_ModuloWorkFlow_ValidacionesSalida" Type="SolutionFramework.MainModel.Store.TBL_ModuloWorkFlow_ValidacionesSalida" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_ModuloWorkFlow_Rutas">
+        <PropertyRef Name="IdRuta" />
+      </Principal>
+      <Dependent Role="TBL_ModuloWorkFlow_ValidacionesSalida">
+        <PropertyRef Name="IdRuta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
