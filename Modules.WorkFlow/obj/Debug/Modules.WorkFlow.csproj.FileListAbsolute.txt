@@ -1,0 +1,198 @@
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Modules.WorkFlow.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Modules.WorkFlow.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Application.Core.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Domain.MainModules.Entities.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Infrastructure.CrossCutting.NetFramework.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Domain.Core.Entities.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Infrastructure.CrossCutting.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\log4net.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Application.Core.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Domain.MainModules.Entities.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Infrastructure.CrossCutting.NetFramework.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Domain.Core.Entities.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Infrastructure.CrossCutting.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\obj\Debug\Modules.WorkFlow.csprojResolveAssemblyReference.cache
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\obj\Debug\Modules.WorkFlow.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\obj\Debug\Modules.WorkFlow.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Applications.MainModule.WorkFlow.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\ASP.NETCLIENTE.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Domain.Core.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Modules.Loader.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Presenters.WorkFlow.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Domain.MainModule.WorkFlow.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Presenters.Admin.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Infraestructure.CrossCutting.Security.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Microsoft.Practices.Unity.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Applications.MainModule.Admin.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Infrastructure.CrossCutting.IoC.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Applications.MainModule.Pedidos.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Domain.MainModule.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Microsoft.Practices.Unity.Interception.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Infrastructure.Data.MainModule.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Application.MainModule.SqlServices.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Infraestructure.Data.Core.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Infraestructure.CrossCutting.NetCommunication.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Application.MainModule.ExportExcel.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Domain.MainModule.Pedidos.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Domain.MainModule.PlanAccion.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Applications.MainModule.WorkFlow.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\ASP.NETCLIENTE.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Domain.Core.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Modules.Loader.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Presenters.WorkFlow.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Domain.MainModule.WorkFlow.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Presenters.Admin.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Infraestructure.CrossCutting.Security.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Microsoft.Practices.Unity.xml
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Applications.MainModule.Admin.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Infrastructure.CrossCutting.IoC.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Applications.MainModule.Pedidos.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Domain.MainModule.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Microsoft.Practices.Unity.Interception.xml
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Infrastructure.Data.MainModule.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Application.MainModule.SqlServices.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Infraestructure.Data.Core.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Infraestructure.CrossCutting.NetCommunication.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Application.MainModule.ExportExcel.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Domain.MainModule.Pedidos.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Domain.MainModule.PlanAccion.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\obj\Debug\Modules.WorkFlow.Message.resources
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\obj\Debug\Modules.WorkFlow.csproj.GenerateResource.Cache
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\obj\Debug\Modules.WorkFlow.dll.licenses
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\ExpressionEval.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Applications.MainModule.SystemActions.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\EMPACOR\CODIGO FUENTE\COMPLETA\EMPACOR\Modules.WorkFlow\bin\Applications.MainModule.SystemActions.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Modules.WorkFlow.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Modules.WorkFlow.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Application.Core.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Applications.MainModule.Admin.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Applications.MainModule.WorkFlow.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\ASP.NETCLIENTE.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Domain.Core.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Domain.Core.Entities.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Domain.MainModule.WorkFlow.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Domain.MainModules.Entities.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Infrastructure.CrossCutting.IoC.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Infrastructure.CrossCutting.NetFramework.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Modules.Loader.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Presenters.WorkFlow.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Domain.MainModule.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Domain.MainModule.Documentos.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Application.MainModule.SqlServices.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Applications.MainModule.SystemActions.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Infraestructure.CrossCutting.Security.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Presenters.Admin.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Microsoft.Practices.Unity.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Infrastructure.CrossCutting.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\log4net.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\ExpressionEval.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Microsoft.Practices.Unity.Interception.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Infrastructure.Data.MainModule.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Infraestructure.Data.Core.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Infraestructure.CrossCutting.NetCommunication.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Application.MainModule.ExportExcel.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Application.MainModule.Documentos.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Domain.MainModule.PlanAccion.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Application.Core.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Applications.MainModule.Admin.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Applications.MainModule.WorkFlow.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\ASP.NETCLIENTE.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Domain.Core.Entities.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Domain.Core.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Domain.MainModule.WorkFlow.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Domain.MainModules.Entities.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Infrastructure.CrossCutting.IoC.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Infrastructure.CrossCutting.NetFramework.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Modules.Loader.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Presenters.WorkFlow.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Domain.MainModule.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Domain.MainModule.Documentos.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Application.MainModule.SqlServices.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Applications.MainModule.SystemActions.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Infraestructure.CrossCutting.Security.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Presenters.Admin.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Microsoft.Practices.Unity.xml
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Infrastructure.CrossCutting.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Microsoft.Practices.Unity.Interception.xml
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Infrastructure.Data.MainModule.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Infraestructure.Data.Core.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Infraestructure.CrossCutting.NetCommunication.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Application.MainModule.ExportExcel.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Application.MainModule.Documentos.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\bin\Domain.MainModule.PlanAccion.pdb
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\obj\Debug\Modules.WorkFlow.csprojResolveAssemblyReference.cache
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\obj\Debug\Modules.WorkFlow.Message.resources
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\obj\Debug\Modules.WorkFlow.csproj.GenerateResource.Cache
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\obj\Debug\Modules.WorkFlow.dll.licenses
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\obj\Debug\Modules.WorkFlow.dll
+D:\PROYECTOS\SOLVER DE COLOMBIA\SIKA\CODIGO FUENTE\COMPLETA\V1\Modules.WorkFlow\obj\Debug\Modules.WorkFlow.pdb
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\obj\Debug\Modules.WorkFlow.csprojResolveAssemblyReference.cache
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\obj\Debug\Modules.WorkFlow.Message.resources
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\obj\Debug\Modules.WorkFlow.csproj.GenerateResource.Cache
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\obj\Debug\Modules.WorkFlow.dll.licenses
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\obj\Debug\Modules.WorkFlow.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\obj\Debug\Modules.WorkFlow.pdb
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Modules.WorkFlow.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Modules.WorkFlow.pdb
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Application.Core.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Applications.MainModule.Admin.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Applications.MainModule.WorkFlow.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\ASP.NETCLIENTE.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Domain.Core.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Domain.Core.Entities.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Domain.MainModule.WorkFlow.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Domain.MainModules.Entities.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Infragistics4.Web.v11.1.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Infragistics4.WebUI.Misc.v11.1.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Infragistics4.WebUI.Shared.v11.1.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Infragistics4.WebUI.UltraWebNavigator.v11.1.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Infrastructure.CrossCutting.IoC.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Infrastructure.CrossCutting.NetFramework.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Modules.Loader.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Presenters.WorkFlow.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Domain.MainModule.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Domain.MainModule.Documentos.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Application.MainModule.SqlServices.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Applications.MainModule.SystemActions.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Infraestructure.CrossCutting.Security.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Presenters.Admin.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\log4net.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Infrastructure.CrossCutting.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Microsoft.Practices.Unity.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\ExpressionEval.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Microsoft.Practices.Unity.Interception.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Infrastructure.Data.MainModule.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Infraestructure.Data.Core.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Infraestructure.CrossCutting.NetCommunication.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Application.MainModule.ExportExcel.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Infragistics4.WebUI.Documents.Reports.v11.1.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Infragistics4.WebUI.Documents.Excel.v11.1.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Application.MainModule.Documentos.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Domain.MainModule.PlanAccion.dll
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Application.Core.pdb
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Applications.MainModule.Admin.pdb
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Applications.MainModule.WorkFlow.pdb
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\ASP.NETCLIENTE.pdb
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Domain.Core.Entities.pdb
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Domain.Core.pdb
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Domain.MainModule.WorkFlow.pdb
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Domain.MainModules.Entities.pdb
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Infrastructure.CrossCutting.IoC.pdb
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Infrastructure.CrossCutting.NetFramework.pdb
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Modules.Loader.pdb
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Presenters.WorkFlow.pdb
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Domain.MainModule.pdb
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Domain.MainModule.Documentos.pdb
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Application.MainModule.SqlServices.pdb
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Applications.MainModule.SystemActions.pdb
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Infraestructure.CrossCutting.Security.pdb
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Presenters.Admin.pdb
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Infrastructure.CrossCutting.pdb
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Microsoft.Practices.Unity.xml
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Microsoft.Practices.Unity.Interception.xml
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Infrastructure.Data.MainModule.pdb
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Infraestructure.Data.Core.pdb
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Infraestructure.CrossCutting.NetCommunication.pdb
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Application.MainModule.ExportExcel.pdb
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Application.MainModule.Documentos.pdb
+E:\DEV\Sika\Dev\V1\Modules.WorkFlow\bin\Domain.MainModule.PlanAccion.pdb
