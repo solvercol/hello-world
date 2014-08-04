@@ -1,2 +1,0 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WucWorkFlowModule.ascx.cs" Inherits="Modules.WorkFlow.WucWorkFlowModule" %>
-<asp:PlaceHolder ID="plHolder" runat="server" EnableViewState="false"></asp:PlaceHolder>

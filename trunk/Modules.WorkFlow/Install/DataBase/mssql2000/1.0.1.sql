@@ -1,1 +1,0 @@
-﻿UPDATE TBL_Admin_ModuleVersion SET major = 1, minor = 0, patch = 1 WHERE assembly = 'Modules.WorkFlow'
