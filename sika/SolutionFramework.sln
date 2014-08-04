@@ -160,6 +160,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dll", "dll", "{CBF230DE-E1A
 	ProjectSection(SolutionItems) = preProject
 		dll\AjaxControlToolkit.dll = dll\AjaxControlToolkit.dll
 		dll\AntiXSSLibrary.dll = dll\AntiXSSLibrary.dll
+		dll\Applications.MainModule.SystemActions.dll = dll\Applications.MainModule.SystemActions.dll
 		dll\Castle.Core.dll = dll\Castle.Core.dll
 		dll\Castle.DynamicProxy.dll = dll\Castle.DynamicProxy.dll
 		dll\Castle.DynamicProxy2.dll = dll\Castle.DynamicProxy2.dll

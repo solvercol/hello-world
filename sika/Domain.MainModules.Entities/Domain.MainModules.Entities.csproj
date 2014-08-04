@@ -134,6 +134,12 @@
     <Compile Include="TBL_ModuloDocumentos_Documento.cs">
       <DependentUpon>MainModuleContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="TBL_ModuloDocumentos_DocumentoAdjunto.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_ModuloDocumentos_DocumentoAdjuntoHistorial.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="TBL_ModuloDocumentos_Estados.cs">
       <DependentUpon>MainModuleContext.tt</DependentUpon>
     </Compile>

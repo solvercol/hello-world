@@ -51,6 +51,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\ITBL_ModuloDocumentos_CategoriasRepository.cs" />
+    <Compile Include="Contracts\ITBL_ModuloDocumentos_DocumentoAdjuntoHistorialRepository.cs" />
+    <Compile Include="Contracts\ITBL_ModuloDocumentos_DocumentoAdjuntoRepository.cs" />
     <Compile Include="Contracts\ITBL_ModuloDocumentos_DocumentoRepository.cs" />
     <Compile Include="Contracts\ITBL_ModuloDocumentos_EstadosRepository.cs" />
     <Compile Include="Contracts\ITBL_ModuloDocumentos_HistorialDocumentoRepository.cs" />

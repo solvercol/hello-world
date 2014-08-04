@@ -59,6 +59,8 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\TBL_ModuloDocumentos_CategoriasRepository.cs" />
+    <Compile Include="Repositories\TBL_ModuloDocumentos_DocumentoAdjuntoHistorialRepository.cs" />
+    <Compile Include="Repositories\TBL_ModuloDocumentos_DocumentoAdjuntoRepository.cs" />
     <Compile Include="Repositories\TBL_ModuloDocumentos_DocumentoRepository.cs" />
     <Compile Include="Repositories\TBL_ModuloDocumentos_EstadosRepository.cs" />
     <Compile Include="Repositories\TBL_ModuloDocumentos_HistorialDocumentoRepository.cs" />
