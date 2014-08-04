@@ -36,13 +36,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Application.Core">
-      <HintPath>..\dll\Application.Core.dll</HintPath>
+      <HintPath>..\Application.Core\bin\Debug\Application.Core.dll</HintPath>
     </Reference>
     <Reference Include="Domain.Core">
-      <HintPath>..\dll\Domain.Core.dll</HintPath>
+      <HintPath>..\Domain.Core\bin\Debug\Domain.Core.dll</HintPath>
     </Reference>
     <Reference Include="Domain.MainModules.Entities">
-      <HintPath>..\dll\Domain.MainModules.Entities.dll</HintPath>
+      <HintPath>..\Domain.MainModules.Entities\bin\Debug\Domain.MainModules.Entities.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
