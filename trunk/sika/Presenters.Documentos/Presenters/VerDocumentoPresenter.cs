@@ -70,7 +70,7 @@ namespace Presenters.Documentos.Presenters
 
                 View.Observaciones = oDocumento.Observaciones;
 
-                View.Archivo = oDocumento.Archivo;
+                //View.Archivo = oDocumento.Archivo;
 
                 if (oDocumento.TBL_ModuloDocumentos_Categorias == null)
                     oDocumento.TBL_ModuloDocumentos_Categorias = categoriasServices.FindById(oDocumento.IdCategoria);

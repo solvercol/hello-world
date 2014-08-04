@@ -117,7 +117,7 @@ namespace Presenters.Documentos.Presenters
                 View.Titulo = oDocumento.Titulo;
                 View.Observaciones = oDocumento.Observaciones;
 
-                View.Archivo = oDocumento.Archivo;
+                //View.Archivo = oDocumento.Archivo;
 
                 View.IdCategoria = oDocumento.IdCategoria;
                 View.IdSubCategoria = oDocumento.IdSubCategoria;
@@ -179,8 +179,8 @@ namespace Presenters.Documentos.Presenters
                 var oDocumento = documentoServices.NewEntity();
                 oDocumento.Titulo = View.Titulo;
                 oDocumento.Observaciones = View.Observaciones;
-                oDocumento.Archivo = View.Archivo;
-                oDocumento.NombreArchivo = View.NombreArchivo;
+                //oDocumento.Archivo = View.Archivo;
+                //oDocumento.NombreArchivo = View.NombreArchivo;
                 oDocumento.Version = "001";
                 oDocumento.IdEstado = Estados.Find(est => est.Codigo.Equals("EN_EDICION")).IdEstado;
 
@@ -194,9 +194,9 @@ namespace Presenters.Documentos.Presenters
                 oDocumento.FechaCreacion = fechaAhora;
                 oDocumento.FechaModificacion = fechaAhora;
                 oDocumento.IsActive = View.Activo;
-                oDocumento.CreateBy = View.UserSession.IdUser.ToString();
+                oDocumento.CreateBy = View.UserSession.IdUser;
                 oDocumento.CreateOn = fechaAhora;
-                oDocumento.ModifiedBy = View.UserSession.IdUser.ToString();
+                oDocumento.ModifiedBy = View.UserSession.IdUser;
                 oDocumento.ModifiedOn = fechaAhora;
                 documentoServices.Add(oDocumento);
 
@@ -297,10 +297,10 @@ namespace Presenters.Documentos.Presenters
                 
                 oDocumento.Titulo = View.Titulo;
                 oDocumento.Observaciones = View.Observaciones;
-                if (View.Archivo.Length > 0)
-                    oDocumento.Archivo = View.Archivo;
-                if (View.NombreArchivo.Length > 0)
-                    oDocumento.NombreArchivo = View.NombreArchivo;
+                //if (View.Archivo.Length > 0)
+                //    oDocumento.Archivo = View.Archivo;
+                //if (View.NombreArchivo.Length > 0)
+                //    oDocumento.NombreArchivo = View.NombreArchivo;
                 oDocumento.Version = GetNextVersion(oDocumento.Version, oDocumento.IdEstado.GetValueOrDefault());
                 oDocumento.IdCategoria = View.IdCategoria;
                 oDocumento.IdSubCategoria = View.IdSubCategoria;
@@ -309,7 +309,7 @@ namespace Presenters.Documentos.Presenters
                 oDocumento.IdUsuarioModificacion = View.UserSession.IdUser;
                 oDocumento.FechaModificacion = fechaAhora;
                 oDocumento.IsActive = View.Activo;
-                oDocumento.ModifiedBy = View.UserSession.IdUser.ToString();
+                oDocumento.ModifiedBy = View.UserSession.IdUser;
                 oDocumento.ModifiedOn = DateTime.Now;
                 documentoServices.Modify(oDocumento);
 
@@ -425,8 +425,8 @@ namespace Presenters.Documentos.Presenters
                 historial.IdDocumento = oDocumento.IdDocumento;
                 historial.Titulo = oDocumento.Titulo;
                 historial.Observaciones = oDocumento.Observaciones;
-                historial.Archivo = oDocumento.Archivo;
-                historial.NombreArchivo = oDocumento.NombreArchivo;
+                //historial.Archivo = oDocumento.Archivo;
+                //historial.NombreArchivo = oDocumento.NombreArchivo;
                 historial.Version = oDocumento.Version;
                 historial.IdCategoria = oDocumento.IdCategoria;
                 historial.IdEstado = oDocumento.IdEstado.GetValueOrDefault();
@@ -437,9 +437,9 @@ namespace Presenters.Documentos.Presenters
                 historial.IdUsuarioModificacion = oDocumento.IdUsuarioModificacion;
                 historial.FechaCreacion = oDocumento.FechaCreacion;
                 historial.IsActive = oDocumento.IsActive;
-                historial.CreateBy = oDocumento.CreateBy;
+                historial.CreateBy = oDocumento.CreateBy.ToString();
                 historial.CreateOn = oDocumento.CreateOn;
-                historial.ModifiedBy = oDocumento.ModifiedBy;
+                historial.ModifiedBy = oDocumento.ModifiedBy.ToString();
                 historial.ModifiedOn = oDocumento.ModifiedOn;
                 historialDocumentoServices.Add(historial);
                 result = historial.IdHistorial;

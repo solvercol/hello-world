@@ -36,7 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Applications.MainModule.SystemActions">
-      <HintPath>..\Applications.MainModule.SystemActions\bin\Debug\Applications.MainModule.SystemActions.dll</HintPath>
+      <HintPath>..\dll\Applications.MainModule.SystemActions.dll</HintPath>
     </Reference>
     <Reference Include="ExpressionEval">
       <HintPath>..\dll\ExpressionEval.dll</HintPath>
