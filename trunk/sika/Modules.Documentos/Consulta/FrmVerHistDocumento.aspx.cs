@@ -150,8 +150,8 @@ namespace Modules.Documentos.Consulta
 
         public void DescargarArchivo(TBL_ModuloDocumentos_HistorialDocumento documento)
         {
-            ViewPage<EditarDocumentoPresenter, IEditarDocumentoView>
-                .DownloadDocument(documento.Archivo, documento.NombreArchivo, "application/octet-stream");
+            //ViewPage<EditarDocumentoPresenter, IEditarDocumentoView>
+            //    .DownloadDocument(documento.Archivo, documento.NombreArchivo, "application/octet-stream");
         }
 
         #endregion

@@ -33,6 +33,8 @@
           <EntitySet Name="TBL_Admin_UsuariosByRol" EntityType="SolutionFramework.MainModel.Store.TBL_Admin_UsuariosByRol" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="TBL_ModuloDocumentos_Categorias" EntityType="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_Categorias" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="TBL_ModuloDocumentos_Documento" EntityType="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_Documento" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TBL_ModuloDocumentos_DocumentoAdjunto" EntityType="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_DocumentoAdjunto" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TBL_ModuloDocumentos_DocumentoAdjuntoHistorial" EntityType="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_DocumentoAdjuntoHistorial" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="TBL_ModuloDocumentos_Estados" EntityType="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_Estados" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="TBL_ModuloDocumentos_HistorialDocumento" EntityType="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_HistorialDocumento" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="TBL_ModuloDocumentos_LogCambios" EntityType="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_LogCambios" store:Type="Tables" Schema="dbo" />
@@ -149,6 +151,14 @@
           <AssociationSet Name="FK_TBL_ModuloDocumentos_Documento_TBL_ModuloDocumentos_Estados" Association="SolutionFramework.MainModel.Store.FK_TBL_ModuloDocumentos_Documento_TBL_ModuloDocumentos_Estados">
             <End Role="TBL_ModuloDocumentos_Estados" EntitySet="TBL_ModuloDocumentos_Estados" />
             <End Role="TBL_ModuloDocumentos_Documento" EntitySet="TBL_ModuloDocumentos_Documento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_ModuloDocumentos_DocumentoAdjunto_TBL_ModuloDocumentos_Documento" Association="SolutionFramework.MainModel.Store.FK_TBL_ModuloDocumentos_DocumentoAdjunto_TBL_ModuloDocumentos_Documento">
+            <End Role="TBL_ModuloDocumentos_Documento" EntitySet="TBL_ModuloDocumentos_Documento" />
+            <End Role="TBL_ModuloDocumentos_DocumentoAdjunto" EntitySet="TBL_ModuloDocumentos_DocumentoAdjunto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_ModuloDocumentos_DocumentoAdjuntoHistorial_TBL_ModuloDocumentos_HistorialDocumento" Association="SolutionFramework.MainModel.Store.FK_TBL_ModuloDocumentos_DocumentoAdjuntoHistorial_TBL_ModuloDocumentos_HistorialDocumento">
+            <End Role="TBL_ModuloDocumentos_HistorialDocumento" EntitySet="TBL_ModuloDocumentos_HistorialDocumento" />
+            <End Role="TBL_ModuloDocumentos_DocumentoAdjuntoHistorial" EntitySet="TBL_ModuloDocumentos_DocumentoAdjuntoHistorial" />
           </AssociationSet>
           <AssociationSet Name="FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_Admin_Usuarios" Association="SolutionFramework.MainModel.Store.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_Admin_Usuarios">
             <End Role="TBL_Admin_Usuarios" EntitySet="TBL_Admin_Usuarios" />
@@ -584,7 +594,6 @@
           <Property Name="IdDocumento" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Titulo" Type="varchar" Nullable="false" MaxLength="512" />
           <Property Name="Observaciones" Type="varchar" Nullable="false" MaxLength="512" />
-          <Property Name="Archivo" Type="image" Nullable="false" />
           <Property Name="Version" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="IdEstado" Type="int" />
           <Property Name="IdCategoria" Type="int" Nullable="false" />
@@ -600,7 +609,34 @@
           <Property Name="CreateOn" Type="datetime" Nullable="false" />
           <Property Name="ModifiedBy" Type="int" Nullable="false" />
           <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBL_ModuloDocumentos_DocumentoAdjunto">
+          <Key>
+            <PropertyRef Name="IdDocumentoAdjunto" />
+          </Key>
+          <Property Name="IdDocumentoAdjunto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdDocumento" Type="int" Nullable="false" />
           <Property Name="NombreArchivo" Type="varchar" Nullable="false" MaxLength="512" />
+          <Property Name="Archivo" Type="image" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreateBy" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CrateOn" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBL_ModuloDocumentos_DocumentoAdjuntoHistorial">
+          <Key>
+            <PropertyRef Name="IdDocumentoAdjuntoHistorial" />
+          </Key>
+          <Property Name="IdDocumentoAdjuntoHistorial" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdHistorial" Type="decimal" Nullable="false" />
+          <Property Name="NombreArchivo" Type="varchar" Nullable="false" MaxLength="512" />
+          <Property Name="Archivo" Type="image" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreateBy" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreateOn" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="TBL_ModuloDocumentos_Estados">
           <Key>
@@ -624,7 +660,6 @@
           <Property Name="IdDocumento" Type="int" Nullable="false" />
           <Property Name="Titulo" Type="varchar" Nullable="false" MaxLength="512" />
           <Property Name="Observaciones" Type="varchar" Nullable="false" MaxLength="512" />
-          <Property Name="Archivo" Type="image" Nullable="false" />
           <Property Name="Version" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="IdCategoria" Type="int" Nullable="false" />
           <Property Name="IdEstado" Type="int" Nullable="false" />
@@ -639,7 +674,6 @@
           <Property Name="CreateOn" Type="datetime" Nullable="false" />
           <Property Name="ModifiedBy" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
-          <Property Name="NombreArchivo" Type="varchar" Nullable="false" MaxLength="512" />
         </EntityType>
         <EntityType Name="TBL_ModuloDocumentos_LogCambios">
           <Key>
@@ -1084,6 +1118,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TBL_ModuloDocumentos_DocumentoAdjunto_TBL_ModuloDocumentos_Documento">
+          <End Role="TBL_ModuloDocumentos_Documento" Type="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_Documento" Multiplicity="1" />
+          <End Role="TBL_ModuloDocumentos_DocumentoAdjunto" Type="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_DocumentoAdjunto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_ModuloDocumentos_Documento">
+              <PropertyRef Name="IdDocumento" />
+            </Principal>
+            <Dependent Role="TBL_ModuloDocumentos_DocumentoAdjunto">
+              <PropertyRef Name="IdDocumento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_ModuloDocumentos_DocumentoAdjuntoHistorial_TBL_ModuloDocumentos_HistorialDocumento">
+          <End Role="TBL_ModuloDocumentos_HistorialDocumento" Type="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_HistorialDocumento" Multiplicity="1" />
+          <End Role="TBL_ModuloDocumentos_DocumentoAdjuntoHistorial" Type="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_DocumentoAdjuntoHistorial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_ModuloDocumentos_HistorialDocumento">
+              <PropertyRef Name="IdHistorial" />
+            </Principal>
+            <Dependent Role="TBL_ModuloDocumentos_DocumentoAdjuntoHistorial">
+              <PropertyRef Name="IdHistorial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_Admin_Usuarios">
           <End Role="TBL_Admin_Usuarios" Type="SolutionFramework.MainModel.Store.TBL_Admin_Usuarios" Multiplicity="1" />
           <End Role="TBL_ModuloDocumentos_HistorialDocumento" Type="SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_HistorialDocumento" Multiplicity="*" />
@@ -1292,7 +1350,12 @@
           <EntitySet Name="TBL_Admin_TypeByModules" EntityType="SolutionFramework.MainModel.TBL_Admin_TypeByModules" />
           <EntitySet Name="TBL_Admin_Usuarios" EntityType="SolutionFramework.MainModel.TBL_Admin_Usuarios" />
           <EntitySet Name="TBL_ModuloDocumentos_Categorias" EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_Categorias" />
+          <EntitySet Name="TBL_ModuloDocumentos_Documento" EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_Documento" />
+          <EntitySet Name="TBL_ModuloDocumentos_DocumentoAdjunto" EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_DocumentoAdjunto" />
+          <EntitySet Name="TBL_ModuloDocumentos_DocumentoAdjuntoHistorial" EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_DocumentoAdjuntoHistorial" />
           <EntitySet Name="TBL_ModuloDocumentos_Estados" EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_Estados" />
+          <EntitySet Name="TBL_ModuloDocumentos_HistorialDocumento" EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_HistorialDocumento" />
+          <EntitySet Name="TBL_ModuloDocumentos_LogCambios" EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_LogCambios" />
           <EntitySet Name="TBL_ModuloPlanAccion_BancoActividades" EntityType="SolutionFramework.MainModel.TBL_ModuloPlanAccion_BancoActividades" />
           <EntitySet Name="TBL_ModuloPlanAccion_Categorias" EntityType="SolutionFramework.MainModel.TBL_ModuloPlanAccion_Categorias" />
           <EntitySet Name="TBL_ModuloPlanAccion_ConfiguracionActividades" EntityType="SolutionFramework.MainModel.TBL_ModuloPlanAccion_ConfiguracionActividades" />
@@ -1363,33 +1426,6 @@
             <End Role="TBL_Admin_Usuarios" EntitySet="TBL_Admin_Usuarios" />
             <End Role="TBL_Admin_SistemaNotificaciones" EntitySet="TBL_Admin_SistemaNotificaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_BancoActividades" Association="SolutionFramework.MainModel.FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_BancoActividades">
-            <End Role="TBL_ModuloPlanAccion_BancoActividades" EntitySet="TBL_ModuloPlanAccion_BancoActividades" />
-            <End Role="TBL_ModuloPlanAccion_ConfiguracionActividades" EntitySet="TBL_ModuloPlanAccion_ConfiguracionActividades" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_Categorias" Association="SolutionFramework.MainModel.FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_Categorias">
-            <End Role="TBL_ModuloPlanAccion_Categorias" EntitySet="TBL_ModuloPlanAccion_Categorias" />
-            <End Role="TBL_ModuloPlanAccion_ConfiguracionActividades" EntitySet="TBL_ModuloPlanAccion_ConfiguracionActividades" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TBL_ModuloWorkFlow_ValidacionesSalida_TBL_ModuloWorkFlow_Rutas" Association="SolutionFramework.MainModel.FK_TBL_ModuloWorkFlow_ValidacionesSalida_TBL_ModuloWorkFlow_Rutas">
-            <End Role="TBL_ModuloWorkFlow_Rutas" EntitySet="TBL_ModuloWorkFlow_Rutas" />
-            <End Role="TBL_ModuloWorkFlow_ValidacionesSalida" EntitySet="TBL_ModuloWorkFlow_ValidacionesSalida" />
-          </AssociationSet>
-          <AssociationSet Name="TBL_Admin_ResponsablesAprobacion" Association="SolutionFramework.MainModel.TBL_Admin_ResponsablesAprobacion">
-            <End Role="TBL_Admin_Roles" EntitySet="TBL_Admin_Roles" />
-            <End Role="TBL_Admin_Usuarios" EntitySet="TBL_Admin_Usuarios" />
-          </AssociationSet>
-          <AssociationSet Name="TBL_Admin_RolesPorOpcionMenu" Association="SolutionFramework.MainModel.TBL_Admin_RolesPorOpcionMenu">
-            <End Role="TBL_Admin_OpcionesMenu" EntitySet="TBL_Admin_OpcionesMenu" />
-            <End Role="TBL_Admin_Roles" EntitySet="TBL_Admin_Roles" />
-          </AssociationSet>
-          <AssociationSet Name="TBL_Admin_UsuariosByRol" Association="SolutionFramework.MainModel.TBL_Admin_UsuariosByRol">
-            <End Role="TBL_Admin_Roles" EntitySet="TBL_Admin_Roles" />
-            <End Role="TBL_Admin_Usuarios" EntitySet="TBL_Admin_Usuarios" />
-          </AssociationSet>
-          <EntitySet Name="TBL_ModuloDocumentos_Documento" EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_Documento" />
-          <EntitySet Name="TBL_ModuloDocumentos_HistorialDocumento" EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_HistorialDocumento" />
-          <EntitySet Name="TBL_ModuloDocumentos_LogCambios" EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_LogCambios" />
           <AssociationSet Name="FK_TBL_ModuloDocumentos_Documento_TBL_Admin_Usuarios" Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_Documento_TBL_Admin_Usuarios">
             <End Role="TBL_Admin_Usuarios" EntitySet="TBL_Admin_Usuarios" />
             <End Role="TBL_ModuloDocumentos_Documento" EntitySet="TBL_ModuloDocumentos_Documento" />
@@ -1442,6 +1478,10 @@
             <End Role="TBL_ModuloDocumentos_Estados" EntitySet="TBL_ModuloDocumentos_Estados" />
             <End Role="TBL_ModuloDocumentos_Documento" EntitySet="TBL_ModuloDocumentos_Documento" />
           </AssociationSet>
+          <AssociationSet Name="FK_TBL_ModuloDocumentos_DocumentoAdjunto_TBL_ModuloDocumentos_Documento" Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_DocumentoAdjunto_TBL_ModuloDocumentos_Documento">
+            <End Role="TBL_ModuloDocumentos_Documento" EntitySet="TBL_ModuloDocumentos_Documento" />
+            <End Role="TBL_ModuloDocumentos_DocumentoAdjunto" EntitySet="TBL_ModuloDocumentos_DocumentoAdjunto" />
+          </AssociationSet>
           <AssociationSet Name="FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Documento" Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Documento">
             <End Role="TBL_ModuloDocumentos_Documento" EntitySet="TBL_ModuloDocumentos_Documento" />
             <End Role="TBL_ModuloDocumentos_HistorialDocumento" EntitySet="TBL_ModuloDocumentos_HistorialDocumento" />
@@ -1449,6 +1489,10 @@
           <AssociationSet Name="FK_TBL_ModuloDocumentos_LogCambios_TBL_ModuloDocumentos_Documento" Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_LogCambios_TBL_ModuloDocumentos_Documento">
             <End Role="TBL_ModuloDocumentos_Documento" EntitySet="TBL_ModuloDocumentos_Documento" />
             <End Role="TBL_ModuloDocumentos_LogCambios" EntitySet="TBL_ModuloDocumentos_LogCambios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_ModuloDocumentos_DocumentoAdjuntoHistorial_TBL_ModuloDocumentos_HistorialDocumento" Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_DocumentoAdjuntoHistorial_TBL_ModuloDocumentos_HistorialDocumento">
+            <End Role="TBL_ModuloDocumentos_HistorialDocumento" EntitySet="TBL_ModuloDocumentos_HistorialDocumento" />
+            <End Role="TBL_ModuloDocumentos_DocumentoAdjuntoHistorial" EntitySet="TBL_ModuloDocumentos_DocumentoAdjuntoHistorial" />
           </AssociationSet>
           <AssociationSet Name="FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Estados" Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Estados">
             <End Role="TBL_ModuloDocumentos_Estados" EntitySet="TBL_ModuloDocumentos_Estados" />
@@ -1458,7 +1502,31 @@
             <End Role="TBL_ModuloDocumentos_HistorialDocumento" EntitySet="TBL_ModuloDocumentos_HistorialDocumento" />
             <End Role="TBL_ModuloDocumentos_LogCambios" EntitySet="TBL_ModuloDocumentos_LogCambios" />
           </AssociationSet>
-          </EntityContainer>
+          <AssociationSet Name="FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_BancoActividades" Association="SolutionFramework.MainModel.FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_BancoActividades">
+            <End Role="TBL_ModuloPlanAccion_BancoActividades" EntitySet="TBL_ModuloPlanAccion_BancoActividades" />
+            <End Role="TBL_ModuloPlanAccion_ConfiguracionActividades" EntitySet="TBL_ModuloPlanAccion_ConfiguracionActividades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_Categorias" Association="SolutionFramework.MainModel.FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_Categorias">
+            <End Role="TBL_ModuloPlanAccion_Categorias" EntitySet="TBL_ModuloPlanAccion_Categorias" />
+            <End Role="TBL_ModuloPlanAccion_ConfiguracionActividades" EntitySet="TBL_ModuloPlanAccion_ConfiguracionActividades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_ModuloWorkFlow_ValidacionesSalida_TBL_ModuloWorkFlow_Rutas" Association="SolutionFramework.MainModel.FK_TBL_ModuloWorkFlow_ValidacionesSalida_TBL_ModuloWorkFlow_Rutas">
+            <End Role="TBL_ModuloWorkFlow_Rutas" EntitySet="TBL_ModuloWorkFlow_Rutas" />
+            <End Role="TBL_ModuloWorkFlow_ValidacionesSalida" EntitySet="TBL_ModuloWorkFlow_ValidacionesSalida" />
+          </AssociationSet>
+          <AssociationSet Name="TBL_Admin_ResponsablesAprobacion" Association="SolutionFramework.MainModel.TBL_Admin_ResponsablesAprobacion">
+            <End Role="TBL_Admin_Roles" EntitySet="TBL_Admin_Roles" />
+            <End Role="TBL_Admin_Usuarios" EntitySet="TBL_Admin_Usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="TBL_Admin_RolesPorOpcionMenu" Association="SolutionFramework.MainModel.TBL_Admin_RolesPorOpcionMenu">
+            <End Role="TBL_Admin_OpcionesMenu" EntitySet="TBL_Admin_OpcionesMenu" />
+            <End Role="TBL_Admin_Roles" EntitySet="TBL_Admin_Roles" />
+          </AssociationSet>
+          <AssociationSet Name="TBL_Admin_UsuariosByRol" Association="SolutionFramework.MainModel.TBL_Admin_UsuariosByRol">
+            <End Role="TBL_Admin_Roles" EntitySet="TBL_Admin_Roles" />
+            <End Role="TBL_Admin_Usuarios" EntitySet="TBL_Admin_Usuarios" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="TBL_Admin_Ciudades">
           <Key>
             <PropertyRef Name="IdCiudad" />
@@ -1820,15 +1888,15 @@
           <Property Type="String" Name="ModifiedBy" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Type="DateTime" Name="ModifiedOn" />
           <NavigationProperty Name="TBL_Admin_SistemaNotificaciones" Relationship="SolutionFramework.MainModel.FK_TBL_Admin_SistemaNotificaciones_TBL_Admin_Usuarios" FromRole="TBL_Admin_Usuarios" ToRole="TBL_Admin_SistemaNotificaciones" />
-          <NavigationProperty Name="TBL_Admin_Roles" Relationship="SolutionFramework.MainModel.TBL_Admin_ResponsablesAprobacion" FromRole="TBL_Admin_Usuarios" ToRole="TBL_Admin_Roles" />
-          <NavigationProperty Name="TBL_Admin_Roles1" Relationship="SolutionFramework.MainModel.TBL_Admin_UsuariosByRol" FromRole="TBL_Admin_Usuarios" ToRole="TBL_Admin_Roles" />
           <NavigationProperty Name="TBL_ModuloDocumentos_Documento" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_Documento_TBL_Admin_Usuarios" FromRole="TBL_Admin_Usuarios" ToRole="TBL_ModuloDocumentos_Documento" />
           <NavigationProperty Name="TBL_ModuloDocumentos_Documento1" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_Documento_TBL_Admin_Usuarios1" FromRole="TBL_Admin_Usuarios" ToRole="TBL_ModuloDocumentos_Documento" />
           <NavigationProperty Name="TBL_ModuloDocumentos_Documento2" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_Documento_TBL_Admin_Usuarios2" FromRole="TBL_Admin_Usuarios" ToRole="TBL_ModuloDocumentos_Documento" />
           <NavigationProperty Name="TBL_ModuloDocumentos_HistorialDocumento" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_Admin_Usuarios" FromRole="TBL_Admin_Usuarios" ToRole="TBL_ModuloDocumentos_HistorialDocumento" />
           <NavigationProperty Name="TBL_ModuloDocumentos_HistorialDocumento1" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_Admin_Usuarios1" FromRole="TBL_Admin_Usuarios" ToRole="TBL_ModuloDocumentos_HistorialDocumento" />
           <NavigationProperty Name="TBL_ModuloDocumentos_HistorialDocumento2" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_Admin_Usuarios2" FromRole="TBL_Admin_Usuarios" ToRole="TBL_ModuloDocumentos_HistorialDocumento" />
-          </EntityType>
+          <NavigationProperty Name="TBL_Admin_Roles" Relationship="SolutionFramework.MainModel.TBL_Admin_ResponsablesAprobacion" FromRole="TBL_Admin_Usuarios" ToRole="TBL_Admin_Roles" />
+          <NavigationProperty Name="TBL_Admin_Roles1" Relationship="SolutionFramework.MainModel.TBL_Admin_UsuariosByRol" FromRole="TBL_Admin_Usuarios" ToRole="TBL_Admin_Roles" />
+        </EntityType>
         <EntityType Name="TBL_ModuloDocumentos_Categorias">
           <Key>
             <PropertyRef Name="IdCategoria" />
@@ -1847,7 +1915,70 @@
           <NavigationProperty Name="TBL_ModuloDocumentos_HistorialDocumento" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Categorias" FromRole="TBL_ModuloDocumentos_Categorias" ToRole="TBL_ModuloDocumentos_HistorialDocumento" />
           <NavigationProperty Name="TBL_ModuloDocumentos_HistorialDocumento1" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Categorias1" FromRole="TBL_ModuloDocumentos_Categorias" ToRole="TBL_ModuloDocumentos_HistorialDocumento" />
           <NavigationProperty Name="TBL_ModuloDocumentos_HistorialDocumento2" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Categorias2" FromRole="TBL_ModuloDocumentos_Categorias" ToRole="TBL_ModuloDocumentos_HistorialDocumento" />
-          </EntityType>
+        </EntityType>
+        <EntityType Name="TBL_ModuloDocumentos_Documento">
+          <Key>
+            <PropertyRef Name="IdDocumento" />
+          </Key>
+          <Property Type="Int32" Name="IdDocumento" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Titulo" Nullable="false" MaxLength="512" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Observaciones" Nullable="false" MaxLength="512" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Version" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="IdEstado" />
+          <Property Type="Int32" Name="IdCategoria" Nullable="false" />
+          <Property Type="Int32" Name="IdSubCategoria" Nullable="false" />
+          <Property Type="Int32" Name="IdTipo" Nullable="false" />
+          <Property Type="Int32" Name="IdUsuarioResponsable" Nullable="false" />
+          <Property Type="Int32" Name="IdUsuarioCreacion" Nullable="false" />
+          <Property Type="Int32" Name="IdUsuarioModificacion" Nullable="false" />
+          <Property Type="DateTime" Name="FechaCreacion" Nullable="false" />
+          <Property Type="DateTime" Name="FechaModificacion" Nullable="false" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="Int32" Name="CreateBy" Nullable="false" />
+          <Property Type="DateTime" Name="CreateOn" Nullable="false" />
+          <Property Type="Int32" Name="ModifiedBy" Nullable="false" />
+          <Property Type="DateTime" Name="ModifiedOn" Nullable="false" />
+          <NavigationProperty Name="TBL_Admin_Usuarios" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_Documento_TBL_Admin_Usuarios" FromRole="TBL_ModuloDocumentos_Documento" ToRole="TBL_Admin_Usuarios" />
+          <NavigationProperty Name="TBL_Admin_Usuarios1" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_Documento_TBL_Admin_Usuarios1" FromRole="TBL_ModuloDocumentos_Documento" ToRole="TBL_Admin_Usuarios" />
+          <NavigationProperty Name="TBL_Admin_Usuarios2" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_Documento_TBL_Admin_Usuarios2" FromRole="TBL_ModuloDocumentos_Documento" ToRole="TBL_Admin_Usuarios" />
+          <NavigationProperty Name="TBL_ModuloDocumentos_Categorias" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_Documento_TBL_ModuloDocumentos_Categorias" FromRole="TBL_ModuloDocumentos_Documento" ToRole="TBL_ModuloDocumentos_Categorias" />
+          <NavigationProperty Name="TBL_ModuloDocumentos_Categorias1" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_Documento_TBL_ModuloDocumentos_Categorias1" FromRole="TBL_ModuloDocumentos_Documento" ToRole="TBL_ModuloDocumentos_Categorias" />
+          <NavigationProperty Name="TBL_ModuloDocumentos_Categorias2" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_Documento_TBL_ModuloDocumentos_Categorias2" FromRole="TBL_ModuloDocumentos_Documento" ToRole="TBL_ModuloDocumentos_Categorias" />
+          <NavigationProperty Name="TBL_ModuloDocumentos_Estados" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_Documento_TBL_ModuloDocumentos_Estados" FromRole="TBL_ModuloDocumentos_Documento" ToRole="TBL_ModuloDocumentos_Estados" />
+          <NavigationProperty Name="TBL_ModuloDocumentos_DocumentoAdjunto" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_DocumentoAdjunto_TBL_ModuloDocumentos_Documento" FromRole="TBL_ModuloDocumentos_Documento" ToRole="TBL_ModuloDocumentos_DocumentoAdjunto" />
+          <NavigationProperty Name="TBL_ModuloDocumentos_HistorialDocumento" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Documento" FromRole="TBL_ModuloDocumentos_Documento" ToRole="TBL_ModuloDocumentos_HistorialDocumento" />
+          <NavigationProperty Name="TBL_ModuloDocumentos_LogCambios" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_LogCambios_TBL_ModuloDocumentos_Documento" FromRole="TBL_ModuloDocumentos_Documento" ToRole="TBL_ModuloDocumentos_LogCambios" />
+        </EntityType>
+        <EntityType Name="TBL_ModuloDocumentos_DocumentoAdjunto">
+          <Key>
+            <PropertyRef Name="IdDocumentoAdjunto" />
+          </Key>
+          <Property Type="Int32" Name="IdDocumentoAdjunto" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="IdDocumento" Nullable="false" />
+          <Property Type="String" Name="NombreArchivo" Nullable="false" MaxLength="512" FixedLength="false" Unicode="false" />
+          <Property Type="Binary" Name="Archivo" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="String" Name="CreateBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CrateOn" Nullable="false" />
+          <Property Type="String" Name="ModifiedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="ModifiedOn" Nullable="false" />
+          <NavigationProperty Name="TBL_ModuloDocumentos_Documento" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_DocumentoAdjunto_TBL_ModuloDocumentos_Documento" FromRole="TBL_ModuloDocumentos_DocumentoAdjunto" ToRole="TBL_ModuloDocumentos_Documento" />
+        </EntityType>
+        <EntityType Name="TBL_ModuloDocumentos_DocumentoAdjuntoHistorial">
+          <Key>
+            <PropertyRef Name="IdDocumentoAdjuntoHistorial" />
+          </Key>
+          <Property Type="Decimal" Name="IdDocumentoAdjuntoHistorial" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Decimal" Name="IdHistorial" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="NombreArchivo" Nullable="false" MaxLength="512" FixedLength="false" Unicode="false" />
+          <Property Type="Binary" Name="Archivo" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="String" Name="CreateBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreateOn" Nullable="false" />
+          <Property Type="String" Name="ModifiedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="ModifiedOn" Nullable="false" />
+          <NavigationProperty Name="TBL_ModuloDocumentos_HistorialDocumento" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_DocumentoAdjuntoHistorial_TBL_ModuloDocumentos_HistorialDocumento" FromRole="TBL_ModuloDocumentos_DocumentoAdjuntoHistorial" ToRole="TBL_ModuloDocumentos_HistorialDocumento" />
+        </EntityType>
         <EntityType Name="TBL_ModuloDocumentos_Estados">
           <Key>
             <PropertyRef Name="IdEstado" />
@@ -1863,6 +1994,53 @@
           <Property Type="DateTime" Name="ModifiedOn" Nullable="false" />
           <NavigationProperty Name="TBL_ModuloDocumentos_Documento" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_Documento_TBL_ModuloDocumentos_Estados" FromRole="TBL_ModuloDocumentos_Estados" ToRole="TBL_ModuloDocumentos_Documento" />
           <NavigationProperty Name="TBL_ModuloDocumentos_HistorialDocumento" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Estados" FromRole="TBL_ModuloDocumentos_Estados" ToRole="TBL_ModuloDocumentos_HistorialDocumento" />
+        </EntityType>
+        <EntityType Name="TBL_ModuloDocumentos_HistorialDocumento">
+          <Key>
+            <PropertyRef Name="IdHistorial" />
+          </Key>
+          <Property Type="Decimal" Name="IdHistorial" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="IdDocumento" Nullable="false" />
+          <Property Type="String" Name="Titulo" Nullable="false" MaxLength="512" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Observaciones" Nullable="false" MaxLength="512" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Version" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="IdCategoria" Nullable="false" />
+          <Property Type="Int32" Name="IdEstado" Nullable="false" />
+          <Property Type="Int32" Name="IdSubCategoria" Nullable="false" />
+          <Property Type="Int32" Name="IdTipo" Nullable="false" />
+          <Property Type="Int32" Name="IdUsuarioResposable" Nullable="false" />
+          <Property Type="Int32" Name="IdUsuarioCreacion" Nullable="false" />
+          <Property Type="Int32" Name="IdUsuarioModificacion" Nullable="false" />
+          <Property Type="DateTime" Name="FechaCreacion" Nullable="false" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="String" Name="CreateBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreateOn" Nullable="false" />
+          <Property Type="String" Name="ModifiedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="ModifiedOn" Nullable="false" />
+          <NavigationProperty Name="TBL_Admin_Usuarios" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_Admin_Usuarios" FromRole="TBL_ModuloDocumentos_HistorialDocumento" ToRole="TBL_Admin_Usuarios" />
+          <NavigationProperty Name="TBL_Admin_Usuarios1" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_Admin_Usuarios1" FromRole="TBL_ModuloDocumentos_HistorialDocumento" ToRole="TBL_Admin_Usuarios" />
+          <NavigationProperty Name="TBL_Admin_Usuarios2" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_Admin_Usuarios2" FromRole="TBL_ModuloDocumentos_HistorialDocumento" ToRole="TBL_Admin_Usuarios" />
+          <NavigationProperty Name="TBL_ModuloDocumentos_Categorias" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Categorias" FromRole="TBL_ModuloDocumentos_HistorialDocumento" ToRole="TBL_ModuloDocumentos_Categorias" />
+          <NavigationProperty Name="TBL_ModuloDocumentos_Categorias1" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Categorias1" FromRole="TBL_ModuloDocumentos_HistorialDocumento" ToRole="TBL_ModuloDocumentos_Categorias" />
+          <NavigationProperty Name="TBL_ModuloDocumentos_Categorias2" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Categorias2" FromRole="TBL_ModuloDocumentos_HistorialDocumento" ToRole="TBL_ModuloDocumentos_Categorias" />
+          <NavigationProperty Name="TBL_ModuloDocumentos_Documento" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Documento" FromRole="TBL_ModuloDocumentos_HistorialDocumento" ToRole="TBL_ModuloDocumentos_Documento" />
+          <NavigationProperty Name="TBL_ModuloDocumentos_DocumentoAdjuntoHistorial" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_DocumentoAdjuntoHistorial_TBL_ModuloDocumentos_HistorialDocumento" FromRole="TBL_ModuloDocumentos_HistorialDocumento" ToRole="TBL_ModuloDocumentos_DocumentoAdjuntoHistorial" />
+          <NavigationProperty Name="TBL_ModuloDocumentos_Estados" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Estados" FromRole="TBL_ModuloDocumentos_HistorialDocumento" ToRole="TBL_ModuloDocumentos_Estados" />
+          <NavigationProperty Name="TBL_ModuloDocumentos_LogCambios" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_LogCambios_TBL_ModuloDocumentos_HistorialDocumento" FromRole="TBL_ModuloDocumentos_HistorialDocumento" ToRole="TBL_ModuloDocumentos_LogCambios" />
+        </EntityType>
+        <EntityType Name="TBL_ModuloDocumentos_LogCambios">
+          <Key>
+            <PropertyRef Name="IdLog" />
+          </Key>
+          <Property Type="Decimal" Name="IdLog" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="IdDocumento" Nullable="false" />
+          <Property Type="Decimal" Name="IdHistorial" Precision="18" Scale="0" />
+          <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="512" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="String" Name="CreateBy" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreateOn" Nullable="false" />
+          <NavigationProperty Name="TBL_ModuloDocumentos_Documento" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_LogCambios_TBL_ModuloDocumentos_Documento" FromRole="TBL_ModuloDocumentos_LogCambios" ToRole="TBL_ModuloDocumentos_Documento" />
+          <NavigationProperty Name="TBL_ModuloDocumentos_HistorialDocumento" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_LogCambios_TBL_ModuloDocumentos_HistorialDocumento" FromRole="TBL_ModuloDocumentos_LogCambios" ToRole="TBL_ModuloDocumentos_HistorialDocumento" />
         </EntityType>
         <EntityType Name="TBL_ModuloPlanAccion_BancoActividades">
           <Key>
@@ -2172,136 +2350,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_BancoActividades">
-          <End Type="SolutionFramework.MainModel.TBL_ModuloPlanAccion_BancoActividades" Role="TBL_ModuloPlanAccion_BancoActividades" Multiplicity="1" />
-          <End Type="SolutionFramework.MainModel.TBL_ModuloPlanAccion_ConfiguracionActividades" Role="TBL_ModuloPlanAccion_ConfiguracionActividades" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_ModuloPlanAccion_BancoActividades">
-              <PropertyRef Name="IdActividad" />
-            </Principal>
-            <Dependent Role="TBL_ModuloPlanAccion_ConfiguracionActividades">
-              <PropertyRef Name="IdActividad" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_Categorias">
-          <End Type="SolutionFramework.MainModel.TBL_ModuloPlanAccion_Categorias" Role="TBL_ModuloPlanAccion_Categorias" Multiplicity="1" />
-          <End Type="SolutionFramework.MainModel.TBL_ModuloPlanAccion_ConfiguracionActividades" Role="TBL_ModuloPlanAccion_ConfiguracionActividades" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_ModuloPlanAccion_Categorias">
-              <PropertyRef Name="IdCategoria" />
-            </Principal>
-            <Dependent Role="TBL_ModuloPlanAccion_ConfiguracionActividades">
-              <PropertyRef Name="IdCategoria" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TBL_ModuloWorkFlow_ValidacionesSalida_TBL_ModuloWorkFlow_Rutas">
-          <End Type="SolutionFramework.MainModel.TBL_ModuloWorkFlow_Rutas" Role="TBL_ModuloWorkFlow_Rutas" Multiplicity="1" />
-          <End Type="SolutionFramework.MainModel.TBL_ModuloWorkFlow_ValidacionesSalida" Role="TBL_ModuloWorkFlow_ValidacionesSalida" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_ModuloWorkFlow_Rutas">
-              <PropertyRef Name="IdRuta" />
-            </Principal>
-            <Dependent Role="TBL_ModuloWorkFlow_ValidacionesSalida">
-              <PropertyRef Name="IdRuta" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="TBL_Admin_ResponsablesAprobacion">
-          <End Type="SolutionFramework.MainModel.TBL_Admin_Roles" Role="TBL_Admin_Roles" Multiplicity="*" />
-          <End Type="SolutionFramework.MainModel.TBL_Admin_Usuarios" Role="TBL_Admin_Usuarios" Multiplicity="*" />
-        </Association>
-        <Association Name="TBL_Admin_RolesPorOpcionMenu">
-          <End Type="SolutionFramework.MainModel.TBL_Admin_OpcionesMenu" Role="TBL_Admin_OpcionesMenu" Multiplicity="*" />
-          <End Type="SolutionFramework.MainModel.TBL_Admin_Roles" Role="TBL_Admin_Roles" Multiplicity="*" />
-        </Association>
-        <Association Name="TBL_Admin_UsuariosByRol">
-          <End Type="SolutionFramework.MainModel.TBL_Admin_Roles" Role="TBL_Admin_Roles" Multiplicity="*" />
-          <End Type="SolutionFramework.MainModel.TBL_Admin_Usuarios" Role="TBL_Admin_Usuarios" Multiplicity="*" />
-        </Association>
-        <EntityType Name="TBL_ModuloDocumentos_Documento">
-          <Key>
-            <PropertyRef Name="IdDocumento" />
-          </Key>
-          <Property Type="Int32" Name="IdDocumento" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="Titulo" Nullable="false" MaxLength="512" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Observaciones" Nullable="false" MaxLength="512" FixedLength="false" Unicode="false" />
-          <Property Type="Binary" Name="Archivo" Nullable="false" MaxLength="Max" FixedLength="false" />
-          <Property Type="String" Name="Version" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="Int32" Name="IdEstado" />
-          <Property Type="Int32" Name="IdCategoria" Nullable="false" />
-          <Property Type="Int32" Name="IdSubCategoria" Nullable="false" />
-          <Property Type="Int32" Name="IdTipo" Nullable="false" />
-          <Property Type="Int32" Name="IdUsuarioResponsable" Nullable="false" />
-          <Property Type="Int32" Name="IdUsuarioCreacion" Nullable="false" />
-          <Property Type="Int32" Name="IdUsuarioModificacion" Nullable="false" />
-          <Property Type="DateTime" Name="FechaCreacion" Nullable="false" />
-          <Property Type="DateTime" Name="FechaModificacion" Nullable="false" />
-          <Property Type="Boolean" Name="IsActive" Nullable="false" />
-          <Property Type="Int32" Name="CreateBy" Nullable="false" />
-          <Property Type="DateTime" Name="CreateOn" Nullable="false" />
-          <Property Type="Int32" Name="ModifiedBy" Nullable="false" />
-          <Property Type="DateTime" Name="ModifiedOn" Nullable="false" />
-          <Property Type="String" Name="NombreArchivo" Nullable="false" MaxLength="512" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="TBL_Admin_Usuarios" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_Documento_TBL_Admin_Usuarios" FromRole="TBL_ModuloDocumentos_Documento" ToRole="TBL_Admin_Usuarios" />
-          <NavigationProperty Name="TBL_Admin_Usuarios1" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_Documento_TBL_Admin_Usuarios1" FromRole="TBL_ModuloDocumentos_Documento" ToRole="TBL_Admin_Usuarios" />
-          <NavigationProperty Name="TBL_Admin_Usuarios2" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_Documento_TBL_Admin_Usuarios2" FromRole="TBL_ModuloDocumentos_Documento" ToRole="TBL_Admin_Usuarios" />
-          <NavigationProperty Name="TBL_ModuloDocumentos_Categorias" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_Documento_TBL_ModuloDocumentos_Categorias" FromRole="TBL_ModuloDocumentos_Documento" ToRole="TBL_ModuloDocumentos_Categorias" />
-          <NavigationProperty Name="TBL_ModuloDocumentos_Categorias1" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_Documento_TBL_ModuloDocumentos_Categorias1" FromRole="TBL_ModuloDocumentos_Documento" ToRole="TBL_ModuloDocumentos_Categorias" />
-          <NavigationProperty Name="TBL_ModuloDocumentos_Categorias2" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_Documento_TBL_ModuloDocumentos_Categorias2" FromRole="TBL_ModuloDocumentos_Documento" ToRole="TBL_ModuloDocumentos_Categorias" />
-          <NavigationProperty Name="TBL_ModuloDocumentos_Estados" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_Documento_TBL_ModuloDocumentos_Estados" FromRole="TBL_ModuloDocumentos_Documento" ToRole="TBL_ModuloDocumentos_Estados" />
-          <NavigationProperty Name="TBL_ModuloDocumentos_HistorialDocumento" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Documento" FromRole="TBL_ModuloDocumentos_Documento" ToRole="TBL_ModuloDocumentos_HistorialDocumento" />
-          <NavigationProperty Name="TBL_ModuloDocumentos_LogCambios" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_LogCambios_TBL_ModuloDocumentos_Documento" FromRole="TBL_ModuloDocumentos_Documento" ToRole="TBL_ModuloDocumentos_LogCambios" />
-        </EntityType>
-        <EntityType Name="TBL_ModuloDocumentos_HistorialDocumento">
-          <Key>
-            <PropertyRef Name="IdHistorial" />
-          </Key>
-          <Property Type="Decimal" Name="IdHistorial" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="IdDocumento" Nullable="false" />
-          <Property Type="String" Name="Titulo" Nullable="false" MaxLength="512" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Observaciones" Nullable="false" MaxLength="512" FixedLength="false" Unicode="false" />
-          <Property Type="Binary" Name="Archivo" Nullable="false" MaxLength="Max" FixedLength="false" />
-          <Property Type="String" Name="Version" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="Int32" Name="IdCategoria" Nullable="false" />
-          <Property Type="Int32" Name="IdEstado" Nullable="false" />
-          <Property Type="Int32" Name="IdSubCategoria" Nullable="false" />
-          <Property Type="Int32" Name="IdTipo" Nullable="false" />
-          <Property Type="Int32" Name="IdUsuarioResposable" Nullable="false" />
-          <Property Type="Int32" Name="IdUsuarioCreacion" Nullable="false" />
-          <Property Type="Int32" Name="IdUsuarioModificacion" Nullable="false" />
-          <Property Type="DateTime" Name="FechaCreacion" Nullable="false" />
-          <Property Type="Boolean" Name="IsActive" Nullable="false" />
-          <Property Type="String" Name="CreateBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="CreateOn" Nullable="false" />
-          <Property Type="String" Name="ModifiedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="ModifiedOn" Nullable="false" />
-          <Property Type="String" Name="NombreArchivo" Nullable="false" MaxLength="512" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="TBL_Admin_Usuarios" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_Admin_Usuarios" FromRole="TBL_ModuloDocumentos_HistorialDocumento" ToRole="TBL_Admin_Usuarios" />
-          <NavigationProperty Name="TBL_Admin_Usuarios1" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_Admin_Usuarios1" FromRole="TBL_ModuloDocumentos_HistorialDocumento" ToRole="TBL_Admin_Usuarios" />
-          <NavigationProperty Name="TBL_Admin_Usuarios2" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_Admin_Usuarios2" FromRole="TBL_ModuloDocumentos_HistorialDocumento" ToRole="TBL_Admin_Usuarios" />
-          <NavigationProperty Name="TBL_ModuloDocumentos_Categorias" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Categorias" FromRole="TBL_ModuloDocumentos_HistorialDocumento" ToRole="TBL_ModuloDocumentos_Categorias" />
-          <NavigationProperty Name="TBL_ModuloDocumentos_Categorias1" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Categorias1" FromRole="TBL_ModuloDocumentos_HistorialDocumento" ToRole="TBL_ModuloDocumentos_Categorias" />
-          <NavigationProperty Name="TBL_ModuloDocumentos_Categorias2" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Categorias2" FromRole="TBL_ModuloDocumentos_HistorialDocumento" ToRole="TBL_ModuloDocumentos_Categorias" />
-          <NavigationProperty Name="TBL_ModuloDocumentos_Documento" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Documento" FromRole="TBL_ModuloDocumentos_HistorialDocumento" ToRole="TBL_ModuloDocumentos_Documento" />
-          <NavigationProperty Name="TBL_ModuloDocumentos_Estados" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Estados" FromRole="TBL_ModuloDocumentos_HistorialDocumento" ToRole="TBL_ModuloDocumentos_Estados" />
-          <NavigationProperty Name="TBL_ModuloDocumentos_LogCambios" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_LogCambios_TBL_ModuloDocumentos_HistorialDocumento" FromRole="TBL_ModuloDocumentos_HistorialDocumento" ToRole="TBL_ModuloDocumentos_LogCambios" />
-        </EntityType>
-        <EntityType Name="TBL_ModuloDocumentos_LogCambios">
-          <Key>
-            <PropertyRef Name="IdLog" />
-          </Key>
-          <Property Type="Decimal" Name="IdLog" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="IdDocumento" Nullable="false" />
-          <Property Type="Decimal" Name="IdHistorial" Precision="18" Scale="0" />
-          <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="512" FixedLength="false" Unicode="false" />
-          <Property Type="Boolean" Name="IsActive" Nullable="false" />
-          <Property Type="String" Name="CreateBy" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="CreateOn" Nullable="false" />
-          <NavigationProperty Name="TBL_ModuloDocumentos_Documento" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_LogCambios_TBL_ModuloDocumentos_Documento" FromRole="TBL_ModuloDocumentos_LogCambios" ToRole="TBL_ModuloDocumentos_Documento" />
-          <NavigationProperty Name="TBL_ModuloDocumentos_HistorialDocumento" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_LogCambios_TBL_ModuloDocumentos_HistorialDocumento" FromRole="TBL_ModuloDocumentos_LogCambios" ToRole="TBL_ModuloDocumentos_HistorialDocumento" />
-        </EntityType>
         <Association Name="FK_TBL_ModuloDocumentos_Documento_TBL_Admin_Usuarios">
           <End Type="SolutionFramework.MainModel.TBL_Admin_Usuarios" Role="TBL_Admin_Usuarios" Multiplicity="1" />
           <End Type="SolutionFramework.MainModel.TBL_ModuloDocumentos_Documento" Role="TBL_ModuloDocumentos_Documento" Multiplicity="*" />
@@ -2458,6 +2506,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TBL_ModuloDocumentos_DocumentoAdjunto_TBL_ModuloDocumentos_Documento">
+          <End Type="SolutionFramework.MainModel.TBL_ModuloDocumentos_Documento" Role="TBL_ModuloDocumentos_Documento" Multiplicity="1" />
+          <End Type="SolutionFramework.MainModel.TBL_ModuloDocumentos_DocumentoAdjunto" Role="TBL_ModuloDocumentos_DocumentoAdjunto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_ModuloDocumentos_Documento">
+              <PropertyRef Name="IdDocumento" />
+            </Principal>
+            <Dependent Role="TBL_ModuloDocumentos_DocumentoAdjunto">
+              <PropertyRef Name="IdDocumento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Documento">
           <End Type="SolutionFramework.MainModel.TBL_ModuloDocumentos_Documento" Role="TBL_ModuloDocumentos_Documento" Multiplicity="1" />
           <End Type="SolutionFramework.MainModel.TBL_ModuloDocumentos_HistorialDocumento" Role="TBL_ModuloDocumentos_HistorialDocumento" Multiplicity="*" />
@@ -2479,6 +2539,18 @@
             </Principal>
             <Dependent Role="TBL_ModuloDocumentos_LogCambios">
               <PropertyRef Name="IdDocumento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_ModuloDocumentos_DocumentoAdjuntoHistorial_TBL_ModuloDocumentos_HistorialDocumento">
+          <End Type="SolutionFramework.MainModel.TBL_ModuloDocumentos_HistorialDocumento" Role="TBL_ModuloDocumentos_HistorialDocumento" Multiplicity="1" />
+          <End Type="SolutionFramework.MainModel.TBL_ModuloDocumentos_DocumentoAdjuntoHistorial" Role="TBL_ModuloDocumentos_DocumentoAdjuntoHistorial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_ModuloDocumentos_HistorialDocumento">
+              <PropertyRef Name="IdHistorial" />
+            </Principal>
+            <Dependent Role="TBL_ModuloDocumentos_DocumentoAdjuntoHistorial">
+              <PropertyRef Name="IdHistorial" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2505,6 +2577,54 @@
               <PropertyRef Name="IdHistorial" />
             </Dependent>
           </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_BancoActividades">
+          <End Type="SolutionFramework.MainModel.TBL_ModuloPlanAccion_BancoActividades" Role="TBL_ModuloPlanAccion_BancoActividades" Multiplicity="1" />
+          <End Type="SolutionFramework.MainModel.TBL_ModuloPlanAccion_ConfiguracionActividades" Role="TBL_ModuloPlanAccion_ConfiguracionActividades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_ModuloPlanAccion_BancoActividades">
+              <PropertyRef Name="IdActividad" />
+            </Principal>
+            <Dependent Role="TBL_ModuloPlanAccion_ConfiguracionActividades">
+              <PropertyRef Name="IdActividad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_Categorias">
+          <End Type="SolutionFramework.MainModel.TBL_ModuloPlanAccion_Categorias" Role="TBL_ModuloPlanAccion_Categorias" Multiplicity="1" />
+          <End Type="SolutionFramework.MainModel.TBL_ModuloPlanAccion_ConfiguracionActividades" Role="TBL_ModuloPlanAccion_ConfiguracionActividades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_ModuloPlanAccion_Categorias">
+              <PropertyRef Name="IdCategoria" />
+            </Principal>
+            <Dependent Role="TBL_ModuloPlanAccion_ConfiguracionActividades">
+              <PropertyRef Name="IdCategoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_ModuloWorkFlow_ValidacionesSalida_TBL_ModuloWorkFlow_Rutas">
+          <End Type="SolutionFramework.MainModel.TBL_ModuloWorkFlow_Rutas" Role="TBL_ModuloWorkFlow_Rutas" Multiplicity="1" />
+          <End Type="SolutionFramework.MainModel.TBL_ModuloWorkFlow_ValidacionesSalida" Role="TBL_ModuloWorkFlow_ValidacionesSalida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_ModuloWorkFlow_Rutas">
+              <PropertyRef Name="IdRuta" />
+            </Principal>
+            <Dependent Role="TBL_ModuloWorkFlow_ValidacionesSalida">
+              <PropertyRef Name="IdRuta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TBL_Admin_ResponsablesAprobacion">
+          <End Type="SolutionFramework.MainModel.TBL_Admin_Roles" Role="TBL_Admin_Roles" Multiplicity="*" />
+          <End Type="SolutionFramework.MainModel.TBL_Admin_Usuarios" Role="TBL_Admin_Usuarios" Multiplicity="*" />
+        </Association>
+        <Association Name="TBL_Admin_RolesPorOpcionMenu">
+          <End Type="SolutionFramework.MainModel.TBL_Admin_OpcionesMenu" Role="TBL_Admin_OpcionesMenu" Multiplicity="*" />
+          <End Type="SolutionFramework.MainModel.TBL_Admin_Roles" Role="TBL_Admin_Roles" Multiplicity="*" />
+        </Association>
+        <Association Name="TBL_Admin_UsuariosByRol">
+          <End Type="SolutionFramework.MainModel.TBL_Admin_Roles" Role="TBL_Admin_Roles" Multiplicity="*" />
+          <End Type="SolutionFramework.MainModel.TBL_Admin_Usuarios" Role="TBL_Admin_Usuarios" Multiplicity="*" />
         </Association>
         </Schema>
     </edmx:ConceptualModels>
@@ -2876,6 +2996,60 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="TBL_ModuloDocumentos_Documento">
+            <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_ModuloDocumentos_Documento">
+              <MappingFragment StoreEntitySet="TBL_ModuloDocumentos_Documento">
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="IdUsuarioModificacion" ColumnName="IdUsuarioModificacion" />
+                <ScalarProperty Name="IdUsuarioCreacion" ColumnName="IdUsuarioCreacion" />
+                <ScalarProperty Name="IdUsuarioResponsable" ColumnName="IdUsuarioResponsable" />
+                <ScalarProperty Name="IdTipo" ColumnName="IdTipo" />
+                <ScalarProperty Name="IdSubCategoria" ColumnName="IdSubCategoria" />
+                <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+                <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+                <ScalarProperty Name="IdDocumento" ColumnName="IdDocumento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_ModuloDocumentos_DocumentoAdjunto">
+            <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_ModuloDocumentos_DocumentoAdjunto">
+              <MappingFragment StoreEntitySet="TBL_ModuloDocumentos_DocumentoAdjunto">
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CrateOn" ColumnName="CrateOn" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Archivo" ColumnName="Archivo" />
+                <ScalarProperty Name="NombreArchivo" ColumnName="NombreArchivo" />
+                <ScalarProperty Name="IdDocumento" ColumnName="IdDocumento" />
+                <ScalarProperty Name="IdDocumentoAdjunto" ColumnName="IdDocumentoAdjunto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_ModuloDocumentos_DocumentoAdjuntoHistorial">
+            <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_ModuloDocumentos_DocumentoAdjuntoHistorial">
+              <MappingFragment StoreEntitySet="TBL_ModuloDocumentos_DocumentoAdjuntoHistorial">
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Archivo" ColumnName="Archivo" />
+                <ScalarProperty Name="NombreArchivo" ColumnName="NombreArchivo" />
+                <ScalarProperty Name="IdHistorial" ColumnName="IdHistorial" />
+                <ScalarProperty Name="IdDocumentoAdjuntoHistorial" ColumnName="IdDocumentoAdjuntoHistorial" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="TBL_ModuloDocumentos_Estados">
             <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_ModuloDocumentos_Estados">
               <MappingFragment StoreEntitySet="TBL_ModuloDocumentos_Estados">
@@ -2888,6 +3062,43 @@
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
                 <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_ModuloDocumentos_HistorialDocumento">
+            <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_ModuloDocumentos_HistorialDocumento">
+              <MappingFragment StoreEntitySet="TBL_ModuloDocumentos_HistorialDocumento">
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="IdUsuarioModificacion" ColumnName="IdUsuarioModificacion" />
+                <ScalarProperty Name="IdUsuarioCreacion" ColumnName="IdUsuarioCreacion" />
+                <ScalarProperty Name="IdUsuarioResposable" ColumnName="IdUsuarioResposable" />
+                <ScalarProperty Name="IdTipo" ColumnName="IdTipo" />
+                <ScalarProperty Name="IdSubCategoria" ColumnName="IdSubCategoria" />
+                <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+                <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+                <ScalarProperty Name="IdDocumento" ColumnName="IdDocumento" />
+                <ScalarProperty Name="IdHistorial" ColumnName="IdHistorial" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_ModuloDocumentos_LogCambios">
+            <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_ModuloDocumentos_LogCambios">
+              <MappingFragment StoreEntitySet="TBL_ModuloDocumentos_LogCambios">
+                <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IdHistorial" ColumnName="IdHistorial" />
+                <ScalarProperty Name="IdDocumento" ColumnName="IdDocumento" />
+                <ScalarProperty Name="IdLog" ColumnName="IdLog" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -3028,71 +3239,6 @@
               <ScalarProperty Name="IdRol" ColumnName="IdRol" />
             </EndProperty>
           </AssociationSetMapping>
-          <EntitySetMapping Name="TBL_ModuloDocumentos_Documento">
-            <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_ModuloDocumentos_Documento">
-              <MappingFragment StoreEntitySet="TBL_ModuloDocumentos_Documento">
-                <ScalarProperty Name="NombreArchivo" ColumnName="NombreArchivo" />
-                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
-                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
-                <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
-                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
-                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
-                <ScalarProperty Name="IdUsuarioModificacion" ColumnName="IdUsuarioModificacion" />
-                <ScalarProperty Name="IdUsuarioCreacion" ColumnName="IdUsuarioCreacion" />
-                <ScalarProperty Name="IdUsuarioResponsable" ColumnName="IdUsuarioResponsable" />
-                <ScalarProperty Name="IdTipo" ColumnName="IdTipo" />
-                <ScalarProperty Name="IdSubCategoria" ColumnName="IdSubCategoria" />
-                <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
-                <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
-                <ScalarProperty Name="Version" ColumnName="Version" />
-                <ScalarProperty Name="Archivo" ColumnName="Archivo" />
-                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
-                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
-                <ScalarProperty Name="IdDocumento" ColumnName="IdDocumento" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TBL_ModuloDocumentos_HistorialDocumento">
-            <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_ModuloDocumentos_HistorialDocumento">
-              <MappingFragment StoreEntitySet="TBL_ModuloDocumentos_HistorialDocumento">
-                <ScalarProperty Name="NombreArchivo" ColumnName="NombreArchivo" />
-                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
-                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
-                <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
-                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
-                <ScalarProperty Name="IdUsuarioModificacion" ColumnName="IdUsuarioModificacion" />
-                <ScalarProperty Name="IdUsuarioCreacion" ColumnName="IdUsuarioCreacion" />
-                <ScalarProperty Name="IdUsuarioResposable" ColumnName="IdUsuarioResposable" />
-                <ScalarProperty Name="IdTipo" ColumnName="IdTipo" />
-                <ScalarProperty Name="IdSubCategoria" ColumnName="IdSubCategoria" />
-                <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
-                <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
-                <ScalarProperty Name="Version" ColumnName="Version" />
-                <ScalarProperty Name="Archivo" ColumnName="Archivo" />
-                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
-                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
-                <ScalarProperty Name="IdDocumento" ColumnName="IdDocumento" />
-                <ScalarProperty Name="IdHistorial" ColumnName="IdHistorial" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TBL_ModuloDocumentos_LogCambios">
-            <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_ModuloDocumentos_LogCambios">
-              <MappingFragment StoreEntitySet="TBL_ModuloDocumentos_LogCambios">
-                <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
-                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-                <ScalarProperty Name="IdHistorial" ColumnName="IdHistorial" />
-                <ScalarProperty Name="IdDocumento" ColumnName="IdDocumento" />
-                <ScalarProperty Name="IdLog" ColumnName="IdLog" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -3115,287 +3261,325 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="MainModuleDataModel" ZoomLevel="23">
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_Ciudades" Width="1.5" PointX="41.125" PointY="3.875" Height="2.9417936197916674" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_ConfiguracionServidores" Width="1.5" PointX="33.625" PointY="1.875" Height="3.1340950520833246" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_Departamentos" Width="1.5" PointX="38.875" PointY="3.75" Height="3.1340950520833388" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_DescripcionesTipoProducto" Width="1.5" PointX="35.625" PointY="1.875" Height="2.5571907552083246" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_DiasAnticipados" Width="1.5" PointX="41.625" PointY="11.875" Height="2.5571907552083246" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_EstadosProceso" Width="1.5" PointX="31.625" PointY="10.625" Height="4.48020507812501" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_ModuleRepository" Width="1.5" PointX="29.875" PointY="18.75" Height="2.557190755208353" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_ModuleService" Width="1.5" PointX="29.875" PointY="22" Height="2.557190755208353" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_ModuleType" Width="1.5" PointX="22.875" PointY="21.25" Height="3.9033007812499818" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_ModuleVersion" Width="1.5" PointX="26.625" PointY="9.875" Height="1.9802864583333246" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_Modulos" Width="1.5" PointX="8.875" PointY="29.75" Height="3.9033007812499818" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_Monedas" Width="1.5" PointX="39.625" PointY="14.875" Height="2.9417936197916674" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_OpcionesMenu" Width="1.5" PointX="2" PointY="22.125" Height="4.4802050781249818" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_OptionList" Width="1.5" PointX="37.625" PointY="18.875" Height="2.7494921874999818" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_Paises" Width="1.5" PointX="36.625" PointY="5.625" Height="3.3263964843749818" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_PaisMoneda" Width="1.5" PointX="41.875" PointY="8.375" Height="1.9802864583333246" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_Plantillas" Width="1.5" PointX="38.875" PointY="10.375" Height="3.134095052083353" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_Roles" Width="1.5" PointX="5.125" PointY="21.875" Height="3.1340950520833246" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_Secciones" Width="1.5" PointX="14" PointY="26.125" Height="3.9033007812499818" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_SistemaNotificaciones" Width="1.5" PointX="3.375" PointY="13.25" Height="3.710999348958353" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_TypeByModules" Width="1.5" PointX="29.875" PointY="26.25" Height="3.7109993489583246" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_Usuarios" Width="1.5" PointX="10.5" PointY="17.75" Height="5.4417122395833228" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_Categorias" Width="1.5" PointX="17.625" PointY="4" Height="3.7109993489583246" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_Estados" Width="1.5" PointX="19" PointY="21.875" Height="3.1340950520833246" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloPlanAccion_BancoActividades" Width="1.5" PointX="32.625" PointY="19.25" Height="4.0956022135416674" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloPlanAccion_Categorias" Width="1.5" PointX="35.125" PointY="25" Height="2.9417936197916674" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloPlanAccion_ConfiguracionActividades" Width="1.5" PointX="34.875" PointY="19.125" Height="4.2879036458333246" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloWorkFlow_CamposValidacion" Width="1.5" PointX="33.875" PointY="8.375" Height="3.710999348958353" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloWorkFlow_Rutas" Width="1.5" PointX="33.875" PointY="12.875" Height="4.4802050781249818" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloWorkFlow_ValidacionesSalida" Width="1.5" PointX="36.125" PointY="13.5" Height="3.134095052083353" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_Ciudades" Width="1.5" PointX="15.25" PointY="13.75" Height="2.9417936197916656" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_ConfiguracionServidores" Width="1.5" PointX="10.75" PointY="3.75" Height="3.1340950520833246" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_Departamentos" Width="1.5" PointX="13" PointY="13.75" Height="3.1340950520833371" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_DescripcionesTipoProducto" Width="1.5" PointX="12.75" PointY="3.75" Height="2.5571907552083246" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_DiasAnticipados" Width="1.5" PointX="14.75" PointY="3.75" Height="2.5571907552083246" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_EstadosProceso" Width="1.5" PointX="3.75" PointY="16.5" Height="4.48020507812501" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_ModuleRepository" Width="1.5" PointX="20" PointY="6.625" Height="2.5571907552083246" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_ModuleService" Width="1.5" PointX="20" PointY="9.875" Height="2.5571907552083246" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_ModuleType" Width="1.5" PointX="17.75" PointY="7.625" Height="3.903300781249996" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_ModuleVersion" Width="1.5" PointX="16.75" PointY="3.75" Height="1.9802864583333246" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_Modulos" Width="1.5" PointX="1.5" PointY="25.625" Height="3.9033007812500102" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_Monedas" Width="1.5" PointX="13.75" PointY="24.75" Height="2.9417936197916674" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_OpcionesMenu" Width="1.5" PointX="1.5" PointY="20.375" Height="4.4802050781249818" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_OptionList" Width="1.5" PointX="8.75" PointY="23.75" Height="2.7494921874999818" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_Paises" Width="1.5" PointX="10.75" PointY="15.5" Height="3.32639648437498" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_PaisMoneda" Width="1.5" PointX="16" PointY="18.25" Height="1.9802864583333246" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_Plantillas" Width="1.5" PointX="13" PointY="20.25" Height="3.134095052083353" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_Roles" Width="1.5" PointX="1.5" PointY="16" Height="3.1340950520833246" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_Secciones" Width="1.5" PointX="3.75" PointY="23.375" Height="3.9033007812499818" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_SistemaNotificaciones" Width="1.5" PointX="3" PointY="30.875" Height="3.710999348958353" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_TypeByModules" Width="1.5" PointX="20" PointY="16.75" Height="3.7109993489583246" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_Usuarios" Width="1.5" PointX="0.75" PointY="0.75" Height="5.4417122395833246" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_Categorias" Width="1.5" PointX="0.75" PointY="7.5" Height="3.7109993489583246" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_Documento" Width="1.5" PointX="3" PointY="6.25" Height="6.4032194010416674" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_DocumentoAdjunto" Width="1.5" PointX="5.25" PointY="8" Height="2.9417936197916674" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_DocumentoAdjuntoHistorial" Width="1.5" PointX="10.5" PointY="8" Height="2.9417936197916674" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_Estados" Width="1.5" PointX="0.75" PointY="31" Height="3.1340950520833246" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_HistorialDocumento" Width="1.5" PointX="8.25" PointY="6.25" Height="6.4032194010416674" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_LogCambios" Width="1.5" PointX="13.5" PointY="8" Height="2.7494921874999818" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloPlanAccion_BancoActividades" Width="1.5" PointX="15.75" PointY="22.125" Height="4.0956022135416674" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloPlanAccion_Categorias" Width="1.5" PointX="15.75" PointY="28.75" Height="2.9417936197916674" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloPlanAccion_ConfiguracionActividades" Width="1.5" PointX="18" PointY="22" Height="4.2879036458333246" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloWorkFlow_CamposValidacion" Width="1.5" PointX="6" PointY="14.25" Height="3.7109993489583548" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloWorkFlow_Rutas" Width="1.5" PointX="6" PointY="18.75" Height="4.4802050781249818" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloWorkFlow_ValidacionesSalida" Width="1.5" PointX="8.25" PointY="19.375" Height="3.134095052083353" />
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_Admin_Ciudades_TBL_Admin_Departamentos" >
-          <ConnectorPoint PointX="40.375" PointY="5.3458968098958337" />
-          <ConnectorPoint PointX="41.125" PointY="5.3458968098958337" />
+          <ConnectorPoint PointX="14.5" PointY="15.220896809895834" />
+          <ConnectorPoint PointX="15.25" PointY="15.220896809895834" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_Admin_Departamentos_TBL_Admin_Paises" >
-          <ConnectorPoint PointX="38.125" PointY="6.2545475260416694" />
-          <ConnectorPoint PointX="38.875" PointY="6.2545475260416694" />
+          <ConnectorPoint PointX="12.25" PointY="16.192047526041669" />
+          <ConnectorPoint PointX="13" PointY="16.192047526041669" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_Maestra_Propuestas_RutasPorestado_TBL_Maestra_Propuestas_EstadosPropuesta" >
-          <ConnectorPoint PointX="33.125" PointY="13.990102539062505" />
-          <ConnectorPoint PointX="33.875" PointY="13.990102539062505" />
+          <ConnectorPoint PointX="5.25" PointY="19.865102539062505" />
+          <ConnectorPoint PointX="6" PointY="19.865102539062505" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloWorkFlow_CamposValidacion_TBL_Admin_EstadosProceso" >
-          <ConnectorPoint PointX="33.125" PointY="11.355499674479177" />
-          <ConnectorPoint PointX="33.875" PointY="11.355499674479177" />
+          <ConnectorPoint PointX="5.25" PointY="17.230499674479177" />
+          <ConnectorPoint PointX="6" PointY="17.230499674479177" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloWorkFlow_Rutas_TBL_Admin_EstadosProceso" >
-          <ConnectorPoint PointX="33.125" PointY="13.370051269531253" />
-          <ConnectorPoint PointX="33.875" PointY="13.370051269531253" />
+          <ConnectorPoint PointX="5.25" PointY="19.245051269531253" />
+          <ConnectorPoint PointX="6" PointY="19.245051269531253" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_Admin_ModuleRepository_TBL_Admin_ModuleType" >
-          <ConnectorPoint PointX="23.625" PointY="21.25" />
-          <ConnectorPoint PointX="23.625" PointY="19.9999995" />
-          <ConnectorPoint PointX="24.807294166666669" PointY="19.9999995" />
-          <ConnectorPoint PointX="24.973960833333333" PointY="19.9999995" />
-          <ConnectorPoint PointX="29.875" PointY="19.9999995" />
+          <ConnectorPoint PointX="19.25" PointY="8.4035953776041623" />
+          <ConnectorPoint PointX="20" PointY="8.4035953776041623" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_Maestra_ModuleService_TBL_Maestra_ModuleType" >
-          <ConnectorPoint PointX="24.375" PointY="23.278595377604177" />
-          <ConnectorPoint PointX="29.875" PointY="23.278595377604177" />
+          <ConnectorPoint PointX="19.25" PointY="10.701650390624998" />
+          <ConnectorPoint PointX="20" PointY="10.701650390624998" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_Maestra_Secciones_TBL_Maestra_ModuleType" >
-          <ConnectorPoint PointX="23.625" PointY="25.153300781249982" />
-          <ConnectorPoint PointX="23.625" PointY="28.105499674479162" />
-          <ConnectorPoint PointX="29.875" PointY="28.105499674479162" />
+          <ConnectorPoint PointX="18.5" PointY="11.528300781249996" />
+          <ConnectorPoint PointX="18.5" PointY="18.605499674479162" />
+          <ConnectorPoint PointX="20" PointY="18.605499674479162" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_Admin_Secciones_TBL_Admin_Modulos" >
-          <ConnectorPoint PointX="10.375" PointY="30.950173781249987" />
-          <ConnectorPoint PointX="14.75" PointY="30.950173781249987" />
-          <ConnectorPoint PointX="14.75" PointY="30.028300781249982" />
+          <ConnectorPoint PointX="3" PointY="26.451650390624991" />
+          <ConnectorPoint PointX="3.1666666666666665" PointY="26.451650390624991" />
+          <ConnectorPoint PointX="3.3333333333333335" PointY="26.451650390624991" />
+          <ConnectorPoint PointX="3.4166666666666665" PointY="26.451650390624991" />
+          <ConnectorPoint PointX="3.5833333333333335" PointY="26.451650390624991" />
+          <ConnectorPoint PointX="3.75" PointY="26.451650390624991" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_Maestra_OpcionesMenu_TBL_Maestra_Modulos" >
-          <ConnectorPoint PointX="9.625" PointY="29.75" />
-          <ConnectorPoint PointX="9.625" PointY="25.838400065104153" />
-          <ConnectorPoint PointX="3.5" PointY="25.838400065104153" />
+          <ConnectorPoint PointX="2.25" PointY="25.625" />
+          <ConnectorPoint PointX="2.25" PointY="24.855205078124982" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_Maestra_Secciones_TBL_Maestra_Modulos" >
-          <ConnectorPoint PointX="10.375" PointY="31.934550781249982" />
-          <ConnectorPoint PointX="30.625" PointY="31.934550781249982" />
-          <ConnectorPoint PointX="30.625" PointY="29.960999348958325" />
+          <ConnectorPoint PointX="3" PointY="28.220896809895834" />
+          <ConnectorPoint PointX="3.1666666666666665" PointY="28.220896809895834" />
+          <ConnectorPoint PointX="3.3333333333333335" PointY="28.220896809895834" />
+          <ConnectorPoint PointX="3.4166666666666665" PointY="28.220896809895834" />
+          <ConnectorPoint PointX="3.5833333333333335" PointY="28.220896809895834" />
+          <ConnectorPoint PointX="7.916666666666667" PointY="28.220896809895834" />
+          <ConnectorPoint PointX="8.0833333333333339" PointY="28.220896809895834" />
+          <ConnectorPoint PointX="18.666666666666668" PointY="28.220896809895834" />
+          <ConnectorPoint PointX="18.833333333333332" PointY="28.220896809895834" />
+          <ConnectorPoint PointX="20.75" PointY="28.220896809895834" />
+          <ConnectorPoint PointX="20.75" PointY="20.460999348958325" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_Maestra_Admin_PaisMoneda_TBL_Maestra_Admin_Monedas" >
-          <ConnectorPoint PointX="40.78125" PointY="14.875" />
-          <ConnectorPoint PointX="40.78125" PointY="9.3651432291666623" />
-          <ConnectorPoint PointX="41.875" PointY="9.3651432291666623" />
+          <ConnectorPoint PointX="14.90625" PointY="24.75" />
+          <ConnectorPoint PointX="14.90625" PointY="19.240143229166662" />
+          <ConnectorPoint PointX="16" PointY="19.240143229166662" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_Maestra_OpcionesMenu_TBL_Maestra_OpcionesMenu" >
-          <ConnectorPoint PointX="2.5319230769230767" PointY="26.605205078124982" />
-          <ConnectorPoint PointX="2.5319230769230767" PointY="26.855205078124982" />
-          <ConnectorPoint PointX="2.9784615384615383" PointY="26.855205078124982" />
-          <ConnectorPoint PointX="2.9784615384615383" PointY="26.605205078124982" />
+          <ConnectorPoint PointX="2.0319230769230767" PointY="20.375" />
+          <ConnectorPoint PointX="2.0319230769230767" PointY="20.125" />
+          <ConnectorPoint PointX="2.4784615384615383" PointY="20.125" />
+          <ConnectorPoint PointX="2.4784615384615383" PointY="20.375" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_Maestra_Admin_PaisMoneda_TBL_Maestra_Paises" >
-          <ConnectorPoint PointX="38.125" PointY="8.6631982421874909" />
-          <ConnectorPoint PointX="41.875" PointY="8.6631982421874909" />
+          <ConnectorPoint PointX="12.25" PointY="18.538198242187491" />
+          <ConnectorPoint PointX="16" PointY="18.538198242187491" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_Maestra_Plantillas_TBL_Maestra_Paises" >
-          <ConnectorPoint PointX="37.90625" PointY="8.9513964843749818" />
-          <ConnectorPoint PointX="37.90625" PointY="11.90625" />
-          <ConnectorPoint PointX="38.875" PointY="11.90625" />
+          <ConnectorPoint PointX="11.5" PointY="18.826396484374982" />
+          <ConnectorPoint PointX="11.5" PointY="21.817047526041677" />
+          <ConnectorPoint PointX="13" PointY="21.817047526041677" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_Admin_SistemaNotificaciones_TBL_Admin_Usuarios" >
-          <ConnectorPoint PointX="11.25" PointY="17.75" />
-          <ConnectorPoint PointX="11.25" PointY="15.105499674479177" />
-          <ConnectorPoint PointX="4.875" PointY="15.105499674479177" />
+          <ConnectorPoint PointX="2.25" PointY="3.4708561197916623" />
+          <ConnectorPoint PointX="2.75" PointY="3.4708561197916623" />
+          <ConnectorPoint PointX="2.75" PointY="15.75" />
+          <ConnectorPoint PointX="3.1666666666666665" PointY="15.75" />
+          <ConnectorPoint PointX="3.3333333333333335" PointY="15.75" />
+          <ConnectorPoint PointX="3.5" PointY="15.75" />
+          <ConnectorPoint PointX="3.5" PointY="30.5" />
+          <ConnectorPoint PointX="3.75" PointY="30.5" />
+          <ConnectorPoint PointX="3.75" PointY="30.875" />
         </AssociationConnector>
-        <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_BancoActividades" >
-          <ConnectorPoint PointX="34.125" PointY="21.297801106770834" />
-          <ConnectorPoint PointX="34.875" PointY="21.297801106770834" />
-        </AssociationConnector>
-        <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_Categorias" >
-          <ConnectorPoint PointX="35.75" PointY="25" />
-          <ConnectorPoint PointX="35.75" PointY="23.412903645833325" />
-        </AssociationConnector>
-        <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloWorkFlow_ValidacionesSalida_TBL_ModuloWorkFlow_Rutas" >
-          <ConnectorPoint PointX="35.375" PointY="15.067047526041677" />
-          <ConnectorPoint PointX="36.125" PointY="15.067047526041677" />
-        </AssociationConnector>
-        <AssociationConnector Association="SolutionFramework.MainModel.TBL_Admin_ResponsablesAprobacion" >
-          <ConnectorPoint PointX="6.625" PointY="22.284608028980561" />
-          <ConnectorPoint PointX="10.5" PointY="22.284608028980561" />
-        </AssociationConnector>
-        <AssociationConnector Association="SolutionFramework.MainModel.TBL_Admin_RolesPorOpcionMenu" >
-          <ConnectorPoint PointX="3.5" PointY="23.567047526041662" />
-          <ConnectorPoint PointX="5.125" PointY="23.567047526041662" />
-        </AssociationConnector>
-        <AssociationConnector Association="SolutionFramework.MainModel.TBL_Admin_UsuariosByRol" >
-          <ConnectorPoint PointX="6.625" PointY="22.800660134281948" />
-          <ConnectorPoint PointX="10.5" PointY="22.800660134281948" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_Documento" Width="1.5" PointX="21.25" PointY="11.25" Height="6.5955208333333246" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_HistorialDocumento" Width="1.5" PointX="23.5" PointY="11.25" Height="6.5955208333333246" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_LogCambios" Width="1.5" PointX="25.75" PointY="13.125" Height="2.7494921875000102" />
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_Documento_TBL_Admin_Usuarios" >
-          <ConnectorPoint PointX="12" PointY="19.829010916666661" />
-          <ConnectorPoint PointX="19.666666666666668" PointY="19.829010916666661" />
-          <ConnectorPoint PointX="19.833333333333332" PointY="19.829010916666661" />
-          <ConnectorPoint PointX="20.791666666666668" PointY="19.829010916666661" />
-          <ConnectorPoint PointX="20.958333333333332" PointY="19.829010916666661" />
-          <ConnectorPoint PointX="21.510414166666667" PointY="19.829010916666661" />
-          <ConnectorPoint PointX="21.677080833333331" PointY="19.829010916666661" />
-          <ConnectorPoint PointX="22" PointY="19.829010916666661" />
-          <ConnectorPoint PointX="22" PointY="17.845520833333325" />
+          <ConnectorPoint PointX="2.25" PointY="4.862536679687544" />
+          <ConnectorPoint PointX="2.6666666666666665" PointY="4.8625366796875431" />
+          <ConnectorPoint PointX="2.8958333333333335" PointY="4.862536679687544" />
+          <ConnectorPoint PointX="3.2604141666666666" PointY="4.8625366796875431" />
+          <ConnectorPoint PointX="3.4270808333333336" PointY="4.862536679687544" />
+          <ConnectorPoint PointX="3.75" PointY="4.862536679687544" />
+          <ConnectorPoint PointX="3.75" PointY="6.25" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_Documento_TBL_Admin_Usuarios1" >
-          <ConnectorPoint PointX="12" PointY="20.852007958333331" />
-          <ConnectorPoint PointX="19.666666666666668" PointY="20.852007958333331" />
-          <ConnectorPoint PointX="19.833333333333332" PointY="20.852007958333331" />
-          <ConnectorPoint PointX="20.791666666666668" PointY="20.852007958333331" />
-          <ConnectorPoint PointX="20.958333333333332" PointY="20.852007958333331" />
-          <ConnectorPoint PointX="21.5937475" PointY="20.852007958333331" />
-          <ConnectorPoint PointX="21.5937475" PointY="17.845520833333325" />
+          <ConnectorPoint PointX="2.25" PointY="2.0791755598957806" />
+          <ConnectorPoint PointX="3.3437475" PointY="2.0791755598957806" />
+          <ConnectorPoint PointX="3.3437475" PointY="6.25" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_Documento_TBL_Admin_Usuarios2" >
-          <ConnectorPoint PointX="12" PointY="18.837265874999986" />
-          <ConnectorPoint PointX="19.666666666666668" PointY="18.837265874999986" />
-          <ConnectorPoint PointX="19.833333333333332" PointY="18.837265874999986" />
-          <ConnectorPoint PointX="20.791666666666668" PointY="18.837265874999986" />
-          <ConnectorPoint PointX="20.958333333333332" PointY="18.837265874999986" />
-          <ConnectorPoint PointX="21.510414166666667" PointY="18.837265874999986" />
-          <ConnectorPoint PointX="21.677080833333331" PointY="18.837265874999986" />
-          <ConnectorPoint PointX="21.916666666666668" PointY="18.837265874999986" />
-          <ConnectorPoint PointX="22.083333333333332" PointY="18.837265874999986" />
-          <ConnectorPoint PointX="22.4062525" PointY="18.837265874999986" />
-          <ConnectorPoint PointX="22.4062525" PointY="17.845520833333325" />
+          <ConnectorPoint PointX="2.25" PointY="5.5583769596354848" />
+          <ConnectorPoint PointX="2.5572916666666665" PointY="5.5583769596354839" />
+          <ConnectorPoint PointX="2.8958333333333335" PointY="5.5583769596354848" />
+          <ConnectorPoint PointX="3.2604141666666666" PointY="5.5583769596354839" />
+          <ConnectorPoint PointX="3.4270808333333336" PointY="5.5583769596354848" />
+          <ConnectorPoint PointX="3.6666666666666665" PointY="5.5583769596354839" />
+          <ConnectorPoint PointX="3.8333333333333335" PointY="5.5583769596354848" />
+          <ConnectorPoint PointX="4.1562525" PointY="5.5583769596354848" />
+          <ConnectorPoint PointX="4.1562525" PointY="6.25" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_Admin_Usuarios" >
-          <ConnectorPoint PointX="12" PointY="18.341393354166648" />
-          <ConnectorPoint PointX="19.666666666666668" PointY="18.341393354166648" />
-          <ConnectorPoint PointX="19.833333333333332" PointY="18.341393354166648" />
-          <ConnectorPoint PointX="20.791666666666668" PointY="18.341393354166648" />
-          <ConnectorPoint PointX="20.958333333333332" PointY="18.341393354166648" />
-          <ConnectorPoint PointX="21.510414166666667" PointY="18.341393354166648" />
-          <ConnectorPoint PointX="21.677080833333331" PointY="18.341393354166648" />
-          <ConnectorPoint PointX="21.916666666666668" PointY="18.341393354166648" />
-          <ConnectorPoint PointX="22.083333333333332" PointY="18.341393354166648" />
-          <ConnectorPoint PointX="22.322919166666669" PointY="18.341393354166648" />
-          <ConnectorPoint PointX="22.489585833333333" PointY="18.341393354166648" />
-          <ConnectorPoint PointX="24.463539166666667" PointY="18.341393354166648" />
-          <ConnectorPoint PointX="24.630205833333331" PointY="18.341393354166648" />
-          <ConnectorPoint PointX="24.71875" PointY="18.341393354166648" />
-          <ConnectorPoint PointX="24.71875" PointY="17.845520833333325" />
+          <ConnectorPoint PointX="2.25" PointY="4.1666963997396032" />
+          <ConnectorPoint PointX="2.6666666666666665" PointY="4.1666963997396023" />
+          <ConnectorPoint PointX="2.8333333333333335" PointY="4.1666963997396032" />
+          <ConnectorPoint PointX="3.2604141666666666" PointY="4.1666963997396023" />
+          <ConnectorPoint PointX="3.4270808333333336" PointY="4.1666963997396032" />
+          <ConnectorPoint PointX="8.5104141666666653" PointY="4.1666963997396023" />
+          <ConnectorPoint PointX="8.6770808333333331" PointY="4.1666963997396032" />
+          <ConnectorPoint PointX="9" PointY="4.1666963997396032" />
+          <ConnectorPoint PointX="9" PointY="6.25" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_Admin_Usuarios1" >
-          <ConnectorPoint PointX="12" PointY="19.333138395833323" />
-          <ConnectorPoint PointX="19.666666666666668" PointY="19.333138395833323" />
-          <ConnectorPoint PointX="19.833333333333332" PointY="19.333138395833323" />
-          <ConnectorPoint PointX="20.791666666666668" PointY="19.333138395833323" />
-          <ConnectorPoint PointX="20.958333333333332" PointY="19.333138395833323" />
-          <ConnectorPoint PointX="21.510414166666667" PointY="19.333138395833323" />
-          <ConnectorPoint PointX="21.677080833333331" PointY="19.333138395833323" />
-          <ConnectorPoint PointX="21.916666666666668" PointY="19.333138395833323" />
-          <ConnectorPoint PointX="22.083333333333332" PointY="19.333138395833323" />
-          <ConnectorPoint PointX="24.5468725" PointY="19.333138395833323" />
-          <ConnectorPoint PointX="24.5468725" PointY="17.845520833333325" />
+          <ConnectorPoint PointX="2.25" PointY="2.7750158398437215" />
+          <ConnectorPoint PointX="3.2604141666666666" PointY="2.775015839843721" />
+          <ConnectorPoint PointX="3.4270808333333336" PointY="2.7750158398437215" />
+          <ConnectorPoint PointX="8.5937475" PointY="2.7750158398437215" />
+          <ConnectorPoint PointX="8.5937475" PointY="6.25" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_Admin_Usuarios2" >
-          <ConnectorPoint PointX="12" PointY="20.394751229166665" />
-          <ConnectorPoint PointX="19.666666666666668" PointY="20.394751229166665" />
-          <ConnectorPoint PointX="19.833333333333332" PointY="20.394751229166665" />
-          <ConnectorPoint PointX="20.791666666666668" PointY="20.394751229166665" />
-          <ConnectorPoint PointX="20.958333333333332" PointY="20.394751229166665" />
-          <ConnectorPoint PointX="21.510414166666667" PointY="20.394751229166665" />
-          <ConnectorPoint PointX="21.677080833333331" PointY="20.394751229166665" />
-          <ConnectorPoint PointX="23.541666666666668" PointY="20.394751229166665" />
-          <ConnectorPoint PointX="23.708333333333332" PointY="20.394751229166665" />
-          <ConnectorPoint PointX="24.8906275" PointY="20.394751229166665" />
-          <ConnectorPoint PointX="24.8906275" PointY="17.845520833333325" />
+          <ConnectorPoint PointX="2.25" PointY="1.3833352799478398" />
+          <ConnectorPoint PointX="9.4062525" PointY="1.3833352799478398" />
+          <ConnectorPoint PointX="9.4062525" PointY="6.25" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_Documento_TBL_ModuloDocumentos_Categorias" >
-          <ConnectorPoint PointX="18.375" PointY="7.7109993489583326" />
-          <ConnectorPoint PointX="18.375" PointY="14.547760416666662" />
-          <ConnectorPoint PointX="21.25" PointY="14.547760416666662" />
+          <ConnectorPoint PointX="2.25" PointY="9.3554996744791623" />
+          <ConnectorPoint PointX="2.5572916666666665" PointY="9.35549967447916" />
+          <ConnectorPoint PointX="2.8958333333333335" PointY="9.3554996744791623" />
+          <ConnectorPoint PointX="3" PointY="9.3554996744791623" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_Documento_TBL_ModuloDocumentos_Categorias1" >
-          <ConnectorPoint PointX="18.7812525" PointY="7.7109993489583326" />
-          <ConnectorPoint PointX="18.7812525" PointY="12.867627708333338" />
-          <ConnectorPoint PointX="21.25" PointY="12.867627708333338" />
+          <ConnectorPoint PointX="2.25" PointY="8.3652498372395812" />
+          <ConnectorPoint PointX="2.5572916666666665" PointY="8.36524983723958" />
+          <ConnectorPoint PointX="2.8958333333333335" PointY="8.3652498372395812" />
+          <ConnectorPoint PointX="3" PointY="8.3652498372395812" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_Documento_TBL_ModuloDocumentos_Categorias2" >
-          <ConnectorPoint PointX="17.9687475" PointY="7.7109993489583326" />
-          <ConnectorPoint PointX="17.9687475" PointY="16.227893124999987" />
-          <ConnectorPoint PointX="21.25" PointY="16.227893124999987" />
+          <ConnectorPoint PointX="2.25" PointY="10.345749511718744" />
+          <ConnectorPoint PointX="2.5572916666666665" PointY="10.345749511718742" />
+          <ConnectorPoint PointX="2.8958333333333335" PointY="10.345749511718744" />
+          <ConnectorPoint PointX="3" PointY="10.345749511718744" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Categorias" >
-          <ConnectorPoint PointX="19.125" PointY="5.8554996744791659" />
-          <ConnectorPoint PointX="24.25" PointY="5.8554996744791659" />
-          <ConnectorPoint PointX="24.25" PointY="11.25" />
+          <ConnectorPoint PointX="2.2499999999999996" PointY="11.210999348958325" />
+          <ConnectorPoint PointX="2.375" PointY="11.335999348958325" />
+          <ConnectorPoint PointX="2.375" PointY="13.028219401041667" />
+          <ConnectorPoint PointX="2.5572916666666665" PointY="13.028219401041666" />
+          <ConnectorPoint PointX="2.8958333333333335" PointY="13.028219401041667" />
+          <ConnectorPoint PointX="3.6666666666666665" PointY="13.028219401041667" />
+          <ConnectorPoint PointX="3.8333333333333335" PointY="13.028219401041667" />
+          <ConnectorPoint PointX="7.875" PointY="13.028219401041667" />
+          <ConnectorPoint PointX="8.25" PointY="12.653219401041667" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Categorias1" >
-          <ConnectorPoint PointX="19.125" PointY="6.8145020117187487" />
-          <ConnectorPoint PointX="23.8437475" PointY="6.8145020117187487" />
-          <ConnectorPoint PointX="23.8437475" PointY="11.25" />
+          <ConnectorPoint PointX="2.25" PointY="7.525383615384615" />
+          <ConnectorPoint PointX="2.58169943490112" PointY="7.1936841804834941" />
+          <ConnectorPoint PointX="2.8714255650988791" PointY="6.9039580502857367" />
+          <ConnectorPoint PointX="2.875" PointY="6.9003836153846159" />
+          <ConnectorPoint PointX="2.875" PointY="5.75" />
+          <ConnectorPoint PointX="3.2604141666666666" PointY="5.7499999999999991" />
+          <ConnectorPoint PointX="3.4270808333333336" PointY="5.75" />
+          <ConnectorPoint PointX="3.6666666666666665" PointY="5.7499999999999991" />
+          <ConnectorPoint PointX="3.8333333333333335" PointY="5.75" />
+          <ConnectorPoint PointX="4.0729191666666669" PointY="5.7499999999999991" />
+          <ConnectorPoint PointX="4.2395858333333329" PointY="5.75" />
+          <ConnectorPoint PointX="7.72576923076923" PointY="5.75" />
+          <ConnectorPoint PointX="8.25" PointY="6.27423076923077" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Categorias2" >
-          <ConnectorPoint PointX="19.125" PointY="4.896497337239583" />
-          <ConnectorPoint PointX="24.6562525" PointY="4.896497337239583" />
-          <ConnectorPoint PointX="24.6562525" PointY="11.25" />
+          <ConnectorPoint PointX="2.25" PointY="7.5069220769230771" />
+          <ConnectorPoint PointX="2.53125" PointY="7.2256720769230771" />
+          <ConnectorPoint PointX="2.53125" PointY="5.875" />
+          <ConnectorPoint PointX="2.5572916666666665" PointY="5.8749999999999982" />
+          <ConnectorPoint PointX="2.9583333333333335" PointY="5.875" />
+          <ConnectorPoint PointX="3.2604141666666666" PointY="5.8749999999999991" />
+          <ConnectorPoint PointX="3.4270808333333336" PointY="5.875" />
+          <ConnectorPoint PointX="3.6666666666666665" PointY="5.8749999999999991" />
+          <ConnectorPoint PointX="3.8333333333333335" PointY="5.875" />
+          <ConnectorPoint PointX="4.0729191666666669" PointY="5.8749999999999991" />
+          <ConnectorPoint PointX="4.2395858333333329" PointY="5.875" />
+          <ConnectorPoint PointX="7.9003836153846159" PointY="5.875" />
+          <ConnectorPoint PointX="8.2753836153846159" PointY="6.25" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_Documento_TBL_ModuloDocumentos_Estados" >
-          <ConnectorPoint PointX="19.75" PointY="21.875" />
-          <ConnectorPoint PointX="19.75" PointY="17.06795947916665" />
-          <ConnectorPoint PointX="21.25" PointY="17.06795947916665" />
+          <ConnectorPoint PointX="2.25" PointY="32.567047526041662" />
+          <ConnectorPoint PointX="2.75" PointY="32.567047526041662" />
+          <ConnectorPoint PointX="2.75" PointY="30.625" />
+          <ConnectorPoint PointX="3.25" PointY="30.625" />
+          <ConnectorPoint PointX="3.25" PointY="13.278219401041667" />
+          <ConnectorPoint PointX="3.75" PointY="13.278219401041667" />
+          <ConnectorPoint PointX="3.75" PointY="12.653219401041667" />
+        </AssociationConnector>
+        <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_DocumentoAdjunto_TBL_ModuloDocumentos_Documento" >
+          <ConnectorPoint PointX="4.5" PointY="9.4708968098958337" />
+          <ConnectorPoint PointX="5.25" PointY="9.4708968098958337" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Documento" >
-          <ConnectorPoint PointX="22.75" PointY="14.547760416666662" />
-          <ConnectorPoint PointX="23.5" PointY="14.547760416666662" />
+          <ConnectorPoint PointX="4.5" PointY="7.1371178846154351" />
+          <ConnectorPoint PointX="8.25" PointY="7.1371178846154351" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_LogCambios_TBL_ModuloDocumentos_Documento" >
-          <ConnectorPoint PointX="22" PointY="11.25" />
-          <ConnectorPoint PointX="22" PointY="11" />
-          <ConnectorPoint PointX="23.760414166666667" PointY="11" />
-          <ConnectorPoint PointX="23.927080833333331" PointY="11" />
-          <ConnectorPoint PointX="24.166666666666668" PointY="11" />
-          <ConnectorPoint PointX="24.333333333333332" PointY="11" />
-          <ConnectorPoint PointX="24.572919166666669" PointY="11" />
-          <ConnectorPoint PointX="24.739585833333333" PointY="11" />
-          <ConnectorPoint PointX="25.375" PointY="11" />
-          <ConnectorPoint PointX="25.375" PointY="14.499746093750005" />
-          <ConnectorPoint PointX="25.75" PointY="14.499746093750005" />
+          <ConnectorPoint PointX="3.95312625" PointY="6.25" />
+          <ConnectorPoint PointX="3.95312625" PointY="6" />
+          <ConnectorPoint PointX="4.0729191666666669" PointY="5.9999999999999991" />
+          <ConnectorPoint PointX="4.2395858333333329" PointY="6" />
+          <ConnectorPoint PointX="7.892435897435897" PointY="5.9999999999999991" />
+          <ConnectorPoint PointX="8.10871694871795" PointY="6" />
+          <ConnectorPoint PointX="8.5104141666666653" PointY="5.9999999999999991" />
+          <ConnectorPoint PointX="8.6770808333333331" PointY="6" />
+          <ConnectorPoint PointX="8.9166666666666661" PointY="5.9999999999999991" />
+          <ConnectorPoint PointX="9.0833333333333339" PointY="6" />
+          <ConnectorPoint PointX="9.3229191666666669" PointY="5.9999999999999991" />
+          <ConnectorPoint PointX="9.4895858333333347" PointY="6" />
+          <ConnectorPoint PointX="10.5" PointY="6" />
+          <ConnectorPoint PointX="10.5" PointY="7.1340950520833246" />
+          <ConnectorPoint PointX="13.125" PointY="7.1340950520833246" />
+          <ConnectorPoint PointX="13.125" PointY="9.3747460937499909" />
+          <ConnectorPoint PointX="13.5" PointY="9.3747460937499909" />
+        </AssociationConnector>
+        <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_DocumentoAdjuntoHistorial_TBL_ModuloDocumentos_HistorialDocumento" >
+          <ConnectorPoint PointX="9.75" PointY="9.4708968098958337" />
+          <ConnectorPoint PointX="10.5" PointY="9.4708968098958337" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Estados" >
-          <ConnectorPoint PointX="20.5" PointY="21.875" />
-          <ConnectorPoint PointX="20.875" PointY="21.5" />
-          <ConnectorPoint PointX="20.875" PointY="18.220520833333325" />
-          <ConnectorPoint PointX="21.510414166666667" PointY="18.220520833333325" />
-          <ConnectorPoint PointX="21.677080833333331" PointY="18.220520833333325" />
-          <ConnectorPoint PointX="21.916666666666668" PointY="18.220520833333325" />
-          <ConnectorPoint PointX="22.083333333333332" PointY="18.220520833333325" />
-          <ConnectorPoint PointX="22.322919166666669" PointY="18.220520833333325" />
-          <ConnectorPoint PointX="22.489585833333333" PointY="18.220520833333325" />
-          <ConnectorPoint PointX="23.125" PointY="18.220520833333325" />
-          <ConnectorPoint PointX="23.5" PointY="17.845520833333325" />
+          <ConnectorPoint PointX="2.25" PointY="31.752271763020836" />
+          <ConnectorPoint PointX="2.5" PointY="31.752271763020836" />
+          <ConnectorPoint PointX="2.5" PointY="30.75" />
+          <ConnectorPoint PointX="2.6666666666666665" PointY="30.75" />
+          <ConnectorPoint PointX="2.8333333333333335" PointY="30.75" />
+          <ConnectorPoint PointX="3.6666666666666665" PointY="30.75" />
+          <ConnectorPoint PointX="3.8333333333333335" PointY="30.75" />
+          <ConnectorPoint PointX="8" PointY="30.75" />
+          <ConnectorPoint PointX="8" PointY="13.278219401041667" />
+          <ConnectorPoint PointX="9.031252" PointY="13.278219401041667" />
+          <ConnectorPoint PointX="9.031252" PointY="12.653219401041667" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_LogCambios_TBL_ModuloDocumentos_HistorialDocumento" >
-          <ConnectorPoint PointX="25" PointY="13.749873046875003" />
-          <ConnectorPoint PointX="25.291666666666668" PointY="13.749873046875003" />
-          <ConnectorPoint PointX="25.458333333333332" PointY="13.749873046875003" />
-          <ConnectorPoint PointX="25.75" PointY="13.749873046875003" />
+          <ConnectorPoint PointX="9.75" PointY="11.828756510416667" />
+          <ConnectorPoint PointX="14.25" PointY="11.828756510416667" />
+          <ConnectorPoint PointX="14.25" PointY="10.749492187499982" />
         </AssociationConnector>
-        </Diagram>
+        <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_BancoActividades" >
+          <ConnectorPoint PointX="17.25" PointY="24.172801106770834" />
+          <ConnectorPoint PointX="18" PointY="24.172801106770834" />
+        </AssociationConnector>
+        <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_Categorias" >
+          <ConnectorPoint PointX="17.25" PointY="30.220896809895834" />
+          <ConnectorPoint PointX="18.75" PointY="30.220896809895834" />
+          <ConnectorPoint PointX="18.75" PointY="26.287903645833325" />
+        </AssociationConnector>
+        <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloWorkFlow_ValidacionesSalida_TBL_ModuloWorkFlow_Rutas" >
+          <ConnectorPoint PointX="7.5" PointY="20.942047526041677" />
+          <ConnectorPoint PointX="7.916666666666667" PointY="20.942047526041677" />
+          <ConnectorPoint PointX="8.0833333333333339" PointY="20.942047526041677" />
+          <ConnectorPoint PointX="8.25" PointY="20.942047526041677" />
+        </AssociationConnector>
+        <AssociationConnector Association="SolutionFramework.MainModel.TBL_Admin_ResponsablesAprobacion" >
+          <ConnectorPoint PointX="2.640625" PointY="16" />
+          <ConnectorPoint PointX="2.640625" PointY="5.2104568196615144" />
+          <ConnectorPoint PointX="2.25" PointY="5.2104568196615144" />
+        </AssociationConnector>
+        <AssociationConnector Association="SolutionFramework.MainModel.TBL_Admin_RolesPorOpcionMenu" >
+          <ConnectorPoint PointX="1.7034615384615384" PointY="20.375" />
+          <ConnectorPoint PointX="1.7034615384615384" PointY="19.134095052083325" />
+        </AssociationConnector>
+        <AssociationConnector Association="SolutionFramework.MainModel.TBL_Admin_UsuariosByRol" >
+          <ConnectorPoint PointX="2.8125" PointY="16" />
+          <ConnectorPoint PointX="2.8125" PointY="4.5146165397135736" />
+          <ConnectorPoint PointX="2.25" PointY="4.5146165397135736" />
+        </AssociationConnector>
+      </Diagram>
     </Diagrams>
   </Designer>
 </edmx:Edmx>

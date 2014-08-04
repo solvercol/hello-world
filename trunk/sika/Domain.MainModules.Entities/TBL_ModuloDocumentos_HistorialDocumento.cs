@@ -23,6 +23,7 @@ namespace Domain.MainModules.Entities
     [KnownType(typeof(TBL_Admin_Usuarios))]
     [KnownType(typeof(TBL_ModuloDocumentos_Categorias))]
     [KnownType(typeof(TBL_ModuloDocumentos_Documento))]
+    [KnownType(typeof(TBL_ModuloDocumentos_DocumentoAdjuntoHistorial))]
     [KnownType(typeof(TBL_ModuloDocumentos_Estados))]
     [KnownType(typeof(TBL_ModuloDocumentos_LogCambios))]
     
@@ -101,21 +102,6 @@ namespace Domain.MainModules.Entities
             }
         }
         private string _observaciones;
-    
-        [DataMember]
-        public byte[] Archivo
-        {
-            get { return _archivo; }
-            set
-            {
-                if (_archivo != value)
-                {
-                    _archivo = value;
-                    OnPropertyChanged("Archivo");
-                }
-            }
-        }
-        private byte[] _archivo;
     
         [DataMember]
         public string Version
@@ -382,21 +368,6 @@ namespace Domain.MainModules.Entities
             }
         }
         private System.DateTime _modifiedOn;
-    
-        [DataMember]
-        public string NombreArchivo
-        {
-            get { return _nombreArchivo; }
-            set
-            {
-                if (_nombreArchivo != value)
-                {
-                    _nombreArchivo = value;
-                    OnPropertyChanged("NombreArchivo");
-                }
-            }
-        }
-        private string _nombreArchivo;
 
         #endregion
         #region Navigation Properties
@@ -519,6 +490,41 @@ namespace Domain.MainModules.Entities
             }
         }
         private TBL_ModuloDocumentos_Documento _tBL_ModuloDocumentos_Documento;
+    
+        [DataMember]
+        public TrackableCollection<TBL_ModuloDocumentos_DocumentoAdjuntoHistorial> TBL_ModuloDocumentos_DocumentoAdjuntoHistorial
+        {
+            get
+            {
+                if (_tBL_ModuloDocumentos_DocumentoAdjuntoHistorial == null)
+                {
+                    _tBL_ModuloDocumentos_DocumentoAdjuntoHistorial = new TrackableCollection<TBL_ModuloDocumentos_DocumentoAdjuntoHistorial>();
+                    _tBL_ModuloDocumentos_DocumentoAdjuntoHistorial.CollectionChanged += FixupTBL_ModuloDocumentos_DocumentoAdjuntoHistorial;
+                }
+                return _tBL_ModuloDocumentos_DocumentoAdjuntoHistorial;
+            }
+            set
+            {
+                if (!ReferenceEquals(_tBL_ModuloDocumentos_DocumentoAdjuntoHistorial, value))
+                {
+                    if (ChangeTracker.ChangeTrackingEnabled)
+                    {
+                        throw new InvalidOperationException("Cannot set the FixupChangeTrackingCollection when ChangeTracking is enabled");
+                    }
+                    if (_tBL_ModuloDocumentos_DocumentoAdjuntoHistorial != null)
+                    {
+                        _tBL_ModuloDocumentos_DocumentoAdjuntoHistorial.CollectionChanged -= FixupTBL_ModuloDocumentos_DocumentoAdjuntoHistorial;
+                    }
+                    _tBL_ModuloDocumentos_DocumentoAdjuntoHistorial = value;
+                    if (_tBL_ModuloDocumentos_DocumentoAdjuntoHistorial != null)
+                    {
+                        _tBL_ModuloDocumentos_DocumentoAdjuntoHistorial.CollectionChanged += FixupTBL_ModuloDocumentos_DocumentoAdjuntoHistorial;
+                    }
+                    OnNavigationPropertyChanged("TBL_ModuloDocumentos_DocumentoAdjuntoHistorial");
+                }
+            }
+        }
+        private TrackableCollection<TBL_ModuloDocumentos_DocumentoAdjuntoHistorial> _tBL_ModuloDocumentos_DocumentoAdjuntoHistorial;
     
         [DataMember]
         public TBL_ModuloDocumentos_Estados TBL_ModuloDocumentos_Estados
@@ -657,6 +663,7 @@ namespace Domain.MainModules.Entities
             TBL_ModuloDocumentos_Categorias1 = null;
             TBL_ModuloDocumentos_Categorias2 = null;
             TBL_ModuloDocumentos_Documento = null;
+            TBL_ModuloDocumentos_DocumentoAdjuntoHistorial.Clear();
             TBL_ModuloDocumentos_Estados = null;
             TBL_ModuloDocumentos_LogCambios.Clear();
         }
@@ -972,6 +979,45 @@ namespace Domain.MainModules.Entities
                 if (TBL_ModuloDocumentos_Estados != null && !TBL_ModuloDocumentos_Estados.ChangeTracker.ChangeTrackingEnabled)
                 {
                     TBL_ModuloDocumentos_Estados.StartTracking();
+                }
+            }
+        }
+    
+        private void FixupTBL_ModuloDocumentos_DocumentoAdjuntoHistorial(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            if (IsDeserializing)
+            {
+                return;
+            }
+    
+            if (e.NewItems != null)
+            {
+                foreach (TBL_ModuloDocumentos_DocumentoAdjuntoHistorial item in e.NewItems)
+                {
+                    item.TBL_ModuloDocumentos_HistorialDocumento = this;
+                    if (ChangeTracker.ChangeTrackingEnabled)
+                    {
+                        if (!item.ChangeTracker.ChangeTrackingEnabled)
+                        {
+                            item.StartTracking();
+                        }
+                        ChangeTracker.RecordAdditionToCollectionProperties("TBL_ModuloDocumentos_DocumentoAdjuntoHistorial", item);
+                    }
+                }
+            }
+    
+            if (e.OldItems != null)
+            {
+                foreach (TBL_ModuloDocumentos_DocumentoAdjuntoHistorial item in e.OldItems)
+                {
+                    if (ReferenceEquals(item.TBL_ModuloDocumentos_HistorialDocumento, this))
+                    {
+                        item.TBL_ModuloDocumentos_HistorialDocumento = null;
+                    }
+                    if (ChangeTracker.ChangeTrackingEnabled)
+                    {
+                        ChangeTracker.RecordRemovalFromCollectionProperties("TBL_ModuloDocumentos_DocumentoAdjuntoHistorial", item);
+                    }
                 }
             }
         }

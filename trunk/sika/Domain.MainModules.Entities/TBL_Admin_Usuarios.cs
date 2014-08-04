@@ -21,9 +21,9 @@ namespace Domain.MainModules.Entities
 {
     [DataContract(IsReference = true)]
     [KnownType(typeof(TBL_Admin_SistemaNotificaciones))]
-    [KnownType(typeof(TBL_Admin_Roles))]
     [KnownType(typeof(TBL_ModuloDocumentos_Documento))]
     [KnownType(typeof(TBL_ModuloDocumentos_HistorialDocumento))]
+    [KnownType(typeof(TBL_Admin_Roles))]
     
     public partial class TBL_Admin_Usuarios: IObjectWithChangeTracker, INotifyPropertyChanged
     {
@@ -282,76 +282,6 @@ namespace Domain.MainModules.Entities
         private TrackableCollection<TBL_Admin_SistemaNotificaciones> _tBL_Admin_SistemaNotificaciones;
     
         [DataMember]
-        public TrackableCollection<TBL_Admin_Roles> TBL_Admin_Roles
-        {
-            get
-            {
-                if (_tBL_Admin_Roles == null)
-                {
-                    _tBL_Admin_Roles = new TrackableCollection<TBL_Admin_Roles>();
-                    _tBL_Admin_Roles.CollectionChanged += FixupTBL_Admin_Roles;
-                }
-                return _tBL_Admin_Roles;
-            }
-            set
-            {
-                if (!ReferenceEquals(_tBL_Admin_Roles, value))
-                {
-                    if (ChangeTracker.ChangeTrackingEnabled)
-                    {
-                        throw new InvalidOperationException("Cannot set the FixupChangeTrackingCollection when ChangeTracking is enabled");
-                    }
-                    if (_tBL_Admin_Roles != null)
-                    {
-                        _tBL_Admin_Roles.CollectionChanged -= FixupTBL_Admin_Roles;
-                    }
-                    _tBL_Admin_Roles = value;
-                    if (_tBL_Admin_Roles != null)
-                    {
-                        _tBL_Admin_Roles.CollectionChanged += FixupTBL_Admin_Roles;
-                    }
-                    OnNavigationPropertyChanged("TBL_Admin_Roles");
-                }
-            }
-        }
-        private TrackableCollection<TBL_Admin_Roles> _tBL_Admin_Roles;
-    
-        [DataMember]
-        public TrackableCollection<TBL_Admin_Roles> TBL_Admin_Roles1
-        {
-            get
-            {
-                if (_tBL_Admin_Roles1 == null)
-                {
-                    _tBL_Admin_Roles1 = new TrackableCollection<TBL_Admin_Roles>();
-                    _tBL_Admin_Roles1.CollectionChanged += FixupTBL_Admin_Roles1;
-                }
-                return _tBL_Admin_Roles1;
-            }
-            set
-            {
-                if (!ReferenceEquals(_tBL_Admin_Roles1, value))
-                {
-                    if (ChangeTracker.ChangeTrackingEnabled)
-                    {
-                        throw new InvalidOperationException("Cannot set the FixupChangeTrackingCollection when ChangeTracking is enabled");
-                    }
-                    if (_tBL_Admin_Roles1 != null)
-                    {
-                        _tBL_Admin_Roles1.CollectionChanged -= FixupTBL_Admin_Roles1;
-                    }
-                    _tBL_Admin_Roles1 = value;
-                    if (_tBL_Admin_Roles1 != null)
-                    {
-                        _tBL_Admin_Roles1.CollectionChanged += FixupTBL_Admin_Roles1;
-                    }
-                    OnNavigationPropertyChanged("TBL_Admin_Roles1");
-                }
-            }
-        }
-        private TrackableCollection<TBL_Admin_Roles> _tBL_Admin_Roles1;
-    
-        [DataMember]
         public TrackableCollection<TBL_ModuloDocumentos_Documento> TBL_ModuloDocumentos_Documento
         {
             get
@@ -560,6 +490,76 @@ namespace Domain.MainModules.Entities
             }
         }
         private TrackableCollection<TBL_ModuloDocumentos_HistorialDocumento> _tBL_ModuloDocumentos_HistorialDocumento2;
+    
+        [DataMember]
+        public TrackableCollection<TBL_Admin_Roles> TBL_Admin_Roles
+        {
+            get
+            {
+                if (_tBL_Admin_Roles == null)
+                {
+                    _tBL_Admin_Roles = new TrackableCollection<TBL_Admin_Roles>();
+                    _tBL_Admin_Roles.CollectionChanged += FixupTBL_Admin_Roles;
+                }
+                return _tBL_Admin_Roles;
+            }
+            set
+            {
+                if (!ReferenceEquals(_tBL_Admin_Roles, value))
+                {
+                    if (ChangeTracker.ChangeTrackingEnabled)
+                    {
+                        throw new InvalidOperationException("Cannot set the FixupChangeTrackingCollection when ChangeTracking is enabled");
+                    }
+                    if (_tBL_Admin_Roles != null)
+                    {
+                        _tBL_Admin_Roles.CollectionChanged -= FixupTBL_Admin_Roles;
+                    }
+                    _tBL_Admin_Roles = value;
+                    if (_tBL_Admin_Roles != null)
+                    {
+                        _tBL_Admin_Roles.CollectionChanged += FixupTBL_Admin_Roles;
+                    }
+                    OnNavigationPropertyChanged("TBL_Admin_Roles");
+                }
+            }
+        }
+        private TrackableCollection<TBL_Admin_Roles> _tBL_Admin_Roles;
+    
+        [DataMember]
+        public TrackableCollection<TBL_Admin_Roles> TBL_Admin_Roles1
+        {
+            get
+            {
+                if (_tBL_Admin_Roles1 == null)
+                {
+                    _tBL_Admin_Roles1 = new TrackableCollection<TBL_Admin_Roles>();
+                    _tBL_Admin_Roles1.CollectionChanged += FixupTBL_Admin_Roles1;
+                }
+                return _tBL_Admin_Roles1;
+            }
+            set
+            {
+                if (!ReferenceEquals(_tBL_Admin_Roles1, value))
+                {
+                    if (ChangeTracker.ChangeTrackingEnabled)
+                    {
+                        throw new InvalidOperationException("Cannot set the FixupChangeTrackingCollection when ChangeTracking is enabled");
+                    }
+                    if (_tBL_Admin_Roles1 != null)
+                    {
+                        _tBL_Admin_Roles1.CollectionChanged -= FixupTBL_Admin_Roles1;
+                    }
+                    _tBL_Admin_Roles1 = value;
+                    if (_tBL_Admin_Roles1 != null)
+                    {
+                        _tBL_Admin_Roles1.CollectionChanged += FixupTBL_Admin_Roles1;
+                    }
+                    OnNavigationPropertyChanged("TBL_Admin_Roles1");
+                }
+            }
+        }
+        private TrackableCollection<TBL_Admin_Roles> _tBL_Admin_Roles1;
 
         #endregion
         #region ChangeTracking
@@ -640,14 +640,14 @@ namespace Domain.MainModules.Entities
         protected virtual void ClearNavigationProperties()
         {
             TBL_Admin_SistemaNotificaciones.Clear();
-            TBL_Admin_Roles.Clear();
-            TBL_Admin_Roles1.Clear();
             TBL_ModuloDocumentos_Documento.Clear();
             TBL_ModuloDocumentos_Documento1.Clear();
             TBL_ModuloDocumentos_Documento2.Clear();
             TBL_ModuloDocumentos_HistorialDocumento.Clear();
             TBL_ModuloDocumentos_HistorialDocumento1.Clear();
             TBL_ModuloDocumentos_HistorialDocumento2.Clear();
+            TBL_Admin_Roles.Clear();
+            TBL_Admin_Roles1.Clear();
         }
 
         #endregion
@@ -687,90 +687,6 @@ namespace Domain.MainModules.Entities
                     if (ChangeTracker.ChangeTrackingEnabled)
                     {
                         ChangeTracker.RecordRemovalFromCollectionProperties("TBL_Admin_SistemaNotificaciones", item);
-                    }
-                }
-            }
-        }
-    
-        private void FixupTBL_Admin_Roles(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            if (IsDeserializing)
-            {
-                return;
-            }
-    
-            if (e.NewItems != null)
-            {
-                foreach (TBL_Admin_Roles item in e.NewItems)
-                {
-                    if (!item.TBL_Admin_Usuarios.Contains(this))
-                    {
-                        item.TBL_Admin_Usuarios.Add(this);
-                    }
-                    if (ChangeTracker.ChangeTrackingEnabled)
-                    {
-                        if (!item.ChangeTracker.ChangeTrackingEnabled)
-                        {
-                            item.StartTracking();
-                        }
-                        ChangeTracker.RecordAdditionToCollectionProperties("TBL_Admin_Roles", item);
-                    }
-                }
-            }
-    
-            if (e.OldItems != null)
-            {
-                foreach (TBL_Admin_Roles item in e.OldItems)
-                {
-                    if (item.TBL_Admin_Usuarios.Contains(this))
-                    {
-                        item.TBL_Admin_Usuarios.Remove(this);
-                    }
-                    if (ChangeTracker.ChangeTrackingEnabled)
-                    {
-                        ChangeTracker.RecordRemovalFromCollectionProperties("TBL_Admin_Roles", item);
-                    }
-                }
-            }
-        }
-    
-        private void FixupTBL_Admin_Roles1(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            if (IsDeserializing)
-            {
-                return;
-            }
-    
-            if (e.NewItems != null)
-            {
-                foreach (TBL_Admin_Roles item in e.NewItems)
-                {
-                    if (!item.TBL_Admin_Usuarios1.Contains(this))
-                    {
-                        item.TBL_Admin_Usuarios1.Add(this);
-                    }
-                    if (ChangeTracker.ChangeTrackingEnabled)
-                    {
-                        if (!item.ChangeTracker.ChangeTrackingEnabled)
-                        {
-                            item.StartTracking();
-                        }
-                        ChangeTracker.RecordAdditionToCollectionProperties("TBL_Admin_Roles1", item);
-                    }
-                }
-            }
-    
-            if (e.OldItems != null)
-            {
-                foreach (TBL_Admin_Roles item in e.OldItems)
-                {
-                    if (item.TBL_Admin_Usuarios1.Contains(this))
-                    {
-                        item.TBL_Admin_Usuarios1.Remove(this);
-                    }
-                    if (ChangeTracker.ChangeTrackingEnabled)
-                    {
-                        ChangeTracker.RecordRemovalFromCollectionProperties("TBL_Admin_Roles1", item);
                     }
                 }
             }
@@ -1005,6 +921,90 @@ namespace Domain.MainModules.Entities
                     if (ChangeTracker.ChangeTrackingEnabled)
                     {
                         ChangeTracker.RecordRemovalFromCollectionProperties("TBL_ModuloDocumentos_HistorialDocumento2", item);
+                    }
+                }
+            }
+        }
+    
+        private void FixupTBL_Admin_Roles(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            if (IsDeserializing)
+            {
+                return;
+            }
+    
+            if (e.NewItems != null)
+            {
+                foreach (TBL_Admin_Roles item in e.NewItems)
+                {
+                    if (!item.TBL_Admin_Usuarios.Contains(this))
+                    {
+                        item.TBL_Admin_Usuarios.Add(this);
+                    }
+                    if (ChangeTracker.ChangeTrackingEnabled)
+                    {
+                        if (!item.ChangeTracker.ChangeTrackingEnabled)
+                        {
+                            item.StartTracking();
+                        }
+                        ChangeTracker.RecordAdditionToCollectionProperties("TBL_Admin_Roles", item);
+                    }
+                }
+            }
+    
+            if (e.OldItems != null)
+            {
+                foreach (TBL_Admin_Roles item in e.OldItems)
+                {
+                    if (item.TBL_Admin_Usuarios.Contains(this))
+                    {
+                        item.TBL_Admin_Usuarios.Remove(this);
+                    }
+                    if (ChangeTracker.ChangeTrackingEnabled)
+                    {
+                        ChangeTracker.RecordRemovalFromCollectionProperties("TBL_Admin_Roles", item);
+                    }
+                }
+            }
+        }
+    
+        private void FixupTBL_Admin_Roles1(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            if (IsDeserializing)
+            {
+                return;
+            }
+    
+            if (e.NewItems != null)
+            {
+                foreach (TBL_Admin_Roles item in e.NewItems)
+                {
+                    if (!item.TBL_Admin_Usuarios1.Contains(this))
+                    {
+                        item.TBL_Admin_Usuarios1.Add(this);
+                    }
+                    if (ChangeTracker.ChangeTrackingEnabled)
+                    {
+                        if (!item.ChangeTracker.ChangeTrackingEnabled)
+                        {
+                            item.StartTracking();
+                        }
+                        ChangeTracker.RecordAdditionToCollectionProperties("TBL_Admin_Roles1", item);
+                    }
+                }
+            }
+    
+            if (e.OldItems != null)
+            {
+                foreach (TBL_Admin_Roles item in e.OldItems)
+                {
+                    if (item.TBL_Admin_Usuarios1.Contains(this))
+                    {
+                        item.TBL_Admin_Usuarios1.Remove(this);
+                    }
+                    if (ChangeTracker.ChangeTrackingEnabled)
+                    {
+                        ChangeTracker.RecordRemovalFromCollectionProperties("TBL_Admin_Roles1", item);
                     }
                 }
             }

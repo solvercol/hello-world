@@ -356,8 +356,8 @@ namespace Modules.Documentos.Admin
 
         public void DescargarArchivo(TBL_ModuloDocumentos_Documento documento)
         {
-            ViewPage<EditarDocumentoPresenter, IEditarDocumentoView>
-                .DownloadDocument(documento.Archivo, documento.NombreArchivo, "application/octet-stream");
+            //ViewPage<EditarDocumentoPresenter, IEditarDocumentoView>
+            //    .DownloadDocument(documento.Archivo, documento.NombreArchivo, "application/octet-stream");
         }
 
         #region Métodos Web
