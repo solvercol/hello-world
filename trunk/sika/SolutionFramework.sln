@@ -154,6 +154,62 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modules.Documentos", "Modul
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presenters.Documentos", "Presenters.Documentos\Presenters.Documentos.csproj", "{3D42EB42-A5CD-4A9E-B376-CFDE6C11A2A5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Others", "3 - Others", "{7C53F027-629C-46E4-B76F-EE7C62F65472}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dll", "dll", "{CBF230DE-E1A5-4226-B545-07F59F049010}"
+	ProjectSection(SolutionItems) = preProject
+		dll\AjaxControlToolkit.dll = dll\AjaxControlToolkit.dll
+		dll\AntiXSSLibrary.dll = dll\AntiXSSLibrary.dll
+		dll\Castle.Core.dll = dll\Castle.Core.dll
+		dll\Castle.DynamicProxy.dll = dll\Castle.DynamicProxy.dll
+		dll\Castle.DynamicProxy2.dll = dll\Castle.DynamicProxy2.dll
+		dll\Castle.MicroKernel.dll = dll\Castle.MicroKernel.dll
+		dll\Castle.Services.Transaction.dll = dll\Castle.Services.Transaction.dll
+		dll\Castle.Windsor.dll = dll\Castle.Windsor.dll
+		dll\ExpressionEval.dll = dll\ExpressionEval.dll
+		dll\ICSharpCode.SharpZipLib.dll = dll\ICSharpCode.SharpZipLib.dll
+		dll\Infragistics4.Web.v11.1.dll = dll\Infragistics4.Web.v11.1.dll
+		dll\Infragistics4.WebUI.Documents.Core.v11.1.dll = dll\Infragistics4.WebUI.Documents.Core.v11.1.dll
+		dll\Infragistics4.WebUI.Documents.Excel.v11.1.dll = dll\Infragistics4.WebUI.Documents.Excel.v11.1.dll
+		dll\Infragistics4.WebUI.Documents.IO.v11.1.dll = dll\Infragistics4.WebUI.Documents.IO.v11.1.dll
+		dll\Infragistics4.WebUI.Documents.Reports.v11.1.dll = dll\Infragistics4.WebUI.Documents.Reports.v11.1.dll
+		dll\Infragistics4.WebUI.Documents.Word.v11.1.dll = dll\Infragistics4.WebUI.Documents.Word.v11.1.dll
+		dll\Infragistics4.WebUI.Misc.v11.1.dll = dll\Infragistics4.WebUI.Misc.v11.1.dll
+		dll\Infragistics4.WebUI.Shared.v11.1.dll = dll\Infragistics4.WebUI.Shared.v11.1.dll
+		dll\Infragistics4.WebUI.UltraWebCalcManager.v11.1.dll = dll\Infragistics4.WebUI.UltraWebCalcManager.v11.1.dll
+		dll\Infragistics4.WebUI.UltraWebChart.v11.1.dll = dll\Infragistics4.WebUI.UltraWebChart.v11.1.dll
+		dll\Infragistics4.WebUI.UltraWebGauge.v11.1.dll = dll\Infragistics4.WebUI.UltraWebGauge.v11.1.dll
+		dll\Infragistics4.WebUI.UltraWebGrid.DocumentExport.v11.1.dll = dll\Infragistics4.WebUI.UltraWebGrid.DocumentExport.v11.1.dll
+		dll\Infragistics4.WebUI.UltraWebGrid.ExcelExport.v11.1.dll = dll\Infragistics4.WebUI.UltraWebGrid.ExcelExport.v11.1.dll
+		dll\Infragistics4.WebUI.UltraWebGrid.v11.1.dll = dll\Infragistics4.WebUI.UltraWebGrid.v11.1.dll
+		dll\Infragistics4.WebUI.UltraWebListbar.v11.1.dll = dll\Infragistics4.WebUI.UltraWebListbar.v11.1.dll
+		dll\Infragistics4.WebUI.UltraWebNavigator.v11.1.dll = dll\Infragistics4.WebUI.UltraWebNavigator.v11.1.dll
+		dll\Infragistics4.WebUI.UltraWebTab.v11.1.dll = dll\Infragistics4.WebUI.UltraWebTab.v11.1.dll
+		dll\Infragistics4.WebUI.UltraWebToolbar.v11.1.dll = dll\Infragistics4.WebUI.UltraWebToolbar.v11.1.dll
+		dll\Infragistics4.WebUI.WebCombo.v11.1.dll = dll\Infragistics4.WebUI.WebCombo.v11.1.dll
+		dll\Infragistics4.WebUI.WebDataInput.v11.1.dll = dll\Infragistics4.WebUI.WebDataInput.v11.1.dll
+		dll\Infragistics4.WebUI.WebDateChooser.v11.1.dll = dll\Infragistics4.WebUI.WebDateChooser.v11.1.dll
+		dll\Infragistics4.WebUI.WebHtmlEditor.v11.1.dll = dll\Infragistics4.WebUI.WebHtmlEditor.v11.1.dll
+		dll\Infragistics4.WebUI.WebNavBar.v11.1.dll = dll\Infragistics4.WebUI.WebNavBar.v11.1.dll
+		dll\Infragistics4.WebUI.WebResizingExtender.v11.1.dll = dll\Infragistics4.WebUI.WebResizingExtender.v11.1.dll
+		dll\Infragistics4.WebUI.WebSchedule.v11.1.dll = dll\Infragistics4.WebUI.WebSchedule.v11.1.dll
+		dll\Infragistics4.WebUI.WebScheduleDataProvider.v11.1.dll = dll\Infragistics4.WebUI.WebScheduleDataProvider.v11.1.dll
+		dll\Infragistics4.WebUI.WebSpellChecker.v11.1.dll = dll\Infragistics4.WebUI.WebSpellChecker.v11.1.dll
+		dll\log4net.dll = dll\log4net.dll
+		dll\Microsoft.Practices.EnterpriseLibrary.Common.dll = dll\Microsoft.Practices.EnterpriseLibrary.Common.dll
+		dll\Microsoft.Practices.EnterpriseLibrary.Common.xml = dll\Microsoft.Practices.EnterpriseLibrary.Common.xml
+		dll\Microsoft.Practices.Unity.Configuration.dll = dll\Microsoft.Practices.Unity.Configuration.dll
+		dll\Microsoft.Practices.Unity.Configuration.xml = dll\Microsoft.Practices.Unity.Configuration.xml
+		dll\Microsoft.Practices.Unity.dll = dll\Microsoft.Practices.Unity.dll
+		dll\Microsoft.Practices.Unity.Interception.Configuration.dll = dll\Microsoft.Practices.Unity.Interception.Configuration.dll
+		dll\Microsoft.Practices.Unity.Interception.Configuration.xml = dll\Microsoft.Practices.Unity.Interception.Configuration.xml
+		dll\Microsoft.Practices.Unity.Interception.dll = dll\Microsoft.Practices.Unity.Interception.dll
+		dll\Microsoft.Practices.Unity.Interception.xml = dll\Microsoft.Practices.Unity.Interception.xml
+		dll\Microsoft.Practices.Unity.xml = dll\Microsoft.Practices.Unity.xml
+		dll\Oracle.DataAccess.dll = dll\Oracle.DataAccess.dll
+		dll\SanitizerProviders.dll = dll\SanitizerProviders.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -699,5 +755,6 @@ Global
 		{21D32B31-8E0D-40D6-874F-02AB7F54D0F2} = {9AC6C3CB-C88F-4107-A6AB-EFF413AB5B01}
 		{6AAF4F84-A922-4439-9AF3-ED86655EB74B} = {9AC6C3CB-C88F-4107-A6AB-EFF413AB5B01}
 		{D4EB3DC9-97DF-49F1-866C-64E2218F2F57} = {C96EB561-2E3F-4B60-AB49-CABFB02173FF}
+		{CBF230DE-E1A5-4226-B545-07F59F049010} = {7C53F027-629C-46E4-B76F-EE7C62F65472}
 	EndGlobalSection
 EndGlobal
