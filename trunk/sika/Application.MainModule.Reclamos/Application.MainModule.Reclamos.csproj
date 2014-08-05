@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C9837181-2A13-4F70-8132-570940C442C0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Application.MainModule.Reclamos</RootNamespace>
+    <AssemblyName>Application.MainModule.Reclamos</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IServices\ITBLModuloReclamosActividadesManagementServices.cs" />
+    <Compile Include="IServices\ITBLModuloReclamosActividadesReclamoManagementServices.cs" />
+    <Compile Include="IServices\ITBLModuloReclamosAlternativasManagementServices.cs" />
+    <Compile Include="IServices\ITBLModuloReclamosAnexosActividadManagementServices.cs" />
+    <Compile Include="IServices\ITBLModuloReclamosAnexosAlternativaManagementServices.cs" />
+    <Compile Include="IServices\ITBLModuloReclamosAnexosComentarioRespuestaManagementServices.cs" />
+    <Compile Include="IServices\ITBLModuloReclamosAnexosSolucionManagementServices.cs" />
+    <Compile Include="IServices\ITBLModuloReclamosAsesoresManagementServices.cs" />
+    <Compile Include="IServices\ITBLModuloReclamosCategoriaProductoManagementServices.cs" />
+    <Compile Include="IServices\ITBLModuloReclamosCategoriasReclamoManagementServices.cs" />
+    <Compile Include="IServices\ITBLModuloReclamosComentariosRespuestaManagementServices.cs" />
+    <Compile Include="IServices\ITBLModuloReclamosCostosProductoManagementServices.cs" />
+    <Compile Include="IServices\ITBLModuloReclamosReclamoManagementServices.cs" />
+    <Compile Include="IServices\ITBLModuloReclamosSolucionesManagementServices.cs" />
+    <Compile Include="IServices\ITBLModuloReclamosTipoReclamoManagementServices.cs" />
+    <Compile Include="IServices\ITBLModuloReclamosUnidadesZonasManagementServices.cs" />
+    <Compile Include="IServices\ITBLModuloReclamosUnidadManagementServices.cs" />
+    <Compile Include="IServices\ITBLModuloReclamosZonaManagementServices.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\TBLModuloReclamosActividadesManagementServices.cs" />
+    <Compile Include="Services\TBLModuloReclamosActividadesReclamoManagementServices.cs" />
+    <Compile Include="Services\TBLModuloReclamosAlternativasManagementServices.cs" />
+    <Compile Include="Services\TBLModuloReclamosAnexosActividadManagementServices.cs" />
+    <Compile Include="Services\TBLModuloReclamosAnexosAlternativaManagementServices.cs" />
+    <Compile Include="Services\TBLModuloReclamosAnexosComentarioRespuestaManagementServices.cs" />
+    <Compile Include="Services\TBLModuloReclamosAnexosSolucionManagementServices.cs" />
+    <Compile Include="Services\TBLModuloReclamosAsesoresManagementServices.cs" />
+    <Compile Include="Services\TBLModuloReclamosCategoriaProductoManagementServices.cs" />
+    <Compile Include="Services\TBLModuloReclamosCategoriasReclamoManagementServices.cs" />
+    <Compile Include="Services\TBLModuloReclamosComentariosRespuestaManagementServices.cs" />
+    <Compile Include="Services\TBLModuloReclamosCostosProductoManagementServices.cs" />
+    <Compile Include="Services\TBLModuloReclamosReclamoManagementServices.cs" />
+    <Compile Include="Services\TBLModuloReclamosSolucionesManagementServices.cs" />
+    <Compile Include="Services\TBLModuloReclamosTipoReclamoManagementServices.cs" />
+    <Compile Include="Services\TBLModuloReclamosUnidadesZonasManagementServices.cs" />
+    <Compile Include="Services\TBLModuloReclamosUnidadManagementServices.cs" />
+    <Compile Include="Services\TBLModuloReclamosZonaManagementServices.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Messages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Domain.Core.Entities\Domain.Core.Entities.csproj">
+      <Project>{A1708898-8F15-4D62-99E0-293334E740C2}</Project>
+      <Name>Domain.Core.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.Core\Domain.Core.csproj">
+      <Project>{94FCB1C4-2C52-4D9D-A07B-F01AC38CF88E}</Project>
+      <Name>Domain.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.MainModule.Reclamos\Domain.MainModule.Reclamos.csproj">
+      <Project>{50D7DFA7-2314-41D2-A9BF-9630ADA55B98}</Project>
+      <Name>Domain.MainModule.Reclamos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.MainModules.Entities\Domain.MainModules.Entities.csproj">
+      <Project>{6FA9FF63-4F79-4A9F-882C-7A7AE27C7332}</Project>
+      <Name>Domain.MainModules.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

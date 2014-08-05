@@ -316,11 +316,41 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
         }
         private ObjectSet<TBL_ModuloDocumentos_Categorias> _tBL_ModuloDocumentos_Categorias;
     
+        public IObjectSet<TBL_ModuloDocumentos_Documento> TBL_ModuloDocumentos_Documento
+        {
+            get { return _tBL_ModuloDocumentos_Documento  ?? (_tBL_ModuloDocumentos_Documento = CreateObjectSet<TBL_ModuloDocumentos_Documento>("TBL_ModuloDocumentos_Documento")); }
+        }
+        private ObjectSet<TBL_ModuloDocumentos_Documento> _tBL_ModuloDocumentos_Documento;
+    
+        public IObjectSet<TBL_ModuloDocumentos_DocumentoAdjunto> TBL_ModuloDocumentos_DocumentoAdjunto
+        {
+            get { return _tBL_ModuloDocumentos_DocumentoAdjunto  ?? (_tBL_ModuloDocumentos_DocumentoAdjunto = CreateObjectSet<TBL_ModuloDocumentos_DocumentoAdjunto>("TBL_ModuloDocumentos_DocumentoAdjunto")); }
+        }
+        private ObjectSet<TBL_ModuloDocumentos_DocumentoAdjunto> _tBL_ModuloDocumentos_DocumentoAdjunto;
+    
+        public IObjectSet<TBL_ModuloDocumentos_DocumentoAdjuntoHistorial> TBL_ModuloDocumentos_DocumentoAdjuntoHistorial
+        {
+            get { return _tBL_ModuloDocumentos_DocumentoAdjuntoHistorial  ?? (_tBL_ModuloDocumentos_DocumentoAdjuntoHistorial = CreateObjectSet<TBL_ModuloDocumentos_DocumentoAdjuntoHistorial>("TBL_ModuloDocumentos_DocumentoAdjuntoHistorial")); }
+        }
+        private ObjectSet<TBL_ModuloDocumentos_DocumentoAdjuntoHistorial> _tBL_ModuloDocumentos_DocumentoAdjuntoHistorial;
+    
         public IObjectSet<TBL_ModuloDocumentos_Estados> TBL_ModuloDocumentos_Estados
         {
             get { return _tBL_ModuloDocumentos_Estados  ?? (_tBL_ModuloDocumentos_Estados = CreateObjectSet<TBL_ModuloDocumentos_Estados>("TBL_ModuloDocumentos_Estados")); }
         }
         private ObjectSet<TBL_ModuloDocumentos_Estados> _tBL_ModuloDocumentos_Estados;
+    
+        public IObjectSet<TBL_ModuloDocumentos_HistorialDocumento> TBL_ModuloDocumentos_HistorialDocumento
+        {
+            get { return _tBL_ModuloDocumentos_HistorialDocumento  ?? (_tBL_ModuloDocumentos_HistorialDocumento = CreateObjectSet<TBL_ModuloDocumentos_HistorialDocumento>("TBL_ModuloDocumentos_HistorialDocumento")); }
+        }
+        private ObjectSet<TBL_ModuloDocumentos_HistorialDocumento> _tBL_ModuloDocumentos_HistorialDocumento;
+    
+        public IObjectSet<TBL_ModuloDocumentos_LogCambios> TBL_ModuloDocumentos_LogCambios
+        {
+            get { return _tBL_ModuloDocumentos_LogCambios  ?? (_tBL_ModuloDocumentos_LogCambios = CreateObjectSet<TBL_ModuloDocumentos_LogCambios>("TBL_ModuloDocumentos_LogCambios")); }
+        }
+        private ObjectSet<TBL_ModuloDocumentos_LogCambios> _tBL_ModuloDocumentos_LogCambios;
     
         public IObjectSet<TBL_ModuloPlanAccion_BancoActividades> TBL_ModuloPlanAccion_BancoActividades
         {
@@ -340,6 +370,114 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
         }
         private ObjectSet<TBL_ModuloPlanAccion_ConfiguracionActividades> _tBL_ModuloPlanAccion_ConfiguracionActividades;
     
+        public IObjectSet<TBL_ModuloReclamos_Actividades> TBL_ModuloReclamos_Actividades
+        {
+            get { return _tBL_ModuloReclamos_Actividades  ?? (_tBL_ModuloReclamos_Actividades = CreateObjectSet<TBL_ModuloReclamos_Actividades>("TBL_ModuloReclamos_Actividades")); }
+        }
+        private ObjectSet<TBL_ModuloReclamos_Actividades> _tBL_ModuloReclamos_Actividades;
+    
+        public IObjectSet<TBL_ModuloReclamos_ActividadesReclamo> TBL_ModuloReclamos_ActividadesReclamo
+        {
+            get { return _tBL_ModuloReclamos_ActividadesReclamo  ?? (_tBL_ModuloReclamos_ActividadesReclamo = CreateObjectSet<TBL_ModuloReclamos_ActividadesReclamo>("TBL_ModuloReclamos_ActividadesReclamo")); }
+        }
+        private ObjectSet<TBL_ModuloReclamos_ActividadesReclamo> _tBL_ModuloReclamos_ActividadesReclamo;
+    
+        public IObjectSet<TBL_ModuloReclamos_Alternativas> TBL_ModuloReclamos_Alternativas
+        {
+            get { return _tBL_ModuloReclamos_Alternativas  ?? (_tBL_ModuloReclamos_Alternativas = CreateObjectSet<TBL_ModuloReclamos_Alternativas>("TBL_ModuloReclamos_Alternativas")); }
+        }
+        private ObjectSet<TBL_ModuloReclamos_Alternativas> _tBL_ModuloReclamos_Alternativas;
+    
+        public IObjectSet<TBL_ModuloReclamos_AnexosActividad> TBL_ModuloReclamos_AnexosActividad
+        {
+            get { return _tBL_ModuloReclamos_AnexosActividad  ?? (_tBL_ModuloReclamos_AnexosActividad = CreateObjectSet<TBL_ModuloReclamos_AnexosActividad>("TBL_ModuloReclamos_AnexosActividad")); }
+        }
+        private ObjectSet<TBL_ModuloReclamos_AnexosActividad> _tBL_ModuloReclamos_AnexosActividad;
+    
+        public IObjectSet<TBL_ModuloReclamos_AnexosAlternativa> TBL_ModuloReclamos_AnexosAlternativa
+        {
+            get { return _tBL_ModuloReclamos_AnexosAlternativa  ?? (_tBL_ModuloReclamos_AnexosAlternativa = CreateObjectSet<TBL_ModuloReclamos_AnexosAlternativa>("TBL_ModuloReclamos_AnexosAlternativa")); }
+        }
+        private ObjectSet<TBL_ModuloReclamos_AnexosAlternativa> _tBL_ModuloReclamos_AnexosAlternativa;
+    
+        public IObjectSet<TBL_ModuloReclamos_AnexosComentarioRespuesta> TBL_ModuloReclamos_AnexosComentarioRespuesta
+        {
+            get { return _tBL_ModuloReclamos_AnexosComentarioRespuesta  ?? (_tBL_ModuloReclamos_AnexosComentarioRespuesta = CreateObjectSet<TBL_ModuloReclamos_AnexosComentarioRespuesta>("TBL_ModuloReclamos_AnexosComentarioRespuesta")); }
+        }
+        private ObjectSet<TBL_ModuloReclamos_AnexosComentarioRespuesta> _tBL_ModuloReclamos_AnexosComentarioRespuesta;
+    
+        public IObjectSet<TBL_ModuloReclamos_AnexosSolucion> TBL_ModuloReclamos_AnexosSolucion
+        {
+            get { return _tBL_ModuloReclamos_AnexosSolucion  ?? (_tBL_ModuloReclamos_AnexosSolucion = CreateObjectSet<TBL_ModuloReclamos_AnexosSolucion>("TBL_ModuloReclamos_AnexosSolucion")); }
+        }
+        private ObjectSet<TBL_ModuloReclamos_AnexosSolucion> _tBL_ModuloReclamos_AnexosSolucion;
+    
+        public IObjectSet<TBL_ModuloReclamos_Asesores> TBL_ModuloReclamos_Asesores
+        {
+            get { return _tBL_ModuloReclamos_Asesores  ?? (_tBL_ModuloReclamos_Asesores = CreateObjectSet<TBL_ModuloReclamos_Asesores>("TBL_ModuloReclamos_Asesores")); }
+        }
+        private ObjectSet<TBL_ModuloReclamos_Asesores> _tBL_ModuloReclamos_Asesores;
+    
+        public IObjectSet<TBL_ModuloReclamos_CategoriaProducto> TBL_ModuloReclamos_CategoriaProducto
+        {
+            get { return _tBL_ModuloReclamos_CategoriaProducto  ?? (_tBL_ModuloReclamos_CategoriaProducto = CreateObjectSet<TBL_ModuloReclamos_CategoriaProducto>("TBL_ModuloReclamos_CategoriaProducto")); }
+        }
+        private ObjectSet<TBL_ModuloReclamos_CategoriaProducto> _tBL_ModuloReclamos_CategoriaProducto;
+    
+        public IObjectSet<TBL_ModuloReclamos_CategoriasReclamo> TBL_ModuloReclamos_CategoriasReclamo
+        {
+            get { return _tBL_ModuloReclamos_CategoriasReclamo  ?? (_tBL_ModuloReclamos_CategoriasReclamo = CreateObjectSet<TBL_ModuloReclamos_CategoriasReclamo>("TBL_ModuloReclamos_CategoriasReclamo")); }
+        }
+        private ObjectSet<TBL_ModuloReclamos_CategoriasReclamo> _tBL_ModuloReclamos_CategoriasReclamo;
+    
+        public IObjectSet<TBL_ModuloReclamos_ComentariosRespuesta> TBL_ModuloReclamos_ComentariosRespuesta
+        {
+            get { return _tBL_ModuloReclamos_ComentariosRespuesta  ?? (_tBL_ModuloReclamos_ComentariosRespuesta = CreateObjectSet<TBL_ModuloReclamos_ComentariosRespuesta>("TBL_ModuloReclamos_ComentariosRespuesta")); }
+        }
+        private ObjectSet<TBL_ModuloReclamos_ComentariosRespuesta> _tBL_ModuloReclamos_ComentariosRespuesta;
+    
+        public IObjectSet<TBL_ModuloReclamos_CostosProducto> TBL_ModuloReclamos_CostosProducto
+        {
+            get { return _tBL_ModuloReclamos_CostosProducto  ?? (_tBL_ModuloReclamos_CostosProducto = CreateObjectSet<TBL_ModuloReclamos_CostosProducto>("TBL_ModuloReclamos_CostosProducto")); }
+        }
+        private ObjectSet<TBL_ModuloReclamos_CostosProducto> _tBL_ModuloReclamos_CostosProducto;
+    
+        public IObjectSet<TBL_ModuloReclamos_Reclamo> TBL_ModuloReclamos_Reclamo
+        {
+            get { return _tBL_ModuloReclamos_Reclamo  ?? (_tBL_ModuloReclamos_Reclamo = CreateObjectSet<TBL_ModuloReclamos_Reclamo>("TBL_ModuloReclamos_Reclamo")); }
+        }
+        private ObjectSet<TBL_ModuloReclamos_Reclamo> _tBL_ModuloReclamos_Reclamo;
+    
+        public IObjectSet<TBL_ModuloReclamos_Soluciones> TBL_ModuloReclamos_Soluciones
+        {
+            get { return _tBL_ModuloReclamos_Soluciones  ?? (_tBL_ModuloReclamos_Soluciones = CreateObjectSet<TBL_ModuloReclamos_Soluciones>("TBL_ModuloReclamos_Soluciones")); }
+        }
+        private ObjectSet<TBL_ModuloReclamos_Soluciones> _tBL_ModuloReclamos_Soluciones;
+    
+        public IObjectSet<TBL_ModuloReclamos_TipoReclamo> TBL_ModuloReclamos_TipoReclamo
+        {
+            get { return _tBL_ModuloReclamos_TipoReclamo  ?? (_tBL_ModuloReclamos_TipoReclamo = CreateObjectSet<TBL_ModuloReclamos_TipoReclamo>("TBL_ModuloReclamos_TipoReclamo")); }
+        }
+        private ObjectSet<TBL_ModuloReclamos_TipoReclamo> _tBL_ModuloReclamos_TipoReclamo;
+    
+        public IObjectSet<TBL_ModuloReclamos_Unidad> TBL_ModuloReclamos_Unidad
+        {
+            get { return _tBL_ModuloReclamos_Unidad  ?? (_tBL_ModuloReclamos_Unidad = CreateObjectSet<TBL_ModuloReclamos_Unidad>("TBL_ModuloReclamos_Unidad")); }
+        }
+        private ObjectSet<TBL_ModuloReclamos_Unidad> _tBL_ModuloReclamos_Unidad;
+    
+        public IObjectSet<TBL_ModuloReclamos_UnidadesZonas> TBL_ModuloReclamos_UnidadesZonas
+        {
+            get { return _tBL_ModuloReclamos_UnidadesZonas  ?? (_tBL_ModuloReclamos_UnidadesZonas = CreateObjectSet<TBL_ModuloReclamos_UnidadesZonas>("TBL_ModuloReclamos_UnidadesZonas")); }
+        }
+        private ObjectSet<TBL_ModuloReclamos_UnidadesZonas> _tBL_ModuloReclamos_UnidadesZonas;
+    
+        public IObjectSet<TBL_ModuloReclamos_Zona> TBL_ModuloReclamos_Zona
+        {
+            get { return _tBL_ModuloReclamos_Zona  ?? (_tBL_ModuloReclamos_Zona = CreateObjectSet<TBL_ModuloReclamos_Zona>("TBL_ModuloReclamos_Zona")); }
+        }
+        private ObjectSet<TBL_ModuloReclamos_Zona> _tBL_ModuloReclamos_Zona;
+    
         public IObjectSet<TBL_ModuloWorkFlow_CamposValidacion> TBL_ModuloWorkFlow_CamposValidacion
         {
             get { return _tBL_ModuloWorkFlow_CamposValidacion  ?? (_tBL_ModuloWorkFlow_CamposValidacion = CreateObjectSet<TBL_ModuloWorkFlow_CamposValidacion>("TBL_ModuloWorkFlow_CamposValidacion")); }
@@ -357,24 +495,6 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
             get { return _tBL_ModuloWorkFlow_ValidacionesSalida  ?? (_tBL_ModuloWorkFlow_ValidacionesSalida = CreateObjectSet<TBL_ModuloWorkFlow_ValidacionesSalida>("TBL_ModuloWorkFlow_ValidacionesSalida")); }
         }
         private ObjectSet<TBL_ModuloWorkFlow_ValidacionesSalida> _tBL_ModuloWorkFlow_ValidacionesSalida;
-    
-        public IObjectSet<TBL_ModuloDocumentos_Documento> TBL_ModuloDocumentos_Documento
-        {
-            get { return _tBL_ModuloDocumentos_Documento  ?? (_tBL_ModuloDocumentos_Documento = CreateObjectSet<TBL_ModuloDocumentos_Documento>("TBL_ModuloDocumentos_Documento")); }
-        }
-        private ObjectSet<TBL_ModuloDocumentos_Documento> _tBL_ModuloDocumentos_Documento;
-    
-        public IObjectSet<TBL_ModuloDocumentos_HistorialDocumento> TBL_ModuloDocumentos_HistorialDocumento
-        {
-            get { return _tBL_ModuloDocumentos_HistorialDocumento  ?? (_tBL_ModuloDocumentos_HistorialDocumento = CreateObjectSet<TBL_ModuloDocumentos_HistorialDocumento>("TBL_ModuloDocumentos_HistorialDocumento")); }
-        }
-        private ObjectSet<TBL_ModuloDocumentos_HistorialDocumento> _tBL_ModuloDocumentos_HistorialDocumento;
-    
-        public IObjectSet<TBL_ModuloDocumentos_LogCambios> TBL_ModuloDocumentos_LogCambios
-        {
-            get { return _tBL_ModuloDocumentos_LogCambios  ?? (_tBL_ModuloDocumentos_LogCambios = CreateObjectSet<TBL_ModuloDocumentos_LogCambios>("TBL_ModuloDocumentos_LogCambios")); }
-        }
-        private ObjectSet<TBL_ModuloDocumentos_LogCambios> _tBL_ModuloDocumentos_LogCambios;
 
         #endregion
     }

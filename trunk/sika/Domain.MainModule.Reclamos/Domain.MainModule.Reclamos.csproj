@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{50D7DFA7-2314-41D2-A9BF-9630ADA55B98}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Domain.MainModule.Reclamos</RootNamespace>
+    <AssemblyName>Domain.MainModule.Reclamos</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contracts\ITBL_ModuloReclamos_ActividadesReclamoRepository.cs" />
+    <Compile Include="Contracts\ITBL_ModuloReclamos_ActividadesRepository.cs" />
+    <Compile Include="Contracts\ITBL_ModuloReclamos_AlternativasRepository.cs" />
+    <Compile Include="Contracts\ITBL_ModuloReclamos_AnexosActividadRepository.cs" />
+    <Compile Include="Contracts\ITBL_ModuloReclamos_AnexosAlternativaRepository.cs" />
+    <Compile Include="Contracts\ITBL_ModuloReclamos_AnexosComentarioRespuestaRepository.cs" />
+    <Compile Include="Contracts\ITBL_ModuloReclamos_AnexosSolucionRepository.cs" />
+    <Compile Include="Contracts\ITBL_ModuloReclamos_AsesoresRepository.cs" />
+    <Compile Include="Contracts\ITBL_ModuloReclamos_CategoriaProductoRepository.cs" />
+    <Compile Include="Contracts\ITBL_ModuloReclamos_CategoriasReclamoRepository.cs" />
+    <Compile Include="Contracts\ITBL_ModuloReclamos_ComentariosRespuestaRepository.cs" />
+    <Compile Include="Contracts\ITBL_ModuloReclamos_CostosProductoRepository.cs" />
+    <Compile Include="Contracts\ITBL_ModuloReclamos_ReclamoRepository.cs" />
+    <Compile Include="Contracts\ITBL_ModuloReclamos_SolucionesRepository.cs" />
+    <Compile Include="Contracts\ITBL_ModuloReclamos_TipoReclamoRepository.cs" />
+    <Compile Include="Contracts\ITBL_ModuloReclamos_UnidadesZonasRepository.cs" />
+    <Compile Include="Contracts\ITBL_ModuloReclamos_UnidadRepository.cs" />
+    <Compile Include="Contracts\ITBL_ModuloReclamos_ZonaRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain.Core.Entities\Domain.Core.Entities.csproj">
+      <Project>{A1708898-8F15-4D62-99E0-293334E740C2}</Project>
+      <Name>Domain.Core.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.Core\Domain.Core.csproj">
+      <Project>{94FCB1C4-2C52-4D9D-A07B-F01AC38CF88E}</Project>
+      <Name>Domain.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.MainModules.Entities\Domain.MainModules.Entities.csproj">
+      <Project>{6FA9FF63-4F79-4A9F-882C-7A7AE27C7332}</Project>
+      <Name>Domain.MainModules.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Spec\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

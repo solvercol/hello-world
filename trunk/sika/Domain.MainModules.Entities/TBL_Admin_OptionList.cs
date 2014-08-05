@@ -90,6 +90,21 @@ namespace Domain.MainModules.Entities
         private string _value;
     
         [DataMember]
+        public string Descripcion
+        {
+            get { return _descripcion; }
+            set
+            {
+                if (_descripcion != value)
+                {
+                    _descripcion = value;
+                    OnPropertyChanged("Descripcion");
+                }
+            }
+        }
+        private string _descripcion;
+    
+        [DataMember]
         public bool IsActive
         {
             get { return _isActive; }
