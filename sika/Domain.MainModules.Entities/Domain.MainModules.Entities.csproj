@@ -158,6 +158,60 @@
     <Compile Include="TBL_ModuloPlanAccion_ConfiguracionActividades.cs">
       <DependentUpon>MainModuleContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="TBL_ModuloReclamos_Actividades.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_ModuloReclamos_ActividadesReclamo.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_ModuloReclamos_Alternativas.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_ModuloReclamos_AnexosActividad.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_ModuloReclamos_AnexosAlternativa.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_ModuloReclamos_AnexosComentarioRespuesta.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_ModuloReclamos_AnexosSolucion.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_ModuloReclamos_Asesores.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_ModuloReclamos_CategoriaProducto.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_ModuloReclamos_CategoriasReclamo.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_ModuloReclamos_ComentariosRespuesta.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_ModuloReclamos_CostosProducto.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_ModuloReclamos_Reclamo.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_ModuloReclamos_Soluciones.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_ModuloReclamos_TipoReclamo.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_ModuloReclamos_Unidad.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_ModuloReclamos_UnidadesZonas.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_ModuloReclamos_Zona.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="TBL_ModuloWorkFlow_CamposValidacion.cs">
       <DependentUpon>MainModuleContext.tt</DependentUpon>
     </Compile>

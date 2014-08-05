@@ -93,7 +93,22 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
         IObjectSet<TBL_ModuloDocumentos_Categorias> TBL_ModuloDocumentos_Categorias{get;}
         
     
+        IObjectSet<TBL_ModuloDocumentos_Documento> TBL_ModuloDocumentos_Documento{get;}
+        
+    
+        IObjectSet<TBL_ModuloDocumentos_DocumentoAdjunto> TBL_ModuloDocumentos_DocumentoAdjunto{get;}
+        
+    
+        IObjectSet<TBL_ModuloDocumentos_DocumentoAdjuntoHistorial> TBL_ModuloDocumentos_DocumentoAdjuntoHistorial{get;}
+        
+    
         IObjectSet<TBL_ModuloDocumentos_Estados> TBL_ModuloDocumentos_Estados{get;}
+        
+    
+        IObjectSet<TBL_ModuloDocumentos_HistorialDocumento> TBL_ModuloDocumentos_HistorialDocumento{get;}
+        
+    
+        IObjectSet<TBL_ModuloDocumentos_LogCambios> TBL_ModuloDocumentos_LogCambios{get;}
         
     
         IObjectSet<TBL_ModuloPlanAccion_BancoActividades> TBL_ModuloPlanAccion_BancoActividades{get;}
@@ -105,6 +120,60 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
         IObjectSet<TBL_ModuloPlanAccion_ConfiguracionActividades> TBL_ModuloPlanAccion_ConfiguracionActividades{get;}
         
     
+        IObjectSet<TBL_ModuloReclamos_Actividades> TBL_ModuloReclamos_Actividades{get;}
+        
+    
+        IObjectSet<TBL_ModuloReclamos_ActividadesReclamo> TBL_ModuloReclamos_ActividadesReclamo{get;}
+        
+    
+        IObjectSet<TBL_ModuloReclamos_Alternativas> TBL_ModuloReclamos_Alternativas{get;}
+        
+    
+        IObjectSet<TBL_ModuloReclamos_AnexosActividad> TBL_ModuloReclamos_AnexosActividad{get;}
+        
+    
+        IObjectSet<TBL_ModuloReclamos_AnexosAlternativa> TBL_ModuloReclamos_AnexosAlternativa{get;}
+        
+    
+        IObjectSet<TBL_ModuloReclamos_AnexosComentarioRespuesta> TBL_ModuloReclamos_AnexosComentarioRespuesta{get;}
+        
+    
+        IObjectSet<TBL_ModuloReclamos_AnexosSolucion> TBL_ModuloReclamos_AnexosSolucion{get;}
+        
+    
+        IObjectSet<TBL_ModuloReclamos_Asesores> TBL_ModuloReclamos_Asesores{get;}
+        
+    
+        IObjectSet<TBL_ModuloReclamos_CategoriaProducto> TBL_ModuloReclamos_CategoriaProducto{get;}
+        
+    
+        IObjectSet<TBL_ModuloReclamos_CategoriasReclamo> TBL_ModuloReclamos_CategoriasReclamo{get;}
+        
+    
+        IObjectSet<TBL_ModuloReclamos_ComentariosRespuesta> TBL_ModuloReclamos_ComentariosRespuesta{get;}
+        
+    
+        IObjectSet<TBL_ModuloReclamos_CostosProducto> TBL_ModuloReclamos_CostosProducto{get;}
+        
+    
+        IObjectSet<TBL_ModuloReclamos_Reclamo> TBL_ModuloReclamos_Reclamo{get;}
+        
+    
+        IObjectSet<TBL_ModuloReclamos_Soluciones> TBL_ModuloReclamos_Soluciones{get;}
+        
+    
+        IObjectSet<TBL_ModuloReclamos_TipoReclamo> TBL_ModuloReclamos_TipoReclamo{get;}
+        
+    
+        IObjectSet<TBL_ModuloReclamos_Unidad> TBL_ModuloReclamos_Unidad{get;}
+        
+    
+        IObjectSet<TBL_ModuloReclamos_UnidadesZonas> TBL_ModuloReclamos_UnidadesZonas{get;}
+        
+    
+        IObjectSet<TBL_ModuloReclamos_Zona> TBL_ModuloReclamos_Zona{get;}
+        
+    
         IObjectSet<TBL_ModuloWorkFlow_CamposValidacion> TBL_ModuloWorkFlow_CamposValidacion{get;}
         
     
@@ -112,15 +181,6 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
         
     
         IObjectSet<TBL_ModuloWorkFlow_ValidacionesSalida> TBL_ModuloWorkFlow_ValidacionesSalida{get;}
-        
-    
-        IObjectSet<TBL_ModuloDocumentos_Documento> TBL_ModuloDocumentos_Documento{get;}
-        
-    
-        IObjectSet<TBL_ModuloDocumentos_HistorialDocumento> TBL_ModuloDocumentos_HistorialDocumento{get;}
-        
-    
-        IObjectSet<TBL_ModuloDocumentos_LogCambios> TBL_ModuloDocumentos_LogCambios{get;}
         
 
         #endregion
