@@ -53,6 +53,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IServices\ITBLModuloDocumentosCategoriasManagementServices.cs" />
+    <Compile Include="IServices\ITBLModuloDocumentosDocumentoAdjuntoHistorialManagementServices.cs" />
+    <Compile Include="IServices\ITBLModuloDocumentosDocumentoAdjuntoManagementServices.cs" />
     <Compile Include="IServices\ITBLModuloDocumentosDocumentoManagementServices.cs" />
     <Compile Include="IServices\ITBLModuloDocumentosEstadosManagementServices.cs" />
     <Compile Include="IServices\ITBLModuloDocumentosHistorialDocumentoManagementServices.cs" />
@@ -64,6 +66,8 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Services\TBLModuloDocumentosCategoriasManagementServices.cs" />
+    <Compile Include="Services\TBLModuloDocumentosDocumentoAdjuntoHistorialManagementServices.cs" />
+    <Compile Include="Services\TBLModuloDocumentosDocumentoAdjuntoManagementServices.cs" />
     <Compile Include="Services\TBLModuloDocumentosDocumentoManagementServices.cs" />
     <Compile Include="Services\TBLModuloDocumentosEstadosManagementServices.cs" />
     <Compile Include="Services\TBLModuloDocumentosHistorialDocumentoManagementServices.cs" />
