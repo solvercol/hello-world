@@ -12,12 +12,10 @@
 using Domain.MainModule.Documentos.Contracts;
 using Infraestructure.Data.Core;
 using Infrastructure.CrossCutting.Logging;
-using Domain.Core;
 using Domain.MainModules.Entities;
-using Domain.Core.Specification;
 using Infrastructure.Data.MainModule.UnitOfWork;
 
-namespace Infrastructure.Data.MainModule.Repositories
+namespace Infraestructura.Data.Documentos.Repositories
 {
     public class TBL_ModuloDocumentos_DocumentoAdjuntoHistorialRepository : GenericRepository<TBL_ModuloDocumentos_DocumentoAdjuntoHistorial>, ITBL_ModuloDocumentos_DocumentoAdjuntoHistorialRepository 
     {
