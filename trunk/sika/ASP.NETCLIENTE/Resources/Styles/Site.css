@@ -64,11 +64,11 @@ input, textarea, select, .group, fieldset
 label
 {
     display: inline-block;
-    float: left;
+    /*float: left;*/
     margin-right: 4px;
     padding: 6px;
     position: relative;
-    width: 164px;
+    /*width: 164px;*/
 }
 
 label[for*="chk"]
@@ -853,6 +853,7 @@ color:#333;
 visibility:visible;
 margin-bottom:2px;
 border-left:solid 1px #C0C0C0;
+padding: 2px;
 }
 
 table.tbl th {
@@ -927,6 +928,20 @@ table.tblBuscador .Separador15
     border-bottom: 2px solid #FBFF00;
     font-weight:bold;
     font-family:Tahoma, Verdana, Arial;
+}
+
+.SectionMainTitle
+{
+    border: 1px solid #CECECE;
+    color: #545A68;
+    background-color: #CECECE;
+	font-family: Tahoma, Verdana, Arial;
+	font-size: 12px;
+	font-weight: bolder;
+    padding: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+    text-align:center;
 }
 
 /**ESTILOS CALENDAR EXENDER **/

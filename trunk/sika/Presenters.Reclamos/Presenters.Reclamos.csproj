@@ -40,6 +40,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IViews\IAdminRecServicioT5View.cs" />
+    <Compile Include="IViews\IAdminRecServicioT4View.cs" />
+    <Compile Include="IViews\IAdminRecServicioT3View.cs" />
+    <Compile Include="IViews\IAddReclamoView.cs" />
+    <Compile Include="IViews\IAdminActividadesReclamoView.cs" />
+    <Compile Include="IViews\IAdminAlternativasReclamoView.cs" />
+    <Compile Include="IViews\IAdminComentariosRespuestaReclamoView.cs" />
+    <Compile Include="IViews\IAdminCostosReclamoView.cs" />
+    <Compile Include="IViews\IAdminReclamoProductoView.cs" />
+    <Compile Include="IViews\IAdminRecServicioT1View.cs" />
+    <Compile Include="IViews\IAdminRecServicioT2View.cs" />
+    <Compile Include="IViews\IAdminSolucionesReclamoView.cs" />
+    <Compile Include="IViews\IListaGeneralReclamosView.cs" />
+    <Compile Include="Presenters\AddReclamoPresenter.cs" />
+    <Compile Include="Presenters\AdminActividadesReclamoPresenter.cs" />
+    <Compile Include="Presenters\AdminAlternativasReclamoPresenter.cs" />
+    <Compile Include="Presenters\AdminComentariosRespuestaReclamoPresenter.cs" />
+    <Compile Include="Presenters\AdminCostosReclamoPresenter.cs" />
+    <Compile Include="Presenters\AdminReclamoProductoPresenter.cs" />
+    <Compile Include="Presenters\AdminRecServicioT1Presenter.cs" />
+    <Compile Include="Presenters\AdminRecServicioT2Presenter.cs" />
+    <Compile Include="Presenters\AdminRecServicioT3Presenter.cs" />
+    <Compile Include="Presenters\AdminRecServicioT4Presenter.cs" />
+    <Compile Include="Presenters\AdminRecServicioT5Presenter.cs" />
+    <Compile Include="Presenters\AdminSolucionesReclamoPresenter.cs" />
+    <Compile Include="Presenters\ListaGeneralReclamosPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -72,11 +98,11 @@
       <Name>Infrastructure.CrossCutting.NetFramework</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="IViews\" />
-    <Folder Include="Presenters\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /s /y "$(TargetDir)Presenters.Reclamos*.dll" "$(SolutionDir)"Web\bin\</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
