@@ -166,7 +166,7 @@
     <value>La fecha límite MultiOrden no puede ser mayor a la fecha: {0}</value>
   </data>
   <data name="SizeMaxFileError" xml:space="preserve">
-    <value>Superó el tamaño máximo permitido a cargar de un archivo ({0} Mega(s))</value>
+    <value>Superó el tamaño máximo permitido a cargar de un archivo ({0} MB)</value>
   </data>
   <data name="NotSelectFile" xml:space="preserve">
     <value>No ha seleccionado un archivo</value>
