@@ -15,8 +15,7 @@ namespace Application.MainModule.Documentos.IServices
 {
     public interface ISfTBL_ModuloDocumentos_HistorialDocumentoManagementServices : IGenericServices<TBL_ModuloDocumentos_HistorialDocumento>
     {
-     
-
+        TBL_ModuloDocumentos_HistorialDocumento GetHistorialByIdWithAttachments(int id);
     }
 }
     
