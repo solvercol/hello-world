@@ -16,17 +16,20 @@ namespace Presenters.Documentos.Presenters
     {
 
         private readonly ISfTBL_ModuloDocumentos_HistorialDocumentoManagementServices histDocumentoServices;
+        private readonly ISfTBL_ModuloDocumentos_DocumentoAdjuntoHistorialManagementServices docAdjuntoHistServices;
         private readonly ISfTBL_ModuloDocumentos_CategoriasManagementServices categoriasServices;
         private readonly ISfTBL_Admin_UsuariosManagementServices usuarioServices;
 
         public VerHistDocumentoPresenter
             (
                 ISfTBL_ModuloDocumentos_HistorialDocumentoManagementServices histDocumentoServices
+                ,ISfTBL_ModuloDocumentos_DocumentoAdjuntoHistorialManagementServices docAdjuntoHistServices
                 ,ISfTBL_ModuloDocumentos_CategoriasManagementServices categoriasManagementServices
                 ,ISfTBL_Admin_UsuariosManagementServices usuarioServices
             )
         {
             this.histDocumentoServices = histDocumentoServices;
+            this.docAdjuntoHistServices = docAdjuntoHistServices;
             this.categoriasServices = categoriasManagementServices;
             this.usuarioServices = usuarioServices;
         }
@@ -40,8 +43,9 @@ namespace Presenters.Documentos.Presenters
 
         void ViewDescargarArchivoEvent(object sender, EventArgs e)
         {
-            var documento = histDocumentoServices.FindById(View.IdHistDocumento);
-            View.DescargarArchivo(documento);
+            var idDocAdjuntoHist = (Int32)sender;
+            var adjunto = docAdjuntoHistServices.FindById(idDocAdjuntoHist);
+            View.DescargarArchivo(adjunto);
         }
 
         void ViewLoad(object sender, EventArgs e)
@@ -57,7 +61,7 @@ namespace Presenters.Documentos.Presenters
                 if(View.IdHistDocumento == 0)
                     return;
 
-                var oHistDocumento = histDocumentoServices.FindById(Convert.ToInt32(View.IdHistDocumento));
+                var oHistDocumento = histDocumentoServices.GetHistorialByIdWithAttachments(Convert.ToInt32(View.IdHistDocumento));
                 
                 if (oHistDocumento == null)
                 {
@@ -69,8 +73,6 @@ namespace Presenters.Documentos.Presenters
                 View.Version = oHistDocumento.Version;
                 View.IdDocumento = oHistDocumento.IdDocumento;
                 View.Observaciones = oHistDocumento.Observaciones;
-
-                //View.Archivo = oHistDocumento.Archivo;
 
                 if (oHistDocumento.TBL_ModuloDocumentos_Categorias == null)
                     oHistDocumento.TBL_ModuloDocumentos_Categorias = categoriasServices.FindById(oHistDocumento.IdCategoria);
@@ -84,6 +86,8 @@ namespace Presenters.Documentos.Presenters
 
                 View.UsuarioResponsable = usuarioServices.FindById(oHistDocumento.IdUsuarioResposable).Nombres;
                 View.Activo = oHistDocumento.IsActive;
+
+                View.Adjuntos(oHistDocumento.TBL_ModuloDocumentos_DocumentoAdjuntoHistorial);
             }
             catch (Exception ex)
             {

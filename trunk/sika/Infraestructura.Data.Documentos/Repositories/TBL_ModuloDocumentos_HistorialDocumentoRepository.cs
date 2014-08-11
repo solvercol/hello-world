@@ -9,11 +9,17 @@
 
 #pragma warning disable 1591 // this is for supress no xml comments in public members warnings 
 
+using System.Linq;
 using Domain.MainModule.Documentos.Contracts;
 using Infraestructure.Data.Core;
+using Infraestructure.Data.Core.Extensions;
 using Infrastructure.CrossCutting.Logging;
 using Domain.MainModules.Entities;
 using Infrastructure.Data.MainModule.UnitOfWork;
+using Domain.Core.Specification;
+using System;
+using System.Globalization;
+using Infraestructura.Data.Documentos.Resources;
 
 namespace Infraestructura.Data.Documentos.Repositories
 {
@@ -22,6 +28,29 @@ namespace Infraestructura.Data.Documentos.Repositories
         public TBL_ModuloDocumentos_HistorialDocumentoRepository(IMainModuleUnitOfWork unitOfWork, ITraceManager traceManager) : base(unitOfWork, traceManager)
         {
         }
+
+        public TBL_ModuloDocumentos_HistorialDocumento GetHistorialByIdWithAttachments(ISpecification<TBL_ModuloDocumentos_HistorialDocumento> specification)
+        {
+            //validate specification
+            if (specification == null)
+                throw new ArgumentNullException("specification");
+            var activeContext = UnitOfWork as IMainModuleUnitOfWork;
+            if (activeContext != null)
+            {
+                //perform operation in this repository
+                var specific = specification.SatisfiedBy();
+                return activeContext.TBL_ModuloDocumentos_HistorialDocumento
+                                    .Include(h => h.TBL_ModuloDocumentos_DocumentoAdjuntoHistorial)
+                                    .Where(specific)
+                                    .SingleOrDefault();
+            }
+            throw new InvalidOperationException(string.Format(
+                CultureInfo.InvariantCulture,
+                Messages.exception_InvalidStoreContext,
+                GetType().Name));
+
+        }  
+
     }
 }
     

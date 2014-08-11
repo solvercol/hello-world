@@ -30,14 +30,17 @@ namespace Modules.Documentos.Consulta
 
         protected void BtnRegresarClick(object sender, EventArgs e)
         {
-            string url = string.Format("~/pages/modules/documentos/Consulta/FrmVerDocumento.aspx?IdDocumento={0}", IdDocumento);
+            string url =
+                string.Format("~/pages/modules/documentos/Consulta/FrmVerDocumento.aspx?ModuleId={0}&IdDocumento={1}",
+                              ModuleId, IdDocumento);
             Response.Redirect(url);
         }
 
-        protected void LnkBtnDescargar_Click(object sender, EventArgs e)
+        protected void lnkBtnArchivo_Click(object sender, EventArgs e)
         {
+            LinkButton lnkBtnArchivo = (LinkButton)sender;
             if (DescargarArchivoEvent != null)
-                DescargarArchivoEvent(null, EventArgs.Empty);
+                DescargarArchivoEvent(Convert.ToInt32(lnkBtnArchivo.CommandArgument), EventArgs.Empty);
         }
 
         #endregion
@@ -98,13 +101,13 @@ namespace Modules.Documentos.Consulta
             }
         }
 
-        public byte[] Archivo
-        {
-            set
-            {
-                LnkBtnDescargar.Visible = (value.Length > 0);
-            }
-        }
+        //public byte[] Archivo
+        //{
+        //    set
+        //    {
+        //        LnkBtnDescargar.Visible = (value.Length > 0);
+        //    }
+        //}
 
         public string Categoria
         {
@@ -148,11 +151,18 @@ namespace Modules.Documentos.Consulta
 
         #region Métodos
 
-        public void DescargarArchivo(TBL_ModuloDocumentos_HistorialDocumento documento)
+        public void DescargarArchivo(TBL_ModuloDocumentos_DocumentoAdjuntoHistorial adjunto)
         {
-            //ViewPage<EditarDocumentoPresenter, IEditarDocumentoView>
-            //    .DownloadDocument(documento.Archivo, documento.NombreArchivo, "application/octet-stream");
+            ViewPage<EditarDocumentoPresenter, IEditarDocumentoView>
+                .DownloadDocument(adjunto.Archivo, adjunto.NombreArchivo, "application/octet-stream");
         }
+
+        public void Adjuntos(IEnumerable<TBL_ModuloDocumentos_DocumentoAdjuntoHistorial> adjuntos)
+        {
+            GrdViewArchivos.DataSource = adjuntos;
+            GrdViewArchivos.DataBind();
+        }
+
 
         #endregion
 

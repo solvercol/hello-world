@@ -132,7 +132,7 @@ namespace Modules.Documentos.Consulta
                     }
 
                     tNodeDoc = new TreeNode(documento.Titulo, documento.IdDocumento.ToString());
-                    tNodeDoc.NavigateUrl = string.Format("~/pages/modules/documentos/Consulta/FrmVerDocumento.aspx?IdDocumento={0}", documento.IdDocumento);
+                    tNodeDoc.NavigateUrl = string.Format("~/pages/modules/documentos/Consulta/FrmVerDocumento.aspx?ModuleId={0}&IdDocumento={1}", ModuleId, documento.IdDocumento);
                     tNodeTipoDoc.ChildNodes.Add(tNodeDoc);
 
                     idCatAnt = documento.IdCategoria;

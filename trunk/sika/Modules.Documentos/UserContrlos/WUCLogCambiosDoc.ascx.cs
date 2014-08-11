@@ -34,7 +34,10 @@ namespace Modules.Documentos.UserContrlos
             var HyprLnkVerHistDoc = e.Item.FindControl("HyprLnkVerHistDoc") as HyperLink;
             if (HyprLnkVerHistDoc == null) return;
             if (log.IdHistorial != null)
-                HyprLnkVerHistDoc.NavigateUrl = string.Format("~/pages/modules/documentos/Consulta/FrmVerHistDocumento.aspx?IdHistDocumento={0}", log.IdHistorial);
+                HyprLnkVerHistDoc.NavigateUrl =
+                    string.Format(
+                        "~/pages/modules/documentos/Consulta/FrmVerHistDocumento.aspx?ModuleId={0}&IdHistDocumento={1}",
+                        ModuleId, log.IdHistorial);
             else
                 HyprLnkVerHistDoc.Visible = false;
         }

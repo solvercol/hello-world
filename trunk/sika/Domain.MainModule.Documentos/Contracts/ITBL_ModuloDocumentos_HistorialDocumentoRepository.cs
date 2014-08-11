@@ -11,12 +11,14 @@
 
 using Domain.Core;
 using Domain.MainModules.Entities;
+using Domain.Core.Specification;
 
 namespace Domain.MainModule.Documentos.Contracts
 {
     public interface ITBL_ModuloDocumentos_HistorialDocumentoRepository : IRepository<TBL_ModuloDocumentos_HistorialDocumento>
     {
-        
+        TBL_ModuloDocumentos_HistorialDocumento GetHistorialByIdWithAttachments(
+            ISpecification<TBL_ModuloDocumentos_HistorialDocumento> specification);
     }
 }
     

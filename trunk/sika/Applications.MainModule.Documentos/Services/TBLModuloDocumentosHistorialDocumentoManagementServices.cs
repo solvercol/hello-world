@@ -101,17 +101,13 @@ namespace Application.MainModule.Documentos.Services
            
          }
 
-		 /*
-         public TBL_ModuloDocumentos_HistorialDocumento FindById(string id)
+         public TBL_ModuloDocumentos_HistorialDocumento GetHistorialByIdWithAttachments(int id)
          {
-             if (string.IsNullOrEmpty(id))
+             if (id == 0)
                  throw new ArgumentNullException(string.Format("Busqueda por Id : El parametro es nulo."));
-
-              Specification<TBL_ModuloDocumentos_HistorialDocumento> specification = new DirectSpecification<TBL_ModuloDocumentos_HistorialDocumento>(u => u.Code == id);
-
-            return _TBLModuloDocumentosHistorialDocumentoRepository.GetEntityBySpec(specification);
+             Specification<TBL_ModuloDocumentos_HistorialDocumento> specification = new DirectSpecification<TBL_ModuloDocumentos_HistorialDocumento>(h => h.IdHistorial == id && h.IsActive);
+             return _tblModuloDocumentosHistorialDocumentoRepository.GetHistorialByIdWithAttachments(specification);
          }
-		 */
 
 		
 
