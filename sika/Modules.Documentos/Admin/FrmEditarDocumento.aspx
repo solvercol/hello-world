@@ -69,11 +69,11 @@
                 <td class="validator" style="width:1%">
                     *
                 </td>
-                <th>
-                    Título del Documento:
+                <th style="width:15%;text-align:left">
+                    Título del Doc.:
                 </th>
                 <td class="Separador"></td>
-                <td style="width:90%" >
+                <td style="width:35%">
                    <asp:TextBox ID="txtTitulo" runat="server" Width="250px" CssClass="TextUpperCase" MaxLength="512"></asp:TextBox>
                    <asp:RequiredFieldValidator 
                         ID="rfvTxtTitulo" 
@@ -86,17 +86,43 @@
                         Display="Dynamic">
                    </asp:RequiredFieldValidator>
                 </td>
+                <td rowspan="8" style="width:49%;vertical-align:top">
+                    <%--Grilla de documentos--%>
+                    <asp:Panel ID="PnlContenedorArchivos" runat="server" BorderWidth="1px" Width="100%" Height="230px" ScrollBars="Vertical">
+                        <asp:GridView ID="GrdViewArchivos" runat="server" Width="90%" AutoGenerateColumns="False">
+                            <Columns>
+                                <asp:TemplateField HeaderText="Archivo" HeaderStyle-HorizontalAlign="Center">
+                                    <ItemTemplate>
+                                        <asp:LinkButton ID="lnkBtnArchivo" runat="server" Width="350px" 
+                                            CommandArgument='<%# Eval("IdDocumentoAdjunto") %>' 
+                                            Text='<%# Eval("NombreArchivo") %>' onclick="lnkBtnArchivo_Click"></asp:LinkButton>
+                                    </ItemTemplate>
+                                    <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderStyle-HorizontalAlign="Center">
+                                    <ItemTemplate>                                        
+                                        <asp:ImageButton ID="ImgBtnEliminar" runat="server" ImageUrl="~/Resources/Images/Close.png" 
+                                            CommandArgument='<%# Eval("IdDocumentoAdjunto") %>' 
+                                            OnClientClick="return confirm('¿Confirma que desea eliminar el archivo?');" 
+                                            onclick="ImgBtnEliminar_Click"/>                                        
+                                    </ItemTemplate>
+                                    <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                </asp:TemplateField>
+                            </Columns>
+                        </asp:GridView>
+                    </asp:Panel>
+                </td>
              </tr>
              <!--Categoría-->
              <tr>
                 <td class="validator" style="width:1%">
                     *
                 </td>
-                <th>
+                <th style="width:15%;text-align:left">
                     Categoría:
                 </th>
                 <td class="Separador"></td>
-                <td style="width:90%;">
+                <td style="width:35%;">
                    <asp:TextBox ID="txtCategoria" runat="server" Width="250px" 
                        CssClass="TextUpperCase" MaxLength="512"></asp:TextBox>
                    <asp:AutoCompleteExtender ID="txtCategoria_AutoCompleteExtender"                         
@@ -119,17 +145,18 @@
                         Display="Dynamic">
                    </asp:RequiredFieldValidator>
                 </td>
+                <td style="width:49%"></td>
              </tr>
              <!--Sub Categoría-->
              <tr>
                 <td class="validator" style="width:1%">
                     *
                 </td>
-                <th>
+                <th style="width:15%;text-align:left">
                     Sub Categoría:
                 </th>
                 <td class="Separador"></td>
-                <td style="width:90%">
+                <td style="width:35%">
                    <asp:TextBox ID="txtSubCategoria" runat="server" Width="250px" 
                        CssClass="TextUpperCase" MaxLength="512"></asp:TextBox>                    
                    <asp:AutoCompleteExtender ID="txtSubCategoria_AutoCompleteExtender" 
@@ -153,17 +180,18 @@
                         Display="Dynamic">
                    </asp:RequiredFieldValidator>
                 </td>
+                <td style="width:49%"></td>
              </tr>
              <!--Tipo de Documento-->
              <tr>
                 <td class="validator" style="width:1%">
                     *
                 </td>
-                <th>
+                <th style="width:15%;text-align:left">
                     Tipo de Documento:
                 </th>
                 <td class="Separador"></td>
-                <td style="width:90%">
+                <td style="width:35%">
                    <asp:TextBox ID="txtTipoDocumento" runat="server" Width="250px" 
                        CssClass="TextUpperCase" MaxLength="512"></asp:TextBox>                    
                    <asp:AutoCompleteExtender ID="txtTipoDocumento_AutoCompleteExtender" 
@@ -187,17 +215,18 @@
                         Display="Dynamic">
                    </asp:RequiredFieldValidator>
                 </td>
+                <td style="width:49%"></td>
              </tr>
              <!--Responsable del documento-->
              <tr>
                 <td class="validator" style="width:1%">
                     *
                 </td>
-                <th>
+                <th style="width:15%;text-align:left">
                     Responsable del Doc.:
                 </th>
                 <td class="Separador"></td>
-                <td style="width:90%" >
+                <td style="width:35%" >
                    <asp:DropDownList ID="ddlResponsableDoc" runat="server" Width="250px"></asp:DropDownList>
                    <asp:RequiredFieldValidator 
                         ID="rfvDdlResponsableDoc" 
@@ -210,31 +239,32 @@
                         Display="Dynamic">
                    </asp:RequiredFieldValidator>
                 </td>
+                <td style="width:49%"></td>
            </tr>
              <!--Archivo-->
              <tr>
                 <td class="validator" style="width:1%">
                     *
                 </td>
-                <th>
+                <th style="width:15%;text-align:left">
                     Contenido:
                 </th>
                 <td class="Separador"></td>
-                <td style="width:90%" >
-                    <asp:LinkButton ID="LnkBtnDescargar" runat="server" Font-Names="Arial" Font-Size="Smaller" CausesValidation="false" OnClick="LnkBtnDescargar_Click" Visible="False">Descargar Archivo</asp:LinkButton>
+                <td style="width:35%" >
                    <asp:FileUpload ID="FileUploadArchivo" runat="server" CausesValidation="False" />
                 </td>
+                <td style="width:49%"></td>
            </tr>
              <!--Observaciones-->
              <tr>
                 <td class="validator" style="width:1%">
                     *
                 </td>
-                <th>
+                <th style="width:15%;text-align:left">
                     Observaciones:
                 </th>
                 <td class="Separador"></td>
-                <td style="width:90%" >
+                <td style="width:35%">
                    <asp:TextBox ID="txtObservaciones" Rows="3" runat="server" Width="250px" CssClass="TextUpperCase" MaxLength="512"></asp:TextBox>
                    <asp:RequiredFieldValidator 
                         ID="rfvTxtObservaciones" 
@@ -247,20 +277,21 @@
                         Display="Dynamic">
                    </asp:RequiredFieldValidator>
                 </td>
+                <td style="width:49%"></td>
            </tr>             
             <!--Activo-->
             <tr>
                 <td class="validator">              
                 </td>
-                <th>
+                <th style="width:15%;text-align:left">
                     Activo:
                 </th>
                 <td class="Separador"></td>
-                <td >
+                <td style="width:35%" >
                      <asp:CheckBox ID="chkActiva" runat="server" Checked="true"/>
                 </td>
+                <td style="width:49%"></td>
             </tr>
-
         </table>
     </div>
 </asp:Content>

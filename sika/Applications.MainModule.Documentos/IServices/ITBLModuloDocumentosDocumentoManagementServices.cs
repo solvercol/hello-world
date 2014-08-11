@@ -13,10 +13,10 @@ using Domain.MainModules.Entities;
 
 namespace Application.MainModule.Documentos.IServices
 {
-    public interface ISfTBL_ModuloDocumentos_DocumentoManagementServices : IGenericServices<TBL_ModuloDocumentos_Documento>
+    public interface ISfTBL_ModuloDocumentos_DocumentoManagementServices 
+        : IGenericServices<TBL_ModuloDocumentos_Documento>
     {
-     
-
+        TBL_ModuloDocumentos_Documento GetDocumentoByIdWithAttachments(int id);
     }
 }
     
