@@ -4,11 +4,8 @@ using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Web;
-using System.Web.Script.Services;
 using System.Web.Services;
-using System.Web.UI;
 using System.Web.UI.WebControls;
-using AjaxControlToolkit;
 using Application.MainModule.Documentos.IServices;
 using ASP.NETCLIENTE.UI;
 using Domain.MainModules.Entities;
@@ -28,6 +25,7 @@ namespace Modules.Documentos.Admin
         public event EventHandler CancelarEvent;
         public event EventHandler DescargarArchivoEvent;
         public event EventHandler PublicarEvent;
+        public event EventHandler EliminarAdjuntoEvent;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -92,25 +90,30 @@ namespace Modules.Documentos.Admin
                 GuardarEvent(null, EventArgs.Empty);
         }
 
-        public Int32 TamanioArchivoActual
+
+        public double TamanioArchivoActual
         {
             get
             {
                 HttpPostedFile file = (HttpPostedFile)(FileUploadArchivo.PostedFile);
+                double result = 0;
+                double div = 1048576.0;
                 if (file == null)
-                    return 0;
-                return file.ContentLength;
+                    return result;
+                ///Lo divido en este valor para pasarlo a MB
+                result = (file.ContentLength / div);
+                return result;
             }
         }
 
-        public Int32 TamanioMaxArchivoACargar
+        public double TamanioMaxArchivoACargar
         {
             get
             {
-                int tamanio = 0;
-                Int32.TryParse(ConfigurationManager.AppSettings["TamanioMaxArchivoAcargar"], out tamanio);
+                double tamanio = 0;
+                double.TryParse(ConfigurationManager.AppSettings["TamanioMaxArchivoAcargar"], out tamanio);
                 if (tamanio == 0)
-                    tamanio = 1000000;
+                    tamanio = 2;
                 return tamanio;
             }
         }
@@ -125,12 +128,6 @@ namespace Modules.Documentos.Admin
         {
             if (CancelarEvent != null)
                 CancelarEvent(null, EventArgs.Empty);
-        }
-
-        protected void LnkBtnDescargar_Click(object sender, EventArgs e)
-        {
-            if (DescargarArchivoEvent != null)
-                DescargarArchivoEvent(null, EventArgs.Empty);
         }
 
         #endregion
@@ -219,10 +216,6 @@ namespace Modules.Documentos.Admin
             get
             {
                 return FileUploadArchivo.FileBytes;
-            }
-            set
-            {
-                LnkBtnDescargar.Visible = (value.Length > 0);
             }
         }
 
@@ -344,7 +337,7 @@ namespace Modules.Documentos.Admin
         #endregion
 
         #region Métodos
-
+        
         public void Responsables(IEnumerable<TBL_Admin_Usuarios> responsables)
         {
             ddlResponsableDoc.Items.Clear();
@@ -354,10 +347,16 @@ namespace Modules.Documentos.Admin
             ddlResponsableDoc.Items.Insert(0, li);
         }
 
-        public void DescargarArchivo(TBL_ModuloDocumentos_Documento documento)
+        public void Adjuntos(IEnumerable<TBL_ModuloDocumentos_DocumentoAdjunto> adjuntos)
         {
-            //ViewPage<EditarDocumentoPresenter, IEditarDocumentoView>
-            //    .DownloadDocument(documento.Archivo, documento.NombreArchivo, "application/octet-stream");
+            GrdViewArchivos.DataSource = adjuntos;
+            GrdViewArchivos.DataBind();
+        }
+
+        public void DescargarArchivo(TBL_ModuloDocumentos_DocumentoAdjunto adjunto)
+        {
+            ViewPage<EditarDocumentoPresenter, IEditarDocumentoView>
+                .DownloadDocument(adjunto.Archivo, adjunto.NombreArchivo, "application/octet-stream");
         }
 
         #region Métodos Web
@@ -444,6 +443,20 @@ namespace Modules.Documentos.Admin
         public string IdModule
         {
             get { return ModuleId; }
+        }
+
+        protected void lnkBtnArchivo_Click(object sender, EventArgs e)
+        {
+            LinkButton lnkBtnArchivo = (LinkButton) sender;
+            if (DescargarArchivoEvent != null)
+                DescargarArchivoEvent(Convert.ToInt32(lnkBtnArchivo.CommandArgument), EventArgs.Empty);
+        }
+
+        protected void ImgBtnEliminar_Click(object sender, System.Web.UI.ImageClickEventArgs e)
+        {
+            ImageButton ImgBtnEliminar = (ImageButton) sender;
+            if (EliminarAdjuntoEvent != null)
+                EliminarAdjuntoEvent(ImgBtnEliminar.CommandArgument, EventArgs.Empty);
         }
     }
 }

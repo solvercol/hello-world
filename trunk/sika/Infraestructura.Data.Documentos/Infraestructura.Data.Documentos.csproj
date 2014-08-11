@@ -65,6 +65,11 @@
     <Compile Include="Repositories\TBL_ModuloDocumentos_EstadosRepository.cs" />
     <Compile Include="Repositories\TBL_ModuloDocumentos_HistorialDocumentoRepository.cs" />
     <Compile Include="Repositories\TBL_ModuloDocumentos_LogCambiosRepository.cs" />
+    <Compile Include="Resources\Messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain.Core.Entities\Domain.Core.Entities.csproj">
@@ -83,6 +88,12 @@
       <Project>{1063AE74-49D5-4D8A-B6A3-2C38349F55BF}</Project>
       <Name>Infrastructure.CrossCutting</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Messages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

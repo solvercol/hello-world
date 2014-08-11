@@ -168,7 +168,7 @@ namespace Modules.Documentos.Admin
                     }
 
                     tNodeDoc = new TreeNode(documento.Titulo, documento.IdDocumento.ToString());
-                    tNodeDoc.NavigateUrl = string.Format("~/pages/modules/documentos/Admin/FrmEditarDocumento.aspx?IdDocumento={0}", documento.IdDocumento);
+                    tNodeDoc.NavigateUrl = string.Format("~/pages/modules/documentos/Admin/FrmEditarDocumento.aspx?ModuleId={0}&IdDocumento={1}", ModuleId ,documento.IdDocumento);
                     tNodeTipoDoc.ChildNodes.Add(tNodeDoc);
 
                     idCatAnt = documento.IdCategoria;

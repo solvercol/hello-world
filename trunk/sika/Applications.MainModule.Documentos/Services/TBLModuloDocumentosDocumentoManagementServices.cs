@@ -17,7 +17,8 @@ using Domain.Core.Specification;
 
 namespace Application.MainModule.Documentos.Services
 {
-    public class SfTBL_ModuloDocumentos_DocumentoManagementServices : ISfTBL_ModuloDocumentos_DocumentoManagementServices
+    public class SfTBL_ModuloDocumentos_DocumentoManagementServices 
+        : ISfTBL_ModuloDocumentos_DocumentoManagementServices
     {
 
          #region Fields
@@ -101,17 +102,15 @@ namespace Application.MainModule.Documentos.Services
            
          }
 
-		 /*
-         public TBL_ModuloDocumentos_Documento FindById(string id)
+
+         public TBL_ModuloDocumentos_Documento GetDocumentoByIdWithAttachments(int id)
          {
-             if (string.IsNullOrEmpty(id))
+             if (id == 0)
                  throw new ArgumentNullException(string.Format("Busqueda por Id : El parametro es nulo."));
-
-              Specification<TBL_ModuloDocumentos_Documento> specification = new DirectSpecification<TBL_ModuloDocumentos_Documento>(u => u.Code == id);
-
-            return _TBLModuloDocumentosDocumentoRepository.GetEntityBySpec(specification);
+              Specification<TBL_ModuloDocumentos_Documento> specification = new DirectSpecification<TBL_ModuloDocumentos_Documento>(d => d.IdDocumento == id && d.IsActive);
+             return _tblModuloDocumentosDocumentoRepository.GetDocumentoByIdWithAttachments(specification);
          }
-		 */
+		 
 
 		
 

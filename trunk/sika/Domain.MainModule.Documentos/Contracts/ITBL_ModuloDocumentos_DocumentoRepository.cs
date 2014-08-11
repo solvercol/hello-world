@@ -11,12 +11,16 @@
 
 using Domain.Core;
 using Domain.MainModules.Entities;
+using Domain.Core.Specification;
 
 namespace Domain.MainModule.Documentos.Contracts
 {
     public interface ITBL_ModuloDocumentos_DocumentoRepository : IRepository<TBL_ModuloDocumentos_Documento>
     {
         TBL_ModuloDocumentos_Documento GetDocumentoById(int id);
+
+        TBL_ModuloDocumentos_Documento GetDocumentoByIdWithAttachments(
+            ISpecification<TBL_ModuloDocumentos_Documento> specification);
     }
 }
     
