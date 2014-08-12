@@ -422,6 +422,21 @@ namespace Domain.MainModules.Entities
         private string _codigoCliente;
     
         [DataMember]
+        public string UnidadZona
+        {
+            get { return _unidadZona; }
+            set
+            {
+                if (_unidadZona != value)
+                {
+                    _unidadZona = value;
+                    OnPropertyChanged("UnidadZona");
+                }
+            }
+        }
+        private string _unidadZona;
+    
+        [DataMember]
         public string Contacto
         {
             get { return _contacto; }
@@ -465,6 +480,36 @@ namespace Domain.MainModules.Entities
             }
         }
         private string _nombreObra;
+    
+        [DataMember]
+        public string AplicadoPor
+        {
+            get { return _aplicadoPor; }
+            set
+            {
+                if (_aplicadoPor != value)
+                {
+                    _aplicadoPor = value;
+                    OnPropertyChanged("AplicadoPor");
+                }
+            }
+        }
+        private string _aplicadoPor;
+    
+        [DataMember]
+        public string EmailQuienAplica
+        {
+            get { return _emailQuienAplica; }
+            set
+            {
+                if (_emailQuienAplica != value)
+                {
+                    _emailQuienAplica = value;
+                    OnPropertyChanged("EmailQuienAplica");
+                }
+            }
+        }
+        private string _emailQuienAplica;
     
         [DataMember]
         public string PropietarioObra
@@ -572,7 +617,7 @@ namespace Domain.MainModules.Entities
         private string _usoDescripcion;
     
         [DataMember]
-        public Nullable<int> Lote
+        public string Lote
         {
             get { return _lote; }
             set
@@ -584,7 +629,7 @@ namespace Domain.MainModules.Entities
                 }
             }
         }
-        private Nullable<int> _lote;
+        private string _lote;
     
         [DataMember]
         public Nullable<bool> MuestraDisponible
@@ -773,6 +818,21 @@ namespace Domain.MainModules.Entities
             }
         }
         private string _areaIncumple;
+    
+        [DataMember]
+        public string ProcedimientoInternoAfectado
+        {
+            get { return _procedimientoInternoAfectado; }
+            set
+            {
+                if (_procedimientoInternoAfectado != value)
+                {
+                    _procedimientoInternoAfectado = value;
+                    OnPropertyChanged("ProcedimientoInternoAfectado");
+                }
+            }
+        }
+        private string _procedimientoInternoAfectado;
     
         [DataMember]
         public string DescripcionProblema
