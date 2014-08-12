@@ -51,11 +51,17 @@
     <Compile Include="Domain\Partes.cs" />
     <Compile Include="Domain\PedidoClientes.cs" />
     <Compile Include="IServices\IPedidosEmpacorServices.cs" />
+    <Compile Include="IServices\IReclamosExternalInterfacesService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\PedidosEmpacorServices.cs" />
+    <Compile Include="Services\ReclamosExternalInterfacesService.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\Domain.MainModule.Reclamos\Domain.MainModule.Reclamos.csproj">
+      <Project>{50D7DFA7-2314-41D2-A9BF-9630ADA55B98}</Project>
+      <Name>Domain.MainModule.Reclamos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Infraestructure.Data.Core\Infraestructure.Data.Core.csproj">
       <Project>{2F2A8353-C22F-4312-8B04-FBA5923AE9E8}</Project>
       <Name>Infraestructure.Data.Core</Name>
