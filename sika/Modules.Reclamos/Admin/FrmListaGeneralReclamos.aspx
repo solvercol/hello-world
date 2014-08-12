@@ -45,7 +45,7 @@
                         </asp:Panel>
                         </td>
                         <td align="right" style="width:80%">
-                             <asp:Button ID="btnNuevo" runat="server" Text="Nuevo Reclamo" />
+                             <asp:Button ID="btnNuevo" runat="server" Text="Nuevo Reclamo" OnClick="BtnNuevoReclamo_Click" />
                         </td>
                     </tr>
                 </table>                
@@ -142,7 +142,7 @@
                         <td class="Separador"></td>
 
                         <td class="Line" style="width:70%">
-                            <asp:RadioButtonList ID="rblReclamoType" RepeatLayout="Table" RepeatColumns="2" runat="server">
+                            <asp:RadioButtonList ID="rblReclamoType" RepeatLayout="Table" RepeatColumns="2" runat="server" AutoPostBack="true" OnSelectedIndexChanged="RblReclamoType_Changed">
                                 <asp:ListItem Text="Producto" Value="Producto" Selected="True" />
                                 <asp:ListItem Text="Servicio" Value="Servicio" />
                             </asp:RadioButtonList>
@@ -150,7 +150,7 @@
 
                         <td class="Separador"></td>
                     </tr>
-                    <tr>
+                    <tr id="trCategoriaReclamo" runat="server" visible="false">
                         <th style="text-align:left; width: 25%">
                             Categoría :
                         </th>
@@ -167,7 +167,7 @@
                     <tr>
                         <td colspan="4">
                             <div style="padding:3px; text-align:right;">
-                                <asp:Button ID="btnConfirmNewReclamo" runat="server" Text="Continuar" />
+                                <asp:Button ID="btnConfirmNewReclamo" runat="server" Text="Continuar" OnClick="BtnConfirmNuevoReclamo_Click" />
                             </div>
                         </td>
                     </tr>
@@ -180,7 +180,7 @@
         <ajaxToolkit:ModalPopupExtender 
         ID="mpeNewReclamo" 
         runat="server" 
-        TargetControlID="btnNuevo" 
+        TargetControlID="btnPopNewReclamoTargetControl" 
         PopupControlID="pnlNewReclamo" 
         BackgroundCssClass="ModalPopupBG" 
         cancelcontrolid="divClose"> 

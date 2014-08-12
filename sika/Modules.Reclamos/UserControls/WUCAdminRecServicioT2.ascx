@@ -1,14 +1,35 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WUCAdminRecServicioT2.ascx.cs" Inherits="Modules.Reclamos.UserControls.WUCAdminRecServicioT2" %>
 
-    <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+    <%@ Register    Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+    <%@ Register    Assembly="Infragistics4.Web.v11.1, Version=11.1.20111.2238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb"
+                    Namespace="Infragistics.Web.UI.ListControls" TagPrefix="ig" %>
+    <%@ Register    Assembly="Infragistics4.Web.v11.1, Version=11.1.20111.2238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb"
+                    Namespace="Infragistics.Web.UI.EditorControls" TagPrefix="ig" %>   
+    <%@ Register src="WUCFilterClient.ascx" tagname="WucFilterClient" tagprefix="ucFilterClient" %> 
 
-    <asp:ValidationSummary ID="vsGeneral" runat="server" DisplayMode="BulletList" ShowMessageBox="true" CssClass="validator" ShowSummary="False" ValidationGroup="vgGeneral"/>
+    <script language="javascript" type="text/javascript">
+        var divModal = 'DivModal';
+
+        function ShowSplashModal() {
+            var adiv = $get(divModal);
+            adiv.style.visibility = 'visible';
+        }
+    </script>
     
-    <div style="padding:3px; text-align:right;">
-        <asp:Button ID="btnRegresar" runat="server" Text="Regresar"  />
-        <asp:Button ID="btnGuardar" runat="server" Text="Guardar"  ValidationGroup="vgGeneral"  />
-        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CausesValidation="false" />
+    <div id="DivModal">
+        <div id="VentanaMensaje">
+            <div id="Msg">
+                <img id="Img1"  src="~/Resources/images/Barloading.gif" runat="server" alt="" />
+            </div>
+        </div>
     </div>
+
+    <div style="padding:3px; text-align:right;">
+        <asp:Button ID="btnRegresar" runat="server" Text="Regresar" OnClick="BtnRegresar_Click" />
+        <asp:Button ID="btnGuardar" runat="server" Text="Guardar"  ValidationGroup="vgGeneral" OnClientClick="return ShowSplashModal();" OnClick="BtnGuardar_Click" />
+    </div>
+
+    <asp:ValidationSummary ID="vsGeneral" runat="server" DisplayMode="BulletList" ShowMessageBox="false" CssClass="validator" ShowSummary="true" ValidationGroup="vgGeneral"/>
 
     <ajaxToolkit:Accordion    ID="Secciones"
                                 runat="Server"
@@ -39,6 +60,7 @@
                             <td class="Separador"></td>
 
                             <td class="Line" style="width: 40%">
+                                <asp:Label ID="lblCategoriaReclamo" runat="server" />
                             </td>
 
                             <td class="Separador"></td>
@@ -50,6 +72,7 @@
                             <td class="Separador"></td>
 
                             <td class="Line" style="width: 30%">
+                                <asp:Label ID="lblArea" runat="server" />
                             </td>
 
                         </tr>
@@ -61,6 +84,17 @@
                             <td class="Separador"></td>
 
                             <td class="Line" >
+                                <ig:WebDropDown ID="wddAsesor" 
+                                                runat="server" 
+                                                EnableMultipleSelection="false"
+                                                MultipleSelectionType="Checkbox" 
+                                                DisplayMode="DropDown"
+                                                EnableClosingDropDownOnSelect="false"
+                                                StyleSetName="Claymation"
+                                                DropDownContainerWidth="300px"
+                                                DropDownContainerHeight="220px"
+                                                Width="98%">
+                                </ig:WebDropDown>
                             </td>
 
                             <td class="Separador"></td>
@@ -72,8 +106,18 @@
                             <td class="Separador"></td>
 
                             <td class="Line" >
+                                <ig:WebDropDown ID="wddPlanta" 
+                                                runat="server" 
+                                                EnableMultipleSelection="false"
+                                                MultipleSelectionType="Checkbox" 
+                                                DisplayMode="DropDown"
+                                                EnableClosingDropDownOnSelect="false"
+                                                StyleSetName="Claymation"
+                                                DropDownContainerWidth="250px"
+                                                DropDownContainerHeight="150px"
+                                                Width="98%">
+                                </ig:WebDropDown>
                             </td>
-
                         </tr>
                         <tr>
                             <th style="text-align:left">
@@ -82,9 +126,10 @@
                                 # Remisión :
                             </th>
 
-                                <td class="Separador"></td>
+                            <td class="Separador"></td>
 
-                            <td class="Line" >
+                            <td class="Line" style="vertical-align:middle;" >
+                                <asp:TextBox ID="txtPedidoFacturaRemision" runat="server" Width="90%" />
                             </td>
 
                             <td class="Separador"></td>
@@ -96,6 +141,8 @@
                             <td class="Separador"></td>
 
                             <td class="Line" >
+                                <ig:WebNumericEditor    Id="txtDiarioInventario" runat="server" 
+                                                        Nullable="false" MinValue="0" Width="100%" />
                             </td>
                         </tr>
                         <tr>
@@ -106,6 +153,17 @@
                             <td class="Separador"></td>
 
                             <td class="Line" >
+                                <ig:WebDropDown ID="wddReclamoAtentidoPor" 
+                                                runat="server" 
+                                                EnableMultipleSelection="false"
+                                                MultipleSelectionType="Checkbox" 
+                                                DisplayMode="DropDown"
+                                                EnableClosingDropDownOnSelect="false"
+                                                StyleSetName="Claymation"
+                                                DropDownContainerWidth="300px"
+                                                DropDownContainerHeight="220px"
+                                                Width="98%">
+                                </ig:WebDropDown>
                             </td>
 
                             <td class="Separador"></td>
@@ -117,6 +175,8 @@
                             <td class="Separador"></td>
 
                             <td class="Line" >
+                                <ig:WebNumericEditor    Id="txtNoRecordatorios" runat="server"
+                                                        Nullable="false" MinValue="0" Width="50" />
                             </td>
 
                         </tr>
@@ -128,6 +188,10 @@
                             <td class="Separador"></td>
 
                             <td class="Line" >
+                                <asp:RadioButtonList ID="rblRespuestaInmediata" runat="server" RepeatColumns="2" RepeatDirection="Horizontal" RepeatLayout="Table">
+                                    <asp:ListItem Value="true" Text="Si" />
+                                    <asp:ListItem Value="false" Text="No" Selected="True" />
+                                </asp:RadioButtonList>
                             </td>
 
                             <td class="Separador"></td>
@@ -138,7 +202,11 @@
 
                             <td class="Separador"></td>
 
-                            <td >
+                            <td class="Line" >
+                                <asp:RadioButtonList ID="rblTipoContacto" runat="server" RepeatColumns="2" RepeatDirection="Horizontal" RepeatLayout="Table">
+                                    <asp:ListItem Selected="True" Value="Escrito" Text="Escrito" />
+                                    <asp:ListItem Value="Telefonico" Text="Teléfonoico" />
+                                </asp:RadioButtonList>
                             </td>
 
                         </tr>
@@ -160,17 +228,8 @@
 
                             <td class="Separador"></td>
 
-                            <td class="Line">
-                            </td>
-
-                            <td class="Separador"></td>
-
-                            <th style="text-align:left">                
-                            </th>
-
-                            <td class="Separador"></td>
-
-                            <td >
+                            <td colspan="5">
+                                <ucFilterClient:WucFilterClient ID="ucFilterClient" runat="server" /> 
                             </td>
 
                         </tr>
@@ -182,6 +241,7 @@
                             <td class="Separador"></td>
 
                             <td class="Line">
+                                <asp:Label ID="lblUnidadZona" runat="server" />
                             </td>
 
                             <td class="Separador"></td>
@@ -203,6 +263,21 @@
                             <td class="Separador"></td>
 
                             <td class="Line" >
+                                <table width="100%">
+                                    <tr>
+                                        <td style="width:95%">
+                                            <asp:TextBox ID="txtNombreContacto" Width="100%" runat="server" />
+                                        </td>
+                                        <td style="width:5%">
+                                            <asp:RequiredFieldValidator ID="reqNombreContacto"
+                                                                        runat="server"
+                                                                        ForeColor="Red"
+                                                                        ControlToValidate="txtNombreContacto"
+                                                                        ValidationGroup="vgGeneral"                                                                 
+                                                                        ErrorMessage="El nombre del contacto es obligatorio-Datos Cliente Obra" >*</asp:RequiredFieldValidator> 
+                                        </td>
+                                    </tr>
+                                </table>
                             </td>
 
                             <td class="Separador"></td>
@@ -214,6 +289,28 @@
                             <td class="Separador"></td>
 
                             <td class="Line" >
+                                <table width="100%">
+                                    <tr>
+                                        <td style="width:95%">
+                                            <asp:TextBox ID="txtEmailContacto" Width="100%" runat="server" />
+                                        </td>
+                                        <td style="width:5%">
+                                            <asp:RequiredFieldValidator ID="reqEmailContacto"
+                                                                        runat="server"
+                                                                        ForeColor="Red"
+                                                                        ControlToValidate="txtEmailContacto"
+                                                                        ValidationGroup="vgGeneral"                                                                 
+                                                                        ErrorMessage="El email de contacto es obligatorio-Datos Cliente Obra" >*</asp:RequiredFieldValidator>   
+                                            <asp:RegularExpressionValidator ID="reqExpTxtEmailContacto"
+                                                                            runat="server"
+                                                                            ForeColor="Red"
+                                                                            ControlToValidate="txtEmailContacto"
+                                                                            ValidationExpression="^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"
+                                                                            ValidationGroup="vgGeneral"                                                                            
+                                                                            ErrorMessage="El mail ingresado no se encuentra con una estructura correcta">*</asp:RegularExpressionValidator>
+                                        </td>
+                                    </tr>
+                                </table>
                             </td>
 
                         </tr>  
@@ -225,6 +322,15 @@
                             <td class="Separador"></td>
 
                             <td class="Line" >
+                                <asp:TextBox ID="txtFechaPedido" runat="server"></asp:TextBox>
+                                <ajaxToolkit:CalendarExtender 
+                                    ID="cexTxtFechaPedido" 
+                                    runat="server"  
+                                    TargetControlID="txtFechaPedido" 
+                                    PopupPosition="Right" 
+                                    PopupButtonID="txtFechaPedido"
+                                    Format="dd/MM/yyyy"
+                                    CssClass="cal_Theme1" />
                             </td>
 
                             <td class="Separador"></td>
@@ -236,6 +342,15 @@
                             <td class="Separador"></td>
 
                             <td class="Line" >
+                                <asp:TextBox ID="txtFechaCompromiso" runat="server"></asp:TextBox>
+                                <ajaxToolkit:CalendarExtender 
+                                    ID="cexTxtFechaCompromiso" 
+                                    runat="server"  
+                                    TargetControlID="txtFechaCompromiso" 
+                                    PopupPosition="Right" 
+                                    PopupButtonID="txtFechaCompromiso"
+                                    Format="dd/MM/yyyy"
+                                    CssClass="cal_Theme1" />
                             </td>
 
                         </tr>
@@ -247,6 +362,15 @@
                             <td class="Separador"></td>
 
                             <td class="Line" >
+                                <asp:TextBox ID="txtFechaRealEntrega" runat="server"></asp:TextBox>
+                                <ajaxToolkit:CalendarExtender 
+                                    ID="cexTxtFechaRealEntrega" 
+                                    runat="server"  
+                                    TargetControlID="txtFechaRealEntrega" 
+                                    PopupPosition="Right" 
+                                    PopupButtonID="txtFechaRealEntrega"
+                                    Format="dd/MM/yyyy"
+                                    CssClass="cal_Theme1" />
                             </td>
 
                             <td class="Separador"></td>
@@ -258,6 +382,8 @@
                             <td class="Separador"></td>
 
                             <td class="Line" >
+                                <ig:WebNumericEditor    Id="txtDiasIncumplimiento" runat="server"
+                                                        Nullable="false" MinValue="0" Width="100%" />
                             </td>
 
                         </tr>  
@@ -274,28 +400,27 @@
                         <table width="100%" class="tblSecciones">
                             <!-- INICIO Descripcion del problema -->
                             <tr>
-                                <td colspan="7">                
-                                    <asp:TextBox ID="txtDescripcionProblema" runat="server" TextMode="MultiLine" Width="97%" Rows="4" />
+                                <td colspan="7">   
+                                    <table width="100%">
+                                        <tr>
+                                            <td style="width:95%">
+                                                <asp:TextBox ID="txtDescripcionProblema" runat="server" TextMode="MultiLine" Width="97%" Rows="4" />
+                                            </td>
+                                            <td style="width:5%">
+                                                <asp:RequiredFieldValidator ID="reqTxtDescripcionProblema"
+                                                                            runat="server"
+                                                                            ForeColor="Red"
+                                                                            ControlToValidate="txtDescripcionProblema"
+                                                                            ValidationGroup="vgGeneral"                                                                 
+                                                                            ErrorMessage="La descripción del problema es obligatoria" >*</asp:RequiredFieldValidator>   
+                                            </td>
+                                        </tr>
+                                    </table>                                
                                 </td>            
                             </tr>
                             <tr>            
                                 <td colspan="7">                
-                                    <asp:Label ID="Label4" runat="server" ForeColor="Red"  >
-                                        a. El problema debe estar formulado claramente; describir los hechos, situaciones, características del fenómeno, lugares, fechas, situaciones difíciles. 
-                                    </asp:Label>
-                                </td>
-                            </tr>
-                            <tr>            
-                                <td colspan="7">                
-                                    <asp:Label ID="Label5" runat="server" ForeColor="Red"  >
-                                        b. Expresar el problema y su relación con una o más variables (Aplicación, superficie, temperatura, etc.) 
-                                    </asp:Label>
-                                </td>
-                            </tr>
-                            <tr>            
-                                <td colspan="7">                
-                                    <asp:Label ID="Label6" runat="server" ForeColor="Red" >
-                                        c. Defina claramente porque lo considera un reclamo, entendiendo por reclamo toda desviación del comportamiento estándar de un producto o servicio.
+                                    <asp:Label ID="lblMensajeDescripcionProblema" runat="server" ForeColor="Red"  >                                    
                                     </asp:Label>
                                 </td>
                             </tr>

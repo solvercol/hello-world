@@ -22,12 +22,12 @@ namespace Modules.Reclamos.Admin {
         protected global::System.Web.UI.UpdatePanel upgeneral;
         
         /// <summary>
-        /// wucAddReclamoServicioT5 control.
+        /// phlCreateReclamo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Modules.Reclamos.UserControls.WUCAdminActividadesReclamo wucAddReclamoServicioT5;
+        protected global::System.Web.UI.WebControls.PlaceHolder phlCreateReclamo;
     }
 }
