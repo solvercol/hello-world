@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationErrorException.cs" />
+    <Compile Include="DTO_ValueKey.cs" />
     <Compile Include="IView.cs" />
     <Compile Include="IViewUc.cs" />
     <Compile Include="LogProcesamientoEventArgs.cs" />
