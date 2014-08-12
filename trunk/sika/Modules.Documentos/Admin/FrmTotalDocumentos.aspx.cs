@@ -177,10 +177,15 @@ namespace Modules.Documentos.Admin
                     }
 
                     tNodeDoc = new TreeNode(documento.Titulo, documento.IdDocumento.ToString());
-                    tNodeDoc.NavigateUrl =
-                        string.Format(
-                            "~/pages/modules/documentos/Admin/FrmEditarDocumento.aspx?ModuleId={0}&IdDocumento={1}",
-                            ModuleId, documento.IdDocumento);
+
+                    if (!documento.TBL_ModuloDocumentos_Estados.Codigo.Equals("CANCELADO"))
+                        tNodeDoc.NavigateUrl =
+                            string.Format(
+                                "~/pages/modules/documentos/Admin/FrmEditarDocumento.aspx?ModuleId={0}&IdDocumento={1}&Form={2}",
+                                ModuleId, documento.IdDocumento, "FrmTotalDocumentos.aspx");
+                    else
+                        tNodeDoc.SelectAction = TreeNodeSelectAction.None;
+
                     tNodeTipoDoc.ChildNodes.Add(tNodeDoc);
 
                     idCatAnt = documento.IdCategoria;

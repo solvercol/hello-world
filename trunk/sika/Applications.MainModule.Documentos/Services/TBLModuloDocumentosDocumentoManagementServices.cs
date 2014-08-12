@@ -186,6 +186,36 @@ namespace Application.MainModule.Documentos.Services
              return _tblModuloDocumentosDocumentoRepository.GetDocumentoByIdWithCategories(specification).ToList();
          }
 
+         public List<TBL_ModuloDocumentos_Documento> FindMyDocsByFilters(string filtroNombre, Int32 filtroIdEstado, Int32 filtroIdUsuario)
+         {
+             bool isActive = true;
+             if (filtroIdEstado > 0)
+             {
+                 Specification<TBL_ModuloDocumentos_Estados> specEstado =
+                     new DirectSpecification<TBL_ModuloDocumentos_Estados>(e => e.IdEstado == filtroIdEstado);
+                 if (_tblEstadosRepository.GetEntityBySpec(specEstado).Codigo.Equals("CANCELADO"))
+                     isActive = false;
+             }
+
+             Specification<TBL_ModuloDocumentos_Documento> specification = new DirectSpecification<TBL_ModuloDocumentos_Documento>(doc => doc.IsActive == isActive);
+
+             if (filtroNombre.Length > 0)
+                 specification &= new DirectSpecification<TBL_ModuloDocumentos_Documento>
+                     (doc =>
+                      doc.TBL_ModuloDocumentos_Categorias.Nombre.ToLower().Contains(filtroNombre.ToLower())
+                      ||
+                      doc.TBL_ModuloDocumentos_Categorias1.Nombre.ToLower().Contains(filtroNombre.ToLower())
+                      ||
+                      doc.TBL_ModuloDocumentos_Categorias2.Nombre.ToLower().Contains(filtroNombre.ToLower()));
+
+             if (filtroIdEstado != 0)
+                 specification &= new DirectSpecification<TBL_ModuloDocumentos_Documento>(doc => doc.IdEstado == filtroIdEstado);
+             if (filtroIdUsuario != 0)
+                 specification &= new DirectSpecification<TBL_ModuloDocumentos_Documento>(doc => doc.IdUsuarioCreacion == filtroIdUsuario);
+
+             return _tblModuloDocumentosDocumentoRepository.GetDocumentoByIdWithCategories(specification).ToList();
+         }
+
           /// <summary>
           /// Obtiene el listado de entidades activas y paginadas.
           /// </summary>

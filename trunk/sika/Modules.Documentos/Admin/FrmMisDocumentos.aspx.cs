@@ -125,10 +125,6 @@ namespace Modules.Documentos.Admin
 
         public TreeNodeCollection ConstruirArbol()
         {
-            ISfTBL_ModuloDocumentos_CategoriasManagementServices _categoriaServices;
-            TBL_ModuloDocumentos_Categorias categoria = null;
-            TBL_ModuloDocumentos_Categorias subCategoria = null;
-            TBL_ModuloDocumentos_Categorias tipoDocumento = null;
             int idCatAnt = 0; int idSubCatAnt = 0; int idTipoDocAnt = 0;
             bool cambioCat = false; bool cambioSubCat = false;
             TreeNode tNodeCat = null; TreeNode tNodeSubCat = null;
@@ -137,7 +133,6 @@ namespace Modules.Documentos.Admin
             try
             {
                 Nodos = new TreeNodeCollection();
-                _categoriaServices = IoC.Resolve<ISfTBL_ModuloDocumentos_CategoriasManagementServices>();
                 if (ListaDocumentos.Count() == 0)
                     return Nodos;
                 var list = ListaDocumentos.OrderBy(cat => cat.IdCategoria).ThenBy(sub => sub.IdSubCategoria).ThenBy(tdoc => tdoc.IdTipo);
@@ -145,30 +140,35 @@ namespace Modules.Documentos.Admin
                 {
                     if (documento.IdCategoria != idCatAnt)
                     {
-                        categoria = _categoriaServices.FindById(documento.IdCategoria);
-                        tNodeCat = new TreeNode(categoria.Nombre.ToUpper(), categoria.IdCategoria.ToString());
+                        tNodeCat = new TreeNode(documento.TBL_ModuloDocumentos_Categorias.Nombre.ToUpper(), documento.IdCategoria.ToString());
                         tNodeCat.SelectAction = TreeNodeSelectAction.None;
                         Nodos.Add(tNodeCat);
                         cambioCat = true;
                     }
                     if (documento.IdSubCategoria != idSubCatAnt || cambioCat)
                     {
-                        subCategoria = _categoriaServices.FindById(documento.IdSubCategoria);
-                        tNodeSubCat = new TreeNode(subCategoria.Nombre.ToUpper());
+                        tNodeSubCat = new TreeNode(documento.TBL_ModuloDocumentos_Categorias1.Nombre.ToUpper(),documento.IdSubCategoria.ToString());
                         tNodeSubCat.SelectAction = TreeNodeSelectAction.None;
                         tNodeCat.ChildNodes.Add(tNodeSubCat);
                         cambioSubCat = true;
                     }
                     if (documento.IdTipo != idTipoDocAnt || cambioSubCat)
                     {
-                        tipoDocumento = _categoriaServices.FindById(documento.IdTipo);
-                        tNodeTipoDoc = new TreeNode(tipoDocumento.Nombre.ToUpper());
+                        tNodeTipoDoc = new TreeNode(documento.TBL_ModuloDocumentos_Categorias2.Nombre.ToUpper(), documento.IdTipo.ToString());
                         tNodeTipoDoc.SelectAction = TreeNodeSelectAction.None;
                         tNodeSubCat.ChildNodes.Add(tNodeTipoDoc);
                     }
 
                     tNodeDoc = new TreeNode(documento.Titulo, documento.IdDocumento.ToString());
-                    tNodeDoc.NavigateUrl = string.Format("~/pages/modules/documentos/Admin/FrmEditarDocumento.aspx?ModuleId={0}&IdDocumento={1}", ModuleId ,documento.IdDocumento);
+
+                    if (!documento.TBL_ModuloDocumentos_Estados.Codigo.Equals("CANCELADO"))
+                        tNodeDoc.NavigateUrl =
+                            string.Format(
+                                "~/pages/modules/documentos/Admin/FrmEditarDocumento.aspx?ModuleId={0}&IdDocumento={1}&Form={2}",
+                                ModuleId, documento.IdDocumento, "FrmMisDocumentos.aspx");
+                    else
+                        tNodeDoc.SelectAction = TreeNodeSelectAction.None;
+
                     tNodeTipoDoc.ChildNodes.Add(tNodeDoc);
 
                     idCatAnt = documento.IdCategoria;
