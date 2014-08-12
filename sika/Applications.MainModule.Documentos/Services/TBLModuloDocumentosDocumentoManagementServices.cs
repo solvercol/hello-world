@@ -162,6 +162,30 @@ namespace Application.MainModule.Documentos.Services
              return _tblModuloDocumentosDocumentoRepository.GetDocumentoByIdWithCategories(specification).ToList();
          }
 
+         public List<TBL_ModuloDocumentos_Documento> FindDocsPublicadosByFilters(string filtroNombre)
+         {
+             TBL_ModuloDocumentos_Estados estadoPublicado = null;
+                 Specification<TBL_ModuloDocumentos_Estados> specEstadoPublicado =
+                     new DirectSpecification<TBL_ModuloDocumentos_Estados>(e => e.Codigo.Equals("PUBLICADO"));
+             estadoPublicado = _tblEstadosRepository.GetEntityBySpec(specEstadoPublicado);
+
+
+             Specification<TBL_ModuloDocumentos_Documento> specification =
+                 new DirectSpecification<TBL_ModuloDocumentos_Documento>(
+                     doc => doc.IsActive && doc.IdEstado == estadoPublicado.IdEstado);
+
+             if (filtroNombre.Length > 0)
+                 specification &= new DirectSpecification<TBL_ModuloDocumentos_Documento>
+                     (doc =>
+                      doc.TBL_ModuloDocumentos_Categorias.Nombre.ToLower().Contains(filtroNombre.ToLower())
+                      ||
+                      doc.TBL_ModuloDocumentos_Categorias1.Nombre.ToLower().Contains(filtroNombre.ToLower())
+                      ||
+                      doc.TBL_ModuloDocumentos_Categorias2.Nombre.ToLower().Contains(filtroNombre.ToLower()));
+
+             return _tblModuloDocumentosDocumentoRepository.GetDocumentoByIdWithCategories(specification).ToList();
+         }
+
           /// <summary>
           /// Obtiene el listado de entidades activas y paginadas.
           /// </summary>
