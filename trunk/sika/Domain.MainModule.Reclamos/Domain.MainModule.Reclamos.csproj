@@ -58,7 +58,11 @@
     <Compile Include="Contracts\ITBL_ModuloReclamos_UnidadesZonasRepository.cs" />
     <Compile Include="Contracts\ITBL_ModuloReclamos_UnidadRepository.cs" />
     <Compile Include="Contracts\ITBL_ModuloReclamos_ZonaRepository.cs" />
+    <Compile Include="DTO\Dto_Cliente.cs" />
+    <Compile Include="DTO\Dto_Producto.cs" />
+    <Compile Include="Enum\TipoReclamo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Spec\TBL_ModuloReclamos_CategoriasReclamo_Spec.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain.Core.Entities\Domain.Core.Entities.csproj">
@@ -74,9 +78,7 @@
       <Name>Domain.MainModules.Entities</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Spec\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy /s /y "$(TargetDir)Domain.MainModule.Reclamos*.dll" "$(SolutionDir)"Web\bin\</PostBuildEvent>
