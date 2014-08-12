@@ -52,6 +52,8 @@
     <Compile Include="IViews\IAdminRecServicioT1View.cs" />
     <Compile Include="IViews\IAdminRecServicioT2View.cs" />
     <Compile Include="IViews\IAdminSolucionesReclamoView.cs" />
+    <Compile Include="IViews\IFilterClientView.cs" />
+    <Compile Include="IViews\IFilterProductView.cs" />
     <Compile Include="IViews\IListaGeneralReclamosView.cs" />
     <Compile Include="Presenters\AddReclamoPresenter.cs" />
     <Compile Include="Presenters\AdminActividadesReclamoPresenter.cs" />
@@ -65,6 +67,8 @@
     <Compile Include="Presenters\AdminRecServicioT4Presenter.cs" />
     <Compile Include="Presenters\AdminRecServicioT5Presenter.cs" />
     <Compile Include="Presenters\AdminSolucionesReclamoPresenter.cs" />
+    <Compile Include="Presenters\FilterClientPresenter.cs" />
+    <Compile Include="Presenters\FilterProductPresenter.cs" />
     <Compile Include="Presenters\ListaGeneralReclamosPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -77,6 +81,10 @@
       <Project>{C9837181-2A13-4F70-8132-570940C442C0}</Project>
       <Name>Application.MainModule.Reclamos</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Application.MainModule.SqlServices\Application.MainModule.SqlServices.csproj">
+      <Project>{A339985E-A4A5-4DC1-9632-1A622603F028}</Project>
+      <Name>Application.MainModule.SqlServices</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Applications.MainModule.Admin\Applications.MainModule.Admin.csproj">
       <Project>{FD7F4861-2115-473B-B704-8F0DC443D11C}</Project>
       <Name>Applications.MainModule.Admin</Name>
@@ -88,6 +96,10 @@
     <ProjectReference Include="..\Domain.Core\Domain.Core.csproj">
       <Project>{94FCB1C4-2C52-4D9D-A07B-F01AC38CF88E}</Project>
       <Name>Domain.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.MainModule.Reclamos\Domain.MainModule.Reclamos.csproj">
+      <Project>{50D7DFA7-2314-41D2-A9BF-9630ADA55B98}</Project>
+      <Name>Domain.MainModule.Reclamos</Name>
     </ProjectReference>
     <ProjectReference Include="..\Domain.MainModules.Entities\Domain.MainModules.Entities.csproj">
       <Project>{6FA9FF63-4F79-4A9F-882C-7A7AE27C7332}</Project>
