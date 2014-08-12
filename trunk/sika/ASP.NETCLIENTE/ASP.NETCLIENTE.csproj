@@ -230,6 +230,7 @@
     <Content Include="Pages\UserControls\wucMenuPrincipal.ascx" />
     <Content Include="Pages\UserControls\wucUserLogin.ascx" />
     <Content Include="Resources\Images\Actividades.gif" />
+    <Content Include="Resources\Images\Barloading.gif" />
     <Content Include="Resources\Images\Bienvenida.jpg" />
     <Content Include="Resources\Images\Cabezote.jpg" />
     <Content Include="Resources\Images\CabezoteHome.jpg" />
@@ -245,6 +246,7 @@
     <Content Include="Resources\Images\Expand.gif" />
     <Content Include="Resources\Images\expand.png" />
     <Content Include="Resources\Images\Field.png" />
+    <Content Include="Resources\Images\fondosemitrans.gif" />
     <Content Include="Resources\Images\Home.jpg" />
     <Content Include="Resources\Images\cross_icon_normal.png" />
     <Content Include="Resources\Images\Footer.jpg" />
@@ -639,6 +641,7 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Utils\ContainerAccessorUtil.cs" />
+    <Compile Include="Utils\ValidationError.cs" />
     <Compile Include="Utils\WebAssemblyHelper.cs" />
   </ItemGroup>
   <ItemGroup>
