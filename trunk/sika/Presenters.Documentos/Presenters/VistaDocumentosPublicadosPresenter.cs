@@ -54,24 +54,7 @@ namespace Presenters.Documentos.Presenters
         {
             try
             {
-                
-                View.ListaDocumentos = _documentoServices.FindBySpec(true).Where(doc=>doc.IdEstado == EstadoPublicado.IdEstado).ToList();
-                //if (!View.UserSession.IsInRole("Administrador"))
-                //    if (View.ListaDocumentos.Count() > 0)
-                //        View.ListaDocumentos = View.ListaDocumentos.FindAll(doc => doc.IdUsuarioCreacion == View.UserSession.IdUser);
-                if (View.FiltroNombre.Length > 0)
-                {
-                    View.ListaDocumentos =
-                    View.ListaDocumentos.FindAll
-                        (doc =>
-                            _categoriaServices.FindById(doc.IdCategoria).Nombre.ToLower().Contains(View.FiltroNombre.ToLower())
-                            ||
-                            _categoriaServices.FindById(doc.IdSubCategoria).Nombre.ToLower().Contains(View.FiltroNombre.ToLower())
-                            ||
-                            _categoriaServices.FindById(doc.IdTipo).Nombre.ToLower().Contains(View.FiltroNombre.ToLower())
-                        );
-                }
-            
+                View.ListaDocumentos = _documentoServices.FindDocsPublicadosByFilters(View.FiltroNombre);
                 View.ArbolDocumentos();
             }
             catch (Exception ex)
