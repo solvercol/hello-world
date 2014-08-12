@@ -2,7 +2,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div style="padding:3px; text-align:right;">
-        <%--<asp:Button ID="btnNuevo" runat="server" Text="Nuevo Documento" OnClick="BtnNuevoClick" />--%>
     </div>
     <table>
         <tr>

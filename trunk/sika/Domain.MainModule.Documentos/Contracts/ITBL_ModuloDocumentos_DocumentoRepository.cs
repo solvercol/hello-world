@@ -12,6 +12,7 @@
 using Domain.Core;
 using Domain.MainModules.Entities;
 using Domain.Core.Specification;
+using System.Collections.Generic;
 
 namespace Domain.MainModule.Documentos.Contracts
 {
@@ -20,6 +21,9 @@ namespace Domain.MainModule.Documentos.Contracts
         TBL_ModuloDocumentos_Documento GetDocumentoById(int id);
 
         TBL_ModuloDocumentos_Documento GetDocumentoByIdWithAttachments(
+            ISpecification<TBL_ModuloDocumentos_Documento> specification);
+
+        List<TBL_ModuloDocumentos_Documento> GetDocumentoByIdWithCategories(
             ISpecification<TBL_ModuloDocumentos_Documento> specification);
     }
 }

@@ -20,10 +20,12 @@ using Domain.Core.Specification;
 using System;
 using System.Globalization;
 using Infraestructura.Data.Documentos.Resources;
+using System.Collections.Generic;
 
 namespace Infraestructura.Data.Documentos.Repositories
 {
-    public class TBL_ModuloDocumentos_DocumentoRepository : GenericRepository<TBL_ModuloDocumentos_Documento>, ITBL_ModuloDocumentos_DocumentoRepository 
+    public class TBL_ModuloDocumentos_DocumentoRepository 
+        : GenericRepository<TBL_ModuloDocumentos_Documento>, ITBL_ModuloDocumentos_DocumentoRepository 
     {
         IMainModuleUnitOfWork _currentUnitOfWork;
 
@@ -60,6 +62,29 @@ namespace Infraestructura.Data.Documentos.Repositories
                                     .Include(r => r.TBL_ModuloDocumentos_DocumentoAdjunto)
                                     .Where(specific)
                                     .SingleOrDefault();
+            }
+            throw new InvalidOperationException(string.Format(
+                CultureInfo.InvariantCulture,
+                Messages.exception_InvalidStoreContext,
+                GetType().Name));
+
+        }
+
+        public List<TBL_ModuloDocumentos_Documento> GetDocumentoByIdWithCategories(ISpecification<TBL_ModuloDocumentos_Documento> specification)
+        {
+            //validate specification
+            if (specification == null)
+                throw new ArgumentNullException("specification");
+            var activeContext = UnitOfWork as IMainModuleUnitOfWork;
+            if (activeContext != null)
+            {
+                //perform operation in this repository
+                var specific = specification.SatisfiedBy();
+                return activeContext.TBL_ModuloDocumentos_Documento
+                    .Include(r => r.TBL_ModuloDocumentos_Categorias)
+                    .Include(r => r.TBL_ModuloDocumentos_Categorias1)
+                    .Include(r => r.TBL_ModuloDocumentos_Categorias2)
+                    .Where(specific).ToList();
             }
             throw new InvalidOperationException(string.Format(
                 CultureInfo.InvariantCulture,
