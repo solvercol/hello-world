@@ -13,13 +13,13 @@ namespace Modules.Reclamos.UserControls {
     public partial class WUCAdminRecServicioT2 {
         
         /// <summary>
-        /// vsGeneral control.
+        /// Img1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary vsGeneral;
+        protected global::System.Web.UI.HtmlControls.HtmlImage Img1;
         
         /// <summary>
         /// btnRegresar control.
@@ -40,13 +40,13 @@ namespace Modules.Reclamos.UserControls {
         protected global::System.Web.UI.WebControls.Button btnGuardar;
         
         /// <summary>
-        /// btnCancelar control.
+        /// vsGeneral control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancelar;
+        protected global::System.Web.UI.WebControls.ValidationSummary vsGeneral;
         
         /// <summary>
         /// Secciones control.
@@ -67,6 +67,96 @@ namespace Modules.Reclamos.UserControls {
         protected global::AjaxControlToolkit.AccordionPane PaneInfoGeneral;
         
         /// <summary>
+        /// lblCategoriaReclamo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCategoriaReclamo;
+        
+        /// <summary>
+        /// lblArea control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblArea;
+        
+        /// <summary>
+        /// wddAsesor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Infragistics.Web.UI.ListControls.WebDropDown wddAsesor;
+        
+        /// <summary>
+        /// wddPlanta control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Infragistics.Web.UI.ListControls.WebDropDown wddPlanta;
+        
+        /// <summary>
+        /// txtPedidoFacturaRemision control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPedidoFacturaRemision;
+        
+        /// <summary>
+        /// txtDiarioInventario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Infragistics.Web.UI.EditorControls.WebNumericEditor txtDiarioInventario;
+        
+        /// <summary>
+        /// wddReclamoAtentidoPor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Infragistics.Web.UI.ListControls.WebDropDown wddReclamoAtentidoPor;
+        
+        /// <summary>
+        /// txtNoRecordatorios control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Infragistics.Web.UI.EditorControls.WebNumericEditor txtNoRecordatorios;
+        
+        /// <summary>
+        /// rblRespuestaInmediata control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList rblRespuestaInmediata;
+        
+        /// <summary>
+        /// rblTipoContacto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList rblTipoContacto;
+        
+        /// <summary>
         /// PaneDatosClienteObra control.
         /// </summary>
         /// <remarks>
@@ -74,6 +164,132 @@ namespace Modules.Reclamos.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.AccordionPane PaneDatosClienteObra;
+        
+        /// <summary>
+        /// ucFilterClient control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Modules.Reclamos.UserControls.WUCFilterClient ucFilterClient;
+        
+        /// <summary>
+        /// lblUnidadZona control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUnidadZona;
+        
+        /// <summary>
+        /// txtNombreContacto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNombreContacto;
+        
+        /// <summary>
+        /// reqNombreContacto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqNombreContacto;
+        
+        /// <summary>
+        /// txtEmailContacto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEmailContacto;
+        
+        /// <summary>
+        /// reqEmailContacto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqEmailContacto;
+        
+        /// <summary>
+        /// reqExpTxtEmailContacto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator reqExpTxtEmailContacto;
+        
+        /// <summary>
+        /// txtFechaPedido control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFechaPedido;
+        
+        /// <summary>
+        /// cexTxtFechaPedido control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.CalendarExtender cexTxtFechaPedido;
+        
+        /// <summary>
+        /// txtFechaCompromiso control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFechaCompromiso;
+        
+        /// <summary>
+        /// cexTxtFechaCompromiso control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.CalendarExtender cexTxtFechaCompromiso;
+        
+        /// <summary>
+        /// txtFechaRealEntrega control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFechaRealEntrega;
+        
+        /// <summary>
+        /// cexTxtFechaRealEntrega control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.CalendarExtender cexTxtFechaRealEntrega;
+        
+        /// <summary>
+        /// txtDiasIncumplimiento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Infragistics.Web.UI.EditorControls.WebNumericEditor txtDiasIncumplimiento;
         
         /// <summary>
         /// PaneDescripcionProblema control.
@@ -94,31 +310,22 @@ namespace Modules.Reclamos.UserControls {
         protected global::System.Web.UI.WebControls.TextBox txtDescripcionProblema;
         
         /// <summary>
-        /// Label4 control.
+        /// reqTxtDescripcionProblema control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqTxtDescripcionProblema;
         
         /// <summary>
-        /// Label5 control.
+        /// lblMensajeDescripcionProblema control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
-        
-        /// <summary>
-        /// Label6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label6;
+        protected global::System.Web.UI.WebControls.Label lblMensajeDescripcionProblema;
         
         /// <summary>
         /// PaneDiagnosticoConclusionesPrevias control.

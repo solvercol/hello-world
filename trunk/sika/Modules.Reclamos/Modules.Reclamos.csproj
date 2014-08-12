@@ -36,6 +36,30 @@
     <Reference Include="AjaxControlToolkit">
       <HintPath>..\dll\AjaxControlToolkit.dll</HintPath>
     </Reference>
+    <Reference Include="Infragistics4.Web.v11.1, Version=11.1.20111.2238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dll\Infragistics4.Web.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.WebUI.Misc.v11.1, Version=11.1.20111.2238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dll\Infragistics4.WebUI.Misc.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.WebUI.Shared.v11.1, Version=11.1.20111.2238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dll\Infragistics4.WebUI.Shared.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.WebUI.WebCombo.v11.1, Version=11.1.20111.2238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dll\Infragistics4.WebUI.WebCombo.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.WebUI.WebDataInput.v11.1, Version=11.1.20111.2238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dll\Infragistics4.WebUI.WebDataInput.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.WebUI.WebDateChooser.v11.1, Version=11.1.20111.2238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dll\Infragistics4.WebUI.WebDateChooser.v11.1.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Practices.Unity">
       <HintPath>..\ASP.NETCLIENTE\bin\Microsoft.Practices.Unity.dll</HintPath>
@@ -70,6 +94,8 @@
     <Content Include="UserControls\WUCAdminRecServicioT5.ascx" />
     <Content Include="UserControls\WUCAdminSolucionesReclamo.ascx" />
     <Content Include="UserControls\WUCAdminCostosReclamo.ascx" />
+    <Content Include="UserControls\WUCFilterClient.ascx" />
+    <Content Include="UserControls\WUCFilterProduct.ascx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -179,6 +205,20 @@
     <Compile Include="UserControls\WUCAdminCostosReclamo.ascx.designer.cs">
       <DependentUpon>WUCAdminCostosReclamo.ascx</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\WUCFilterClient.ascx.cs">
+      <DependentUpon>WUCFilterClient.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WUCFilterClient.ascx.designer.cs">
+      <DependentUpon>WUCFilterClient.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WUCFilterProduct.ascx.cs">
+      <DependentUpon>WUCFilterProduct.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WUCFilterProduct.ascx.designer.cs">
+      <DependentUpon>WUCFilterProduct.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Site.Master" />
@@ -204,6 +244,10 @@
       <Project>{94FCB1C4-2C52-4D9D-A07B-F01AC38CF88E}</Project>
       <Name>Domain.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Domain.MainModule.Reclamos\Domain.MainModule.Reclamos.csproj">
+      <Project>{50D7DFA7-2314-41D2-A9BF-9630ADA55B98}</Project>
+      <Name>Domain.MainModule.Reclamos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Domain.MainModules.Entities\Domain.MainModules.Entities.csproj">
       <Project>{6FA9FF63-4F79-4A9F-882C-7A7AE27C7332}</Project>
       <Name>Domain.MainModules.Entities</Name>
@@ -220,6 +264,9 @@
       <Project>{AC6B9382-921B-40C7-9282-27EDEF1D3432}</Project>
       <Name>ServerControls</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

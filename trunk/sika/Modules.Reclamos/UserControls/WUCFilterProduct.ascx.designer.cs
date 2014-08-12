@@ -7,82 +7,91 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Modules.Reclamos.Admin {
+namespace Modules.Reclamos.UserControls {
     
     
-    public partial class FrmListaGeneralReclamos {
+    public partial class WUCFilterProduct {
         
         /// <summary>
-        /// upgeneral control.
+        /// litNombreProductoSeleccionado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upgeneral;
+        protected global::System.Web.UI.WebControls.Literal litNombreProductoSeleccionado;
         
         /// <summary>
-        /// pnlHeader control.
+        /// ImgSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlHeader;
+        protected global::System.Web.UI.WebControls.ImageButton ImgSearch;
         
         /// <summary>
-        /// ShowHide control.
+        /// trInfoProducto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ShowHide;
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow trInfoProducto;
         
         /// <summary>
-        /// lbFiltro control.
+        /// lblPresentacionProducto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbFiltro;
+        protected global::System.Web.UI.WebControls.Label lblPresentacionProducto;
         
         /// <summary>
-        /// btnNuevo control.
+        /// lblTargetMarketProducto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNuevo;
+        protected global::System.Web.UI.WebControls.Label lblTargetMarketProducto;
         
         /// <summary>
-        /// PanelFiltro control.
+        /// lblCampoAplicacionProducto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelFiltro;
+        protected global::System.Web.UI.WebControls.Label lblCampoAplicacionProducto;
         
         /// <summary>
-        /// txtNombreCliente control.
+        /// lblSubCampoAplicacionProducto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreCliente;
+        protected global::System.Web.UI.WebControls.Label lblSubCampoAplicacionProducto;
         
         /// <summary>
-        /// txtCodigoCliente control.
+        /// pnlImg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCodigoCliente;
+        protected global::System.Web.UI.WebControls.Panel pnlImg;
+        
+        /// <summary>
+        /// txtFilterProduct control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFilterProduct;
         
         /// <summary>
         /// btnFiltrar control.
@@ -94,84 +103,57 @@ namespace Modules.Reclamos.Admin {
         protected global::System.Web.UI.WebControls.Button btnFiltrar;
         
         /// <summary>
-        /// btnRemoveFilter control.
+        /// pnlContainerProductList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRemoveFilter;
+        protected global::System.Web.UI.WebControls.Panel pnlContainerProductList;
         
         /// <summary>
-        /// CollapsiblePanelExtender1 control.
+        /// rptListado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.CollapsiblePanelExtender CollapsiblePanelExtender1;
+        protected global::System.Web.UI.WebControls.Repeater rptListado;
         
         /// <summary>
-        /// pnlNewReclamo control.
+        /// lblNoRecords control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlNewReclamo;
+        protected global::System.Web.UI.WebControls.Label lblNoRecords;
         
         /// <summary>
-        /// rblReclamoType control.
+        /// pgrListado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rblReclamoType;
+        protected global::ServerControls.PagerLinq pgrListado;
         
         /// <summary>
-        /// trCategoriaReclamo control.
+        /// btnTargetControl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableRow trCategoriaReclamo;
+        protected global::System.Web.UI.WebControls.Button btnTargetControl;
         
         /// <summary>
-        /// ddlCategoriaReclamo control.
+        /// mpeSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlCategoriaReclamo;
-        
-        /// <summary>
-        /// btnConfirmNewReclamo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnConfirmNewReclamo;
-        
-        /// <summary>
-        /// btnPopNewReclamoTargetControl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPopNewReclamoTargetControl;
-        
-        /// <summary>
-        /// mpeNewReclamo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.ModalPopupExtender mpeNewReclamo;
+        protected global::AjaxControlToolkit.ModalPopupExtender mpeSearch;
     }
 }
