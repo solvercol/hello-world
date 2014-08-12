@@ -84,6 +84,7 @@ namespace Infraestructura.Data.Documentos.Repositories
                     .Include(r => r.TBL_ModuloDocumentos_Categorias)
                     .Include(r => r.TBL_ModuloDocumentos_Categorias1)
                     .Include(r => r.TBL_ModuloDocumentos_Categorias2)
+                    .Include(r => r.TBL_ModuloDocumentos_Estados)
                     .Where(specific).ToList();
             }
             throw new InvalidOperationException(string.Format(

@@ -24,6 +24,9 @@ namespace Application.MainModule.Documentos.IServices
                                                                     Int32 filtroIdResponsable);
 
         List<TBL_ModuloDocumentos_Documento> FindDocsPublicadosByFilters(string filtroNombre);
+
+        List<TBL_ModuloDocumentos_Documento> FindMyDocsByFilters(string filtroNombre, Int32 filtroIdEstado,
+                                                                 Int32 filtroIdUsuario);
     }
 }
     

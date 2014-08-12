@@ -78,9 +78,10 @@ namespace Modules.Documentos.Admin
 
         protected void BtnRegresarClick(object sender, EventArgs e)
         {
-            string url = string.IsNullOrEmpty(FormRequest)
-                                  ? string.Format("FrmMisDocumentos.aspx{0}", GetBaseQueryString())
-                                  : string.Format("{0}{1}", FormRequest, GetBaseQueryString());
+            //string url = string.IsNullOrEmpty(FormRequest)
+            //                      ? string.Format("FrmMisDocumentos.aspx{0}", GetBaseQueryString())
+            //                      : string.Format("{0}{1}", FormRequest, GetBaseQueryString());
+            string url = string.Format("{0}{1}", FormRequest, GetBaseQueryString());
             Response.Redirect(url);
         }
 

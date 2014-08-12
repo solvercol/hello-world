@@ -76,25 +76,11 @@ namespace Presenters.Documentos.Presenters
         {
             try
             {
-                var listDoc = _documentoServices.FindBySpec(true);
+                var idUsuario = 0;
                 if (!View.UserSession.IsInRole("Administrador"))
-                    if (listDoc.Count() > 0)
-                        listDoc = listDoc.FindAll(doc => doc.IdUsuarioCreacion == View.UserSession.IdUser);
-                if (View.FiltroNombre.Length > 0)
-                {
-                    listDoc =
-                    listDoc.FindAll
-                        (doc =>
-                            _categoriaServices.FindById(doc.IdCategoria).Nombre.ToLower().Contains(View.FiltroNombre.ToLower())
-                            ||
-                            _categoriaServices.FindById(doc.IdSubCategoria).Nombre.ToLower().Contains(View.FiltroNombre.ToLower())
-                            ||
-                            _categoriaServices.FindById(doc.IdTipo).Nombre.ToLower().Contains(View.FiltroNombre.ToLower())
-                        );
-                }
-                if (View.FiltroIdEstado != 0)
-                    listDoc = listDoc.FindAll(doc => doc.IdEstado == View.FiltroIdEstado);
-                View.ListaDocumentos = listDoc;
+                    idUsuario = View.UserSession.IdUser;
+                View.ListaDocumentos = _documentoServices.FindMyDocsByFilters(View.FiltroNombre, View.FiltroIdEstado,
+                                                                              idUsuario);
                 View.ArbolDocumentos();
             }
             catch (Exception ex)
