@@ -97,11 +97,6 @@ namespace Modules.Documentos.Admin
             base.OnInit(e);
         }
 
-        protected void BtnNuevoClick(object sender, EventArgs e)
-        {
-            Response.Redirect(string.Format("FrmEditarDocumento.aspx{0}", GetBaseQueryString()));
-        }
-
         protected void BtnFindClick(object sender, EventArgs e)
         {
             if (FilterEvent != null)
@@ -144,14 +139,9 @@ namespace Modules.Documentos.Admin
             var li = new ListItem("Seleccione", "0");
             ddlResponsableDoc.Items.Insert(0, li);
         }
-
-
+        
         public TreeNodeCollection ConstruirArbol()
         {
-            ISfTBL_ModuloDocumentos_CategoriasManagementServices _categoriaServices;
-            TBL_ModuloDocumentos_Categorias categoria = null;
-            TBL_ModuloDocumentos_Categorias subCategoria = null;
-            TBL_ModuloDocumentos_Categorias tipoDocumento = null;
             int idCatAnt = 0; int idSubCatAnt = 0; int idTipoDocAnt = 0;
             bool cambioCat = false; bool cambioSubCat = false;
             TreeNode tNodeCat = null; TreeNode tNodeSubCat = null;
@@ -160,7 +150,6 @@ namespace Modules.Documentos.Admin
             try
             {
                 Nodos = new TreeNodeCollection();
-                _categoriaServices = IoC.Resolve<ISfTBL_ModuloDocumentos_CategoriasManagementServices>();
                 if (ListaDocumentos.Count() == 0)
                     return Nodos;
                 var list = ListaDocumentos.OrderBy(cat => cat.IdCategoria).ThenBy(sub => sub.IdSubCategoria).ThenBy(tdoc => tdoc.IdTipo);
@@ -168,30 +157,30 @@ namespace Modules.Documentos.Admin
                 {
                     if (documento.IdCategoria != idCatAnt)
                     {
-                        categoria = _categoriaServices.FindById(documento.IdCategoria);
-                        tNodeCat = new TreeNode(categoria.Nombre.ToUpper(), categoria.IdCategoria.ToString());
+                        tNodeCat = new TreeNode(documento.TBL_ModuloDocumentos_Categorias.Nombre.ToUpper(), documento.IdCategoria.ToString());
                         tNodeCat.SelectAction = TreeNodeSelectAction.None;
                         Nodos.Add(tNodeCat);
                         cambioCat = true;
                     }
                     if (documento.IdSubCategoria != idSubCatAnt || cambioCat)
                     {
-                        subCategoria = _categoriaServices.FindById(documento.IdSubCategoria);
-                        tNodeSubCat = new TreeNode(subCategoria.Nombre.ToUpper());
+                        tNodeSubCat = new TreeNode(documento.TBL_ModuloDocumentos_Categorias1.Nombre.ToUpper(), documento.IdSubCategoria.ToString());
                         tNodeSubCat.SelectAction = TreeNodeSelectAction.None;
                         tNodeCat.ChildNodes.Add(tNodeSubCat);
                         cambioSubCat = true;
                     }
                     if (documento.IdTipo != idTipoDocAnt || cambioSubCat)
                     {
-                        tipoDocumento = _categoriaServices.FindById(documento.IdTipo);
-                        tNodeTipoDoc = new TreeNode(tipoDocumento.Nombre.ToUpper());
+                        tNodeTipoDoc = new TreeNode(documento.TBL_ModuloDocumentos_Categorias2.Nombre.ToUpper(),documento.IdTipo.ToString());
                         tNodeTipoDoc.SelectAction = TreeNodeSelectAction.None;
                         tNodeSubCat.ChildNodes.Add(tNodeTipoDoc);
                     }
 
                     tNodeDoc = new TreeNode(documento.Titulo, documento.IdDocumento.ToString());
-                    tNodeDoc.NavigateUrl = string.Format("~/pages/modules/documentos/Admin/FrmEditarDocumento.aspx?IdDocumento={0}", documento.IdDocumento);
+                    tNodeDoc.NavigateUrl =
+                        string.Format(
+                            "~/pages/modules/documentos/Admin/FrmEditarDocumento.aspx?ModuleId={0}&IdDocumento={1}",
+                            ModuleId, documento.IdDocumento);
                     tNodeTipoDoc.ChildNodes.Add(tNodeDoc);
 
                     idCatAnt = documento.IdCategoria;
@@ -207,8 +196,6 @@ namespace Modules.Documentos.Admin
             }
             return Nodos;
         }
-
-
 
         public string IdModule
         {

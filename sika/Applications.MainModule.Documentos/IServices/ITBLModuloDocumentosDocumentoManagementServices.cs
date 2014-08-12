@@ -10,6 +10,8 @@
 
 using Domain.Core;
 using Domain.MainModules.Entities;
+using System.Collections.Generic;
+using System;
 
 namespace Application.MainModule.Documentos.IServices
 {
@@ -17,6 +19,9 @@ namespace Application.MainModule.Documentos.IServices
         : IGenericServices<TBL_ModuloDocumentos_Documento>
     {
         TBL_ModuloDocumentos_Documento GetDocumentoByIdWithAttachments(int id);
+
+        List<TBL_ModuloDocumentos_Documento> FindTotalDocsByFilters(string filtroNombre, Int32 filtroIdEstado,
+                                                                    Int32 filtroIdResponsable);
     }
 }
     
