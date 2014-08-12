@@ -64,6 +64,9 @@
     <Folder Include="Scripts\Functions" />
     <Folder Include="Scripts\StoredProcedure" />
     <Folder Include="Scripts\Data Base" />
+    <Folder Include="Scripts\Modules" />
+    <Folder Include="Scripts\Modules\Reclamos" />
+    <Folder Include="Scripts\Modules\Reclamos\Interfaces" />
   </ItemGroup>
   <ItemGroup>
     <PropertiesFile Include="Properties\Database.sqlsettings">
@@ -81,6 +84,30 @@
   </ItemGroup>
   <ItemGroup>
     <NotInBuild Include="Scripts\Data Base\DB_Create.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Scripts\Modules\Reclamos\Interfaces\01_Interface_GetAllProducts.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Scripts\Modules\Reclamos\Interfaces\02_Interface_GetProductByCodProducto.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Scripts\Modules\Reclamos\Interfaces\03_Interface_GetProductsByFilters.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Scripts\Modules\Reclamos\Interfaces\04_Interface_GetAllClients.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Scripts\Modules\Reclamos\Interfaces\05_Interface_GetClienteByCodCliente.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Scripts\Modules\Reclamos\Interfaces\06_Interface_GetClientsByFilters.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Scripts\Modules\Reclamos\Interfaces\07_Interface_GetProductsByFiltersCount.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Scripts\Modules\Reclamos\Interfaces\08_Interface_GetClientsByFiltersCount.sql">
       <SubType>NotInBuild</SubType>
     </NotInBuild>
   </ItemGroup>
