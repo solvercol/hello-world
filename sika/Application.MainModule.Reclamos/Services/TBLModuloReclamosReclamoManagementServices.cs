@@ -161,6 +161,13 @@ namespace Application.MainModule.Reclamos.Services
         }
 
         #endregion
+
+        public TBL_ModuloReclamos_Reclamo GetReclamoWithNavById(decimal id)
+        {
+            Specification<TBL_ModuloReclamos_Reclamo> onlyEnabledSpec = new DirectSpecification<TBL_ModuloReclamos_Reclamo>(u => u.IdReclamo == id);
+
+            return _TBLModuloReclamosReclamoRepository.GetCompleteEntity(onlyEnabledSpec);
+        }
     }
 }
     

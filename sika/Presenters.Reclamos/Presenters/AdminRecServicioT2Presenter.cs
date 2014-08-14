@@ -177,6 +177,7 @@ namespace Presenters.Reclamos.Presenters
                 IncrementConsecutivoReclamo();
                 InvokeMessageBox(new MessageBoxEventArgs(string.Format("Datos Guardados Con Exito."), TypeError.Ok));
 
+                View.GoToReclamoView(string.Format("{0}", model.IdReclamo));
             }
             catch (Exception ex)
             {

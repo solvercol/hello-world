@@ -83,6 +83,7 @@
   <ItemGroup>
     <Content Include="Admin\FrmAddReclamo.aspx" />
     <Content Include="Admin\FrmListaGeneralReclamos.aspx" />
+    <Content Include="Admin\FrmReclamo.aspx" />
     <Content Include="UserControls\WUCAdminActividadesReclamo.ascx" />
     <Content Include="UserControls\WUCAdminAlternativasReclamo.ascx" />
     <Content Include="UserControls\WUCAdminComentariosRespuestaReclamo.ascx" />
@@ -118,6 +119,13 @@
     </Compile>
     <Compile Include="Admin\FrmListaGeneralReclamos.aspx.designer.cs">
       <DependentUpon>FrmListaGeneralReclamos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FrmReclamo.aspx.cs">
+      <DependentUpon>FrmReclamo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FrmReclamo.aspx.designer.cs">
+      <DependentUpon>FrmReclamo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReclamosModule.cs" />

@@ -16,8 +16,7 @@ namespace Application.MainModule.Reclamos.IServices
 {
     public interface ISfTBL_ModuloReclamos_ReclamoManagementServices : IGenericServices<TBL_ModuloReclamos_Reclamo>
     {
-     
-
+        TBL_ModuloReclamos_Reclamo GetReclamoWithNavById(decimal id);
     }
 }
     

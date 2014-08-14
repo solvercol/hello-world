@@ -40,5 +40,8 @@ namespace Presenters.Reclamos.IViews
         // Carga
         void LoadAsesores(List<TBL_Admin_Usuarios> items);
         void LoadAtendidoPor(List<TBL_Admin_Usuarios> items);
+
+        // View 
+        void GoToReclamoView(string idReclamo);
     }
 }
