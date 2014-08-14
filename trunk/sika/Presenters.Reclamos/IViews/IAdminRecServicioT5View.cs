@@ -37,5 +37,8 @@ namespace Presenters.Reclamos.IViews
         void LoadPlantas(List<DTO_ValueKey> items);
         void LoadAreaIncumpleProcedimiento(List<DTO_ValueKey> items);
         void LoadProcedimientoInternoAfectado(List<DTO_ValueKey> items);
+
+        // View 
+        void GoToReclamoView(string idReclamo);
     }
 }

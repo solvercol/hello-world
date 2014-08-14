@@ -14,6 +14,7 @@ using Domain.MainModules.Entities;
 using Domain.Core.Specification;
 using Domain.MainModule.Reclamos.Contracts;
 using Application.MainModule.Reclamos.IServices;
+using Domain.MainModule.Reclamos.Spec;
 
 namespace Application.MainModule.Reclamos.Services
 {
@@ -158,6 +159,16 @@ namespace Application.MainModule.Reclamos.Services
             {
                 _TBLModuloReclamosCategoriasReclamoRepository.UnitOfWork.Dispose();
             }
+        }
+
+        #endregion
+
+        #region IService Members
+
+        public List<TBL_ModuloReclamos_CategoriasReclamo> GetByTipoReclamo(int idTipoReclamo)
+        {
+            return _TBLModuloReclamosCategoriasReclamoRepository.GetBySpec(TBL_ModuloReclamos_CategoriasReclamo_Spec.SpecByTipoReclamo(idTipoReclamo))
+                                                                .ToList();
         }
 
         #endregion

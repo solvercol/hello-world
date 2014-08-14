@@ -47,5 +47,8 @@ namespace Presenters.Reclamos.IViews
         void LoadAtendidoPor(List<TBL_Admin_Usuarios> items);
         void LoadPlantas(List<DTO_ValueKey> items);
         void LoadSubCategoriaReclamo(List<DTO_ValueKey> items);
+
+        // View 
+        void GoToReclamoView(string idReclamo);
     }
 }

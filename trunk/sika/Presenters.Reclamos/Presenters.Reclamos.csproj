@@ -55,6 +55,7 @@
     <Compile Include="IViews\IFilterClientView.cs" />
     <Compile Include="IViews\IFilterProductView.cs" />
     <Compile Include="IViews\IListaGeneralReclamosView.cs" />
+    <Compile Include="IViews\IReclamoView.cs" />
     <Compile Include="Presenters\AddReclamoPresenter.cs" />
     <Compile Include="Presenters\AdminActividadesReclamoPresenter.cs" />
     <Compile Include="Presenters\AdminAlternativasReclamoPresenter.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Presenters\FilterClientPresenter.cs" />
     <Compile Include="Presenters\FilterProductPresenter.cs" />
     <Compile Include="Presenters\ListaGeneralReclamosPresenter.cs" />
+    <Compile Include="Presenters\ReclamoPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -10,16 +10,14 @@
 #pragma warning disable 1591 // this is for supress no xml comments in public members warnings 
 
 using System;
-using System.Data.Objects;
-using System.Data.Objects.SqlClient;
 using System.Globalization;
 using System.Linq;
+using Domain.Core.Specification;
 using Domain.MainModule.Contracts;
+using Domain.MainModules.Entities;
 using Infraestructure.Data.Core;
 using Infraestructure.Data.Core.Extensions;
 using Infrastructure.CrossCutting.Logging;
-using Domain.MainModules.Entities;
-using Domain.Core.Specification;
 using Infrastructure.Data.MainModule.Resources;
 using Infrastructure.Data.MainModule.UnitOfWork;
 

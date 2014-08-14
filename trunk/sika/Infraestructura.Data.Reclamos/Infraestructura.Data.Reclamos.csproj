@@ -60,8 +60,18 @@
     <Compile Include="Repositories\TBL_ModuloReclamos_UnidadesZonasRepository.cs" />
     <Compile Include="Repositories\TBL_ModuloReclamos_UnidadRepository.cs" />
     <Compile Include="Repositories\TBL_ModuloReclamos_ZonaRepository.cs" />
+    <Compile Include="Resources\Messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Messages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain.Core.Entities\Domain.Core.Entities.csproj">
       <Project>{A1708898-8F15-4D62-99E0-293334E740C2}</Project>

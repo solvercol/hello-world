@@ -22,6 +22,8 @@ namespace Applications.MainModule.Admin.IServices
         /// <returns></returns>
         TBL_Admin_OptionList ObtenerOpcionBykey(string key);
 
+        TBL_Admin_OptionList ObtenerOpcionBykeyModuleId(string key, int moduleId);
+
     }
 }
     

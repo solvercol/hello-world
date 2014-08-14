@@ -139,6 +139,18 @@ namespace Applications.MainModule.Admin.Services
              return _tblAdminOptionListRepository.GetEntityBySpec(specification);
 
          }
+
+         public TBL_Admin_OptionList ObtenerOpcionBykeyModuleId(string key, int moduleId)
+         {
+             if (string.IsNullOrEmpty(key))
+                 throw new ArgumentNullException(string.Format("Busqueda por Key : El parametro es nulo."));
+
+             Specification<TBL_Admin_OptionList> specification = new DirectSpecification<TBL_Admin_OptionList>(u => u.Key.Equals(key) && u.IdModule == moduleId);
+
+             return _tblAdminOptionListRepository.GetEntityBySpec(specification);
+         }
+
+
          #endregion
 
          #region IDisposable Members
@@ -158,7 +170,7 @@ namespace Applications.MainModule.Admin.Services
             }
         }
 
-        #endregion
+        #endregion       
     }
 }
     

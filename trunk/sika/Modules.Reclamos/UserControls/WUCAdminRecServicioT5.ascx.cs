@@ -62,6 +62,11 @@ namespace Modules.Reclamos.UserControls
 
         #region Methods
 
+        public void GoToReclamoView(string idReclamo)
+        {
+            Response.Redirect(string.Format("../Admin/FrmReclamo.aspx?ModuleId={0}&IdReclamo={1}", IdModule, idReclamo));
+        }
+
         public void LoadQuienReclama(List<TBL_Admin_Usuarios> items)
         {
             if (items.Any())

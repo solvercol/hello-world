@@ -114,6 +114,7 @@ namespace Infrastructure.CrossCutting.IoC
 
             #region Servicio de Consultas SQl
             container.RegisterType<IPedidosEmpacorServices, PedidosEmpacorServices>(new TransientLifetimeManager());
+            container.RegisterType<IReclamosExternalInterfacesService, ReclamosExternalInterfacesService>(new TransientLifetimeManager());
             #endregion
 
             #region Register crosscuting mappings
