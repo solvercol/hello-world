@@ -15,7 +15,7 @@ namespace Domain.MainModule.Reclamos.Spec
          #region Constructor
 
         public TBL_ModuloReclamos_CategoriasReclamo_Spec()
-        {
+        { 
         }
 
         #endregion
