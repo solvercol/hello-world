@@ -41,6 +41,10 @@ namespace Infraestructura.Data.Documentos.Repositories
                 var specific = specification.SatisfiedBy();
                 return activeContext.TBL_ModuloDocumentos_HistorialDocumento
                                     .Include(h => h.TBL_ModuloDocumentos_DocumentoAdjuntoHistorial)
+                                    .Include(r => r.TBL_ModuloDocumentos_Categorias)
+                                    .Include(r => r.TBL_ModuloDocumentos_Categorias1)
+                                    .Include(r => r.TBL_ModuloDocumentos_Categorias2)
+                                    .Include(r => r.TBL_ModuloDocumentos_Estados)
                                     .Where(specific)
                                     .SingleOrDefault();
             }
