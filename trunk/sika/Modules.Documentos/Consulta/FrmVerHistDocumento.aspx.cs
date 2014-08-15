@@ -159,8 +159,8 @@ namespace Modules.Documentos.Consulta
 
         public void Adjuntos(IEnumerable<TBL_ModuloDocumentos_DocumentoAdjuntoHistorial> adjuntos)
         {
-            GrdViewArchivos.DataSource = adjuntos;
-            GrdViewArchivos.DataBind();
+            rptAdjuntos.DataSource = adjuntos;
+            rptAdjuntos.DataBind();
         }
 
 

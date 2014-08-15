@@ -26,6 +26,7 @@ namespace Modules.Documentos.Admin
         public event EventHandler DescargarArchivoEvent;
         public event EventHandler PublicarEvent;
         public event EventHandler EliminarAdjuntoEvent;
+        public event EventHandler GuardarAdjuntoEvent;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -90,7 +91,6 @@ namespace Modules.Documentos.Admin
             if (GuardarEvent != null)
                 GuardarEvent(null, EventArgs.Empty);
         }
-
 
         public double TamanioArchivoActual
         {
@@ -350,8 +350,8 @@ namespace Modules.Documentos.Admin
 
         public void Adjuntos(IEnumerable<TBL_ModuloDocumentos_DocumentoAdjunto> adjuntos)
         {
-            GrdViewArchivos.DataSource = adjuntos;
-            GrdViewArchivos.DataBind();
+            rptAdjuntos.DataSource = adjuntos;
+            rptAdjuntos.DataBind();
         }
 
         public void DescargarArchivo(TBL_ModuloDocumentos_DocumentoAdjunto adjunto)
@@ -459,5 +459,12 @@ namespace Modules.Documentos.Admin
             if (EliminarAdjuntoEvent != null)
                 EliminarAdjuntoEvent(ImgBtnEliminar.CommandArgument, EventArgs.Empty);
         }
+
+        protected void BtnAdjuntarClick(object sender, EventArgs e)
+        {
+            if (GuardarAdjuntoEvent != null)
+                GuardarAdjuntoEvent(null, EventArgs.Empty);
+        }
+
     }
 }

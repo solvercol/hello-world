@@ -59,6 +59,12 @@ namespace Presenters.Documentos.Presenters
             View.CancelarEvent += ViewEliminarEvent;
             View.DescargarArchivoEvent += ViewDescargarArchivoEvent;
             View.EliminarAdjuntoEvent += ViewEliminarAdjuntoEvent;
+            View.GuardarAdjuntoEvent += ViewGuardarAdjuntoEvent;
+        }
+
+        void ViewGuardarAdjuntoEvent(object sender, EventArgs e)
+        {
+            GuardarArchivoAdjunto(View.IdDocumento,View.NombreArchivo);
         }
 
         void ViewEliminarAdjuntoEvent(object sender, EventArgs e)
@@ -137,18 +143,14 @@ namespace Presenters.Documentos.Presenters
                 View.IdSubCategoria = oDocumento.IdSubCategoria;
                 View.IdTipoDocumento = oDocumento.IdTipo;
 
-                if (oDocumento.TBL_ModuloDocumentos_Categorias == null)
-                    oDocumento.TBL_ModuloDocumentos_Categorias = categoriasServices.FindById(oDocumento.IdCategoria);
                 View.Categoria = oDocumento.TBL_ModuloDocumentos_Categorias.Nombre;
-                if (oDocumento.TBL_ModuloDocumentos_Categorias1 == null)
-                    oDocumento.TBL_ModuloDocumentos_Categorias1 = categoriasServices.FindById(oDocumento.IdSubCategoria);
                 View.SubCategoria = oDocumento.TBL_ModuloDocumentos_Categorias1.Nombre;
-                if (oDocumento.TBL_ModuloDocumentos_Categorias2 == null)
-                    oDocumento.TBL_ModuloDocumentos_Categorias2 = categoriasServices.FindById(oDocumento.IdTipo);
                 View.TipoDocumento = oDocumento.TBL_ModuloDocumentos_Categorias2.Nombre;
 
                 View.IdUsuarioResponsable = oDocumento.IdUsuarioResponsable;
                 View.Activo = oDocumento.IsActive;
+
+                View.Adjuntos(oDocumento.TBL_ModuloDocumentos_DocumentoAdjunto);
             }
             catch (Exception ex)
             {
@@ -159,24 +161,8 @@ namespace Presenters.Documentos.Presenters
 
         private void Guardar()
         {
-            string msgError = string.Empty;
             try
             {
-                if (View.TamanioArchivoActual == 0)
-                {
-                    CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(new Exception(Message.NotSelectFile), MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
-                    InvokeMessageBox(new MessageBoxEventArgs(Message.NotSelectFile, TypeError.Error));
-                    return;
-                }
-                if (View.TamanioArchivoActual > View.TamanioMaxArchivoACargar)  // 1MB approx (actually less though)
-                {
-                    msgError = string.Format(Message.SizeMaxFileError, View.TamanioMaxArchivoACargar);
-                    CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(new Exception(msgError), MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
-                    InvokeMessageBox(new MessageBoxEventArgs(msgError, TypeError.Error));
-                    return;
-                }
-
-
                 var IdCategoria = View.IdCategoria;
                 if (View.IdCategoria == 0)
                     IdCategoria = GuardarCategoria(1, View.Categoria);
@@ -212,8 +198,6 @@ namespace Presenters.Documentos.Presenters
                 oDocumento.ModifiedOn = fechaAhora;
                 documentoServices.Add(oDocumento);
 
-                GuardarAdjunto(oDocumento.IdDocumento, View.NombreArchivo);
-
                 ///LOG DE DOCUMENTO
                 GuardarLog(oDocumento, null, "Documento creado");
 
@@ -229,10 +213,25 @@ namespace Presenters.Documentos.Presenters
             }
         }
 
-        private void GuardarAdjunto(int idDocumento, string nombreArchivo) 
+        private void GuardarArchivoAdjunto(int idDocumento, string nombreArchivo) 
         {
             try
             {
+                string msgError = string.Empty;
+                if (View.TamanioArchivoActual == 0)
+                {
+                    CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(new Exception(Message.NotSelectFile), MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+                    InvokeMessageBox(new MessageBoxEventArgs(Message.NotSelectFile, TypeError.Error));
+                    return;
+                }
+                if (View.TamanioArchivoActual > View.TamanioMaxArchivoACargar)  // 1MB approx (actually less though)
+                {
+                    msgError = string.Format(Message.SizeMaxFileError, View.TamanioMaxArchivoACargar);
+                    CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(new Exception(msgError), MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+                    InvokeMessageBox(new MessageBoxEventArgs(msgError, TypeError.Error));
+                    return;
+                }
+
                 var adjunto = docAdjuntoServices.NewEntity();
                 adjunto.IdDocumento = idDocumento;
                 adjunto.Archivo = View.Archivo;
@@ -243,6 +242,14 @@ namespace Presenters.Documentos.Presenters
                 adjunto.CrateOn = DateTime.Now;
                 adjunto.NombreArchivo = nombreArchivo;
                 docAdjuntoServices.Add(adjunto);
+
+                var oDocumento = documentoServices.GetDocumentoByIdWithAttachments(idDocumento);
+
+                GuardarLog(oDocumento, null, "Se agregó archivo adjunto");
+
+                View.Adjuntos(oDocumento.TBL_ModuloDocumentos_DocumentoAdjunto);
+
+                InvokeMessageBox(new MessageBoxEventArgs(Message.ProcessOk, TypeError.Ok));
             }
             catch (Exception ex)
             {
@@ -304,13 +311,13 @@ namespace Presenters.Documentos.Presenters
                     return;
                 }
 
-                if (View.Archivo.Length > 0 && View.TamanioArchivoActual > View.TamanioMaxArchivoACargar)  
-                {
-                    msgError = string.Format(Message.SizeMaxFileError, View.TamanioMaxArchivoACargar);
-                    CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(new Exception(msgError), MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
-                    InvokeMessageBox(new MessageBoxEventArgs(msgError, TypeError.Error));
-                    return;
-                }
+                //if (View.Archivo.Length > 0 && View.TamanioArchivoActual > View.TamanioMaxArchivoACargar)  
+                //{
+                //    msgError = string.Format(Message.SizeMaxFileError, View.TamanioMaxArchivoACargar);
+                //    CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(new Exception(msgError), MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+                //    InvokeMessageBox(new MessageBoxEventArgs(msgError, TypeError.Error));
+                //    return;
+                //}
 
 
                 ///CREACION DEL HISTORICO SI ESTA PUBLICADO
@@ -347,8 +354,6 @@ namespace Presenters.Documentos.Presenters
                 oDocumento.ModifiedBy = View.UserSession.IdUser;
                 oDocumento.ModifiedOn = DateTime.Now;
                 documentoServices.Modify(oDocumento);
-
-                GuardarAdjunto(oDocumento.IdDocumento, View.NombreArchivo);
 
                 InvokeMessageBox(new MessageBoxEventArgs(Message.ProcessOk, TypeError.Ok));
 
@@ -460,13 +465,8 @@ namespace Presenters.Documentos.Presenters
 
                 var oDocumento = documentoServices.GetDocumentoByIdWithAttachments(oAdjunto.IdDocumento);
 
-                ///CREACION DEL HISTORICO SI ESTA PUBLICADO
-                var estado = estadosServices.FindById(oDocumento.IdEstado.GetValueOrDefault());
-                decimal? idHistorial = null;
-                if (estado.Codigo.Equals("PUBLICADO"))
-                    idHistorial = GuardarHistorico(oDocumento);
                 ///LOG DE DOCUMENTO
-                GuardarLog(oDocumento, idHistorial, "Se eliminó un archivo adjunto");
+                GuardarLog(oDocumento, null, "Se eliminó un archivo adjunto");
 
                 docAdjuntoServices.Remove(oAdjunto);
                 

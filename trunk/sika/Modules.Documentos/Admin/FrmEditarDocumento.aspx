@@ -87,30 +87,65 @@
                    </asp:RequiredFieldValidator>
                 </td>
                 <td rowspan="8" style="width:49%;vertical-align:top">
-                    <%--Grilla de documentos--%>
-                    <asp:Panel ID="PnlContenedorArchivos" runat="server" BorderWidth="1px" Width="100%" Height="230px" ScrollBars="Vertical">
-                        <asp:GridView ID="GrdViewArchivos" runat="server" Width="90%" AutoGenerateColumns="False">
-                            <Columns>
-                                <asp:TemplateField HeaderText="Archivo" HeaderStyle-HorizontalAlign="Center">
-                                    <ItemTemplate>
-                                        <asp:LinkButton ID="lnkBtnArchivo" runat="server" Width="350px" 
-                                            CommandArgument='<%# Eval("IdDocumentoAdjunto") %>' 
-                                            Text='<%# Eval("NombreArchivo") %>' onclick="lnkBtnArchivo_Click"></asp:LinkButton>
-                                    </ItemTemplate>
-                                    <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderStyle-HorizontalAlign="Center">
-                                    <ItemTemplate>                                        
-                                        <asp:ImageButton ID="ImgBtnEliminar" runat="server" ImageUrl="~/Resources/Images/Close.png" 
-                                            CommandArgument='<%# Eval("IdDocumentoAdjunto") %>' 
-                                            OnClientClick="return confirm('¿Confirma que desea eliminar el archivo?');" 
-                                            onclick="ImgBtnEliminar_Click"/>                                        
-                                    </ItemTemplate>
-                                    <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                                </asp:TemplateField>
-                            </Columns>
-                        </asp:GridView>
-                    </asp:Panel>
+                    <%--Tablas de Adjuntos--%>
+                    <table cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                        <td colspan="2" id="tdCollapse" runat="server" class="ToolBar">
+                            Archivos Adjuntos
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Panel id="pnlDetalle" style="width:100%;float: left; " runat="server" >                            
+                                <table class="tbl" cellpadding="0" cellspacing="0" width="100%" style="height:15px">
+                                   <tr>
+                                        <th  style="width:79%" align="center" >
+                                                Archivos
+                                        </th>
+                                        <th  style="width:21%">                                           
+                                        </th>
+                                    </tr>
+                                </table>  
+                                <asp:Panel id="pnlContainer" style="width:100%;float: left; " Height="230px" ScrollBars="Auto" runat="server" >
+                                    <table width="100%" cellpadding="0" cellspacing="0" class="tbl" >
+				                        <asp:repeater id="rptAdjuntos" runat="server">
+					                        <itemtemplate>
+						                        <tr>
+							                        <td style="width:80%" align="left">
+                                                        <asp:LinkButton ID="lnkBtnArchivo" runat="server" Width="350px" 
+                                                            CommandArgument='<%# DataBinder.Eval(Container.DataItem, "IdDocumentoAdjunto")%>' 
+                                                            Text='<%# DataBinder.Eval(Container.DataItem, "NombreArchivo")%>' onclick="lnkBtnArchivo_Click"></asp:LinkButton>                                                        
+                                                    </td>
+							                        <td style="width:20%" align="center">
+                                                        <asp:ImageButton ID="ImgBtnEliminar" runat="server" ImageUrl="~/Resources/Images/RemoveGrid.png" 
+                                                            CommandArgument='<%# DataBinder.Eval(Container.DataItem,"IdDocumentoAdjunto") %>' 
+                                                            OnClientClick="return confirm('¿Confirma que desea eliminar el archivo?');" 
+                                                            onclick="ImgBtnEliminar_Click"/>                                        
+                                                    </td>
+						                        </tr>
+					                        </itemtemplate> 
+                                            <AlternatingItemTemplate>
+                                             <tr class="AlternateGridStyle">                                           
+							                        <td style="width:80%" align="left">
+                                                        <asp:LinkButton ID="lnkBtnArchivo" runat="server" Width="350px" 
+                                                            CommandArgument='<%# DataBinder.Eval(Container.DataItem, "IdDocumentoAdjunto")%>' 
+                                                            Text='<%# DataBinder.Eval(Container.DataItem, "NombreArchivo")%>' onclick="lnkBtnArchivo_Click"></asp:LinkButton>                                                        
+                                                    </td>
+							                        <td style="width:20%" align="center">
+                                                        <asp:ImageButton ID="ImgBtnEliminar" runat="server" ImageUrl="~/Resources/Images/RemoveGrid.png" 
+                                                            CommandArgument='<%# DataBinder.Eval(Container.DataItem,"IdDocumentoAdjunto") %>' 
+                                                            OnClientClick="return confirm('¿Confirma que desea eliminar el archivo?');" 
+                                                            onclick="ImgBtnEliminar_Click"/>                                        
+                                                    </td>
+						                     </tr>
+                                           </AlternatingItemTemplate>
+				                        </asp:repeater>
+			                          </table>                      
+                                </asp:Panel>                         
+                            </asp:Panel>
+                        </td>
+                    </tr>
+               </table>
                 </td>
              </tr>
              <!--Categoría-->
@@ -252,6 +287,7 @@
                 <td class="Separador"></td>
                 <td style="width:35%" >
                    <asp:FileUpload ID="FileUploadArchivo" runat="server" CausesValidation="False" />
+                   <asp:Button ID="btnAdjuntar" runat="server" Text="Adjuntar" OnClick="BtnAdjuntarClick" CausesValidation="false" />
                 </td>
                 <td style="width:49%"></td>
            </tr>
