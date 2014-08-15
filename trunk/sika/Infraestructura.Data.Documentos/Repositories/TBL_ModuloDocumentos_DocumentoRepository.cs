@@ -34,7 +34,6 @@ namespace Infraestructura.Data.Documentos.Repositories
             _currentUnitOfWork = unitOfWork;
         }
 
-
         public TBL_ModuloDocumentos_Documento GetDocumentoById(int id)
         {
             if (id > 0)
@@ -60,6 +59,10 @@ namespace Infraestructura.Data.Documentos.Repositories
                 var specific = specification.SatisfiedBy();
                 return activeContext.TBL_ModuloDocumentos_Documento
                                     .Include(r => r.TBL_ModuloDocumentos_DocumentoAdjunto)
+                                    .Include(r => r.TBL_ModuloDocumentos_Categorias)
+                                    .Include(r => r.TBL_ModuloDocumentos_Categorias1)
+                                    .Include(r => r.TBL_ModuloDocumentos_Categorias2)
+                                    .Include(r => r.TBL_ModuloDocumentos_Estados)
                                     .Where(specific)
                                     .SingleOrDefault();
             }
@@ -70,7 +73,7 @@ namespace Infraestructura.Data.Documentos.Repositories
 
         }
 
-        public List<TBL_ModuloDocumentos_Documento> GetDocumentoByIdWithCategories(ISpecification<TBL_ModuloDocumentos_Documento> specification)
+        public List<TBL_ModuloDocumentos_Documento> GetDocumentsWithCategories(ISpecification<TBL_ModuloDocumentos_Documento> specification)
         {
             //validate specification
             if (specification == null)
@@ -86,6 +89,30 @@ namespace Infraestructura.Data.Documentos.Repositories
                     .Include(r => r.TBL_ModuloDocumentos_Categorias2)
                     .Include(r => r.TBL_ModuloDocumentos_Estados)
                     .Where(specific).ToList();
+            }
+            throw new InvalidOperationException(string.Format(
+                CultureInfo.InvariantCulture,
+                Messages.exception_InvalidStoreContext,
+                GetType().Name));
+
+        }
+
+        public TBL_ModuloDocumentos_Documento GetDocumentsByIdWithCategories(ISpecification<TBL_ModuloDocumentos_Documento> specification)
+        {
+            //validate specification
+            if (specification == null)
+                throw new ArgumentNullException("specification");
+            var activeContext = UnitOfWork as IMainModuleUnitOfWork;
+            if (activeContext != null)
+            {
+                //perform operation in this repository
+                var specific = specification.SatisfiedBy();
+                return activeContext.TBL_ModuloDocumentos_Documento
+                    .Include(r => r.TBL_ModuloDocumentos_Categorias)
+                    .Include(r => r.TBL_ModuloDocumentos_Categorias1)
+                    .Include(r => r.TBL_ModuloDocumentos_Categorias2)
+                    .Include(r => r.TBL_ModuloDocumentos_Estados)
+                    .Where(specific).FirstOrDefault();
             }
             throw new InvalidOperationException(string.Format(
                 CultureInfo.InvariantCulture,
