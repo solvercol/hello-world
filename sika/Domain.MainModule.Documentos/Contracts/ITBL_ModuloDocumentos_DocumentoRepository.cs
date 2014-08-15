@@ -23,7 +23,10 @@ namespace Domain.MainModule.Documentos.Contracts
         TBL_ModuloDocumentos_Documento GetDocumentoByIdWithAttachments(
             ISpecification<TBL_ModuloDocumentos_Documento> specification);
 
-        List<TBL_ModuloDocumentos_Documento> GetDocumentoByIdWithCategories(
+        List<TBL_ModuloDocumentos_Documento> GetDocumentsWithCategories(
+            ISpecification<TBL_ModuloDocumentos_Documento> specification);
+
+        TBL_ModuloDocumentos_Documento GetDocumentsByIdWithCategories(
             ISpecification<TBL_ModuloDocumentos_Documento> specification);
     }
 }

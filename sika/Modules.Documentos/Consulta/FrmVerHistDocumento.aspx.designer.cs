@@ -49,22 +49,40 @@ namespace Modules.Documentos.Consulta {
         protected global::System.Web.UI.WebControls.Label txtTitulo;
         
         /// <summary>
-        /// PnlContenedorArchivos control.
+        /// tdCollapse control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PnlContenedorArchivos;
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell tdCollapse;
         
         /// <summary>
-        /// GrdViewArchivos control.
+        /// pnlDetalle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GrdViewArchivos;
+        protected global::System.Web.UI.WebControls.Panel pnlDetalle;
+        
+        /// <summary>
+        /// pnlContainer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlContainer;
+        
+        /// <summary>
+        /// rptAdjuntos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptAdjuntos;
         
         /// <summary>
         /// txtCategoria control.

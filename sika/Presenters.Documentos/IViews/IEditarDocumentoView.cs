@@ -17,6 +17,7 @@ namespace Presenters.Documentos.IViews
         event EventHandler CancelarEvent;
         event EventHandler DescargarArchivoEvent;
         event EventHandler EliminarAdjuntoEvent;
+        event EventHandler GuardarAdjuntoEvent;
 
         #endregion
 

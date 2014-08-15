@@ -27,6 +27,8 @@ namespace Application.MainModule.Documentos.IServices
 
         List<TBL_ModuloDocumentos_Documento> FindMyDocsByFilters(string filtroNombre, Int32 filtroIdEstado,
                                                                  Int32 filtroIdUsuario);
+
+        TBL_ModuloDocumentos_Documento GetDocumentoByIdWithCategories(int id);
     }
 }
     

@@ -29,21 +29,51 @@
                        CssClass="TextUpperCase" MaxLength="512"></asp:Label>
                 </td>
                 <td rowspan="8" style="width:49%;vertical-align:top">
-                    <%--Grilla de documentos--%>
-                    <asp:Panel ID="PnlContenedorArchivos" runat="server" BorderWidth="1px" Width="100%" Height="230px" ScrollBars="Vertical">
-                        <asp:GridView ID="GrdViewArchivos" runat="server" Width="35%" AutoGenerateColumns="False">
-                            <Columns>
-                                <asp:TemplateField HeaderText="Archivo" HeaderStyle-HorizontalAlign="Center">
-                                    <ItemTemplate>
-                                        <asp:LinkButton ID="lnkBtnArchivo" runat="server" Width="400px" 
-                                            CommandArgument='<%# Eval("IdDocumentoAdjuntoHistorial") %>' 
-                                            Text='<%# Eval("NombreArchivo") %>' onclick="lnkBtnArchivo_Click"></asp:LinkButton>
-                                    </ItemTemplate>
-                                    <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                                </asp:TemplateField>
-                            </Columns>
-                        </asp:GridView>
-                    </asp:Panel>
+                    <%--Tablas de Adjuntos--%>
+                        <table cellpadding="0" cellspacing="0" width="100%">
+                        <tr>
+                            <td colspan="2" id="tdCollapse" runat="server" class="ToolBar">
+                                Archivos Adjuntos
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Panel id="pnlDetalle" style="width:100%;float: left; " runat="server" >                            
+                                    <table class="tbl" cellpadding="0" cellspacing="0" width="100%" style="height:15px">
+                                       <tr>
+                                            <th  style="width:100%" align="center" >
+                                                    Archivos
+                                            </th>
+                                        </tr>
+                                    </table>  
+                                    <asp:Panel id="pnlContainer" style="width:100%;float: left; " Height="230px" ScrollBars="Auto" runat="server" >
+                                        <table width="100%" cellpadding="0" cellspacing="0" class="tbl" >
+				                            <asp:repeater id="rptAdjuntos" runat="server">
+					                            <itemtemplate>
+						                            <tr>
+							                            <td style="width:100%" align="left">
+                                                            <asp:LinkButton ID="lnkBtnArchivo" runat="server" Width="350px" 
+                                                                CommandArgument='<%# DataBinder.Eval(Container.DataItem, "IdDocumentoAdjuntoHistorial")%>' 
+                                                                Text='<%# DataBinder.Eval(Container.DataItem, "NombreArchivo")%>' onclick="lnkBtnArchivo_Click"></asp:LinkButton>                                                        
+                                                        </td>
+						                            </tr>
+					                            </itemtemplate> 
+                                                <AlternatingItemTemplate>
+                                                 <tr class="AlternateGridStyle">                                           
+							                            <td style="width:100%" align="left">
+                                                            <asp:LinkButton ID="lnkBtnArchivo" runat="server" Width="350px" 
+                                                                CommandArgument='<%# DataBinder.Eval(Container.DataItem, "IdDocumentoAdjuntoHistorial")%>' 
+                                                                Text='<%# DataBinder.Eval(Container.DataItem, "NombreArchivo")%>' onclick="lnkBtnArchivo_Click"></asp:LinkButton>                                                        
+                                                        </td>
+						                         </tr>
+                                               </AlternatingItemTemplate>
+				                            </asp:repeater>
+			                              </table>                      
+                                    </asp:Panel>                         
+                                </asp:Panel>
+                            </td>
+                        </tr>
+                   </table>
                 </td>
              </tr>
              <!--Categoría-->

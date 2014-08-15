@@ -57,7 +57,7 @@ namespace Presenters.Documentos.Presenters
                 if(View.IdDocumento == 0)
                     return;
 
-                var oDocumento = documentoServices.FindById(Convert.ToInt32(View.IdDocumento));
+                var oDocumento = documentoServices.GetDocumentoByIdWithCategories(Convert.ToInt32(View.IdDocumento));
                 
                 if (oDocumento == null)
                 {
@@ -70,16 +70,8 @@ namespace Presenters.Documentos.Presenters
 
                 View.Observaciones = oDocumento.Observaciones;
 
-                //View.Archivo = oDocumento.Archivo;
-
-                if (oDocumento.TBL_ModuloDocumentos_Categorias == null)
-                    oDocumento.TBL_ModuloDocumentos_Categorias = categoriasServices.FindById(oDocumento.IdCategoria);
                 View.Categoria = oDocumento.TBL_ModuloDocumentos_Categorias.Nombre;
-                if (oDocumento.TBL_ModuloDocumentos_Categorias1 == null)
-                    oDocumento.TBL_ModuloDocumentos_Categorias1 = categoriasServices.FindById(oDocumento.IdSubCategoria);
                 View.SubCategoria = oDocumento.TBL_ModuloDocumentos_Categorias1.Nombre;
-                if (oDocumento.TBL_ModuloDocumentos_Categorias2 == null)
-                    oDocumento.TBL_ModuloDocumentos_Categorias2 = categoriasServices.FindById(oDocumento.IdTipo);
                 View.TipoDocumento = oDocumento.TBL_ModuloDocumentos_Categorias2.Nombre;
 
                 View.UsuarioResponsable = usuarioServices.FindById(oDocumento.IdUsuarioResponsable).Nombres;

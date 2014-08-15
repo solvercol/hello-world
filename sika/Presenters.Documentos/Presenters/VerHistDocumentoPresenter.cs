@@ -74,14 +74,8 @@ namespace Presenters.Documentos.Presenters
                 View.IdDocumento = oHistDocumento.IdDocumento;
                 View.Observaciones = oHistDocumento.Observaciones;
 
-                if (oHistDocumento.TBL_ModuloDocumentos_Categorias == null)
-                    oHistDocumento.TBL_ModuloDocumentos_Categorias = categoriasServices.FindById(oHistDocumento.IdCategoria);
                 View.Categoria = oHistDocumento.TBL_ModuloDocumentos_Categorias.Nombre;
-                if (oHistDocumento.TBL_ModuloDocumentos_Categorias1 == null)
-                    oHistDocumento.TBL_ModuloDocumentos_Categorias1 = categoriasServices.FindById(oHistDocumento.IdSubCategoria);
                 View.SubCategoria = oHistDocumento.TBL_ModuloDocumentos_Categorias1.Nombre;
-                if (oHistDocumento.TBL_ModuloDocumentos_Categorias2 == null)
-                    oHistDocumento.TBL_ModuloDocumentos_Categorias2 = categoriasServices.FindById(oHistDocumento.IdTipo);
                 View.TipoDocumento = oHistDocumento.TBL_ModuloDocumentos_Categorias2.Nombre;
 
                 View.UsuarioResponsable = usuarioServices.FindById(oHistDocumento.IdUsuarioResposable).Nombres;

@@ -159,7 +159,7 @@ namespace Application.MainModule.Documentos.Services
              if (filtroIdResponsable != 0)
                  specification &= new DirectSpecification<TBL_ModuloDocumentos_Documento>(doc => doc.IdUsuarioResponsable == filtroIdResponsable);
 
-             return _tblModuloDocumentosDocumentoRepository.GetDocumentoByIdWithCategories(specification).ToList();
+             return _tblModuloDocumentosDocumentoRepository.GetDocumentsWithCategories(specification).ToList();
          }
 
          public List<TBL_ModuloDocumentos_Documento> FindDocsPublicadosByFilters(string filtroNombre)
@@ -183,7 +183,7 @@ namespace Application.MainModule.Documentos.Services
                       ||
                       doc.TBL_ModuloDocumentos_Categorias2.Nombre.ToLower().Contains(filtroNombre.ToLower()));
 
-             return _tblModuloDocumentosDocumentoRepository.GetDocumentoByIdWithCategories(specification).ToList();
+             return _tblModuloDocumentosDocumentoRepository.GetDocumentsWithCategories(specification).ToList();
          }
 
          public List<TBL_ModuloDocumentos_Documento> FindMyDocsByFilters(string filtroNombre, Int32 filtroIdEstado, Int32 filtroIdUsuario)
@@ -213,7 +213,13 @@ namespace Application.MainModule.Documentos.Services
              if (filtroIdUsuario != 0)
                  specification &= new DirectSpecification<TBL_ModuloDocumentos_Documento>(doc => doc.IdUsuarioCreacion == filtroIdUsuario);
 
-             return _tblModuloDocumentosDocumentoRepository.GetDocumentoByIdWithCategories(specification).ToList();
+             return _tblModuloDocumentosDocumentoRepository.GetDocumentsWithCategories(specification).ToList();
+         }
+
+         public TBL_ModuloDocumentos_Documento GetDocumentoByIdWithCategories(int id)
+         {
+             Specification<TBL_ModuloDocumentos_Documento> specification = new DirectSpecification<TBL_ModuloDocumentos_Documento>(doc => doc.IsActive && doc.IdDocumento == id);
+             return _tblModuloDocumentosDocumentoRepository.GetDocumentsByIdWithCategories(specification);
          }
 
           /// <summary>
