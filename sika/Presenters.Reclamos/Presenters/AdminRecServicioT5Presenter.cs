@@ -44,6 +44,9 @@ namespace Presenters.Reclamos.Presenters
             LoadConsecutivoReclamo();
             LoadCategoria();
             InitViewValues();
+
+            if (!string.IsNullOrEmpty(View.IdReclamo))
+                LoadReclamo();
         }
 
         void InitViewValues()
@@ -225,6 +228,70 @@ namespace Presenters.Reclamos.Presenters
                 InvokeMessageBox(new MessageBoxEventArgs(string.Format("Datos Guardados Con Exito."), TypeError.Ok));
 
                 View.GoToReclamoView(string.Format("{0}", model.IdReclamo));
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
+        }
+
+        public void UpdateReclamo()
+        {
+            if (string.IsNullOrEmpty(View.IdReclamo)) return;
+
+            try
+            {
+                var model = _reclamoService.GetReclamoWithNavById(Convert.ToDecimal(View.IdReclamo));
+
+                model.IdCategoriaReclamo = Convert.ToInt32(View.IdCategoriaReclamo);
+                model.Area = View.Area;
+                model.Planta = View.Planta;
+                model.NumeroDeVeces = View.NoRecordatorios;
+                model.IdAtendidoPor = Convert.ToInt32(View.IdAtendidoPor);
+                model.UnidadZona = View.UnidadZona;
+                model.NombreReclama = View.QuienReclama;
+                model.AreaIncumple = View.AreaIncumpleProcedimiento;
+                model.ProcedimientoInternoAfectado = View.ProcedimientoInternoAfectado;
+                model.DescripcionProblema = View.DescripcionProblema;
+                model.DiagnosticoPrevio = View.Diagnostico;
+                model.ConclusionesPrevias = View.ConclusionesPrevias;
+                model.ObservacionesSolucion = View.Solucion;
+                model.ModifiedBy = View.UserSession.IdUser;
+                model.ModifiedOn = DateTime.Now;
+
+                _reclamoService.Modify(model);
+
+                InvokeMessageBox(new MessageBoxEventArgs(string.Format("Datos Guardados Con Exito."), TypeError.Ok));
+
+                View.GoToReclamoView(string.Format("{0}", model.IdReclamo));
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
+        }
+
+        void LoadReclamo()
+        {
+            if (string.IsNullOrEmpty(View.IdReclamo)) return;
+
+            try
+            {
+                var model = _reclamoService.GetReclamoWithNavById(Convert.ToDecimal(View.IdReclamo));
+
+                View.IdCategoriaReclamo = model.IdCategoriaReclamo.ToString();
+                View.Area = model.Area;
+                View.Planta = model.Planta;
+                View.NoRecordatorios = model.NumeroDeVeces;
+                View.IdAtendidoPor = model.IdAtendidoPor.ToString();
+                View.UnidadZona = model.UnidadZona;
+                View.QuienReclama = model.NombreReclama;
+                View.AreaIncumpleProcedimiento = model.AreaIncumple;
+                View.ProcedimientoInternoAfectado = model.ProcedimientoInternoAfectado;
+                View.DescripcionProblema = model.DescripcionProblema;
+                View.Diagnostico = model.DiagnosticoPrevio;
+                View.ConclusionesPrevias = model.ConclusionesPrevias;
+                View.Solucion = model.ObservacionesSolucion;
             }
             catch (Exception ex)
             {

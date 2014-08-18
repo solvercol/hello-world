@@ -26,7 +26,11 @@ namespace Modules.Reclamos.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ImprimirTituloVentana("Registrar Nuevo Reclamo");
+            if (string.IsNullOrEmpty(IdReclamo))
+                ImprimirTituloVentana("Registrar Nuevo Reclamo");
+            else
+                ImprimirTituloVentana("Editar Reclamo");
+
             LoadInitReclamoControl();
         }
 
@@ -98,6 +102,14 @@ namespace Modules.Reclamos.Admin
             get
             {
                 return Request.QueryString.Get("gruinf");
+            }
+        }
+
+        public string IdReclamo
+        {
+            get
+            {
+                return Request.QueryString.Get("IdReclamo");
             }
         }
 

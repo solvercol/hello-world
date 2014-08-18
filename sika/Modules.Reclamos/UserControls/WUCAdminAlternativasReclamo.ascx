@@ -1,7 +1,8 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WUCAdminAlternativasReclamo.ascx.cs" Inherits="Modules.Reclamos.UserControls.WUCAdminAlternativasReclamo" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
-
+<%@ Register Assembly="Infragistics4.Web.v11.1, Version=11.1.20111.2238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb"
+             Namespace="Infragistics.Web.UI.ListControls" TagPrefix="ig" %>
 
 <table width="100%">
     <tr class="SectionMainTitle">
@@ -12,67 +13,76 @@
     <tr>
         <td >
             <div style="padding:3px; text-align:right;">
-                <asp:Button ID="btnNuevoAlternativa" runat="server" Text="Registrar Alternativa" />
+                <asp:Button ID="btnNuevoAlternativa" runat="server" Text="Registrar Alternativa" OnClick="BtnAddAlternativa_Click" />
             </div>
         </td>
     </tr>
     <tr style="padding:10px;">
         <td >
             <table class="tbl" width="100%">
-                <tr>
-                    <th style="width:3%;">                        
-                    </th>
-                    <th style="width:3%;">                        
-                    </th>
-                    <th style="width:30%;text-align:left;">
-                        Alternativa
-                    </th>
-                    <th style="width:14%; text-align:left;">
-                        Fecha
-                    </th>
-                    <th style="width:20%;text-align:left;">
-                        Responsable
-                    </th>
-                    <th style="width:10%;text-align:left; color:#a31717">
-                        Estado
-                    </th>
-                    <th style="width:20%;text-align:left;">
-                        Seguimiento
-                    </th>
-                </tr>
-                <tr>
-                    <td style="text-align:center; ">
-                        <asp:ImageButton 
-                                    ID="imgSelect" 
-                                    runat="server"
-                                    CausesValidation="false"
-                                    BorderStyle="None"
-                                    ImageUrl="~/Resources/Images/select.png"  />
-                    </td>
-                    <td style="text-align:center; ">
-                        <asp:ImageButton 
-                                    ID="imgDelete" 
-                                    runat="server"
-                                    CausesValidation="false"
-                                    BorderStyle="None"
-                                    ImageUrl="~/Resources/Images/RemoveGrid.png"  />
-                    </td>
-                    <td style="text-align:left">
-                        Adición de biocida en la formulación del producto y se implementó mayor control al tratamiento de agua de producción.
-                    </td>
-                    <td style="text-align:left;">
-                        24/09/2013 12:35:13 pm
-                    </td>
-                    <td style="text-align:left">
-                        Albeiro Cadavid
-                    </td>
-                    <td style="text-align:left; color:#a31717">
-                        Enviado
-                    </td>   
-                    <td style="text-align:left">
-                        Esto es el campo de seguimiento
-                    </td>                    
-                </tr>
+                <asp:repeater id="rptAlternativasList" runat="server" OnItemDataBound="RptAlternativasList_ItemDataBound" >
+                    <HeaderTemplate>
+                        <tr>
+                            <th style="width:3%;">                        
+                            </th>
+                            <th style="width:3%;">                        
+                            </th>
+                            <th style="width:30%;text-align:left;">
+                                Alternativa
+                            </th>
+                            <th style="width:14%; text-align:left;">
+                                Fecha
+                            </th>
+                            <th style="width:20%;text-align:left;">
+                                Responsable
+                            </th>
+                            <th style="width:10%;text-align:left; color:#a31717">
+                                Estado
+                            </th>
+                            <th style="width:20%;text-align:left;">
+                                Seguimiento
+                            </th>
+                        </tr>
+                    </HeaderTemplate>   
+                    <ItemTemplate>
+                        <tr>
+                            <td style="text-align:center; ">
+                                <asp:HiddenField ID="hddIdAlternativa" runat="server" />
+                                <asp:ImageButton 
+                                            ID="imgSelectAlternativa" 
+                                            runat="server"
+                                            CausesValidation="false"
+                                            BorderStyle="None"
+                                            ImageUrl="~/Resources/Images/select.png" 
+                                            OnClick="BtnSelectAlternativa_Click" />
+                            </td>
+                            <td style="text-align:center; ">
+                                <asp:ImageButton 
+                                            ID="imgDeleteAlternativa" 
+                                            runat="server"
+                                            CausesValidation="false"
+                                            BorderStyle="None"
+                                            ImageUrl="~/Resources/Images/RemoveGrid.png"
+                                            OnClick="BtnRemoveAlternativa_Click" />
+                            </td>
+                            <td style="text-align:left">
+                                <asp:Label ID="lblAlternativa" runat="server" />
+                            </td>
+                            <td style="text-align:left;">
+                                <asp:Label ID="lblFechaAlternativa" runat="server" />
+                            </td>
+                            <td style="text-align:left">
+                                <asp:Label ID="lblResponable" runat="server" />
+                            </td>
+                            <td style="text-align:left; color:#a31717">
+                                <asp:Label ID="lblEstado" runat="server" />
+                            </td>   
+                            <td style="text-align:left">
+                                <asp:Label ID="lblSeguimiento" runat="server" />
+                            </td>                    
+                        </tr>
+                    </ItemTemplate>
+                </asp:repeater>
             </table>
         </td>
     </tr>    
@@ -84,8 +94,13 @@
         <div class="TitlebarLeft">
             Administrar Alternativa
         </div>
-        <div class="TitlebarRight" id="divClose">
+        <div class="TitlebarRight" id="divCloseAdminAlternativa">
         </div>
+    </div>
+
+    <div style="padding:3px; text-align:right;">
+        <asp:Button ID="btnRegresar" runat="server" Text="Regresar"  />
+        <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="BtnSaveAlternativa_Click"  />
     </div>
 
     <div class="popup_Body">                                                    
@@ -98,6 +113,7 @@
                 <td class="Separador"></td>
 
                 <td class="Line" style="width:70%">
+                    <asp:TextBox ID="txtCausas" runat="server" TextMode="MultiLine" Rows="3" Width="90%" />
                 </td>
 
                 <td class="Separador"></td>
@@ -110,6 +126,7 @@
                 <td class="Separador"></td>
 
                 <td class="Line">
+                    <asp:TextBox ID="txtFactores" runat="server" TextMode="MultiLine" Rows="3" Width="90%" />
                 </td>
 
                 <td class="Separador"></td>
@@ -122,6 +139,7 @@
                 <td class="Separador"></td>
 
                 <td class="Line">
+                    <asp:TextBox ID="txtAlternativa" runat="server" TextMode="MultiLine" Rows="3" Width="90%" />
                 </td>
 
                 <td class="Separador"></td>
@@ -134,6 +152,17 @@
                 <td class="Separador"></td>
 
                 <td class="Line">
+                    <ig:WebDropDown ID="wddResponsable" 
+                                    runat="server" 
+                                    EnableMultipleSelection="false"
+                                    MultipleSelectionType="Checkbox" 
+                                    DisplayMode="DropDown"
+                                    EnableClosingDropDownOnSelect="false"
+                                    StyleSetName="Claymation"
+                                    DropDownContainerWidth="300px"
+                                    DropDownContainerHeight="220px"
+                                    Width="98%">
+                    </ig:WebDropDown>
                 </td>
 
                 <td class="Separador"></td>
@@ -146,6 +175,15 @@
                 <td class="Separador"></td>
 
                 <td class="Line">
+                    <asp:TextBox ID="txtFechaAlternativa" runat="server"></asp:TextBox>
+                    <ajaxToolkit:CalendarExtender 
+                        ID="cexTxtFechaAlternativa" 
+                        runat="server"  
+                        TargetControlID="txtFechaAlternativa" 
+                        PopupPosition="Right" 
+                        PopupButtonID="txtFechaAlternativa"
+                        Format="dd/MM/yyyy"
+                        CssClass="cal_Theme1" />
                 </td>
 
                 <td class="Separador"></td>
@@ -158,6 +196,7 @@
                 <td class="Separador"></td>
 
                 <td class="Line">
+                    <asp:TextBox ID="txtSeguimiento" runat="server" TextMode="MultiLine" Rows="3" Width="90%" />
                 </td>
 
                 <td class="Separador"></td>
@@ -208,8 +247,8 @@
 <ajaxToolkit:ModalPopupExtender 
 ID="mpeAdminAlternativa" 
 runat="server" 
-TargetControlID="btnNuevoAlternativa" 
+TargetControlID="btnPopUpAdminAlternativaTargetControl" 
 PopupControlID="pnlAdminAlternativa" 
 BackgroundCssClass="ModalPopupBG" 
-cancelcontrolid="divClose"> 
+cancelcontrolid="divCloseAdminAlternativa"> 
 </ajaxToolkit:ModalPopupExtender>   

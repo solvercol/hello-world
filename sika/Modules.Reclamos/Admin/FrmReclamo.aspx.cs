@@ -9,6 +9,7 @@ using Domain.MainModules.Entities;
 using Infrastructure.CrossCutting.IoC;
 using Presenters.Reclamos.IViews;
 using Presenters.Reclamos.Presenters;
+using Modules.Reclamos.UI;
 
 namespace Modules.Reclamos.Admin
 {
@@ -48,6 +49,29 @@ namespace Modules.Reclamos.Admin
 
         #endregion
 
+        #region Buttons
+
+        protected void BtnRegresar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(string.Format("FrmListaGeneralReclamos.aspx?ModuleId={0}", ModuleId));
+        }
+
+        protected void BtnEditReclamo_Click(object sender, EventArgs e)
+        {
+            if (TipoReclamo == "Producto")
+            {
+                Response.Redirect(string.Format("FrmAddReclamo.aspx?ModuleId={0}&tr={1}&IdReclamo={2}", ModuleId, TipoReclamo, IdReclamo));
+            }
+            else
+            {
+                Response.Redirect(string.Format("FrmAddReclamo.aspx?ModuleId={0}&tr={1}&cat={2}&gruinf={3}&IdReclamo={4}",
+                                                ModuleId, TipoReclamo, IdCategoriaReclamo, IdGrupoInformacion, IdReclamo
+                                                ));
+            }
+        }
+
+        #endregion
+
         #region Menu
 
         protected void MnuItemClick(object sender, MenuEventArgs e)
@@ -81,7 +105,10 @@ namespace Modules.Reclamos.Admin
             phlContent.Controls.Clear();
             var uc = LoadControl(controlPath);
             uc.ID = idUc;
-            phlContent.Controls.Add(uc);            
+            phlContent.Controls.Add(uc);
+
+            if (uc is IReclamoWebUserControl)
+                ((IReclamoWebUserControl)uc).LoadControlData();
         }
 
         #endregion
@@ -144,6 +171,30 @@ namespace Modules.Reclamos.Admin
             set
             {
                 ViewState["Reclamo_NumeroReclamo"] = value;
+            }
+        }
+
+        public string IdCategoriaReclamo
+        {
+            get
+            {
+                return ViewState["Reclamo_IdCategoriaReclamo"] == null ? string.Empty : ViewState["Reclamo_IdCategoriaReclamo"].ToString();
+            }
+            set
+            {
+                ViewState["Reclamo_IdCategoriaReclamo"] = value;
+            }
+        }
+
+        public string IdGrupoInformacion
+        {
+            get
+            {
+                return ViewState["Reclamo_IdGrupoInformacion"] == null ? string.Empty : ViewState["Reclamo_IdGrupoInformacion"].ToString();
+            }
+            set
+            {
+                ViewState["Reclamo_IdGrupoInformacion"] = value;
             }
         }
 

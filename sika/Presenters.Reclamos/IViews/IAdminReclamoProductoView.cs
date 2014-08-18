@@ -24,6 +24,7 @@ namespace Presenters.Reclamos.IViews
         bool RespuestaInmediata { get; set; }
         string Planta { get; set; }
         Dto_Producto SelectedProduct { get; }
+        void SetSelectedProduct(Dto_Producto producto);
 
         // Informacion de Cliente
         string NombreContacto { get; set; }
@@ -35,6 +36,7 @@ namespace Presenters.Reclamos.IViews
         string EmailQuienAplica { get; set; }
         string EmailPropietario { get; set; }
         Dto_Cliente SelectedCliente { get; }
+        void SetSelectedClient(Dto_Cliente cliente);
 
         // Informacion de Producto
         string AspectoExteriorEnvase { get; set; }
@@ -57,5 +59,8 @@ namespace Presenters.Reclamos.IViews
 
         // View 
         void GoToReclamoView(string idReclamo);
+
+        // Edit Params
+        string IdReclamo { get; }
     }
 }

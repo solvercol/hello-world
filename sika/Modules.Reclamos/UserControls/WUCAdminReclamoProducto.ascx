@@ -108,7 +108,7 @@
                             <td class="Separador"></td>
 
                             <td colspan="5">
-                                <ucFilterProduct:WucFilterProduct ID="ucFilterProduct" runat="server" />                
+                                <ucFilterProduct:WucFilterProduct ID="ucFilterProduct" runat="server" ShowProductTable="true" />                
                             </td>
                         </tr>
                         <tr>

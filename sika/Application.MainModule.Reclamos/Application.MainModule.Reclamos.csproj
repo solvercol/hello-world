@@ -91,6 +91,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\Application.MainModule.SqlServices\Application.MainModule.SqlServices.csproj">
+      <Project>{A339985E-A4A5-4DC1-9632-1A622603F028}</Project>
+      <Name>Application.MainModule.SqlServices</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Domain.Core.Entities\Domain.Core.Entities.csproj">
       <Project>{A1708898-8F15-4D62-99E0-293334E740C2}</Project>
       <Name>Domain.Core.Entities</Name>

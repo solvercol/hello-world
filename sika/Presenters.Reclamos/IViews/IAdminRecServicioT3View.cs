@@ -30,6 +30,7 @@ namespace Presenters.Reclamos.IViews
         string UnidadZona { get; set; }
         string EmailContacto { get; set; }
         Dto_Cliente SelectedCliente { get; }
+        void SetSelectedClient(Dto_Cliente cliente);
         DateTime FechaPedido { get; set; }
         DateTime FechaCompromiso { get; set; }
 
@@ -47,5 +48,8 @@ namespace Presenters.Reclamos.IViews
 
         // View 
         void GoToReclamoView(string idReclamo);
+
+        // Edit Params
+        string IdReclamo { get; }
     }
 }

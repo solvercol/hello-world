@@ -2,6 +2,8 @@
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 
+<%@ Register    Assembly="Infragistics4.Web.v11.1, Version=11.1.20111.2238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb"
+                    Namespace="Infragistics.Web.UI.ListControls" TagPrefix="ig" %>
 
 <table width="100%">
     <tr class="SectionMainTitle">
@@ -12,61 +14,70 @@
     <tr>
         <td >
             <div style="padding:3px; text-align:right;">
-                <asp:Button ID="btnNuevoSolucion" runat="server" Text="Registrar Solución" />
+                <asp:Button ID="btnNuevoSolucion" runat="server" Text="Registrar Solución" OnClick="BtnAddSolucion_Click" />
             </div>
         </td>
     </tr>
     <tr style="padding:10px;">
         <td >
             <table class="tbl" width="100%">
-                <tr>
-                    <th style="width:3%;">                        
-                    </th>
-                    <th style="width:3%;">                        
-                    </th>
-                    <th style="width:14%;text-align:left;">
-                        Fecha
-                    </th>
-                    <th style="width:30%; text-align:left;">
-                        Referencia
-                    </th>
-                    <th style="width:30%;text-align:left;">
-                        Departamento
-                    </th>
-                    <th style="width:20%;text-align:left;">
-                        Autor
-                    </th>
-                </tr>
-                <tr>
-                    <td style="text-align:center; ">
-                        <asp:ImageButton 
-                                    ID="imgSelect" 
-                                    runat="server"
-                                    CausesValidation="false"
-                                    BorderStyle="None"
-                                    ImageUrl="~/Resources/Images/select.png"  />
-                    </td>
-                    <td style="text-align:center; ">
-                        <asp:ImageButton 
-                                    ID="imgDelete" 
-                                    runat="server"
-                                    CausesValidation="false"
-                                    BorderStyle="None"
-                                    ImageUrl="~/Resources/Images/RemoveGrid.png"  />
-                    </td>                    
-                    <td style="text-align:left;">
-                        24/09/2013 12:35:13 pm
-                    </td>
-                    <td style="text-align:left">
-                        Garrafas infladas de SIKA
-                    </td>
-                    <td style="text-align:left">
-                        Planta Rionegro
-                    </td>
-                    <td style="text-align:left">
-                        Ivan Sanchez
-                    </td>                    
-                </tr>
+                <asp:repeater id="rptSolucionList" runat="server" OnItemDataBound="RptSolucionList_ItemDataBound" >              
+                    <HeaderTemplate>
+                        <tr>
+                            <th style="width:3%;">                        
+                            </th>
+                            <th style="width:3%;">                        
+                            </th>
+                            <th style="width:14%;text-align:left;">
+                                Fecha
+                            </th>
+                            <th style="width:30%; text-align:left;">
+                                Referencia
+                            </th>
+                            <th style="width:30%;text-align:left;">
+                                Departamento
+                            </th>
+                            <th style="width:20%;text-align:left;">
+                                Autor
+                            </th>
+                        </tr>
+                    </HeaderTemplate>   
+                    <ItemTemplate>
+                        <tr>
+                            <td style="text-align:center; ">
+                                <asp:HiddenField ID="hddIdSolucion" runat="server" />
+                                <asp:ImageButton 
+                                            ID="imgSelectSolucion" 
+                                            runat="server"
+                                            CausesValidation="false"
+                                            BorderStyle="None"
+                                            ImageUrl="~/Resources/Images/select.png"
+                                            OnClick="BtnSelectSolucion_Click"  />
+                            </td>
+                            <td style="text-align:center; ">
+                                <asp:ImageButton 
+                                            ID="imgDeleteSolucion" 
+                                            runat="server"
+                                            CausesValidation="false"
+                                            BorderStyle="None"
+                                            ImageUrl="~/Resources/Images/RemoveGrid.png" 
+                                            OnClick="BtnRemoveSolucion_Click"  />
+                            </td>                    
+                            <td style="text-align:left;">
+                                <asp:Label ID="lblFechaSolucion" runat="server" />
+                            </td>
+                            <td style="text-align:left">
+                                <asp:Label ID="lblReferenciaSolucion" runat="server" />
+                            </td>
+                            <td style="text-align:left">
+                                <asp:Label ID="lblDepartamentoSolucion" runat="server" />
+                            </td>
+                            <td style="text-align:left">
+                                <asp:Label ID="lblCreateBy" runat="server" />
+                            </td>                    
+                        </tr>
+                    </ItemTemplate>
+                </asp:repeater>
             </table>
         </td>
     </tr>    
@@ -78,8 +89,13 @@
         <div class="TitlebarLeft">
             Administrar Solución
         </div>
-        <div class="TitlebarRight" id="divClose">
+        <div class="TitlebarRight" id="divCloseAdminSolucion">
         </div>
+    </div>
+
+    <div style="padding:3px; text-align:right;">
+        <asp:Button ID="btnRegresar" runat="server" Text="Regresar"  />
+        <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="BtnSaveSolucion_Click"  />
     </div>
 
     <div class="popup_Body">                                                    
@@ -92,6 +108,17 @@
                 <td class="Separador"></td>
 
                 <td class="Line" style="width:70%">
+                    <ig:WebDropDown ID="wddDepartamento" 
+                                    runat="server" 
+                                    EnableMultipleSelection="false"
+                                    MultipleSelectionType="Checkbox" 
+                                    DisplayMode="DropDown"
+                                    EnableClosingDropDownOnSelect="false"
+                                    StyleSetName="Claymation"
+                                    DropDownContainerWidth="250px"
+                                    DropDownContainerHeight="150px"
+                                    Width="98%">
+                    </ig:WebDropDown>
                 </td>
 
                 <td class="Separador"></td>
@@ -102,8 +129,9 @@
                 </th>
 
                 <td class="Separador"></td>
-
+                
                 <td class="Line">
+                    <asp:TextBox ID="txtReferencia" runat="server" Width="90%" />
                 </td>
 
                 <td class="Separador"></td>
@@ -116,6 +144,7 @@
                 <td class="Separador"></td>
 
                 <td class="Line">
+                    <asp:TextBox ID="txtObservaciones" runat="server" Width="90%" TextMode="MultiLine" Rows="3" />
                 </td>
 
                 <td class="Separador"></td>
@@ -166,8 +195,8 @@
 <ajaxToolkit:ModalPopupExtender 
 ID="mpeAdminSolucion" 
 runat="server" 
-TargetControlID="btnNuevoSolucion" 
+TargetControlID="btnPopUpAdminSolucionTargetControl" 
 PopupControlID="pnlAdminSolucion" 
 BackgroundCssClass="ModalPopupBG" 
-cancelcontrolid="divClose"> 
+cancelcontrolid="divCloseAdminSolucion"> 
 </ajaxToolkit:ModalPopupExtender>   

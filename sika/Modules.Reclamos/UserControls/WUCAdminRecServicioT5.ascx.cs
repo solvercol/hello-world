@@ -32,12 +32,18 @@ namespace Modules.Reclamos.UserControls
 
         protected void BtnRegresar_Click(object sender, EventArgs e)
         {
-            Response.Redirect(string.Format("../Admin/FrmListaGeneralReclamos.aspx?ModuleId={0}", ModuleId));
+            if (string.IsNullOrEmpty(IdReclamo))
+                Response.Redirect(string.Format("../Admin/FrmListaGeneralReclamos.aspx?ModuleId={0}", ModuleId));
+            else
+                Response.Redirect(string.Format("../Admin/FrmReclamo.aspx?ModuleId={0}&IdReclamo={1}", ModuleId, IdReclamo));
         }
 
         protected void BtnGuardar_Click(object sender, EventArgs e)
         {
-            Presenter.SaveReclamo();
+            if (string.IsNullOrEmpty(IdReclamo))
+                Presenter.SaveReclamo();
+            else
+                Presenter.UpdateReclamo();
         }
 
         #endregion
@@ -358,6 +364,11 @@ namespace Modules.Reclamos.UserControls
             {
                 wddAreaIncumpleProcedimiento.SelectedValue = value;
             }
+        }
+
+        public string IdReclamo
+        {
+            get { return Request.QueryString.Get("IdReclamo"); }
         }
 
         #endregion

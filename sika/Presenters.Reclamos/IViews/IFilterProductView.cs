@@ -13,6 +13,10 @@ namespace Presenters.Reclamos.IViews
 
         string FilterText { get; set; }
 
+        string IdReclamo { get; }
+
+        string NombreProducto { get; set; }
+
         void LoadSelectedProducto(Dto_Producto producto);
 
         void LoadProructos(List<Dto_Producto> items);

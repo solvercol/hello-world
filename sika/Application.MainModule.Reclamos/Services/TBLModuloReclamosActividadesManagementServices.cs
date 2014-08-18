@@ -161,6 +161,19 @@ namespace Application.MainModule.Reclamos.Services
         }
 
         #endregion
+
+        public TBL_ModuloReclamos_Actividades GetById(decimal id)
+        {
+            Specification<TBL_ModuloReclamos_Actividades> spec = new DirectSpecification<TBL_ModuloReclamos_Actividades>(u => u.IdActividad == id);
+
+            return _TBLModuloReclamosActividadesRepository.GetCompleteEntityBySpec(spec);
+        }
+
+        public List<TBL_ModuloReclamos_Actividades> GetByIdReclamo(decimal idReclamo)
+        {
+            Specification<TBL_ModuloReclamos_Actividades> spec = new DirectSpecification<TBL_ModuloReclamos_Actividades>(u => u.IdReclamo == idReclamo);
+
+            return _TBLModuloReclamosActividadesRepository.GetCompleteListBySpec(spec);
+        }
     }
-}
-    
+}    

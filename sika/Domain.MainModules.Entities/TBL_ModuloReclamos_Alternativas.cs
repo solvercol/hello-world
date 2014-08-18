@@ -160,6 +160,21 @@ namespace Domain.MainModules.Entities
         private string _seguimiento;
     
         [DataMember]
+        public string Estado
+        {
+            get { return _estado; }
+            set
+            {
+                if (_estado != value)
+                {
+                    _estado = value;
+                    OnPropertyChanged("Estado");
+                }
+            }
+        }
+        private string _estado;
+    
+        [DataMember]
         public bool IsActive
         {
             get { return _isActive; }

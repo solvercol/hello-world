@@ -2,6 +2,10 @@
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 
+<%@ Register    Assembly="Infragistics4.Web.v11.1, Version=11.1.20111.2238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb"
+                Namespace="Infragistics.Web.UI.EditorControls" TagPrefix="ig" %> 
+
+<%@ Register src="WUCFilterProduct.ascx" tagname="WucFilterProduct" tagprefix="ucFilterProduct" %> 
 
 <table width="100%">
     <tr class="SectionMainTitle">
@@ -12,81 +16,89 @@
     <tr>
         <td >
             <div style="padding:3px; text-align:right;">
-                <asp:Button ID="btnNuevoGasto" runat="server" Text="Adicionar Gasto" />
+                <asp:Button ID="btnNuevoGasto" runat="server" Text="Adicionar Gasto" OnClick="BtnAddCosto_Click" />
             </div>
         </td>
     </tr>
     <tr style="padding:10px;">
         <td >
             <table class="tbl" width="100%">
-                <tr>                    
-                    <th style="width:4%;">                        
-                    </th>
-                    <th style="width:2%;">
-                        No
-                    </th>
-                    <th style="width:28%; text-align:left;">
-                        Producto
-                    </th>
-                    <th style="width:8%;">
-                        Peso Neto
-                    </th>
-                    <th style="width:10%;">
-                        Precio Lista
-                    </th>
-                    <th style="width:8%;">
-                        Unidades
-                    </th>
-                    <th style="width:10%;">
-                        Costo Producto
-                    </th>
-                    <th style="width:10%;">
-                        Kilos
-                    </th>
-                    <th style="width:10%;">
-                        Und a Disp.
-                    </th>
-                    <th style="width:10%;">
-                        Costo Disp.
-                    </th>
-                </tr>
-                <tr>
-                    <td style="text-align:center; ">
-                        <asp:ImageButton 
-                                    ID="imgDelete" 
-                                    runat="server"
-                                    CausesValidation="false"
-                                    BorderStyle="None"
-                                    ImageUrl="~/Resources/Images/RemoveGrid.png"  />
-                    </td>
-                    <td style="text-align:center">
-                        1
-                    </td>
-                    <td>
-                        SHAFLEX CONSTRUCTION GRIS
-                    </td>
-                    <td style="text-align:right">
-                        0,41
-                    </td>
-                    <td style="text-align:right">
-                        15,000.00
-                    </td>
-                    <td style="text-align:right">
-                        1,00
-                    </td>
-                    <td style="text-align:right; color:#2e40b3;">
-                        10.575,00
-                    </td>
-                    <td style="text-align:right; color:#d66f00">
-                        0,41
-                    </td>
-                    <td style="text-align:right">
-                        1,00
-                    </td>
-                    <td style="text-align:right; color:#25960f;">
-                        405,00
-                    </td>                    
-                </tr>
+                <asp:repeater id="rptCostosList" runat="server" OnItemDataBound="RptCostosList_ItemDataBound" >              
+                <HeaderTemplate>
+                    <tr>                    
+                        <th style="width:4%;">                        
+                        </th>
+                        <th style="width:2%;">
+                            No
+                        </th>
+                        <th style="width:28%; text-align:left;">
+                            Producto
+                        </th>
+                        <th style="width:8%;">
+                            Peso Neto
+                        </th>
+                        <th style="width:10%;">
+                            Precio Lista
+                        </th>
+                        <th style="width:8%;">
+                            Unidades
+                        </th>
+                        <th style="width:10%;">
+                            Costo Producto
+                        </th>
+                        <th style="width:10%;">
+                            Kilos
+                        </th>
+                        <th style="width:10%;">
+                            Und a Disp.
+                        </th>
+                        <th style="width:10%;">
+                            Costo Disp.
+                        </th>
+                    </tr>
+                </HeaderTemplate>   
+                <ItemTemplate>
+                    <tr>
+                        <td style="text-align:center; ">
+                            <asp:HiddenField ID="hddIdCosto" runat="server" />
+                            <asp:ImageButton 
+                                        ID="imgDeleteCosto" 
+                                        runat="server"
+                                        CausesValidation="false"
+                                        BorderStyle="None"
+                                        ImageUrl="~/Resources/Images/RemoveGrid.png"
+                                        OnClick="BtnRemoveCosto_Click"  />
+                        </td>
+                        <td style="text-align:center">
+                            <asp:Label ID="lblNoCosto" runat="server" />
+                        </td>
+                        <td>
+                            <asp:Label ID="lblProducto" runat="server" />
+                        </td>
+                        <td style="text-align:right">
+                            <asp:Label ID="lblPesoNeto" runat="server" />
+                        </td>
+                        <td style="text-align:right">
+                            <asp:Label ID="lblPrecioLista" runat="server" />
+                        </td>
+                        <td style="text-align:right">
+                            <asp:Label ID="lblUnidades" runat="server" />
+                        </td>
+                        <td style="text-align:right; color:#2e40b3;">
+                            <asp:Label ID="lblCostoProducto" runat="server" />
+                        </td>
+                        <td style="text-align:right; color:#d66f00">
+                            <asp:Label ID="lblKilos" runat="server" />
+                        </td>
+                        <td style="text-align:right">
+                            <asp:Label ID="lblUnidadesDisponibles" runat="server" />
+                        </td>
+                        <td style="text-align:right; color:#25960f;">
+                            <asp:Label ID="lblCostoDisponible" runat="server" />
+                        </td>                    
+                    </tr>
+                </ItemTemplate>
+                </asp:repeater>
             </table>
         </td>
     </tr>
@@ -106,7 +118,7 @@
                         Costo Producto
                     </td>
                     <td style="text-align:right; color:#2e40b3;">
-                        21.150,00
+                        <asp:Label ID="lblCostoProductoReclamo" runat="server" />
                     </td>
                 </tr>
                 <tr>
@@ -114,7 +126,7 @@
                         Costo Transporte
                     </td>
                     <td style="text-align:right; color:#d66f00">
-                        21.150,00
+                        <asp:Label ID="lblCostoTransporte" runat="server" />
                     </td>
                 </tr>
                 <tr>
@@ -122,7 +134,7 @@
                         Costo Discopsición
                     </td>
                     <td style="text-align:right; color:#25960f;">
-                        21.150,00
+                        <asp:Label ID="lblCostoDisposicion" runat="server" />
                     </td>
                 </tr>
                 <tr>
@@ -130,7 +142,9 @@
                         Costo Pruebas de Campo
                     </td>
                     <td style="text-align:right">
-                        21.150,00
+                        <ig:WebNumericEditor    Id="txtCostoPruebasCampo" runat="server" 
+                                                Nullable="false" MinValue="0" Width="90%"
+                                                OnTextChanged="TxtTotalCostosTextChanged" AutoPostBackFlags-ValueChanged="On"  />
                     </td>
                 </tr>
                 <tr>
@@ -138,7 +152,9 @@
                         Costo Mano de Obra
                     </td>
                     <td style="text-align:right">
-                        21.150,00
+                        <ig:WebNumericEditor    Id="txtCostoManoObra" runat="server" 
+                                                Nullable="false" MinValue="0" Width="90%"
+                                                OnTextChanged="TxtTotalCostosTextChanged" AutoPostBackFlags-ValueChanged="On"  />
                     </td>
                 </tr>
                 <tr>
@@ -146,7 +162,9 @@
                         Otros Costos
                     </td>
                     <td style="text-align:right">
-                        21.150,00
+                        <ig:WebNumericEditor    Id="txtOtrosCostos" runat="server" 
+                                                Nullable="false" MinValue="0" Width="90%"
+                                                OnTextChanged="TxtTotalCostosTextChanged" AutoPostBackFlags-ValueChanged="On"  />
                     </td>
                 </tr>
                 <tr>
@@ -162,7 +180,9 @@
                         Costo Asistencia Técnica
                     </td>
                     <td style="text-align:right">
-                        21.150,00
+                        <ig:WebNumericEditor    Id="txtCostosAsistenciaTecnica" runat="server" 
+                                                Nullable="false" MinValue="0" Width="90%"
+                                                OnTextChanged="TxtTotalCostosTextChanged" AutoPostBackFlags-ValueChanged="On"  />
                     </td>
                 </tr>
                 <tr>
@@ -170,7 +190,9 @@
                         Costo Asistencia Técnica Regional
                     </td>
                     <td style="text-align:right">
-                        21.150,00
+                        <ig:WebNumericEditor    Id="txtCostosAsistenciaRegional" runat="server" 
+                                                Nullable="false" MinValue="0" Width="90%"
+                                                OnTextChanged="TxtTotalCostosTextChanged" AutoPostBackFlags-ValueChanged="On"  />
                     </td>
                 </tr>
                 <tr>
@@ -178,7 +200,9 @@
                         Costo Viaje Personas (Tickets, Viáticos)
                     </td>
                     <td style="text-align:right">
-                        21.150,00
+                        <ig:WebNumericEditor    Id="txtCostoViajePersonas" runat="server" 
+                                                Nullable="false" MinValue="0" Width="90%"
+                                                OnTextChanged="TxtTotalCostosTextChanged" AutoPostBackFlags-ValueChanged="On"  />
                     </td>
                 </tr>
                 <tr>
@@ -186,7 +210,9 @@
                         Costo Equipos y Herramientas (Arrendamiento)
                     </td>
                     <td style="text-align:right">
-                        21.150,00
+                        <ig:WebNumericEditor    Id="txtCostoEquiposHerramientas" runat="server" 
+                                                Nullable="false" MinValue="0" Width="90%"
+                                                OnTextChanged="TxtTotalCostosTextChanged" AutoPostBackFlags-ValueChanged="On"  />
                     </td>
                 </tr>
                 <tr>
@@ -202,7 +228,7 @@
                         Total Costos
                     </td>
                     <td style="text-align:right; font-weight:bolder;">
-                        21.150,00
+                        <asp:Label ID="lblTotalCostosReclamo" runat="server" />
                     </td>
                 </tr>
             </table>
@@ -210,14 +236,19 @@
     </tr>
 </table>
 
-<asp:Panel ID="pnlAdminCosto"  runat="server" CssClass="popup_Container" Width="500" Height="300" style="display:none;">  
+<asp:Panel ID="pnlAdminCosto"  runat="server" CssClass="popup_Container" Width="600" Height="400" style="display:none;">  
 
     <div class="popup_Titlebar" id="PopupHeader">
         <div class="TitlebarLeft">
             Administrar Costo
         </div>
-        <div class="TitlebarRight" id="divClose">
+        <div class="TitlebarRight" id="divCloseAdminCosto">
         </div>
+    </div>
+
+    <div style="padding:3px; text-align:right;">
+        <asp:Button ID="btnRegresar" runat="server" Text="Regresar"  />
+        <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="BtnSaveCosto_Click"  />
     </div>
 
     <div class="popup_Body">                                                    
@@ -229,7 +260,8 @@
 
                 <td class="Separador"></td>
 
-                <td class="Line" style="width:70%">
+                <td  style="width:80%">
+                    <ucFilterProduct:WucFilterProduct ID="ucFilterProduct" runat="server" ShowProductTable="false" />
                 </td>
 
                 <td class="Separador"></td>
@@ -242,6 +274,7 @@
                 <td class="Separador"></td>
 
                 <td class="Line">
+                    <asp:Label ID="lblPesoNetoProducto" runat="server" Text="Label" />
                 </td>
 
                 <td class="Separador"></td>
@@ -254,6 +287,7 @@
                 <td class="Separador"></td>
 
                 <td class="Line">
+                    <asp:Label ID="lblPrecioListaProducto" runat="server" Text="Label" />
                 </td>
 
                 <td class="Separador"></td>
@@ -266,6 +300,9 @@
                 <td class="Separador"></td>
 
                 <td class="Line">
+                    <ig:WebNumericEditor    Id="txtUnidadesProducto" runat="server" 
+                                            Nullable="false" MinValue="0" Width="90%"
+                                            OnTextChanged="TxtUnidadesProductoTextChanged" AutoPostBackFlags-ValueChanged="On" />
                 </td>
 
                 <td class="Separador"></td>
@@ -278,6 +315,7 @@
                 <td class="Separador"></td>
 
                 <td class="Line">
+                    <asp:Label ID="lblCostoProducto" runat="server" Text="Label" />
                 </td>
 
                 <td class="Separador"></td>
@@ -290,18 +328,21 @@
                 <td class="Separador"></td>
 
                 <td class="Line">
+                    <asp:Label ID="lblKilosProducto" runat="server" Text="Label" />
                 </td>
 
                 <td class="Separador"></td>
             </tr>
             <tr>
                 <th style="text-align:left">
-                    Und a Disponer :
+                    Undidades a Disponer :
                 </th>
 
                 <td class="Separador"></td>
 
                 <td class="Line">
+                    <ig:WebNumericEditor    Id="txtUnidadesDisponerProducto" runat="server" 
+                                            Nullable="false" MinValue="0" Width="90%" />
                 </td>
 
                 <td class="Separador"></td>
@@ -314,6 +355,7 @@
                 <td class="Separador"></td>
 
                 <td class="Line">
+                    <asp:Label ID="lblCostoDisponibleProducto" runat="server" Text="Label" />
                 </td>
 
                 <td class="Separador"></td>
@@ -327,8 +369,8 @@
 <ajaxToolkit:ModalPopupExtender 
 ID="mpeAdminCosto" 
 runat="server" 
-TargetControlID="btnNuevoGasto" 
+TargetControlID="btnPopUpAdminCostoTargetControl" 
 PopupControlID="pnlAdminCosto" 
 BackgroundCssClass="ModalPopupBG" 
-cancelcontrolid="divClose"> 
+cancelcontrolid="divCloseAdminCosto"> 
 </ajaxToolkit:ModalPopupExtender>   

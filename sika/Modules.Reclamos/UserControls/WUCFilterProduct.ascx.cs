@@ -17,6 +17,22 @@ namespace Modules.Reclamos.UserControls
         #region Members
 
         public event Action PostBackEvent;
+        public event Action<Dto_Producto> SelectProductoEvent;
+
+        public bool ShowProductTable
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(ViewState["FilterProduct_ShowProductTable"].ToString()))
+                    ViewState["FilterProduct_ShowProductTable"] = true;
+
+                return Convert.ToBoolean(ViewState["FilterProduct_ShowProductTable"]);
+            }
+            set
+            {
+                ViewState["FilterProduct_ShowProductTable"] = value;
+            }
+        }
 
         #endregion
 
@@ -99,8 +115,12 @@ namespace Modules.Reclamos.UserControls
         protected void PgrListadoPageChanged(object sender, PageChanged e)
         {
             if (Filterevent != null)
-                Filterevent(e.CurrentPage, EventArgs.Empty);
-            mpeSearch.Show();
+                Filterevent(e.CurrentPage, EventArgs.Empty);            
+
+            if (PostBackEvent != null)
+                PostBackEvent();
+
+            ShowSelectProductWindow(true);
         }
 
         #endregion
@@ -109,14 +129,22 @@ namespace Modules.Reclamos.UserControls
 
         protected void BtnSearchProduct_Click(object sender, EventArgs e)
         {
-            FilterText = string.Empty;            
+            FilterText = string.Empty;                        
+
+            if (PostBackEvent != null)
+                PostBackEvent();
+
             ShowSelectProductWindow(true);
         }
 
         protected void BtnFiltrarClick(object sender, EventArgs e)
         {
             Presenter.LoadTotalProductos();
-            Presenter.LoadProductos(0);
+            Presenter.LoadProductos(0);            
+
+            if (PostBackEvent != null)
+                PostBackEvent();
+
             ShowSelectProductWindow(true);
         }
 
@@ -127,6 +155,9 @@ namespace Modules.Reclamos.UserControls
             var codigoProducto = imgButton.CommandArgument;
 
             Presenter.SelectProduct(codigoProducto);
+
+            if (PostBackEvent != null)
+                PostBackEvent();
         }
 
         #endregion
@@ -134,6 +165,13 @@ namespace Modules.Reclamos.UserControls
         #endregion
 
         #region Methods
+
+        public void InitControl()
+        {
+            SelectedProduct = null;
+            litNombreProductoSeleccionado.Text = string.Empty;
+        }
+
         #endregion
 
         #region View Members
@@ -142,12 +180,16 @@ namespace Modules.Reclamos.UserControls
 
         public void LoadSelectedProducto(Dto_Producto producto)
         {
-            litNombreProductoSeleccionado.Text = producto.NombreProducto;
-            lblPresentacionProducto.Text = producto.Unidad;
-            lblTargetMarketProducto.Text = producto.GrupoCompradores;
-            lblCampoAplicacionProducto.Text = producto.CampoApl;
-            lblSubCampoAplicacionProducto.Text = producto.Categoria;
-            trInfoProducto.Visible = true;
+            NombreProducto = producto.NombreProducto;
+            PresentacionProducto = producto.Unidad;
+            TargetMarketProducto = producto.GrupoCompradores;
+            CampoAplicacionProducto = producto.CampoApl;
+            SubCampoAplicacionProducto = producto.Categoria;
+
+            trInfoProducto.Visible = true && ShowProductTable;
+
+            if (SelectProductoEvent != null)
+                SelectProductoEvent(producto);
         }
 
         public void LoadProructos(List<Dto_Producto> items)
@@ -208,6 +250,66 @@ namespace Modules.Reclamos.UserControls
             }
         }
 
+        public string NombreProducto
+        {
+            get
+            {
+                return litNombreProductoSeleccionado.Text;
+            }
+            set
+            {
+                litNombreProductoSeleccionado.Text = value;
+            }
+        }
+
+        public string PresentacionProducto
+        {
+            get
+            {
+                return lblPresentacionProducto.Text;
+            }
+            set
+            {
+                lblPresentacionProducto.Text = value;
+            }
+        }
+
+        public string CampoAplicacionProducto
+        {
+            get
+            {
+                return lblCampoAplicacionProducto.Text;
+            }
+            set
+            {
+                lblCampoAplicacionProducto.Text = value;
+            }
+        }
+
+        public string SubCampoAplicacionProducto
+        {
+            get
+            {
+                return lblSubCampoAplicacionProducto.Text;
+            }
+            set
+            {
+                lblSubCampoAplicacionProducto.Text = value;
+            }
+        }
+
+        public string TargetMarketProducto
+        {
+            get
+            {
+                return lblTargetMarketProducto.Text;
+            }
+            set
+            {
+                lblTargetMarketProducto.Text = value;
+            }
+        }
+
         public int TotalRegistrosPaginador
         {
             set { pgrListado.RowCount = value; }
@@ -218,8 +320,13 @@ namespace Modules.Reclamos.UserControls
             get { return pgrListado.PageSize; }
         }
 
+        public string IdReclamo
+        {
+            get { return Request.QueryString.Get("IdReclamo"); }
+        }
+
         #endregion
 
-        #endregion      
+        #endregion
     }
 }
