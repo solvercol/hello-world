@@ -136,6 +136,7 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="UI\IReclamoWebUserControl.cs" />
     <Compile Include="UserControls\WUCAdminActividadesReclamo.ascx.cs">
       <DependentUpon>WUCAdminActividadesReclamo.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

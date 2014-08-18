@@ -40,5 +40,8 @@ namespace Presenters.Reclamos.IViews
 
         // View 
         void GoToReclamoView(string idReclamo);
+
+        // Edit Params
+        string IdReclamo { get; }
     }
 }

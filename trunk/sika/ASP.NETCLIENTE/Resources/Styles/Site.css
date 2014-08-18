@@ -1014,7 +1014,9 @@ color: #bbbbbb;
 .popup_Container {
 	background-color:#FCFDFD;
 	border:1px solid #DEDEDE;
-	padding: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;	
+    margin:0 auto;
+    position: absolute;
 }
 
 .popup_Titlebar {

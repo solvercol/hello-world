@@ -57,13 +57,13 @@
     </tr>               
 </table>
 
- <asp:Panel ID="pnlImg"  runat="server" CssClass="popup_Container" Width="900" Height="400" style="display:none;">  
+ <asp:Panel ID="pnlImg"  runat="server" CssClass="popup_Container" Width="920" Height="350" style="display:none;">  
 
     <div class="popup_Titlebar" id="PopupHeader">
         <div class="TitlebarLeft">
             Buscar Producto
         </div>
-        <div class="TitlebarRight" id="divClose">
+        <div class="TitlebarRight" id="divCloseFilterProduct">
         </div>
     </div>
 
@@ -165,11 +165,12 @@
 
 <asp:Button ID="btnTargetControl" runat="server" style="display:none; "/>    
 
-<ajaxToolkit:ModalPopupExtender 
+<ajaxToolkit:ModalPopupExtender
 ID="mpeSearch" 
 runat="server" 
 TargetControlID="btnTargetControl" 
-PopupControlID="pnlImg" 
+PopupControlID="pnlImg"
 BackgroundCssClass="ModalPopupBG" 
-cancelcontrolid="divClose"> 
+cancelcontrolid="divCloseFilterProduct"
+> 
 </ajaxToolkit:ModalPopupExtender>

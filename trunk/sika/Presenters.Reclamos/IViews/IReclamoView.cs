@@ -13,6 +13,9 @@ namespace Presenters.Reclamos.IViews
         string NumeroReclamo { get; set; }
         string DescripcionProblema { get; set; }
 
+        string IdCategoriaReclamo { get; set; }
+        string IdGrupoInformacion { get; set; }
+
         // Load
         void LoadSecciones(IEnumerable<TBL_Admin_Secciones> secciones);
     }

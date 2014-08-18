@@ -25,7 +25,9 @@ namespace Presenters.Reclamos.Presenters
         void View_Load(object sender, EventArgs e)
         {
             if (View.IsPostBack) return;
-            View.SelectedProduct = null;
+
+            if (string.IsNullOrEmpty(View.IdReclamo))
+                View.SelectedProduct = null;
         }
 
         void ViewFilterevent(object sender, EventArgs e)

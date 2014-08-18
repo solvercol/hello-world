@@ -100,7 +100,22 @@ namespace Domain.MainModules.Entities
         private string _codigoProducto;
     
         [DataMember]
-        public int PesoNeto
+        public string NombreProducto
+        {
+            get { return _nombreProducto; }
+            set
+            {
+                if (_nombreProducto != value)
+                {
+                    _nombreProducto = value;
+                    OnPropertyChanged("NombreProducto");
+                }
+            }
+        }
+        private string _nombreProducto;
+    
+        [DataMember]
+        public decimal PesoNeto
         {
             get { return _pesoNeto; }
             set
@@ -112,7 +127,7 @@ namespace Domain.MainModules.Entities
                 }
             }
         }
-        private int _pesoNeto;
+        private decimal _pesoNeto;
     
         [DataMember]
         public decimal PrecioLista
@@ -130,7 +145,7 @@ namespace Domain.MainModules.Entities
         private decimal _precioLista;
     
         [DataMember]
-        public int Unidades
+        public decimal Unidades
         {
             get { return _unidades; }
             set
@@ -142,7 +157,7 @@ namespace Domain.MainModules.Entities
                 }
             }
         }
-        private int _unidades;
+        private decimal _unidades;
     
         [DataMember]
         public decimal CostoProducto
@@ -160,7 +175,7 @@ namespace Domain.MainModules.Entities
         private decimal _costoProducto;
     
         [DataMember]
-        public int Kilos
+        public decimal Kilos
         {
             get { return _kilos; }
             set
@@ -172,10 +187,10 @@ namespace Domain.MainModules.Entities
                 }
             }
         }
-        private int _kilos;
+        private decimal _kilos;
     
         [DataMember]
-        public int UnidadesDisponibles
+        public decimal UnidadesDisponibles
         {
             get { return _unidadesDisponibles; }
             set
@@ -187,7 +202,7 @@ namespace Domain.MainModules.Entities
                 }
             }
         }
-        private int _unidadesDisponibles;
+        private decimal _unidadesDisponibles;
     
         [DataMember]
         public decimal CostoDisponible

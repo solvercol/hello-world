@@ -13,6 +13,8 @@ namespace Presenters.Reclamos.IViews
 
         string FilterText { get; set; }
 
+        string IdReclamo { get; }
+
         void LoadSelectedClient(Dto_Cliente cliente);
 
         void LoadClientes(List<Dto_Cliente> items);

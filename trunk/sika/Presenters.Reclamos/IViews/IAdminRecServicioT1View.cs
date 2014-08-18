@@ -29,6 +29,7 @@ namespace Presenters.Reclamos.IViews
         string UnidadZona { get; set; }
         string EmailContacto { get; set; }       
         Dto_Cliente SelectedCliente { get; }
+        void SetSelectedClient(Dto_Cliente cliente);
 
         // Descripcion de Problema
         string DescripcionProblema { get; set; }
@@ -43,5 +44,8 @@ namespace Presenters.Reclamos.IViews
 
         // View 
         void GoToReclamoView(string idReclamo);
+
+        // Edit Params
+        string IdReclamo { get; }
     }
 }

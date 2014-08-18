@@ -42,5 +42,7 @@ namespace Domain.MainModules.Entities
             get { return this.TBL_Admin_Usuarios6; }
         }
 
+        public object DtoProducto { get; set; }
+        public object DtoCliente { get; set; }
     }
 }

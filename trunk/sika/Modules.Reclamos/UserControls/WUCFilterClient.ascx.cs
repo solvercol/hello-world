@@ -142,7 +142,7 @@ namespace Modules.Reclamos.UserControls
 
         public void LoadSelectedClient(Dto_Cliente cliente)
         {
-            litNombreClienteSeleccionado.Text = cliente.NombreCliente;
+            NombreCliente = cliente.NombreCliente;
 
             if (SelectClient != null)
                 SelectClient(cliente);
@@ -214,6 +214,17 @@ namespace Modules.Reclamos.UserControls
         public int PageZise
         {
             get { return pgrListado.PageSize; }
+        }
+
+        public string NombreCliente
+        {
+            get { return litNombreClienteSeleccionado.Text; }
+            set { litNombreClienteSeleccionado.Text = value; }
+        }
+
+        public string IdReclamo
+        {
+            get { return Request.QueryString.Get("IdReclamo"); }
         }
 
         #endregion

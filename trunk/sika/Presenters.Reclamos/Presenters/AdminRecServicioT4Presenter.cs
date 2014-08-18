@@ -7,6 +7,7 @@ using Domain.MainModules.Entities;
 using Infrastructure.CrossCutting.NetFramework.Enums;
 using Presenters.Reclamos.IViews;
 using System.Collections.Generic;
+using Domain.MainModule.Reclamos.DTO;
 
 namespace Presenters.Reclamos.Presenters
 {
@@ -42,6 +43,9 @@ namespace Presenters.Reclamos.Presenters
             LoadConsecutivoReclamo();
             LoadCategoria();
             InitViewValues();
+
+            if (!string.IsNullOrEmpty(View.IdReclamo))
+                LoadReclamo();
         }
 
         void InitViewValues()
@@ -184,6 +188,89 @@ namespace Presenters.Reclamos.Presenters
                 InvokeMessageBox(new MessageBoxEventArgs(string.Format("Datos Guardados Con Exito."), TypeError.Ok));
 
                 View.GoToReclamoView(string.Format("{0}", model.IdReclamo));
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
+        }
+
+        public void UpdateReclamo()
+        {
+            if (string.IsNullOrEmpty(View.IdReclamo)) return;
+
+            try
+            {
+                var model = _reclamoService.GetReclamoWithNavById(Convert.ToDecimal(View.IdReclamo));
+
+                model.IdCategoriaReclamo = Convert.ToInt32(View.IdCategoriaReclamo);
+                model.SubCategoria = View.SubCategoriaReclamo;
+                model.Area = View.Area;
+                model.Planta = View.Planta;
+                model.IdAsesoradoPor = Convert.ToInt32(View.IdAsesor);
+                model.NumeroDeVeces = View.NoRecordatorios;
+                model.IdAtendidoPor = Convert.ToInt32(View.IdAtendidoPor);
+                model.TipoContrato = View.TipoContacto;
+                model.RespuestaInmediata = View.RespuestaInmediata;
+                model.CodigoCliente = View.SelectedCliente.CodigoCliente;
+                model.UnidadZona = View.UnidadZona;
+                model.Contacto = View.NombreContacto;
+                model.EmailContacto = View.EmailContacto;
+                model.NombreObra = View.NombreObra;
+                model.PropietarioObra = View.PropietarioObra;
+                model.EmailPropietarioObra = View.EmailPropietario;
+                model.EmailQuienAplica = View.EmailQuienAplica;
+                model.DescripcionProblema = View.DescripcionProblema;
+                model.DiagnosticoPrevio = View.Diagnostico;
+                model.ConclusionesPrevias = View.ConclusionesPrevias;
+                model.ObservacionesSolucion = View.Solucion;
+                model.ModifiedBy = View.UserSession.IdUser;
+                model.ModifiedOn = DateTime.Now;
+
+                _reclamoService.Modify(model);
+
+                InvokeMessageBox(new MessageBoxEventArgs(string.Format("Datos Guardados Con Exito."), TypeError.Ok));
+
+                View.GoToReclamoView(string.Format("{0}", model.IdReclamo));
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
+        }
+
+        void LoadReclamo()
+        {
+            if (string.IsNullOrEmpty(View.IdReclamo)) return;
+
+            try
+            {
+                var model = _reclamoService.GetReclamoWithNavById(Convert.ToDecimal(View.IdReclamo));
+
+                View.IdCategoriaReclamo = model.IdCategoriaReclamo.ToString();
+                View.SubCategoriaReclamo = model.SubCategoria;
+                View.Area = model.Area;
+                View.Planta = model.Planta;
+                View.IdAsesor = model.IdAsesoradoPor.ToString();
+                View.NoRecordatorios = model.NumeroDeVeces;
+                View.IdAtendidoPor = model.IdAtendidoPor.ToString();
+                View.TipoContacto = model.TipoContrato;
+                View.RespuestaInmediata = model.RespuestaInmediata;
+                View.SelectedCliente.CodigoCliente = model.CodigoCliente;
+                View.UnidadZona = model.UnidadZona;
+                View.NombreContacto = model.Contacto;
+                View.EmailContacto = model.EmailContacto;
+                View.NombreObra = model.NombreObra;
+                View.PropietarioObra = model.PropietarioObra;
+                View.EmailPropietario = model.EmailPropietarioObra;
+                View.EmailQuienAplica = model.EmailQuienAplica;
+                View.DescripcionProblema = model.DescripcionProblema;
+                View.Diagnostico = model.DiagnosticoPrevio;
+                View.ConclusionesPrevias = model.ConclusionesPrevias;
+                View.Solucion = model.ObservacionesSolucion;
+
+                if (model.DtoCliente != null)
+                    View.SetSelectedClient((Dto_Cliente)model.DtoCliente);
             }
             catch (Exception ex)
             {

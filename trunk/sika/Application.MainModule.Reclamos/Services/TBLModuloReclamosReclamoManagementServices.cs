@@ -14,6 +14,7 @@ using Domain.MainModules.Entities;
 using Domain.Core.Specification;
 using Domain.MainModule.Reclamos.Contracts;
 using Application.MainModule.Reclamos.IServices;
+using Application.MainModule.SqlServices.IServices;
 
 namespace Application.MainModule.Reclamos.Services
 {
@@ -22,17 +23,19 @@ namespace Application.MainModule.Reclamos.Services
 
          #region Fields
          readonly ITBL_ModuloReclamos_ReclamoRepository _TBLModuloReclamosReclamoRepository;
+         readonly IReclamosExternalInterfacesService _reclamosExternarInterfaceService;
          #endregion
 
          #region Constructor
          /// <summary>
          /// Constructor de la Calse 
          /// </summary>
-         public SfTBL_ModuloReclamos_ReclamoManagementServices( ITBL_ModuloReclamos_ReclamoRepository TBLModuloReclamosReclamoRepository)
+         public SfTBL_ModuloReclamos_ReclamoManagementServices(ITBL_ModuloReclamos_ReclamoRepository TBLModuloReclamosReclamoRepository, IReclamosExternalInterfacesService reclamosExternarInterfaceService)
          {
             if (TBLModuloReclamosReclamoRepository == null)
                 throw new ArgumentNullException("TBLModuloReclamosReclamoRepository");
             _TBLModuloReclamosReclamoRepository = TBLModuloReclamosReclamoRepository;
+            _reclamosExternarInterfaceService = reclamosExternarInterfaceService;
          }
          #endregion
 
@@ -165,8 +168,44 @@ namespace Application.MainModule.Reclamos.Services
         public TBL_ModuloReclamos_Reclamo GetReclamoWithNavById(decimal id)
         {
             Specification<TBL_ModuloReclamos_Reclamo> onlyEnabledSpec = new DirectSpecification<TBL_ModuloReclamos_Reclamo>(u => u.IdReclamo == id);
+            var oReturn = _TBLModuloReclamosReclamoRepository.GetCompleteEntity(onlyEnabledSpec);
 
-            return _TBLModuloReclamosReclamoRepository.GetCompleteEntity(onlyEnabledSpec);
+            if (oReturn != null)
+            {
+                if (!string.IsNullOrEmpty(oReturn.CodigoProducto))
+                {
+                    oReturn.DtoProducto = _reclamosExternarInterfaceService.GetProductByCodigoProducto(oReturn.CodigoProducto);
+                }
+
+                if (!string.IsNullOrEmpty(oReturn.CodigoCliente))
+                {
+                    oReturn.DtoCliente = _reclamosExternarInterfaceService.GetClientByCodigoCliente(oReturn.CodigoCliente);
+                }
+            }
+
+            return oReturn;
+        }
+
+        public TBL_ModuloReclamos_Reclamo GetReclamoById(decimal id)
+        {
+            Specification<TBL_ModuloReclamos_Reclamo> onlyEnabledSpec = new DirectSpecification<TBL_ModuloReclamos_Reclamo>(u => u.IdReclamo == id);
+
+            var oReturn = _TBLModuloReclamosReclamoRepository.GetEntityBySpec(onlyEnabledSpec);
+
+            if (oReturn != null)
+            {
+                if (!string.IsNullOrEmpty(oReturn.CodigoProducto))
+                {
+                    oReturn.DtoProducto = _reclamosExternarInterfaceService.GetProductByCodigoProducto(oReturn.CodigoProducto);
+                }
+
+                if (!string.IsNullOrEmpty(oReturn.CodigoCliente))
+                {
+                    oReturn.DtoCliente = _reclamosExternarInterfaceService.GetClientByCodigoCliente(oReturn.CodigoCliente);
+                }
+            }
+
+            return oReturn;
         }
     }
 }

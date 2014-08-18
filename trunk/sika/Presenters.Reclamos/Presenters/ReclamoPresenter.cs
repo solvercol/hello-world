@@ -46,6 +46,10 @@ namespace Presenters.Reclamos.Presenters
                     View.Solicitante = reclamo.Solicitante.Nombres;
                     View.NumeroReclamo = reclamo.NumeroReclamo;
                     View.DescripcionProblema = reclamo.DescripcionProblema;
+
+                    // Load Nav
+                    View.IdCategoriaReclamo = reclamo.IdCategoriaReclamo.ToString();
+                    View.IdGrupoInformacion = reclamo.TBL_ModuloReclamos_CategoriasReclamo.GrupoInformacion.ToString();
                 }
             }
             catch (Exception ex)

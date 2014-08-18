@@ -9,8 +9,8 @@
 <asp:UpdatePanel ID="upMenuBar" runat="server">
     <ContentTemplate>
          <div style="padding:3px; text-align:right;">
-            <asp:Button ID="btnRegresar" runat="server" Text="Regresar"  />
-            <asp:Button ID="btnEdit" runat="server" Text="Editar" />
+            <asp:Button ID="btnRegresar" runat="server" Text="Regresar" OnClick="BtnRegresar_Click" />
+            <asp:Button ID="btnEdit" runat="server" Text="Editar" OnClick="BtnEditReclamo_Click" />
             <asp:PlaceHolder ID="plhWf" runat="server"></asp:PlaceHolder>
         </div>
     </ContentTemplate>

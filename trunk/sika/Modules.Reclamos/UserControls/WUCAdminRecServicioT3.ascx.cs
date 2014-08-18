@@ -34,7 +34,10 @@ namespace Modules.Reclamos.UserControls
 
         protected void BtnRegresar_Click(object sender, EventArgs e)
         {
-            Response.Redirect(string.Format("../Admin/FrmListaGeneralReclamos.aspx?ModuleId={0}", ModuleId));
+            if (string.IsNullOrEmpty(IdReclamo))
+                Response.Redirect(string.Format("../Admin/FrmListaGeneralReclamos.aspx?ModuleId={0}", ModuleId));
+            else
+                Response.Redirect(string.Format("../Admin/FrmReclamo.aspx?ModuleId={0}&IdReclamo={1}", ModuleId, IdReclamo));
         }
 
         protected void BtnGuardar_Click(object sender, EventArgs e)
@@ -59,7 +62,10 @@ namespace Modules.Reclamos.UserControls
                 return;
             }
 
-            Presenter.SaveReclamo();
+            if (string.IsNullOrEmpty(IdReclamo))
+                Presenter.SaveReclamo();
+            else
+                Presenter.UpdateReclamo();
         }
 
         #endregion
@@ -125,6 +131,12 @@ namespace Modules.Reclamos.UserControls
             wddPlanta.DataBind();
 
             wddPlanta.SelectedItemIndex = 0;
+        }
+
+        public void SetSelectedClient(Dto_Cliente cliente)
+        {
+            ucFilterClient.SelectedClient = cliente;
+            ucFilterClient.NombreCliente = cliente.NombreCliente;
         }
 
         #endregion
@@ -435,6 +447,11 @@ namespace Modules.Reclamos.UserControls
             {
                 txtFechaCompromiso.Text = value.ToString("dd/MM/yyyy");
             }
+        }
+
+        public string IdReclamo
+        {
+            get { return Request.QueryString.Get("IdReclamo"); }
         }
 
         #endregion
