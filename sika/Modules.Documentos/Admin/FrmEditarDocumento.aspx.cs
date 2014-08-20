@@ -35,6 +35,7 @@ namespace Modules.Documentos.Admin
 
             btnPublicar.Visible = !(IdDocumento == 0);
             btnCancelar.Visible = !(IdDocumento == 0);
+            filaAdjuntar.Visible = !(IdDocumento == 0);
             HacerVisibleBotonesSegunEstado();
             ValidacionExistenIdCategorias();            
         }
@@ -72,16 +73,18 @@ namespace Modules.Documentos.Admin
 
         void FrmEditarDocumentoHideControlsevent(object sender, EventArgs e)
         {
-            btnCancelar.Visible = false;
-            btnGuardar.Visible = false;
-            btnPublicar.Visible = false;
+            if (!EstaAdjuntandoOEliminando)
+            {
+                btnCancelar.Visible = false;
+                btnGuardar.Visible = false;
+                btnPublicar.Visible = false;
+            }
+            else
+                EstaAdjuntandoOEliminando = false;
         }
 
         protected void BtnRegresarClick(object sender, EventArgs e)
         {
-            //string url = string.IsNullOrEmpty(FormRequest)
-            //                      ? string.Format("FrmMisDocumentos.aspx{0}", GetBaseQueryString())
-            //                      : string.Format("{0}{1}", FormRequest, GetBaseQueryString());
             string url = string.Format("{0}{1}", FormRequest, GetBaseQueryString());
             Response.Redirect(url);
         }
@@ -134,6 +137,20 @@ namespace Modules.Documentos.Admin
         #endregion
 
         #region Propiedades
+
+        private bool EstaAdjuntandoOEliminando
+        {
+            get
+            {
+                if (HttpContext.Current.Session["FrmEditarDocumento.EstaAdjuntandoOEliminando"] == null)
+                    HttpContext.Current.Session["FrmEditarDocumento.EstaAdjuntandoOEliminando"] = false;
+                return Convert.ToBoolean(HttpContext.Current.Session["FrmEditarDocumento.EstaAdjuntandoOEliminando"]);
+            }
+            set
+            {
+                HttpContext.Current.Session["FrmEditarDocumento.EstaAdjuntandoOEliminando"] = value;
+            }
+        }
 
         private static object IdCategoriaSession
         {
@@ -455,6 +472,7 @@ namespace Modules.Documentos.Admin
 
         protected void ImgBtnEliminar_Click(object sender, System.Web.UI.ImageClickEventArgs e)
         {
+            EstaAdjuntandoOEliminando = true;
             ImageButton ImgBtnEliminar = (ImageButton) sender;
             if (EliminarAdjuntoEvent != null)
                 EliminarAdjuntoEvent(ImgBtnEliminar.CommandArgument, EventArgs.Empty);
@@ -462,6 +480,7 @@ namespace Modules.Documentos.Admin
 
         protected void BtnAdjuntarClick(object sender, EventArgs e)
         {
+            EstaAdjuntandoOEliminando = true;
             if (GuardarAdjuntoEvent != null)
                 GuardarAdjuntoEvent(null, EventArgs.Empty);
         }

@@ -277,7 +277,7 @@
                 <td style="width:49%"></td>
            </tr>
              <!--Archivo-->
-             <tr>
+             <tr id="filaAdjuntar" runat="server">
                 <td class="validator" style="width:1%">
                     *
                 </td>

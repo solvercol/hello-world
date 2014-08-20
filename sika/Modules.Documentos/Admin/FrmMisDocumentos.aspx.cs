@@ -85,7 +85,7 @@ namespace Modules.Documentos.Admin
 
         protected void BtnNuevoClick(object sender, EventArgs e)
         {
-            Response.Redirect(string.Format("FrmEditarDocumento.aspx{0}", GetBaseQueryString()));
+            Response.Redirect(string.Format("FrmEditarDocumento.aspx{0}{1}", GetBaseQueryString(), "&Form=FrmMisDocumentos.aspx"));
         }
 
         protected void BtnFindClick(object sender, EventArgs e)

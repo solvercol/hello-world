@@ -43,10 +43,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Infraestructure.Data.Core\bin\Debug\Infraestructure.Data.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Infrastructure.Data.MainModule, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Infrastructure.Data.MainModule\bin\Debug\Infrastructure.Data.MainModule.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
@@ -87,6 +83,10 @@
     <ProjectReference Include="..\Infrastructure.CrossCutting\Infrastructure.CrossCutting.csproj">
       <Project>{1063AE74-49D5-4D8A-B6A3-2C38349F55BF}</Project>
       <Name>Infrastructure.CrossCutting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure.Data.MainModule\Infrastructure.Data.MainModule.csproj">
+      <Project>{AAD8AB19-2DF0-4FAD-8105-0BE1BD9A797B}</Project>
+      <Name>Infrastructure.Data.MainModule</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

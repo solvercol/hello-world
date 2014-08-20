@@ -202,6 +202,15 @@ namespace Modules.Documentos.Admin {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDdlResponsableDoc;
         
         /// <summary>
+        /// filaAdjuntar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow filaAdjuntar;
+        
+        /// <summary>
         /// FileUploadArchivo control.
         /// </summary>
         /// <remarks>
