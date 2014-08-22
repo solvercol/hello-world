@@ -94,6 +94,8 @@
                                                 StyleSetName="Claymation"
                                                 DropDownContainerWidth="300px"
                                                 DropDownContainerHeight="220px"
+                                                OnValueChanged="WddAsesor_ValueChanged"
+                                                AutoPostBack="true"
                                                 Width="98%">
                                 </ig:WebDropDown>
                             </td>
@@ -342,60 +344,9 @@
                                     </asp:Label>
                                 </td>
                             </tr>
-                            <!-- FIN Estado del Producto -->
+                            <!-- FIN Descripcion -->
                         </table>
                     </Content>
-                </ajaxToolkit:AccordionPane>
-            <ajaxToolkit:AccordionPane  runat="server" ID="PaneDiagnosticoConclusionesPrevias"
-                                            HeaderCssClass="accordionHeader"
-                                            HeaderSelectedCssClass="accordionHeaderSelected"
-                                            ContentCssClass="accordionContent">
-                    <Header>Diagnóstico y Conclusiones Previas</Header>
-                    <Content>
-                        <table width="100%" class="tblSecciones">
-                            <!-- INICIO Diagnostico y conclusiones previas -->
-                            <tr>
-                                <th style="text-align:left">
-                                    Diagnóstico :
-                                </th>
-                                <td class="Separador"></td>
-                                <td colspan="5">
-                                    <asp:TextBox ID="txtDiagnostico" runat="server" TextMode="MultiLine" Width="97%" Rows="4" />
-                                </td>            
-                            </tr>
-                            <tr>
-                                <th style="text-align:left">
-                                    Conclusiones Previa :
-                                </th>
-                                <td class="Separador"></td>
-                                <td colspan="5">
-                                    <asp:TextBox ID="txtConclusionesPrevias" runat="server" TextMode="MultiLine" Width="97%" Rows="4" />
-                                </td>            
-                            </tr>
-                            <!-- FIN Diagnostico y conclusiones previas -->
-                        </table>
-                    </Content>
-                </ajaxToolkit:AccordionPane>
-            <ajaxToolkit:AccordionPane  runat="server" ID="PaneSolucion"
-                                            HeaderCssClass="accordionHeader"
-                                            HeaderSelectedCssClass="accordionHeaderSelected"
-                                            ContentCssClass="accordionContent">
-                    <Header>Solución</Header>
-                    <Content>
-                        <table width="100%" class="tblSecciones">
-                            <!-- INICIO Solucion -->
-                            <tr>
-                                <th style="text-align:left">
-                                    Solucionado? :
-                                </th>
-                                <td class="Separador"></td>
-                                <td colspan="5">
-                                    <asp:TextBox ID="txtObservacionesSolucion" runat="server" TextMode="MultiLine" Width="97%" Rows="4" />
-                                </td>            
-                            </tr>
-                            <!-- FIN Solucion -->
-                        </table>
-                    </Content>
-                </ajaxToolkit:AccordionPane>         
+                </ajaxToolkit:AccordionPane>       
         </Panes>
     </ajaxToolkit:Accordion>

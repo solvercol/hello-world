@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Reflection;
 using Application.Core;
 using Application.MainModule.Reclamos.IServices;
@@ -6,6 +7,8 @@ using Applications.MainModule.Admin.IServices;
 using Domain.MainModules.Entities;
 using Infrastructure.CrossCutting.NetFramework.Enums;
 using Presenters.Reclamos.IViews;
+using Application.MainModule.SqlServices.IServices;
+using System.Collections.Generic;
 
 namespace Presenters.Reclamos.Presenters
 {
@@ -15,16 +18,22 @@ namespace Presenters.Reclamos.Presenters
         readonly ISfTBL_ModuloReclamos_ActividadesReclamoManagementServices _actividadesReclamoAdmService;
         readonly ISfTBL_ModuloReclamos_ReclamoManagementServices _reclamoService;
         readonly ISfTBL_Admin_UsuariosManagementServices _usuariosService;
+        readonly IReclamosAdoService _reclamoAdoService;
+        readonly ISfTBL_ModuloReclamos_AnexosActividadManagementServices _anexosService;
 
         public AdminActividadesReclamoPresenter(ISfTBL_ModuloReclamos_ActividadesManagementServices actividadesService,
                                                 ISfTBL_ModuloReclamos_ActividadesReclamoManagementServices actividadesReclamoAdmService,
                                                 ISfTBL_ModuloReclamos_ReclamoManagementServices reclamoService,
-                                                ISfTBL_Admin_UsuariosManagementServices usuariosService)
+                                                ISfTBL_Admin_UsuariosManagementServices usuariosService,
+                                                IReclamosAdoService reclamoAdoService,
+                                                ISfTBL_ModuloReclamos_AnexosActividadManagementServices anexosService)
         {
             _actividadesService = actividadesService;
             _actividadesReclamoAdmService = actividadesReclamoAdmService;
             _reclamoService = reclamoService;
             _usuariosService = usuariosService;
+            _reclamoAdoService = reclamoAdoService;
+            _anexosService = anexosService;
         }
 
         public override void SubscribeViewToEvents()
@@ -43,6 +52,7 @@ namespace Presenters.Reclamos.Presenters
             LoadActividadesReclamo();
             LoadActividadesReclamoAdmin();
             LoadUsuarioAsignacion();
+            LoadUsuarioCopia();
         }
 
         void LoadActividadesReclamo()
@@ -94,6 +104,19 @@ namespace Presenters.Reclamos.Presenters
             }
         }
 
+        void LoadUsuarioCopia()
+        {
+            try
+            {
+                var items = _usuariosService.FindBySpec(true);
+                View.LoadUsuarioCopia(items);
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
+        }
+
         public void AddActividadReclamo()
         {
             if (string.IsNullOrEmpty(View.IdReclamo)) return;
@@ -103,6 +126,32 @@ namespace Presenters.Reclamos.Presenters
                 var model = GetModel();
 
                 _actividadesService.Add(model);
+
+                if (View.UsuariosCopia.Any())
+                {
+                    foreach (var item in View.UsuariosCopia)
+                    {
+                        _reclamoAdoService.InsertUsuarioCopiaActividades(item.Id, string.Format("{0}", model.IdActividad));
+                    }
+                }
+
+                if (View.ArchivosAdjuntos.Any())
+                {
+                    foreach (var archivo in View.ArchivosAdjuntos)
+                    {
+                        var anexo = new TBL_ModuloReclamos_AnexosActividad();
+                        anexo.IdActividad = model.IdActividad;
+                        anexo.NombreArchivo = archivo.Value;
+                        anexo.Archivo = (byte[])archivo.ComplexValue;
+                        anexo.IsActive = true;
+                        anexo.CreateBy = View.UserSession.IdUser;
+                        anexo.CreateOn = DateTime.Now;
+                        anexo.ModifiedBy = View.UserSession.IdUser;
+                        anexo.ModifiedOn = DateTime.Now;
+
+                        _anexosService.Add(anexo);
+                    }
+                }
 
                 LoadActividadesReclamo();
             }
@@ -156,8 +205,32 @@ namespace Presenters.Reclamos.Presenters
                     View.FechaActividad = model.Fecha;
                     View.IdUsuarioAsignacion = model.IdUsuarioAsignacion.ToString();
                     View.Observaciones = model.ObservacionesCierre;
+                    View.UsuariosCopia = new List<DTO_ValueKey>();
+                    if (model.TBL_Admin_Usuarios3.Any())
+                    {
+                        foreach (var itm in model.TBL_Admin_Usuarios3)
+                        {
+                            var usuarioCopia = new DTO_ValueKey() { Id = itm.IdUser.ToString(), Value = itm.Nombres };
+                            View.UsuariosCopia.Add(usuarioCopia);
+                        }
+                    }
+                    View.LoadUsuariosCopia(View.UsuariosCopia);
+                    View.ArchivosAdjuntos = new List<DTO_ValueKey>();
+                    if (model.TBL_ModuloReclamos_AnexosActividad.Any())
+                    {
+                        foreach (var anexo in model.TBL_ModuloReclamos_AnexosActividad)
+                        {
+                            var archivo = new DTO_ValueKey();
+                            archivo.Id = string.Format("{0}", anexo.IdAnexoActividad);
+                            archivo.Value = anexo.NombreArchivo;
+                            archivo.ComplexValue = anexo.Archivo;
+                            View.ArchivosAdjuntos.Add(archivo);
+                        }
+                    }
+                    View.LoadArchivosAdjuntos(View.ArchivosAdjuntos);
                     View.IsNewActividad = false;
                     View.ShowAdminActividadWindow(true);
+                    View.EnableEdit(false);
                 }
             }
             catch (Exception ex)

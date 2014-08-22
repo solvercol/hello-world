@@ -84,13 +84,13 @@
                             <td align="left">
                                 <asp:Literal ID="litCliente" runat="server"></asp:Literal>
                             </td>
-                            <td align="center">
+                            <td align="left">
                                 <asp:Literal ID="litContacto" runat="server"></asp:Literal>
                             </td>
-                            <td align="right">
+                            <td align="left">
                                 <asp:Literal ID="litEmail" runat="server"></asp:Literal>
                             </td>
-                            <td align="right">
+                            <td align="left">
                                 <asp:Literal ID="litUnidad" runat="server"></asp:Literal>
                             </td>
                             <td align="left">
@@ -125,6 +125,6 @@ ID="mpeSearchClient"
 runat="server" 
 TargetControlID="btnTargetControlClient" 
 PopupControlID="pnlImgClient" 
-BackgroundCssClass="ModalPopupBG" 
+BackgroundCssClass="ModalPopupBG" DropShadow="true" 
 cancelcontrolid="divCloseClient"> 
 </ajaxToolkit:ModalPopupExtender>

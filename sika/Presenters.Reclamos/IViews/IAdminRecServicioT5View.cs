@@ -26,9 +26,6 @@ namespace Presenters.Reclamos.IViews
 
         // Descripcion de Problema
         string DescripcionProblema { get; set; }
-        string Diagnostico { get; set; }
-        string ConclusionesPrevias { get; set; }
-        string Solucion { get; set; }
         string MensajeDescripcionProblema { get; set; }
 
         // Carga

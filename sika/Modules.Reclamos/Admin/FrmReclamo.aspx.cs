@@ -43,10 +43,6 @@ namespace Modules.Reclamos.Admin
             LoadUserControl();
         }
 
-        void LoadInitReclamoControl()
-        {
-        }
-
         #endregion
 
         #region Buttons
@@ -93,7 +89,7 @@ namespace Modules.Reclamos.Admin
 
             if (string.IsNullOrEmpty(controlPath))
             {
-                controlPath = "WUCAdminCostosReclamo.ascx";
+                controlPath = "WUCAdminInformacionReclamo.ascx";
                 if (mnuSecciones.Items.Count > 0)
                     mnuSecciones.Items[0].Selected = true;
             }
@@ -135,14 +131,32 @@ namespace Modules.Reclamos.Admin
             mnuSecciones.Items[0].Selected = true;
         }
 
+        public void LoadInitReclamoControl()
+        {
+            var controlPath = "";
+            var idUc = "";
+
+            if (TipoReclamo == "Producto")
+            {
+                controlPath = string.Format("{0}WUCReadingReclamoProducto.ascx", ROOTUC);
+                idUc = "WUCReadingReclamoProducto";
+            }
+            else
+            {
+                controlPath = string.Format("{0}WUCReadingReclamoServicio.ascx", ROOTUC);
+
+                idUc = "WUCReadingReclamoServicio";
+            }
+
+            phInfoReclamo.Controls.Clear();
+            var uc = LoadControl(controlPath);
+            uc.ID = idUc;
+            phInfoReclamo.Controls.Add(uc);
+        }
+
         #endregion
 
-        #region Memebers
-
-        #region Methods
-        #endregion
-
-        #region Properties        
+        #region Properties
 
         public TBL_Admin_Usuarios UserSession
         {
@@ -202,41 +216,13 @@ namespace Modules.Reclamos.Admin
         {
             get
             {
-                return litTipoReclamo.Text;
+                return ViewState["Reclamo_TipoReclamo"] == null ? string.Empty : ViewState["Reclamo_TipoReclamo"].ToString();
             }
             set
             {
-                litTipoReclamo.Text = value;
+                ViewState["Reclamo_TipoReclamo"] = value;
             }
         }
-
-        public string Solicitante
-        {
-            get
-            {
-                return litSolicitante.Text;
-            }
-            set
-            {
-                litSolicitante.Text = value;
-            }
-        }      
-
-        public string DescripcionProblema
-        {
-            get
-            {
-                return litDescripcionProblema.Text;
-            }
-            set
-            {
-                litDescripcionProblema.Text = TruncateString(value, 100);
-                imgTooltipDescripcionProblema.Visible = value.Length > 100;
-                imgTooltipDescripcionProblema.ToolTip = value;
-            }
-        }
-
-        #endregion
 
         #endregion
 

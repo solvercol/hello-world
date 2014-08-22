@@ -65,120 +65,143 @@
     </tr>    
 </table>
 
-<asp:Panel ID="pnlAdminComentarioRespuesta"  runat="server" CssClass="popup_Container" Width="500" Height="300" style="display:none;">  
+<asp:UpdatePanel ID="upModal" runat="server">
+    <ContentTemplate> 
+        <asp:Panel ID="pnlAdminComentarioRespuesta"  runat="server" CssClass="popup_Container" Width="500" Height="300" style="display:none;">  
 
-    <div class="popup_Titlebar" id="PopupHeader">
-        <div class="TitlebarLeft">
-            Administrar Comentario / Respuesta
-        </div>
-        <div class="TitlebarRight" id="divCloseAdminComentario">
-        </div>
-    </div>
+            <div class="popup_Titlebar" id="PopupHeader">
+                <div class="TitlebarLeft">
+                    Administrar Comentario / Respuesta
+                </div>
+                <div class="TitlebarRight" id="divCloseAdminComentario">
+                </div>
+            </div>
 
-    <div style="padding:3px; text-align:right;">
-        <asp:Button ID="btnRegresar" runat="server" Text="Regresar"  />
-        <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="BtnSaveComentario_Click"  />
-    </div>
+            <div style="padding:3px; text-align:right;">
+                <asp:Button ID="btnRegresar" runat="server" Text="Regresar"  />
+                <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="BtnSaveComentario_Click"  />
+            </div>
 
-    <div class="popup_Body">                                                    
-        <table width="100%" class="tblSecciones">
-            <tr>
-                <th style="text-align:left; width: 25%">
-                    Asunto :
-                </th>
+            <div class="popup_Body">                                                    
+                <table width="100%" class="tblSecciones">
+                    <tr>
+                        <th style="text-align:left; width: 25%">
+                            Asunto :
+                        </th>
 
-                <td class="Separador"></td>
+                        <td class="Separador"></td>
 
-                <td class="Line" style="width:70%">
-                    <asp:TextBox ID="txtAsunto" runat="server" Width="90%" />
-                </td>
+                        <td class="Line" style="width:70%">
+                            <asp:TextBox ID="txtAsunto" runat="server" Width="90%" />
+                        </td>
 
-                <td class="Separador"></td>
-            </tr>
-            <tr>
-                <th style="text-align:left">
-                    Observaciones :
-                </th>
+                        <td class="Separador"></td>
+                    </tr>
+                    <tr>
+                        <th style="text-align:left">
+                            Observaciones :
+                        </th>
 
-                <td class="Separador"></td>
+                        <td class="Separador"></td>
 
-                <td class="Line">
-                    <asp:TextBox ID="txtObservaciones" runat="server" TextMode="MultiLine" Rows="3" Width="90%" />
-                </td>
+                        <td class="Line">
+                            <asp:TextBox ID="txtObservaciones" runat="server" TextMode="MultiLine" Rows="3" Width="90%" />
+                        </td>
 
-                <td class="Separador"></td>
-            </tr>
-            <tr>
-                <th style="text-align:left">
-                    Destinatario :
-                </th>
+                        <td class="Separador"></td>
+                    </tr>
+                    <tr>
+                        <th style="text-align:left">
+                            Destinatario :
+                        </th>
 
-                <td class="Separador"></td>
+                        <td class="Separador"></td>
 
-                <td class="Line">
-                    <ig:WebDropDown ID="wddDestinatarios" 
-                                    runat="server" 
-                                    EnableMultipleSelection="false"
-                                    MultipleSelectionType="Checkbox" 
-                                    DisplayMode="DropDown"
-                                    EnableClosingDropDownOnSelect="false"
-                                    StyleSetName="Claymation"
-                                    DropDownContainerWidth="300px"
-                                    DropDownContainerHeight="220px"
-                                    Width="98%">
-                    </ig:WebDropDown>
-                </td>
+                        <td class="Line">
+                            <ig:WebDropDown ID="wddDestinatarios" 
+                                            runat="server" 
+                                            EnableMultipleSelection="false"
+                                            MultipleSelectionType="Checkbox" 
+                                            DisplayMode="DropDown"
+                                            EnableClosingDropDownOnSelect="false"
+                                            StyleSetName="Claymation"
+                                            DropDownContainerWidth="300px"
+                                            DropDownContainerHeight="220px"
+                                            Width="98%">
+                            </ig:WebDropDown>
+                        </td>
 
-                <td class="Separador"></td>
-            </tr>
-            <tr>
-                <th style="text-align:left">
-                    NuevoAnexo :
-                </th>
+                        <td class="Separador"></td>
+                    </tr>
+                    <tr>
+                        <th style="text-align:left">
+                            NuevoAnexo :
+                        </th>
 
-                <td class="Separador"></td>
+                        <td class="Separador"></td>
 
-                <td class="Line">
-                    <asp:FileUpload ID="FileUpload1" runat="server" />
-                    <asp:Button ID="btnAdd" runat="server" Text="Agregar" />
-                </td>
+                        <td class="Line">
+                            <asp:FileUpload ID="fupAnexoArchivo" runat="server" />
 
-                <td class="Separador"></td>
-            </tr>
-            <tr>
-                <td colspan="4">
-                    <table class="tbl" width="100%">
-                        <tr>
-                            <th style="width:90%">Archivo</th>
-                            <th style="width:10%"></th>
-                        </tr>
-                        <tr>
-                            <td>
-                                Archivo de Pruebas.pdf
-                            </td>
-                            <td>
-                                 <asp:ImageButton 
-                                    ID="imgDeleteAnexo" 
-                                    runat="server"
-                                    CausesValidation="false"
-                                    BorderStyle="None"
-                                    ImageUrl="~/Resources/Images/RemoveGrid.png"  />
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </table>
-    </div>
-</asp:Panel>
+                            <asp:Button ID="btnAddArchivoAdjunto" runat="server" Text="Agregar" OnClick="BtnAddArchivoAdjunto_Click" />
+                        </td>
+
+                        <td class="Separador"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="padding-left:2px">
+                            <table class="tbl" width="100%">
+                                <tr>
+                                    <th style="width:90%">Archivo</th>
+                                    <th style="width:10%"></th>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <asp:Panel ID="pnlArchivosAdjuntos" runat="server" Width="100%" Height="65px" ScrollBars="Vertical">
+                                            <table width="100%">
+                                                <asp:repeater id="rptArchivosAdjuntos" runat="server" OnItemDataBound="RptArchivosAdjuntos_ItemDataBound" >                                                                 
+                                                    <ItemTemplate>
+                                                        <tr>
+                                                            <td >
+                                                                <asp:HiddenField ID="hddIdArchivo" runat="server" />                                                                
+                                                                <asp:LinkButton ID="lnkNombreArchivo" runat="server" OnClick="BtnDownloadArchivoAdjunto_Click" />
+                                                            </td>
+                                                            <td style="width:27px;" >
+                                                                 <asp:ImageButton 
+                                                                    ID="imgDeleteAnexo" 
+                                                                    runat="server"
+                                                                    CausesValidation="false"
+                                                                    BorderStyle="None"
+                                                                    ImageUrl="~/Resources/Images/RemoveGrid.png"
+                                                                    OnClick="BtnRemoveArchivoAdjunto_Click"  />
+                                                            </td>
+                                                        </tr>
+                                                    </ItemTemplate>
+                                                </asp:repeater>
+                                            </table>                                            
+                                        </asp:Panel>
+                                    </td>
+                                </tr>                                
+                            </table>
+                        </td>
+                        <td class="Separador"></td>
+                    </tr>
+                </table>
+            </div>
+        </asp:Panel>
     
-<asp:Button ID="btnPopUpAdminComentarioRespuestaTargetControl" runat="server" style="display:none; "/>    
+        <asp:Button ID="btnPopUpAdminComentarioRespuestaTargetControl" runat="server" style="display:none; "/>    
 
-<ajaxToolkit:ModalPopupExtender 
-ID="mpeAdminSolucion" 
-runat="server" 
-TargetControlID="btnPopUpAdminComentarioRespuestaTargetControl" 
-PopupControlID="pnlAdminComentarioRespuesta" 
-BackgroundCssClass="ModalPopupBG" 
-cancelcontrolid="divCloseAdminComentario"> 
-</ajaxToolkit:ModalPopupExtender>
+        <ajaxToolkit:ModalPopupExtender 
+                    ID="mpeAdminSolucion" 
+                    runat="server" 
+                    TargetControlID="btnPopUpAdminComentarioRespuestaTargetControl" 
+                    PopupControlID="pnlAdminComentarioRespuesta" 
+                    BackgroundCssClass="ModalPopupBG" DropShadow="true"
+                    cancelcontrolid="divCloseAdminComentario"> 
+        </ajaxToolkit:ModalPopupExtender>
+    </ContentTemplate>
+    <Triggers>
+        <asp:PostBackTrigger ControlID="btnAddArchivoAdjunto" />
+    </Triggers>
+</asp:UpdatePanel>

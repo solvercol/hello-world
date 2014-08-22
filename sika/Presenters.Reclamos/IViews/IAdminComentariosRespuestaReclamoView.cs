@@ -20,5 +20,11 @@ namespace Presenters.Reclamos.IViews
         void ShowAdminComentarioWindow(bool visible);
         void LoadComentariosReclamo(List<TBL_ModuloReclamos_ComentariosRespuesta> items);
         void LoadDestinatarios(List<TBL_Admin_Usuarios> items);
+
+        void EnableEdit(bool enable);
+
+        // Archivos Adjuntos
+        List<DTO_ValueKey> ArchivosAdjuntos { get; set; }
+        void LoadArchivosAdjuntos(List<DTO_ValueKey> items);
     }
 }

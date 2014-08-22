@@ -73,6 +73,8 @@
                                                 StyleSetName="Claymation"
                                                 DropDownContainerWidth="300px"
                                                 DropDownContainerHeight="220px"
+                                                OnValueChanged="WddAsesor_ValueChanged"
+                                                AutoPostBack="true"
                                                 Width="98%">
                                 </ig:WebDropDown>
                             </td>
@@ -631,18 +633,27 @@
                                 Diagnóstico :
                             </th>
                             <td class="Separador"></td>
-                            <td colspan="5">
-                                <asp:TextBox ID="txtDiagnostico" runat="server" TextMode="MultiLine" Width="97%" Rows="4" />
-                            </td>            
+                            <td colspan="4">
+                                <asp:TextBox ID="txtDiagnostico" runat="server" TextMode="MultiLine" Width="100%" Rows="4" />
+                            </td>      
+                            <td>
+                                <asp:RequiredFieldValidator ID="reqTxtDiagnostico"
+                                                            runat="server"
+                                                            ForeColor="Red"
+                                                            ControlToValidate="txtDiagnostico"
+                                                            ValidationGroup="vgGeneral"                                                                 
+                                                            ErrorMessage="El campo diagnóstico es obligatorio" >*</asp:RequiredFieldValidator>   
+                            </td>      
                         </tr>
                         <tr>
                             <th style="text-align:left">
                                 Conclusiones Previa :
                             </th>
                             <td class="Separador"></td>
-                            <td colspan="5">
-                                <asp:TextBox ID="txtConclusionesPrevias" runat="server" TextMode="MultiLine" Width="97%" Rows="4" />
+                            <td colspan="4">
+                                <asp:TextBox ID="txtConclusionesPrevias" runat="server" TextMode="MultiLine" Width="100%" Rows="4" />
                             </td>            
+                            <td></td>
                         </tr>
                         <!-- FIN Diagnostico y conclusiones previas -->
                     </table>

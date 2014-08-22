@@ -34,6 +34,7 @@ namespace Infrastructure.Data.MainModule.Reclamos.Repositories
                 return activeContext.TBL_ModuloReclamos_Soluciones
                                     .Include(x => x.TBL_Admin_Usuarios)     // Creado Por
                                     .Include(x => x.TBL_Admin_Usuarios1)    // Modificado Por
+                                    .Include(x => x.TBL_ModuloReclamos_AnexosSolucion)
                                     .Where(specific)
                                     .SingleOrDefault();
             }

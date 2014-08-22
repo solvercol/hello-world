@@ -55,6 +55,11 @@ namespace Modules.Reclamos.UserControls
 
         #region Buttons
 
+        protected void BtnSaveCostos_Click(object sender, EventArgs e)
+        {
+            Presenter.UpdateCostosReclamo();
+        }
+
         protected void BtnAddCosto_Click(object sender, EventArgs e)
         {
             InitAdminProducto();
@@ -131,9 +136,15 @@ namespace Modules.Reclamos.UserControls
 
         protected void TxtUnidadesProductoTextChanged(object sender, EventArgs e)
         {
-            CostoProducto = (Convert.ToDecimal(PrecioListaProducto) * UnidadesProducto) * PorcentajeDescuento;
+            CostoProducto = (Convert.ToDecimal(PrecioListaProducto) * UnidadesProducto) - ((Convert.ToDecimal(PrecioListaProducto) * UnidadesProducto) * PorcentajeDescuento);
             KilosProducto = (Convert.ToDecimal(PesoNetoProducto) * UnidadesProducto);
-            CostoDisponibleProducto = (Convert.ToDecimal(PrecioListaProducto) * UnidadesProducto) * ValorDisposicion;
+
+            ShowAdminProductoWindow(true);
+        }
+
+        protected void TxtUnidadesDisponerProductoTextChanged(object sender, EventArgs e)
+        {
+            CostoDisponibleProducto = (Convert.ToDecimal(PesoNetoProducto) * UnidadesDisponerProducto) * ValorDisposicion;
 
             ShowAdminProductoWindow(true);
         }
@@ -195,16 +206,13 @@ namespace Modules.Reclamos.UserControls
 
         public void LoadCostoProductos(List<TBL_ModuloReclamos_CostosProducto> items)
         {
+            _totalCostosProductoReclamo = 0;
+            _totalCostosTransporte = 0;
+            _totalCostosDisposicion = 0;
+
             rptCostosList.DataSource = items;
             rptCostosList.DataBind();
-
-            if (!items.Any())
-            {
-                _totalCostosProductoReclamo = 0;
-                _totalCostosTransporte = 0;
-                _totalCostosDisposicion = 0;
-            }
-
+            
             CostoProductoReclamo = _totalCostosProductoReclamo;
             CostoTransporte = _totalCostosTransporte;
             CostoDisposicion = _totalCostosDisposicion;

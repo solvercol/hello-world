@@ -13,6 +13,15 @@ namespace Modules.Reclamos.UserControls {
     public partial class WUCAdminCostosReclamo {
         
         /// <summary>
+        /// Img1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlImage Img1;
+        
+        /// <summary>
         /// btnNuevoGasto control.
         /// </summary>
         /// <remarks>
@@ -20,6 +29,15 @@ namespace Modules.Reclamos.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnNuevoGasto;
+        
+        /// <summary>
+        /// btnSaveCostos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSaveCostos;
         
         /// <summary>
         /// rptCostosList control.

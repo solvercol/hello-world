@@ -7,6 +7,8 @@ using Domain.MainModules.Entities;
 using Modules.Reclamos.UI;
 using Presenters.Reclamos.IViews;
 using Presenters.Reclamos.Presenters;
+using Application.Core;
+using System.Web.UI;
 
 namespace Modules.Reclamos.UserControls
 {
@@ -56,6 +58,55 @@ namespace Modules.Reclamos.UserControls
             Presenter.LoadComentarioReclamo();
         }
 
+        protected void BtnAddArchivoAdjunto_Click(object sender, EventArgs e)
+        {
+            if (!fupAnexoArchivo.HasFile)
+            {
+                ShowAdminComentarioWindow(true);
+                return;
+            }
+
+            var archivoAdjunto = new DTO_ValueKey();
+            archivoAdjunto.Id = (ArchivosAdjuntos.Count + 1).ToString();
+            archivoAdjunto.Value = fupAnexoArchivo.FileName;
+            archivoAdjunto.ComplexValue = fupAnexoArchivo.FileBytes;
+
+            ArchivosAdjuntos.Add(archivoAdjunto);
+            LoadArchivosAdjuntos(ArchivosAdjuntos);
+
+            ShowAdminComentarioWindow(true);
+        }
+
+        protected void BtnRemoveArchivoAdjunto_Click(object sender, EventArgs e)
+        {
+            var btn = (ImageButton)sender;
+
+            var IdArchivo = btn.CommandArgument;
+
+            var archivo = ArchivosAdjuntos.Where(x => x.Id == IdArchivo).SingleOrDefault();
+
+            if (archivo != null)
+            {
+                ArchivosAdjuntos.Remove(archivo);
+                LoadArchivosAdjuntos(ArchivosAdjuntos);
+            }
+
+            ShowAdminComentarioWindow(true);
+        }
+
+        protected void BtnDownloadArchivoAdjunto_Click(object sender, EventArgs e)
+        {
+            var btn = (LinkButton)sender;
+
+            var IdArchivo = btn.CommandArgument;
+
+            var archivo = ArchivosAdjuntos.Where(x => x.Id == IdArchivo).SingleOrDefault();
+
+            DownloadDocument((byte[])archivo.ComplexValue, archivo.Value, "application/octet-stream");
+
+            ShowAdminComentarioWindow(true);
+        }
+
         #endregion
 
         #region Repeaters
@@ -84,6 +135,36 @@ namespace Modules.Reclamos.UserControls
             }
         }
 
+        protected void RptArchivosAdjuntos_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+            {
+                var item = (DTO_ValueKey)(e.Item.DataItem);
+                // Bindind data
+
+                var hddIdArchivo = e.Item.FindControl("hddIdArchivo") as HiddenField;
+                if (hddIdArchivo != null) hddIdArchivo.Value = string.Format("{0}", item.Id);
+
+                var lnkNombreArchivo = e.Item.FindControl("lnkNombreArchivo") as LinkButton;
+                if (lnkNombreArchivo != null)
+                {
+                    lnkNombreArchivo.Text = string.Format("{0}", item.Value);
+                    lnkNombreArchivo.Enabled = !IsNewComentario;
+                    lnkNombreArchivo.CommandArgument = string.Format("{0}", item.Id);
+
+                    ScriptManager scriptManager = ScriptManager.GetCurrent(this.Page);
+                    scriptManager.RegisterPostBackControl(lnkNombreArchivo);
+                }
+
+                var imgDeleteAnexo = e.Item.FindControl("imgDeleteAnexo") as ImageButton;
+                if (imgDeleteAnexo != null)
+                {
+                    imgDeleteAnexo.CommandArgument = string.Format("{0}", item.Id);
+                    imgDeleteAnexo.Enabled = IsNewComentario;
+                }
+            }
+        }
+
         #endregion
 
         #endregion
@@ -95,7 +176,10 @@ namespace Modules.Reclamos.UserControls
             Asunto = string.Empty;
             Comentario = string.Empty;
             IdUsuarioDestino = UserSession.IdUser.ToString();
+            ArchivosAdjuntos = new List<DTO_ValueKey>();
+            LoadArchivosAdjuntos(ArchivosAdjuntos);
             IsNewComentario = true;
+            EnableEdit(true);
         }
 
         #endregion
@@ -138,6 +222,20 @@ namespace Modules.Reclamos.UserControls
             wddDestinatarios.TextField = "Nombres";
             wddDestinatarios.ValueField = "IdUser";
             wddDestinatarios.DataBind();
+        }
+
+        public void EnableEdit(bool enable)
+        {
+            txtAsunto.Enabled = enable;
+            txtObservaciones.Enabled = enable;
+            wddDestinatarios.Enabled = enable;
+            btnGuardar.Visible = enable;
+        }
+
+        public void LoadArchivosAdjuntos(List<DTO_ValueKey> items)
+        {
+            rptArchivosAdjuntos.DataSource = items;
+            rptArchivosAdjuntos.DataBind();
         }
 
         #endregion
@@ -220,7 +318,22 @@ namespace Modules.Reclamos.UserControls
             {
                 ViewState["AdminComentario_IsNewComentario"] = value;
             }
-        }        
+        }
+
+        public List<DTO_ValueKey> ArchivosAdjuntos
+        {
+            get
+            {
+                if (Session["AdminComentario_ArchivosAdjuntos"] == null)
+                    Session["AdminComentario_ArchivosAdjuntos"] = new List<DTO_ValueKey>();
+
+                return Session["AdminComentario_ArchivosAdjuntos"] as List<DTO_ValueKey>;
+            }
+            set
+            {
+                Session["AdminComentario_ArchivosAdjuntos"] = value;
+            }
+        }
 
         #endregion
 

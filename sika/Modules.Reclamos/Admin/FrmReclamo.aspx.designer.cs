@@ -13,6 +13,15 @@ namespace Modules.Reclamos.Admin {
     public partial class FrmReclamo {
         
         /// <summary>
+        /// Img1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlImage Img1;
+        
+        /// <summary>
         /// upMenuBar control.
         /// </summary>
         /// <remarks>
@@ -49,13 +58,13 @@ namespace Modules.Reclamos.Admin {
         protected global::System.Web.UI.WebControls.PlaceHolder plhWf;
         
         /// <summary>
-        /// litSolicitante control.
+        /// phInfoReclamo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litSolicitante;
+        protected global::System.Web.UI.WebControls.PlaceHolder phInfoReclamo;
         
         /// <summary>
         /// upResumen control.
@@ -65,33 +74,6 @@ namespace Modules.Reclamos.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel upResumen;
-        
-        /// <summary>
-        /// litTipoReclamo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litTipoReclamo;
-        
-        /// <summary>
-        /// litDescripcionProblema control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litDescripcionProblema;
-        
-        /// <summary>
-        /// imgTooltipDescripcionProblema control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgTooltipDescripcionProblema;
         
         /// <summary>
         /// upSecciones control.

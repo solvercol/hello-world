@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Application.MainModule.SqlServices.IServices;
-using Infraestructure.Data.Core;
-using Domain.MainModule.Reclamos.DTO;
-using System.Web.Management;
 using System.Data;
 using System.Data.SqlClient;
+using System.Web.Management;
+using Application.MainModule.SqlServices.IServices;
+using Domain.MainModule.Reclamos.DTO;
+using Infraestructure.Data.Core;
 
 namespace Application.MainModule.SqlServices.Services
 {

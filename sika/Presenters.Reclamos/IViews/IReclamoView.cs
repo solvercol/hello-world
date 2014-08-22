@@ -1,5 +1,5 @@
-﻿using Application.Core;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Application.Core;
 using Domain.MainModules.Entities;
 
 namespace Presenters.Reclamos.IViews
@@ -9,14 +9,13 @@ namespace Presenters.Reclamos.IViews
         // Properties
         string IdReclamo { get; }
         string TipoReclamo { get; set; }
-        string Solicitante { get; set; }
         string NumeroReclamo { get; set; }
-        string DescripcionProblema { get; set; }
 
         string IdCategoriaReclamo { get; set; }
         string IdGrupoInformacion { get; set; }
 
         // Load
         void LoadSecciones(IEnumerable<TBL_Admin_Secciones> secciones);
+        void LoadInitReclamoControl();
     }
 }

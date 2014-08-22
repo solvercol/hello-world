@@ -253,9 +253,6 @@ namespace Presenters.Reclamos.Presenters
                 model.AreaIncumple = View.AreaIncumpleProcedimiento;
                 model.ProcedimientoInternoAfectado = View.ProcedimientoInternoAfectado;
                 model.DescripcionProblema = View.DescripcionProblema;
-                model.DiagnosticoPrevio = View.Diagnostico;
-                model.ConclusionesPrevias = View.ConclusionesPrevias;
-                model.ObservacionesSolucion = View.Solucion;
                 model.ModifiedBy = View.UserSession.IdUser;
                 model.ModifiedOn = DateTime.Now;
 
@@ -289,9 +286,6 @@ namespace Presenters.Reclamos.Presenters
                 View.AreaIncumpleProcedimiento = model.AreaIncumple;
                 View.ProcedimientoInternoAfectado = model.ProcedimientoInternoAfectado;
                 View.DescripcionProblema = model.DescripcionProblema;
-                View.Diagnostico = model.DiagnosticoPrevio;
-                View.ConclusionesPrevias = model.ConclusionesPrevias;
-                View.Solucion = model.ObservacionesSolucion;
             }
             catch (Exception ex)
             {
@@ -318,9 +312,6 @@ namespace Presenters.Reclamos.Presenters
             model.AreaIncumple = View.AreaIncumpleProcedimiento;
             model.ProcedimientoInternoAfectado = View.ProcedimientoInternoAfectado;
             model.DescripcionProblema = View.DescripcionProblema;
-            model.DiagnosticoPrevio = View.Diagnostico;
-            model.ConclusionesPrevias = View.ConclusionesPrevias;
-            model.ObservacionesSolucion = View.Solucion;
             model.IsActive = true;
             model.CreateBy = View.UserSession.IdUser;
             model.CreateOn = DateTime.Now;

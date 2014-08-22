@@ -157,7 +157,7 @@ namespace Application.MainModule.Reclamos.Services
         {
             Specification<TBL_ModuloReclamos_Soluciones> spec = new DirectSpecification<TBL_ModuloReclamos_Soluciones>(u => u.IdSolucion == id);
 
-            return _TBLModuloReclamosSolucionesRepository.GetEntityBySpec(spec);
+            return _TBLModuloReclamosSolucionesRepository.GetCompleteEntityBySpec(spec);
         }
 
         public List<TBL_ModuloReclamos_Soluciones> GetByIdReclamo(decimal idReclamo)

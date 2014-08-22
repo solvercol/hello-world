@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Reflection;
 using Application.Core;
@@ -15,14 +16,17 @@ namespace Presenters.Reclamos.Presenters
         readonly ISfTBL_Admin_OptionListManagementServices _optionListService;
         readonly ISfTBL_ModuloReclamos_ReclamoManagementServices _reclamoService;
         readonly ISfTBL_ModuloReclamos_SolucionesManagementServices _solucionesReclamo;
+        readonly ISfTBL_ModuloReclamos_AnexosSolucionManagementServices _anexosService;
 
         public AdminSolucionesReclamoPresenter(ISfTBL_Admin_OptionListManagementServices optionListService,
                                                ISfTBL_ModuloReclamos_ReclamoManagementServices reclamoService,
-                                               ISfTBL_ModuloReclamos_SolucionesManagementServices solucionesReclamo)
+                                               ISfTBL_ModuloReclamos_SolucionesManagementServices solucionesReclamo,
+                                               ISfTBL_ModuloReclamos_AnexosSolucionManagementServices anexosService)
         {
             _optionListService = optionListService;
             _reclamoService = reclamoService;
             _solucionesReclamo = solucionesReclamo;
+            _anexosService = anexosService;
         }
 
         public override void SubscribeViewToEvents()
@@ -93,6 +97,24 @@ namespace Presenters.Reclamos.Presenters
 
                 _solucionesReclamo.Add(model);
 
+                if (View.ArchivosAdjuntos.Any())
+                {
+                    foreach (var archivo in View.ArchivosAdjuntos)
+                    {
+                        var anexo = new TBL_ModuloReclamos_AnexosSolucion();
+                        anexo.IdSolucion = model.IdSolucion;
+                        anexo.NombreArchivo = archivo.Value;
+                        anexo.Archivo = (byte[])archivo.ComplexValue;
+                        anexo.IsActive = true;
+                        anexo.CreateBy = View.UserSession.IdUser;
+                        anexo.CreateOn = DateTime.Now;
+                        anexo.ModifiedBy = View.UserSession.IdUser;
+                        anexo.ModifiedOn = DateTime.Now;
+
+                        _anexosService.Add(anexo);
+                    }
+                }
+
                 LoadSolucionesReclamo();
             }
             catch (Exception ex)
@@ -141,6 +163,19 @@ namespace Presenters.Reclamos.Presenters
                     View.Departamento = model.Departamento;
                     View.Referencia = model.Referencia;
                     View.Observaciones = model.Observaciones;
+                    View.ArchivosAdjuntos = new List<DTO_ValueKey>();
+                    if (model.TBL_ModuloReclamos_AnexosSolucion.Any())
+                    {
+                        foreach (var anexo in model.TBL_ModuloReclamos_AnexosSolucion)
+                        {
+                            var archivo = new DTO_ValueKey();
+                            archivo.Id = string.Format("{0}", anexo.IdAnexoSolucion);
+                            archivo.Value = anexo.NombreArchivo;
+                            archivo.ComplexValue = anexo.Archivo;
+                            View.ArchivosAdjuntos.Add(archivo);
+                        }
+                    }
+                    View.LoadArchivosAdjuntos(View.ArchivosAdjuntos);
                     View.IsNewSolucion = false;
                     View.ShowAdminSolucionWindow(true);
                 }

@@ -199,43 +199,7 @@ namespace Modules.Reclamos.UserControls
             {
                 txtDescripcionProblema.Text = value;
             }
-        }
-
-        public string Diagnostico
-        {
-            get
-            {
-                return txtDiagnostico.Text;
-            }
-            set
-            {
-                txtDiagnostico.Text = value;
-            }
-        }
-
-        public string ConclusionesPrevias
-        {
-            get
-            {
-                return txtConclusionesPrevias.Text;
-            }
-            set
-            {
-                txtConclusionesPrevias.Text = value;
-            }
-        }
-
-        public string Solucion
-        {
-            get
-            {
-                return txtObservacionesSolucion.Text;
-            }
-            set
-            {
-                txtObservacionesSolucion.Text = value;
-            }
-        }
+        }        
 
         public string MensajeDescripcionProblema
         {
