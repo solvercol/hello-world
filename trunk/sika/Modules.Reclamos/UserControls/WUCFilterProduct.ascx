@@ -3,6 +3,14 @@
 <%@ Register TagPrefix="csc" Namespace="ServerControls" Assembly="ServerControls" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 
+<script language="javascript" type="text/javascript">
+    function EnterEvent(e) {
+        if (e.keyCode == 13) {
+            $('#btnFiltrar').trigger('click');
+        }
+    }
+</script>
+
 <table width="100%" >
     <tr>
         <td style="width:95%; font-size:12pt; color:#000090;" align="left" class="Line">
@@ -76,7 +84,7 @@
                 </td>
                 <td class="Separador15"></td>
                 <td valign="middle" style="width:70%;" class="Line">
-                    <asp:TextBox ID="txtFilterProduct" runat="server" Width="90%" MaxLength="100"></asp:TextBox>                  
+                    <asp:TextBox ID="txtFilterProduct" runat="server" Width="90%" MaxLength="100" onKeyDown="return EnterEvent(event);" AutoPostBack="false"></asp:TextBox>                  
                 </td>
                 <td align="right" style="width:10%;">   
                     <asp:Button ID="btnFiltrar" runat="server" CausesValidation="false" Text="Filtrar" OnClick="BtnFiltrarClick" />                                  
@@ -170,7 +178,7 @@ ID="mpeSearch"
 runat="server" 
 TargetControlID="btnTargetControl" 
 PopupControlID="pnlImg"
-BackgroundCssClass="ModalPopupBG" 
+BackgroundCssClass="ModalPopupBG" DropShadow="true" 
 cancelcontrolid="divCloseFilterProduct"
 > 
 </ajaxToolkit:ModalPopupExtender>

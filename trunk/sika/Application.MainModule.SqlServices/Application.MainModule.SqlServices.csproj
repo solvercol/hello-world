@@ -51,9 +51,11 @@
     <Compile Include="Domain\Partes.cs" />
     <Compile Include="Domain\PedidoClientes.cs" />
     <Compile Include="IServices\IPedidosEmpacorServices.cs" />
+    <Compile Include="IServices\IReclamosAdoService.cs" />
     <Compile Include="IServices\IReclamosExternalInterfacesService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\PedidosEmpacorServices.cs" />
+    <Compile Include="Services\ReclamosAdoService.cs" />
     <Compile Include="Services\ReclamosExternalInterfacesService.cs" />
   </ItemGroup>
   <ItemGroup />

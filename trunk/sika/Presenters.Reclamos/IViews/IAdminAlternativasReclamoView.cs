@@ -24,5 +24,11 @@ namespace Presenters.Reclamos.IViews
         void ShowAdminAlternativaWindow(bool visible);
         void LoadAlternativasReclamo(List<TBL_ModuloReclamos_Alternativas> items);
         void LoadResponsables(List<TBL_Admin_Usuarios> items);
+
+        void EnableEdit(bool enable);
+
+        // Archivos Adjuntos
+        List<DTO_ValueKey> ArchivosAdjuntos { get; set; }
+        void LoadArchivosAdjuntos(List<DTO_ValueKey> items);
     }
 }

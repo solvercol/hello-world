@@ -1,10 +1,10 @@
 ﻿using System;
-using Application.Core;
-using Presenters.Reclamos.IViews;
 using System.Reflection;
-using Infrastructure.CrossCutting.NetFramework.Enums;
+using Application.Core;
 using Application.MainModule.Reclamos.IServices;
 using Applications.MainModule.Admin.IServices;
+using Infrastructure.CrossCutting.NetFramework.Enums;
+using Presenters.Reclamos.IViews;
 
 namespace Presenters.Reclamos.Presenters
 {
@@ -43,13 +43,14 @@ namespace Presenters.Reclamos.Presenters
                 if (reclamo != null)
                 {
                     View.TipoReclamo = reclamo.TBL_ModuloReclamos_TipoReclamo.Nombre;
-                    View.Solicitante = reclamo.Solicitante.Nombres;
                     View.NumeroReclamo = reclamo.NumeroReclamo;
-                    View.DescripcionProblema = reclamo.DescripcionProblema;
 
                     // Load Nav
                     View.IdCategoriaReclamo = reclamo.IdCategoriaReclamo.ToString();
-                    View.IdGrupoInformacion = reclamo.TBL_ModuloReclamos_CategoriasReclamo.GrupoInformacion.ToString();
+                    if (reclamo.TBL_ModuloReclamos_CategoriasReclamo != null)
+                        View.IdGrupoInformacion = reclamo.TBL_ModuloReclamos_CategoriasReclamo.GrupoInformacion.ToString();
+
+                    View.LoadInitReclamoControl();
                 }
             }
             catch (Exception ex)

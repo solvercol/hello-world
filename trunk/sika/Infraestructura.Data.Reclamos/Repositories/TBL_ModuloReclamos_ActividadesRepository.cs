@@ -36,6 +36,8 @@ namespace Infrastructure.Data.MainModule.Reclamos.Repositories
                                     .Include(x => x.TBL_Admin_Usuarios)     // Creado Por
                                     .Include(x => x.TBL_Admin_Usuarios1)    // Modificado Por
                                     .Include(x => x.TBL_Admin_Usuarios2)    // Asignado
+                                    .Include(x => x.TBL_Admin_Usuarios3)    // Usuarios Copia
+                                    .Include(x => x.TBL_ModuloReclamos_AnexosActividad)
                                     .Where(specific)
                                     .SingleOrDefault();
             }
@@ -62,6 +64,7 @@ namespace Infrastructure.Data.MainModule.Reclamos.Repositories
                                     .Include(x => x.TBL_Admin_Usuarios)     // Creado Por
                                     .Include(x => x.TBL_Admin_Usuarios1)    // Modificado Por
                                     .Include(x => x.TBL_Admin_Usuarios2)    // Asignado
+                                    .Include(x => x.TBL_Admin_Usuarios3)    // Usuarios Copia
                                     .Where(specific)
                                     .ToList();
             }

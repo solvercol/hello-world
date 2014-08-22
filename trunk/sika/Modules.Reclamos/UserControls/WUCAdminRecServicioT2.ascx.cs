@@ -12,6 +12,7 @@ using Presenters.Reclamos.Presenters;
 using Domain.MainModule.Reclamos.DTO;
 using Domain.MainModule.Reclamos.Enum;
 using Application.Core;
+using Infragistics.Web.UI.ListControls;
 
 namespace Modules.Reclamos.UserControls
 {
@@ -70,6 +71,16 @@ namespace Modules.Reclamos.UserControls
 
         #endregion
 
+        #region DropDownList
+
+        protected void WddAsesor_ValueChanged(object sender, DropDownValueChangedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(SelectedCliente.CodigoCliente))
+                Presenter.LoadUnidadZonaAsesor();
+        }
+
+        #endregion
+
         #endregion
 
         #region Methods
@@ -81,7 +92,9 @@ namespace Modules.Reclamos.UserControls
 
         void WucClientSelectEvent(Dto_Cliente cliente)
         {
-            UnidadZona = cliente.Unidad;
+            UnidadZona = string.Format("{0}-{1}", cliente.Unidad, cliente.Zona);
+            NombreContacto = cliente.Contacto;
+            EmailContacto = cliente.Email;
         }
 
         #endregion
@@ -95,16 +108,18 @@ namespace Modules.Reclamos.UserControls
             Response.Redirect(string.Format("../Admin/FrmReclamo.aspx?ModuleId={0}&IdReclamo={1}", IdModule, idReclamo));
         }
 
-        public void LoadAsesores(List<TBL_Admin_Usuarios> items)
+        public void LoadAsesores(List<Dto_Asesor> items)
         {
             if (items.Any())
             {
-                items = items.OrderBy(x => x.Nombres).ToList();
+                items = items.OrderBy(x => x.Asesor).ToList();
             }
             wddAsesor.DataSource = items;
-            wddAsesor.TextField = "Nombres";
+            wddAsesor.TextField = "Asesor";
             wddAsesor.ValueField = "IdUser";
             wddAsesor.DataBind();
+
+            wddAsesor.SelectedItemIndex = 0;
         }
 
         public void LoadAtendidoPor(List<TBL_Admin_Usuarios> items)
@@ -259,43 +274,7 @@ namespace Modules.Reclamos.UserControls
             {
                 txtDescripcionProblema.Text = value;
             }
-        }
-
-        public string Diagnostico
-        {
-            get
-            {
-                return txtDiagnostico.Text;
-            }
-            set
-            {
-                txtDiagnostico.Text = value;
-            }
-        }
-
-        public string ConclusionesPrevias
-        {
-            get
-            {
-                return txtConclusionesPrevias.Text;
-            }
-            set
-            {
-                txtConclusionesPrevias.Text = value;
-            }
-        }
-
-        public string Solucion
-        {
-            get
-            {
-                return txtObservacionesSolucion.Text;
-            }
-            set
-            {
-                txtObservacionesSolucion.Text = value;
-            }
-        }
+        }        
 
         public string MensajeDescripcionProblema
         {

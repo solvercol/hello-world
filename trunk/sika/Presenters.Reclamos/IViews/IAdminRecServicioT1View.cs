@@ -33,13 +33,10 @@ namespace Presenters.Reclamos.IViews
 
         // Descripcion de Problema
         string DescripcionProblema { get; set; }
-        string Diagnostico { get; set; }
-        string ConclusionesPrevias { get; set; }
-        string Solucion { get; set; }
         string MensajeDescripcionProblema { get; set; }
 
         // Carga
-        void LoadAsesores(List<TBL_Admin_Usuarios> items);
+        void LoadAsesores(List<Dto_Asesor> items);
         void LoadAtendidoPor(List<TBL_Admin_Usuarios> items);
 
         // View 

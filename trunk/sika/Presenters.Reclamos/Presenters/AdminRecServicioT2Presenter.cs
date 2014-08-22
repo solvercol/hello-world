@@ -8,6 +8,7 @@ using Infrastructure.CrossCutting.NetFramework.Enums;
 using Presenters.Reclamos.IViews;
 using System.Collections.Generic;
 using Domain.MainModule.Reclamos.DTO;
+using Application.MainModule.SqlServices.IServices;
 
 namespace Presenters.Reclamos.Presenters
 {
@@ -17,16 +18,19 @@ namespace Presenters.Reclamos.Presenters
         readonly ISfTBL_Admin_OptionListManagementServices _optionListService;
         readonly ISfTBL_ModuloReclamos_ReclamoManagementServices _reclamoService;
         readonly ISfTBL_ModuloReclamos_CategoriasReclamoManagementServices _categoriasReclamoService;
+        readonly IReclamosAdoService _reclamosAdoService;
 
         public AdminRecServicioT2Presenter(ISfTBL_Admin_UsuariosManagementServices usuariosService,
                                             ISfTBL_Admin_OptionListManagementServices optionListService,
                                             ISfTBL_ModuloReclamos_ReclamoManagementServices reclamoService,
-                                            ISfTBL_ModuloReclamos_CategoriasReclamoManagementServices categoriasReclamoService)
+                                            ISfTBL_ModuloReclamos_CategoriasReclamoManagementServices categoriasReclamoService,
+                                            IReclamosAdoService reclamosAdoService)
         {
             _usuariosService = usuariosService;
             _optionListService = optionListService;
             _reclamoService = reclamoService;
             _categoriasReclamoService = categoriasReclamoService;
+            _reclamosAdoService = reclamosAdoService;
         }
 
         public override void SubscribeViewToEvents()
@@ -38,11 +42,13 @@ namespace Presenters.Reclamos.Presenters
         {
             if (View.IsPostBack) return;
             LoadAsesores();
+            LoadUsuariosAtendidos();
             LoadPlantas();
             LoadMensajesReclamoConf();
             LoadConsecutivoReclamo();
             LoadCategoria();
             InitViewValues();
+            LoadUnidadZonaAsesor();
 
             if (!string.IsNullOrEmpty(View.IdReclamo))
                 LoadReclamo();
@@ -119,8 +125,21 @@ namespace Presenters.Reclamos.Presenters
         {
             try
             {
-                var asesores = _usuariosService.FindBySpec(true);
+                var asesores = _reclamosAdoService.GetAllAsesores();
                 View.LoadAsesores(asesores);
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
+        }
+
+        void LoadUsuariosAtendidos()
+        {
+            try
+            {
+                var asesores = _usuariosService.FindBySpec(true);
+
                 View.LoadAtendidoPor(asesores);
             }
             catch (Exception ex)
@@ -129,6 +148,22 @@ namespace Presenters.Reclamos.Presenters
             }
         }
 
+        public void LoadUnidadZonaAsesor()
+        {
+            if (string.IsNullOrEmpty(View.IdAsesor)) return;
+
+            try
+            {
+                var asesor = _reclamosAdoService.GetByIdAsesor(Convert.ToInt32(View.IdAsesor));
+
+                View.UnidadZona = string.Format("{0}-{1}", asesor.Unidad, asesor.Zona);
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
+        }
+       
         public void LoadPlantas()
         {
             try
@@ -216,9 +251,6 @@ namespace Presenters.Reclamos.Presenters
                 model.FechaRealEntrega = View.FechaRealEntrega;
                 model.DiasDiferencia = View.DiasIncumplimiento;
                 model.DescripcionProblema = View.DescripcionProblema;
-                model.DiagnosticoPrevio = View.Diagnostico;
-                model.ConclusionesPrevias = View.ConclusionesPrevias;
-                model.ObservacionesSolucion = View.Solucion;
                 model.ModifiedBy = View.UserSession.IdUser;
                 model.ModifiedOn = DateTime.Now;
 
@@ -261,9 +293,6 @@ namespace Presenters.Reclamos.Presenters
                 View.FechaRealEntrega = model.FechaRealEntrega.GetValueOrDefault();
                 View.DiasIncumplimiento = model.DiasDiferencia.GetValueOrDefault();
                 View.DescripcionProblema = model.DescripcionProblema;
-                View.Diagnostico = model.DiagnosticoPrevio;
-                View.ConclusionesPrevias = model.ConclusionesPrevias;
-                View.Solucion = model.ObservacionesSolucion;
 
                 if (model.DtoCliente != null)
                     View.SetSelectedClient((Dto_Cliente)model.DtoCliente);
@@ -302,9 +331,6 @@ namespace Presenters.Reclamos.Presenters
             model.FechaRealEntrega = View.FechaRealEntrega;
             model.DiasDiferencia = View.DiasIncumplimiento;
             model.DescripcionProblema = View.DescripcionProblema;
-            model.DiagnosticoPrevio = View.Diagnostico;
-            model.ConclusionesPrevias = View.ConclusionesPrevias;
-            model.ObservacionesSolucion = View.Solucion;
             model.IsActive = true;
             model.CreateBy = View.UserSession.IdUser;
             model.CreateOn = DateTime.Now;

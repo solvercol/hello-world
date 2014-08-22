@@ -19,5 +19,9 @@ namespace Presenters.Reclamos.IViews
         void ShowAdminSolucionWindow(bool visible);
         void LoadSolucionesReclamo(List<TBL_ModuloReclamos_Soluciones> items);
         void LoadDepartamentos(List<DTO_ValueKey> items);
+
+        // Archivos Adjuntos
+        List<DTO_ValueKey> ArchivosAdjuntos { get; set; }
+        void LoadArchivosAdjuntos(List<DTO_ValueKey> items);
     }
 }

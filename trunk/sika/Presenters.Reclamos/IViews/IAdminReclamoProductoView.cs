@@ -53,7 +53,7 @@ namespace Presenters.Reclamos.IViews
         string MensajeDescripcionProblema { get; set; }
 
         // Carga
-        void LoadAsesores(List<TBL_Admin_Usuarios> items);
+        void LoadAsesores(List<Dto_Asesor> items);
         void LoadAtendidoPor(List<TBL_Admin_Usuarios> items);
         void LoadPlantas(List<DTO_ValueKey> items);
 

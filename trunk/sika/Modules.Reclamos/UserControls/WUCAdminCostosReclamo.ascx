@@ -7,6 +7,23 @@
 
 <%@ Register src="WUCFilterProduct.ascx" tagname="WucFilterProduct" tagprefix="ucFilterProduct" %> 
 
+ <script language="javascript" type="text/javascript">
+     var divModal = 'DivModal';
+
+     function ShowSplashModal() {
+         var adiv = $get(divModal);
+         adiv.style.visibility = 'visible';
+     }
+</script>
+
+<div id="DivModal">
+    <div id="VentanaMensaje">
+        <div id="Msg">
+            <img id="Img1"  src="~/Resources/images/Barloading.gif" runat="server" alt="" />
+        </div>
+    </div>
+</div>
+
 <table width="100%">
     <tr class="SectionMainTitle">
         <td >
@@ -16,7 +33,8 @@
     <tr>
         <td >
             <div style="padding:3px; text-align:right;">
-                <asp:Button ID="btnNuevoGasto" runat="server" Text="Adicionar Gasto" OnClick="BtnAddCosto_Click" />
+                <asp:Button ID="btnNuevoGasto" runat="server" Text="Adicionar Gasto Producto" OnClick="BtnAddCosto_Click" />
+                <asp:Button ID="btnSaveCostos" runat="server" Text="Guardar Gastos Reclamo" OnClick="BtnSaveCostos_Click" OnClientClick="return ShowSplashModal();" />
             </div>
         </td>
     </tr>
@@ -342,7 +360,8 @@
 
                 <td class="Line">
                     <ig:WebNumericEditor    Id="txtUnidadesDisponerProducto" runat="server" 
-                                            Nullable="false" MinValue="0" Width="90%" />
+                                            Nullable="false" MinValue="0" Width="90%"
+                                            OnTextChanged="TxtUnidadesDisponerProductoTextChanged" AutoPostBackFlags-ValueChanged="On"  />
                 </td>
 
                 <td class="Separador"></td>
@@ -371,6 +390,6 @@ ID="mpeAdminCosto"
 runat="server" 
 TargetControlID="btnPopUpAdminCostoTargetControl" 
 PopupControlID="pnlAdminCosto" 
-BackgroundCssClass="ModalPopupBG" 
+BackgroundCssClass="ModalPopupBG"  DropShadow="true" 
 cancelcontrolid="divCloseAdminCosto"> 
 </ajaxToolkit:ModalPopupExtender>   

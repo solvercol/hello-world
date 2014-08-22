@@ -182,7 +182,7 @@
         runat="server" 
         TargetControlID="btnPopNewReclamoTargetControl" 
         PopupControlID="pnlNewReclamo" 
-        BackgroundCssClass="ModalPopupBG" 
+        BackgroundCssClass="ModalPopupBG"  DropShadow="true" 
         cancelcontrolid="divClose"> 
         </ajaxToolkit:ModalPopupExtender>
     </ContentTemplate>

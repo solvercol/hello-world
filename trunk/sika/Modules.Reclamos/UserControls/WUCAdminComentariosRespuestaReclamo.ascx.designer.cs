@@ -31,6 +31,15 @@ namespace Modules.Reclamos.UserControls {
         protected global::System.Web.UI.WebControls.Repeater rptComentariosList;
         
         /// <summary>
+        /// upModal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upModal;
+        
+        /// <summary>
         /// pnlAdminComentarioRespuesta control.
         /// </summary>
         /// <remarks>
@@ -85,31 +94,40 @@ namespace Modules.Reclamos.UserControls {
         protected global::Infragistics.Web.UI.ListControls.WebDropDown wddDestinatarios;
         
         /// <summary>
-        /// FileUpload1 control.
+        /// fupAnexoArchivo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        protected global::System.Web.UI.WebControls.FileUpload fupAnexoArchivo;
         
         /// <summary>
-        /// btnAdd control.
+        /// btnAddArchivoAdjunto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdd;
+        protected global::System.Web.UI.WebControls.Button btnAddArchivoAdjunto;
         
         /// <summary>
-        /// imgDeleteAnexo control.
+        /// pnlArchivosAdjuntos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton imgDeleteAnexo;
+        protected global::System.Web.UI.WebControls.Panel pnlArchivosAdjuntos;
+        
+        /// <summary>
+        /// rptArchivosAdjuntos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptArchivosAdjuntos;
         
         /// <summary>
         /// btnPopUpAdminComentarioRespuestaTargetControl control.

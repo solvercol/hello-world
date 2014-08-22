@@ -7,6 +7,8 @@ using Domain.MainModules.Entities;
 using Modules.Reclamos.UI;
 using Presenters.Reclamos.IViews;
 using Presenters.Reclamos.Presenters;
+using Application.Core;
+using System.Web.UI;
 
 namespace Modules.Reclamos.UserControls
 {
@@ -27,6 +29,33 @@ namespace Modules.Reclamos.UserControls
         protected void BtnAddActividad_Click(object sender, EventArgs e)
         {
             InitAdminActividad();
+            ShowAdminActividadWindow(true);
+        }
+
+        protected void BtnAddUsuarioCopia_Click(object sender, EventArgs e)
+        {
+            var usuarioCopia = new DTO_ValueKey() { Id = IdUsuarioCopia, Value = wddUsuarioCopia.SelectedItem.Text };
+            if (!ExistsInCopia(usuarioCopia))
+                UsuariosCopia.Add(usuarioCopia);
+
+            LoadUsuariosCopia(UsuariosCopia);
+
+            cpeCopiarUsuarios.Collapsed = false;
+            ShowAdminActividadWindow(true);
+        }
+
+        protected void BtnRemoveUsuarioCopia_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(IdUsuarioCopiaSelected)) return;
+
+            var usuarioCopia = UsuariosCopia.Where(x => x.Id == IdUsuarioCopiaSelected).SingleOrDefault();
+
+            if (usuarioCopia != null)
+                UsuariosCopia.Remove(usuarioCopia);
+
+            LoadUsuariosCopia(UsuariosCopia);
+
+            cpeCopiarUsuarios.Collapsed = false;
             ShowAdminActividadWindow(true);
         }
 
@@ -54,6 +83,55 @@ namespace Modules.Reclamos.UserControls
             IdSelectedActividad = btn.CommandArgument;
 
             Presenter.LoadActividadReclamo();
+        }
+
+        protected void BtnAddArchivoAdjunto_Click(object sender, EventArgs e)
+        {
+            if (!fupAnexoArchivo.HasFile)
+            {
+                ShowAdminActividadWindow(true);
+                return;
+            }
+
+            var archivoAdjunto = new DTO_ValueKey();
+            archivoAdjunto.Id = (ArchivosAdjuntos.Count + 1).ToString();
+            archivoAdjunto.Value = fupAnexoArchivo.FileName;
+            archivoAdjunto.ComplexValue = fupAnexoArchivo.FileBytes;
+
+            ArchivosAdjuntos.Add(archivoAdjunto);
+            LoadArchivosAdjuntos(ArchivosAdjuntos);
+
+            ShowAdminActividadWindow(true);
+        }
+
+        protected void BtnRemoveArchivoAdjunto_Click(object sender, EventArgs e)
+        {
+            var btn = (ImageButton)sender;
+
+            var IdArchivo = btn.CommandArgument;
+
+            var archivo = ArchivosAdjuntos.Where(x => x.Id == IdArchivo).SingleOrDefault();
+
+            if (archivo != null)
+            {
+                ArchivosAdjuntos.Remove(archivo);
+                LoadArchivosAdjuntos(ArchivosAdjuntos);
+            }
+
+            ShowAdminActividadWindow(true);
+        }
+
+        protected void BtnDownloadArchivoAdjunto_Click(object sender, EventArgs e)
+        {
+            var btn = (LinkButton)sender;
+
+            var IdArchivo = btn.CommandArgument;
+
+            var archivo = ArchivosAdjuntos.Where(x => x.Id == IdArchivo).SingleOrDefault();
+
+            DownloadDocument((byte[])archivo.ComplexValue, archivo.Value, "application/octet-stream");
+
+            ShowAdminActividadWindow(true);
         }
 
         #endregion
@@ -90,6 +168,36 @@ namespace Modules.Reclamos.UserControls
             }
         }
 
+        protected void RptArchivosAdjuntos_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+            {
+                var item = (DTO_ValueKey)(e.Item.DataItem);
+                // Bindind data
+
+                var hddIdArchivo = e.Item.FindControl("hddIdArchivo") as HiddenField;
+                if (hddIdArchivo != null) hddIdArchivo.Value = string.Format("{0}", item.Id);
+
+                var lnkNombreArchivo = e.Item.FindControl("lnkNombreArchivo") as LinkButton;
+                if (lnkNombreArchivo != null)
+                {
+                    lnkNombreArchivo.Text = string.Format("{0}", item.Value);
+                    lnkNombreArchivo.Enabled = !IsNewActividad;
+                    lnkNombreArchivo.CommandArgument = string.Format("{0}", item.Id);
+
+                    ScriptManager scriptManager = ScriptManager.GetCurrent(this.Page);
+                    scriptManager.RegisterPostBackControl(lnkNombreArchivo);
+                }
+
+                var imgDeleteAnexo = e.Item.FindControl("imgDeleteAnexo") as ImageButton;
+                if (imgDeleteAnexo != null)
+                {
+                    imgDeleteAnexo.CommandArgument = string.Format("{0}", item.Id);
+                    imgDeleteAnexo.Enabled = IsNewActividad;
+                }
+            }
+        }
+
         #endregion
 
         #endregion
@@ -103,7 +211,23 @@ namespace Modules.Reclamos.UserControls
             Descripcion = string.Empty;
             FechaActividad = DateTime.Now;
             Observaciones = string.Empty;
+            UsuariosCopia = new List<DTO_ValueKey>();
+            LoadUsuariosCopia(UsuariosCopia);
+            ArchivosAdjuntos = new List<DTO_ValueKey>();
+            LoadArchivosAdjuntos(ArchivosAdjuntos);
             IsNewActividad = true;
+            EnableEdit(true);
+        }
+
+        bool ExistsInCopia(DTO_ValueKey item)
+        {
+            foreach (var itm in UsuariosCopia)
+            {
+                if (itm.Id == item.Id)
+                    return true;
+            }
+
+            return false;
         }
 
         #endregion
@@ -148,6 +272,21 @@ namespace Modules.Reclamos.UserControls
             wddUsuarioAsignacion.DataBind();
         }
 
+        public void LoadUsuarioCopia(List<TBL_Admin_Usuarios> items)
+        {
+            if (items.Any())
+            {
+                items = items.OrderBy(x => x.Nombres).ToList();
+            }
+
+            wddUsuarioCopia.DataSource = items;
+            wddUsuarioCopia.TextField = "Nombres";
+            wddUsuarioCopia.ValueField = "IdUser";
+            wddUsuarioCopia.DataBind();
+
+            wddUsuarioCopia.SelectedItemIndex = 0;
+        }
+
         public void LoadActividadesAdmin(List<TBL_ModuloReclamos_ActividadesReclamo> items)
         {
             if (items.Any())
@@ -159,6 +298,34 @@ namespace Modules.Reclamos.UserControls
             wddActividadesReclamo.TextField = "Nombre";
             wddActividadesReclamo.ValueField = "IdActividad";
             wddActividadesReclamo.DataBind();
+        }
+
+        public void LoadUsuariosCopia(List<DTO_ValueKey> items)
+        {
+            lstUsuariosCopia.DataSource = items;
+            lstUsuariosCopia.DataValueField = "Id";
+            lstUsuariosCopia.DataTextField = "Value";
+            lstUsuariosCopia.DataBind();
+        }
+
+        public void EnableEdit(bool enable)
+        {
+            wddActividadesReclamo.Enabled = enable;
+            wddUsuarioAsignacion.Enabled = enable;
+            wddUsuarioCopia.Enabled = enable;
+            txtDescripcion.Enabled = enable;
+            txtFechaActividad.Enabled = enable;
+            txtObservaciones.Enabled = enable;
+            lstUsuariosCopia.Enabled = enable;
+            btnGuardar.Visible = enable;
+            btnAddCopia.Visible = enable;
+            btnRemoveCopia.Visible = enable;
+        }
+
+        public void LoadArchivosAdjuntos(List<DTO_ValueKey> items)
+        {
+            rptArchivosAdjuntos.DataSource = items;
+            rptArchivosAdjuntos.DataBind();
         }
 
         #endregion
@@ -240,6 +407,30 @@ namespace Modules.Reclamos.UserControls
             }
         }
 
+        public string IdUsuarioCopia
+        {
+            get
+            {
+                return wddUsuarioCopia.SelectedValue;
+            }
+            set
+            {
+                wddUsuarioCopia.SelectedValue = value;
+            }
+        }
+
+        public string IdUsuarioCopiaSelected
+        {
+            get
+            {
+                return lstUsuariosCopia.SelectedValue;
+            }
+            set
+            {
+                lstUsuariosCopia.SelectedValue = value;
+            }
+        }
+
         public string Observaciones
         {
             get
@@ -279,8 +470,38 @@ namespace Modules.Reclamos.UserControls
             }
         }
 
+        public List<DTO_ValueKey> UsuariosCopia
+        {
+            get
+            {
+                if (Session["AdminActividades_UsuarioCopia"] == null)
+                    Session["AdminActividades_UsuarioCopia"] = new List<DTO_ValueKey>();
+
+                return Session["AdminActividades_UsuarioCopia"] as List<DTO_ValueKey>;
+            }
+            set
+            {
+                Session["AdminActividades_UsuarioCopia"] = value;
+            }
+        }
+
+        public List<DTO_ValueKey> ArchivosAdjuntos
+        {
+            get
+            {
+                if (Session["AdminActividades_ArchivosAdjuntos"] == null)
+                    Session["AdminActividades_ArchivosAdjuntos"] = new List<DTO_ValueKey>();
+
+                return Session["AdminActividades_ArchivosAdjuntos"] as List<DTO_ValueKey>;
+            }
+            set
+            {
+                Session["AdminActividades_ArchivosAdjuntos"] = value;
+            }
+        }
+
         #endregion
 
-        #endregion        
+        #endregion
     }
 }

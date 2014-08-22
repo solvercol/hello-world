@@ -35,6 +35,7 @@ namespace Infrastructure.Data.MainModule.Reclamos.Repositories
                                     .Include(x => x.TBL_Admin_Usuarios)     // Creado Por
                                     .Include(x => x.TBL_Admin_Usuarios1)    // Modificado Por
                                     .Include(x => x.TBL_Admin_Usuarios2)    // Responsable
+                                    .Include(x => x.TBL_ModuloReclamos_AnexosAlternativa)
                                     .Where(specific)
                                     .SingleOrDefault();
             }

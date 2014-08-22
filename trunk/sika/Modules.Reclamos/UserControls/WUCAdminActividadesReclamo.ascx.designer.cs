@@ -31,6 +31,15 @@ namespace Modules.Reclamos.UserControls {
         protected global::System.Web.UI.WebControls.Repeater rptActividadesList;
         
         /// <summary>
+        /// upModal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upModal;
+        
+        /// <summary>
         /// pnlAdminActividad control.
         /// </summary>
         /// <remarks>
@@ -103,6 +112,78 @@ namespace Modules.Reclamos.UserControls {
         protected global::Infragistics.Web.UI.ListControls.WebDropDown wddUsuarioAsignacion;
         
         /// <summary>
+        /// lblUsuariosCopiaTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUsuariosCopiaTitle;
+        
+        /// <summary>
+        /// ShowHideUsuariosCopia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ShowHideUsuariosCopia;
+        
+        /// <summary>
+        /// PanelUsuariosCopia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelUsuariosCopia;
+        
+        /// <summary>
+        /// wddUsuarioCopia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Infragistics.Web.UI.ListControls.WebDropDown wddUsuarioCopia;
+        
+        /// <summary>
+        /// btnAddCopia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddCopia;
+        
+        /// <summary>
+        /// lstUsuariosCopia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox lstUsuariosCopia;
+        
+        /// <summary>
+        /// btnRemoveCopia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRemoveCopia;
+        
+        /// <summary>
+        /// cpeCopiarUsuarios control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.CollapsiblePanelExtender cpeCopiarUsuarios;
+        
+        /// <summary>
         /// txtObservaciones control.
         /// </summary>
         /// <remarks>
@@ -112,31 +193,40 @@ namespace Modules.Reclamos.UserControls {
         protected global::System.Web.UI.WebControls.TextBox txtObservaciones;
         
         /// <summary>
-        /// FileUpload1 control.
+        /// fupAnexoArchivo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        protected global::System.Web.UI.WebControls.FileUpload fupAnexoArchivo;
         
         /// <summary>
-        /// btnAdd control.
+        /// btnAddArchivoAdjunto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdd;
+        protected global::System.Web.UI.WebControls.Button btnAddArchivoAdjunto;
         
         /// <summary>
-        /// imgDeleteAnexo control.
+        /// pnlArchivosAdjuntos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton imgDeleteAnexo;
+        protected global::System.Web.UI.WebControls.Panel pnlArchivosAdjuntos;
+        
+        /// <summary>
+        /// rptArchivosAdjuntos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptArchivosAdjuntos;
         
         /// <summary>
         /// btnPopUpAdminActividadTargetControl control.

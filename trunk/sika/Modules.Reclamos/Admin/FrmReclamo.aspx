@@ -1,10 +1,26 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FrmReclamo.aspx.cs" Inherits="Modules.Reclamos.Admin.FrmReclamo" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
-
+ 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
+<script language="javascript" type="text/javascript">
+    var divModal = 'DivModal';
+
+    function ShowSplashModalLoading() {
+        var adiv = $get(divModal);
+        adiv.style.visibility = 'visible';
+    }
+</script>
+    
+<div id="DivModal">
+    <div id="VentanaMensaje">
+        <div id="Msg">
+            <img id="Img1"  src="~/Resources/images/Barloading.gif" runat="server" alt="" />
+        </div>
+    </div>
+</div>
 
 <asp:UpdatePanel ID="upMenuBar" runat="server">
     <ContentTemplate>
@@ -29,8 +45,8 @@
         <td>
             <table width="100%" cellpadding="0" cellspacing="0" class="tblPreView">
                 <tr>
-                    <td align="left" style="color:#360090; font-weight:bold; font-size:12pt;" colspan="2" class="TextUpperCase">
-                        <asp:Literal ID="litSolicitante" runat="server"></asp:Literal>                    
+                    <td>
+                        <asp:PlaceHolder ID="phInfoReclamo"  runat="server"></asp:PlaceHolder>                
                     </td>   
                     
                     <td align="right" style="width:25%" rowspan="4" valign="top">
@@ -42,22 +58,7 @@
                             </ContentTemplate>
                         </asp:UpdatePanel>                  
                     </td>
-                </tr>               
-                
-                <tr>
-                    <td  class="Noline">
-                        Tipo de Reclamo :  <asp:Literal ID="litTipoReclamo" runat="server" ></asp:Literal>
-                    </td>
-                    
-                </tr>
-                <tr>
-                    <td class="Noline">
-                        Descripción Problema: <asp:Literal ID="litDescripcionProblema" runat="server" ></asp:Literal> 
-                        <asp:Image  ID="imgTooltipDescripcionProblema" runat="server" ImageUrl="~/Resources/Images/MasComentarios.png"
-                                    Width="16" Height="16" BorderStyle="None" Visible="false" />                        
-                    </td>
-                    
-                </tr>
+                </tr>                
             </table>
         </td>
     </tr>
