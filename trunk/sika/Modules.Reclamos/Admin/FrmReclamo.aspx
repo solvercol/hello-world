@@ -22,18 +22,6 @@
     </div>
 </div>
 
-<asp:UpdatePanel ID="upMenuBar" runat="server">
-    <ContentTemplate>
-         <div style="padding:3px; text-align:right;">
-            <asp:Button ID="btnRegresar" runat="server" Text="Regresar" OnClick="BtnRegresar_Click" />
-            <asp:Button ID="btnEdit" runat="server" Text="Editar" OnClick="BtnEditReclamo_Click" />
-            <asp:PlaceHolder ID="plhWf" runat="server"></asp:PlaceHolder>
-        </div>
-    </ContentTemplate>
-</asp:UpdatePanel>
-   
-
-
 <table width="100%" cellpadding="0" cellspacing="0" >
     
     <tr>
@@ -102,6 +90,15 @@
                     </td>   
                     
                     <td align="right" style="width:25%" valign="top">
+                        <asp:UpdatePanel ID="upMenuBar" runat="server">
+                            <ContentTemplate>
+                                 <div style="padding:3px; text-align:right;">
+                                    <asp:Button ID="btnRegresar" runat="server" Text="Regresar" OnClick="BtnRegresar_Click" />
+                                    <asp:Button ID="btnEdit" runat="server" Text="Editar" OnClick="BtnEditReclamo_Click" />
+                                    <asp:PlaceHolder ID="plhWf" runat="server"></asp:PlaceHolder>
+                                </div>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
                         <asp:UpdatePanel ID="upResumen" runat="server">
                             <ContentTemplate>
                                 <div class="ContentPanelResumen">                           
