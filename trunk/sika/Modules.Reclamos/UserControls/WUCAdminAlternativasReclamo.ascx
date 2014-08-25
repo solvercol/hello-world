@@ -108,7 +108,7 @@
             <div class="popup_Body">                                                    
                 <table width="100%" class="tblSecciones">
                     <tr>
-                        <th style="text-align:left; width: 30%">
+                        <th style="text-align:left; width: 30%; vertical-align:top">
                             Causas :
                         </th>
 
@@ -116,12 +116,13 @@
 
                         <td class="Line" style="width:70%">
                             <asp:TextBox ID="txtCausas" runat="server" TextMode="MultiLine" Rows="3" Width="90%" />
+                            <asp:Label ID="lblCausas" runat="server" />
                         </td>
 
                         <td class="Separador"></td>
                     </tr>
                     <tr>
-                        <th style="text-align:left">
+                        <th style="text-align:left; vertical-align:top">
                             Factores :
                         </th>
 
@@ -129,12 +130,13 @@
 
                         <td class="Line">
                             <asp:TextBox ID="txtFactores" runat="server" TextMode="MultiLine" Rows="3" Width="90%" />
+                            <asp:Label ID="lblFactores" runat="server" />
                         </td>
 
                         <td class="Separador"></td>
                     </tr>
                     <tr>
-                        <th style="text-align:left">
+                        <th style="text-align:left; vertical-align:top">
                             Alternativas de Solución :
                         </th>
 
@@ -142,12 +144,13 @@
 
                         <td class="Line">
                             <asp:TextBox ID="txtAlternativa" runat="server" TextMode="MultiLine" Rows="3" Width="90%" />
+                            <asp:Label ID="lblAlternativa" runat="server" />
                         </td>
 
                         <td class="Separador"></td>
                     </tr>
                      <tr>
-                        <th style="text-align:left">
+                        <th style="text-align:left; vertical-align:top">
                             Responsable :
                         </th>
 
@@ -165,12 +168,13 @@
                                             DropDownContainerHeight="220px"
                                             Width="98%">
                             </ig:WebDropDown>
+                            <asp:Label ID="lblResponsable" runat="server" />
                         </td>
 
                         <td class="Separador"></td>
                     </tr>
                      <tr>
-                        <th style="text-align:left">
+                        <th style="text-align:left; vertical-align:top">
                             Fecha :
                         </th>
 
@@ -186,12 +190,13 @@
                                 PopupButtonID="txtFechaAlternativa"
                                 Format="dd/MM/yyyy"
                                 CssClass="cal_Theme1" />
+                            <asp:Label ID="lblFechaAlternativa" runat="server" />
                         </td>
 
                         <td class="Separador"></td>
                     </tr>
                      <tr>
-                        <th style="text-align:left">
+                        <th style="text-align:left; vertical-align:top">
                             Seguimiento :
                         </th>
 
@@ -199,13 +204,14 @@
 
                         <td class="Line">
                             <asp:TextBox ID="txtSeguimiento" runat="server" TextMode="MultiLine" Rows="3" Width="90%" />
+                            <asp:Label ID="lblSeguimiento" runat="server" />
                         </td>
 
                         <td class="Separador"></td>
                     </tr>
                     <tr>
-                        <th style="text-align:left">
-                            NuevoAnexo :
+                        <th style="text-align:left; vertical-align:top">
+                            Anexos :
                         </th>
 
                         <td class="Separador"></td>

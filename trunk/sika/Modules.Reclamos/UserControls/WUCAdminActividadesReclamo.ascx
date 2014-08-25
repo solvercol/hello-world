@@ -102,7 +102,7 @@
             <div class="popup_Body">                                                    
                 <table width="100%" class="tblSecciones">
                     <tr>
-                        <th style="text-align:left; width: 25%">
+                        <th style="text-align:left; width: 25%; vertical-align:top">
                             Actividad :
                         </th>
 
@@ -120,12 +120,13 @@
                                             DropDownContainerHeight="220px"
                                             Width="98%">
                             </ig:WebDropDown>
+                            <asp:Label ID="lblActividadesReclamo" runat="server" />
                         </td>
 
                         <td class="Separador"></td>
                     </tr>
                     <tr>
-                        <th style="text-align:left">
+                        <th style="text-align:left; vertical-align:top">
                             Descripción :
                         </th>
 
@@ -133,12 +134,13 @@
 
                         <td class="Line">
                             <asp:TextBox ID="txtDescripcion" runat="server" TextMode="MultiLine" Rows="3" Width="90%" />
+                            <asp:Label ID="lblDescripcion" runat="server" />
                         </td>
 
                         <td class="Separador"></td>
                     </tr>
                     <tr>
-                        <th style="text-align:left">
+                        <th style="text-align:left; vertical-align:top">
                             Fecha Actividad :
                         </th>
 
@@ -154,12 +156,13 @@
                                 PopupButtonID="txtFechaActividad"
                                 Format="dd/MM/yyyy"
                                 CssClass="cal_Theme1" />
+                            <asp:Label ID="lblFechaActividad" runat="server" />
                         </td>
 
                         <td class="Separador"></td>
                     </tr>
                     <tr>
-                        <th style="text-align:left">
+                        <th style="text-align:left; vertical-align:top">
                             Asignar a :
                         </th>
 
@@ -177,6 +180,7 @@
                                             DropDownContainerHeight="220px"
                                             Width="98%">
                             </ig:WebDropDown>
+                            <asp:Label ID="lblUsuarioAsignacion" runat="server" />
                         </td>
 
                         <td class="Separador"></td>
@@ -263,7 +267,7 @@
                         <td class="Separador"></td>
                     </tr>
                     <tr>
-                        <th style="text-align:left">
+                        <th style="text-align:left; vertical-align:top">
                             Observaciones :
                         </th>
 
@@ -271,13 +275,14 @@
 
                         <td class="Line">
                             <asp:TextBox ID="txtObservaciones" runat="server" TextMode="MultiLine" Rows="3" Width="90%" />
+                            <asp:Label ID="lblObservaciones" runat="server" />
                         </td>
 
                         <td class="Separador"></td>
                     </tr>
                     <tr>
-                        <th style="text-align:left">
-                            NuevoAnexo :
+                        <th style="text-align:left; vertical-align:top">
+                            Anexos :
                         </th>
 
                         <td class="Separador"></td>

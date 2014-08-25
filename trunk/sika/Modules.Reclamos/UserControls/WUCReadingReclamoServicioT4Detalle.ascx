@@ -2,7 +2,7 @@
 
 <table width="100%" class="tblSecciones">
     <tr>
-        <td colspan="7" class="accordionHeaderSelected">
+        <td colspan="7" class="TituloSeccion">
             Información General
         </td>
     </tr>
@@ -122,7 +122,7 @@
         </td>
     </tr>
     <tr>
-        <td colspan="7" class="accordionHeaderSelected">
+        <td colspan="7" class="TituloSeccion">
             Datos Cliente
         </td>
     </tr>
@@ -133,7 +133,7 @@
 
         <td class="Separador"></td>
 
-        <td colspan="5">
+        <td colspan="5" class="Line">
             <asp:Label ID="lblCliente" runat="server" />
         </td>
 
@@ -256,13 +256,13 @@
 
     </tr>
     <tr>
-        <td colspan="7" class="accordionHeaderSelected">
+        <td colspan="7" class="TituloSeccion">
             Descripción del Problema
         </td>
     </tr>
     <tr>
-        <td colspan="7">   
-            <asp:TextBox ID="txtDescripcionProblema" runat="server" TextMode="MultiLine" Width="97%" Rows="4" Enabled="false" />                               
+        <td colspan="7" class="Line" style="padding:8px;">
+            <asp:Label ID="txtDescripcionProblema" runat="server" />                               
         </td>            
     </tr>
 </table>

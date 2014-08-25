@@ -219,13 +219,23 @@ namespace Modules.Reclamos.UserControls
 
         public void EnableEdit(bool enable)
         {
-            txtCausas.Enabled = enable;
-            txtFactores.Enabled = enable;
-            txtAlternativa.Enabled = enable;
-            txtFechaAlternativa.Enabled = enable;
-            txtSeguimiento.Enabled = enable;
-            wddResponsable.Enabled = enable;
+            txtCausas.Visible = enable;
+            txtFactores.Visible = enable;
+            txtAlternativa.Visible = enable;
+            txtFechaAlternativa.Visible = enable;
+            txtSeguimiento.Visible = enable;
+            wddResponsable.Visible = enable;
             btnGuardar.Visible = enable;
+
+            lblCausas.Visible = !enable;
+            lblFactores.Visible = !enable;
+            lblAlternativa.Visible = !enable;
+            lblFechaAlternativa.Visible = !enable;
+            lblSeguimiento.Visible = !enable;
+            lblResponsable.Visible = !enable;
+
+            fupAnexoArchivo.Visible = enable;
+            btnAddArchivoAdjunto.Visible = enable;
         }
 
         public void LoadAlternativasReclamo(List<TBL_ModuloReclamos_Alternativas> items)
@@ -281,6 +291,7 @@ namespace Modules.Reclamos.UserControls
             set
             {
                 txtAlternativa.Text = value;
+                lblAlternativa.Text = value;
             }
         }
 
@@ -293,6 +304,7 @@ namespace Modules.Reclamos.UserControls
             set
             {
                 txtCausas.Text = value;
+                lblCausas.Text = value;
             }
         }
 
@@ -305,6 +317,7 @@ namespace Modules.Reclamos.UserControls
             set
             {
                 txtFactores.Text = value;
+                lblFactores.Text = value;
             }
         }
 
@@ -317,6 +330,7 @@ namespace Modules.Reclamos.UserControls
             set
             {
                 wddResponsable.SelectedValue = value;
+                lblResponsable.Text = wddResponsable.SelectedItem.Text;
             }
         }
 
@@ -329,6 +343,7 @@ namespace Modules.Reclamos.UserControls
             set
             {
                 txtFechaAlternativa.Text = string.Format("{0:dd/MM/yyy}", value);
+                lblFechaAlternativa.Text = string.Format("{0:dd/MM/yyy}", value);
             }
         }
 
@@ -341,6 +356,7 @@ namespace Modules.Reclamos.UserControls
             set
             {
                 txtSeguimiento.Text = value;
+                lblSeguimiento.Text = value;
             }
         }
 

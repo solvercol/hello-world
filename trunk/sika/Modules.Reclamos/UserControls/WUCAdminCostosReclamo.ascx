@@ -33,7 +33,7 @@
     <tr>
         <td >
             <div style="padding:3px; text-align:right;">
-                <asp:Button ID="btnNuevoGasto" runat="server" Text="Adicionar Gasto Producto" OnClick="BtnAddCosto_Click" />
+                <asp:Button ID="btnNuevoGasto" runat="server" Text="Adicionar Costo Producto" OnClick="BtnAddCosto_Click" />
                 <asp:Button ID="btnSaveCostos" runat="server" Text="Guardar Gastos Reclamo" OnClick="BtnSaveCostos_Click" OnClientClick="return ShowSplashModal();" />
             </div>
         </td>

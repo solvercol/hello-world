@@ -39,7 +39,7 @@ namespace Modules.Reclamos.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ImprimirTituloVentana(string.Format("RECLAMO No. {0}", NumeroReclamo));
+            ImprimirTituloVentana(string.Format("Reclamo de {0} No. {1}", TipoReclamo, NumeroReclamo));
             LoadUserControl();
         }
 
@@ -148,10 +148,10 @@ namespace Modules.Reclamos.Admin
                 idUc = "WUCReadingReclamoServicio";
             }
 
-            phInfoReclamo.Controls.Clear();
-            var uc = LoadControl(controlPath);
-            uc.ID = idUc;
-            phInfoReclamo.Controls.Add(uc);
+            //phInfoReclamo.Controls.Clear();
+            //var uc = LoadControl(controlPath);
+            //uc.ID = idUc;
+            //phInfoReclamo.Controls.Add(uc);
         }
 
         #endregion
@@ -212,6 +212,18 @@ namespace Modules.Reclamos.Admin
             }
         }
 
+        public string MonedaLocal
+        {
+            get
+            {
+                return ViewState["Reclamo_MonedaLocal"] == null ? string.Empty : ViewState["Reclamo_MonedaLocal"].ToString();
+            }
+            set
+            {
+                ViewState["Reclamo_MonedaLocal"] = value;
+            }
+        }
+
         public string TipoReclamo
         {
             get
@@ -221,6 +233,90 @@ namespace Modules.Reclamos.Admin
             set
             {
                 ViewState["Reclamo_TipoReclamo"] = value;
+            }
+        }
+
+        public string TitleReclamo
+        {
+            get
+            {
+                return lblTitleReclamo.Text;
+            }
+            set
+            {
+                lblTitleReclamo.Text = value;
+            }
+        }
+
+        public string TitleReclamoFrom
+        {
+            get
+            {
+                return lblTitleReclamoFrom.Text;
+            }
+            set
+            {
+                lblTitleReclamoFrom.Text = value;
+            }
+        }
+
+        public string Unidad
+        {
+            get
+            {
+                return lblUnidad.Text;
+            }
+            set
+            {
+                lblUnidad.Text = value;
+            }
+        }
+
+        public string Area
+        {
+            get
+            {
+                return lblArea.Text;
+            }
+            set
+            {
+                lblArea.Text = value;
+            }
+        }
+
+        public string FechaReclamo
+        {
+            get
+            {
+                return lblFechaReclamo.Text;
+            }
+            set
+            {
+                lblFechaReclamo.Text = value;
+            }
+        }
+
+        public string Asesor
+        {
+            get
+            {
+                return lblAsesor.Text;
+            }
+            set
+            {
+                lblAsesor.Text = value;
+            }
+        }
+
+        public string TotalCostoReclamo
+        {
+            get
+            {
+                return lblTotalCostoReclamo.Text;
+            }
+            set
+            {
+                lblTotalCostoReclamo.Text = value;
             }
         }
 
