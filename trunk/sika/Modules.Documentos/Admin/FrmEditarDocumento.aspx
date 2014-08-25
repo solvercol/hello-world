@@ -90,8 +90,7 @@
                     <%--Tablas de Adjuntos--%>
                     <table cellpadding="0" cellspacing="0" width="100%">
                     <tr>
-                        <td colspan="2" id="tdCollapse" runat="server" class="ToolBar">
-                            Archivos Adjuntos
+                        <td colspan="2" id="tdCollapse" runat="server" class="ToolBar">                            
                         </td>
                     </tr>
                     <tr>

@@ -112,15 +112,6 @@ namespace Modules.Documentos.Consulta {
         protected global::System.Web.UI.WebControls.Label txtResponsableDoc;
         
         /// <summary>
-        /// LnkBtnDescargar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LnkBtnDescargar;
-        
-        /// <summary>
         /// lblVersion control.
         /// </summary>
         /// <remarks>
@@ -137,15 +128,6 @@ namespace Modules.Documentos.Consulta {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label txtObservaciones;
-        
-        /// <summary>
-        /// chkActiva control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkActiva;
         
         /// <summary>
         /// WUCLogCambiosDoc control.
