@@ -78,7 +78,6 @@ namespace Presenters.Documentos.Presenters
                 View.TipoDocumento = oDocumento.TBL_ModuloDocumentos_Categorias2.Nombre;
 
                 View.UsuarioResponsable = usuarioServices.FindById(oDocumento.IdUsuarioResponsable).Nombres;
-                View.Activo = oDocumento.IsActive;
 
                 View.Adjuntos(oDocumento.TBL_ModuloDocumentos_DocumentoAdjunto);
             }

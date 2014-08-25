@@ -95,14 +95,6 @@ namespace Modules.Documentos.Consulta
             }
         }
 
-        public byte[] Archivo
-        {
-            set
-            {
-                LnkBtnDescargar.Visible = (value.Length > 0);
-            }
-        }
-
         public string Categoria
         {
             set
@@ -133,12 +125,6 @@ namespace Modules.Documentos.Consulta
             {
                 txtResponsableDoc.Text = value;
             }
-        }
-
-        public bool Activo
-        {
-            get { return chkActiva.Checked; }
-            set { chkActiva.Checked = value; }
         }
 
         #endregion
