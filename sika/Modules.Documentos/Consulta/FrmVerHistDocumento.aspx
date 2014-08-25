@@ -21,7 +21,7 @@
                 <td class="validator" style="width:1%">
                 </td>
                 <th style="width:15%;text-align:left">
-                    Título del Doc.:
+                    Título del Documento:
                 </th>
                 <td class="Separador"></td>
                 <td style="width:35%">

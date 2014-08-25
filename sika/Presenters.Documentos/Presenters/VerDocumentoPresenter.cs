@@ -14,7 +14,7 @@ namespace Presenters.Documentos.Presenters
     public class VerDocumentoPresenter
         : Presenter<IVerDocumentoView>
     {
-
+        private readonly ISfTBL_ModuloDocumentos_DocumentoAdjuntoManagementServices docAdjuntoServices;
         private readonly ISfTBL_ModuloDocumentos_DocumentoManagementServices documentoServices;
         private readonly ISfTBL_ModuloDocumentos_CategoriasManagementServices categoriasServices;
         private readonly ISfTBL_Admin_UsuariosManagementServices usuarioServices;
@@ -24,11 +24,13 @@ namespace Presenters.Documentos.Presenters
                 ISfTBL_ModuloDocumentos_DocumentoManagementServices documentoManagementServices
                 ,ISfTBL_ModuloDocumentos_CategoriasManagementServices categoriasManagementServices
                 ,ISfTBL_Admin_UsuariosManagementServices usuarioServices
+                ,ISfTBL_ModuloDocumentos_DocumentoAdjuntoManagementServices docAdjuntoServices
             )
         {
             this.documentoServices = documentoManagementServices;
             this.categoriasServices = categoriasManagementServices;
             this.usuarioServices = usuarioServices;
+            this.docAdjuntoServices = docAdjuntoServices;
         }
 
         public override void SubscribeViewToEvents()
@@ -40,8 +42,9 @@ namespace Presenters.Documentos.Presenters
 
         void ViewDescargarArchivoEvent(object sender, EventArgs e)
         {
-            var documento = documentoServices.FindById(View.IdDocumento);
-            View.DescargarArchivo(documento);
+            var idDocAdjunto = (Int32)sender;
+            var adjunto = docAdjuntoServices.FindById(idDocAdjunto);
+            View.DescargarArchivo(adjunto);
         }
 
         void ViewLoad(object sender, EventArgs e)
@@ -76,6 +79,8 @@ namespace Presenters.Documentos.Presenters
 
                 View.UsuarioResponsable = usuarioServices.FindById(oDocumento.IdUsuarioResponsable).Nombres;
                 View.Activo = oDocumento.IsActive;
+
+                View.Adjuntos(oDocumento.TBL_ModuloDocumentos_DocumentoAdjunto);
             }
             catch (Exception ex)
             {

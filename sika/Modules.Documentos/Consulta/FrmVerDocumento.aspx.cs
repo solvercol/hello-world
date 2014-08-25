@@ -42,6 +42,13 @@ namespace Modules.Documentos.Consulta
                 DescargarArchivoEvent(null, EventArgs.Empty);
         }
 
+        protected void lnkBtnArchivo_Click(object sender, EventArgs e)
+        {
+            LinkButton lnkBtnArchivo = (LinkButton)sender;
+            if (DescargarArchivoEvent != null)
+                DescargarArchivoEvent(Convert.ToInt32(lnkBtnArchivo.CommandArgument), EventArgs.Empty);
+        }
+
         #endregion
 
         #region Propiedades
@@ -138,14 +145,20 @@ namespace Modules.Documentos.Consulta
 
         #region Métodos
 
-        public void DescargarArchivo(TBL_ModuloDocumentos_Documento documento)
+        public void DescargarArchivo(TBL_ModuloDocumentos_DocumentoAdjunto adjunto)
         {
-            
-            //ViewPage<EditarDocumentoPresenter, IEditarDocumentoView>
-            //    .DownloadDocument(documento.Archivo, documento.NombreArchivo, "application/octet-stream");
+            ViewPage<EditarDocumentoPresenter, IEditarDocumentoView>
+                .DownloadDocument(adjunto.Archivo, adjunto.NombreArchivo, "application/octet-stream");
         }        
 
         #endregion
+
+        public void Adjuntos(IEnumerable<TBL_ModuloDocumentos_DocumentoAdjunto> adjuntos)
+        {
+            rptAdjuntos.DataSource = adjuntos;
+            rptAdjuntos.DataBind();
+        }
+
 
         public string IdModule
         {
