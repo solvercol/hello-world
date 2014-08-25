@@ -30,6 +30,7 @@ namespace Presenters.Documentos.IViews
         string NombreArchivo { get; }
         double TamanioMaxArchivoACargar { get; }
         double TamanioArchivoActual { get; }
+        int IdDocCreado { get; set; }
         int IdCategoria { get; set; }
         int IdSubCategoria { get; set; }
         int IdTipoDocumento { get; set; }
