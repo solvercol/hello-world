@@ -135,7 +135,7 @@ input, select, textarea, .igte_Edit
 {
     border: 1px solid #F4F4F3;
     color: #333;
-    font-family: Tahoma, Verdana, Arial;
+    font-family: Calibri;
     font-size: 8pt;
     margin-left: 1px;
     margin-right: 1px;
@@ -150,7 +150,7 @@ input, select, textarea, .igte_Edit
 p, div
 {
     color: #333;
-    font-family: Tahoma, Verdana, Arial;
+    font-family: Calibri;
     font-size: small;
 }
 
@@ -161,7 +161,7 @@ h1
     border-bottom-style: solid;
     border-bottom-width: 4px;
     color: #366;
-    font-family: Tahoma, Verdana, Arial;
+    font-family: Calibri;
     font-size: large;
     font-weight: 700;
     padding-bottom: 4px;
@@ -292,7 +292,7 @@ a
 {
     color:White;
     font-weight:bold;
-    font-family:Tahoma, Verdana, Arial;
+    font-family:Calibri;
 }
 
 .wrap-header
@@ -389,7 +389,7 @@ a
     height:20px;
     color:#060000;
     text-align:center;
-    font-family:Tahoma, Verdana, Arial;
+    font-family:Calibri;
     margin:auto;
     vertical-align:middle;
 }
@@ -463,7 +463,7 @@ a
 {
     display: block;
     float: left;
-    font-family: Tahoma, Verdana, Arial;
+    font-family: Calibri;
     font-size: small;
     padding-left: 32px;
     position: relative;
@@ -485,7 +485,7 @@ a
     color: #666;
     display: block;
     float: left;
-    font-family: Tahoma, Verdana, Arial
+    font-family: Calibri
     font-size: small;
     font-weight: 700;
     height: 26px;
@@ -500,7 +500,7 @@ a
     color: red;
     display: block;
     float: left;
-    font-family: Tahoma, Verdana, Arial;
+    font-family: Calibri;
     font-size: small;
     height: 30px;
     padding-left: 32px;
@@ -515,7 +515,7 @@ a
     -webkit-border-radius: 8px;
     border: 1px solid #999;
     color: #666;
-    font-family: Tahoma, Verdana, Arial;
+    font-family: Calibri;
     font-size: small;
     height: 20px;
     line-height: 24px;
@@ -641,7 +641,7 @@ input[type*="submit"][name*="Delete"]:hover, input[type*="submit"][name*="Rebuil
     border: 1px solid #F2F2F2;
     color: #545A68;
     background-color: #F2F2F2;
-	font-family:Tahoma, Verdana, Arial;
+	font-family:Calibri;
 	font-size: 12px;
 	font-weight: bold;
     padding: 5px;
@@ -667,7 +667,7 @@ input[type*="submit"][name*="Delete"]:hover, input[type*="submit"][name*="Rebuil
     border: 1px solid #CECECE;
     color: #545A68;
     background-color: #CECECE;
-	font-family: Tahoma, Verdana, Arial;
+	font-family: Calibri;
 	font-size: 12px;
 	font-weight: bold;
     padding: 5px;
@@ -711,7 +711,7 @@ table.tblPreView th
 color:#9A9A9A;
 padding: 4px 8px;
 font-size:0.82em;
-font-family: Tahoma, Verdana, Arial;
+font-family: Calibri;
 font-weight: normal;
 text-align:right;
 }
@@ -719,7 +719,7 @@ text-align:right;
 table.tblPreView .line {
 color:#526C8C;
 font-size:0.82em;
-font-family: Tahoma, Verdana, Arial;
+font-family: Calibri;
 font-weight: normal;
 border-bottom:1px solid #F4F4F3; 
 }
@@ -728,7 +728,7 @@ table.tblPreView .ContentDiv {
 color:#526C8C;
 padding: 4px 8px;
 font-size:0.82em;
-font-family: Tahoma, Verdana, Arial;
+font-family: Calibri;
 font-weight: normal;
 text-align:right;
 }
@@ -737,7 +737,7 @@ table.tblPreView .ContentPanelResumen {
 color:#526C8C;
 padding: 4px 8px;
 font-size:0.88em;
-font-family: Tahoma, Verdana, Arial;
+font-family: Calibri;
 font-weight: normal;
 text-align:right;
 border:1px solid #F5BA38; 
@@ -748,7 +748,7 @@ background-color:#F6F7F8;
 color:#526C8C;
 padding: 4px 8px;
 font-size:0.88em;
-font-family: Tahoma, Verdana, Arial;
+font-family: Calibri;
 font-weight: normal;
 text-align:right;
 border:1px solid #F5BA38; 
@@ -772,7 +772,7 @@ font-size: 0.88em;
 /*line-height: 18px;*/
 vertical-align:middle;    
 text-decoration: none;
-font-family:Tahoma, Verdana, Arial;
+font-family:Calibri;
 font-weight: normal;
 }
 
@@ -781,7 +781,7 @@ font-size: 0.94em;
 line-height: 18px;
 vertical-align:middle;    
 text-decoration: none;
-font-family:Tahoma, Verdana, Arial;
+font-family:Calibri;
 font-weight: bold;
 padding-left:2px;
 color:#38379C;
@@ -803,7 +803,7 @@ border-bottom:1px solid #6362B1;
 table.tblPreView .Noline {
 color:#9A9A9A;
 font-size:0.82em;
-font-family: Tahoma, Verdana, Arial;
+font-family: Calibri;
 font-weight: normal;
 }
 
@@ -825,7 +825,7 @@ table.tblSecciones th {
 color:#526C8C;
 padding: 4px 10px;
 font-size:0.82em;
-font-family: Tahoma, Verdana, Arial;
+font-family: Calibri;
 font-weight: normal;
 text-align:right;
 width:16%;
@@ -834,10 +834,10 @@ width:16%;
 table.tblSecciones .Line {
 color:#9A9A9A;
 font-size:0.82em;
-font-family: Tahoma, Verdana, Arial;
+font-family: Calibri;
 font-weight: normal;
 border-bottom:1px solid #F4F4F3; 
-height:29px;
+
 }
 
 table.tblSecciones .Separador  
@@ -851,7 +851,7 @@ table.tblSecciones td {
 line-height: 15px;
 vertical-align:middle;    
 text-decoration: none;
-font-family:Tahoma, Verdana, Arial;
+font-family:Calibri;
 /*font-weight: normal;*/
 
 }
@@ -876,7 +876,7 @@ border-right:solid 1px #CCC;
 color:#38379C;
 font-size:0.75em;
 font-weight:bold;
-font-family: Tahoma, Verdana, Arial;
+font-family: Calibri;
 text-align:center;
 }
 
@@ -888,7 +888,7 @@ border-right:solid 1px #C0C0C0;
 font-size: 0.75em;
 line-height: 10px;  
 text-decoration: none;
-font-family: Tahoma, Verdana, Arial;
+font-family: Calibri;
 font-weight: normal;
 
 }
@@ -908,7 +908,7 @@ color:#38379C;
 padding:4px 10px;
 font-size:0.82em;
 font-weight:bold;
-font-family: Tahoma, Verdana, Arial;
+font-family: Calibri;
 text-align:left;
 border-bottom:1px solid #F4F4F3;
 }
@@ -939,7 +939,7 @@ table.tblBuscador .Separador15
     color:#545A68;
     border-bottom: 2px solid #FBFF00;
     font-weight:bold;
-    font-family:Tahoma, Verdana, Arial;
+    font-family:Calibri;
 }
 
 .SectionMainTitle
@@ -947,7 +947,7 @@ table.tblBuscador .Separador15
     border: 1px solid #CECECE;
     color: #545A68;
     background-color: #CECECE;
-	font-family: Tahoma, Verdana, Arial;
+	font-family: Calibri;
 	font-size: 12px;
 	font-weight: bolder;
     padding: 5px;
@@ -963,7 +963,7 @@ background-color: #DEF1F4;
 border:solid 1px #77D5F7;
 width:190px;
 font-size:9pt;
-font-family:Tahoma, Verdana, Arial;
+font-family:Calibri;
 }
 
 .cal_Theme1 .ajax__calendar_header  {
@@ -982,7 +982,7 @@ padding-top: 3px;
 background-color: #ffffff;
 border: solid 1px #77D5F7;
 font-size:9pt;
-font-family:Tahoma, Verdana, Arial;
+font-family:Calibri;
 }
 
 .cal_Theme1 .ajax__calendar_dayname {
@@ -1274,7 +1274,7 @@ text-transform:uppercase;
     line-height: 18px;
     vertical-align:middle;    
     text-decoration: none;
-    font-family: Tahoma, Verdana, Arial;
+    font-family: Calibri;
     font-weight: normal;
     
 }
@@ -1283,7 +1283,7 @@ text-transform:uppercase;
 {
     border: 0px solid #F4F4F3;
     color: #333;
-    font-family: Tahoma, Verdana, Arial;
+    font-family: Calibri;
     font-size: 8pt;
     margin-left: 1px;
     margin-right: 1px;
