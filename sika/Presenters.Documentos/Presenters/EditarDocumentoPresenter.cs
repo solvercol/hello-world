@@ -198,6 +198,8 @@ namespace Presenters.Documentos.Presenters
                 oDocumento.ModifiedOn = fechaAhora;
                 documentoServices.Add(oDocumento);
 
+                View.IdDocCreado = oDocumento.IdDocumento;
+
                 ///LOG DE DOCUMENTO
                 GuardarLog(oDocumento, null, "Documento creado");
 
