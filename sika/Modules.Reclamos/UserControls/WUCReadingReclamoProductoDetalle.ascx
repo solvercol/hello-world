@@ -2,7 +2,7 @@
 
 <table width="100%" class="tblSecciones">
     <tr>
-        <td colspan="7" class="accordionHeaderSelected">
+        <td colspan="7" class="TituloSeccion">
             Información General
         </td>
     </tr>
@@ -147,7 +147,7 @@
 
     </tr>
     <tr>
-        <td colspan="7" class="accordionHeaderSelected">
+        <td colspan="7" class="TituloSeccion">
             Datos Cliente Obra
         </td>
     </tr>
@@ -158,7 +158,7 @@
 
         <td class="Separador"></td>
 
-        <td colspan="5">
+        <td colspan="5" class="Line">
             <asp:Label ID="lblNombreCliente" runat="server" />
         </td>
     </tr>
@@ -280,7 +280,7 @@
 
     </tr>
     <tr>
-        <td colspan="7" class="accordionHeaderSelected">
+        <td colspan="7" class="TituloSeccion">
             Estado Del Producto
         </td>
     </tr>
@@ -354,17 +354,17 @@
         </td>
     </tr>
     <tr>
-        <td colspan="7" class="accordionHeaderSelected">
+        <td colspan="7" class="TituloSeccion">
             Descripción del Problema
         </td>
     </tr>
     <tr>
-        <td colspan="7">   
-            <asp:TextBox ID="txtDescripcionProblema" runat="server" TextMode="MultiLine" Width="97%" Rows="4" Enabled="false" />                               
+        <td colspan="7" class="Line" style="padding:8px;">
+            <asp:Label ID="txtDescripcionProblema" runat="server"  />
         </td>            
     </tr>
     <tr>
-        <td colspan="7" class="accordionHeaderSelected">
+        <td colspan="7" class="TituloSeccion">
             Diagnóstico y Conclusiones Previas
         </td>
     </tr>
@@ -373,8 +373,8 @@
             Diagnóstico :
         </th>
         <td class="Separador"></td>
-        <td colspan="4">
-            <asp:TextBox ID="txtDiagnostico" runat="server" TextMode="MultiLine" Width="100%" Rows="4" Enabled="false" />
+        <td colspan="4" class="Line">
+            <asp:Label ID="txtDiagnostico" runat="server" />
         </td>        
         <td class="Separador"></td>
     </tr>
@@ -383,23 +383,23 @@
             Conclusiones Previa :
         </th>
         <td class="Separador"></td>
-        <td colspan="4">
-            <asp:TextBox ID="txtConclusionesPrevias" runat="server" TextMode="MultiLine" Width="100%" Rows="4" Enabled="false" />
+        <td colspan="4" class="Line">
+            <asp:Label ID="txtConclusionesPrevias" runat="server"/>
         </td>            
         <td class="Separador"></td>
     </tr>
     <tr>
-        <td colspan="7" class="accordionHeaderSelected">
+        <td colspan="7" class="TituloSeccion">
             Solución
         </td>
     </tr>
-     <tr>
+    <tr>
         <th style="text-align:left">
             Observaciones :
         </th>
         <td class="Separador"></td>
-        <td colspan="4">
-            <asp:TextBox ID="txtObservacionesSolucion" runat="server" TextMode="MultiLine" Width="97%" Rows="4" Enabled="false" />
+        <td colspan="4" class="Line">
+            <asp:Label ID="txtObservacionesSolucion" runat="server"  />
         </td>      
         <td class="Separador"></td>      
     </tr>

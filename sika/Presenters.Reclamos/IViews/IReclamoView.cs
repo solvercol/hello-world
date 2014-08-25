@@ -13,6 +13,17 @@ namespace Presenters.Reclamos.IViews
 
         string IdCategoriaReclamo { get; set; }
         string IdGrupoInformacion { get; set; }
+        string MonedaLocal { get; set; }
+
+
+        // Seccion Info Reclamo
+        string TitleReclamo { get; set; }
+        string TitleReclamoFrom { get; set; }
+        string Unidad { get; set; }
+        string Area { get; set; }
+        string FechaReclamo { get; set; }
+        string Asesor { get; set; }
+        string TotalCostoReclamo { get; set; }
 
         // Load
         void LoadSecciones(IEnumerable<TBL_Admin_Secciones> secciones);

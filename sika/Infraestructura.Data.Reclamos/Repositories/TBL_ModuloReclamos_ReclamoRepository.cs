@@ -42,7 +42,7 @@ namespace Infrastructure.Data.MainModule.Reclamos.Repositories
                                     .Include(x => x.TBL_Admin_Usuarios4)    // Modified By
                                     .Include(x => x.TBL_Admin_Usuarios5)    // Solicitante
                                     .Include(x => x.TBL_Admin_Usuarios6)    // Usuario Cierre
-                                    .Include(x => x.TBL_ModuloReclamos_CategoriasReclamo)
+                                    .Include(x => x.TBL_ModuloReclamos_CategoriasReclamo.TBL_Admin_Usuarios)
                                     .Include(x => x.TBL_ModuloReclamos_TipoReclamo)                                    
                                     .Where(specific)
                                     .SingleOrDefault();

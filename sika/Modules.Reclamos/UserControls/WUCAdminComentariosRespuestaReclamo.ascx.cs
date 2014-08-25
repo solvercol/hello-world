@@ -226,10 +226,17 @@ namespace Modules.Reclamos.UserControls
 
         public void EnableEdit(bool enable)
         {
-            txtAsunto.Enabled = enable;
-            txtObservaciones.Enabled = enable;
-            wddDestinatarios.Enabled = enable;
+            txtAsunto.Visible = enable;
+            txtObservaciones.Visible = enable;
+            wddDestinatarios.Visible = enable;
             btnGuardar.Visible = enable;
+
+            lblAsunto.Visible = !enable;
+            lblObservaciones.Visible = !enable;
+            lblDestinatarios.Visible = !enable;
+
+            fupAnexoArchivo.Visible = enable;
+            btnAddArchivoAdjunto.Visible = enable;
         }
 
         public void LoadArchivosAdjuntos(List<DTO_ValueKey> items)
@@ -266,6 +273,7 @@ namespace Modules.Reclamos.UserControls
             set
             {
                 txtAsunto.Text = value;
+                lblAsunto.Text = value;
             }
         }
 
@@ -278,6 +286,7 @@ namespace Modules.Reclamos.UserControls
             set
             {
                 txtObservaciones.Text = value;
+                lblObservaciones.Text = value;
             }
         }
 
@@ -290,6 +299,7 @@ namespace Modules.Reclamos.UserControls
             set
             {
                 wddDestinatarios.SelectedValue = value;
+                lblDestinatarios.Text = wddDestinatarios.SelectedItem.Text;
             }
         }
 

@@ -235,7 +235,7 @@ namespace Modules.Reclamos.UserControls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescripcionProblema;
+        protected global::System.Web.UI.WebControls.Label txtDescripcionProblema;
         
         /// <summary>
         /// txtDiagnostico control.
@@ -244,7 +244,7 @@ namespace Modules.Reclamos.UserControls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDiagnostico;
+        protected global::System.Web.UI.WebControls.Label txtDiagnostico;
         
         /// <summary>
         /// txtConclusionesPrevias control.
@@ -253,7 +253,7 @@ namespace Modules.Reclamos.UserControls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtConclusionesPrevias;
+        protected global::System.Web.UI.WebControls.Label txtConclusionesPrevias;
         
         /// <summary>
         /// txtObservacionesSolucion control.
@@ -262,6 +262,6 @@ namespace Modules.Reclamos.UserControls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtObservacionesSolucion;
+        protected global::System.Web.UI.WebControls.Label txtObservacionesSolucion;
     }
 }

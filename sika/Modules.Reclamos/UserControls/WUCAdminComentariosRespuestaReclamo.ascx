@@ -85,7 +85,7 @@
             <div class="popup_Body">                                                    
                 <table width="100%" class="tblSecciones">
                     <tr>
-                        <th style="text-align:left; width: 25%">
+                        <th style="text-align:left; width: 25%; vertical-align:top">
                             Asunto :
                         </th>
 
@@ -93,12 +93,13 @@
 
                         <td class="Line" style="width:70%">
                             <asp:TextBox ID="txtAsunto" runat="server" Width="90%" />
+                            <asp:Label ID="lblAsunto" runat="server"/>
                         </td>
 
                         <td class="Separador"></td>
                     </tr>
                     <tr>
-                        <th style="text-align:left">
+                        <th style="text-align:left; vertical-align:top">
                             Observaciones :
                         </th>
 
@@ -106,12 +107,13 @@
 
                         <td class="Line">
                             <asp:TextBox ID="txtObservaciones" runat="server" TextMode="MultiLine" Rows="3" Width="90%" />
+                            <asp:Label ID="lblObservaciones" runat="server"/>
                         </td>
 
                         <td class="Separador"></td>
                     </tr>
                     <tr>
-                        <th style="text-align:left">
+                        <th style="text-align:left; vertical-align:top">
                             Destinatario :
                         </th>
 
@@ -129,13 +131,14 @@
                                             DropDownContainerHeight="220px"
                                             Width="98%">
                             </ig:WebDropDown>
+                            <asp:Label ID="lblDestinatarios" runat="server"/>
                         </td>
 
                         <td class="Separador"></td>
                     </tr>
                     <tr>
-                        <th style="text-align:left">
-                            NuevoAnexo :
+                        <th style="text-align:left; vertical-align:top">
+                            Anexos :
                         </th>
 
                         <td class="Separador"></td>

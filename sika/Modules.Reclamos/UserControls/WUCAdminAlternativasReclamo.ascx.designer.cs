@@ -76,6 +76,15 @@ namespace Modules.Reclamos.UserControls {
         protected global::System.Web.UI.WebControls.TextBox txtCausas;
         
         /// <summary>
+        /// lblCausas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCausas;
+        
+        /// <summary>
         /// txtFactores control.
         /// </summary>
         /// <remarks>
@@ -83,6 +92,15 @@ namespace Modules.Reclamos.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFactores;
+        
+        /// <summary>
+        /// lblFactores control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFactores;
         
         /// <summary>
         /// txtAlternativa control.
@@ -94,6 +112,15 @@ namespace Modules.Reclamos.UserControls {
         protected global::System.Web.UI.WebControls.TextBox txtAlternativa;
         
         /// <summary>
+        /// lblAlternativa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAlternativa;
+        
+        /// <summary>
         /// wddResponsable control.
         /// </summary>
         /// <remarks>
@@ -101,6 +128,15 @@ namespace Modules.Reclamos.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Infragistics.Web.UI.ListControls.WebDropDown wddResponsable;
+        
+        /// <summary>
+        /// lblResponsable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblResponsable;
         
         /// <summary>
         /// txtFechaAlternativa control.
@@ -121,6 +157,15 @@ namespace Modules.Reclamos.UserControls {
         protected global::AjaxControlToolkit.CalendarExtender cexTxtFechaAlternativa;
         
         /// <summary>
+        /// lblFechaAlternativa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFechaAlternativa;
+        
+        /// <summary>
         /// txtSeguimiento control.
         /// </summary>
         /// <remarks>
@@ -128,6 +173,15 @@ namespace Modules.Reclamos.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSeguimiento;
+        
+        /// <summary>
+        /// lblSeguimiento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSeguimiento;
         
         /// <summary>
         /// fupAnexoArchivo control.

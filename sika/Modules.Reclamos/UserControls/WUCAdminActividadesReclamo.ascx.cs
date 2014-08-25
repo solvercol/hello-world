@@ -310,16 +310,25 @@ namespace Modules.Reclamos.UserControls
 
         public void EnableEdit(bool enable)
         {
-            wddActividadesReclamo.Enabled = enable;
-            wddUsuarioAsignacion.Enabled = enable;
-            wddUsuarioCopia.Enabled = enable;
-            txtDescripcion.Enabled = enable;
-            txtFechaActividad.Enabled = enable;
-            txtObservaciones.Enabled = enable;
+            wddActividadesReclamo.Visible = enable;
+            wddUsuarioAsignacion.Visible = enable;
+            wddUsuarioCopia.Visible = enable;
+            txtDescripcion.Visible = enable;
+            txtFechaActividad.Visible = enable;
+            txtObservaciones.Visible = enable;
             lstUsuariosCopia.Enabled = enable;
             btnGuardar.Visible = enable;
             btnAddCopia.Visible = enable;
             btnRemoveCopia.Visible = enable;
+
+            lblActividadesReclamo.Visible = !enable;
+            lblUsuarioAsignacion.Visible = !enable;            
+            lblDescripcion.Visible = !enable;
+            lblFechaActividad.Visible = !enable;
+            lblObservaciones.Visible = !enable;
+
+            fupAnexoArchivo.Visible = enable;
+            btnAddArchivoAdjunto.Visible = enable;
         }
 
         public void LoadArchivosAdjuntos(List<DTO_ValueKey> items)
@@ -356,6 +365,7 @@ namespace Modules.Reclamos.UserControls
             set
             {
                 wddActividadesReclamo.SelectedValue = value;
+                lblActividadesReclamo.Text = wddActividadesReclamo.SelectedItem.Text;
             }
         }
 
@@ -380,6 +390,7 @@ namespace Modules.Reclamos.UserControls
             set
             {
                 txtDescripcion.Text = value;
+                lblDescripcion.Text = value;
             }
         }
 
@@ -392,6 +403,7 @@ namespace Modules.Reclamos.UserControls
             set
             {
                 txtFechaActividad.Text = string.Format("{0:dd/MM/yyyy}", value);
+                lblFechaActividad.Text = string.Format("{0:dd/MM/yyyy}", value);
             }
         }
 
@@ -404,6 +416,7 @@ namespace Modules.Reclamos.UserControls
             set
             {
                 wddUsuarioAsignacion.SelectedValue = value;
+                lblUsuarioAsignacion.Text = wddUsuarioAsignacion.SelectedItem.Text;
             }
         }
 
@@ -415,7 +428,7 @@ namespace Modules.Reclamos.UserControls
             }
             set
             {
-                wddUsuarioCopia.SelectedValue = value;
+                wddUsuarioCopia.SelectedValue = value;                
             }
         }
 
@@ -440,6 +453,7 @@ namespace Modules.Reclamos.UserControls
             set
             {
                 txtObservaciones.Text = value;
+                lblObservaciones.Text = value;
             }
         }
 

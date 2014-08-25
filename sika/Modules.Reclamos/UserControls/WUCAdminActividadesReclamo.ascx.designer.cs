@@ -76,6 +76,15 @@ namespace Modules.Reclamos.UserControls {
         protected global::Infragistics.Web.UI.ListControls.WebDropDown wddActividadesReclamo;
         
         /// <summary>
+        /// lblActividadesReclamo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblActividadesReclamo;
+        
+        /// <summary>
         /// txtDescripcion control.
         /// </summary>
         /// <remarks>
@@ -83,6 +92,15 @@ namespace Modules.Reclamos.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
+        
+        /// <summary>
+        /// lblDescripcion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDescripcion;
         
         /// <summary>
         /// txtFechaActividad control.
@@ -103,6 +121,15 @@ namespace Modules.Reclamos.UserControls {
         protected global::AjaxControlToolkit.CalendarExtender cexTxtFechaActividad;
         
         /// <summary>
+        /// lblFechaActividad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFechaActividad;
+        
+        /// <summary>
         /// wddUsuarioAsignacion control.
         /// </summary>
         /// <remarks>
@@ -110,6 +137,15 @@ namespace Modules.Reclamos.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Infragistics.Web.UI.ListControls.WebDropDown wddUsuarioAsignacion;
+        
+        /// <summary>
+        /// lblUsuarioAsignacion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUsuarioAsignacion;
         
         /// <summary>
         /// lblUsuariosCopiaTitle control.
@@ -191,6 +227,15 @@ namespace Modules.Reclamos.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtObservaciones;
+        
+        /// <summary>
+        /// lblObservaciones control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblObservaciones;
         
         /// <summary>
         /// fupAnexoArchivo control.

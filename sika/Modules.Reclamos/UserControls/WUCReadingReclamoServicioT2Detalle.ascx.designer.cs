@@ -181,6 +181,6 @@ namespace Modules.Reclamos.UserControls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescripcionProblema;
+        protected global::System.Web.UI.WebControls.Label txtDescripcionProblema;
     }
 }

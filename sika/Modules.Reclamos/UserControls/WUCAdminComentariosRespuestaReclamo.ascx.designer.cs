@@ -76,6 +76,15 @@ namespace Modules.Reclamos.UserControls {
         protected global::System.Web.UI.WebControls.TextBox txtAsunto;
         
         /// <summary>
+        /// lblAsunto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAsunto;
+        
+        /// <summary>
         /// txtObservaciones control.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,15 @@ namespace Modules.Reclamos.UserControls {
         protected global::System.Web.UI.WebControls.TextBox txtObservaciones;
         
         /// <summary>
+        /// lblObservaciones control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblObservaciones;
+        
+        /// <summary>
         /// wddDestinatarios control.
         /// </summary>
         /// <remarks>
@@ -92,6 +110,15 @@ namespace Modules.Reclamos.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Infragistics.Web.UI.ListControls.WebDropDown wddDestinatarios;
+        
+        /// <summary>
+        /// lblDestinatarios control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDestinatarios;
         
         /// <summary>
         /// fupAnexoArchivo control.
