@@ -36,6 +36,7 @@ namespace Modules.Documentos.Admin
             btnPublicar.Visible = !(IdDocumento == 0);
             btnCancelar.Visible = !(IdDocumento == 0);
             filaAdjuntar.Visible = !(IdDocumento == 0);
+            IdDocCreado = IdDocumento;
             HacerVisibleBotonesSegunEstado();
             ValidacionExistenIdCategorias();            
         }
@@ -73,8 +74,14 @@ namespace Modules.Documentos.Admin
 
         void FrmEditarDocumentoHideControlsevent(object sender, EventArgs e)
         {
+            string url = string.Empty;
             if (!EstaAdjuntandoOEliminando)
             {
+                if (IdDocumento == 0)
+                {
+                    url = string.Format("FrmEditarDocumento.aspx{0}{1}&IdDocumento={2}", GetBaseQueryString(), "&Form=FrmMisDocumentos.aspx", IdDocCreado);
+                    Response.Redirect(url);
+                }
                 btnCancelar.Visible = false;
                 btnGuardar.Visible = false;
                 btnPublicar.Visible = false;
@@ -149,6 +156,20 @@ namespace Modules.Documentos.Admin
             set
             {
                 HttpContext.Current.Session["FrmEditarDocumento.EstaAdjuntandoOEliminando"] = value;
+            }
+        }
+
+
+
+        private static object IdDocCreadoSession
+        {
+            get
+            {
+                return HttpContext.Current.Session["IdDocCreadoSession"];
+            }
+            set
+            {
+                HttpContext.Current.Session["IdDocCreadoSession"] = value;
             }
         }
 
@@ -249,6 +270,21 @@ namespace Modules.Documentos.Admin
                     result = fileInfo.Name;
                 }
                 return result;
+            }
+        }
+
+        public int IdDocCreado
+        {
+            get
+            {
+                int idDocCreado = 0;
+                if (IdDocCreadoSession != null)
+                    idDocCreado = Convert.ToInt32(IdDocCreadoSession);
+                return idDocCreado;
+            }
+            set
+            {
+                IdDocCreadoSession = value;
             }
         }
 
