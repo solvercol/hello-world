@@ -28,7 +28,10 @@ namespace Presenters.Documentos.IViews
         string TipoDocumento { set; }
         string UsuarioResponsable { set; }
         bool Activo { set; }
-        void DescargarArchivo(TBL_ModuloDocumentos_Documento documento);
+
+        void DescargarArchivo(TBL_ModuloDocumentos_DocumentoAdjunto adjunto);
+        void Adjuntos(IEnumerable<TBL_ModuloDocumentos_DocumentoAdjunto> adjuntos);
+
         #endregion
     }
 }
