@@ -197,6 +197,9 @@
     <Compile Include="TBL_ModuloReclamos_CostosProducto.cs">
       <DependentUpon>MainModuleContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="TBL_ModuloReclamos_LogReclamos.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="TBL_ModuloReclamos_Reclamo.cs">
       <DependentUpon>MainModuleContext.tt</DependentUpon>
     </Compile>
@@ -204,6 +207,9 @@
       <DependentUpon>MainModuleContext.tt</DependentUpon>
     </Compile>
     <Compile Include="TBL_ModuloReclamos_TipoReclamo.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_ModuloReclamos_Tracking.cs">
       <DependentUpon>MainModuleContext.tt</DependentUpon>
     </Compile>
     <Compile Include="TBL_ModuloReclamos_Unidad.cs">

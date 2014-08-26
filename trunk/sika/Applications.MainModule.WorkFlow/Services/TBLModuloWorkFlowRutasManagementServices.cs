@@ -22,6 +22,7 @@ using Applications.MainModule.WorkFlow.Util;
 using Domain.MainModule.Contracts;
 using Domain.MainModule.Documentos.Contracts;
 using Domain.MainModule.Reclamos.Contracts;
+using Domain.MainModule.Reclamos.Services;
 using Domain.MainModule.WorkFlow.Contracts;
 using Domain.MainModule.WorkFlow.Enums;
 using Domain.MainModule.WorkFlow.Services.FieldsValidatos;
@@ -49,6 +50,9 @@ namespace Applications.MainModule.WorkFlow.Services
         private readonly ITBL_Admin_SistemaNotificacionesRepository _notificacionesSistemaRepository;
         private readonly ISendMailNotification _sendMailNotificationServices;
         private readonly IReclamosAdoService _sqlReclamosServices;
+        private readonly ITBL_Moduloreclamos_ReclamoDomainServices _reclamosDomainServices;
+        private readonly ITBL_ModuloReclamos_TrackingRepository _trackRepository;
+        private readonly ITBL_ModuloReclamos_LogReclamosRepository _logDocumentosRepository;
         #endregion
 
          #region Constructor
@@ -66,11 +70,15 @@ namespace Applications.MainModule.WorkFlow.Services
              ITBL_Admin_SistemaNotificacionesRepository notificacionesSistemaRepository, 
              ISendMailNotification sendMailNotificationServices,
              ITBL_ModuloReclamos_ReclamoRepository tblDocumentosRepository, 
-             IReclamosAdoService sqlReclamosServices)
+             IReclamosAdoService sqlReclamosServices, 
+             ITBL_Moduloreclamos_ReclamoDomainServices reclamosDomainServices, 
+             ITBL_ModuloReclamos_TrackingRepository trackRepository)
          {
             if (tblModuloWorkFlowRutasRepository == null)
                 throw new ArgumentNullException("tblModuloWorkFlowRutasRepository");
             _tblModuloWorkFlowRutasRepository = tblModuloWorkFlowRutasRepository;
+             _trackRepository = trackRepository;
+             _reclamosDomainServices = reclamosDomainServices;
              _sqlReclamosServices = sqlReclamosServices;
              _tblDocumentosRepository = tblDocumentosRepository;
              _sendMailNotificationServices = sendMailNotificationServices;
@@ -558,12 +566,12 @@ namespace Applications.MainModule.WorkFlow.Services
         /// <param name="oDocument"></param>
         private void GenerarEntradatracking(RenderTypeControlButtonDto oDocument)
         {
-          
-           //var oTrack = _pedidosDomainServices.GenerarObjetoTrackpedido(_trackinRepository.NewEntity(), oDocument.TextControl,
-           //                                                 oDocument.CurrentStatus,
-           //                                                 Convert.ToInt32(oDocument.IdDocument), oDocument.NextStatus,
-           //                                                 oDocument.CurrentResponsibe);
-           // _trackinRepository.Add(oTrack);
+
+            var oTrack = _reclamosDomainServices.GenerarObjetoTrackpedido(_trackRepository.NewEntity(), oDocument.TextControl,
+                                                             oDocument.CurrentStatus,
+                                                             Convert.ToInt32(oDocument.IdDocument), oDocument.NextStatus,
+                                                             oDocument.CurrentResponsibe);
+            _trackRepository.Add(oTrack);
         }
 
         /// <summary>
@@ -572,10 +580,10 @@ namespace Applications.MainModule.WorkFlow.Services
         /// <param name="oDocument"></param>
         private void GenerarEntradalogPedido(RenderTypeControlButtonDto oDocument)
         {
-            //var oLog = _pedidosDomainServices.GenerarObjetoLogPedido(_logDocumentosRepository.NewEntity(),
-            //                                                         oDocument.TextControl,
-            //                                                         Convert.ToInt32(oDocument.IdDocument));
-            //_logDocumentosRepository.Add(oLog);
+            var oLog = _reclamosDomainServices.GenerarObjetoLogPedido(_logDocumentosRepository.NewEntity(),
+                                                                     oDocument.TextControl,
+                                                                     Convert.ToInt32(oDocument.IdDocument));
+            _logDocumentosRepository.Add(oLog);
         }
 
         /// <summary>
@@ -598,12 +606,12 @@ namespace Applications.MainModule.WorkFlow.Services
 
             var cliente = "";// _sqlPedidosServices.RetornarNombreClienteByIdPedido(oDocument.IdDocument);
 
-            //var oNotify = _pedidosDomainServices.GenerarEntradaNotificadorSistema(
-            //                           _notificacionesSistemaRepository.NewEntity(),
-            //                           Convert.ToInt32(oDocument.IdCurrentResponsibe),
-            //                           template, cliente);
+            var oNotify = _reclamosDomainServices.GenerarEntradaNotificadorSistema(
+                                       _notificacionesSistemaRepository.NewEntity(),
+                                       Convert.ToInt32(oDocument.IdCurrentResponsibe),
+                                       template, cliente);
 
-            //_notificacionesSistemaRepository.Add(oNotify);
+            _notificacionesSistemaRepository.Add(oNotify);
         }
 
 
