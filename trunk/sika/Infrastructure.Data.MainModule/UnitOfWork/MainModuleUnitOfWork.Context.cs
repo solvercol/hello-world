@@ -214,6 +214,18 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
         }
         private ObjectSet<TBL_Admin_EstadosProceso> _tBL_Admin_EstadosProceso;
     
+        public IObjectSet<TBL_Admin_ModuleRepository> TBL_Admin_ModuleRepository
+        {
+            get { return _tBL_Admin_ModuleRepository  ?? (_tBL_Admin_ModuleRepository = CreateObjectSet<TBL_Admin_ModuleRepository>("TBL_Admin_ModuleRepository")); }
+        }
+        private ObjectSet<TBL_Admin_ModuleRepository> _tBL_Admin_ModuleRepository;
+    
+        public IObjectSet<TBL_Admin_ModuleService> TBL_Admin_ModuleService
+        {
+            get { return _tBL_Admin_ModuleService  ?? (_tBL_Admin_ModuleService = CreateObjectSet<TBL_Admin_ModuleService>("TBL_Admin_ModuleService")); }
+        }
+        private ObjectSet<TBL_Admin_ModuleService> _tBL_Admin_ModuleService;
+    
         public IObjectSet<TBL_Admin_ModuleType> TBL_Admin_ModuleType
         {
             get { return _tBL_Admin_ModuleType  ?? (_tBL_Admin_ModuleType = CreateObjectSet<TBL_Admin_ModuleType>("TBL_Admin_ModuleType")); }
@@ -238,6 +250,12 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
         }
         private ObjectSet<TBL_Admin_Monedas> _tBL_Admin_Monedas;
     
+        public IObjectSet<TBL_Admin_OpcionesMenu> TBL_Admin_OpcionesMenu
+        {
+            get { return _tBL_Admin_OpcionesMenu  ?? (_tBL_Admin_OpcionesMenu = CreateObjectSet<TBL_Admin_OpcionesMenu>("TBL_Admin_OpcionesMenu")); }
+        }
+        private ObjectSet<TBL_Admin_OpcionesMenu> _tBL_Admin_OpcionesMenu;
+    
         public IObjectSet<TBL_Admin_OptionList> TBL_Admin_OptionList
         {
             get { return _tBL_Admin_OptionList  ?? (_tBL_Admin_OptionList = CreateObjectSet<TBL_Admin_OptionList>("TBL_Admin_OptionList")); }
@@ -261,60 +279,6 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
             get { return _tBL_Admin_Plantillas  ?? (_tBL_Admin_Plantillas = CreateObjectSet<TBL_Admin_Plantillas>("TBL_Admin_Plantillas")); }
         }
         private ObjectSet<TBL_Admin_Plantillas> _tBL_Admin_Plantillas;
-    
-        public IObjectSet<TBL_ModuloPlanAccion_BancoActividades> TBL_ModuloPlanAccion_BancoActividades
-        {
-            get { return _tBL_ModuloPlanAccion_BancoActividades  ?? (_tBL_ModuloPlanAccion_BancoActividades = CreateObjectSet<TBL_ModuloPlanAccion_BancoActividades>("TBL_ModuloPlanAccion_BancoActividades")); }
-        }
-        private ObjectSet<TBL_ModuloPlanAccion_BancoActividades> _tBL_ModuloPlanAccion_BancoActividades;
-    
-        public IObjectSet<TBL_ModuloPlanAccion_Categorias> TBL_ModuloPlanAccion_Categorias
-        {
-            get { return _tBL_ModuloPlanAccion_Categorias  ?? (_tBL_ModuloPlanAccion_Categorias = CreateObjectSet<TBL_ModuloPlanAccion_Categorias>("TBL_ModuloPlanAccion_Categorias")); }
-        }
-        private ObjectSet<TBL_ModuloPlanAccion_Categorias> _tBL_ModuloPlanAccion_Categorias;
-    
-        public IObjectSet<TBL_ModuloPlanAccion_ConfiguracionActividades> TBL_ModuloPlanAccion_ConfiguracionActividades
-        {
-            get { return _tBL_ModuloPlanAccion_ConfiguracionActividades  ?? (_tBL_ModuloPlanAccion_ConfiguracionActividades = CreateObjectSet<TBL_ModuloPlanAccion_ConfiguracionActividades>("TBL_ModuloPlanAccion_ConfiguracionActividades")); }
-        }
-        private ObjectSet<TBL_ModuloPlanAccion_ConfiguracionActividades> _tBL_ModuloPlanAccion_ConfiguracionActividades;
-    
-        public IObjectSet<TBL_ModuloWorkFlow_CamposValidacion> TBL_ModuloWorkFlow_CamposValidacion
-        {
-            get { return _tBL_ModuloWorkFlow_CamposValidacion  ?? (_tBL_ModuloWorkFlow_CamposValidacion = CreateObjectSet<TBL_ModuloWorkFlow_CamposValidacion>("TBL_ModuloWorkFlow_CamposValidacion")); }
-        }
-        private ObjectSet<TBL_ModuloWorkFlow_CamposValidacion> _tBL_ModuloWorkFlow_CamposValidacion;
-    
-        public IObjectSet<TBL_ModuloWorkFlow_Rutas> TBL_ModuloWorkFlow_Rutas
-        {
-            get { return _tBL_ModuloWorkFlow_Rutas  ?? (_tBL_ModuloWorkFlow_Rutas = CreateObjectSet<TBL_ModuloWorkFlow_Rutas>("TBL_ModuloWorkFlow_Rutas")); }
-        }
-        private ObjectSet<TBL_ModuloWorkFlow_Rutas> _tBL_ModuloWorkFlow_Rutas;
-    
-        public IObjectSet<TBL_ModuloWorkFlow_ValidacionesSalida> TBL_ModuloWorkFlow_ValidacionesSalida
-        {
-            get { return _tBL_ModuloWorkFlow_ValidacionesSalida  ?? (_tBL_ModuloWorkFlow_ValidacionesSalida = CreateObjectSet<TBL_ModuloWorkFlow_ValidacionesSalida>("TBL_ModuloWorkFlow_ValidacionesSalida")); }
-        }
-        private ObjectSet<TBL_ModuloWorkFlow_ValidacionesSalida> _tBL_ModuloWorkFlow_ValidacionesSalida;
-    
-        public IObjectSet<TBL_Admin_ModuleRepository> TBL_Admin_ModuleRepository
-        {
-            get { return _tBL_Admin_ModuleRepository  ?? (_tBL_Admin_ModuleRepository = CreateObjectSet<TBL_Admin_ModuleRepository>("TBL_Admin_ModuleRepository")); }
-        }
-        private ObjectSet<TBL_Admin_ModuleRepository> _tBL_Admin_ModuleRepository;
-    
-        public IObjectSet<TBL_Admin_ModuleService> TBL_Admin_ModuleService
-        {
-            get { return _tBL_Admin_ModuleService  ?? (_tBL_Admin_ModuleService = CreateObjectSet<TBL_Admin_ModuleService>("TBL_Admin_ModuleService")); }
-        }
-        private ObjectSet<TBL_Admin_ModuleService> _tBL_Admin_ModuleService;
-    
-        public IObjectSet<TBL_Admin_OpcionesMenu> TBL_Admin_OpcionesMenu
-        {
-            get { return _tBL_Admin_OpcionesMenu  ?? (_tBL_Admin_OpcionesMenu = CreateObjectSet<TBL_Admin_OpcionesMenu>("TBL_Admin_OpcionesMenu")); }
-        }
-        private ObjectSet<TBL_Admin_OpcionesMenu> _tBL_Admin_OpcionesMenu;
     
         public IObjectSet<TBL_Admin_Roles> TBL_Admin_Roles
         {
@@ -388,6 +352,24 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
         }
         private ObjectSet<TBL_ModuloDocumentos_LogCambios> _tBL_ModuloDocumentos_LogCambios;
     
+        public IObjectSet<TBL_ModuloPlanAccion_BancoActividades> TBL_ModuloPlanAccion_BancoActividades
+        {
+            get { return _tBL_ModuloPlanAccion_BancoActividades  ?? (_tBL_ModuloPlanAccion_BancoActividades = CreateObjectSet<TBL_ModuloPlanAccion_BancoActividades>("TBL_ModuloPlanAccion_BancoActividades")); }
+        }
+        private ObjectSet<TBL_ModuloPlanAccion_BancoActividades> _tBL_ModuloPlanAccion_BancoActividades;
+    
+        public IObjectSet<TBL_ModuloPlanAccion_Categorias> TBL_ModuloPlanAccion_Categorias
+        {
+            get { return _tBL_ModuloPlanAccion_Categorias  ?? (_tBL_ModuloPlanAccion_Categorias = CreateObjectSet<TBL_ModuloPlanAccion_Categorias>("TBL_ModuloPlanAccion_Categorias")); }
+        }
+        private ObjectSet<TBL_ModuloPlanAccion_Categorias> _tBL_ModuloPlanAccion_Categorias;
+    
+        public IObjectSet<TBL_ModuloPlanAccion_ConfiguracionActividades> TBL_ModuloPlanAccion_ConfiguracionActividades
+        {
+            get { return _tBL_ModuloPlanAccion_ConfiguracionActividades  ?? (_tBL_ModuloPlanAccion_ConfiguracionActividades = CreateObjectSet<TBL_ModuloPlanAccion_ConfiguracionActividades>("TBL_ModuloPlanAccion_ConfiguracionActividades")); }
+        }
+        private ObjectSet<TBL_ModuloPlanAccion_ConfiguracionActividades> _tBL_ModuloPlanAccion_ConfiguracionActividades;
+    
         public IObjectSet<TBL_ModuloReclamos_Actividades> TBL_ModuloReclamos_Actividades
         {
             get { return _tBL_ModuloReclamos_Actividades  ?? (_tBL_ModuloReclamos_Actividades = CreateObjectSet<TBL_ModuloReclamos_Actividades>("TBL_ModuloReclamos_Actividades")); }
@@ -460,6 +442,12 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
         }
         private ObjectSet<TBL_ModuloReclamos_CostosProducto> _tBL_ModuloReclamos_CostosProducto;
     
+        public IObjectSet<TBL_ModuloReclamos_LogReclamos> TBL_ModuloReclamos_LogReclamos
+        {
+            get { return _tBL_ModuloReclamos_LogReclamos  ?? (_tBL_ModuloReclamos_LogReclamos = CreateObjectSet<TBL_ModuloReclamos_LogReclamos>("TBL_ModuloReclamos_LogReclamos")); }
+        }
+        private ObjectSet<TBL_ModuloReclamos_LogReclamos> _tBL_ModuloReclamos_LogReclamos;
+    
         public IObjectSet<TBL_ModuloReclamos_Reclamo> TBL_ModuloReclamos_Reclamo
         {
             get { return _tBL_ModuloReclamos_Reclamo  ?? (_tBL_ModuloReclamos_Reclamo = CreateObjectSet<TBL_ModuloReclamos_Reclamo>("TBL_ModuloReclamos_Reclamo")); }
@@ -477,6 +465,12 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
             get { return _tBL_ModuloReclamos_TipoReclamo  ?? (_tBL_ModuloReclamos_TipoReclamo = CreateObjectSet<TBL_ModuloReclamos_TipoReclamo>("TBL_ModuloReclamos_TipoReclamo")); }
         }
         private ObjectSet<TBL_ModuloReclamos_TipoReclamo> _tBL_ModuloReclamos_TipoReclamo;
+    
+        public IObjectSet<TBL_ModuloReclamos_Tracking> TBL_ModuloReclamos_Tracking
+        {
+            get { return _tBL_ModuloReclamos_Tracking  ?? (_tBL_ModuloReclamos_Tracking = CreateObjectSet<TBL_ModuloReclamos_Tracking>("TBL_ModuloReclamos_Tracking")); }
+        }
+        private ObjectSet<TBL_ModuloReclamos_Tracking> _tBL_ModuloReclamos_Tracking;
     
         public IObjectSet<TBL_ModuloReclamos_Unidad> TBL_ModuloReclamos_Unidad
         {
@@ -496,17 +490,23 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
         }
         private ObjectSet<TBL_ModuloReclamos_Zona> _tBL_ModuloReclamos_Zona;
     
-        public IObjectSet<TBL_ModuloReclamos_Tracking> TBL_ModuloReclamos_Tracking
+        public IObjectSet<TBL_ModuloWorkFlow_CamposValidacion> TBL_ModuloWorkFlow_CamposValidacion
         {
-            get { return _tBL_ModuloReclamos_Tracking  ?? (_tBL_ModuloReclamos_Tracking = CreateObjectSet<TBL_ModuloReclamos_Tracking>("TBL_ModuloReclamos_Tracking")); }
+            get { return _tBL_ModuloWorkFlow_CamposValidacion  ?? (_tBL_ModuloWorkFlow_CamposValidacion = CreateObjectSet<TBL_ModuloWorkFlow_CamposValidacion>("TBL_ModuloWorkFlow_CamposValidacion")); }
         }
-        private ObjectSet<TBL_ModuloReclamos_Tracking> _tBL_ModuloReclamos_Tracking;
+        private ObjectSet<TBL_ModuloWorkFlow_CamposValidacion> _tBL_ModuloWorkFlow_CamposValidacion;
     
-        public IObjectSet<TBL_ModuloReclamos_LogReclamos> TBL_ModuloReclamos_LogReclamos
+        public IObjectSet<TBL_ModuloWorkFlow_Rutas> TBL_ModuloWorkFlow_Rutas
         {
-            get { return _tBL_ModuloReclamos_LogReclamos  ?? (_tBL_ModuloReclamos_LogReclamos = CreateObjectSet<TBL_ModuloReclamos_LogReclamos>("TBL_ModuloReclamos_LogReclamos")); }
+            get { return _tBL_ModuloWorkFlow_Rutas  ?? (_tBL_ModuloWorkFlow_Rutas = CreateObjectSet<TBL_ModuloWorkFlow_Rutas>("TBL_ModuloWorkFlow_Rutas")); }
         }
-        private ObjectSet<TBL_ModuloReclamos_LogReclamos> _tBL_ModuloReclamos_LogReclamos;
+        private ObjectSet<TBL_ModuloWorkFlow_Rutas> _tBL_ModuloWorkFlow_Rutas;
+    
+        public IObjectSet<TBL_ModuloWorkFlow_ValidacionesSalida> TBL_ModuloWorkFlow_ValidacionesSalida
+        {
+            get { return _tBL_ModuloWorkFlow_ValidacionesSalida  ?? (_tBL_ModuloWorkFlow_ValidacionesSalida = CreateObjectSet<TBL_ModuloWorkFlow_ValidacionesSalida>("TBL_ModuloWorkFlow_ValidacionesSalida")); }
+        }
+        private ObjectSet<TBL_ModuloWorkFlow_ValidacionesSalida> _tBL_ModuloWorkFlow_ValidacionesSalida;
 
         #endregion
     }

@@ -35,13 +35,15 @@ namespace Infrastructure.Data.MainModule.Reclamos.Repositories
                 //perform operation in this repository
                 var specific = specification.SatisfiedBy();
                 return activeContext.TBL_ModuloReclamos_Reclamo
-                                    .Include(x => x.TBL_Admin_Usuarios)     // Asesorado Por
-                                    .Include(x => x.TBL_Admin_Usuarios1)    // Atendido Por
-                                    .Include(x => x.TBL_Admin_Usuarios2)    // CreadoPor
-                                    .Include(x => x.TBL_Admin_Usuarios3)    // Ingeniero Responsable
-                                    .Include(x => x.TBL_Admin_Usuarios4)    // Modified By
-                                    .Include(x => x.TBL_Admin_Usuarios5)    // Solicitante
-                                    .Include(x => x.TBL_Admin_Usuarios6)    // Usuario Cierre
+                                    .Include(x => x.TBL_Admin_Usuarios)     // Responsable Actual
+                                    .Include(x => x.TBL_Admin_Usuarios1)    // Asesorado Por
+                                    .Include(x => x.TBL_Admin_Usuarios2)    // Atendido Por
+                                    .Include(x => x.TBL_Admin_Usuarios3)    // CreadoPor
+                                    .Include(x => x.TBL_Admin_Usuarios4)    // Ingeniero Responsable
+                                    .Include(x => x.TBL_Admin_Usuarios5)    // Modified By
+                                    .Include(x => x.TBL_Admin_Usuarios6)    // Solicitante// Usuario Cierre
+                                    .Include(x => x.TBL_Admin_Usuarios7)    // Usuario Cierre
+                                    .Include(x => x.TBL_ModuloReclamos_CategoriasReclamo)
                                     .Include(x => x.TBL_ModuloReclamos_CategoriasReclamo.TBL_Admin_Usuarios)
                                     .Include(x => x.TBL_ModuloReclamos_TipoReclamo)                                    
                                     .Where(specific)
