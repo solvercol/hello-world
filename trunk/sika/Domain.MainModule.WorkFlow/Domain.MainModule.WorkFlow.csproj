@@ -62,10 +62,10 @@
     <Compile Include="Services\FieldsValidatos\TblModuloWorkFlowRutasFieldsValidatorDomainServices.cs" />
     <Compile Include="Services\WorkFlow\ITblModuloWorkFlowRutaDomainServices.cs" />
     <Compile Include="Services\WorkFlow\TblModuloWorkFlowRutaDomainServices.cs" />
-    <Compile Include="Spec\VerificarEstadoSuministrosCodeSpecifications.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\InputParameters\" />
+    <Folder Include="Spec\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Application.MainModule.SqlServices\Application.MainModule.SqlServices.csproj">
