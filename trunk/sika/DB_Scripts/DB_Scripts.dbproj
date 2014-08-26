@@ -68,6 +68,7 @@
     <Folder Include="Scripts\Modules\Reclamos" />
     <Folder Include="Scripts\Modules\Reclamos\Interfaces" />
     <Folder Include="Scripts\Modules\Reclamos\Asesores" />
+    <Folder Include="Scripts\Modules\Reclamos\Vistas" />
   </ItemGroup>
   <ItemGroup>
     <PropertiesFile Include="Properties\Database.sqlsettings">
@@ -115,6 +116,9 @@
       <SubType>NotInBuild</SubType>
     </NotInBuild>
     <NotInBuild Include="Scripts\Modules\Reclamos\Asesores\02_Reclamos_GetAsesorByIdUsuario.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Scripts\Modules\Reclamos\Vistas\01_Vistas_VistaGeneralReclamos.sql">
       <SubType>NotInBuild</SubType>
     </NotInBuild>
   </ItemGroup>
