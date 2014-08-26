@@ -10,12 +10,17 @@ namespace Presenters.Reclamos.IViews
     {
         // Admin Producto
         Dto_Producto SelectedProduct { get; set; }
+        string PesoNetoProducto { get; set; }
+        string PrecioListaProducto { get; set; }
         string IdReclamo { get; }
         int UnidadesProducto { get; set; }
         int UnidadesDisponerProducto { get; set; }
         decimal CostoProducto { get; set; }
         decimal KilosProducto { get; set; }
         decimal CostoDisponibleProducto { get; set; }
+
+        void CheckCostosProductoSelect();
+        void CheckCostosDisponibilidadProductoSelect();
 
         // Resumen Costos
         decimal CostoProductoReclamo { get; set; }
@@ -38,5 +43,14 @@ namespace Presenters.Reclamos.IViews
         void ShowAdminProductoWindow(bool visible);
 
         void LoadCostoProductos(List<TBL_ModuloReclamos_CostosProducto> items);
+
+        // Buscar producto
+        string FilterText { get; set; }
+        string NombreProducto { get; set; }
+        void LoadProructos(List<Dto_Producto> items);
+        void ShowSelectProductWindow(bool visible);
+        int TotalRegistrosPaginador { set; }
+        int PageZise { get; }
+        event EventHandler Filterevent;
     }
 }

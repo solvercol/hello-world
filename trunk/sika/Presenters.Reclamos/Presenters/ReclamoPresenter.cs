@@ -81,10 +81,11 @@ namespace Presenters.Reclamos.Presenters
                         View.TitleReclamo = dtoProducto.NombreProducto;
                         View.TitleReclamoFrom = dtoCliente.NombreCliente;
                         View.Unidad = reclamo.UnidadZona;
-                        View.Area = string.Format("{0} / {1}", reclamo.TBL_ModuloReclamos_CategoriasReclamo.Area, reclamo.TBL_ModuloReclamos_CategoriasReclamo.TBL_Admin_Usuarios.Nombres);
+                        if (reclamo.TBL_ModuloReclamos_CategoriasReclamo != null)
+                            View.Area = string.Format("{0} / {1}", reclamo.TBL_ModuloReclamos_CategoriasReclamo.Area, reclamo.TBL_ModuloReclamos_CategoriasReclamo.TBL_Admin_Usuarios.Nombres);
                         View.FechaReclamo = string.Format("{0:dd/MM/yyyy}", reclamo.CreateOn);
                         View.Asesor = reclamo.AsesoradoPor.Nombres;
-                        View.TotalCostoReclamo = string.Format("{0:0.0,0} {1}", reclamo.CostoTotal, View.MonedaLocal);
+                        View.TotalCostoReclamo = string.Format("{0:0,0.0} {1}", reclamo.CostoTotal, View.MonedaLocal);
                     }
                     else
                     {

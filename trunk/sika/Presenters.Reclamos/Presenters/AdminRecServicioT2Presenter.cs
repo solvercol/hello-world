@@ -331,6 +331,8 @@ namespace Presenters.Reclamos.Presenters
             model.FechaRealEntrega = View.FechaRealEntrega;
             model.DiasDiferencia = View.DiasIncumplimiento;
             model.DescripcionProblema = View.DescripcionProblema;
+            model.IdResponsableActual = View.UserSession.IdUser;
+            model.IdEstado = 1; // Registrado
             model.IsActive = true;
             model.CreateBy = View.UserSession.IdUser;
             model.CreateOn = DateTime.Now;
