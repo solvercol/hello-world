@@ -7,6 +7,7 @@ using System.Reflection;
 using Infrastructure.CrossCutting.NetFramework.Enums;
 using Application.MainModule.Reclamos.IServices;
 using Domain.MainModules.Entities;
+using Application.MainModule.SqlServices.IServices;
 
 namespace Presenters.Reclamos.Presenters
 {
@@ -15,25 +16,34 @@ namespace Presenters.Reclamos.Presenters
         readonly ISfTBL_Admin_OptionListManagementServices _optionListService;
         readonly ISfTBL_ModuloReclamos_CostosProductoManagementServices _costosReclamoService;
         readonly ISfTBL_ModuloReclamos_ReclamoManagementServices _reclamoService;
+        readonly IReclamosExternalInterfacesService _reclmaosInterfaceService;
 
         public AdminCostosReclamoPresenter(ISfTBL_Admin_OptionListManagementServices optionListService,
                                            ISfTBL_ModuloReclamos_CostosProductoManagementServices costosReclamoService,
-                                           ISfTBL_ModuloReclamos_ReclamoManagementServices reclamoService)
+                                           ISfTBL_ModuloReclamos_ReclamoManagementServices reclamoService,
+                                           IReclamosExternalInterfacesService reclmaosInterfaceService)
         {
             _optionListService = optionListService;
             _costosReclamoService = costosReclamoService;
             _reclamoService = reclamoService;
+            _reclmaosInterfaceService = reclmaosInterfaceService;
         }
 
         public override void SubscribeViewToEvents()
         {
             View.Load += View_Load;
+            View.Filterevent += ViewFilterevent;
         }
 
         void View_Load(object sender, EventArgs e)
         {
             if (View.IsPostBack) return;
             LoadInitData();
+        }
+
+        void ViewFilterevent(object sender, EventArgs e)
+        {
+            LoadProductos(sender == null ? 0 : Convert.ToInt32(sender));
         }
 
         public void LoadInitData()
@@ -180,6 +190,52 @@ namespace Presenters.Reclamos.Presenters
                 _costosReclamoService.Remove(reclamo);
 
                 LoadCostosReclamo();
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
+        }
+
+        public void LoadTotalProductos()
+        {
+            try
+            {
+                var productos = _reclmaosInterfaceService.GetAllProductsByFilterCount(View.FilterText);
+                View.TotalRegistrosPaginador = productos;
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
+        }
+
+        public void LoadProductos(int indexPage)
+        {
+            try
+            {
+                var productos = _reclmaosInterfaceService.GetAllProductsByFilter(View.FilterText, View.PageZise, indexPage);
+
+                View.LoadProructos(productos);
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
+        }
+
+        public void SelectProduct(string codigoProducto)
+        {
+            try
+            {
+                var producto = _reclmaosInterfaceService.GetProductByCodigoProducto(codigoProducto);
+
+                View.SelectedProduct = producto;
+                View.PesoNetoProducto = string.Format("{0:0,0.0}", producto.PesoNeto);
+                View.PrecioListaProducto = string.Format("{0:0,0.0}", producto.PrecioLista);
+                View.CheckCostosProductoSelect();
+                View.CheckCostosDisponibilidadProductoSelect();
+                View.NombreProducto = producto.NombreProducto;                
             }
             catch (Exception ex)
             {

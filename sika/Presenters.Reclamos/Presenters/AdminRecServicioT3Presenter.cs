@@ -323,6 +323,8 @@ namespace Presenters.Reclamos.Presenters
             model.FechaPedido = View.FechaPedido;
             model.FechaCompromiso = View.FechaCompromiso;
             model.DescripcionProblema = View.DescripcionProblema;
+            model.IdResponsableActual = View.UserSession.IdUser;
+            model.IdEstado = 1; // Registrado
             model.IsActive = true;
             model.CreateBy = View.UserSession.IdUser;
             model.CreateOn = DateTime.Now;

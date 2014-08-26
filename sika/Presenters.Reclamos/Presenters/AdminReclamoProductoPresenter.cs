@@ -340,6 +340,8 @@ namespace Presenters.Reclamos.Presenters
             model.DiagnosticoPrevio = View.Diagnostico;
             model.ConclusionesPrevias = View.ConclusionesPrevias;
             model.ObservacionesSolucion = View.Solucion;
+            model.IdResponsableActual = View.UserSession.IdUser;
+            model.IdEstado = 1; // Registrado
             model.IsActive = true;
             model.CreateBy = View.UserSession.IdUser;
             model.CreateOn = DateTime.Now;
