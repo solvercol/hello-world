@@ -57,7 +57,7 @@ namespace Modules.Reclamos.Admin
             if (e.MessageView.ToString() == "UpdatePanel")
             {
                 //todo: Bloque de código que se encargará de actuaizar el panel de resumen cuando el WF termine el paso..
-                //WucPanelEstado1.ActualizarPanelResumen();
+                WucPanelEstado1.ActualizarPanelResumen();
                 //if (RefreshEvent != null)
                 //    RefreshEvent(null, EventArgs.Empty);
             }
