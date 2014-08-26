@@ -98,6 +98,7 @@
     <Content Include="UserControls\WUCAdminCostosReclamo.ascx" />
     <Content Include="UserControls\WUCFilterClient.ascx" />
     <Content Include="UserControls\WUCFilterProduct.ascx" />
+    <Content Include="UserControls\WucPanelEstado.ascx" />
     <Content Include="UserControls\WUCReadingReclamoProducto.ascx" />
     <Content Include="UserControls\WUCReadingReclamoProductoDetalle.ascx" />
     <Content Include="UserControls\WUCReadingReclamoServicio.ascx" />
@@ -106,6 +107,7 @@
     <Content Include="UserControls\WUCReadingReclamoServicioT3Detalle.ascx" />
     <Content Include="UserControls\WUCReadingReclamoServicioT4Detalle.ascx" />
     <Content Include="UserControls\WUCReadingReclamoServicioT5Detalle.ascx" />
+    <Content Include="UserControls\WucRenderMessagesError.ascx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -244,6 +246,13 @@
     <Compile Include="UserControls\WUCFilterProduct.ascx.designer.cs">
       <DependentUpon>WUCFilterProduct.ascx</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\WucPanelEstado.ascx.cs">
+      <DependentUpon>WucPanelEstado.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WucPanelEstado.ascx.designer.cs">
+      <DependentUpon>WucPanelEstado.ascx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\WUCReadingReclamoProducto.ascx.cs">
       <DependentUpon>WUCReadingReclamoProducto.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -300,6 +309,13 @@
     <Compile Include="UserControls\WUCReadingReclamoServicioT5Detalle.ascx.designer.cs">
       <DependentUpon>WUCReadingReclamoServicioT5Detalle.ascx</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\WucRenderMessagesError.ascx.cs">
+      <DependentUpon>WucRenderMessagesError.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WucRenderMessagesError.ascx.designer.cs">
+      <DependentUpon>WucRenderMessagesError.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Site.Master" />
@@ -312,6 +328,10 @@
     <ProjectReference Include="..\Application.MainModule.Reclamos\Application.MainModule.Reclamos.csproj">
       <Project>{C9837181-2A13-4F70-8132-570940C442C0}</Project>
       <Name>Application.MainModule.Reclamos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Applications.MainModule.WorkFlow\Applications.MainModule.WorkFlow.csproj">
+      <Project>{21D32B31-8E0D-40D6-874F-02AB7F54D0F2}</Project>
+      <Name>Applications.MainModule.WorkFlow</Name>
     </ProjectReference>
     <ProjectReference Include="..\ASP.NETCLIENTE\ASP.NETCLIENTE.csproj">
       <Project>{19CC1144-5EE0-4D32-9436-1FCC3515EAC7}</Project>

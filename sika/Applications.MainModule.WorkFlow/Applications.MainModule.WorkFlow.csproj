@@ -94,6 +94,10 @@
       <Project>{314457B6-C0E8-45F3-89AE-32A1CD4438B3}</Project>
       <Name>Domain.MainModule.Documentos</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Domain.MainModule.Reclamos\Domain.MainModule.Reclamos.csproj">
+      <Project>{50D7DFA7-2314-41D2-A9BF-9630ADA55B98}</Project>
+      <Name>Domain.MainModule.Reclamos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Domain.MainModule.WorkFlow\Domain.MainModule.WorkFlow.csproj">
       <Project>{D4EB3DC9-97DF-49F1-866C-64E2218F2F57}</Project>
       <Name>Domain.MainModule.WorkFlow</Name>

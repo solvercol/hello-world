@@ -53,8 +53,9 @@ namespace Infraestructura.Data.Documentos.Repositories
                 Messages.exception_InvalidStoreContext,
                 GetType().Name));
 
-        }  
+        }
 
+      
     }
 }
     

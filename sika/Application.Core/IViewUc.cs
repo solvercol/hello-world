@@ -31,9 +31,6 @@ namespace Application.Core
         /// </summary>
         TBL_Admin_Usuarios UserSession { get; }
 
-        /// <summary>
-        /// Propiedad que permite identificar si el User control se encuentra cargado en la Interface de usuario
-        /// </summary>
-        bool IsLoadUserControl { get; set; }
+       
     }
 }

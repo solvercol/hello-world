@@ -5,7 +5,7 @@ namespace Infrastructure.CrossCutting.NetFramework.Enums
         /// <summary>
         /// 1 Corresponde al modulo de Pedidos
         /// </summary>
-        Pedidos = 1,
+        Reclamos = 1,
         /// <summary>
         /// 2 corresponde al modulo administrativo
         /// </summary>

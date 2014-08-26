@@ -12,7 +12,7 @@ namespace Modules.WorkFlow
     public partial class WucWorkFlowModule : BaseUserControl
     {
         private WorkFlowModule _module;
-       
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,9 +20,11 @@ namespace Modules.WorkFlow
 
             ResponseeventHandler += WucWorkFlowModule_ResponseeventHandler;
 
+            btnAceptar.Attributes.Add("Onclick", "javascript:InhabilitarControl('" + DivMomento.ClientID + "','" + divContinuar.ClientID + "')");
+
             if (_module != null)
             {
-                
+
                 if (ViewState["control"] == null)
                 {
                     CargarPedido();
@@ -34,21 +36,29 @@ namespace Modules.WorkFlow
             }
         }
 
+
+
         void WucWorkFlowModule_ResponseeventHandler(object sender, ViewResulteventArgs e)
         {
-            if(e.MessageView == null)return;
+            if (e.MessageView == null) return;
 
-            var oDocument = (RenderTypeControlButtonDto) ViewState["control"];
+            var input = (InputParameter)e.MessageView;
 
-            var input = (InputParameter) e.MessageView;
+            if (input.Key == "Refresh")
+            {
+                CargarPedido();
+                return;
+            }
 
-            oDocument.Parameters.Add(input.Key, input.Value);
+            //var oDocument = (RenderTypeControlButtonDto)ViewState["control"];
+
+            //oDocument.Parameters = input.Inputs;
 
             //_module.ActualizarFechaEntrega(oDocument);
 
-            CargarPedido();
+            //CargarPedido();
 
-            InvokeActualizarEvent(new ViewResulteventArgs("UpdatePanel"));
+            //InvokeActualizarEvent(new ViewResulteventArgs("UpdatePanel"));
         }
 
 
@@ -56,25 +66,47 @@ namespace Modules.WorkFlow
         {
             try
             {
-                var oControl = _module.CargarWorkFlow(Request.QueryString["IdPedido"]);
+                var idDocumento = Request.QueryString["IdReclamo"];
+                if(string.IsNullOrEmpty(idDocumento))return;
+                var oControl = _module.CargarWorkFlow(idDocumento);
                 RenderButtomControl(oControl);
                 ViewState["control"] = oControl;
             }
             catch (Exception ex)
             {
-                LogError(MethodBase.GetCurrentMethod().Name,ex);
+                LogError(MethodBase.GetCurrentMethod().Name, ex);
             }
         }
 
         private void RenderButtomControl(RenderTypeControlButtonDto oControl)
         {
+            if (oControl == null) return;
             plHolder.Controls.Clear();
-            var btn = new Button {ID = "btnAprove", Text = oControl.TextControl};
+            var btn = new Button
+            {
+                ID = "btnAprove",
+                Text = oControl.TextControl,
+                Visible = !string.IsNullOrEmpty(oControl.TextControl),
+                CausesValidation = false
+            };
+            if (!string.IsNullOrEmpty(oControl.TextControl))
+            {
+                if (string.IsNullOrEmpty(oControl.IdCurrentResponsibe))
+                    btn.Visible = false;
+                else
+                    btn.Visible = oControl.IdCurrentResponsibe == AuthenticatedUser.IdUser.ToString();
+            }
+
             btn.Click += BtnClick;
             plHolder.Controls.Add(btn);
         }
 
         void BtnClick(object sender, EventArgs e)
+        {
+            mpeSearch.Show();
+        }
+
+        protected void BtnAceptarClick(object sender, EventArgs e)
         {
             try
             {
@@ -82,7 +114,7 @@ namespace Modules.WorkFlow
                 if (oDocument == null) return;
                 var doc = _module.EjecutarWorkFlow(oDocument);
                 //todo: pendiente por implementar logica cuando el objeto es null
-                if (doc == null)return;
+                if (doc == null) return;
 
                 switch (doc.ProcessStatus)
                 {
@@ -101,6 +133,11 @@ namespace Modules.WorkFlow
             {
                 throw;
             }
+        }
+
+        protected void BtnCancelarClick(object sender, EventArgs e)
+        {
+            mpeSearch.Hide();
         }
 
     }

@@ -114,7 +114,6 @@ namespace Infrastructure.CrossCutting.IoC
 
             #region Servicio de Consultas SQl
             
-            container.RegisterType<IPedidosEmpacorServices, PedidosEmpacorServices>(new TransientLifetimeManager());
             container.RegisterType<IReclamosExternalInterfacesService, ReclamosExternalInterfacesService>(new TransientLifetimeManager());
             container.RegisterType<IReclamosAdoService, ReclamosAdoService>(new TransientLifetimeManager());
 
@@ -142,7 +141,11 @@ namespace Infrastructure.CrossCutting.IoC
             
             #endregion
 
-          
+            #region Servicios Capa de Dominio
+
+            container.RegisterType<ITblModuloWorkFlowRutasFieldsValidatorDomainServices, TblModuloWorkFlowRutasFieldsValidatorDomainServices>(new TransientLifetimeManager());
+            container.RegisterType<ITblModuloWorkFlowRutaDomainServices, TblModuloWorkFlowRutaDomainServices>(new TransientLifetimeManager());
+            #endregion
         }
 
         #endregion

@@ -12,9 +12,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Application.MainModule.Documentos.IServices;
 using Domain.MainModule.Documentos.Contracts;
-using Domain.MainModules.Entities;
 using Domain.Core.Specification;
-using System.Linq.Expressions;
+using Domain.MainModules.Entities;
 
 namespace Application.MainModule.Documentos.Services
 {

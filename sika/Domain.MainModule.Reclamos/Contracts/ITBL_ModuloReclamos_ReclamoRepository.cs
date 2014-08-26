@@ -10,5 +10,7 @@ namespace Domain.MainModule.Reclamos.Contracts
         TBL_ModuloReclamos_Reclamo GetCompleteEntity(ISpecification<TBL_ModuloReclamos_Reclamo> specification);
 
         List<TBL_ModuloReclamos_Reclamo> GetCompleteEntityList(ISpecification<TBL_ModuloReclamos_Reclamo> specification);
+
+        TBL_ModuloReclamos_Reclamo GetReclamoById(int id);
     }
 }    

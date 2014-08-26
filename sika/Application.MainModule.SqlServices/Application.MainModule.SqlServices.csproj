@@ -45,16 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\Clientes.cs" />
-    <Compile Include="Domain\Cotizaciones.cs" />
-    <Compile Include="Domain\DespacharA.cs" />
-    <Compile Include="Domain\Partes.cs" />
-    <Compile Include="Domain\PedidoClientes.cs" />
-    <Compile Include="IServices\IPedidosEmpacorServices.cs" />
+    <Compile Include="Domain\Reclamos.cs" />
+    <Compile Include="Domain\SqlHelper.cs" />
     <Compile Include="IServices\IReclamosAdoService.cs" />
     <Compile Include="IServices\IReclamosExternalInterfacesService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\PedidosEmpacorServices.cs" />
     <Compile Include="Services\ReclamosAdoService.cs" />
     <Compile Include="Services\ReclamosExternalInterfacesService.cs" />
   </ItemGroup>

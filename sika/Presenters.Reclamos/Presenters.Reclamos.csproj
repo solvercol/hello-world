@@ -56,6 +56,7 @@
     <Compile Include="IViews\IFilterClientView.cs" />
     <Compile Include="IViews\IFilterProductView.cs" />
     <Compile Include="IViews\IListaGeneralReclamosView.cs" />
+    <Compile Include="IViews\IPanelEstadosView.cs" />
     <Compile Include="IViews\IReadingReclamoProductoDetalleView.cs" />
     <Compile Include="IViews\IReadingReclamoProductoView.cs" />
     <Compile Include="IViews\IReadingReclamoServicioT1DetalleView.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Presenters\FilterClientPresenter.cs" />
     <Compile Include="Presenters\FilterProductPresenter.cs" />
     <Compile Include="Presenters\ListaGeneralReclamosPresenter.cs" />
+    <Compile Include="Presenters\PanelEstadosPresenter.cs" />
     <Compile Include="Presenters\ReadingReclamoProductoDetallePresenter.cs" />
     <Compile Include="Presenters\ReadingReclamoProductoPresenter.cs" />
     <Compile Include="Presenters\ReadingReclamoServicioPresenter.cs" />

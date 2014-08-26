@@ -21,6 +21,7 @@ using Applications.MainModule.WorkFlow.Resources;
 using Applications.MainModule.WorkFlow.Util;
 using Domain.MainModule.Contracts;
 using Domain.MainModule.Documentos.Contracts;
+using Domain.MainModule.Reclamos.Contracts;
 using Domain.MainModule.WorkFlow.Contracts;
 using Domain.MainModule.WorkFlow.Enums;
 using Domain.MainModule.WorkFlow.Services.FieldsValidatos;
@@ -38,17 +39,16 @@ namespace Applications.MainModule.WorkFlow.Services
 
         #region Fields
         private readonly ITBL_ModuloWorkFlow_RutasRepository _tblModuloWorkFlowRutasRepository;
-        private readonly ITBL_ModuloDocumentos_DocumentoRepository _tblDocumentosRepository;
-        private readonly IPedidosEmpacorServices _sqlPedidosServices;
+        private readonly ITBL_ModuloReclamos_ReclamoRepository _tblDocumentosRepository;
         private readonly ITBL_Admin_EstadosProcesoRepository _estadosRepository;
         private readonly ITblModuloWorkFlowRutasFieldsValidatorDomainServices _workFlowDomainFieldsValidatorServices;
         private readonly ITblModuloWorkFlowRutaDomainServices _workFlowDomainServices;
         private readonly ISystemActionsManagementServices _systemActionsServices;
         private readonly IAutentication _autenticationService;
-        private readonly ITBL_ModuloDocumentos_LogCambiosRepository _logDocumentosRepository;
         private readonly ITBL_Admin_UsuariosRepository _usuariosRepository;
         private readonly ITBL_Admin_SistemaNotificacionesRepository _notificacionesSistemaRepository;
         private readonly ISendMailNotification _sendMailNotificationServices;
+        private readonly IReclamosAdoService _sqlReclamosServices;
         #endregion
 
          #region Constructor
@@ -57,7 +57,6 @@ namespace Applications.MainModule.WorkFlow.Services
          /// </summary>
          public SfTBL_ModuloWorkFlow_RutasManagementServices( 
              ITBL_ModuloWorkFlow_RutasRepository tblModuloWorkFlowRutasRepository, 
-             IPedidosEmpacorServices sqlPedidosServices, 
              ITBL_Admin_EstadosProcesoRepository estadosRepository,
              ITblModuloWorkFlowRutasFieldsValidatorDomainServices workFlowDomainFieldsValidatorServices, 
              ITblModuloWorkFlowRutaDomainServices workFlowDomainServices, 
@@ -65,12 +64,14 @@ namespace Applications.MainModule.WorkFlow.Services
              IAutentication autenticationService, 
              ITBL_Admin_UsuariosRepository usuariosRepository, 
              ITBL_Admin_SistemaNotificacionesRepository notificacionesSistemaRepository, 
-             ISendMailNotification sendMailNotificationServices, ITBL_ModuloDocumentos_DocumentoRepository tblDocumentosRepository, ITBL_ModuloDocumentos_LogCambiosRepository logDocumentosRepository)
+             ISendMailNotification sendMailNotificationServices,
+             ITBL_ModuloReclamos_ReclamoRepository tblDocumentosRepository, 
+             IReclamosAdoService sqlReclamosServices)
          {
             if (tblModuloWorkFlowRutasRepository == null)
                 throw new ArgumentNullException("tblModuloWorkFlowRutasRepository");
             _tblModuloWorkFlowRutasRepository = tblModuloWorkFlowRutasRepository;
-             _logDocumentosRepository = logDocumentosRepository;
+             _sqlReclamosServices = sqlReclamosServices;
              _tblDocumentosRepository = tblDocumentosRepository;
              _sendMailNotificationServices = sendMailNotificationServices;
              _notificacionesSistemaRepository = notificacionesSistemaRepository;
@@ -80,7 +81,6 @@ namespace Applications.MainModule.WorkFlow.Services
              _workFlowDomainServices = workFlowDomainServices;
              _workFlowDomainFieldsValidatorServices = workFlowDomainFieldsValidatorServices;
              _estadosRepository = estadosRepository;
-             _sqlPedidosServices = sqlPedidosServices;
 
          }
          #endregion
@@ -204,11 +204,11 @@ namespace Applications.MainModule.WorkFlow.Services
 
         #endregion
 
-         #region Members Pedidos
+         #region Members RECLAMOS
 
-        private DataTable GetPedidoWorkFlowByIdPedido(string idPedido)
+        private DataTable GetDocumentWorkFlowById(string id)
         {
-            return _sqlPedidosServices.GetPedidoWorkFlowByIdPedido(idPedido);
+            return _sqlReclamosServices.GetReclamoWorkFlowById(id);
         }
          #endregion
 
@@ -216,40 +216,42 @@ namespace Applications.MainModule.WorkFlow.Services
         /// <summary>
         /// Carga los parametros iniciales aplicando las reglas de validaciónn definidas en las rutas.
         /// </summary>
-        /// <param name="idPedido"></param>
+        /// <param name="idDocument"></param>
         /// <returns></returns>
-        public RenderTypeControlButtonDto CargarWorkFlow(string idPedido)
+        public RenderTypeControlButtonDto CargarWorkFlow(string idDocument)
         {
 
             try
             {
 
-                var estadoPedido = _sqlPedidosServices.EstadoPedido(idPedido);
+                var estadoReclamo = _sqlReclamosServices.EstadoReclamo(idDocument);
 
-                if (string.IsNullOrEmpty(estadoPedido))
-                    throw new Exception("Error al obtener el estado del pedido desde la Base de Datos.");
+                if (string.IsNullOrEmpty(estadoReclamo))
+                    throw new Exception("Error al obtener el estado del reclamo desde la Base de Datos.");
 
-                var dtPedido = GetPedidoWorkFlowByIdPedido(idPedido);
+                //Se listan los campos involucrados en el Work Flow con el fin de mapearlos y posteriormente evaluar su
+                //contenido.
+                var dtReclamo = GetDocumentWorkFlowById(idDocument);
 
-                var listadoRutas = GetRutasByEstadoByModule(Convert.ToInt32(estadoPedido), ModulosAplicacion.Pedidos);
+                var listadoRutas = GetRutasByEstadoByModule(Convert.ToInt32(estadoReclamo), ModulosAplicacion.Reclamos);
 
-                var oWorkflow = _workFlowDomainServices.CargarWorkFlow(listadoRutas, dtPedido);
+                var oWorkflow = _workFlowDomainServices.CargarWorkFlow(listadoRutas, dtReclamo, idDocument);
 
                 if (oWorkflow == null) return null;
 
-                var responsable = RetornarUsuarioResponsable(oWorkflow.CurrenteResponsible, Convert.ToInt32(idPedido), dtPedido);
+                var responsable = RetornarUsuarioResponsable(oWorkflow.CurrenteResponsible, Convert.ToInt32(idDocument), dtReclamo, estadoReclamo);
 
                 var oRender = new RenderTypeControlButtonDto
                                   {
                                       CurrentStatus = oWorkflow.CurrentStatus,
-                                      IdCurrentStatus = estadoPedido,
+                                      IdCurrentStatus = estadoReclamo,
                                       NextStatus = oWorkflow.NextStatus,
                                       IdNextStatus = oWorkflow.IdNextStatus,
                                       TextControl = oWorkflow.TextControl,
-                                      IdDocument = idPedido,
-                                      CurrentResponsibe = responsable.Nombres,
-                                      IdCurrentResponsibe = responsable.IdUser.ToString(),
-                                      EmailCurrentResponsibe = responsable.Email
+                                      IdDocument = idDocument,
+                                      CurrentResponsibe = responsable == null ? string.Empty : responsable.Nombres,
+                                      IdCurrentResponsibe = responsable == null ? string.Empty : responsable.IdUser.ToString(),
+                                      EmailCurrentResponsibe = responsable == null ? string.Empty : responsable.Email
                 };
 
                 return oRender;
@@ -278,10 +280,12 @@ namespace Applications.MainModule.WorkFlow.Services
                 if (oEstado == null)
                     throw new ArgumentException(string.Format("Error al recuperar el estado {0} desde la Base de Datos.", oDocument.CurrentStatus));
 
-                var oDocumento = _tblDocumentosRepository.GetDocumentoById(Convert.ToInt32(oDocument.IdDocument));
+                var oDoc = _tblDocumentosRepository.GetReclamoById(Convert.ToInt32(oDocument.IdDocument));
 
-                if (oDocumento == null)
-                    throw new ArgumentException(string.Format("Error al recuperar el pedido {0} desde la Base de Datos.", oDocument.IdDocument));
+                if (oDoc == null)
+                    throw new ArgumentException(string.Format("Error al recuperar el reclamo {0} desde la Base de Datos.", oDocument.IdDocument));
+
+                if (oDoc.IdEstado == Convert.ToInt32(oDocument.IdNextStatus)) return oDocument;
 
                 var nextStatus = Convert.ToInt32(oDocument.IdNextStatus);
                 var currentRule = oEstado.TBL_ModuloWorkFlow_Rutas.Where(x => x.SiguienteEstado == nextStatus).SingleOrDefault();
@@ -290,7 +294,7 @@ namespace Applications.MainModule.WorkFlow.Services
                 {
                     if (oEstado.TBL_ModuloWorkFlow_CamposValidacion.Count > 0)
                     {
-                        var result = ValidacionDeCampos(oEstado, oDocumento, oDocument);
+                        var result = ValidacionDeCampos(oEstado, oDoc, oDocument);
                         if (!result)
                         {
                             oDocument.ProcessStatus = ProcessStatus.ValidationErrorField;
@@ -304,7 +308,7 @@ namespace Applications.MainModule.WorkFlow.Services
                     }
                 }
 
-                if (currentRule.TBL_ModuloWorkFlow_ValidacionesSalida.Count > 0)
+                if (currentRule.TBL_ModuloWorkFlow_ValidacionesSalida.Where(x => x.Ejecutar == true).Count() > 0)
                 {
 
                     var inputParameters = currentRule.TBL_ModuloWorkFlow_ValidacionesSalida.Where(
@@ -319,7 +323,7 @@ namespace Applications.MainModule.WorkFlow.Services
                         return oDocument;
                     }
 
-                    var listerror = EjecutarAccionSistema(currentRule.TBL_ModuloWorkFlow_ValidacionesSalida,oDocumento.IdDocumento);
+                    var listerror = EjecutarAccionSistema(currentRule.TBL_ModuloWorkFlow_ValidacionesSalida,oDoc.IdReclamo.ToString());
                     if (listerror.Count > 0)
                     {
                         foreach (var msg in listerror)
@@ -343,16 +347,17 @@ namespace Applications.MainModule.WorkFlow.Services
                 {
                     var unitOfWork = _tblDocumentosRepository.UnitOfWork;
 
-                    oDocumento.IdEstado = Convert.ToInt32(oDocument.IdNextStatus);
+                    oDoc.IdEstado = Convert.ToInt32(oDocument.IdNextStatus);
 
-                    oDocumento.ModifiedBy = _autenticationService.GetUserFromSession.IdUser;
+                    oDoc.ModifiedBy = _autenticationService.GetUserFromSession.IdUser;
 
-                    oDocumento.ModifiedOn = DateTime.Now;
+                    oDoc.ModifiedOn = DateTime.Now;
 
-                    if (!string.IsNullOrEmpty(oDocument.IdCurrentResponsibe))
-                        oDocumento.IdUsuarioResponsable = Convert.ToInt32(oDocument.IdCurrentResponsibe);
+                    var responsable = GetResponsableDocumento(oDocument.IdDocument, oDocument.IdNextStatus);
+                    if (!string.IsNullOrEmpty(responsable))
+                        oDoc.IdResponsableActual = Convert.ToInt32(responsable);
 
-                    _tblDocumentosRepository.Modify(oDocumento);
+                    _tblDocumentosRepository.Modify(oDoc);
 
                     //Crea un nuevo registro en el tracking del pedido
                     GenerarEntradatracking(oDocument);
@@ -365,11 +370,11 @@ namespace Applications.MainModule.WorkFlow.Services
                     unitOfWork.CommitAndRefreshChanges();
 
                     oDocument.ProcessStatus = ProcessStatus.Ok;
-                    
-                    SendMail(oDocument);
 
                     scope.Complete();
                 }
+
+                SendMail(oDocument);
 
                 return oDocument;
 
@@ -380,17 +385,35 @@ namespace Applications.MainModule.WorkFlow.Services
             }
         }
 
+        private string GetResponsableDocumento(string idDocumento, string estado)
+        {
+
+            var dtPedido = GetDocumentWorkFlowById(idDocumento);
+
+            var listadoRutas = GetRutasByEstadoByModule(Convert.ToInt32(estado), ModulosAplicacion.Reclamos);
+
+            var rolResponsable = _workFlowDomainServices.GetResponsablePedidobyRuta(listadoRutas, dtPedido);
+
+            if (!string.IsNullOrEmpty(rolResponsable))
+            {
+                var responsable = RetornarUsuarioResponsable(rolResponsable, Convert.ToInt32(idDocumento), dtPedido, estado);
+                if (responsable != null)
+                    return responsable.IdUser.ToString();
+            }
+
+            return string.Empty;
+        }
         
         /// <summary>
         /// Realiza el proceso de validación de campos con base a las reglas definidas en la tabla FieldValidations.
         /// </summary>
         /// <param name="oEstado"></param>
-        /// <param name="oDocumento"></param>
+        /// <param name="oDoc"></param>
         /// <param name="oDocument"></param>
         /// <returns></returns>
-        private bool ValidacionDeCampos(TBL_Admin_EstadosProceso oEstado, TBL_ModuloDocumentos_Documento oDocumento, RenderTypeControlButtonDto oDocument)
+        private bool ValidacionDeCampos(TBL_Admin_EstadosProceso oEstado, TBL_ModuloReclamos_Reclamo oDoc, RenderTypeControlButtonDto oDocument)
         {
-            var isValidFields = _workFlowDomainFieldsValidatorServices.IsValidField(oDocumento, oEstado);
+            var isValidFields = _workFlowDomainFieldsValidatorServices.IsValidField(oDoc, oEstado);
             if (!isValidFields)
             {
                 var listErrors = _workFlowDomainFieldsValidatorServices.GetValidationErrorsMessages;
@@ -399,7 +422,7 @@ namespace Applications.MainModule.WorkFlow.Services
                 if (procedimientos.Count > 0)
                 {
                     listErrors.AddRange(from procedimiento in procedimientos
-                                        let result = EjecutarSp(procedimiento)
+                                        let result = EjecutarSp(procedimiento, oDoc)
                                         where !result
                                         select string.Format("SP:[{0}] - Mensaje:[{1}]", procedimiento, "La validación a travéz de la función externa no fue exitosa!!."));
                 }
@@ -409,16 +432,19 @@ namespace Applications.MainModule.WorkFlow.Services
 
             return isValidFields;
         }
-       
+
         /// <summary>
         /// Función que ejecuta procedimientos almacenados con AdoNet
         /// </summary>
         /// <param name="sp"></param>
+        /// <param name="oDoc"></param>
         /// <returns></returns>
-        private bool EjecutarSp(string sp)
+        private bool EjecutarSp(string sp,TBL_ModuloReclamos_Reclamo oDoc )
         {
-            var result = _sqlPedidosServices.VerificarSuministros(sp);
+            var parameters = new Dictionary<string, string> {{"IdReclamo", oDoc.IdReclamo.ToString()}};
+            var result = _sqlReclamosServices.EjecutarSpToBool(sp, parameters);
             return Convert.ToBoolean(result);
+          
         }
 
         /// <summary>
@@ -428,26 +454,24 @@ namespace Applications.MainModule.WorkFlow.Services
         /// 
         /// </summary>
         /// <param name="accionesSistema"></param>
-        /// <param name="idPedido"></param>
+        /// <param name="idDocument"></param>
         /// <returns></returns>
-        private List<string> EjecutarAccionSistema(IEnumerable<TBL_ModuloWorkFlow_ValidacionesSalida> accionesSistema, int idPedido)
+        private List<string> EjecutarAccionSistema(IEnumerable<TBL_ModuloWorkFlow_ValidacionesSalida> accionesSistema, string idDocument)
         {
             try
             {
                 var messages = new List<string>();
                 foreach (var salida in accionesSistema)
                 {
-
-
                     _systemActionsServices.AssemblyQualifiedName = salida.NombreEnsamblado;
                     _systemActionsServices.MethodName = salida.NombreMetodo;
-                    _systemActionsServices.Params = new object[]{idPedido};
+                    _systemActionsServices.Params = new object[] { idDocument };
 
                     var result = _systemActionsServices.Execute();
 
-                    if(result is bool)
+                    if (result is bool)
                     {
-                        if(!Convert.ToBoolean(result))
+                        if (!Convert.ToBoolean(result))
                             messages.Add(string.Format("La Ejecución de la Acción del Sistema [{0}] retornó FALSO en el proceso de validación..", salida.NombreMetodo));
                     }
                 }
@@ -492,16 +516,28 @@ namespace Applications.MainModule.WorkFlow.Services
         /// <param name="role"></param>
         /// <param name="idPedido"></param>
         /// <param name="dt"></param>
+        /// <param name="idEstado"></param>
         /// <returns></returns>
-        private TBL_Admin_Usuarios RetornarUsuarioResponsable(string role, int idPedido, DataTable dt)
+        private TBL_Admin_Usuarios RetornarUsuarioResponsable(string role, int idPedido, DataTable dt, string idEstado)
         {
-            var roleResponsable = role;
-            if(role.Contains("[Fn]") )
+            if (string.IsNullOrEmpty(role)) return null;
+            //1= Estado Registrado
+            if (idEstado == "1")
             {
-                roleResponsable = _workFlowDomainServices.MapearExpresion(role, dt); 
+                if (!(dt.Rows[0]["CreateBy"] is DBNull))
+                {
+                    var user = _usuariosRepository.GetUsuarioById(Convert.ToInt32(dt.Rows[0]["CreateBy"]));
+                    return user;
+                }
             }
 
-            if(roleResponsable.Contains("Aut"))
+            var roleResponsable = role;
+            if (role.Contains("[Fn]"))
+            {
+                roleResponsable = _workFlowDomainServices.MapearExpresion(role, dt);
+            }
+
+            if (roleResponsable.Contains("Autor"))
             {
                 var user = _usuariosRepository.RetornarUsuarioAutordocumento(idPedido);
                 if (user != null)
@@ -509,9 +545,11 @@ namespace Applications.MainModule.WorkFlow.Services
                     return user;
                 }
             }
+
             var userrole = _usuariosRepository.RetornarUsuarioReponsableAprobacion(roleResponsable);
 
             return userrole;
+            
         }
 
         /// <summary>
@@ -558,7 +596,7 @@ namespace Applications.MainModule.WorkFlow.Services
             var template = _sendMailNotificationServices.GetMergeTemplate(oDocument);
             if(template == null)return;
 
-            var cliente = _sqlPedidosServices.RetornarNombreClienteByIdPedido(oDocument.IdDocument);
+            var cliente = "";// _sqlPedidosServices.RetornarNombreClienteByIdPedido(oDocument.IdDocument);
 
             //var oNotify = _pedidosDomainServices.GenerarEntradaNotificadorSistema(
             //                           _notificacionesSistemaRepository.NewEntity(),

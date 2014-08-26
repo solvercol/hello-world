@@ -51,29 +51,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\dll\AjaxControlToolkit.dll</HintPath>
     </Reference>
-    <Reference Include="Application.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\dll\Application.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Domain.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\dll\Domain.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Domain.MainModules.Entities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\dll\Domain.MainModules.Entities.dll</HintPath>
-    </Reference>
-    <Reference Include="Infrastructure.CrossCutting.IoC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\dll\Infrastructure.CrossCutting.IoC.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\ASP.NETCLIENTE\bin\Microsoft.Practices.Unity.dll</HintPath>
-    </Reference>
-    <Reference Include="ServerControls">
-      <HintPath>..\dll\ServerControls.dll</HintPath>
+      <HintPath>..\dll\Microsoft.Practices.Unity.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -178,6 +159,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Application.Core\Application.Core.csproj">
+      <Project>{43E44D76-4378-4A99-9100-7C5CDFB9DAC0}</Project>
+      <Name>Application.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Applications.MainModule.Documentos\Application.MainModule.Documentos.csproj">
       <Project>{1448adfe-3242-43ae-9635-4615b15e3fba}</Project>
       <Name>Application.MainModule.Documentos</Name>
@@ -190,9 +175,25 @@
       <Project>{a1708898-8f15-4d62-99e0-293334e740c2}</Project>
       <Name>Domain.Core.Entities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Domain.Core\Domain.Core.csproj">
+      <Project>{94FCB1C4-2C52-4D9D-A07B-F01AC38CF88E}</Project>
+      <Name>Domain.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.MainModules.Entities\Domain.MainModules.Entities.csproj">
+      <Project>{6FA9FF63-4F79-4A9F-882C-7A7AE27C7332}</Project>
+      <Name>Domain.MainModules.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure.CrossCutting.IoC\Infrastructure.CrossCutting.IoC.csproj">
+      <Project>{5DD8CB67-048D-44FE-8444-DC6D260E87AB}</Project>
+      <Name>Infrastructure.CrossCutting.IoC</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Presenters.Documentos\Presenters.Documentos.csproj">
       <Project>{3d42eb42-a5cd-4a9e-b376-cfde6c11a2a5}</Project>
       <Name>Presenters.Documentos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServerControls\ServerControls.csproj">
+      <Project>{AC6B9382-921B-40C7-9282-27EDEF1D3432}</Project>
+      <Name>ServerControls</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

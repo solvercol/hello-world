@@ -264,7 +264,7 @@ namespace Presenters.Reclamos.Presenters
         {
             var model = new TBL_ModuloReclamos_Actividades();
 
-            model.IdReclamo = Convert.ToDecimal(View.IdReclamo);
+            model.IdReclamo = Convert.ToInt32(View.IdReclamo);
             model.IdActividadReclamo = Convert.ToInt32(View.IdActividadReclamo);
             model.Descripcion = View.Descripcion;
             model.Fecha = View.FechaActividad;

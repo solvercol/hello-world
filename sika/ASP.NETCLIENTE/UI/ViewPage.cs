@@ -34,13 +34,12 @@ namespace ASP.NETCLIENTE.UI
 
         public event EventHandler<ViewResulteventArgs> SystemActionsEvent;
 
-        private void InvokeSystemActionsEvent(ViewResulteventArgs e)
+        protected void InvokeSystemActionsEvent(ViewResulteventArgs e)
         {
             var handler = SystemActionsEvent;
             if (handler != null) handler(this, e);
         }
 
-       
 
         #endregion
 
@@ -56,13 +55,12 @@ namespace ASP.NETCLIENTE.UI
             Presenter.SubscribeViewToEvents();
             Presenter.MessageBox += PresenterMessageBox;
             Presenter.LogProcesamientoEvent += PresenterLogProcesamientoEvent;
-            
+
         }
 
         protected override void OnInit(EventArgs e)
         {
             base.OnInit(e);
-            //if (HttpContext.Current.Request.HttpMethod == "GET")
             LoadModule();
         }
 
@@ -70,19 +68,19 @@ namespace ASP.NETCLIENTE.UI
         {
             try
             {
-                
-                if(Modulo == null)return;
-                if(Master == null)return;
+
+                if (Modulo == null) return;
+                if (Master == null) return;
 
                 foreach (var tblAdminTypeByModulese in Modulo.TBL_Admin_TypeByModules)
                 {
-                    if( string.IsNullOrEmpty(tblAdminTypeByModulese.Placeholder)) continue;
+                    if (string.IsNullOrEmpty(tblAdminTypeByModulese.Placeholder)) continue;
                     var phl = Master.FindControl("MainContent").FindControl(tblAdminTypeByModulese.Placeholder) as PlaceHolder;
                     if (phl == null) continue;
                     phl.Controls.Clear();
-                    if (!tblAdminTypeByModulese.TBL_Admin_ModuleType.AutoActivar)continue;
-                    if (!tblAdminTypeByModulese.IsActive)continue;
-                   
+                    if (!tblAdminTypeByModulese.TBL_Admin_ModuleType.AutoActivar) continue;
+                    if (!tblAdminTypeByModulese.IsActive) continue;
+
                     var moduleControl = CreateModuleControlForSection(tblAdminTypeByModulese);
                     if (moduleControl != null)
                     {
@@ -99,13 +97,13 @@ namespace ASP.NETCLIENTE.UI
 
         private void ConfigureUserControl(Control oControl)
         {
-            var uc = (BaseUserControl) oControl;
+            var uc = (BaseUserControl)oControl;
             if (uc == null) return;
             uc.ActualizarEvent += UcActualizarEvent;
-            
+
         }
 
-        void UcActualizarEvent(object sender, ViewResulteventArgs e)
+        private void UcActualizarEvent(object sender, ViewResulteventArgs e)
         {
             InvokeSystemActionsEvent(e);
         }
@@ -115,10 +113,10 @@ namespace ASP.NETCLIENTE.UI
 
             // Create the module that is connected to the section.
             var module = LoaderModule.GetModuleFromSection(section);
-            
+
             if (module != null)
             {
-               return LoadModuleControl(module);
+                return LoadModuleControl(module);
             }
             return null;
         }
@@ -131,6 +129,12 @@ namespace ASP.NETCLIENTE.UI
             return ctrl;
         }
 
+        /// <summary>
+        /// Metodo que busca el WorkFlowModule  (WUC) en el placeHolder del formulario principal e invoca un evento de la clase el cual realiza la acción que 
+        /// se programe, acción adicional al evento del boton de wf.
+        /// Para hacer uso de esta funcionalidad se debe invocar este metodo desde el formulario principal.
+        /// </summary>
+        /// <param name="input"></param>
         protected void EjecutarWorkFlow(InputParameter input)
         {
             try
@@ -164,8 +168,8 @@ namespace ASP.NETCLIENTE.UI
                 LogError(e.NombreMetodo, AuthenticatedUser.Nombres, new Uri(GetUrl, UriKind.RelativeOrAbsolute), e.Error);
             else
             {
-                if(string.IsNullOrEmpty(e.IdPedido))return;
-                LogError(Convert.ToInt32(e.IdPedido),AuthenticatedUser.IdUser,AuthenticatedUser.Nombres,e.LogAccion);
+                if (string.IsNullOrEmpty(e.IdPedido)) return;
+                LogError(Convert.ToInt32(e.IdPedido), AuthenticatedUser.IdUser, AuthenticatedUser.Nombres, e.LogAccion);
             }
         }
 
@@ -175,7 +179,7 @@ namespace ASP.NETCLIENTE.UI
             {
                 case TypeError.Ok:
                     ShowMessageOk(e.Message);
-                    InvokeHideControlsevent(EventArgs.Empty);
+                    InvokeHideControlsevent(e);
                     break;
                 default:
                     ShowError(e.Message);
@@ -222,7 +226,7 @@ namespace ASP.NETCLIENTE.UI
             get { return Master != null ? Master.FindControl("MessageBox") as HtmlGenericControl : null; }
         }
 
-       
+
         #endregion
 
         #region Metodos
@@ -238,7 +242,7 @@ namespace ASP.NETCLIENTE.UI
             {
                 throw new Exception(errorText);
             }
-            
+
             MessageBox.InnerHtml = errorText;
             MessageBox.Attributes["class"] = "errorbox";
             MessageBox.Visible = true;
@@ -277,7 +281,7 @@ namespace ASP.NETCLIENTE.UI
 
 
 
-       
+
 
         /// <summary>
         /// Try to find the MessageBox control, insert the message and set visibility to true.
@@ -293,7 +297,7 @@ namespace ASP.NETCLIENTE.UI
         /// <summary>
         /// The messagebox.
         /// </summary>
-        public void ImprimirTituloVentana(string strTitulo)
+        protected void ImprimirTituloVentana(string strTitulo)
         {
 
             if (TitulosVentana == null)
@@ -307,7 +311,7 @@ namespace ASP.NETCLIENTE.UI
             TitulosVentana.Visible = true;
         }
 
-       
+
         /// <summary>
         /// 
         /// </summary>
@@ -330,7 +334,7 @@ namespace ASP.NETCLIENTE.UI
             if (sm == null) return;
             sm.RegisterPostBackControl(ctrl);
         }
-      
+
         /// <summary>
         /// 
         /// </summary>
@@ -534,12 +538,12 @@ namespace ASP.NETCLIENTE.UI
             return response;
         }
 
-      /// <summary>
-      /// 
-      /// </summary>
-      /// <param name="strCad"></param>
-      /// <param name="num"></param>
-      /// <returns></returns>
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="strCad"></param>
+        /// <param name="num"></param>
+        /// <returns></returns>
         protected string TruncateString(string strCad, int num)
         {
             if (string.IsNullOrEmpty(strCad)) return string.Empty;
@@ -550,10 +554,10 @@ namespace ASP.NETCLIENTE.UI
         protected string GetUrl
         {
             get { return HttpContext.Current.Request.AppRelativeCurrentExecutionFilePath; }
-    
+
         }
 
-       
+
 
         #endregion
 

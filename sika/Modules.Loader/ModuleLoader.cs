@@ -75,6 +75,7 @@ namespace Modules.Loader
                 {
                     var serviceType = Type.GetType(repoService.RepositoryType);
                     var classType = Type.GetType(repoService.classtype);
+                    if(serviceType ==  null || classType==null)continue;
                     _traceManager.LogInfo(string.Format("Loading module repository {0}, {1}.", repoService.Repositorykey, repoService.classtype), LogType.Notify);
                     IoC.RegisterType(serviceType, classType);
                 }
@@ -84,6 +85,7 @@ namespace Modules.Loader
                 {
                     var serviceType = Type.GetType(moduleService.servicetype);
                     var classType = Type.GetType(moduleService.classtype);
+                    if (serviceType == null || classType == null) continue;
                     _traceManager.LogInfo(string.Format("Loading module service {0}, {1}.", moduleService.servicekey, moduleService.classtype), LogType.Notify);
                     IoC.RegisterType(serviceType, classType);
                     

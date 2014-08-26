@@ -211,7 +211,7 @@ namespace Presenters.Reclamos.Presenters
         {
             var model = new TBL_ModuloReclamos_Soluciones();
 
-            model.IdReclamo = Convert.ToDecimal(View.IdReclamo);
+            model.IdReclamo = Convert.ToInt32(View.IdReclamo);
             model.Departamento = View.Departamento;
             model.Referencia = View.Referencia;
             model.Observaciones = View.Observaciones;

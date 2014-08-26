@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 using Application.Core;
 using Application.MainModule.Documentos.IServices;
-using Applications.MainModule.Admin.IServices;
 using Infrastructure.CrossCutting.NetFramework.Enums;
 using Presenters.Documentos.IViews;
 
@@ -16,24 +12,22 @@ namespace Presenters.Documentos.Presenters
     {        
 
         private readonly ISfTBL_ModuloDocumentos_DocumentoManagementServices _documentoServices;
-        private readonly ISfTBL_ModuloDocumentos_CategoriasManagementServices _categoriaServices;
+        
         private readonly ISfTBL_ModuloDocumentos_EstadosManagementServices _estadosServices;
 
         public VistaMisDocumentosPresenter
             (
                  ISfTBL_ModuloDocumentos_DocumentoManagementServices documentoServices
-                ,ISfTBL_ModuloDocumentos_CategoriasManagementServices categoriaServices
                 ,ISfTBL_ModuloDocumentos_EstadosManagementServices estadosServices
             )
         {            
             _documentoServices = documentoServices;
-            _categoriaServices = categoriaServices;
             _estadosServices = estadosServices;
         }
 
         public override void SubscribeViewToEvents()
         {
-            View.Load += View_Load;
+            View.Load += ViewLoad;
             View.FilterEvent += ViewFilterEvent;
             View.ClearFilterEvent += ViewClearFilterEvent;
         }
@@ -50,7 +44,7 @@ namespace Presenters.Documentos.Presenters
             GetAll();
         }
 
-        void View_Load(object sender, EventArgs e)
+        void ViewLoad(object sender, EventArgs e)
         {
             if (View.IsPostBack) return;
             Estados();

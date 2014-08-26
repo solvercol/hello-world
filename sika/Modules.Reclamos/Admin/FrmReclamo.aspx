@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FrmReclamo.aspx.cs" Inherits="Modules.Reclamos.Admin.FrmReclamo" %>
-
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+<%@ Register src="../UserControls/WucPanelEstado.ascx" tagname="WucPanelEstado" tagprefix="uc1" %>
  
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
@@ -22,6 +22,19 @@
     </div>
 </div>
 
+<%--
+<asp:UpdatePanel ID="upMenuPrincipal" runat="server">
+    <ContentTemplate>
+         <div style="padding:3px; text-align:right;">
+            <asp:Button ID="btnRegresar" runat="server" Text="Regresar" OnClick="BtnRegresarClick" />
+            <asp:Button ID="btnEdit" runat="server" Text="Editar" OnClick="BtnEditReclamoClick" />
+            <asp:PlaceHolder ID="plhWf" runat="server"></asp:PlaceHolder>
+        </div>
+    </ContentTemplate>
+</asp:UpdatePanel>--%>
+   
+
+
 <table width="100%" cellpadding="0" cellspacing="0" >
     
     <tr>
@@ -33,6 +46,10 @@
         <td>
             <table width="100%" cellpadding="0" cellspacing="0">
                 <tr>
+
+                    <td valign="top">
+                        <asp:PlaceHolder ID="phInfoReclamo"  runat="server"></asp:PlaceHolder>                
+
                     <td valign="top">
                         <%--<asp:PlaceHolder ID="phInfoReclamo"  runat="server"></asp:PlaceHolder>                --%>
                         <table width="100%" >
@@ -87,14 +104,15 @@
                                 </td>
                             </tr>
                         </table>
+
                     </td>   
                     
                     <td align="right" style="width:25%" valign="top">
                         <asp:UpdatePanel ID="upMenuBar" runat="server">
                             <ContentTemplate>
                                  <div style="padding:3px; text-align:right;">
-                                    <asp:Button ID="btnRegresar" runat="server" Text="Regresar" OnClick="BtnRegresar_Click" />
-                                    <asp:Button ID="btnEdit" runat="server" Text="Editar" OnClick="BtnEditReclamo_Click" />
+                                    <asp:Button ID="btnRegresar" runat="server" Text="Regresar" OnClick="BtnRegresarClick" />
+                                    <asp:Button ID="btnEdit" runat="server" Text="Editar" OnClick="BtnEditReclamoClick" />
                                     <asp:PlaceHolder ID="plhWf" runat="server"></asp:PlaceHolder>
                                 </div>
                             </ContentTemplate>
@@ -102,6 +120,8 @@
                         <asp:UpdatePanel ID="upResumen" runat="server">
                             <ContentTemplate>
                                 <div class="ContentPanelResumen">                           
+                                                                    
+                                    <uc1:WucPanelEstado ID="WucPanelEstado1" runat="server" />
                                                                     
                                 </div>    
                             </ContentTemplate>
@@ -149,6 +169,52 @@
         </asp:UpdatePanel>
     </div>                     
 
+
+
+<asp:UpdatePanel ID="upInputWindows" runat="server">
+        <ContentTemplate>
+            
+
+        <asp:Panel ID="pnlVentanaEmergente"  runat="server" CssClass="popup_Container" Width="400" Height="160" style="display:none;">  
+
+            <div class="popup_Titlebar" id="PopupHeader">
+                <div class="TitlebarLeft">
+                  <asp:Literal ID="litTitulo" runat="server"></asp:Literal>
+                </div>
+                <div class="TitlebarRight" id="divCloseMensajes">
+                </div>
+            </div>
+
+            <div class="popup_Body">      
+                <asp:PlaceHolder ID="phlVentanaMensajes" runat="server"></asp:PlaceHolder>                
+                <table width="100%" cellpadding="0" cellpadding="0">
+                    <tr>
+                        <td style=" width:30%">
+                        </td>
+                        <td class="Separador15"></td>
+                        <td>
+                            <%--<asp:Button ID="btnEnviarFecha" runat="server" Text="Aceptar" OnClick="BtnEnviarFechaCick" ValidationGroup="grpFechaEntrega" />--%>
+                        </td>
+                    </tr>
+                </table>
+                          
+            </div>
+        </asp:Panel>
+    
+        <asp:Button ID="btnTargetControl" runat="server" style="display:none; "/>    
+
+        <ajaxToolkit:ModalPopupExtender 
+        ID="mpeVentanaEmergente" 
+        runat="server" 
+        TargetControlID="btnTargetControl" 
+        PopupControlID="pnlVentanaEmergente" 
+        BackgroundCssClass="ModalPopupBG" 
+        cancelcontrolid="divCloseMensajes"> 
+        </ajaxToolkit:ModalPopupExtender>   
+
+
+        </ContentTemplate>
+    </asp:UpdatePanel>
 </asp:Content>
 
 

@@ -22,6 +22,15 @@ namespace Modules.Reclamos.Admin {
         protected global::System.Web.UI.HtmlControls.HtmlImage Img1;
         
         /// <summary>
+        /// phInfoReclamo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder phInfoReclamo;
+        
+        /// <summary>
         /// lblTitleReclamo control.
         /// </summary>
         /// <remarks>
@@ -130,6 +139,15 @@ namespace Modules.Reclamos.Admin {
         protected global::System.Web.UI.UpdatePanel upResumen;
         
         /// <summary>
+        /// WucPanelEstado1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Modules.Reclamos.UserControls.WucPanelEstado WucPanelEstado1;
+        
+        /// <summary>
         /// upSecciones control.
         /// </summary>
         /// <remarks>
@@ -173,5 +191,59 @@ namespace Modules.Reclamos.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder phlContent;
+        
+        /// <summary>
+        /// upInputWindows control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upInputWindows;
+        
+        /// <summary>
+        /// pnlVentanaEmergente control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlVentanaEmergente;
+        
+        /// <summary>
+        /// litTitulo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litTitulo;
+        
+        /// <summary>
+        /// phlVentanaMensajes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder phlVentanaMensajes;
+        
+        /// <summary>
+        /// btnTargetControl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnTargetControl;
+        
+        /// <summary>
+        /// mpeVentanaEmergente control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ModalPopupExtender mpeVentanaEmergente;
     }
 }

@@ -39,10 +39,10 @@
   <ItemGroup>
     <Reference Include="AjaxControlToolkit, Version=4.1.51116.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\PWC\trunk\SIAC\dll\AjaxControlToolkit.dll</HintPath>
+      <HintPath>..\dll\AjaxControlToolkit.dll</HintPath>
     </Reference>
     <Reference Include="AntiXSSLibrary">
-      <HintPath>..\..\..\..\PWC\trunk\SIAC\dll\AntiXSSLibrary.dll</HintPath>
+      <HintPath>..\dll\AntiXSSLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Infragistics4.Web.v11.1, Version=11.1.20111.2238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -153,28 +153,28 @@
       <HintPath>..\..\..\..\PWC\trunk\SIAC\dll\Infragistics4.WebUI.WebSpellChecker.v11.1.dll</HintPath>
     </Reference>
     <Reference Include="log4net">
-      <HintPath>..\..\..\..\PWC\trunk\SIAC\dll\log4net.dll</HintPath>
+      <HintPath>..\dll\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp">
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
-      <HintPath>..\..\..\..\PWC\trunk\SIAC\dll\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+      <HintPath>..\dll\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.Unity">
-      <HintPath>..\..\..\..\PWC\trunk\SIAC\dll\Microsoft.Practices.Unity.dll</HintPath>
+      <HintPath>..\dll\Microsoft.Practices.Unity.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.Unity.Configuration">
-      <HintPath>..\..\..\..\PWC\trunk\SIAC\dll\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <HintPath>..\dll\Microsoft.Practices.Unity.Configuration.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.Unity.Interception">
-      <HintPath>..\..\..\..\PWC\trunk\SIAC\dll\Microsoft.Practices.Unity.Interception.dll</HintPath>
+      <HintPath>..\dll\Microsoft.Practices.Unity.Interception.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.Unity.Interception.Configuration">
-      <HintPath>..\..\..\..\PWC\trunk\SIAC\dll\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+      <HintPath>..\dll\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
     </Reference>
     <Reference Include="SanitizerProviders">
-      <HintPath>..\..\..\..\PWC\trunk\SIAC\dll\SanitizerProviders.dll</HintPath>
+      <HintPath>..\dll\SanitizerProviders.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Private>True</Private>

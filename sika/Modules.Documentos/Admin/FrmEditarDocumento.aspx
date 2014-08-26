@@ -113,13 +113,13 @@
 							                        <td style="width:80%" align="left">
                                                         <asp:LinkButton ID="lnkBtnArchivo" runat="server" Width="350px" 
                                                             CommandArgument='<%# DataBinder.Eval(Container.DataItem, "IdDocumentoAdjunto")%>' 
-                                                            Text='<%# DataBinder.Eval(Container.DataItem, "NombreArchivo")%>' onclick="lnkBtnArchivo_Click"></asp:LinkButton>                                                        
+                                                            Text='<%# DataBinder.Eval(Container.DataItem, "NombreArchivo")%>' onclick="LnkBtnArchivoClick"></asp:LinkButton>                                                        
                                                     </td>
 							                        <td style="width:20%" align="center">
                                                         <asp:ImageButton ID="ImgBtnEliminar" runat="server" ImageUrl="~/Resources/Images/RemoveGrid.png" 
                                                             CommandArgument='<%# DataBinder.Eval(Container.DataItem,"IdDocumentoAdjunto") %>' 
                                                             OnClientClick="return confirm('¿Confirma que desea eliminar el archivo?');" 
-                                                            onclick="ImgBtnEliminar_Click"/>                                        
+                                                            onclick="ImgBtnEliminarClick"/>                                        
                                                     </td>
 						                        </tr>
 					                        </itemtemplate> 
@@ -128,13 +128,13 @@
 							                        <td style="width:80%" align="left">
                                                         <asp:LinkButton ID="lnkBtnArchivo" runat="server" Width="350px" 
                                                             CommandArgument='<%# DataBinder.Eval(Container.DataItem, "IdDocumentoAdjunto")%>' 
-                                                            Text='<%# DataBinder.Eval(Container.DataItem, "NombreArchivo")%>' onclick="lnkBtnArchivo_Click"></asp:LinkButton>                                                        
+                                                            Text='<%# DataBinder.Eval(Container.DataItem, "NombreArchivo")%>' onclick="LnkBtnArchivoClick"></asp:LinkButton>                                                        
                                                     </td>
 							                        <td style="width:20%" align="center">
                                                         <asp:ImageButton ID="ImgBtnEliminar" runat="server" ImageUrl="~/Resources/Images/RemoveGrid.png" 
                                                             CommandArgument='<%# DataBinder.Eval(Container.DataItem,"IdDocumentoAdjunto") %>' 
                                                             OnClientClick="return confirm('¿Confirma que desea eliminar el archivo?');" 
-                                                            onclick="ImgBtnEliminar_Click"/>                                        
+                                                            onclick="ImgBtnEliminarClick"/>                                        
                                                     </td>
 						                     </tr>
                                            </AlternatingItemTemplate>

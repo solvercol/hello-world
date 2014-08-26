@@ -83,6 +83,19 @@ namespace Infrastructure.Data.MainModule.Reclamos.Repositories
                 Messages.exception_InvalidStoreContext,
                 GetType().Name));
         }
+
+        public TBL_ModuloReclamos_Reclamo GetReclamoById(int id)
+        {
+            if (id > 0)
+            {
+                var set = _currentUnitOfWork.CreateSet<TBL_ModuloReclamos_Reclamo>();
+
+                return set.Where(c => c.IdReclamo == id)
+                          .Select(c => c)
+                          .SingleOrDefault();
+            }
+            return null;
+        }
     }
 }
     

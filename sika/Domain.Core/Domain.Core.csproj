@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommitOption.cs" />
+    <Compile Include="DefinedRegex.cs" />
     <Compile Include="IContext.cs" />
     <Compile Include="IGenericServices.cs" />
     <Compile Include="IRepository.cs" />

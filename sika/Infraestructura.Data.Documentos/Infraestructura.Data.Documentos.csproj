@@ -35,14 +35,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Domain.MainModules.Entities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Domain.MainModules.Entities\bin\Debug\Domain.MainModules.Entities.dll</HintPath>
-    </Reference>
-    <Reference Include="Infraestructure.Data.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Infraestructure.Data.Core\bin\Debug\Infraestructure.Data.Core.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
@@ -79,6 +71,14 @@
     <ProjectReference Include="..\Domain.MainModule.Documentos\Domain.MainModule.Documentos.csproj">
       <Project>{314457B6-C0E8-45F3-89AE-32A1CD4438B3}</Project>
       <Name>Domain.MainModule.Documentos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.MainModules.Entities\Domain.MainModules.Entities.csproj">
+      <Project>{6FA9FF63-4F79-4A9F-882C-7A7AE27C7332}</Project>
+      <Name>Domain.MainModules.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infraestructure.Data.Core\Infraestructure.Data.Core.csproj">
+      <Project>{2F2A8353-C22F-4312-8B04-FBA5923AE9E8}</Project>
+      <Name>Infraestructure.Data.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Infrastructure.CrossCutting\Infrastructure.CrossCutting.csproj">
       <Project>{1063AE74-49D5-4D8A-B6A3-2C38349F55BF}</Project>
