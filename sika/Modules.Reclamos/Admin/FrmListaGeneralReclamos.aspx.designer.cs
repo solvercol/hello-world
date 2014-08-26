@@ -13,13 +13,13 @@ namespace Modules.Reclamos.Admin {
     public partial class FrmListaGeneralReclamos {
         
         /// <summary>
-        /// upgeneral control.
+        /// Img1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upgeneral;
+        protected global::System.Web.UI.HtmlControls.HtmlImage Img1;
         
         /// <summary>
         /// pnlHeader control.
@@ -67,22 +67,76 @@ namespace Modules.Reclamos.Admin {
         protected global::System.Web.UI.WebControls.Panel PanelFiltro;
         
         /// <summary>
-        /// txtNombreCliente control.
+        /// txtNoReclamo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreCliente;
+        protected global::System.Web.UI.WebControls.TextBox txtNoReclamo;
         
         /// <summary>
-        /// txtCodigoCliente control.
+        /// txtCliente control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCodigoCliente;
+        protected global::System.Web.UI.WebControls.TextBox txtCliente;
+        
+        /// <summary>
+        /// txtProducto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtProducto;
+        
+        /// <summary>
+        /// txtServicio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtServicio;
+        
+        /// <summary>
+        /// wdpFiltroDateFrom control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox wdpFiltroDateFrom;
+        
+        /// <summary>
+        /// CalendarExtender2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.CalendarExtender CalendarExtender2;
+        
+        /// <summary>
+        /// wdpFiltroDateTo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox wdpFiltroDateTo;
+        
+        /// <summary>
+        /// CalendarExtender1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.CalendarExtender CalendarExtender1;
         
         /// <summary>
         /// btnFiltrar control.
@@ -94,15 +148,6 @@ namespace Modules.Reclamos.Admin {
         protected global::System.Web.UI.WebControls.Button btnFiltrar;
         
         /// <summary>
-        /// btnRemoveFilter control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRemoveFilter;
-        
-        /// <summary>
         /// CollapsiblePanelExtender1 control.
         /// </summary>
         /// <remarks>
@@ -110,6 +155,15 @@ namespace Modules.Reclamos.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.CollapsiblePanelExtender CollapsiblePanelExtender1;
+        
+        /// <summary>
+        /// upgeneral control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upgeneral;
         
         /// <summary>
         /// pnlNewReclamo control.
@@ -173,5 +227,23 @@ namespace Modules.Reclamos.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.ModalPopupExtender mpeNewReclamo;
+        
+        /// <summary>
+        /// pReporte control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pReporte;
+        
+        /// <summary>
+        /// rptReclamos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.Reporting.WebForms.ReportViewer rptReclamos;
     }
 }

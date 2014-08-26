@@ -11,6 +11,7 @@ using Presenters.Reclamos.IViews;
 using Presenters.Reclamos.Presenters;
 using Domain.MainModule.Reclamos.DTO;
 using Modules.Reclamos.UI;
+using ServerControls;
 
 namespace Modules.Reclamos.UserControls
 {
@@ -20,19 +21,7 @@ namespace Modules.Reclamos.UserControls
 
         private decimal _totalCostosProductoReclamo = 0;
         private decimal _totalCostosTransporte = 0;
-        private decimal _totalCostosDisposicion = 0;
-
-        public string PesoNetoProducto
-        {
-            get { return lblPesoNetoProducto.Text; }
-            set { lblPesoNetoProducto.Text = value; }
-        }
-
-        public string PrecioListaProducto
-        {
-            get { return lblPrecioListaProducto.Text; }
-            set { lblPrecioListaProducto.Text = value; }
-        }
+        private decimal _totalCostosDisposicion = 0;       
 
         #endregion
 
@@ -42,8 +31,6 @@ namespace Modules.Reclamos.UserControls
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ucFilterProduct.PostBackEvent += WucProductPostBackEvent;
-            ucFilterProduct.SelectProductoEvent += WucProductoSelectEvent;
         }
 
         public void LoadControlData()
@@ -78,6 +65,37 @@ namespace Modules.Reclamos.UserControls
             var idCosto = Convert.ToDecimal(btn.CommandArgument);
 
             Presenter.RemoveCostosReclamo(idCosto);
+        }
+
+        protected void BtnSearchProduct_Click(object sender, EventArgs e)
+        {
+            FilterText = string.Empty;
+            
+            ShowSelectProductWindow(true);
+        }
+
+        protected void BtnFiltrarClick(object sender, EventArgs e)
+        {
+            Presenter.LoadTotalProductos();
+            Presenter.LoadProductos(0);
+
+            ShowSelectProductWindow(true);
+        }
+
+        protected void BtnCancelFiltrarClick(object sender, EventArgs e)
+        {
+            ShowAdminProductoWindow(true);
+        }
+
+        protected void BtnSelect_Click(object sender, EventArgs e)
+        {
+            var imgButton = (ImageButton)sender;
+
+            var codigoProducto = imgButton.CommandArgument;
+
+            Presenter.SelectProduct(codigoProducto);
+
+            ShowAdminProductoWindow(true);
         }
 
         #endregion
@@ -130,22 +148,91 @@ namespace Modules.Reclamos.UserControls
             }
         }
 
+        protected void RptListadoProductoItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            var item = e.Item.DataItem as Dto_Producto;
+            if (item == null) return;
+
+            var litCodProducto = e.Item.FindControl("litCodProducto") as Literal;
+            if (litCodProducto != null)
+            {
+                litCodProducto.Text = item.CodigoProducto;
+            }
+
+            var litProducto = e.Item.FindControl("litProducto") as Literal;
+            if (litProducto != null)
+            {
+                litProducto.Text = item.Producto;
+            }
+
+            var litUnidad = e.Item.FindControl("litUnidad") as Literal;
+            if (litUnidad != null)
+            {
+                litUnidad.Text = item.Unidad;
+            }
+
+            var litPesoNeto = e.Item.FindControl("litPesoNeto") as Literal;
+            if (litPesoNeto != null)
+            {
+                litPesoNeto.Text = string.Format("{0:0,0.00}", item.PesoNeto);
+            }
+
+            var litPrecioLista = e.Item.FindControl("litPrecioLista") as Literal;
+            if (litPrecioLista != null)
+            {
+                litPrecioLista.Text = string.Format("{0:0,0.00}", item.PrecioLista);
+            }
+
+            var litTargetMarket = e.Item.FindControl("litTargetMarket") as Literal;
+            if (litTargetMarket != null)
+            {
+                litTargetMarket.Text = item.GrupoCompradores;
+            }
+
+            var litCampoAplicacion = e.Item.FindControl("litCampoAplicacion") as Literal;
+            if (litCampoAplicacion != null)
+            {
+                litCampoAplicacion.Text = item.CampoApl;
+            }
+
+            var litSubCampoAplicacion = e.Item.FindControl("litSubCampoAplicacion") as Literal;
+            if (litSubCampoAplicacion != null)
+            {
+                litSubCampoAplicacion.Text = item.Categoria;
+            }
+
+            var imgSelect = e.Item.FindControl("ImgSelect") as ImageButton;
+            if (imgSelect != null)
+            {
+                imgSelect.CommandArgument = string.Format("{0}", item.CodigoProducto);
+            }
+        }
+        
+        #endregion
+
+        #region Pager
+
+        protected void PgrListadoPageChanged(object sender, PageChanged e)
+        {
+            if (Filterevent != null)
+                Filterevent(e.CurrentPage, EventArgs.Empty);
+
+            ShowSelectProductWindow(true);
+        }
+
         #endregion
 
         #region TextBoxes
 
         protected void TxtUnidadesProductoTextChanged(object sender, EventArgs e)
         {
-            CostoProducto = (Convert.ToDecimal(PrecioListaProducto) * UnidadesProducto) - ((Convert.ToDecimal(PrecioListaProducto) * UnidadesProducto) * PorcentajeDescuento);
-            KilosProducto = (Convert.ToDecimal(PesoNetoProducto) * UnidadesProducto);
-
+            CheckCostosProductoSelect();
             ShowAdminProductoWindow(true);
         }
 
         protected void TxtUnidadesDisponerProductoTextChanged(object sender, EventArgs e)
         {
-            CostoDisponibleProducto = (Convert.ToDecimal(PesoNetoProducto) * UnidadesDisponerProducto) * ValorDisposicion;
-
+            CheckCostosDisponibilidadProductoSelect();
             ShowAdminProductoWindow(true);
         }
 
@@ -160,17 +247,6 @@ namespace Modules.Reclamos.UserControls
 
         #region Methods
 
-        void WucProductPostBackEvent()
-        {
-            mpeAdminCosto.Show();
-        }
-
-        void WucProductoSelectEvent(Dto_Producto producto)
-        {
-            PesoNetoProducto = string.Format("{0:0,0.0}", producto.PesoNeto);
-            PrecioListaProducto = string.Format("{0:0,0.0}", producto.PrecioLista);
-        }
-
         void InitAdminProducto()
         {
             PesoNetoProducto = string.Format("{0:0,0.0}", 0);
@@ -180,7 +256,9 @@ namespace Modules.Reclamos.UserControls
             CostoProducto = 0;
             CostoDisponibleProducto = 0;
             KilosProducto = 0;
-            ucFilterProduct.InitControl();
+            SelectedProduct = null;
+            NombreProducto = string.Empty;
+            FilterText = string.Empty;
         }
 
         void CheckTotales()
@@ -195,6 +273,21 @@ namespace Modules.Reclamos.UserControls
         #region View Members
 
         #region Methods
+
+        public void CheckCostosProductoSelect()
+        {
+            if (SelectedProduct == null) return;
+
+            CostoProducto = (Convert.ToDecimal(PrecioListaProducto) * UnidadesProducto) - ((Convert.ToDecimal(PrecioListaProducto) * UnidadesProducto) * PorcentajeDescuento);
+            KilosProducto = (Convert.ToDecimal(PesoNetoProducto) * UnidadesProducto);
+        }
+
+        public void CheckCostosDisponibilidadProductoSelect()
+        {
+            if (SelectedProduct == null) return;
+
+            CostoDisponibleProducto = (Convert.ToDecimal(PesoNetoProducto) * UnidadesDisponerProducto) * ValorDisposicion;
+        }
 
         public void ShowAdminProductoWindow(bool visible)
         {
@@ -220,9 +313,27 @@ namespace Modules.Reclamos.UserControls
             CheckTotales();
         }
 
+        public void LoadProructos(List<Dto_Producto> items)
+        {
+            rptListadoProducto.DataSource = items;
+            rptListadoProducto.DataBind();
+
+            lblNoRecords.Visible = !items.Any();
+        }
+
+        public void ShowSelectProductWindow(bool visible)
+        {
+            if (visible)
+                mpeSearchProducto.Show();
+            else
+                mpeSearchProducto.Hide();
+        }
+
         #endregion
 
-        #region Methods
+        #region Properties
+
+        public event EventHandler Filterevent;
 
         public TBL_Admin_Usuarios UserSession
         {
@@ -243,12 +354,26 @@ namespace Modules.Reclamos.UserControls
         {
             get
             {
-                return ucFilterProduct.SelectedProduct;
+                if (Session["AdminCostos_SelectedProducto"] == null)
+                    Session["AdminCostos_SelectedProducto"] = new Dto_Producto();
+                return Session["AdminCostos_SelectedProducto"] as Dto_Producto;
             }
             set
             {
-                ucFilterProduct.SelectedProduct = value;
+                Session["AdminCostos_SelectedProducto"] = value;
             }
+        }
+
+        public string PesoNetoProducto
+        {
+            get { return lblPesoNetoProducto.Text; }
+            set { lblPesoNetoProducto.Text = value; }
+        }
+
+        public string PrecioListaProducto
+        {
+            get { return lblPrecioListaProducto.Text; }
+            set { lblPrecioListaProducto.Text = value; }
         }
 
         public int UnidadesProducto
@@ -457,8 +582,42 @@ namespace Modules.Reclamos.UserControls
             }
         }
 
+        public string FilterText
+        {
+            get
+            {
+                return txtFilterProduct.Text;
+            }
+            set
+            {
+                txtFilterProduct.Text = value;
+            }
+        }
+
+        public string NombreProducto
+        {
+            get
+            {
+                return litNombreProductoSeleccionado.Text;
+            }
+            set
+            {
+                litNombreProductoSeleccionado.Text = value;
+            }
+        }
+
+        public int TotalRegistrosPaginador
+        {
+            set { pgrListado.RowCount = value; }
+        }
+
+        public int PageZise
+        {
+            get { return pgrListado.PageSize; }
+        }
+
         #endregion
 
-        #endregion    
+        #endregion        
     }
 }

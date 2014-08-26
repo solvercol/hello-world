@@ -64,6 +64,14 @@
     <Reference Include="Microsoft.Practices.Unity">
       <HintPath>..\ASP.NETCLIENTE\bin\Microsoft.Practices.Unity.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 10.0\ReportViewer\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 10.0\ReportViewer\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -137,6 +145,11 @@
     </Compile>
     <Compile Include="Admin\FrmReclamo.aspx.designer.cs">
       <DependentUpon>FrmReclamo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DS_Report.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Report.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReclamosModule.cs" />
@@ -368,6 +381,23 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Resources\ReportViewer\RptVistaGeneralReclamos.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataSets\DS_Report.xsc">
+      <DependentUpon>DS_Report.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DS_Report.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Report.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DS_Report.xss">
+      <DependentUpon>DS_Report.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
@@ -392,7 +422,8 @@
   </ProjectExtensions>
   <PropertyGroup>
     <PostBuildEvent>xcopy /s /y "$(TargetDir)Modules.Reclamos*.dll" "$(SolutionDir)"Web\bin\
-xcopy /s /y "$(ProjectDir)*.as?x" "$(SolutionDir)"Web\Pages\Modules\Reclamos\</PostBuildEvent>
+xcopy /s /y "$(ProjectDir)*.as?x" "$(SolutionDir)"Web\Pages\Modules\Reclamos\
+xcopy /s /y "$(ProjectDir)*.rdlc" "$(SolutionDir)"Web\Pages\Modules\Reclamos\</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
