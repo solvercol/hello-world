@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>.: PWC :.</title>
+    <title>.: SIKA :.</title>
     <link rel="stylesheet" type="text/css" href="Resources/Styles/Site.css"/>
 </head>
 <body style=" background-color:#2F323B;">
