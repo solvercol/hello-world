@@ -4,25 +4,7 @@
 
 <%@ Register    Assembly="Infragistics4.Web.v11.1, Version=11.1.20111.2238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb"
                 Namespace="Infragistics.Web.UI.EditorControls" TagPrefix="ig" %> 
-
-<%@ Register src="WUCFilterProduct.ascx" tagname="WucFilterProduct" tagprefix="ucFilterProduct" %> 
-
- <script language="javascript" type="text/javascript">
-     var divModal = 'DivModal';
-
-     function ShowSplashModal() {
-         var adiv = $get(divModal);
-         adiv.style.visibility = 'visible';
-     }
-</script>
-
-<div id="DivModal">
-    <div id="VentanaMensaje">
-        <div id="Msg">
-            <img id="Img1"  src="~/Resources/images/Barloading.gif" runat="server" alt="" />
-        </div>
-    </div>
-</div>
+<%@ Register TagPrefix="csc" Namespace="ServerControls" Assembly="ServerControls" %>
 
 <table width="100%">
     <tr class="SectionMainTitle">
@@ -34,7 +16,7 @@
         <td >
             <div style="padding:3px; text-align:right;">
                 <asp:Button ID="btnNuevoGasto" runat="server" Text="Adicionar Costo Producto" OnClick="BtnAddCosto_Click" />
-                <asp:Button ID="btnSaveCostos" runat="server" Text="Guardar Gastos Reclamo" OnClick="BtnSaveCostos_Click" OnClientClick="return ShowSplashModal();" />
+                <asp:Button ID="btnSaveCostos" runat="server" Text="Guardar Costos Reclamo" OnClick="BtnSaveCostos_Click" />
             </div>
         </td>
     </tr>
@@ -278,8 +260,26 @@
 
                 <td class="Separador"></td>
 
-                <td  style="width:80%">
-                    <ucFilterProduct:WucFilterProduct ID="ucFilterProduct" runat="server" ShowProductTable="false" />
+                <td  style="width:80%" class="Line">
+                    <table width="100%">
+                        <tr>
+                            <td style="width:95%; font-size:12pt; color:#000090;" align="left">
+                                <asp:Literal ID="litNombreProductoSeleccionado" runat="server"></asp:Literal>
+                            </td>
+                            <td style="width:2%;"></td>
+                                <td valign="middle" style="width:3%;" align="center">
+                                <asp:ImageButton 
+                                ID="ImgSearch" 
+                                BorderWidth="0" 
+                                BorderStyle="None" 
+                                CausesValidation="false" 
+                                runat="server" 
+                                ImageUrl="~/Resources/Images/LupaNegra.png" 
+                                OnClick="BtnSearchProduct_Click"
+                                />
+                            </td>
+                        </tr> 
+                    </table>
                 </td>
 
                 <td class="Separador"></td>
@@ -393,3 +393,123 @@ PopupControlID="pnlAdminCosto"
 BackgroundCssClass="ModalPopupBG"  DropShadow="true" 
 cancelcontrolid="divCloseAdminCosto"> 
 </ajaxToolkit:ModalPopupExtender>   
+
+
+
+
+<!-- ************************************************************************************** -->
+ <asp:Panel ID="pnlImgProducto"  runat="server" CssClass="popup_Container" Width="920" Height="350" style="display:none;">  
+
+    <div class="popup_Titlebar" id="Div1">
+        <div class="TitlebarLeft">
+            Buscar Producto
+        </div>
+    </div>
+
+    <div class="popup_Body">  
+                
+        <table width="100%" class="tblBuscador" cellpadding="0" cellspacing="0">            
+            <tr>
+                <td style="width:10%;" class="Etiquetas">
+                    Valor
+                </td>
+                <td class="Separador15"></td>
+                <td valign="middle" style="width:70%;" class="Line">
+                    <asp:TextBox ID="txtFilterProduct" runat="server" Width="90%" MaxLength="100" onKeyDown="return EnterEvent(event);" AutoPostBack="false"></asp:TextBox>                  
+                </td>
+                <td align="right" style="width:10%;">   
+                    <asp:Button ID="btnFiltrar" runat="server" CausesValidation="false" Text="Filtrar" OnClick="BtnFiltrarClick" />                                  
+                    <asp:Button ID="btnCancel" runat="server" CausesValidation="false" Text="Cancelar" OnClick="BtnCancelFiltrarClick" />   
+                </td>
+            </tr>
+        </table>
+
+        <asp:Panel ID="pnlContainerProductList" runat="server" Width="100%" Height="250px" ScrollBars="Vertical" >
+            <table id="tblListado" class="tbl" width="100%">
+		        <asp:repeater   id="rptListadoProducto" 
+                                runat="server" 
+                                OnItemDataBound="RptListadoProductoItemDataBound">
+			        <headertemplate>
+					    <tr>
+                            <th style="width:3%;">...</th>
+						    <th style="width:10%;">Cod.Producto</th>
+                            <th style="width:15%;">Producto</th> 
+                            <th style="width:8%;">Unidad</th>
+                            <th style="width:8%;">Peso.Neto</th>
+                            <th style="width:8%;">Precio.Lista</th>
+                            <th style="width:15%;">Target Market</th>
+                            <th style="width:20%;">Campo Aplicación</th>
+                            <th style="width:22%;">SubCampo Aplicación</th>
+                            <th style="width:1%;"></th>                        
+					    </tr>
+				    </headertemplate>
+				    <itemtemplate>
+					    <tr>
+                            <td align="center">
+                                <asp:ImageButton 
+                                ID="ImgSelect" CausesValidation="false"
+                                BorderStyle="None"
+                                ToolTip="Select"
+                                runat="server" 
+                                OnClick="BtnSelect_Click"
+                                ImageUrl="~/Resources/Images/select.png" />
+					        </td>
+						    <td align="center">
+                                <asp:Literal ID="litCodProducto" runat="server"></asp:Literal>
+                            </td>
+                            <td align="left">
+                                <asp:Literal ID="litProducto" runat="server"></asp:Literal>
+                            </td>
+                            <td align="center">
+                                <asp:Literal ID="litUnidad" runat="server"></asp:Literal>
+                            </td>
+                            <td align="right">
+                                <asp:Literal ID="litPesoNeto" runat="server"></asp:Literal>
+                            </td>
+                            <td align="right">
+                                <asp:Literal ID="litPrecioLista" runat="server"></asp:Literal>
+                            </td>
+                            <td align="left">
+                                <asp:Literal ID="litTargetMarket" runat="server"></asp:Literal>
+                            </td>
+
+                            <td align="left">
+                                <asp:Literal ID="litCampoAplicacion" runat="server"></asp:Literal>
+                            </td>
+
+                            <td align="left">
+                                <asp:Literal ID="litSubCampoAplicacion" runat="server"></asp:Literal>
+                            </td>
+
+                            <td>                            
+                            </td>
+                        				                   
+					    </tr>
+				    </itemtemplate>
+			    </asp:repeater>
+		    </table>
+        </asp:Panel>                           
+
+        <asp:Label ID="lblNoRecords" runat="server" Text="No Records" CssClass="validator" Visible="false"></asp:Label>
+        <div class="pager">
+			    <csc:PagerLinq
+                id="pgrListado" 
+                runat="server"
+                OnPageChanged="PgrListadoPageChanged"  
+                pagesize="100"></csc:PagerLinq>
+	    </div>
+
+    </div>
+</asp:Panel>
+    
+
+<asp:Button ID="btnTargetControlProducto" runat="server" style="display:none; "/>    
+
+<ajaxToolkit:ModalPopupExtender
+ID="mpeSearchProducto" 
+runat="server" 
+TargetControlID="btnTargetControlProducto" 
+PopupControlID="pnlImgProducto"
+BackgroundCssClass="ModalPopupBG" DropShadow="true"
+> 
+</ajaxToolkit:ModalPopupExtender>

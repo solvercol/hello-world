@@ -169,7 +169,7 @@ namespace Modules.Reclamos.UserControls
                 if (imgDeleteAnexo != null)
                 {
                     imgDeleteAnexo.CommandArgument = string.Format("{0}", item.Id);
-                    imgDeleteAnexo.Enabled = IsNewAlternativa;
+                    imgDeleteAnexo.Visible = IsNewAlternativa;
                 }
             }
         }

@@ -14,7 +14,7 @@
         <td class="Separador"></td>
 
         <td class="Line" style="width: 40%">
-            <asp:Label ID="lblAsesor" runat="server" Text="Label"></asp:Label>
+            <asp:Label ID="lblAsesor" runat="server" />
         </td>
 
         <td class="Separador"></td>
@@ -26,7 +26,7 @@
         <td class="Separador"></td>
 
         <td class="Line" style="width: 30%">
-            <asp:Label ID="lblPlanta" runat="server" Text="Label"></asp:Label>
+            <asp:Label ID="lblPlanta" runat="server" />
         </td>
 
     </tr>    
@@ -38,7 +38,7 @@
         <td class="Separador"></td>
 
         <td class="Line" >
-            <asp:Label ID="lblCantidadUnidadVendida" runat="server" Text="Label"></asp:Label>
+            <asp:Label ID="lblCantidadUnidadVendida" runat="server" />
         </td>
 
         <td class="Separador"></td>
@@ -50,7 +50,7 @@
         <td class="Separador"></td>
 
         <td class="Line" >
-           <asp:Label ID="lblCantidadReclamadaUnidad" runat="server" Text="Label"></asp:Label>
+           <asp:Label ID="lblCantidadReclamadaUnidad" runat="server" />
         </td>
 
     </tr>
@@ -62,7 +62,7 @@
         <td class="Separador"></td>
 
         <td class="Line" >
-            <asp:Label ID="lblAplicado" runat="server" Text="Label"></asp:Label>
+            <asp:Label ID="lblAplicado" runat="server" />
         </td>
 
         <td class="Separador"></td>
@@ -85,7 +85,7 @@
         <td class="Separador"></td>
 
         <td class="Line" >
-            <asp:Label ID="lblFechaVenta" runat="server" Text="Label"></asp:Label>          
+            <asp:Label ID="lblFechaVenta" runat="server" />
         </td>
 
         <td class="Separador"></td>
@@ -97,7 +97,7 @@
         <td class="Separador"></td>
 
         <td class="Line" >
-            <asp:Label ID="lblNoRecordatorios" runat="server" Text="Label"></asp:Label>
+            <asp:Label ID="lblNoRecordatorios" runat="server" />
         </td>
     </tr>
     <tr>
@@ -108,7 +108,7 @@
         <td class="Separador"></td>
 
         <td class="Line" >
-            <asp:Label ID="lblAtendidoPor" runat="server" Text="Label"></asp:Label>
+            <asp:Label ID="lblAtendidoPor" runat="server" />
         </td>
 
         <td class="Separador"></td>
@@ -120,7 +120,7 @@
         <td class="Separador"></td>
 
         <td class="Line" >
-            <asp:Label ID="lblTipoContacto" runat="server" Text="Label"></asp:Label>
+            <asp:Label ID="lblTipoContacto" runat="server" />
         </td>
 
     </tr>
@@ -132,7 +132,7 @@
         <td class="Separador"></td>
 
         <td class="Line" >
-            <asp:Label ID="lblRespuestaInmediata" runat="server" Text="Label"></asp:Label>
+            <asp:Label ID="lblRespuestaInmediata" runat="server" />
         </td>
 
         <td class="Separador"></td>
