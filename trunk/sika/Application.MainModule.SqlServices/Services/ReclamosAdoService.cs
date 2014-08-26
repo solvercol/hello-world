@@ -119,5 +119,28 @@ namespace Application.MainModule.SqlServices.Services
             var oreclamo = new Reclamos(_sql);
             return oreclamo.ResumenReclamosPanelWorkFlow(idReclamo);
         }
+
+        #region Vistas Y Reportes
+
+        public DataTable GetVistaGeneralReclamos(DateTime from, DateTime end, string serverHost, string moduleId)
+        {
+            try
+            {
+                string strSql = "Vistas_VistaGeneralReclamos";
+                var result = _sql.ExecuteDataTable(strSql, CommandType.StoredProcedure
+                                       , new SqlParameter("@dateFrom", from)
+                                       , new SqlParameter("@dateEnd", end)
+                                       , new SqlParameter("@ServerHostPath", serverHost)
+                                       , new SqlParameter("@ModuleId", moduleId));
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new SqlExecutionException("Vistas_VistaGeneralReclamos", ex);
+            }
+        }
+
+        #endregion
     }
 }
