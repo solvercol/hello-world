@@ -42,6 +42,12 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
         IObjectSet<TBL_Admin_EstadosProceso> TBL_Admin_EstadosProceso{get;}
         
     
+        IObjectSet<TBL_Admin_ModuleRepository> TBL_Admin_ModuleRepository{get;}
+        
+    
+        IObjectSet<TBL_Admin_ModuleService> TBL_Admin_ModuleService{get;}
+        
+    
         IObjectSet<TBL_Admin_ModuleType> TBL_Admin_ModuleType{get;}
         
     
@@ -54,6 +60,9 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
         IObjectSet<TBL_Admin_Monedas> TBL_Admin_Monedas{get;}
         
     
+        IObjectSet<TBL_Admin_OpcionesMenu> TBL_Admin_OpcionesMenu{get;}
+        
+    
         IObjectSet<TBL_Admin_OptionList> TBL_Admin_OptionList{get;}
         
     
@@ -64,33 +73,6 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
         
     
         IObjectSet<TBL_Admin_Plantillas> TBL_Admin_Plantillas{get;}
-        
-    
-        IObjectSet<TBL_ModuloPlanAccion_BancoActividades> TBL_ModuloPlanAccion_BancoActividades{get;}
-        
-    
-        IObjectSet<TBL_ModuloPlanAccion_Categorias> TBL_ModuloPlanAccion_Categorias{get;}
-        
-    
-        IObjectSet<TBL_ModuloPlanAccion_ConfiguracionActividades> TBL_ModuloPlanAccion_ConfiguracionActividades{get;}
-        
-    
-        IObjectSet<TBL_ModuloWorkFlow_CamposValidacion> TBL_ModuloWorkFlow_CamposValidacion{get;}
-        
-    
-        IObjectSet<TBL_ModuloWorkFlow_Rutas> TBL_ModuloWorkFlow_Rutas{get;}
-        
-    
-        IObjectSet<TBL_ModuloWorkFlow_ValidacionesSalida> TBL_ModuloWorkFlow_ValidacionesSalida{get;}
-        
-    
-        IObjectSet<TBL_Admin_ModuleRepository> TBL_Admin_ModuleRepository{get;}
-        
-    
-        IObjectSet<TBL_Admin_ModuleService> TBL_Admin_ModuleService{get;}
-        
-    
-        IObjectSet<TBL_Admin_OpcionesMenu> TBL_Admin_OpcionesMenu{get;}
         
     
         IObjectSet<TBL_Admin_Roles> TBL_Admin_Roles{get;}
@@ -129,6 +111,15 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
         IObjectSet<TBL_ModuloDocumentos_LogCambios> TBL_ModuloDocumentos_LogCambios{get;}
         
     
+        IObjectSet<TBL_ModuloPlanAccion_BancoActividades> TBL_ModuloPlanAccion_BancoActividades{get;}
+        
+    
+        IObjectSet<TBL_ModuloPlanAccion_Categorias> TBL_ModuloPlanAccion_Categorias{get;}
+        
+    
+        IObjectSet<TBL_ModuloPlanAccion_ConfiguracionActividades> TBL_ModuloPlanAccion_ConfiguracionActividades{get;}
+        
+    
         IObjectSet<TBL_ModuloReclamos_Actividades> TBL_ModuloReclamos_Actividades{get;}
         
     
@@ -165,6 +156,9 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
         IObjectSet<TBL_ModuloReclamos_CostosProducto> TBL_ModuloReclamos_CostosProducto{get;}
         
     
+        IObjectSet<TBL_ModuloReclamos_LogReclamos> TBL_ModuloReclamos_LogReclamos{get;}
+        
+    
         IObjectSet<TBL_ModuloReclamos_Reclamo> TBL_ModuloReclamos_Reclamo{get;}
         
     
@@ -172,6 +166,9 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
         
     
         IObjectSet<TBL_ModuloReclamos_TipoReclamo> TBL_ModuloReclamos_TipoReclamo{get;}
+        
+    
+        IObjectSet<TBL_ModuloReclamos_Tracking> TBL_ModuloReclamos_Tracking{get;}
         
     
         IObjectSet<TBL_ModuloReclamos_Unidad> TBL_ModuloReclamos_Unidad{get;}
@@ -183,10 +180,13 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
         IObjectSet<TBL_ModuloReclamos_Zona> TBL_ModuloReclamos_Zona{get;}
         
     
-        IObjectSet<TBL_ModuloReclamos_Tracking> TBL_ModuloReclamos_Tracking{get;}
+        IObjectSet<TBL_ModuloWorkFlow_CamposValidacion> TBL_ModuloWorkFlow_CamposValidacion{get;}
         
     
-        IObjectSet<TBL_ModuloReclamos_LogReclamos> TBL_ModuloReclamos_LogReclamos{get;}
+        IObjectSet<TBL_ModuloWorkFlow_Rutas> TBL_ModuloWorkFlow_Rutas{get;}
+        
+    
+        IObjectSet<TBL_ModuloWorkFlow_ValidacionesSalida> TBL_ModuloWorkFlow_ValidacionesSalida{get;}
         
 
         #endregion
