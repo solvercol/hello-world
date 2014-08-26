@@ -21,6 +21,7 @@ namespace Domain.MainModules.Entities
 {
     [DataContract(IsReference = true)]
     [KnownType(typeof(TBL_Admin_Usuarios))]
+    [KnownType(typeof(TBL_ModuloReclamos_Reclamo))]
     [KnownType(typeof(TBL_ModuloReclamos_AnexosAlternativa))]
     
     public partial class TBL_ModuloReclamos_Alternativas: IObjectWithChangeTracker, INotifyPropertyChanged
@@ -54,6 +55,14 @@ namespace Domain.MainModules.Entities
             {
                 if (_idReclamo != value)
                 {
+                    ChangeTracker.RecordOriginalValue("IdReclamo", _idReclamo);
+                    if (!IsDeserializing)
+                    {
+                        if (TBL_ModuloReclamos_Reclamo != null && TBL_ModuloReclamos_Reclamo.IdReclamo != value)
+                        {
+                            TBL_ModuloReclamos_Reclamo = null;
+                        }
+                    }
                     _idReclamo = value;
                     OnPropertyChanged("IdReclamo");
                 }
@@ -320,6 +329,23 @@ namespace Domain.MainModules.Entities
         private TBL_Admin_Usuarios _tBL_Admin_Usuarios2;
     
         [DataMember]
+        public TBL_ModuloReclamos_Reclamo TBL_ModuloReclamos_Reclamo
+        {
+            get { return _tBL_ModuloReclamos_Reclamo; }
+            set
+            {
+                if (!ReferenceEquals(_tBL_ModuloReclamos_Reclamo, value))
+                {
+                    var previousValue = _tBL_ModuloReclamos_Reclamo;
+                    _tBL_ModuloReclamos_Reclamo = value;
+                    FixupTBL_ModuloReclamos_Reclamo(previousValue);
+                    OnNavigationPropertyChanged("TBL_ModuloReclamos_Reclamo");
+                }
+            }
+        }
+        private TBL_ModuloReclamos_Reclamo _tBL_ModuloReclamos_Reclamo;
+    
+        [DataMember]
         public TrackableCollection<TBL_ModuloReclamos_AnexosAlternativa> TBL_ModuloReclamos_AnexosAlternativa
         {
             get
@@ -435,6 +461,7 @@ namespace Domain.MainModules.Entities
             TBL_Admin_Usuarios = null;
             TBL_Admin_Usuarios1 = null;
             TBL_Admin_Usuarios2 = null;
+            TBL_ModuloReclamos_Reclamo = null;
             TBL_ModuloReclamos_AnexosAlternativa.Clear();
         }
 
@@ -554,6 +581,45 @@ namespace Domain.MainModules.Entities
                 if (TBL_Admin_Usuarios2 != null && !TBL_Admin_Usuarios2.ChangeTracker.ChangeTrackingEnabled)
                 {
                     TBL_Admin_Usuarios2.StartTracking();
+                }
+            }
+        }
+    
+        private void FixupTBL_ModuloReclamos_Reclamo(TBL_ModuloReclamos_Reclamo previousValue)
+        {
+            if (IsDeserializing)
+            {
+                return;
+            }
+    
+            if (previousValue != null && previousValue.TBL_ModuloReclamos_Alternativas.Contains(this))
+            {
+                previousValue.TBL_ModuloReclamos_Alternativas.Remove(this);
+            }
+    
+            if (TBL_ModuloReclamos_Reclamo != null)
+            {
+                if (!TBL_ModuloReclamos_Reclamo.TBL_ModuloReclamos_Alternativas.Contains(this))
+                {
+                    TBL_ModuloReclamos_Reclamo.TBL_ModuloReclamos_Alternativas.Add(this);
+                }
+    
+                IdReclamo = TBL_ModuloReclamos_Reclamo.IdReclamo;
+            }
+            if (ChangeTracker.ChangeTrackingEnabled)
+            {
+                if (ChangeTracker.OriginalValues.ContainsKey("TBL_ModuloReclamos_Reclamo")
+                    && (ChangeTracker.OriginalValues["TBL_ModuloReclamos_Reclamo"] == TBL_ModuloReclamos_Reclamo))
+                {
+                    ChangeTracker.OriginalValues.Remove("TBL_ModuloReclamos_Reclamo");
+                }
+                else
+                {
+                    ChangeTracker.RecordOriginalValue("TBL_ModuloReclamos_Reclamo", previousValue);
+                }
+                if (TBL_ModuloReclamos_Reclamo != null && !TBL_ModuloReclamos_Reclamo.ChangeTracker.ChangeTrackingEnabled)
+                {
+                    TBL_ModuloReclamos_Reclamo.StartTracking();
                 }
             }
         }
