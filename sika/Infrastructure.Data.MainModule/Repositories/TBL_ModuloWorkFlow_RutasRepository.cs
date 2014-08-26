@@ -52,6 +52,7 @@ namespace Infrastructure.Data.MainModule.Repositories
                 return activeContext.TBL_ModuloWorkFlow_Rutas
                                     .Include(r => r.TBL_Admin_EstadosProceso) //Estado Origen
                                     .Include(r => r.TBL_Admin_EstadosProceso1) //Estado Destino
+                                    .Include(x=> x.TBL_ModuloWorkFlow_ValidacionesSalida)
                                     .Where(specific)
                                     .ToList();
             }

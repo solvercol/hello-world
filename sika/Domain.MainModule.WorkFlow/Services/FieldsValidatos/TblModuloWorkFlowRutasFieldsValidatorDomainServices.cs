@@ -107,6 +107,8 @@ namespace Domain.MainModule.WorkFlow.Services.FieldsValidatos
                     value = Convert.ToBoolean(property.Value) ? "SI" : "NO";
                 else if (property.Value == null)
                     value = string.Empty;
+                else
+                    value = property.Value.ToString();
 
                 strNewExpresion = Regex.Replace(strNewExpresion, patternField, value);
             }
