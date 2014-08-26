@@ -9,6 +9,7 @@ using Application.MainModule.SqlServices.Services;
 using Applications.MainModule.Admin.IServices;
 using Applications.MainModule.Admin.Services;
 using Domain.MainModule.Contracts;
+using Domain.MainModule.Reclamos.Services;
 using Domain.MainModule.WorkFlow.Services.FieldsValidatos;
 using Domain.MainModule.WorkFlow.Services.WorkFlow;
 using Infraestructure.CrossCutting.Security.IServices;
@@ -142,7 +143,10 @@ namespace Infrastructure.CrossCutting.IoC
             #endregion
 
             #region Servicios Capa de Dominio
+            //Reclamos
+            container.RegisterType<ITBL_Moduloreclamos_ReclamoDomainServices, TBL_Moduloreclamos_ReclamoDomainServices>(new TransientLifetimeManager());
 
+            //WorkFlow
             container.RegisterType<ITblModuloWorkFlowRutasFieldsValidatorDomainServices, TblModuloWorkFlowRutasFieldsValidatorDomainServices>(new TransientLifetimeManager());
             container.RegisterType<ITblModuloWorkFlowRutaDomainServices, TblModuloWorkFlowRutaDomainServices>(new TransientLifetimeManager());
             #endregion

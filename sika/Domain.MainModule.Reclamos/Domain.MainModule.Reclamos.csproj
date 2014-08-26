@@ -52,9 +52,11 @@
     <Compile Include="Contracts\ITBL_ModuloReclamos_CategoriasReclamoRepository.cs" />
     <Compile Include="Contracts\ITBL_ModuloReclamos_ComentariosRespuestaRepository.cs" />
     <Compile Include="Contracts\ITBL_ModuloReclamos_CostosProductoRepository.cs" />
+    <Compile Include="Contracts\ITBL_ModuloReclamos_LogReclamosRepository.cs" />
     <Compile Include="Contracts\ITBL_ModuloReclamos_ReclamoRepository.cs" />
     <Compile Include="Contracts\ITBL_ModuloReclamos_SolucionesRepository.cs" />
     <Compile Include="Contracts\ITBL_ModuloReclamos_TipoReclamoRepository.cs" />
+    <Compile Include="Contracts\ITBL_ModuloReclamos_TrackingRepository.cs" />
     <Compile Include="Contracts\ITBL_ModuloReclamos_UnidadesZonasRepository.cs" />
     <Compile Include="Contracts\ITBL_ModuloReclamos_UnidadRepository.cs" />
     <Compile Include="Contracts\ITBL_ModuloReclamos_ZonaRepository.cs" />
@@ -63,6 +65,8 @@
     <Compile Include="DTO\Dto_Producto.cs" />
     <Compile Include="Enum\TipoReclamo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ITBL_Moduloreclamos_ReclamoDomainServices.cs" />
+    <Compile Include="Services\TBL_Moduloreclamos_ReclamoDomainServices.cs" />
     <Compile Include="Spec\TBL_ModuloReclamos_Asesores_Spec.cs" />
     <Compile Include="Spec\TBL_ModuloReclamos_CategoriasReclamo_Spec.cs" />
     <Compile Include="Spec\TBL_ModuloReclamos_Reclamo_Spec.cs" />
@@ -79,6 +83,14 @@
     <ProjectReference Include="..\Domain.MainModules.Entities\Domain.MainModules.Entities.csproj">
       <Project>{6FA9FF63-4F79-4A9F-882C-7A7AE27C7332}</Project>
       <Name>Domain.MainModules.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infraestructure.CrossCutting.Security\Infraestructure.CrossCutting.Security.csproj">
+      <Project>{7011AA17-8384-4B9E-94FE-AB09A2529790}</Project>
+      <Name>Infraestructure.CrossCutting.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure.CrossCutting.NetFramework\Infrastructure.CrossCutting.NetFramework.csproj">
+      <Project>{21EBA478-507F-45AF-B1CC-619578E8FA8B}</Project>
+      <Name>Infrastructure.CrossCutting.NetFramework</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

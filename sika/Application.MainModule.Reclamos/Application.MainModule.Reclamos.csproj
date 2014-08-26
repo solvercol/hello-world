@@ -52,9 +52,11 @@
     <Compile Include="IServices\ITBLModuloReclamosCategoriasReclamoManagementServices.cs" />
     <Compile Include="IServices\ITBLModuloReclamosComentariosRespuestaManagementServices.cs" />
     <Compile Include="IServices\ITBLModuloReclamosCostosProductoManagementServices.cs" />
+    <Compile Include="IServices\ITBLModuloReclamosLogReclamosManagementServices.cs" />
     <Compile Include="IServices\ITBLModuloReclamosReclamoManagementServices.cs" />
     <Compile Include="IServices\ITBLModuloReclamosSolucionesManagementServices.cs" />
     <Compile Include="IServices\ITBLModuloReclamosTipoReclamoManagementServices.cs" />
+    <Compile Include="IServices\ITBLModuloReclamosTrackingManagementServices.cs" />
     <Compile Include="IServices\ITBLModuloReclamosUnidadesZonasManagementServices.cs" />
     <Compile Include="IServices\ITBLModuloReclamosUnidadManagementServices.cs" />
     <Compile Include="IServices\ITBLModuloReclamosZonaManagementServices.cs" />
@@ -76,9 +78,11 @@
     <Compile Include="Services\TBLModuloReclamosCategoriasReclamoManagementServices.cs" />
     <Compile Include="Services\TBLModuloReclamosComentariosRespuestaManagementServices.cs" />
     <Compile Include="Services\TBLModuloReclamosCostosProductoManagementServices.cs" />
+    <Compile Include="Services\TBLModuloReclamosLogReclamosManagementServices.cs" />
     <Compile Include="Services\TBLModuloReclamosReclamoManagementServices.cs" />
     <Compile Include="Services\TBLModuloReclamosSolucionesManagementServices.cs" />
     <Compile Include="Services\TBLModuloReclamosTipoReclamoManagementServices.cs" />
+    <Compile Include="Services\TBLModuloReclamosTrackingManagementServices.cs" />
     <Compile Include="Services\TBLModuloReclamosUnidadesZonasManagementServices.cs" />
     <Compile Include="Services\TBLModuloReclamosUnidadManagementServices.cs" />
     <Compile Include="Services\TBLModuloReclamosZonaManagementServices.cs" />
