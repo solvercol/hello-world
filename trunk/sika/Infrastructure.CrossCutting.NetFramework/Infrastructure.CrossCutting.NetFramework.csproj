@@ -55,6 +55,7 @@
     <Compile Include="Enums\EstadosAplicacion.cs" />
     <Compile Include="Enums\Logtype.cs" />
     <Compile Include="Enums\ModulosAplicacion.cs" />
+    <Compile Include="Extensions\DataTableHelpers.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Logging\TraceManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

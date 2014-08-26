@@ -191,7 +191,7 @@ namespace Presenters.Reclamos.Presenters
         {
             var model = new TBL_ModuloReclamos_CostosProducto();
 
-            model.IdReclamo = Convert.ToDecimal(View.IdReclamo);
+            model.IdReclamo = Convert.ToInt32(View.IdReclamo);
             model.NumItem = 0;
             model.CodigoProducto = View.SelectedProduct.CodigoProducto;
             model.NombreProducto = View.SelectedProduct.Producto;

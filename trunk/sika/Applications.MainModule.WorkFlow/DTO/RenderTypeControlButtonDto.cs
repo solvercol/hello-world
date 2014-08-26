@@ -24,7 +24,7 @@ namespace Applications.MainModule.WorkFlow.DTO
         public string EmailCurrentResponsibe { get; set; }
 
         public string IdCurrentResponsibe { get; set; }
-        
+
         /// <summary>
         /// Propiedad que permite identificar si el WF se ejecutó de forma apropiada o presento algun error tanto en la validación como en la ejecución
         /// de alguno de sus métodos.
@@ -44,7 +44,7 @@ namespace Applications.MainModule.WorkFlow.DTO
         /// <summary>
         /// Diccionario que permite enviar al servicios lo capturado por la ventana "InputParameters" etiquetado con el Key y su valor respectivo
         /// </summary>
-        public readonly Dictionary<string ,string > Parameters = new Dictionary<string, string>();
+        public Dictionary<string, string> Parameters = new Dictionary<string, string>();
     }
 
 }

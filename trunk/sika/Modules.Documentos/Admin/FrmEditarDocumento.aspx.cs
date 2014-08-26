@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
-using System.Linq;
 using System.Web;
 using System.Web.Services;
 using System.Web.UI.WebControls;
@@ -43,14 +42,14 @@ namespace Modules.Documentos.Admin
 
         private void HacerVisibleBotonesSegunEstado()
         {
-            ISfTBL_ModuloDocumentos_DocumentoManagementServices _documentoServices;
-            ISfTBL_ModuloDocumentos_EstadosManagementServices _estadoServices;
+            ISfTBL_ModuloDocumentos_DocumentoManagementServices documentoServices;
+            ISfTBL_ModuloDocumentos_EstadosManagementServices estadoServices;
             if (IdDocumento != 0)
             {
-                _documentoServices = IoC.Resolve<ISfTBL_ModuloDocumentos_DocumentoManagementServices>();
-                _estadoServices = IoC.Resolve<ISfTBL_ModuloDocumentos_EstadosManagementServices>();
-                var documento = _documentoServices.FindById(IdDocumento);
-                var estado = _estadoServices.FindById(documento.IdEstado.GetValueOrDefault());
+                documentoServices = IoC.Resolve<ISfTBL_ModuloDocumentos_DocumentoManagementServices>();
+                estadoServices = IoC.Resolve<ISfTBL_ModuloDocumentos_EstadosManagementServices>();
+                var documento = documentoServices.FindById(IdDocumento);
+                var estado = estadoServices.FindById(documento.IdEstado.GetValueOrDefault());
 
                 btnPublicar.Visible = estado.Codigo.Equals("EN_EDICION");
                 btnCancelar.Visible = !estado.Codigo.Equals("CANCELADO");
@@ -448,18 +447,18 @@ namespace Modules.Documentos.Admin
         [WebMethod]
         public static void DespuesDeDigitarCategoria(string Categoria, string Contenido)
         {
-            ISfTBL_ModuloDocumentos_CategoriasManagementServices _categoriasServices;
+            ISfTBL_ModuloDocumentos_CategoriasManagementServices categoriasServices;
             TBL_ModuloDocumentos_Categorias categoria = null;
             try
             {
-                _categoriasServices = IoC.Resolve<ISfTBL_ModuloDocumentos_CategoriasManagementServices>();
+                categoriasServices = IoC.Resolve<ISfTBL_ModuloDocumentos_CategoriasManagementServices>();
                 switch (Categoria)
                 {
                     case "Categoria":
                         {
                             if (IdCategoriaSession == null)
                                 break;
-                            categoria = _categoriasServices.FindById(Convert.ToInt32(IdCategoriaSession));
+                            categoria = categoriasServices.FindById(Convert.ToInt32(IdCategoriaSession));
                             if (!categoria.Nombre.ToLower().Equals(Contenido.ToLower()))
                                 IdCategoriaSession = null;
                             break;
@@ -468,7 +467,7 @@ namespace Modules.Documentos.Admin
                         {
                             if (IdSubCategoriaSession == null)
                                 break;
-                            categoria = _categoriasServices.FindById(Convert.ToInt32(IdSubCategoriaSession));
+                            categoria = categoriasServices.FindById(Convert.ToInt32(IdSubCategoriaSession));
                             if (!categoria.Nombre.ToLower().Equals(Contenido.ToLower()))
                                 IdSubCategoriaSession = null;
                             break;
@@ -477,7 +476,7 @@ namespace Modules.Documentos.Admin
                         {
                             if (IdTipoDocumentoSession == null)
                                 break;
-                            categoria = _categoriasServices.FindById(Convert.ToInt32(IdTipoDocumentoSession));
+                            categoria = categoriasServices.FindById(Convert.ToInt32(IdTipoDocumentoSession));
                             if (!categoria.Nombre.ToLower().Equals(Contenido.ToLower()))
                                 IdTipoDocumentoSession = null;
                             break;
@@ -499,19 +498,19 @@ namespace Modules.Documentos.Admin
             get { return ModuleId; }
         }
 
-        protected void lnkBtnArchivo_Click(object sender, EventArgs e)
+        protected void LnkBtnArchivoClick(object sender, EventArgs e)
         {
-            LinkButton lnkBtnArchivo = (LinkButton) sender;
+            var lnkBtnArchivo = (LinkButton) sender;
             if (DescargarArchivoEvent != null)
                 DescargarArchivoEvent(Convert.ToInt32(lnkBtnArchivo.CommandArgument), EventArgs.Empty);
         }
 
-        protected void ImgBtnEliminar_Click(object sender, System.Web.UI.ImageClickEventArgs e)
+        protected void ImgBtnEliminarClick(object sender, System.Web.UI.ImageClickEventArgs e)
         {
             EstaAdjuntandoOEliminando = true;
-            ImageButton ImgBtnEliminar = (ImageButton) sender;
+            var imgBtnEliminar = (ImageButton) sender;
             if (EliminarAdjuntoEvent != null)
-                EliminarAdjuntoEvent(ImgBtnEliminar.CommandArgument, EventArgs.Empty);
+                EliminarAdjuntoEvent(imgBtnEliminar.CommandArgument, EventArgs.Empty);
         }
 
         protected void BtnAdjuntarClick(object sender, EventArgs e)

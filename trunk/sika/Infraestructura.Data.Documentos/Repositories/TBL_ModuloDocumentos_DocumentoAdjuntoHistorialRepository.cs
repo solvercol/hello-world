@@ -10,9 +10,9 @@
 #pragma warning disable 1591 // this is for supress no xml comments in public members warnings 
 
 using Domain.MainModule.Documentos.Contracts;
+using Domain.MainModules.Entities;
 using Infraestructure.Data.Core;
 using Infrastructure.CrossCutting.Logging;
-using Domain.MainModules.Entities;
 using Infrastructure.Data.MainModule.UnitOfWork;
 
 namespace Infraestructura.Data.Documentos.Repositories

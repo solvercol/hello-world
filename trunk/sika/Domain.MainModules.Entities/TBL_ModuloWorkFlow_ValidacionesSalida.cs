@@ -187,6 +187,21 @@ namespace Domain.MainModules.Entities
             }
         }
         private Nullable<System.DateTime> _modifiedOn;
+    
+        [DataMember]
+        public Nullable<bool> Ejecutar
+        {
+            get { return _ejecutar; }
+            set
+            {
+                if (_ejecutar != value)
+                {
+                    _ejecutar = value;
+                    OnPropertyChanged("Ejecutar");
+                }
+            }
+        }
+        private Nullable<bool> _ejecutar;
 
         #endregion
         #region Navigation Properties

@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Web.Management;
+using Application.MainModule.SqlServices.Domain;
 using Application.MainModule.SqlServices.IServices;
 using Domain.MainModule.Reclamos.DTO;
 using Infraestructure.Data.Core;
+using SqlHelper = Application.MainModule.SqlServices.Domain.SqlHelper;
 
 namespace Application.MainModule.SqlServices.Services
 {
@@ -81,7 +83,6 @@ namespace Application.MainModule.SqlServices.Services
             return item;
         }
 
-
         public void InsertUsuarioCopiaActividades(string idUsuario, string idActividad)
         {
             var sql = string.Format("insert into TBL_ModuloReclamos_UsuariosCopiaActividades(IdUsuario,IdActividad) values({0},{1})", idUsuario, idActividad);
@@ -93,6 +94,30 @@ namespace Application.MainModule.SqlServices.Services
             {
                 throw new SqlExecutionException("InsertUsuarioCopiaActividades", ex);
             }
+        }
+
+        public string EstadoReclamo(string idreclamo)
+        {
+            var oreclamo = new Reclamos(_sql);
+            return oreclamo.EstadoReclamo(idreclamo);
+        }
+
+        public DataTable GetReclamoWorkFlowById(string idReclamo)
+        {
+            var oreclamo = new Reclamos(_sql);
+            return oreclamo.GetReclamoWorkFlowById(idReclamo);
+        }
+
+        public string EjecutarSpToBool(string spName, Dictionary<string ,string > parametros)
+        {
+            var help = new SqlHelper(_sql);
+            return help.EjecutarScalarSp(spName, parametros);
+        }
+
+        public  DataTable ResumenReclamosPanelWorkFlow(string idReclamo)
+        {
+            var oreclamo = new Reclamos(_sql);
+            return oreclamo.ResumenReclamosPanelWorkFlow(idReclamo);
         }
     }
 }

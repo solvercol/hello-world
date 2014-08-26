@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
+using Application.Core;
+using Applications.MainModule.WorkFlow.DTO;
 using ASP.NETCLIENTE.UI;
 using Domain.MainModules.Entities;
-using Infrastructure.CrossCutting.IoC;
+using Modules.Reclamos.UserControls;
 using Presenters.Reclamos.IViews;
 using Presenters.Reclamos.Presenters;
 using Modules.Reclamos.UI;
@@ -43,16 +43,66 @@ namespace Modules.Reclamos.Admin
             LoadUserControl();
         }
 
+        protected override void OnInit(EventArgs e)
+        {
+            SystemActionsEvent += ReclamoSystemActionsEvent;
+            base.OnInit(e);
+        }
+
+        void ReclamoSystemActionsEvent(object sender, ViewResulteventArgs e)
+        {
+            if (e.MessageView == null) return;
+
+
+            if (e.MessageView.ToString() == "UpdatePanel")
+            {
+                //todo: Bloque de código que se encargará de actuaizar el panel de resumen cuando el WF termine el paso..
+                //WucPanelEstado1.ActualizarPanelResumen();
+                //if (RefreshEvent != null)
+                //    RefreshEvent(null, EventArgs.Empty);
+            }
+            else
+            {
+                var oDocument = (RenderTypeControlButtonDto)e.MessageView;
+                if (oDocument.MessagesError != null)
+                {
+                    if (oDocument.MessagesError.Count > 0)
+                    {
+                        LastLoadedControlMessages = string.Format("{0}WucRenderMessagesError.ascx", ROOTUC);
+                        LoadUserControlVentanaMensajes(oDocument.MessagesError);
+                        pnlVentanaEmergente.Width = 550;
+                        pnlVentanaEmergente.Height = 200;
+                        litTitulo.Text = @"Resultado del proceso de validación.";
+                        mpeVentanaEmergente.Show();
+                    }
+                }
+                else if (oDocument.OutputParameters.Count > 0)
+                {
+                    //todo: se ´puede invocar un WUC para  recibir parámetros y ejecutar en un segundo paso el WF
+
+                    //var ventana = oDocument.OutputParameters[0];
+                    //switch (ventana)
+                    //{
+                    //    case "FechaEntrega":
+                    //        litTitulo.Text = @"Ingrese la Fecha de Entrega.";
+                    //        LoadUserControlVentanaMensajes(null);
+                    //        mpeVentanaEmergente.Show();
+                    //        break;
+                    //}
+                }
+            }
+            
+        }
         #endregion
 
         #region Buttons
 
-        protected void BtnRegresar_Click(object sender, EventArgs e)
+        protected void BtnRegresarClick(object sender, EventArgs e)
         {
             Response.Redirect(string.Format("FrmListaGeneralReclamos.aspx?ModuleId={0}", ModuleId));
         }
 
-        protected void BtnEditReclamo_Click(object sender, EventArgs e)
+        protected void BtnEditReclamoClick(object sender, EventArgs e)
         {
             if (TipoReclamo == "Producto")
             {
@@ -107,6 +157,33 @@ namespace Modules.Reclamos.Admin
                 ((IReclamoWebUserControl)uc).LoadControlData();
         }
 
+        private void LoadUserControlVentanaMensajes(IEnumerable<string> items)
+        {
+            var controlPath = LastLoadedControlMessages;
+
+            if (string.IsNullOrEmpty(controlPath))
+            {
+                //controlPath = "WucFechaEntrega.ascx";
+                return;
+            }
+            if (string.IsNullOrEmpty(controlPath)) return;
+            phlVentanaMensajes.Controls.Clear();
+            var uc = LoadControl(controlPath);
+            uc.ID = "UcRender";
+            phlVentanaMensajes.Controls.Add(uc);
+
+            if (items != null)
+            {
+                if (controlPath.Contains("WucRenderMessagesError"))
+                {
+                    var bl = this.GetUserControl<WucRenderMessagesError>("UcRender", "phlVentanaMensajes");
+                   if (bl != null)
+                   {
+                      bl.RenderMessages(items);
+                   }
+                }
+            }
+        }
         #endregion
 
         #region View Members
@@ -157,6 +234,18 @@ namespace Modules.Reclamos.Admin
         #endregion
 
         #region Properties
+
+        private string LastLoadedControlMessages
+        {
+            get
+            {
+                return ViewState["LastLoadedControlMessages"] as string;
+            }
+            set
+            {
+                ViewState["LastLoadedControlMessages"] = value;
+            }
+        }
 
         public TBL_Admin_Usuarios UserSession
         {

@@ -18,7 +18,7 @@ namespace ASP.NETCLIENTE.UI
         where TPresenter : Presenter<TView>
         where TView : class
     {
-       
+
         private Literal TitulosVentana
         {
             get { return Page.Master != null ? Page.Master.FindControl("PageTitleLabel") as Literal : null; }
@@ -43,19 +43,12 @@ namespace ASP.NETCLIENTE.UI
             LogError(e.NombreMetodo, AuthenticatedUser.Nombres, new Uri(GetUrl, UriKind.RelativeOrAbsolute), e.Error);
         }
 
-      
+
         private static string GetUrl
         {
             get { return HttpContext.Current.Request.AppRelativeCurrentExecutionFilePath; }
 
         }
-
-        public bool IsLoadUserControl
-        {
-            get { return ViewState["IsLoadUserControl"] == null ? false : (bool)ViewState["IsLoadUserControl"]; }
-            set { ViewState["IsLoadUserControl"] = value; }
-        }
-
         
 
         protected bool VerificarPermisos(IEnumerable<TBL_Admin_Roles> roles)
@@ -63,8 +56,8 @@ namespace ASP.NETCLIENTE.UI
             return roles.Any(rol => Context.User.IsInRole(rol.NombreRol));
         }
 
-        
-      
+
+
         /// <summary>
         /// 
         /// </summary>
@@ -212,9 +205,9 @@ namespace ASP.NETCLIENTE.UI
         /// <param name="ctrl"></param>
         protected void RegistrarControlScriptManager(Control ctrl)
         {
-           
-           if (Page.Master == null) return;
-           var sm = Page.Master.FindControl("smGeneral") as ScriptManager;
+
+            if (Page.Master == null) return;
+            var sm = Page.Master.FindControl("smGeneral") as ScriptManager;
             if (sm == null) return;
             sm.RegisterPostBackControl(ctrl);
         }
@@ -241,8 +234,7 @@ namespace ASP.NETCLIENTE.UI
             return String.Format("?ModuleId={0}", ModuleId);
         }
 
-     
-      
+
     }
 
     public static class VerificacionRegisterScript

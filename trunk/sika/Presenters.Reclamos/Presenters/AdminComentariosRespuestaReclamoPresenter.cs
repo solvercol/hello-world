@@ -200,7 +200,7 @@ namespace Presenters.Reclamos.Presenters
         {
             var model = new TBL_ModuloReclamos_ComentariosRespuesta();
 
-            model.IdReclamo = Convert.ToDecimal(View.IdReclamo);
+            model.IdReclamo = Convert.ToInt32(View.IdReclamo);
             model.Asunto = View.Asunto;
             model.Comentario = View.Comentario;
             model.IdUsuarioDestino = Convert.ToInt32(View.IdUsuarioDestino);

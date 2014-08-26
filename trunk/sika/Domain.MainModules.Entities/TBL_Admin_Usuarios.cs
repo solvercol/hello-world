@@ -1665,6 +1665,41 @@ namespace Domain.MainModules.Entities
         private TrackableCollection<TBL_ModuloReclamos_Reclamo> _tBL_ModuloReclamos_Reclamo6;
     
         [DataMember]
+        public TrackableCollection<TBL_ModuloReclamos_Reclamo> TBL_ModuloReclamos_Reclamo7
+        {
+            get
+            {
+                if (_tBL_ModuloReclamos_Reclamo7 == null)
+                {
+                    _tBL_ModuloReclamos_Reclamo7 = new TrackableCollection<TBL_ModuloReclamos_Reclamo>();
+                    _tBL_ModuloReclamos_Reclamo7.CollectionChanged += FixupTBL_ModuloReclamos_Reclamo7;
+                }
+                return _tBL_ModuloReclamos_Reclamo7;
+            }
+            set
+            {
+                if (!ReferenceEquals(_tBL_ModuloReclamos_Reclamo7, value))
+                {
+                    if (ChangeTracker.ChangeTrackingEnabled)
+                    {
+                        throw new InvalidOperationException("Cannot set the FixupChangeTrackingCollection when ChangeTracking is enabled");
+                    }
+                    if (_tBL_ModuloReclamos_Reclamo7 != null)
+                    {
+                        _tBL_ModuloReclamos_Reclamo7.CollectionChanged -= FixupTBL_ModuloReclamos_Reclamo7;
+                    }
+                    _tBL_ModuloReclamos_Reclamo7 = value;
+                    if (_tBL_ModuloReclamos_Reclamo7 != null)
+                    {
+                        _tBL_ModuloReclamos_Reclamo7.CollectionChanged += FixupTBL_ModuloReclamos_Reclamo7;
+                    }
+                    OnNavigationPropertyChanged("TBL_ModuloReclamos_Reclamo7");
+                }
+            }
+        }
+        private TrackableCollection<TBL_ModuloReclamos_Reclamo> _tBL_ModuloReclamos_Reclamo7;
+    
+        [DataMember]
         public TrackableCollection<TBL_ModuloReclamos_Soluciones> TBL_ModuloReclamos_Soluciones
         {
             get
@@ -2202,39 +2237,39 @@ namespace Domain.MainModules.Entities
         private TrackableCollection<TBL_ModuloReclamos_CategoriaProducto> _tBL_ModuloReclamos_CategoriaProducto2;
     
         [DataMember]
-        public TrackableCollection<TBL_ModuloReclamos_Reclamo> TBL_ModuloReclamos_Reclamo7
+        public TrackableCollection<TBL_ModuloReclamos_Reclamo> TBL_ModuloReclamos_Reclamo8
         {
             get
             {
-                if (_tBL_ModuloReclamos_Reclamo7 == null)
+                if (_tBL_ModuloReclamos_Reclamo8 == null)
                 {
-                    _tBL_ModuloReclamos_Reclamo7 = new TrackableCollection<TBL_ModuloReclamos_Reclamo>();
-                    _tBL_ModuloReclamos_Reclamo7.CollectionChanged += FixupTBL_ModuloReclamos_Reclamo7;
+                    _tBL_ModuloReclamos_Reclamo8 = new TrackableCollection<TBL_ModuloReclamos_Reclamo>();
+                    _tBL_ModuloReclamos_Reclamo8.CollectionChanged += FixupTBL_ModuloReclamos_Reclamo8;
                 }
-                return _tBL_ModuloReclamos_Reclamo7;
+                return _tBL_ModuloReclamos_Reclamo8;
             }
             set
             {
-                if (!ReferenceEquals(_tBL_ModuloReclamos_Reclamo7, value))
+                if (!ReferenceEquals(_tBL_ModuloReclamos_Reclamo8, value))
                 {
                     if (ChangeTracker.ChangeTrackingEnabled)
                     {
                         throw new InvalidOperationException("Cannot set the FixupChangeTrackingCollection when ChangeTracking is enabled");
                     }
-                    if (_tBL_ModuloReclamos_Reclamo7 != null)
+                    if (_tBL_ModuloReclamos_Reclamo8 != null)
                     {
-                        _tBL_ModuloReclamos_Reclamo7.CollectionChanged -= FixupTBL_ModuloReclamos_Reclamo7;
+                        _tBL_ModuloReclamos_Reclamo8.CollectionChanged -= FixupTBL_ModuloReclamos_Reclamo8;
                     }
-                    _tBL_ModuloReclamos_Reclamo7 = value;
-                    if (_tBL_ModuloReclamos_Reclamo7 != null)
+                    _tBL_ModuloReclamos_Reclamo8 = value;
+                    if (_tBL_ModuloReclamos_Reclamo8 != null)
                     {
-                        _tBL_ModuloReclamos_Reclamo7.CollectionChanged += FixupTBL_ModuloReclamos_Reclamo7;
+                        _tBL_ModuloReclamos_Reclamo8.CollectionChanged += FixupTBL_ModuloReclamos_Reclamo8;
                     }
-                    OnNavigationPropertyChanged("TBL_ModuloReclamos_Reclamo7");
+                    OnNavigationPropertyChanged("TBL_ModuloReclamos_Reclamo8");
                 }
             }
         }
-        private TrackableCollection<TBL_ModuloReclamos_Reclamo> _tBL_ModuloReclamos_Reclamo7;
+        private TrackableCollection<TBL_ModuloReclamos_Reclamo> _tBL_ModuloReclamos_Reclamo8;
     
         [DataMember]
         public TrackableCollection<TBL_ModuloReclamos_ComentariosRespuesta> TBL_ModuloReclamos_ComentariosRespuesta3
@@ -2424,6 +2459,7 @@ namespace Domain.MainModules.Entities
             TBL_ModuloReclamos_Reclamo4.Clear();
             TBL_ModuloReclamos_Reclamo5.Clear();
             TBL_ModuloReclamos_Reclamo6.Clear();
+            TBL_ModuloReclamos_Reclamo7.Clear();
             TBL_ModuloReclamos_Soluciones.Clear();
             TBL_ModuloReclamos_Soluciones1.Clear();
             TBL_ModuloReclamos_TipoReclamo.Clear();
@@ -2439,7 +2475,7 @@ namespace Domain.MainModules.Entities
             TBL_Admin_Roles1.Clear();
             TBL_ModuloReclamos_Asesores.Clear();
             TBL_ModuloReclamos_CategoriaProducto2.Clear();
-            TBL_ModuloReclamos_Reclamo7.Clear();
+            TBL_ModuloReclamos_Reclamo8.Clear();
             TBL_ModuloReclamos_ComentariosRespuesta3.Clear();
             TBL_ModuloReclamos_Actividades3.Clear();
         }
@@ -4007,6 +4043,45 @@ namespace Domain.MainModules.Entities
             }
         }
     
+        private void FixupTBL_ModuloReclamos_Reclamo7(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            if (IsDeserializing)
+            {
+                return;
+            }
+    
+            if (e.NewItems != null)
+            {
+                foreach (TBL_ModuloReclamos_Reclamo item in e.NewItems)
+                {
+                    item.TBL_Admin_Usuarios7 = this;
+                    if (ChangeTracker.ChangeTrackingEnabled)
+                    {
+                        if (!item.ChangeTracker.ChangeTrackingEnabled)
+                        {
+                            item.StartTracking();
+                        }
+                        ChangeTracker.RecordAdditionToCollectionProperties("TBL_ModuloReclamos_Reclamo7", item);
+                    }
+                }
+            }
+    
+            if (e.OldItems != null)
+            {
+                foreach (TBL_ModuloReclamos_Reclamo item in e.OldItems)
+                {
+                    if (ReferenceEquals(item.TBL_Admin_Usuarios7, this))
+                    {
+                        item.TBL_Admin_Usuarios7 = null;
+                    }
+                    if (ChangeTracker.ChangeTrackingEnabled)
+                    {
+                        ChangeTracker.RecordRemovalFromCollectionProperties("TBL_ModuloReclamos_Reclamo7", item);
+                    }
+                }
+            }
+        }
+    
         private void FixupTBL_ModuloReclamos_Soluciones(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (IsDeserializing)
@@ -4616,7 +4691,7 @@ namespace Domain.MainModules.Entities
             }
         }
     
-        private void FixupTBL_ModuloReclamos_Reclamo7(object sender, NotifyCollectionChangedEventArgs e)
+        private void FixupTBL_ModuloReclamos_Reclamo8(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (IsDeserializing)
             {
@@ -4627,9 +4702,9 @@ namespace Domain.MainModules.Entities
             {
                 foreach (TBL_ModuloReclamos_Reclamo item in e.NewItems)
                 {
-                    if (!item.TBL_Admin_Usuarios7.Contains(this))
+                    if (!item.TBL_Admin_Usuarios8.Contains(this))
                     {
-                        item.TBL_Admin_Usuarios7.Add(this);
+                        item.TBL_Admin_Usuarios8.Add(this);
                     }
                     if (ChangeTracker.ChangeTrackingEnabled)
                     {
@@ -4637,7 +4712,7 @@ namespace Domain.MainModules.Entities
                         {
                             item.StartTracking();
                         }
-                        ChangeTracker.RecordAdditionToCollectionProperties("TBL_ModuloReclamos_Reclamo7", item);
+                        ChangeTracker.RecordAdditionToCollectionProperties("TBL_ModuloReclamos_Reclamo8", item);
                     }
                 }
             }
@@ -4646,13 +4721,13 @@ namespace Domain.MainModules.Entities
             {
                 foreach (TBL_ModuloReclamos_Reclamo item in e.OldItems)
                 {
-                    if (item.TBL_Admin_Usuarios7.Contains(this))
+                    if (item.TBL_Admin_Usuarios8.Contains(this))
                     {
-                        item.TBL_Admin_Usuarios7.Remove(this);
+                        item.TBL_Admin_Usuarios8.Remove(this);
                     }
                     if (ChangeTracker.ChangeTrackingEnabled)
                     {
-                        ChangeTracker.RecordRemovalFromCollectionProperties("TBL_ModuloReclamos_Reclamo7", item);
+                        ChangeTracker.RecordRemovalFromCollectionProperties("TBL_ModuloReclamos_Reclamo8", item);
                     }
                 }
             }

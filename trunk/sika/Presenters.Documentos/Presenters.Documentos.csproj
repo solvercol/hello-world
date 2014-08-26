@@ -35,15 +35,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Application.Core">
-      <HintPath>..\Application.Core\bin\Debug\Application.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Domain.Core">
-      <HintPath>..\Domain.Core\bin\Debug\Domain.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Domain.MainModules.Entities">
-      <HintPath>..\Domain.MainModules.Entities\bin\Debug\Domain.MainModules.Entities.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -82,6 +73,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Application.Core\Application.Core.csproj">
+      <Project>{43E44D76-4378-4A99-9100-7C5CDFB9DAC0}</Project>
+      <Name>Application.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Applications.MainModule.Documentos\Application.MainModule.Documentos.csproj">
       <Project>{1448adfe-3242-43ae-9635-4615b15e3fba}</Project>
       <Name>Application.MainModule.Documentos</Name>
@@ -93,6 +88,14 @@
     <ProjectReference Include="..\Domain.Core.Entities\Domain.Core.Entities.csproj">
       <Project>{a1708898-8f15-4d62-99e0-293334e740c2}</Project>
       <Name>Domain.Core.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.Core\Domain.Core.csproj">
+      <Project>{94FCB1C4-2C52-4D9D-A07B-F01AC38CF88E}</Project>
+      <Name>Domain.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.MainModules.Entities\Domain.MainModules.Entities.csproj">
+      <Project>{6FA9FF63-4F79-4A9F-882C-7A7AE27C7332}</Project>
+      <Name>Domain.MainModules.Entities</Name>
     </ProjectReference>
     <ProjectReference Include="..\Infrastructure.CrossCutting.NetFramework\Infrastructure.CrossCutting.NetFramework.csproj">
       <Project>{21eba478-507f-45af-b1cc-619578e8fa8b}</Project>

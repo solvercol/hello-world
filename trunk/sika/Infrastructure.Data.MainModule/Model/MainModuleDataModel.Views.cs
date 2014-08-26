@@ -14,7 +14,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Data.Mapping.EntityViewGenerationAttribute(typeof(Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySets421EEB9A7C5B344C2F6530901C1DAC1647F4BC59FBC804A6953D1C4BB1EC1F8D))]
+[assembly: System.Data.Mapping.EntityViewGenerationAttribute(typeof(Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySets5BFD482C6B867C5649F6C382D0077FB01CFE35297428C934B0AF09C75073EF80))]
 
 namespace Edm_EntityMappingGeneratedViews
 {
@@ -23,19 +23,19 @@ namespace Edm_EntityMappingGeneratedViews
     /// <Summary>
     /// The type contains views for EntitySets and AssociationSets that were generated at design time.
     /// </Summary>
-    public sealed class ViewsForBaseEntitySets421EEB9A7C5B344C2F6530901C1DAC1647F4BC59FBC804A6953D1C4BB1EC1F8D : System.Data.Mapping.EntityViewContainer
+    public sealed class ViewsForBaseEntitySets5BFD482C6B867C5649F6C382D0077FB01CFE35297428C934B0AF09C75073EF80 : System.Data.Mapping.EntityViewContainer
     {
         
         /// <Summary>
         /// The constructor stores the views for the extents and also the hash values generated based on the metadata and mapping closure and views.
         /// </Summary>
-        public ViewsForBaseEntitySets421EEB9A7C5B344C2F6530901C1DAC1647F4BC59FBC804A6953D1C4BB1EC1F8D()
+        public ViewsForBaseEntitySets5BFD482C6B867C5649F6C382D0077FB01CFE35297428C934B0AF09C75073EF80()
         {
             this.EdmEntityContainerName = "MainModuleContext";
             this.StoreEntityContainerName = "SolutionFrameworkMainModelStoreContainer";
-            this.HashOverMappingClosure = "d9bc8e7a3ec6cde1bff2f668ae20cd8a76610e5eea2eff075c1c73d7ce2a3e68";
-            this.HashOverAllExtentViews = "9d15f64c37913a422e5c37eef7369c43f03ff1b7fc2fb52d35a636c230d037ff";
-            this.ViewCount = 72;
+            this.HashOverMappingClosure = "c32bd1704fe4e4ae5c717e397912d1088eca03ee33883d49d5c2d243c26d8477";
+            this.HashOverAllExtentViews = "dbebf9255585052e63387ab5b48f58c19b79c8f43058c628832c6d6d45fb7ba4";
+            this.ViewCount = 122;
         }
         
         /// <Summary>
@@ -330,6 +330,206 @@ namespace Edm_EntityMappingGeneratedViews
             if ((index == 71))
             {
                 return GetView71();
+            }
+            if ((index == 72))
+            {
+                return GetView72();
+            }
+            if ((index == 73))
+            {
+                return GetView73();
+            }
+            if ((index == 74))
+            {
+                return GetView74();
+            }
+            if ((index == 75))
+            {
+                return GetView75();
+            }
+            if ((index == 76))
+            {
+                return GetView76();
+            }
+            if ((index == 77))
+            {
+                return GetView77();
+            }
+            if ((index == 78))
+            {
+                return GetView78();
+            }
+            if ((index == 79))
+            {
+                return GetView79();
+            }
+            if ((index == 80))
+            {
+                return GetView80();
+            }
+            if ((index == 81))
+            {
+                return GetView81();
+            }
+            if ((index == 82))
+            {
+                return GetView82();
+            }
+            if ((index == 83))
+            {
+                return GetView83();
+            }
+            if ((index == 84))
+            {
+                return GetView84();
+            }
+            if ((index == 85))
+            {
+                return GetView85();
+            }
+            if ((index == 86))
+            {
+                return GetView86();
+            }
+            if ((index == 87))
+            {
+                return GetView87();
+            }
+            if ((index == 88))
+            {
+                return GetView88();
+            }
+            if ((index == 89))
+            {
+                return GetView89();
+            }
+            if ((index == 90))
+            {
+                return GetView90();
+            }
+            if ((index == 91))
+            {
+                return GetView91();
+            }
+            if ((index == 92))
+            {
+                return GetView92();
+            }
+            if ((index == 93))
+            {
+                return GetView93();
+            }
+            if ((index == 94))
+            {
+                return GetView94();
+            }
+            if ((index == 95))
+            {
+                return GetView95();
+            }
+            if ((index == 96))
+            {
+                return GetView96();
+            }
+            if ((index == 97))
+            {
+                return GetView97();
+            }
+            if ((index == 98))
+            {
+                return GetView98();
+            }
+            if ((index == 99))
+            {
+                return GetView99();
+            }
+            if ((index == 100))
+            {
+                return GetView100();
+            }
+            if ((index == 101))
+            {
+                return GetView101();
+            }
+            if ((index == 102))
+            {
+                return GetView102();
+            }
+            if ((index == 103))
+            {
+                return GetView103();
+            }
+            if ((index == 104))
+            {
+                return GetView104();
+            }
+            if ((index == 105))
+            {
+                return GetView105();
+            }
+            if ((index == 106))
+            {
+                return GetView106();
+            }
+            if ((index == 107))
+            {
+                return GetView107();
+            }
+            if ((index == 108))
+            {
+                return GetView108();
+            }
+            if ((index == 109))
+            {
+                return GetView109();
+            }
+            if ((index == 110))
+            {
+                return GetView110();
+            }
+            if ((index == 111))
+            {
+                return GetView111();
+            }
+            if ((index == 112))
+            {
+                return GetView112();
+            }
+            if ((index == 113))
+            {
+                return GetView113();
+            }
+            if ((index == 114))
+            {
+                return GetView114();
+            }
+            if ((index == 115))
+            {
+                return GetView115();
+            }
+            if ((index == 116))
+            {
+                return GetView116();
+            }
+            if ((index == 117))
+            {
+                return GetView117();
+            }
+            if ((index == 118))
+            {
+                return GetView118();
+            }
+            if ((index == 119))
+            {
+                return GetView119();
+            }
+            if ((index == 120))
+            {
+                return GetView120();
+            }
+            if ((index == 121))
+            {
+                return GetView121();
             }
             throw new System.IndexOutOfRangeException();
         }
@@ -798,9 +998,63 @@ namespace Edm_EntityMappingGeneratedViews
         }
         
         /// <Summary>
-        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloWorkFlow_CamposValidacion
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_Admin_ModuleType
         /// </Summary>
         private System.Collections.Generic.KeyValuePair<string, string> GetView19()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_Admin_ModuleType", @"
+    SELECT VALUE -- Constructing TBL_Admin_ModuleType
+        [SolutionFramework.MainModel.Store.TBL_Admin_ModuleType](T1.[TBL_Admin_ModuleType.IdModuleType], T1.[TBL_Admin_ModuleType.Nombre], T1.[TBL_Admin_ModuleType.NombreEnsamblado], T1.[TBL_Admin_ModuleType.NombreClase], T1.[TBL_Admin_ModuleType.path], T1.[TBL_Admin_ModuleType.PathEdicion], T1.[TBL_Admin_ModuleType.AutoActivar], T1.[TBL_Admin_ModuleType.IsActive], T1.[TBL_Admin_ModuleType.CreateBy], T1.[TBL_Admin_ModuleType.CreateOn], T1.[TBL_Admin_ModuleType.ModifiedBy], T1.[TBL_Admin_ModuleType.ModifiedOn])
+    FROM (
+        SELECT 
+            T.IdModuleType AS [TBL_Admin_ModuleType.IdModuleType], 
+            T.Nombre AS [TBL_Admin_ModuleType.Nombre], 
+            T.NombreEnsamblado AS [TBL_Admin_ModuleType.NombreEnsamblado], 
+            T.NombreClase AS [TBL_Admin_ModuleType.NombreClase], 
+            T.path AS [TBL_Admin_ModuleType.path], 
+            T.PathEdicion AS [TBL_Admin_ModuleType.PathEdicion], 
+            T.AutoActivar AS [TBL_Admin_ModuleType.AutoActivar], 
+            T.IsActive AS [TBL_Admin_ModuleType.IsActive], 
+            T.CreateBy AS [TBL_Admin_ModuleType.CreateBy], 
+            T.CreateOn AS [TBL_Admin_ModuleType.CreateOn], 
+            T.ModifiedBy AS [TBL_Admin_ModuleType.ModifiedBy], 
+            T.ModifiedOn AS [TBL_Admin_ModuleType.ModifiedOn], 
+            True AS _from0
+        FROM MainModuleContext.TBL_Admin_ModuleType AS T
+    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_Admin_Modulos
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView20()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_Admin_Modulos", @"
+    SELECT VALUE -- Constructing TBL_Admin_Modulos
+        [SolutionFramework.MainModel.Store.TBL_Admin_Modulos](T1.[TBL_Admin_Modulos.IdModulo], T1.[TBL_Admin_Modulos.NombreModulo], T1.[TBL_Admin_Modulos.Descripcion], T1.[TBL_Admin_Modulos.Imagen], T1.[TBL_Admin_Modulos.ImageDisabled], T1.[TBL_Admin_Modulos.ShowInMenu], T1.[TBL_Admin_Modulos.PathFormPreView], T1.[TBL_Admin_Modulos.IsActive], T1.[TBL_Admin_Modulos.CreateBy], T1.[TBL_Admin_Modulos.CreateOn], T1.[TBL_Admin_Modulos.ModifiedBy], T1.[TBL_Admin_Modulos.ModifiedOn])
+    FROM (
+        SELECT 
+            T.IdModulo AS [TBL_Admin_Modulos.IdModulo], 
+            T.NombreModulo AS [TBL_Admin_Modulos.NombreModulo], 
+            T.Descripcion AS [TBL_Admin_Modulos.Descripcion], 
+            T.Imagen AS [TBL_Admin_Modulos.Imagen], 
+            T.ImageDisabled AS [TBL_Admin_Modulos.ImageDisabled], 
+            T.ShowInMenu AS [TBL_Admin_Modulos.ShowInMenu], 
+            T.PathFormPreView AS [TBL_Admin_Modulos.PathFormPreView], 
+            T.IsActive AS [TBL_Admin_Modulos.IsActive], 
+            T.CreateBy AS [TBL_Admin_Modulos.CreateBy], 
+            T.CreateOn AS [TBL_Admin_Modulos.CreateOn], 
+            T.ModifiedBy AS [TBL_Admin_Modulos.ModifiedBy], 
+            T.ModifiedOn AS [TBL_Admin_Modulos.ModifiedOn], 
+            True AS _from0
+        FROM MainModuleContext.TBL_Admin_Modulos AS T
+    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloWorkFlow_CamposValidacion
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView21()
         {
             System.Text.StringBuilder viewString = new System.Text.StringBuilder(2092);
             viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloWorkFlow_CamposValidacion\r\n        ");
@@ -836,7 +1090,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloWorkFlow_Rutas
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView20()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView22()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloWorkFlow_Rutas", "\r\n    SELECT VALUE -- Constructing TBL_ModuloWorkFlow_Rutas\r\n        [SolutionFra" +
                     "mework.MainModel.Store.TBL_ModuloWorkFlow_Rutas](T1.[TBL_ModuloWorkFlow_Rutas.Id" +
@@ -868,7 +1122,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloWorkFlow_ValidacionesSalida
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView21()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView23()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloWorkFlow_ValidacionesSalida", "\r\n    SELECT VALUE -- Constructing TBL_ModuloWorkFlow_ValidacionesSalida\r\n       " +
                     " [SolutionFramework.MainModel.Store.TBL_ModuloWorkFlow_ValidacionesSalida](T1.[T" +
@@ -878,25 +1132,1189 @@ namespace Edm_EntityMappingGeneratedViews
                     "cionesSalida.TipoAccion], T1.[TBL_ModuloWorkFlow_ValidacionesSalida.IsActive], T" +
                     "1.[TBL_ModuloWorkFlow_ValidacionesSalida.CreateBy], T1.[TBL_ModuloWorkFlow_Valid" +
                     "acionesSalida.CreateOn], T1.[TBL_ModuloWorkFlow_ValidacionesSalida.ModifiedBy], " +
-                    "T1.[TBL_ModuloWorkFlow_ValidacionesSalida.ModifiedOn])\r\n    FROM (\r\n        SELE" +
-                    "CT \r\n            T.ID AS [TBL_ModuloWorkFlow_ValidacionesSalida.ID], \r\n         " +
-                    "   T.IdRuta AS [TBL_ModuloWorkFlow_ValidacionesSalida.IdRuta], \r\n            T.N" +
-                    "ombreEnsamblado AS [TBL_ModuloWorkFlow_ValidacionesSalida.NombreEnsamblado], \r\n " +
-                    "           T.NombreMetodo AS [TBL_ModuloWorkFlow_ValidacionesSalida.NombreMetodo" +
-                    "], \r\n            T.TipoAccion AS [TBL_ModuloWorkFlow_ValidacionesSalida.TipoAcci" +
-                    "on], \r\n            T.IsActive AS [TBL_ModuloWorkFlow_ValidacionesSalida.IsActive" +
-                    "], \r\n            T.CreateBy AS [TBL_ModuloWorkFlow_ValidacionesSalida.CreateBy]," +
-                    " \r\n            T.CreateOn AS [TBL_ModuloWorkFlow_ValidacionesSalida.CreateOn], \r" +
-                    "\n            T.ModifiedBy AS [TBL_ModuloWorkFlow_ValidacionesSalida.ModifiedBy]," +
-                    " \r\n            T.ModifiedOn AS [TBL_ModuloWorkFlow_ValidacionesSalida.ModifiedOn" +
-                    "], \r\n            True AS _from0\r\n        FROM MainModuleContext.TBL_ModuloWorkFl" +
-                    "ow_ValidacionesSalida AS T\r\n    ) AS T1");
+                    "T1.[TBL_ModuloWorkFlow_ValidacionesSalida.ModifiedOn], T1.[TBL_ModuloWorkFlow_Va" +
+                    "lidacionesSalida.Ejecutar])\r\n    FROM (\r\n        SELECT \r\n            T.ID AS [T" +
+                    "BL_ModuloWorkFlow_ValidacionesSalida.ID], \r\n            T.IdRuta AS [TBL_ModuloW" +
+                    "orkFlow_ValidacionesSalida.IdRuta], \r\n            T.NombreEnsamblado AS [TBL_Mod" +
+                    "uloWorkFlow_ValidacionesSalida.NombreEnsamblado], \r\n            T.NombreMetodo A" +
+                    "S [TBL_ModuloWorkFlow_ValidacionesSalida.NombreMetodo], \r\n            T.TipoAcci" +
+                    "on AS [TBL_ModuloWorkFlow_ValidacionesSalida.TipoAccion], \r\n            T.IsActi" +
+                    "ve AS [TBL_ModuloWorkFlow_ValidacionesSalida.IsActive], \r\n            T.CreateBy" +
+                    " AS [TBL_ModuloWorkFlow_ValidacionesSalida.CreateBy], \r\n            T.CreateOn A" +
+                    "S [TBL_ModuloWorkFlow_ValidacionesSalida.CreateOn], \r\n            T.ModifiedBy A" +
+                    "S [TBL_ModuloWorkFlow_ValidacionesSalida.ModifiedBy], \r\n            T.ModifiedOn" +
+                    " AS [TBL_ModuloWorkFlow_ValidacionesSalida.ModifiedOn], \r\n            T.Ejecutar" +
+                    " AS [TBL_ModuloWorkFlow_ValidacionesSalida.Ejecutar], \r\n            True AS _fro" +
+                    "m0\r\n        FROM MainModuleContext.TBL_ModuloWorkFlow_ValidacionesSalida AS T\r\n " +
+                    "   ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_Admin_ModuleRepository
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView24()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_Admin_ModuleRepository", @"
+    SELECT VALUE -- Constructing TBL_Admin_ModuleRepository
+        [SolutionFramework.MainModel.Store.TBL_Admin_ModuleRepository](T1.[TBL_Admin_ModuleRepository.IdModuleRepository], T1.[TBL_Admin_ModuleRepository.IdModuleType], T1.[TBL_Admin_ModuleRepository.Repositorykey], T1.[TBL_Admin_ModuleRepository.RepositoryType], T1.[TBL_Admin_ModuleRepository.classtype], T1.[TBL_Admin_ModuleRepository.lifestyle], T1.[TBL_Admin_ModuleRepository.IsActive])
+    FROM (
+        SELECT 
+            T.IdModuleRepository AS [TBL_Admin_ModuleRepository.IdModuleRepository], 
+            T.IdModuleType AS [TBL_Admin_ModuleRepository.IdModuleType], 
+            T.Repositorykey AS [TBL_Admin_ModuleRepository.Repositorykey], 
+            T.RepositoryType AS [TBL_Admin_ModuleRepository.RepositoryType], 
+            T.classtype AS [TBL_Admin_ModuleRepository.classtype], 
+            T.lifestyle AS [TBL_Admin_ModuleRepository.lifestyle], 
+            T.IsActive AS [TBL_Admin_ModuleRepository.IsActive], 
+            True AS _from0
+        FROM MainModuleContext.TBL_Admin_ModuleRepository AS T
+    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_Admin_ModuleService
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView25()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_Admin_ModuleService", @"
+    SELECT VALUE -- Constructing TBL_Admin_ModuleService
+        [SolutionFramework.MainModel.Store.TBL_Admin_ModuleService](T1.[TBL_Admin_ModuleService.IdModuleServices], T1.[TBL_Admin_ModuleService.IdModuleType], T1.[TBL_Admin_ModuleService.servicekey], T1.[TBL_Admin_ModuleService.servicetype], T1.[TBL_Admin_ModuleService.classtype], T1.[TBL_Admin_ModuleService.lifestyle], T1.[TBL_Admin_ModuleService.IsActive])
+    FROM (
+        SELECT 
+            T.IdModuleServices AS [TBL_Admin_ModuleService.IdModuleServices], 
+            T.IdModuleType AS [TBL_Admin_ModuleService.IdModuleType], 
+            T.servicekey AS [TBL_Admin_ModuleService.servicekey], 
+            T.servicetype AS [TBL_Admin_ModuleService.servicetype], 
+            T.classtype AS [TBL_Admin_ModuleService.classtype], 
+            T.lifestyle AS [TBL_Admin_ModuleService.lifestyle], 
+            T.IsActive AS [TBL_Admin_ModuleService.IsActive], 
+            True AS _from0
+        FROM MainModuleContext.TBL_Admin_ModuleService AS T
+    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_Admin_OpcionesMenu
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView26()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_Admin_OpcionesMenu", "\r\n    SELECT VALUE -- Constructing TBL_Admin_OpcionesMenu\r\n        [SolutionFrame" +
+                    "work.MainModel.Store.TBL_Admin_OpcionesMenu](T1.[TBL_Admin_OpcionesMenu.IdOpcion" +
+                    "Menu], T1.[TBL_Admin_OpcionesMenu.IdopcionPadre], T1.[TBL_Admin_OpcionesMenu.Apl" +
+                    "icationId], T1.[TBL_Admin_OpcionesMenu.TituloOpcion], T1.[TBL_Admin_OpcionesMenu" +
+                    ".Posicion], T1.[TBL_Admin_OpcionesMenu.ShowSecondMenu], T1.[TBL_Admin_OpcionesMe" +
+                    "nu.ShowMainMenu], T1.[TBL_Admin_OpcionesMenu.Activo], T1.[TBL_Admin_OpcionesMenu" +
+                    ".LinkUrl], T1.[TBL_Admin_OpcionesMenu.Icono], T1.[TBL_Admin_OpcionesMenu.CreateB" +
+                    "y], T1.[TBL_Admin_OpcionesMenu.CreateOn], T1.[TBL_Admin_OpcionesMenu.ModifiedBy]" +
+                    ", T1.[TBL_Admin_OpcionesMenu.ModifiedOn])\r\n    FROM (\r\n        SELECT \r\n        " +
+                    "    T.IdOpcionMenu AS [TBL_Admin_OpcionesMenu.IdOpcionMenu], \r\n            T.Ido" +
+                    "pcionPadre AS [TBL_Admin_OpcionesMenu.IdopcionPadre], \r\n            T.Aplication" +
+                    "Id AS [TBL_Admin_OpcionesMenu.AplicationId], \r\n            T.TituloOpcion AS [TB" +
+                    "L_Admin_OpcionesMenu.TituloOpcion], \r\n            T.Posicion AS [TBL_Admin_Opcio" +
+                    "nesMenu.Posicion], \r\n            T.ShowSecondMenu AS [TBL_Admin_OpcionesMenu.Sho" +
+                    "wSecondMenu], \r\n            T.ShowMainMenu AS [TBL_Admin_OpcionesMenu.ShowMainMe" +
+                    "nu], \r\n            T.Activo AS [TBL_Admin_OpcionesMenu.Activo], \r\n            T." +
+                    "LinkUrl AS [TBL_Admin_OpcionesMenu.LinkUrl], \r\n            T.Icono AS [TBL_Admin" +
+                    "_OpcionesMenu.Icono], \r\n            T.CreateBy AS [TBL_Admin_OpcionesMenu.Create" +
+                    "By], \r\n            T.CreateOn AS [TBL_Admin_OpcionesMenu.CreateOn], \r\n          " +
+                    "  T.ModifiedBy AS [TBL_Admin_OpcionesMenu.ModifiedBy], \r\n            T.ModifiedO" +
+                    "n AS [TBL_Admin_OpcionesMenu.ModifiedOn], \r\n            True AS _from0\r\n        " +
+                    "FROM MainModuleContext.TBL_Admin_OpcionesMenu AS T\r\n    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_Admin_Roles
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView27()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_Admin_Roles", @"
+    SELECT VALUE -- Constructing TBL_Admin_Roles
+        [SolutionFramework.MainModel.Store.TBL_Admin_Roles](T1.[TBL_Admin_Roles.IdRol], T1.[TBL_Admin_Roles.NombreRol], T1.[TBL_Admin_Roles.Activo], T1.[TBL_Admin_Roles.IsGroup], T1.[TBL_Admin_Roles.CreateBy], T1.[TBL_Admin_Roles.CreateOn], T1.[TBL_Admin_Roles.ModifiedBy], T1.[TBL_Admin_Roles.ModifiedOn])
+    FROM (
+        SELECT 
+            T.IdRol AS [TBL_Admin_Roles.IdRol], 
+            T.NombreRol AS [TBL_Admin_Roles.NombreRol], 
+            T.Activo AS [TBL_Admin_Roles.Activo], 
+            T.IsGroup AS [TBL_Admin_Roles.IsGroup], 
+            T.CreateBy AS [TBL_Admin_Roles.CreateBy], 
+            T.CreateOn AS [TBL_Admin_Roles.CreateOn], 
+            T.ModifiedBy AS [TBL_Admin_Roles.ModifiedBy], 
+            T.ModifiedOn AS [TBL_Admin_Roles.ModifiedOn], 
+            True AS _from0
+        FROM MainModuleContext.TBL_Admin_Roles AS T
+    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_Admin_Secciones
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView28()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_Admin_Secciones", "\r\n    SELECT VALUE -- Constructing TBL_Admin_Secciones\r\n        [SolutionFramewor" +
+                    "k.MainModel.Store.TBL_Admin_Secciones](T1.[TBL_Admin_Secciones.IdSeccion], T1.[T" +
+                    "BL_Admin_Secciones.IdModule], T1.[TBL_Admin_Secciones.Posicion], T1.[TBL_Admin_S" +
+                    "ecciones.Titulo], T1.[TBL_Admin_Secciones.TituloEdit], T1.[TBL_Admin_Secciones.P" +
+                    "athPreview], T1.[TBL_Admin_Secciones.PathEdit], T1.[TBL_Admin_Secciones.ShowPrev" +
+                    "iew], T1.[TBL_Admin_Secciones.ShowInEdit], T1.[TBL_Admin_Secciones.IsActive], T1" +
+                    ".[TBL_Admin_Secciones.CreateBy], T1.[TBL_Admin_Secciones.CreateOn], T1.[TBL_Admi" +
+                    "n_Secciones.ModifiedBy], T1.[TBL_Admin_Secciones.ModifiedOn])\r\n    FROM (\r\n     " +
+                    "   SELECT \r\n            T.IdSeccion AS [TBL_Admin_Secciones.IdSeccion], \r\n      " +
+                    "      T.IdModule AS [TBL_Admin_Secciones.IdModule], \r\n            T.Posicion AS " +
+                    "[TBL_Admin_Secciones.Posicion], \r\n            T.Titulo AS [TBL_Admin_Secciones.T" +
+                    "itulo], \r\n            T.TituloEdit AS [TBL_Admin_Secciones.TituloEdit], \r\n      " +
+                    "      T.PathPreview AS [TBL_Admin_Secciones.PathPreview], \r\n            T.PathEd" +
+                    "it AS [TBL_Admin_Secciones.PathEdit], \r\n            T.ShowPreview AS [TBL_Admin_" +
+                    "Secciones.ShowPreview], \r\n            T.ShowInEdit AS [TBL_Admin_Secciones.ShowI" +
+                    "nEdit], \r\n            T.IsActive AS [TBL_Admin_Secciones.IsActive], \r\n          " +
+                    "  T.CreateBy AS [TBL_Admin_Secciones.CreateBy], \r\n            T.CreateOn AS [TBL" +
+                    "_Admin_Secciones.CreateOn], \r\n            T.ModifiedBy AS [TBL_Admin_Secciones.M" +
+                    "odifiedBy], \r\n            T.ModifiedOn AS [TBL_Admin_Secciones.ModifiedOn], \r\n  " +
+                    "          True AS _from0\r\n        FROM MainModuleContext.TBL_Admin_Secciones AS " +
+                    "T\r\n    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_Admin_SistemaNotificaciones
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView29()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_Admin_SistemaNotificaciones", "\r\n    SELECT VALUE -- Constructing TBL_Admin_SistemaNotificaciones\r\n        [Solu" +
+                    "tionFramework.MainModel.Store.TBL_Admin_SistemaNotificaciones](T1.[TBL_Admin_Sis" +
+                    "temaNotificaciones.IdNotificacion], T1.[TBL_Admin_SistemaNotificaciones.IdUser]," +
+                    " T1.[TBL_Admin_SistemaNotificaciones.Modulo], T1.[TBL_Admin_SistemaNotificacione" +
+                    "s.Subject], T1.[TBL_Admin_SistemaNotificaciones.Url], T1.[TBL_Admin_SistemaNotif" +
+                    "icaciones.Fecha], T1.[TBL_Admin_SistemaNotificaciones.Visitado], T1.[TBL_Admin_S" +
+                    "istemaNotificaciones.IsActive], T1.[TBL_Admin_SistemaNotificaciones.CreateBy], T" +
+                    "1.[TBL_Admin_SistemaNotificaciones.CreateOn], T1.[TBL_Admin_SistemaNotificacione" +
+                    "s.ModifiedBy], T1.[TBL_Admin_SistemaNotificaciones.ModifiedOn], T1.[TBL_Admin_Si" +
+                    "stemaNotificaciones.Contenido])\r\n    FROM (\r\n        SELECT \r\n            T.IdNo" +
+                    "tificacion AS [TBL_Admin_SistemaNotificaciones.IdNotificacion], \r\n            T." +
+                    "IdUser AS [TBL_Admin_SistemaNotificaciones.IdUser], \r\n            T.Modulo AS [T" +
+                    "BL_Admin_SistemaNotificaciones.Modulo], \r\n            T.Subject AS [TBL_Admin_Si" +
+                    "stemaNotificaciones.Subject], \r\n            T.Url AS [TBL_Admin_SistemaNotificac" +
+                    "iones.Url], \r\n            T.Fecha AS [TBL_Admin_SistemaNotificaciones.Fecha], \r\n" +
+                    "            T.Visitado AS [TBL_Admin_SistemaNotificaciones.Visitado], \r\n        " +
+                    "    T.IsActive AS [TBL_Admin_SistemaNotificaciones.IsActive], \r\n            T.Cr" +
+                    "eateBy AS [TBL_Admin_SistemaNotificaciones.CreateBy], \r\n            T.CreateOn A" +
+                    "S [TBL_Admin_SistemaNotificaciones.CreateOn], \r\n            T.ModifiedBy AS [TBL" +
+                    "_Admin_SistemaNotificaciones.ModifiedBy], \r\n            T.ModifiedOn AS [TBL_Adm" +
+                    "in_SistemaNotificaciones.ModifiedOn], \r\n            T.Contenido AS [TBL_Admin_Si" +
+                    "stemaNotificaciones.Contenido], \r\n            True AS _from0\r\n        FROM MainM" +
+                    "oduleContext.TBL_Admin_SistemaNotificaciones AS T\r\n    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_Admin_TypeByModules
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView30()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_Admin_TypeByModules", "\r\n    SELECT VALUE -- Constructing TBL_Admin_TypeByModules\r\n        [SolutionFram" +
+                    "ework.MainModel.Store.TBL_Admin_TypeByModules](T1.[TBL_Admin_TypeByModules.OID]," +
+                    " T1.[TBL_Admin_TypeByModules.IdModulo], T1.[TBL_Admin_TypeByModules.IdModuleType" +
+                    "], T1.[TBL_Admin_TypeByModules.Titulo], T1.[TBL_Admin_TypeByModules.MostrarTitul" +
+                    "o], T1.[TBL_Admin_TypeByModules.position], T1.[TBL_Admin_TypeByModules.Placehold" +
+                    "er], T1.[TBL_Admin_TypeByModules.IsActive], T1.[TBL_Admin_TypeByModules.CreateBy" +
+                    "], T1.[TBL_Admin_TypeByModules.CreateOn], T1.[TBL_Admin_TypeByModules.ModifiedBy" +
+                    "], T1.[TBL_Admin_TypeByModules.ModifiedOn])\r\n    FROM (\r\n        SELECT \r\n      " +
+                    "      T.OID AS [TBL_Admin_TypeByModules.OID], \r\n            T.IdModulo AS [TBL_A" +
+                    "dmin_TypeByModules.IdModulo], \r\n            T.IdModuleType AS [TBL_Admin_TypeByM" +
+                    "odules.IdModuleType], \r\n            T.Titulo AS [TBL_Admin_TypeByModules.Titulo]" +
+                    ", \r\n            T.MostrarTitulo AS [TBL_Admin_TypeByModules.MostrarTitulo], \r\n  " +
+                    "          T.position AS [TBL_Admin_TypeByModules.position], \r\n            T.Plac" +
+                    "eholder AS [TBL_Admin_TypeByModules.Placeholder], \r\n            T.IsActive AS [T" +
+                    "BL_Admin_TypeByModules.IsActive], \r\n            T.CreateBy AS [TBL_Admin_TypeByM" +
+                    "odules.CreateBy], \r\n            T.CreateOn AS [TBL_Admin_TypeByModules.CreateOn]" +
+                    ", \r\n            T.ModifiedBy AS [TBL_Admin_TypeByModules.ModifiedBy], \r\n        " +
+                    "    T.ModifiedOn AS [TBL_Admin_TypeByModules.ModifiedOn], \r\n            True AS " +
+                    "_from0\r\n        FROM MainModuleContext.TBL_Admin_TypeByModules AS T\r\n    ) AS T1" +
+                    "");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_Admin_Usuarios
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView31()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_Admin_Usuarios", "\r\n    SELECT VALUE -- Constructing TBL_Admin_Usuarios\r\n        [SolutionFramework" +
+                    ".MainModel.Store.TBL_Admin_Usuarios](T1.[TBL_Admin_Usuarios.IdUser], T1.[TBL_Adm" +
+                    "in_Usuarios.CodigoUser], T1.[TBL_Admin_Usuarios.Nombres], T1.[TBL_Admin_Usuarios" +
+                    ".FechaIngreso], T1.[TBL_Admin_Usuarios.lastlogin], T1.[TBL_Admin_Usuarios.lastip" +
+                    "], T1.[TBL_Admin_Usuarios.UserName], T1.[TBL_Admin_Usuarios.Password], T1.[TBL_A" +
+                    "dmin_Usuarios.Email], T1.[TBL_Admin_Usuarios.IsActive], T1.[TBL_Admin_Usuarios.C" +
+                    "reateBy], T1.[TBL_Admin_Usuarios.CreateOn], T1.[TBL_Admin_Usuarios.ModifiedBy], " +
+                    "T1.[TBL_Admin_Usuarios.ModifiedOn])\r\n    FROM (\r\n        SELECT \r\n            T." +
+                    "IdUser AS [TBL_Admin_Usuarios.IdUser], \r\n            T.CodigoUser AS [TBL_Admin_" +
+                    "Usuarios.CodigoUser], \r\n            T.Nombres AS [TBL_Admin_Usuarios.Nombres], \r" +
+                    "\n            T.FechaIngreso AS [TBL_Admin_Usuarios.FechaIngreso], \r\n            " +
+                    "T.lastlogin AS [TBL_Admin_Usuarios.lastlogin], \r\n            T.lastip AS [TBL_Ad" +
+                    "min_Usuarios.lastip], \r\n            T.UserName AS [TBL_Admin_Usuarios.UserName]," +
+                    " \r\n            T.Password AS [TBL_Admin_Usuarios.Password], \r\n            T.Emai" +
+                    "l AS [TBL_Admin_Usuarios.Email], \r\n            T.IsActive AS [TBL_Admin_Usuarios" +
+                    ".IsActive], \r\n            T.CreateBy AS [TBL_Admin_Usuarios.CreateBy], \r\n       " +
+                    "     T.CreateOn AS [TBL_Admin_Usuarios.CreateOn], \r\n            T.ModifiedBy AS " +
+                    "[TBL_Admin_Usuarios.ModifiedBy], \r\n            T.ModifiedOn AS [TBL_Admin_Usuari" +
+                    "os.ModifiedOn], \r\n            True AS _from0\r\n        FROM MainModuleContext.TBL" +
+                    "_Admin_Usuarios AS T\r\n    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_Categorias
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView32()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_Categorias", @"
+    SELECT VALUE -- Constructing TBL_ModuloDocumentos_Categorias
+        [SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_Categorias](T1.[TBL_ModuloDocumentos_Categorias.IdCategoria], T1.[TBL_ModuloDocumentos_Categorias.Nombre], T1.[TBL_ModuloDocumentos_Categorias.Nivel], T1.[TBL_ModuloDocumentos_Categorias.IsActive], T1.[TBL_ModuloDocumentos_Categorias.CreateBy], T1.[TBL_ModuloDocumentos_Categorias.CreateOn], T1.[TBL_ModuloDocumentos_Categorias.ModifiedBy], T1.[TBL_ModuloDocumentos_Categorias.ModifiedOn])
+    FROM (
+        SELECT 
+            T.IdCategoria AS [TBL_ModuloDocumentos_Categorias.IdCategoria], 
+            T.Nombre AS [TBL_ModuloDocumentos_Categorias.Nombre], 
+            T.Nivel AS [TBL_ModuloDocumentos_Categorias.Nivel], 
+            T.IsActive AS [TBL_ModuloDocumentos_Categorias.IsActive], 
+            T.CreateBy AS [TBL_ModuloDocumentos_Categorias.CreateBy], 
+            T.CreateOn AS [TBL_ModuloDocumentos_Categorias.CreateOn], 
+            T.ModifiedBy AS [TBL_ModuloDocumentos_Categorias.ModifiedBy], 
+            T.ModifiedOn AS [TBL_ModuloDocumentos_Categorias.ModifiedOn], 
+            True AS _from0
+        FROM MainModuleContext.TBL_ModuloDocumentos_Categorias AS T
+    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_Documento
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView33()
+        {
+            System.Text.StringBuilder viewString = new System.Text.StringBuilder(2577);
+            viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloDocumentos_Documento\r\n        [Solu");
+            viewString.Append("tionFramework.MainModel.Store.TBL_ModuloDocumentos_Documento](T1.[TBL_ModuloDocu");
+            viewString.Append("mentos_Documento.IdDocumento], T1.[TBL_ModuloDocumentos_Documento.Titulo], T1.[T");
+            viewString.Append("BL_ModuloDocumentos_Documento.Observaciones], T1.[TBL_ModuloDocumentos_Documento");
+            viewString.Append(".Version], T1.[TBL_ModuloDocumentos_Documento.IdEstado], T1.[TBL_ModuloDocumento");
+            viewString.Append("s_Documento.IdCategoria], T1.[TBL_ModuloDocumentos_Documento.IdSubCategoria], T1");
+            viewString.Append(".[TBL_ModuloDocumentos_Documento.IdTipo], T1.[TBL_ModuloDocumentos_Documento.IdU");
+            viewString.Append("suarioResponsable], T1.[TBL_ModuloDocumentos_Documento.IdUsuarioCreacion], T1.[T");
+            viewString.Append("BL_ModuloDocumentos_Documento.IdUsuarioModificacion], T1.[TBL_ModuloDocumentos_D");
+            viewString.Append("ocumento.FechaCreacion], T1.[TBL_ModuloDocumentos_Documento.FechaModificacion], ");
+            viewString.Append("T1.[TBL_ModuloDocumentos_Documento.IsActive], T1.[TBL_ModuloDocumentos_Documento");
+            viewString.Append(".CreateBy], T1.[TBL_ModuloDocumentos_Documento.CreateOn], T1.[TBL_ModuloDocument");
+            viewString.Append("os_Documento.ModifiedBy], T1.[TBL_ModuloDocumentos_Documento.ModifiedOn])\r\n    F");
+            viewString.Append("ROM (\r\n        SELECT \r\n            T.IdDocumento AS [TBL_ModuloDocumentos_Docum");
+            viewString.Append("ento.IdDocumento], \r\n            T.Titulo AS [TBL_ModuloDocumentos_Documento.Tit");
+            viewString.Append("ulo], \r\n            T.Observaciones AS [TBL_ModuloDocumentos_Documento.Observaci");
+            viewString.Append("ones], \r\n            T.Version AS [TBL_ModuloDocumentos_Documento.Version], \r\n  ");
+            viewString.Append("          T.IdEstado AS [TBL_ModuloDocumentos_Documento.IdEstado], \r\n           ");
+            viewString.Append(" T.IdCategoria AS [TBL_ModuloDocumentos_Documento.IdCategoria], \r\n            T.");
+            viewString.Append("IdSubCategoria AS [TBL_ModuloDocumentos_Documento.IdSubCategoria], \r\n           ");
+            viewString.Append(" T.IdTipo AS [TBL_ModuloDocumentos_Documento.IdTipo], \r\n            T.IdUsuarioR");
+            viewString.Append("esponsable AS [TBL_ModuloDocumentos_Documento.IdUsuarioResponsable], \r\n         ");
+            viewString.Append("   T.IdUsuarioCreacion AS [TBL_ModuloDocumentos_Documento.IdUsuarioCreacion], \r\n");
+            viewString.Append("            T.IdUsuarioModificacion AS [TBL_ModuloDocumentos_Documento.IdUsuario");
+            viewString.Append("Modificacion], \r\n            T.FechaCreacion AS [TBL_ModuloDocumentos_Documento.");
+            viewString.Append("FechaCreacion], \r\n            T.FechaModificacion AS [TBL_ModuloDocumentos_Docum");
+            viewString.Append("ento.FechaModificacion], \r\n            T.IsActive AS [TBL_ModuloDocumentos_Docum");
+            viewString.Append("ento.IsActive], \r\n            T.CreateBy AS [TBL_ModuloDocumentos_Documento.Crea");
+            viewString.Append("teBy], \r\n            T.CreateOn AS [TBL_ModuloDocumentos_Documento.CreateOn], \r\n");
+            viewString.Append("            T.ModifiedBy AS [TBL_ModuloDocumentos_Documento.ModifiedBy], \r\n     ");
+            viewString.Append("       T.ModifiedOn AS [TBL_ModuloDocumentos_Documento.ModifiedOn], \r\n          ");
+            viewString.Append("  True AS _from0\r\n        FROM MainModuleContext.TBL_ModuloDocumentos_Documento ");
+            viewString.Append("AS T\r\n    ) AS T1");
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_Documento", viewString.ToString());
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_DocumentoAdjunto
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView34()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_DocumentoAdjunto", "\r\n    SELECT VALUE -- Constructing TBL_ModuloDocumentos_DocumentoAdjunto\r\n       " +
+                    " [SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_DocumentoAdjunto](T1.[T" +
+                    "BL_ModuloDocumentos_DocumentoAdjunto.IdDocumentoAdjunto], T1.[TBL_ModuloDocument" +
+                    "os_DocumentoAdjunto.IdDocumento], T1.[TBL_ModuloDocumentos_DocumentoAdjunto.Nomb" +
+                    "reArchivo], T1.[TBL_ModuloDocumentos_DocumentoAdjunto.Archivo], T1.[TBL_ModuloDo" +
+                    "cumentos_DocumentoAdjunto.IsActive], T1.[TBL_ModuloDocumentos_DocumentoAdjunto.C" +
+                    "reateBy], T1.[TBL_ModuloDocumentos_DocumentoAdjunto.CrateOn], T1.[TBL_ModuloDocu" +
+                    "mentos_DocumentoAdjunto.ModifiedBy], T1.[TBL_ModuloDocumentos_DocumentoAdjunto.M" +
+                    "odifiedOn])\r\n    FROM (\r\n        SELECT \r\n            T.IdDocumentoAdjunto AS [T" +
+                    "BL_ModuloDocumentos_DocumentoAdjunto.IdDocumentoAdjunto], \r\n            T.IdDocu" +
+                    "mento AS [TBL_ModuloDocumentos_DocumentoAdjunto.IdDocumento], \r\n            T.No" +
+                    "mbreArchivo AS [TBL_ModuloDocumentos_DocumentoAdjunto.NombreArchivo], \r\n        " +
+                    "    T.Archivo AS [TBL_ModuloDocumentos_DocumentoAdjunto.Archivo], \r\n            " +
+                    "T.IsActive AS [TBL_ModuloDocumentos_DocumentoAdjunto.IsActive], \r\n            T." +
+                    "CreateBy AS [TBL_ModuloDocumentos_DocumentoAdjunto.CreateBy], \r\n            T.Cr" +
+                    "ateOn AS [TBL_ModuloDocumentos_DocumentoAdjunto.CrateOn], \r\n            T.Modifi" +
+                    "edBy AS [TBL_ModuloDocumentos_DocumentoAdjunto.ModifiedBy], \r\n            T.Modi" +
+                    "fiedOn AS [TBL_ModuloDocumentos_DocumentoAdjunto.ModifiedOn], \r\n            True" +
+                    " AS _from0\r\n        FROM MainModuleContext.TBL_ModuloDocumentos_DocumentoAdjunto" +
+                    " AS T\r\n    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_DocumentoAdjuntoHistorial
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView35()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_DocumentoAdjuntoHis" +
+                    "torial", "\r\n    SELECT VALUE -- Constructing TBL_ModuloDocumentos_DocumentoAdjuntoHistorial" +
+                    "\r\n        [SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_DocumentoAdjun" +
+                    "toHistorial](T1.[TBL_ModuloDocumentos_DocumentoAdjuntoHistorial.IdDocumentoAdjun" +
+                    "toHistorial], T1.[TBL_ModuloDocumentos_DocumentoAdjuntoHistorial.IdHistorial], T" +
+                    "1.[TBL_ModuloDocumentos_DocumentoAdjuntoHistorial.NombreArchivo], T1.[TBL_Modulo" +
+                    "Documentos_DocumentoAdjuntoHistorial.Archivo], T1.[TBL_ModuloDocumentos_Document" +
+                    "oAdjuntoHistorial.IsActive], T1.[TBL_ModuloDocumentos_DocumentoAdjuntoHistorial." +
+                    "CreateBy], T1.[TBL_ModuloDocumentos_DocumentoAdjuntoHistorial.CreateOn], T1.[TBL" +
+                    "_ModuloDocumentos_DocumentoAdjuntoHistorial.ModifiedBy], T1.[TBL_ModuloDocumento" +
+                    "s_DocumentoAdjuntoHistorial.ModifiedOn])\r\n    FROM (\r\n        SELECT \r\n         " +
+                    "   T.IdDocumentoAdjuntoHistorial AS [TBL_ModuloDocumentos_DocumentoAdjuntoHistor" +
+                    "ial.IdDocumentoAdjuntoHistorial], \r\n            T.IdHistorial AS [TBL_ModuloDocu" +
+                    "mentos_DocumentoAdjuntoHistorial.IdHistorial], \r\n            T.NombreArchivo AS " +
+                    "[TBL_ModuloDocumentos_DocumentoAdjuntoHistorial.NombreArchivo], \r\n            T." +
+                    "Archivo AS [TBL_ModuloDocumentos_DocumentoAdjuntoHistorial.Archivo], \r\n         " +
+                    "   T.IsActive AS [TBL_ModuloDocumentos_DocumentoAdjuntoHistorial.IsActive], \r\n  " +
+                    "          T.CreateBy AS [TBL_ModuloDocumentos_DocumentoAdjuntoHistorial.CreateBy" +
+                    "], \r\n            T.CreateOn AS [TBL_ModuloDocumentos_DocumentoAdjuntoHistorial.C" +
+                    "reateOn], \r\n            T.ModifiedBy AS [TBL_ModuloDocumentos_DocumentoAdjuntoHi" +
+                    "storial.ModifiedBy], \r\n            T.ModifiedOn AS [TBL_ModuloDocumentos_Documen" +
+                    "toAdjuntoHistorial.ModifiedOn], \r\n            True AS _from0\r\n        FROM MainM" +
+                    "oduleContext.TBL_ModuloDocumentos_DocumentoAdjuntoHistorial AS T\r\n    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_Estados
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView36()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_Estados", @"
+    SELECT VALUE -- Constructing TBL_ModuloDocumentos_Estados
+        [SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_Estados](T1.[TBL_ModuloDocumentos_Estados.IdEstado], T1.[TBL_ModuloDocumentos_Estados.Codigo], T1.[TBL_ModuloDocumentos_Estados.Nombre], T1.[TBL_ModuloDocumentos_Estados.Descripcion], T1.[TBL_ModuloDocumentos_Estados.IsActive], T1.[TBL_ModuloDocumentos_Estados.CreateBy], T1.[TBL_ModuloDocumentos_Estados.CreateOn], T1.[TBL_ModuloDocumentos_Estados.ModifiedBy], T1.[TBL_ModuloDocumentos_Estados.ModifiedOn])
+    FROM (
+        SELECT 
+            T.IdEstado AS [TBL_ModuloDocumentos_Estados.IdEstado], 
+            T.Codigo AS [TBL_ModuloDocumentos_Estados.Codigo], 
+            T.Nombre AS [TBL_ModuloDocumentos_Estados.Nombre], 
+            T.Descripcion AS [TBL_ModuloDocumentos_Estados.Descripcion], 
+            T.IsActive AS [TBL_ModuloDocumentos_Estados.IsActive], 
+            T.CreateBy AS [TBL_ModuloDocumentos_Estados.CreateBy], 
+            T.CreateOn AS [TBL_ModuloDocumentos_Estados.CreateOn], 
+            T.ModifiedBy AS [TBL_ModuloDocumentos_Estados.ModifiedBy], 
+            T.ModifiedOn AS [TBL_ModuloDocumentos_Estados.ModifiedOn], 
+            True AS _from0
+        FROM MainModuleContext.TBL_ModuloDocumentos_Estados AS T
+    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_HistorialDocumento
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView37()
+        {
+            System.Text.StringBuilder viewString = new System.Text.StringBuilder(2907);
+            viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloDocumentos_HistorialDocumento\r\n    ");
+            viewString.Append("    [SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_HistorialDocumento](");
+            viewString.Append("T1.[TBL_ModuloDocumentos_HistorialDocumento.IdHistorial], T1.[TBL_ModuloDocument");
+            viewString.Append("os_HistorialDocumento.IdDocumento], T1.[TBL_ModuloDocumentos_HistorialDocumento.");
+            viewString.Append("Titulo], T1.[TBL_ModuloDocumentos_HistorialDocumento.Observaciones], T1.[TBL_Mod");
+            viewString.Append("uloDocumentos_HistorialDocumento.Version], T1.[TBL_ModuloDocumentos_HistorialDoc");
+            viewString.Append("umento.IdCategoria], T1.[TBL_ModuloDocumentos_HistorialDocumento.IdEstado], T1.[");
+            viewString.Append("TBL_ModuloDocumentos_HistorialDocumento.IdSubCategoria], T1.[TBL_ModuloDocumento");
+            viewString.Append("s_HistorialDocumento.IdTipo], T1.[TBL_ModuloDocumentos_HistorialDocumento.IdUsua");
+            viewString.Append("rioResposable], T1.[TBL_ModuloDocumentos_HistorialDocumento.IdUsuarioCreacion], ");
+            viewString.Append("T1.[TBL_ModuloDocumentos_HistorialDocumento.IdUsuarioModificacion], T1.[TBL_Modu");
+            viewString.Append("loDocumentos_HistorialDocumento.FechaCreacion], T1.[TBL_ModuloDocumentos_Histori");
+            viewString.Append("alDocumento.IsActive], T1.[TBL_ModuloDocumentos_HistorialDocumento.CreateBy], T1");
+            viewString.Append(".[TBL_ModuloDocumentos_HistorialDocumento.CreateOn], T1.[TBL_ModuloDocumentos_Hi");
+            viewString.Append("storialDocumento.ModifiedBy], T1.[TBL_ModuloDocumentos_HistorialDocumento.Modifi");
+            viewString.Append("edOn])\r\n    FROM (\r\n        SELECT \r\n            T.IdHistorial AS [TBL_ModuloDoc");
+            viewString.Append("umentos_HistorialDocumento.IdHistorial], \r\n            T.IdDocumento AS [TBL_Mod");
+            viewString.Append("uloDocumentos_HistorialDocumento.IdDocumento], \r\n            T.Titulo AS [TBL_Mo");
+            viewString.Append("duloDocumentos_HistorialDocumento.Titulo], \r\n            T.Observaciones AS [TBL");
+            viewString.Append("_ModuloDocumentos_HistorialDocumento.Observaciones], \r\n            T.Version AS ");
+            viewString.Append("[TBL_ModuloDocumentos_HistorialDocumento.Version], \r\n            T.IdCategoria A");
+            viewString.Append("S [TBL_ModuloDocumentos_HistorialDocumento.IdCategoria], \r\n            T.IdEstad");
+            viewString.Append("o AS [TBL_ModuloDocumentos_HistorialDocumento.IdEstado], \r\n            T.IdSubCa");
+            viewString.Append("tegoria AS [TBL_ModuloDocumentos_HistorialDocumento.IdSubCategoria], \r\n         ");
+            viewString.Append("   T.IdTipo AS [TBL_ModuloDocumentos_HistorialDocumento.IdTipo], \r\n            T");
+            viewString.Append(".IdUsuarioResposable AS [TBL_ModuloDocumentos_HistorialDocumento.IdUsuarioRespos");
+            viewString.Append("able], \r\n            T.IdUsuarioCreacion AS [TBL_ModuloDocumentos_HistorialDocum");
+            viewString.Append("ento.IdUsuarioCreacion], \r\n            T.IdUsuarioModificacion AS [TBL_ModuloDoc");
+            viewString.Append("umentos_HistorialDocumento.IdUsuarioModificacion], \r\n            T.FechaCreacion");
+            viewString.Append(" AS [TBL_ModuloDocumentos_HistorialDocumento.FechaCreacion], \r\n            T.IsA");
+            viewString.Append("ctive AS [TBL_ModuloDocumentos_HistorialDocumento.IsActive], \r\n            T.Cre");
+            viewString.Append("ateBy AS [TBL_ModuloDocumentos_HistorialDocumento.CreateBy], \r\n            T.Cre");
+            viewString.Append("ateOn AS [TBL_ModuloDocumentos_HistorialDocumento.CreateOn], \r\n            T.Mod");
+            viewString.Append("ifiedBy AS [TBL_ModuloDocumentos_HistorialDocumento.ModifiedBy], \r\n            T");
+            viewString.Append(".ModifiedOn AS [TBL_ModuloDocumentos_HistorialDocumento.ModifiedOn], \r\n         ");
+            viewString.Append("   True AS _from0\r\n        FROM MainModuleContext.TBL_ModuloDocumentos_Historial");
+            viewString.Append("Documento AS T\r\n    ) AS T1");
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_HistorialDocumento", viewString.ToString());
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_LogCambios
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView38()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_LogCambios", @"
+    SELECT VALUE -- Constructing TBL_ModuloDocumentos_LogCambios
+        [SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_LogCambios](T1.[TBL_ModuloDocumentos_LogCambios.IdLog], T1.[TBL_ModuloDocumentos_LogCambios.IdDocumento], T1.[TBL_ModuloDocumentos_LogCambios.IdHistorial], T1.[TBL_ModuloDocumentos_LogCambios.Descripcion], T1.[TBL_ModuloDocumentos_LogCambios.IsActive], T1.[TBL_ModuloDocumentos_LogCambios.CreateBy], T1.[TBL_ModuloDocumentos_LogCambios.CreateOn])
+    FROM (
+        SELECT 
+            T.IdLog AS [TBL_ModuloDocumentos_LogCambios.IdLog], 
+            T.IdDocumento AS [TBL_ModuloDocumentos_LogCambios.IdDocumento], 
+            T.IdHistorial AS [TBL_ModuloDocumentos_LogCambios.IdHistorial], 
+            T.Descripcion AS [TBL_ModuloDocumentos_LogCambios.Descripcion], 
+            T.IsActive AS [TBL_ModuloDocumentos_LogCambios.IsActive], 
+            T.CreateBy AS [TBL_ModuloDocumentos_LogCambios.CreateBy], 
+            T.CreateOn AS [TBL_ModuloDocumentos_LogCambios.CreateOn], 
+            True AS _from0
+        FROM MainModuleContext.TBL_ModuloDocumentos_LogCambios AS T
+    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_Actividades
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView39()
+        {
+            System.Text.StringBuilder viewString = new System.Text.StringBuilder(2079);
+            viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_Actividades\r\n        [Solu");
+            viewString.Append("tionFramework.MainModel.Store.TBL_ModuloReclamos_Actividades](T1.[TBL_ModuloRecl");
+            viewString.Append("amos_Actividades.IdActividad], T1.[TBL_ModuloReclamos_Actividades.IdReclamo], T1");
+            viewString.Append(".[TBL_ModuloReclamos_Actividades.IdActividadReclamo], T1.[TBL_ModuloReclamos_Act");
+            viewString.Append("ividades.Estado], T1.[TBL_ModuloReclamos_Actividades.Descripcion], T1.[TBL_Modul");
+            viewString.Append("oReclamos_Actividades.Fecha], T1.[TBL_ModuloReclamos_Actividades.IdUsuarioAsigna");
+            viewString.Append("cion], T1.[TBL_ModuloReclamos_Actividades.ObservacionesCierre], T1.[TBL_ModuloRe");
+            viewString.Append("clamos_Actividades.ObservacionesCancelacion], T1.[TBL_ModuloReclamos_Actividades");
+            viewString.Append(".IsActive], T1.[TBL_ModuloReclamos_Actividades.CreateBy], T1.[TBL_ModuloReclamos");
+            viewString.Append("_Actividades.CreateOn], T1.[TBL_ModuloReclamos_Actividades.ModifiedBy], T1.[TBL_");
+            viewString.Append("ModuloReclamos_Actividades.ModifiedOn])\r\n    FROM (\r\n        SELECT \r\n          ");
+            viewString.Append("  T.IdActividad AS [TBL_ModuloReclamos_Actividades.IdActividad], \r\n            T");
+            viewString.Append(".IdReclamo AS [TBL_ModuloReclamos_Actividades.IdReclamo], \r\n            T.IdActi");
+            viewString.Append("vidadReclamo AS [TBL_ModuloReclamos_Actividades.IdActividadReclamo], \r\n         ");
+            viewString.Append("   T.Estado AS [TBL_ModuloReclamos_Actividades.Estado], \r\n            T.Descripc");
+            viewString.Append("ion AS [TBL_ModuloReclamos_Actividades.Descripcion], \r\n            T.Fecha AS [T");
+            viewString.Append("BL_ModuloReclamos_Actividades.Fecha], \r\n            T.IdUsuarioAsignacion AS [TB");
+            viewString.Append("L_ModuloReclamos_Actividades.IdUsuarioAsignacion], \r\n            T.Observaciones");
+            viewString.Append("Cierre AS [TBL_ModuloReclamos_Actividades.ObservacionesCierre], \r\n            T.");
+            viewString.Append("ObservacionesCancelacion AS [TBL_ModuloReclamos_Actividades.ObservacionesCancela");
+            viewString.Append("cion], \r\n            T.IsActive AS [TBL_ModuloReclamos_Actividades.IsActive], \r\n");
+            viewString.Append("            T.CreateBy AS [TBL_ModuloReclamos_Actividades.CreateBy], \r\n         ");
+            viewString.Append("   T.CreateOn AS [TBL_ModuloReclamos_Actividades.CreateOn], \r\n            T.Modi");
+            viewString.Append("fiedBy AS [TBL_ModuloReclamos_Actividades.ModifiedBy], \r\n            T.ModifiedO");
+            viewString.Append("n AS [TBL_ModuloReclamos_Actividades.ModifiedOn], \r\n            True AS _from0\r\n");
+            viewString.Append("        FROM MainModuleContext.TBL_ModuloReclamos_Actividades AS T\r\n    ) AS T1");
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_Actividades", viewString.ToString());
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_ActividadesReclamo
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView40()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_ActividadesReclamo", "\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_ActividadesReclamo\r\n       " +
+                    " [SolutionFramework.MainModel.Store.TBL_ModuloReclamos_ActividadesReclamo](T1.[T" +
+                    "BL_ModuloReclamos_ActividadesReclamo.IdActividad], T1.[TBL_ModuloReclamos_Activi" +
+                    "dadesReclamo.Nombre], T1.[TBL_ModuloReclamos_ActividadesReclamo.Descripcion], T1" +
+                    ".[TBL_ModuloReclamos_ActividadesReclamo.IdTipoReclamo], T1.[TBL_ModuloReclamos_A" +
+                    "ctividadesReclamo.IsActive], T1.[TBL_ModuloReclamos_ActividadesReclamo.CreateBy]" +
+                    ", T1.[TBL_ModuloReclamos_ActividadesReclamo.CreateOn], T1.[TBL_ModuloReclamos_Ac" +
+                    "tividadesReclamo.ModifiedBy], T1.[TBL_ModuloReclamos_ActividadesReclamo.Modified" +
+                    "On])\r\n    FROM (\r\n        SELECT \r\n            T.IdActividad AS [TBL_ModuloRecla" +
+                    "mos_ActividadesReclamo.IdActividad], \r\n            T.Nombre AS [TBL_ModuloReclam" +
+                    "os_ActividadesReclamo.Nombre], \r\n            T.Descripcion AS [TBL_ModuloReclamo" +
+                    "s_ActividadesReclamo.Descripcion], \r\n            T.IdTipoReclamo AS [TBL_ModuloR" +
+                    "eclamos_ActividadesReclamo.IdTipoReclamo], \r\n            T.IsActive AS [TBL_Modu" +
+                    "loReclamos_ActividadesReclamo.IsActive], \r\n            T.CreateBy AS [TBL_Modulo" +
+                    "Reclamos_ActividadesReclamo.CreateBy], \r\n            T.CreateOn AS [TBL_ModuloRe" +
+                    "clamos_ActividadesReclamo.CreateOn], \r\n            T.ModifiedBy AS [TBL_ModuloRe" +
+                    "clamos_ActividadesReclamo.ModifiedBy], \r\n            T.ModifiedOn AS [TBL_Modulo" +
+                    "Reclamos_ActividadesReclamo.ModifiedOn], \r\n            True AS _from0\r\n        F" +
+                    "ROM MainModuleContext.TBL_ModuloReclamos_ActividadesReclamo AS T\r\n    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_Alternativas
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView41()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_Alternativas", "\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_Alternativas\r\n        [Solu" +
+                    "tionFramework.MainModel.Store.TBL_ModuloReclamos_Alternativas](T1.[TBL_ModuloRec" +
+                    "lamos_Alternativas.IdAlternativa], T1.[TBL_ModuloReclamos_Alternativas.IdReclamo" +
+                    "], T1.[TBL_ModuloReclamos_Alternativas.Causas], T1.[TBL_ModuloReclamos_Alternati" +
+                    "vas.Factores], T1.[TBL_ModuloReclamos_Alternativas.Alternativa], T1.[TBL_ModuloR" +
+                    "eclamos_Alternativas.IdResponsable], T1.[TBL_ModuloReclamos_Alternativas.FechaAl" +
+                    "ternativa], T1.[TBL_ModuloReclamos_Alternativas.Seguimiento], T1.[TBL_ModuloRecl" +
+                    "amos_Alternativas.Estado], T1.[TBL_ModuloReclamos_Alternativas.IsActive], T1.[TB" +
+                    "L_ModuloReclamos_Alternativas.CreateBy], T1.[TBL_ModuloReclamos_Alternativas.Cre" +
+                    "ateOn], T1.[TBL_ModuloReclamos_Alternativas.ModifiedBy], T1.[TBL_ModuloReclamos_" +
+                    "Alternativas.ModifiedOn])\r\n    FROM (\r\n        SELECT \r\n            T.IdAlternat" +
+                    "iva AS [TBL_ModuloReclamos_Alternativas.IdAlternativa], \r\n            T.IdReclam" +
+                    "o AS [TBL_ModuloReclamos_Alternativas.IdReclamo], \r\n            T.Causas AS [TBL" +
+                    "_ModuloReclamos_Alternativas.Causas], \r\n            T.Factores AS [TBL_ModuloRec" +
+                    "lamos_Alternativas.Factores], \r\n            T.Alternativa AS [TBL_ModuloReclamos" +
+                    "_Alternativas.Alternativa], \r\n            T.IdResponsable AS [TBL_ModuloReclamos" +
+                    "_Alternativas.IdResponsable], \r\n            T.FechaAlternativa AS [TBL_ModuloRec" +
+                    "lamos_Alternativas.FechaAlternativa], \r\n            T.Seguimiento AS [TBL_Modulo" +
+                    "Reclamos_Alternativas.Seguimiento], \r\n            T.Estado AS [TBL_ModuloReclamo" +
+                    "s_Alternativas.Estado], \r\n            T.IsActive AS [TBL_ModuloReclamos_Alternat" +
+                    "ivas.IsActive], \r\n            T.CreateBy AS [TBL_ModuloReclamos_Alternativas.Cre" +
+                    "ateBy], \r\n            T.CreateOn AS [TBL_ModuloReclamos_Alternativas.CreateOn], " +
+                    "\r\n            T.ModifiedBy AS [TBL_ModuloReclamos_Alternativas.ModifiedBy], \r\n  " +
+                    "          T.ModifiedOn AS [TBL_ModuloReclamos_Alternativas.ModifiedOn], \r\n      " +
+                    "      True AS _from0\r\n        FROM MainModuleContext.TBL_ModuloReclamos_Alternat" +
+                    "ivas AS T\r\n    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_AnexosActividad
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView42()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_AnexosActividad", @"
+    SELECT VALUE -- Constructing TBL_ModuloReclamos_AnexosActividad
+        [SolutionFramework.MainModel.Store.TBL_ModuloReclamos_AnexosActividad](T1.[TBL_ModuloReclamos_AnexosActividad.IdAnexoActividad], T1.[TBL_ModuloReclamos_AnexosActividad.NombreArchivo], T1.[TBL_ModuloReclamos_AnexosActividad.Archivo], T1.[TBL_ModuloReclamos_AnexosActividad.IdActividad], T1.[TBL_ModuloReclamos_AnexosActividad.IsActive], T1.[TBL_ModuloReclamos_AnexosActividad.CreateBy], T1.[TBL_ModuloReclamos_AnexosActividad.CreateOn], T1.[TBL_ModuloReclamos_AnexosActividad.ModifiedBy], T1.[TBL_ModuloReclamos_AnexosActividad.ModifiedOn])
+    FROM (
+        SELECT 
+            T.IdAnexoActividad AS [TBL_ModuloReclamos_AnexosActividad.IdAnexoActividad], 
+            T.NombreArchivo AS [TBL_ModuloReclamos_AnexosActividad.NombreArchivo], 
+            T.Archivo AS [TBL_ModuloReclamos_AnexosActividad.Archivo], 
+            T.IdActividad AS [TBL_ModuloReclamos_AnexosActividad.IdActividad], 
+            T.IsActive AS [TBL_ModuloReclamos_AnexosActividad.IsActive], 
+            T.CreateBy AS [TBL_ModuloReclamos_AnexosActividad.CreateBy], 
+            T.CreateOn AS [TBL_ModuloReclamos_AnexosActividad.CreateOn], 
+            T.ModifiedBy AS [TBL_ModuloReclamos_AnexosActividad.ModifiedBy], 
+            T.ModifiedOn AS [TBL_ModuloReclamos_AnexosActividad.ModifiedOn], 
+            True AS _from0
+        FROM MainModuleContext.TBL_ModuloReclamos_AnexosActividad AS T
+    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_AnexosAlternativa
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView43()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_AnexosAlternativa", "\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_AnexosAlternativa\r\n        " +
+                    "[SolutionFramework.MainModel.Store.TBL_ModuloReclamos_AnexosAlternativa](T1.[TBL" +
+                    "_ModuloReclamos_AnexosAlternativa.IdAnexoAlternativa], T1.[TBL_ModuloReclamos_An" +
+                    "exosAlternativa.NombreArchivo], T1.[TBL_ModuloReclamos_AnexosAlternativa.Archivo" +
+                    "], T1.[TBL_ModuloReclamos_AnexosAlternativa.IdAlternativa], T1.[TBL_ModuloReclam" +
+                    "os_AnexosAlternativa.IsActive], T1.[TBL_ModuloReclamos_AnexosAlternativa.CreateB" +
+                    "y], T1.[TBL_ModuloReclamos_AnexosAlternativa.CreateOn], T1.[TBL_ModuloReclamos_A" +
+                    "nexosAlternativa.ModifiedBy], T1.[TBL_ModuloReclamos_AnexosAlternativa.ModifiedO" +
+                    "n])\r\n    FROM (\r\n        SELECT \r\n            T.IdAnexoAlternativa AS [TBL_Modul" +
+                    "oReclamos_AnexosAlternativa.IdAnexoAlternativa], \r\n            T.NombreArchivo A" +
+                    "S [TBL_ModuloReclamos_AnexosAlternativa.NombreArchivo], \r\n            T.Archivo " +
+                    "AS [TBL_ModuloReclamos_AnexosAlternativa.Archivo], \r\n            T.IdAlternativa" +
+                    " AS [TBL_ModuloReclamos_AnexosAlternativa.IdAlternativa], \r\n            T.IsActi" +
+                    "ve AS [TBL_ModuloReclamos_AnexosAlternativa.IsActive], \r\n            T.CreateBy " +
+                    "AS [TBL_ModuloReclamos_AnexosAlternativa.CreateBy], \r\n            T.CreateOn AS " +
+                    "[TBL_ModuloReclamos_AnexosAlternativa.CreateOn], \r\n            T.ModifiedBy AS [" +
+                    "TBL_ModuloReclamos_AnexosAlternativa.ModifiedBy], \r\n            T.ModifiedOn AS " +
+                    "[TBL_ModuloReclamos_AnexosAlternativa.ModifiedOn], \r\n            True AS _from0\r" +
+                    "\n        FROM MainModuleContext.TBL_ModuloReclamos_AnexosAlternativa AS T\r\n    )" +
+                    " AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_AnexosComentarioRespuesta
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView44()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_AnexosComentarioRespu" +
+                    "esta", "\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_AnexosComentarioRespuesta\r\n" +
+                    "        [SolutionFramework.MainModel.Store.TBL_ModuloReclamos_AnexosComentarioRe" +
+                    "spuesta](T1.[TBL_ModuloReclamos_AnexosComentarioRespuesta.IdAnexoComentarioRespu" +
+                    "esta], T1.[TBL_ModuloReclamos_AnexosComentarioRespuesta.NombreArchivo], T1.[TBL_" +
+                    "ModuloReclamos_AnexosComentarioRespuesta.Archivo], T1.[TBL_ModuloReclamos_Anexos" +
+                    "ComentarioRespuesta.IdComentarioRespuesta], T1.[TBL_ModuloReclamos_AnexosComenta" +
+                    "rioRespuesta.IsActive], T1.[TBL_ModuloReclamos_AnexosComentarioRespuesta.CreateB" +
+                    "y], T1.[TBL_ModuloReclamos_AnexosComentarioRespuesta.CreateOn], T1.[TBL_ModuloRe" +
+                    "clamos_AnexosComentarioRespuesta.ModifiedBy], T1.[TBL_ModuloReclamos_AnexosComen" +
+                    "tarioRespuesta.ModifiedOn])\r\n    FROM (\r\n        SELECT \r\n            T.IdAnexoC" +
+                    "omentarioRespuesta AS [TBL_ModuloReclamos_AnexosComentarioRespuesta.IdAnexoComen" +
+                    "tarioRespuesta], \r\n            T.NombreArchivo AS [TBL_ModuloReclamos_AnexosCome" +
+                    "ntarioRespuesta.NombreArchivo], \r\n            T.Archivo AS [TBL_ModuloReclamos_A" +
+                    "nexosComentarioRespuesta.Archivo], \r\n            T.IdComentarioRespuesta AS [TBL" +
+                    "_ModuloReclamos_AnexosComentarioRespuesta.IdComentarioRespuesta], \r\n            " +
+                    "T.IsActive AS [TBL_ModuloReclamos_AnexosComentarioRespuesta.IsActive], \r\n       " +
+                    "     T.CreateBy AS [TBL_ModuloReclamos_AnexosComentarioRespuesta.CreateBy], \r\n  " +
+                    "          T.CreateOn AS [TBL_ModuloReclamos_AnexosComentarioRespuesta.CreateOn]," +
+                    " \r\n            T.ModifiedBy AS [TBL_ModuloReclamos_AnexosComentarioRespuesta.Mod" +
+                    "ifiedBy], \r\n            T.ModifiedOn AS [TBL_ModuloReclamos_AnexosComentarioResp" +
+                    "uesta.ModifiedOn], \r\n            True AS _from0\r\n        FROM MainModuleContext." +
+                    "TBL_ModuloReclamos_AnexosComentarioRespuesta AS T\r\n    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_AnexosSolucion
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView45()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_AnexosSolucion", @"
+    SELECT VALUE -- Constructing TBL_ModuloReclamos_AnexosSolucion
+        [SolutionFramework.MainModel.Store.TBL_ModuloReclamos_AnexosSolucion](T1.[TBL_ModuloReclamos_AnexosSolucion.IdAnexoSolucion], T1.[TBL_ModuloReclamos_AnexosSolucion.NombreArchivo], T1.[TBL_ModuloReclamos_AnexosSolucion.Archivo], T1.[TBL_ModuloReclamos_AnexosSolucion.IdSolucion], T1.[TBL_ModuloReclamos_AnexosSolucion.IsActive], T1.[TBL_ModuloReclamos_AnexosSolucion.CreateBy], T1.[TBL_ModuloReclamos_AnexosSolucion.CreateOn], T1.[TBL_ModuloReclamos_AnexosSolucion.ModifiedBy], T1.[TBL_ModuloReclamos_AnexosSolucion.ModifiedOn])
+    FROM (
+        SELECT 
+            T.IdAnexoSolucion AS [TBL_ModuloReclamos_AnexosSolucion.IdAnexoSolucion], 
+            T.NombreArchivo AS [TBL_ModuloReclamos_AnexosSolucion.NombreArchivo], 
+            T.Archivo AS [TBL_ModuloReclamos_AnexosSolucion.Archivo], 
+            T.IdSolucion AS [TBL_ModuloReclamos_AnexosSolucion.IdSolucion], 
+            T.IsActive AS [TBL_ModuloReclamos_AnexosSolucion.IsActive], 
+            T.CreateBy AS [TBL_ModuloReclamos_AnexosSolucion.CreateBy], 
+            T.CreateOn AS [TBL_ModuloReclamos_AnexosSolucion.CreateOn], 
+            T.ModifiedBy AS [TBL_ModuloReclamos_AnexosSolucion.ModifiedBy], 
+            T.ModifiedOn AS [TBL_ModuloReclamos_AnexosSolucion.ModifiedOn], 
+            True AS _from0
+        FROM MainModuleContext.TBL_ModuloReclamos_AnexosSolucion AS T
+    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_Asesores
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView46()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_Asesores", @"
+    SELECT VALUE -- Constructing TBL_ModuloReclamos_Asesores
+        [SolutionFramework.MainModel.Store.TBL_ModuloReclamos_Asesores](T1.[TBL_ModuloReclamos_Asesores.IdUsuario], T1.[TBL_ModuloReclamos_Asesores.IdUnidad], T1.[TBL_ModuloReclamos_Asesores.IdZona])
+    FROM (
+        SELECT 
+            T.IdUsuario AS [TBL_ModuloReclamos_Asesores.IdUsuario], 
+            T.IdUnidad AS [TBL_ModuloReclamos_Asesores.IdUnidad], 
+            T.IdZona AS [TBL_ModuloReclamos_Asesores.IdZona], 
+            True AS _from0
+        FROM MainModuleContext.TBL_ModuloReclamos_Asesores AS T
+    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_CategoriaProducto
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView47()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_CategoriaProducto", @"
+    SELECT VALUE -- Constructing TBL_ModuloReclamos_CategoriaProducto
+        [SolutionFramework.MainModel.Store.TBL_ModuloReclamos_CategoriaProducto](T1.[TBL_ModuloReclamos_CategoriaProducto.IdCategoria], T1.[TBL_ModuloReclamos_CategoriaProducto.Nombre], T1.[TBL_ModuloReclamos_CategoriaProducto.Descripcion], T1.[TBL_ModuloReclamos_CategoriaProducto.IsActive], T1.[TBL_ModuloReclamos_CategoriaProducto.CreateBy], T1.[TBL_ModuloReclamos_CategoriaProducto.CreateOn], T1.[TBL_ModuloReclamos_CategoriaProducto.ModifiedBy], T1.[TBL_ModuloReclamos_CategoriaProducto.ModifiedOn])
+    FROM (
+        SELECT 
+            T.IdCategoria AS [TBL_ModuloReclamos_CategoriaProducto.IdCategoria], 
+            T.Nombre AS [TBL_ModuloReclamos_CategoriaProducto.Nombre], 
+            T.Descripcion AS [TBL_ModuloReclamos_CategoriaProducto.Descripcion], 
+            T.IsActive AS [TBL_ModuloReclamos_CategoriaProducto.IsActive], 
+            T.CreateBy AS [TBL_ModuloReclamos_CategoriaProducto.CreateBy], 
+            T.CreateOn AS [TBL_ModuloReclamos_CategoriaProducto.CreateOn], 
+            T.ModifiedBy AS [TBL_ModuloReclamos_CategoriaProducto.ModifiedBy], 
+            T.ModifiedOn AS [TBL_ModuloReclamos_CategoriaProducto.ModifiedOn], 
+            True AS _from0
+        FROM MainModuleContext.TBL_ModuloReclamos_CategoriaProducto AS T
+    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_CategoriasReclamo
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView48()
+        {
+            System.Text.StringBuilder viewString = new System.Text.StringBuilder(2073);
+            viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_CategoriasReclamo\r\n       ");
+            viewString.Append(" [SolutionFramework.MainModel.Store.TBL_ModuloReclamos_CategoriasReclamo](T1.[TB");
+            viewString.Append("L_ModuloReclamos_CategoriasReclamo.IdCategoriaReclamo], T1.[TBL_ModuloReclamos_C");
+            viewString.Append("ategoriasReclamo.Nombre], T1.[TBL_ModuloReclamos_CategoriasReclamo.SubCategoria]");
+            viewString.Append(", T1.[TBL_ModuloReclamos_CategoriasReclamo.Descripcion], T1.[TBL_ModuloReclamos_");
+            viewString.Append("CategoriasReclamo.Area], T1.[TBL_ModuloReclamos_CategoriasReclamo.IdResponsable]");
+            viewString.Append(", T1.[TBL_ModuloReclamos_CategoriasReclamo.GrupoInformacion], T1.[TBL_ModuloRecl");
+            viewString.Append("amos_CategoriasReclamo.IdTipoReclamo], T1.[TBL_ModuloReclamos_CategoriasReclamo.");
+            viewString.Append("IsActive], T1.[TBL_ModuloReclamos_CategoriasReclamo.CreateBy], T1.[TBL_ModuloRec");
+            viewString.Append("lamos_CategoriasReclamo.CreateOn], T1.[TBL_ModuloReclamos_CategoriasReclamo.Modi");
+            viewString.Append("fiedBy], T1.[TBL_ModuloReclamos_CategoriasReclamo.ModifiedOn])\r\n    FROM (\r\n    ");
+            viewString.Append("    SELECT \r\n            T.IdCategoriaReclamo AS [TBL_ModuloReclamos_CategoriasR");
+            viewString.Append("eclamo.IdCategoriaReclamo], \r\n            T.Nombre AS [TBL_ModuloReclamos_Catego");
+            viewString.Append("riasReclamo.Nombre], \r\n            T.SubCategoria AS [TBL_ModuloReclamos_Categor");
+            viewString.Append("iasReclamo.SubCategoria], \r\n            T.Descripcion AS [TBL_ModuloReclamos_Cat");
+            viewString.Append("egoriasReclamo.Descripcion], \r\n            T.Area AS [TBL_ModuloReclamos_Categor");
+            viewString.Append("iasReclamo.Area], \r\n            T.IdResponsable AS [TBL_ModuloReclamos_Categoria");
+            viewString.Append("sReclamo.IdResponsable], \r\n            T.GrupoInformacion AS [TBL_ModuloReclamos");
+            viewString.Append("_CategoriasReclamo.GrupoInformacion], \r\n            T.IdTipoReclamo AS [TBL_Modu");
+            viewString.Append("loReclamos_CategoriasReclamo.IdTipoReclamo], \r\n            T.IsActive AS [TBL_Mo");
+            viewString.Append("duloReclamos_CategoriasReclamo.IsActive], \r\n            T.CreateBy AS [TBL_Modul");
+            viewString.Append("oReclamos_CategoriasReclamo.CreateBy], \r\n            T.CreateOn AS [TBL_ModuloRe");
+            viewString.Append("clamos_CategoriasReclamo.CreateOn], \r\n            T.ModifiedBy AS [TBL_ModuloRec");
+            viewString.Append("lamos_CategoriasReclamo.ModifiedBy], \r\n            T.ModifiedOn AS [TBL_ModuloRe");
+            viewString.Append("clamos_CategoriasReclamo.ModifiedOn], \r\n            True AS _from0\r\n        FROM");
+            viewString.Append(" MainModuleContext.TBL_ModuloReclamos_CategoriasReclamo AS T\r\n    ) AS T1");
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_CategoriasReclamo", viewString.ToString());
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_ComentariosRespuesta
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView49()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_ComentariosRespuesta", "\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_ComentariosRespuesta\r\n     " +
+                    "   [SolutionFramework.MainModel.Store.TBL_ModuloReclamos_ComentariosRespuesta](T" +
+                    "1.[TBL_ModuloReclamos_ComentariosRespuesta.IdComentario], T1.[TBL_ModuloReclamos" +
+                    "_ComentariosRespuesta.IdReclamo], T1.[TBL_ModuloReclamos_ComentariosRespuesta.As" +
+                    "unto], T1.[TBL_ModuloReclamos_ComentariosRespuesta.Comentario], T1.[TBL_ModuloRe" +
+                    "clamos_ComentariosRespuesta.IdUsuarioDestino], T1.[TBL_ModuloReclamos_Comentario" +
+                    "sRespuesta.IdComentarioRelacionado], T1.[TBL_ModuloReclamos_ComentariosRespuesta" +
+                    ".IsActive], T1.[TBL_ModuloReclamos_ComentariosRespuesta.CreateBy], T1.[TBL_Modul" +
+                    "oReclamos_ComentariosRespuesta.CreateOn], T1.[TBL_ModuloReclamos_ComentariosResp" +
+                    "uesta.ModifiedBy], T1.[TBL_ModuloReclamos_ComentariosRespuesta.ModifiedOn])\r\n   " +
+                    " FROM (\r\n        SELECT \r\n            T.IdComentario AS [TBL_ModuloReclamos_Come" +
+                    "ntariosRespuesta.IdComentario], \r\n            T.IdReclamo AS [TBL_ModuloReclamos" +
+                    "_ComentariosRespuesta.IdReclamo], \r\n            T.Asunto AS [TBL_ModuloReclamos_" +
+                    "ComentariosRespuesta.Asunto], \r\n            T.Comentario AS [TBL_ModuloReclamos_" +
+                    "ComentariosRespuesta.Comentario], \r\n            T.IdUsuarioDestino AS [TBL_Modul" +
+                    "oReclamos_ComentariosRespuesta.IdUsuarioDestino], \r\n            T.IdComentarioRe" +
+                    "lacionado AS [TBL_ModuloReclamos_ComentariosRespuesta.IdComentarioRelacionado], " +
+                    "\r\n            T.IsActive AS [TBL_ModuloReclamos_ComentariosRespuesta.IsActive], " +
+                    "\r\n            T.CreateBy AS [TBL_ModuloReclamos_ComentariosRespuesta.CreateBy], " +
+                    "\r\n            T.CreateOn AS [TBL_ModuloReclamos_ComentariosRespuesta.CreateOn], " +
+                    "\r\n            T.ModifiedBy AS [TBL_ModuloReclamos_ComentariosRespuesta.ModifiedB" +
+                    "y], \r\n            T.ModifiedOn AS [TBL_ModuloReclamos_ComentariosRespuesta.Modif" +
+                    "iedOn], \r\n            True AS _from0\r\n        FROM MainModuleContext.TBL_ModuloR" +
+                    "eclamos_ComentariosRespuesta AS T\r\n    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_CostosProducto
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView50()
+        {
+            System.Text.StringBuilder viewString = new System.Text.StringBuilder(2517);
+            viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_CostosProducto\r\n        [S");
+            viewString.Append("olutionFramework.MainModel.Store.TBL_ModuloReclamos_CostosProducto](T1.[TBL_Modu");
+            viewString.Append("loReclamos_CostosProducto.IdCostoProducto], T1.[TBL_ModuloReclamos_CostosProduct");
+            viewString.Append("o.IdReclamo], T1.[TBL_ModuloReclamos_CostosProducto.NumItem], T1.[TBL_ModuloRecl");
+            viewString.Append("amos_CostosProducto.CodigoProducto], T1.[TBL_ModuloReclamos_CostosProducto.Nombr");
+            viewString.Append("eProducto], T1.[TBL_ModuloReclamos_CostosProducto.PesoNeto], T1.[TBL_ModuloRecla");
+            viewString.Append("mos_CostosProducto.PrecioLista], T1.[TBL_ModuloReclamos_CostosProducto.Unidades]");
+            viewString.Append(", T1.[TBL_ModuloReclamos_CostosProducto.CostoProducto], T1.[TBL_ModuloReclamos_C");
+            viewString.Append("ostosProducto.Kilos], T1.[TBL_ModuloReclamos_CostosProducto.UnidadesDisponibles]");
+            viewString.Append(", T1.[TBL_ModuloReclamos_CostosProducto.CostoDisponible], T1.[TBL_ModuloReclamos");
+            viewString.Append("_CostosProducto.IsActive], T1.[TBL_ModuloReclamos_CostosProducto.CreateBy], T1.[");
+            viewString.Append("TBL_ModuloReclamos_CostosProducto.CreateOn], T1.[TBL_ModuloReclamos_CostosProduc");
+            viewString.Append("to.ModifiedBy], T1.[TBL_ModuloReclamos_CostosProducto.ModifiedOn])\r\n    FROM (\r\n");
+            viewString.Append("        SELECT \r\n            T.IdCostoProducto AS [TBL_ModuloReclamos_CostosProd");
+            viewString.Append("ucto.IdCostoProducto], \r\n            T.IdReclamo AS [TBL_ModuloReclamos_CostosPr");
+            viewString.Append("oducto.IdReclamo], \r\n            T.NumItem AS [TBL_ModuloReclamos_CostosProducto");
+            viewString.Append(".NumItem], \r\n            T.CodigoProducto AS [TBL_ModuloReclamos_CostosProducto.");
+            viewString.Append("CodigoProducto], \r\n            T.NombreProducto AS [TBL_ModuloReclamos_CostosPro");
+            viewString.Append("ducto.NombreProducto], \r\n            T.PesoNeto AS [TBL_ModuloReclamos_CostosPro");
+            viewString.Append("ducto.PesoNeto], \r\n            T.PrecioLista AS [TBL_ModuloReclamos_CostosProduc");
+            viewString.Append("to.PrecioLista], \r\n            T.Unidades AS [TBL_ModuloReclamos_CostosProducto.");
+            viewString.Append("Unidades], \r\n            T.CostoProducto AS [TBL_ModuloReclamos_CostosProducto.C");
+            viewString.Append("ostoProducto], \r\n            T.Kilos AS [TBL_ModuloReclamos_CostosProducto.Kilos");
+            viewString.Append("], \r\n            T.UnidadesDisponibles AS [TBL_ModuloReclamos_CostosProducto.Uni");
+            viewString.Append("dadesDisponibles], \r\n            T.CostoDisponible AS [TBL_ModuloReclamos_Costos");
+            viewString.Append("Producto.CostoDisponible], \r\n            T.IsActive AS [TBL_ModuloReclamos_Costo");
+            viewString.Append("sProducto.IsActive], \r\n            T.CreateBy AS [TBL_ModuloReclamos_CostosProdu");
+            viewString.Append("cto.CreateBy], \r\n            T.CreateOn AS [TBL_ModuloReclamos_CostosProducto.Cr");
+            viewString.Append("eateOn], \r\n            T.ModifiedBy AS [TBL_ModuloReclamos_CostosProducto.Modifi");
+            viewString.Append("edBy], \r\n            T.ModifiedOn AS [TBL_ModuloReclamos_CostosProducto.Modified");
+            viewString.Append("On], \r\n            True AS _from0\r\n        FROM MainModuleContext.TBL_ModuloRecl");
+            viewString.Append("amos_CostosProducto AS T\r\n    ) AS T1");
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_CostosProducto", viewString.ToString());
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_Reclamo
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView51()
+        {
+            System.Text.StringBuilder viewString = new System.Text.StringBuilder(10133);
+            viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_Reclamo\r\n        [Solution");
+            viewString.Append("Framework.MainModel.Store.TBL_ModuloReclamos_Reclamo](T1.[TBL_ModuloReclamos_Rec");
+            viewString.Append("lamo.IdReclamo], T1.[TBL_ModuloReclamos_Reclamo.IdDocumentoLotus], T1.[TBL_Modul");
+            viewString.Append("oReclamos_Reclamo.IdDocumentoLotusRelacionado], T1.[TBL_ModuloReclamos_Reclamo.C");
+            viewString.Append("onsecutivo], T1.[TBL_ModuloReclamos_Reclamo.IdSolicitante], T1.[TBL_ModuloReclam");
+            viewString.Append("os_Reclamo.IdTipoReclamo], T1.[TBL_ModuloReclamos_Reclamo.FechaReclamo], T1.[TBL");
+            viewString.Append("_ModuloReclamos_Reclamo.IdReclamoRelacionado], T1.[TBL_ModuloReclamos_Reclamo.Ca");
+            viewString.Append("mpoRelacion], T1.[TBL_ModuloReclamos_Reclamo.NumeroReclamo], T1.[TBL_ModuloRecla");
+            viewString.Append("mos_Reclamo.IdAsesoradoPor], T1.[TBL_ModuloReclamos_Reclamo.Planta], T1.[TBL_Mod");
+            viewString.Append("uloReclamos_Reclamo.CodigoProducto], T1.[TBL_ModuloReclamos_Reclamo.CantidadVend");
+            viewString.Append("ida], T1.[TBL_ModuloReclamos_Reclamo.CantidadReclamada], T1.[TBL_ModuloReclamos_");
+            viewString.Append("Reclamo.Aplicado], T1.[TBL_ModuloReclamos_Reclamo.FechaAplicacion], T1.[TBL_Modu");
+            viewString.Append("loReclamos_Reclamo.FechaVenta], T1.[TBL_ModuloReclamos_Reclamo.NumeroDeVeces], T");
+            viewString.Append("1.[TBL_ModuloReclamos_Reclamo.IdAtendidoPor], T1.[TBL_ModuloReclamos_Reclamo.Tip");
+            viewString.Append("oContrato], T1.[TBL_ModuloReclamos_Reclamo.RespuestaInmediata], T1.[TBL_ModuloRe");
+            viewString.Append("clamos_Reclamo.CodigoCliente], T1.[TBL_ModuloReclamos_Reclamo.UnidadZona], T1.[T");
+            viewString.Append("BL_ModuloReclamos_Reclamo.Contacto], T1.[TBL_ModuloReclamos_Reclamo.EmailContact");
+            viewString.Append("o], T1.[TBL_ModuloReclamos_Reclamo.NombreObra], T1.[TBL_ModuloReclamos_Reclamo.A");
+            viewString.Append("plicadoPor], T1.[TBL_ModuloReclamos_Reclamo.EmailQuienAplica], T1.[TBL_ModuloRec");
+            viewString.Append("lamos_Reclamo.PropietarioObra], T1.[TBL_ModuloReclamos_Reclamo.EmailPropietarioO");
+            viewString.Append("bra], T1.[TBL_ModuloReclamos_Reclamo.Contratista], T1.[TBL_ModuloReclamos_Reclam");
+            viewString.Append("o.EmailContratista], T1.[TBL_ModuloReclamos_Reclamo.AspectoEnvase], T1.[TBL_Modu");
+            viewString.Append("loReclamos_Reclamo.AspectoProducto], T1.[TBL_ModuloReclamos_Reclamo.UsoDescripci");
+            viewString.Append("on], T1.[TBL_ModuloReclamos_Reclamo.Lote], T1.[TBL_ModuloReclamos_Reclamo.Muestr");
+            viewString.Append("aDisponible], T1.[TBL_ModuloReclamos_Reclamo.IdCategoriaReclamo], T1.[TBL_Modulo");
+            viewString.Append("Reclamos_Reclamo.Area], T1.[TBL_ModuloReclamos_Reclamo.SubCategoria], T1.[TBL_Mo");
+            viewString.Append("duloReclamos_Reclamo.NumPFR], T1.[TBL_ModuloReclamos_Reclamo.NumDiarioInventario");
+            viewString.Append("], T1.[TBL_ModuloReclamos_Reclamo.FechaPedido], T1.[TBL_ModuloReclamos_Reclamo.F");
+            viewString.Append("echaCompromiso], T1.[TBL_ModuloReclamos_Reclamo.FechaRealEntrega], T1.[TBL_Modul");
+            viewString.Append("oReclamos_Reclamo.DiasDiferencia], T1.[TBL_ModuloReclamos_Reclamo.NombreReclama]");
+            viewString.Append(", T1.[TBL_ModuloReclamos_Reclamo.AreaIncumple], T1.[TBL_ModuloReclamos_Reclamo.P");
+            viewString.Append("rocedimientoInternoAfectado], T1.[TBL_ModuloReclamos_Reclamo.DescripcionProblema");
+            viewString.Append("], T1.[TBL_ModuloReclamos_Reclamo.DiagnosticoPrevio], T1.[TBL_ModuloReclamos_Rec");
+            viewString.Append("lamo.ConclusionesPrevias], T1.[TBL_ModuloReclamos_Reclamo.ProblemaSolucionado], ");
+            viewString.Append("T1.[TBL_ModuloReclamos_Reclamo.ObservacionesSolucion], T1.[TBL_ModuloReclamos_Re");
+            viewString.Append("clamo.CostoReposicionProducto], T1.[TBL_ModuloReclamos_Reclamo.CostoTransporteMa");
+            viewString.Append("teriales], T1.[TBL_ModuloReclamos_Reclamo.CostoDisposicion], T1.[TBL_ModuloRecla");
+            viewString.Append("mos_Reclamo.CostoPruebas], T1.[TBL_ModuloReclamos_Reclamo.CostoManoObraDirecta],");
+            viewString.Append(" T1.[TBL_ModuloReclamos_Reclamo.CostoExterno], T1.[TBL_ModuloReclamos_Reclamo.Co");
+            viewString.Append("stoAsistenciaTecnica], T1.[TBL_ModuloReclamos_Reclamo.CostoAsistenciaTecnicaRegi");
+            viewString.Append("onal], T1.[TBL_ModuloReclamos_Reclamo.CostoViajes], T1.[TBL_ModuloReclamos_Recla");
+            viewString.Append("mo.CostoArriendosEyH], T1.[TBL_ModuloReclamos_Reclamo.CostoTotal], T1.[TBL_Modul");
+            viewString.Append("oReclamos_Reclamo.ObservacionesCostos], T1.[TBL_ModuloReclamos_Reclamo.IdIngenie");
+            viewString.Append("roResponsable], T1.[TBL_ModuloReclamos_Reclamo.FechaCierre], T1.[TBL_ModuloRecla");
+            viewString.Append("mos_Reclamo.IdUsuarioCierre], T1.[TBL_ModuloReclamos_Reclamo.IsActive], T1.[TBL_");
+            viewString.Append("ModuloReclamos_Reclamo.CreateBy], T1.[TBL_ModuloReclamos_Reclamo.CreateOn], T1.[");
+            viewString.Append("TBL_ModuloReclamos_Reclamo.ModifiedBy], T1.[TBL_ModuloReclamos_Reclamo.ModifiedO");
+            viewString.Append("n], T1.[TBL_ModuloReclamos_Reclamo.IdResponsableActual], T1.[TBL_ModuloReclamos_");
+            viewString.Append("Reclamo.IdEstado])\r\n    FROM (\r\n        SELECT \r\n            T.IdReclamo AS [TBL");
+            viewString.Append("_ModuloReclamos_Reclamo.IdReclamo], \r\n            T.IdDocumentoLotus AS [TBL_Mod");
+            viewString.Append("uloReclamos_Reclamo.IdDocumentoLotus], \r\n            T.IdDocumentoLotusRelaciona");
+            viewString.Append("do AS [TBL_ModuloReclamos_Reclamo.IdDocumentoLotusRelacionado], \r\n            T.");
+            viewString.Append("Consecutivo AS [TBL_ModuloReclamos_Reclamo.Consecutivo], \r\n            T.IdSolic");
+            viewString.Append("itante AS [TBL_ModuloReclamos_Reclamo.IdSolicitante], \r\n            T.IdTipoRecl");
+            viewString.Append("amo AS [TBL_ModuloReclamos_Reclamo.IdTipoReclamo], \r\n            T.FechaReclamo ");
+            viewString.Append("AS [TBL_ModuloReclamos_Reclamo.FechaReclamo], \r\n            T.IdReclamoRelaciona");
+            viewString.Append("do AS [TBL_ModuloReclamos_Reclamo.IdReclamoRelacionado], \r\n            T.CampoRe");
+            viewString.Append("lacion AS [TBL_ModuloReclamos_Reclamo.CampoRelacion], \r\n            T.NumeroRecl");
+            viewString.Append("amo AS [TBL_ModuloReclamos_Reclamo.NumeroReclamo], \r\n            T.IdAsesoradoPo");
+            viewString.Append("r AS [TBL_ModuloReclamos_Reclamo.IdAsesoradoPor], \r\n            T.Planta AS [TBL");
+            viewString.Append("_ModuloReclamos_Reclamo.Planta], \r\n            T.CodigoProducto AS [TBL_ModuloRe");
+            viewString.Append("clamos_Reclamo.CodigoProducto], \r\n            T.CantidadVendida AS [TBL_ModuloRe");
+            viewString.Append("clamos_Reclamo.CantidadVendida], \r\n            T.CantidadReclamada AS [TBL_Modul");
+            viewString.Append("oReclamos_Reclamo.CantidadReclamada], \r\n            T.Aplicado AS [TBL_ModuloRec");
+            viewString.Append("lamos_Reclamo.Aplicado], \r\n            T.FechaAplicacion AS [TBL_ModuloReclamos_");
+            viewString.Append("Reclamo.FechaAplicacion], \r\n            T.FechaVenta AS [TBL_ModuloReclamos_Recl");
+            viewString.Append("amo.FechaVenta], \r\n            T.NumeroDeVeces AS [TBL_ModuloReclamos_Reclamo.Nu");
+            viewString.Append("meroDeVeces], \r\n            T.IdAtendidoPor AS [TBL_ModuloReclamos_Reclamo.IdAte");
+            viewString.Append("ndidoPor], \r\n            T.TipoContrato AS [TBL_ModuloReclamos_Reclamo.TipoContr");
+            viewString.Append("ato], \r\n            T.RespuestaInmediata AS [TBL_ModuloReclamos_Reclamo.Respuest");
+            viewString.Append("aInmediata], \r\n            T.CodigoCliente AS [TBL_ModuloReclamos_Reclamo.Codigo");
+            viewString.Append("Cliente], \r\n            T.UnidadZona AS [TBL_ModuloReclamos_Reclamo.UnidadZona],");
+            viewString.Append(" \r\n            T.Contacto AS [TBL_ModuloReclamos_Reclamo.Contacto], \r\n          ");
+            viewString.Append("  T.EmailContacto AS [TBL_ModuloReclamos_Reclamo.EmailContacto], \r\n            T");
+            viewString.Append(".NombreObra AS [TBL_ModuloReclamos_Reclamo.NombreObra], \r\n            T.Aplicado");
+            viewString.Append("Por AS [TBL_ModuloReclamos_Reclamo.AplicadoPor], \r\n            T.EmailQuienAplic");
+            viewString.Append("a AS [TBL_ModuloReclamos_Reclamo.EmailQuienAplica], \r\n            T.PropietarioO");
+            viewString.Append("bra AS [TBL_ModuloReclamos_Reclamo.PropietarioObra], \r\n            T.EmailPropie");
+            viewString.Append("tarioObra AS [TBL_ModuloReclamos_Reclamo.EmailPropietarioObra], \r\n            T.");
+            viewString.Append("Contratista AS [TBL_ModuloReclamos_Reclamo.Contratista], \r\n            T.EmailCo");
+            viewString.Append("ntratista AS [TBL_ModuloReclamos_Reclamo.EmailContratista], \r\n            T.Aspe");
+            viewString.Append("ctoEnvase AS [TBL_ModuloReclamos_Reclamo.AspectoEnvase], \r\n            T.Aspecto");
+            viewString.Append("Producto AS [TBL_ModuloReclamos_Reclamo.AspectoProducto], \r\n            T.UsoDes");
+            viewString.Append("cripcion AS [TBL_ModuloReclamos_Reclamo.UsoDescripcion], \r\n            T.Lote AS");
+            viewString.Append(" [TBL_ModuloReclamos_Reclamo.Lote], \r\n            T.MuestraDisponible AS [TBL_Mo");
+            viewString.Append("duloReclamos_Reclamo.MuestraDisponible], \r\n            T.IdCategoriaReclamo AS [");
+            viewString.Append("TBL_ModuloReclamos_Reclamo.IdCategoriaReclamo], \r\n            T.Area AS [TBL_Mod");
+            viewString.Append("uloReclamos_Reclamo.Area], \r\n            T.SubCategoria AS [TBL_ModuloReclamos_R");
+            viewString.Append("eclamo.SubCategoria], \r\n            T.NumPFR AS [TBL_ModuloReclamos_Reclamo.NumP");
+            viewString.Append("FR], \r\n            T.NumDiarioInventario AS [TBL_ModuloReclamos_Reclamo.NumDiari");
+            viewString.Append("oInventario], \r\n            T.FechaPedido AS [TBL_ModuloReclamos_Reclamo.FechaPe");
+            viewString.Append("dido], \r\n            T.FechaCompromiso AS [TBL_ModuloReclamos_Reclamo.FechaCompr");
+            viewString.Append("omiso], \r\n            T.FechaRealEntrega AS [TBL_ModuloReclamos_Reclamo.FechaRea");
+            viewString.Append("lEntrega], \r\n            T.DiasDiferencia AS [TBL_ModuloReclamos_Reclamo.DiasDif");
+            viewString.Append("erencia], \r\n            T.NombreReclama AS [TBL_ModuloReclamos_Reclamo.NombreRec");
+            viewString.Append("lama], \r\n            T.AreaIncumple AS [TBL_ModuloReclamos_Reclamo.AreaIncumple]");
+            viewString.Append(", \r\n            T.ProcedimientoInternoAfectado AS [TBL_ModuloReclamos_Reclamo.Pr");
+            viewString.Append("ocedimientoInternoAfectado], \r\n            T.DescripcionProblema AS [TBL_ModuloR");
+            viewString.Append("eclamos_Reclamo.DescripcionProblema], \r\n            T.DiagnosticoPrevio AS [TBL_");
+            viewString.Append("ModuloReclamos_Reclamo.DiagnosticoPrevio], \r\n            T.ConclusionesPrevias A");
+            viewString.Append("S [TBL_ModuloReclamos_Reclamo.ConclusionesPrevias], \r\n            T.ProblemaSolu");
+            viewString.Append("cionado AS [TBL_ModuloReclamos_Reclamo.ProblemaSolucionado], \r\n            T.Obs");
+            viewString.Append("ervacionesSolucion AS [TBL_ModuloReclamos_Reclamo.ObservacionesSolucion], \r\n    ");
+            viewString.Append("        T.CostoReposicionProducto AS [TBL_ModuloReclamos_Reclamo.CostoReposicion");
+            viewString.Append("Producto], \r\n            T.CostoTransporteMateriales AS [TBL_ModuloReclamos_Recl");
+            viewString.Append("amo.CostoTransporteMateriales], \r\n            T.CostoDisposicion AS [TBL_ModuloR");
+            viewString.Append("eclamos_Reclamo.CostoDisposicion], \r\n            T.CostoPruebas AS [TBL_ModuloRe");
+            viewString.Append("clamos_Reclamo.CostoPruebas], \r\n            T.CostoManoObraDirecta AS [TBL_Modul");
+            viewString.Append("oReclamos_Reclamo.CostoManoObraDirecta], \r\n            T.CostoExterno AS [TBL_Mo");
+            viewString.Append("duloReclamos_Reclamo.CostoExterno], \r\n            T.CostoAsistenciaTecnica AS [T");
+            viewString.Append("BL_ModuloReclamos_Reclamo.CostoAsistenciaTecnica], \r\n            T.CostoAsistenc");
+            viewString.Append("iaTecnicaRegional AS [TBL_ModuloReclamos_Reclamo.CostoAsistenciaTecnicaRegional]");
+            viewString.Append(", \r\n            T.CostoViajes AS [TBL_ModuloReclamos_Reclamo.CostoViajes], \r\n   ");
+            viewString.Append("         T.CostoArriendosEyH AS [TBL_ModuloReclamos_Reclamo.CostoArriendosEyH], ");
+            viewString.Append("\r\n            T.CostoTotal AS [TBL_ModuloReclamos_Reclamo.CostoTotal], \r\n       ");
+            viewString.Append("     T.ObservacionesCostos AS [TBL_ModuloReclamos_Reclamo.ObservacionesCostos], ");
+            viewString.Append("\r\n            T.IdIngenieroResponsable AS [TBL_ModuloReclamos_Reclamo.IdIngenier");
+            viewString.Append("oResponsable], \r\n            T.FechaCierre AS [TBL_ModuloReclamos_Reclamo.FechaC");
+            viewString.Append("ierre], \r\n            T.IdUsuarioCierre AS [TBL_ModuloReclamos_Reclamo.IdUsuario");
+            viewString.Append("Cierre], \r\n            T.IsActive AS [TBL_ModuloReclamos_Reclamo.IsActive], \r\n  ");
+            viewString.Append("          T.CreateBy AS [TBL_ModuloReclamos_Reclamo.CreateBy], \r\n            T.C");
+            viewString.Append("reateOn AS [TBL_ModuloReclamos_Reclamo.CreateOn], \r\n            T.ModifiedBy AS ");
+            viewString.Append("[TBL_ModuloReclamos_Reclamo.ModifiedBy], \r\n            T.ModifiedOn AS [TBL_Modu");
+            viewString.Append("loReclamos_Reclamo.ModifiedOn], \r\n            T.IdResponsableActual AS [TBL_Modu");
+            viewString.Append("loReclamos_Reclamo.IdResponsableActual], \r\n            T.IdEstado AS [TBL_Modulo");
+            viewString.Append("Reclamos_Reclamo.IdEstado], \r\n            True AS _from0\r\n        FROM MainModul");
+            viewString.Append("eContext.TBL_ModuloReclamos_Reclamo AS T\r\n    ) AS T1");
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_Reclamo", viewString.ToString());
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_Soluciones
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView52()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_Soluciones", @"
+    SELECT VALUE -- Constructing TBL_ModuloReclamos_Soluciones
+        [SolutionFramework.MainModel.Store.TBL_ModuloReclamos_Soluciones](T1.[TBL_ModuloReclamos_Soluciones.IdSolucion], T1.[TBL_ModuloReclamos_Soluciones.IdReclamo], T1.[TBL_ModuloReclamos_Soluciones.Departamento], T1.[TBL_ModuloReclamos_Soluciones.Referencia], T1.[TBL_ModuloReclamos_Soluciones.Observaciones], T1.[TBL_ModuloReclamos_Soluciones.IsActive], T1.[TBL_ModuloReclamos_Soluciones.CreateBy], T1.[TBL_ModuloReclamos_Soluciones.CreateOn], T1.[TBL_ModuloReclamos_Soluciones.ModifiedBy], T1.[TBL_ModuloReclamos_Soluciones.ModifiedOn])
+    FROM (
+        SELECT 
+            T.IdSolucion AS [TBL_ModuloReclamos_Soluciones.IdSolucion], 
+            T.IdReclamo AS [TBL_ModuloReclamos_Soluciones.IdReclamo], 
+            T.Departamento AS [TBL_ModuloReclamos_Soluciones.Departamento], 
+            T.Referencia AS [TBL_ModuloReclamos_Soluciones.Referencia], 
+            T.Observaciones AS [TBL_ModuloReclamos_Soluciones.Observaciones], 
+            T.IsActive AS [TBL_ModuloReclamos_Soluciones.IsActive], 
+            T.CreateBy AS [TBL_ModuloReclamos_Soluciones.CreateBy], 
+            T.CreateOn AS [TBL_ModuloReclamos_Soluciones.CreateOn], 
+            T.ModifiedBy AS [TBL_ModuloReclamos_Soluciones.ModifiedBy], 
+            T.ModifiedOn AS [TBL_ModuloReclamos_Soluciones.ModifiedOn], 
+            True AS _from0
+        FROM MainModuleContext.TBL_ModuloReclamos_Soluciones AS T
+    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_TipoReclamo
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView53()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_TipoReclamo", @"
+    SELECT VALUE -- Constructing TBL_ModuloReclamos_TipoReclamo
+        [SolutionFramework.MainModel.Store.TBL_ModuloReclamos_TipoReclamo](T1.[TBL_ModuloReclamos_TipoReclamo.IdTipoReclamo], T1.[TBL_ModuloReclamos_TipoReclamo.Nombre], T1.[TBL_ModuloReclamos_TipoReclamo.IsActive], T1.[TBL_ModuloReclamos_TipoReclamo.CreateBy], T1.[TBL_ModuloReclamos_TipoReclamo.CreateOn], T1.[TBL_ModuloReclamos_TipoReclamo.ModifiedBy], T1.[TBL_ModuloReclamos_TipoReclamo.ModifiedOn])
+    FROM (
+        SELECT 
+            T.IdTipoReclamo AS [TBL_ModuloReclamos_TipoReclamo.IdTipoReclamo], 
+            T.Nombre AS [TBL_ModuloReclamos_TipoReclamo.Nombre], 
+            T.IsActive AS [TBL_ModuloReclamos_TipoReclamo.IsActive], 
+            T.CreateBy AS [TBL_ModuloReclamos_TipoReclamo.CreateBy], 
+            T.CreateOn AS [TBL_ModuloReclamos_TipoReclamo.CreateOn], 
+            T.ModifiedBy AS [TBL_ModuloReclamos_TipoReclamo.ModifiedBy], 
+            T.ModifiedOn AS [TBL_ModuloReclamos_TipoReclamo.ModifiedOn], 
+            True AS _from0
+        FROM MainModuleContext.TBL_ModuloReclamos_TipoReclamo AS T
+    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_Unidad
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView54()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_Unidad", @"
+    SELECT VALUE -- Constructing TBL_ModuloReclamos_Unidad
+        [SolutionFramework.MainModel.Store.TBL_ModuloReclamos_Unidad](T1.[TBL_ModuloReclamos_Unidad.IdUnidad], T1.[TBL_ModuloReclamos_Unidad.Nombre], T1.[TBL_ModuloReclamos_Unidad.IsActive], T1.[TBL_ModuloReclamos_Unidad.CreateBy], T1.[TBL_ModuloReclamos_Unidad.CreateOn], T1.[TBL_ModuloReclamos_Unidad.ModifiedBy], T1.[TBL_ModuloReclamos_Unidad.ModifiedOn])
+    FROM (
+        SELECT 
+            T.IdUnidad AS [TBL_ModuloReclamos_Unidad.IdUnidad], 
+            T.Nombre AS [TBL_ModuloReclamos_Unidad.Nombre], 
+            T.IsActive AS [TBL_ModuloReclamos_Unidad.IsActive], 
+            T.CreateBy AS [TBL_ModuloReclamos_Unidad.CreateBy], 
+            T.CreateOn AS [TBL_ModuloReclamos_Unidad.CreateOn], 
+            T.ModifiedBy AS [TBL_ModuloReclamos_Unidad.ModifiedBy], 
+            T.ModifiedOn AS [TBL_ModuloReclamos_Unidad.ModifiedOn], 
+            True AS _from0
+        FROM MainModuleContext.TBL_ModuloReclamos_Unidad AS T
+    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_UnidadesZonas
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView55()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_UnidadesZonas", "\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_UnidadesZonas\r\n        [Sol" +
+                    "utionFramework.MainModel.Store.TBL_ModuloReclamos_UnidadesZonas](T1.[TBL_ModuloR" +
+                    "eclamos_UnidadesZonas.IdUnidad], T1.[TBL_ModuloReclamos_UnidadesZonas.IdZona], T" +
+                    "1.[TBL_ModuloReclamos_UnidadesZonas.Descripcion], T1.[TBL_ModuloReclamos_Unidade" +
+                    "sZonas.IdGerente], T1.[TBL_ModuloReclamos_UnidadesZonas.TarifaFletes], T1.[TBL_M" +
+                    "oduloReclamos_UnidadesZonas.IsActive], T1.[TBL_ModuloReclamos_UnidadesZonas.Crea" +
+                    "teBy], T1.[TBL_ModuloReclamos_UnidadesZonas.CreateOn], T1.[TBL_ModuloReclamos_Un" +
+                    "idadesZonas.ModifiedBy], T1.[TBL_ModuloReclamos_UnidadesZonas.ModifiedOn])\r\n    " +
+                    "FROM (\r\n        SELECT \r\n            T.IdUnidad AS [TBL_ModuloReclamos_UnidadesZ" +
+                    "onas.IdUnidad], \r\n            T.IdZona AS [TBL_ModuloReclamos_UnidadesZonas.IdZo" +
+                    "na], \r\n            T.Descripcion AS [TBL_ModuloReclamos_UnidadesZonas.Descripcio" +
+                    "n], \r\n            T.IdGerente AS [TBL_ModuloReclamos_UnidadesZonas.IdGerente], \r" +
+                    "\n            T.TarifaFletes AS [TBL_ModuloReclamos_UnidadesZonas.TarifaFletes], " +
+                    "\r\n            T.IsActive AS [TBL_ModuloReclamos_UnidadesZonas.IsActive], \r\n     " +
+                    "       T.CreateBy AS [TBL_ModuloReclamos_UnidadesZonas.CreateBy], \r\n            " +
+                    "T.CreateOn AS [TBL_ModuloReclamos_UnidadesZonas.CreateOn], \r\n            T.Modif" +
+                    "iedBy AS [TBL_ModuloReclamos_UnidadesZonas.ModifiedBy], \r\n            T.Modified" +
+                    "On AS [TBL_ModuloReclamos_UnidadesZonas.ModifiedOn], \r\n            True AS _from" +
+                    "0\r\n        FROM MainModuleContext.TBL_ModuloReclamos_UnidadesZonas AS T\r\n    ) A" +
+                    "S T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_Zona
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView56()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_Zona", @"
+    SELECT VALUE -- Constructing TBL_ModuloReclamos_Zona
+        [SolutionFramework.MainModel.Store.TBL_ModuloReclamos_Zona](T1.[TBL_ModuloReclamos_Zona.IdZona], T1.[TBL_ModuloReclamos_Zona.Descripcion], T1.[TBL_ModuloReclamos_Zona.IsActive], T1.[TBL_ModuloReclamos_Zona.CreateBy], T1.[TBL_ModuloReclamos_Zona.CreateOn], T1.[TBL_ModuloReclamos_Zona.ModifiedBy], T1.[TBL_ModuloReclamos_Zona.ModifiedOn])
+    FROM (
+        SELECT 
+            T.IdZona AS [TBL_ModuloReclamos_Zona.IdZona], 
+            T.Descripcion AS [TBL_ModuloReclamos_Zona.Descripcion], 
+            T.IsActive AS [TBL_ModuloReclamos_Zona.IsActive], 
+            T.CreateBy AS [TBL_ModuloReclamos_Zona.CreateBy], 
+            T.CreateOn AS [TBL_ModuloReclamos_Zona.CreateOn], 
+            T.ModifiedBy AS [TBL_ModuloReclamos_Zona.ModifiedBy], 
+            T.ModifiedOn AS [TBL_ModuloReclamos_Zona.ModifiedOn], 
+            True AS _from0
+        FROM MainModuleContext.TBL_ModuloReclamos_Zona AS T
+    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_Admin_ResponsablesAprobacion
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView57()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_Admin_ResponsablesAprobacion", @"
+    SELECT VALUE -- Constructing TBL_Admin_ResponsablesAprobacion
+        [SolutionFramework.MainModel.Store.TBL_Admin_ResponsablesAprobacion](T1.[TBL_Admin_ResponsablesAprobacion.IdRol], T1.[TBL_Admin_ResponsablesAprobacion.IdUser])
+    FROM (
+        SELECT 
+            Key(T.TBL_Admin_Roles).IdRol AS [TBL_Admin_ResponsablesAprobacion.IdRol], 
+            Key(T.TBL_Admin_Usuarios).IdUser AS [TBL_Admin_ResponsablesAprobacion.IdUser], 
+            True AS _from0
+        FROM MainModuleContext.TBL_Admin_ResponsablesAprobacion AS T
+    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_Admin_RolesPorOpcionMenu
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView58()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_Admin_RolesPorOpcionMenu", @"
+    SELECT VALUE -- Constructing TBL_Admin_RolesPorOpcionMenu
+        [SolutionFramework.MainModel.Store.TBL_Admin_RolesPorOpcionMenu](T1.[TBL_Admin_RolesPorOpcionMenu.IdRol], T1.[TBL_Admin_RolesPorOpcionMenu.IdopcionMenu])
+    FROM (
+        SELECT 
+            Key(T.TBL_Admin_Roles).IdRol AS [TBL_Admin_RolesPorOpcionMenu.IdRol], 
+            Key(T.TBL_Admin_OpcionesMenu).IdOpcionMenu AS [TBL_Admin_RolesPorOpcionMenu.IdopcionMenu], 
+            True AS _from0
+        FROM MainModuleContext.TBL_Admin_RolesPorOpcionMenu AS T
+    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_Admin_UsuariosByRol
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView59()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_Admin_UsuariosByRol", @"
+    SELECT VALUE -- Constructing TBL_Admin_UsuariosByRol
+        [SolutionFramework.MainModel.Store.TBL_Admin_UsuariosByRol](T1.[TBL_Admin_UsuariosByRol.IdRol], T1.[TBL_Admin_UsuariosByRol.IdUser])
+    FROM (
+        SELECT 
+            Key(T.TBL_Admin_Roles).IdRol AS [TBL_Admin_UsuariosByRol.IdRol], 
+            Key(T.TBL_Admin_Usuarios).IdUser AS [TBL_Admin_UsuariosByRol.IdUser], 
+            True AS _from0
+        FROM MainModuleContext.TBL_Admin_UsuariosByRol AS T
+    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_AsesorJefe
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView60()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_AsesorJefe", @"
+    SELECT VALUE -- Constructing TBL_ModuloReclamos_AsesorJefe
+        [SolutionFramework.MainModel.Store.TBL_ModuloReclamos_AsesorJefe](T1.[TBL_ModuloReclamos_AsesorJefe.IdAsesor], T1.[TBL_ModuloReclamos_AsesorJefe.IdJefe])
+    FROM (
+        SELECT 
+            Key(T.TBL_ModuloReclamos_Asesores).IdUsuario AS [TBL_ModuloReclamos_AsesorJefe.IdAsesor], 
+            Key(T.TBL_Admin_Usuarios).IdUser AS [TBL_ModuloReclamos_AsesorJefe.IdJefe], 
+            True AS _from0
+        FROM MainModuleContext.TBL_ModuloReclamos_AsesorJefe AS T
+    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_IngenierosResponsablesByCategoriaProducto
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView61()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_IngenierosResponsable" +
+                    "sByCategoriaProducto", @"
+    SELECT VALUE -- Constructing TBL_ModuloReclamos_IngenierosResponsablesByCategoriaProducto
+        [SolutionFramework.MainModel.Store.TBL_ModuloReclamos_IngenierosResponsablesByCategoriaProducto](T1.[TBL_ModuloReclamos_IngenierosResponsablesByCategoriaProducto.IdIngeniero], T1.[TBL_ModuloReclamos_IngenierosResponsablesByCategoriaProducto.IdCategoria])
+    FROM (
+        SELECT 
+            Key(T.TBL_Admin_Usuarios).IdUser AS [TBL_ModuloReclamos_IngenierosResponsablesByCategoriaProducto.IdIngeniero], 
+            Key(T.TBL_ModuloReclamos_CategoriaProducto).IdCategoria AS [TBL_ModuloReclamos_IngenierosResponsablesByCategoriaProducto.IdCategoria], 
+            True AS _from0
+        FROM MainModuleContext.TBL_ModuloReclamos_IngenierosResponsablesByCategoriaProducto AS T
+    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_ReclamoJefeAsesor
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView62()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_ReclamoJefeAsesor", @"
+    SELECT VALUE -- Constructing TBL_ModuloReclamos_ReclamoJefeAsesor
+        [SolutionFramework.MainModel.Store.TBL_ModuloReclamos_ReclamoJefeAsesor](T1.[TBL_ModuloReclamos_ReclamoJefeAsesor.IdReclamo], T1.[TBL_ModuloReclamos_ReclamoJefeAsesor.IdJefeAsesor])
+    FROM (
+        SELECT 
+            Key(T.TBL_ModuloReclamos_Reclamo).IdReclamo AS [TBL_ModuloReclamos_ReclamoJefeAsesor.IdReclamo], 
+            Key(T.TBL_Admin_Usuarios).IdUser AS [TBL_ModuloReclamos_ReclamoJefeAsesor.IdJefeAsesor], 
+            True AS _from0
+        FROM MainModuleContext.TBL_ModuloReclamos_ReclamoJefeAsesor AS T
+    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_UsuarioCopiaComentariosRespuesta
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView63()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_UsuarioCopiaComentari" +
+                    "osRespuesta", @"
+    SELECT VALUE -- Constructing TBL_ModuloReclamos_UsuarioCopiaComentariosRespuesta
+        [SolutionFramework.MainModel.Store.TBL_ModuloReclamos_UsuarioCopiaComentariosRespuesta](T1.[TBL_ModuloReclamos_UsuarioCopiaComentariosRespuesta.IdComentario], T1.[TBL_ModuloReclamos_UsuarioCopiaComentariosRespuesta.IdUsuario])
+    FROM (
+        SELECT 
+            Key(T.TBL_ModuloReclamos_ComentariosRespuesta).IdComentario AS [TBL_ModuloReclamos_UsuarioCopiaComentariosRespuesta.IdComentario], 
+            Key(T.TBL_Admin_Usuarios).IdUser AS [TBL_ModuloReclamos_UsuarioCopiaComentariosRespuesta.IdUsuario], 
+            True AS _from0
+        FROM MainModuleContext.TBL_ModuloReclamos_UsuarioCopiaComentariosRespuesta AS T
+    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_UsuariosCopiaActividades
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView64()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_UsuariosCopiaActivida" +
+                    "des", @"
+    SELECT VALUE -- Constructing TBL_ModuloReclamos_UsuariosCopiaActividades
+        [SolutionFramework.MainModel.Store.TBL_ModuloReclamos_UsuariosCopiaActividades](T1.[TBL_ModuloReclamos_UsuariosCopiaActividades.IdActividad], T1.[TBL_ModuloReclamos_UsuariosCopiaActividades.IdUsuario])
+    FROM (
+        SELECT 
+            Key(T.TBL_ModuloReclamos_Actividades).IdActividad AS [TBL_ModuloReclamos_UsuariosCopiaActividades.IdActividad], 
+            Key(T.TBL_Admin_Usuarios).IdUser AS [TBL_ModuloReclamos_UsuariosCopiaActividades.IdUsuario], 
+            True AS _from0
+        FROM MainModuleContext.TBL_ModuloReclamos_UsuariosCopiaActividades AS T
+    ) AS T1");
         }
         
         /// <Summary>
         /// return view for MainModuleContext.TBL_Admin_EstadosProceso
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView22()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView65()
         {
             System.Text.StringBuilder viewString = new System.Text.StringBuilder(2078);
             viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_Admin_EstadosProceso\r\n        [SolutionFr");
@@ -929,9 +2347,63 @@ namespace Edm_EntityMappingGeneratedViews
         }
         
         /// <Summary>
+        /// return view for MainModuleContext.TBL_Admin_ModuleType
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView66()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_Admin_ModuleType", @"
+    SELECT VALUE -- Constructing TBL_Admin_ModuleType
+        [SolutionFramework.MainModel.TBL_Admin_ModuleType](T1.[TBL_Admin_ModuleType.IdModuleType], T1.[TBL_Admin_ModuleType.Nombre], T1.[TBL_Admin_ModuleType.NombreEnsamblado], T1.[TBL_Admin_ModuleType.NombreClase], T1.[TBL_Admin_ModuleType.path], T1.[TBL_Admin_ModuleType.PathEdicion], T1.[TBL_Admin_ModuleType.AutoActivar], T1.[TBL_Admin_ModuleType.IsActive], T1.[TBL_Admin_ModuleType.CreateBy], T1.[TBL_Admin_ModuleType.CreateOn], T1.[TBL_Admin_ModuleType.ModifiedBy], T1.[TBL_Admin_ModuleType.ModifiedOn])
+    FROM (
+        SELECT 
+            T.IdModuleType AS [TBL_Admin_ModuleType.IdModuleType], 
+            T.Nombre AS [TBL_Admin_ModuleType.Nombre], 
+            T.NombreEnsamblado AS [TBL_Admin_ModuleType.NombreEnsamblado], 
+            T.NombreClase AS [TBL_Admin_ModuleType.NombreClase], 
+            T.path AS [TBL_Admin_ModuleType.path], 
+            T.PathEdicion AS [TBL_Admin_ModuleType.PathEdicion], 
+            T.AutoActivar AS [TBL_Admin_ModuleType.AutoActivar], 
+            T.IsActive AS [TBL_Admin_ModuleType.IsActive], 
+            T.CreateBy AS [TBL_Admin_ModuleType.CreateBy], 
+            T.CreateOn AS [TBL_Admin_ModuleType.CreateOn], 
+            T.ModifiedBy AS [TBL_Admin_ModuleType.ModifiedBy], 
+            T.ModifiedOn AS [TBL_Admin_ModuleType.ModifiedOn], 
+            True AS _from0
+        FROM SolutionFrameworkMainModelStoreContainer.TBL_Admin_ModuleType AS T
+    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for MainModuleContext.TBL_Admin_Modulos
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView67()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_Admin_Modulos", @"
+    SELECT VALUE -- Constructing TBL_Admin_Modulos
+        [SolutionFramework.MainModel.TBL_Admin_Modulos](T1.[TBL_Admin_Modulos.IdModulo], T1.[TBL_Admin_Modulos.NombreModulo], T1.[TBL_Admin_Modulos.Descripcion], T1.[TBL_Admin_Modulos.Imagen], T1.[TBL_Admin_Modulos.ImageDisabled], T1.[TBL_Admin_Modulos.ShowInMenu], T1.[TBL_Admin_Modulos.PathFormPreView], T1.[TBL_Admin_Modulos.IsActive], T1.[TBL_Admin_Modulos.CreateBy], T1.[TBL_Admin_Modulos.CreateOn], T1.[TBL_Admin_Modulos.ModifiedBy], T1.[TBL_Admin_Modulos.ModifiedOn])
+    FROM (
+        SELECT 
+            T.IdModulo AS [TBL_Admin_Modulos.IdModulo], 
+            T.NombreModulo AS [TBL_Admin_Modulos.NombreModulo], 
+            T.Descripcion AS [TBL_Admin_Modulos.Descripcion], 
+            T.Imagen AS [TBL_Admin_Modulos.Imagen], 
+            T.ImageDisabled AS [TBL_Admin_Modulos.ImageDisabled], 
+            T.ShowInMenu AS [TBL_Admin_Modulos.ShowInMenu], 
+            T.PathFormPreView AS [TBL_Admin_Modulos.PathFormPreView], 
+            T.IsActive AS [TBL_Admin_Modulos.IsActive], 
+            T.CreateBy AS [TBL_Admin_Modulos.CreateBy], 
+            T.CreateOn AS [TBL_Admin_Modulos.CreateOn], 
+            T.ModifiedBy AS [TBL_Admin_Modulos.ModifiedBy], 
+            T.ModifiedOn AS [TBL_Admin_Modulos.ModifiedOn], 
+            True AS _from0
+        FROM SolutionFrameworkMainModelStoreContainer.TBL_Admin_Modulos AS T
+    ) AS T1");
+        }
+        
+        /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloWorkFlow_CamposValidacion
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView23()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView68()
         {
             System.Text.StringBuilder viewString = new System.Text.StringBuilder(2109);
             viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloWorkFlow_CamposValidacion\r\n        ");
@@ -967,7 +2439,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloWorkFlow_Rutas
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView24()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView69()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloWorkFlow_Rutas", "\r\n    SELECT VALUE -- Constructing TBL_ModuloWorkFlow_Rutas\r\n        [SolutionFra" +
                     "mework.MainModel.TBL_ModuloWorkFlow_Rutas](T1.[TBL_ModuloWorkFlow_Rutas.IdRuta]," +
@@ -999,7 +2471,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloWorkFlow_ValidacionesSalida
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView25()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView70()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloWorkFlow_ValidacionesSalida", "\r\n    SELECT VALUE -- Constructing TBL_ModuloWorkFlow_ValidacionesSalida\r\n       " +
                     " [SolutionFramework.MainModel.TBL_ModuloWorkFlow_ValidacionesSalida](T1.[TBL_Mod" +
@@ -1009,501 +2481,27 @@ namespace Edm_EntityMappingGeneratedViews
                     "Salida.TipoAccion], T1.[TBL_ModuloWorkFlow_ValidacionesSalida.IsActive], T1.[TBL" +
                     "_ModuloWorkFlow_ValidacionesSalida.CreateBy], T1.[TBL_ModuloWorkFlow_Validacione" +
                     "sSalida.CreateOn], T1.[TBL_ModuloWorkFlow_ValidacionesSalida.ModifiedBy], T1.[TB" +
-                    "L_ModuloWorkFlow_ValidacionesSalida.ModifiedOn])\r\n    FROM (\r\n        SELECT \r\n " +
-                    "           T.ID AS [TBL_ModuloWorkFlow_ValidacionesSalida.ID], \r\n            T.I" +
-                    "dRuta AS [TBL_ModuloWorkFlow_ValidacionesSalida.IdRuta], \r\n            T.NombreE" +
-                    "nsamblado AS [TBL_ModuloWorkFlow_ValidacionesSalida.NombreEnsamblado], \r\n       " +
-                    "     T.NombreMetodo AS [TBL_ModuloWorkFlow_ValidacionesSalida.NombreMetodo], \r\n " +
-                    "           T.TipoAccion AS [TBL_ModuloWorkFlow_ValidacionesSalida.TipoAccion], \r" +
-                    "\n            T.IsActive AS [TBL_ModuloWorkFlow_ValidacionesSalida.IsActive], \r\n " +
-                    "           T.CreateBy AS [TBL_ModuloWorkFlow_ValidacionesSalida.CreateBy], \r\n   " +
-                    "         T.CreateOn AS [TBL_ModuloWorkFlow_ValidacionesSalida.CreateOn], \r\n     " +
-                    "       T.ModifiedBy AS [TBL_ModuloWorkFlow_ValidacionesSalida.ModifiedBy], \r\n   " +
-                    "         T.ModifiedOn AS [TBL_ModuloWorkFlow_ValidacionesSalida.ModifiedOn], \r\n " +
-                    "           True AS _from0\r\n        FROM SolutionFrameworkMainModelStoreContainer" +
-                    ".TBL_ModuloWorkFlow_ValidacionesSalida AS T\r\n    ) AS T1");
-        }
-        
-        /// <Summary>
-        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_Admin_ModuleRepository
-        /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView26()
-        {
-            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_Admin_ModuleRepository", @"
-    SELECT VALUE -- Constructing TBL_Admin_ModuleRepository
-        [SolutionFramework.MainModel.Store.TBL_Admin_ModuleRepository](T1.[TBL_Admin_ModuleRepository.IdModuleRepository], T1.[TBL_Admin_ModuleRepository.IdModuleType], T1.[TBL_Admin_ModuleRepository.Repositorykey], T1.[TBL_Admin_ModuleRepository.RepositoryType], T1.[TBL_Admin_ModuleRepository.classtype], T1.[TBL_Admin_ModuleRepository.lifestyle], T1.[TBL_Admin_ModuleRepository.IsActive])
-    FROM (
-        SELECT 
-            T.IdModuleRepository AS [TBL_Admin_ModuleRepository.IdModuleRepository], 
-            T.IdModuleType AS [TBL_Admin_ModuleRepository.IdModuleType], 
-            T.Repositorykey AS [TBL_Admin_ModuleRepository.Repositorykey], 
-            T.RepositoryType AS [TBL_Admin_ModuleRepository.RepositoryType], 
-            T.classtype AS [TBL_Admin_ModuleRepository.classtype], 
-            T.lifestyle AS [TBL_Admin_ModuleRepository.lifestyle], 
-            T.IsActive AS [TBL_Admin_ModuleRepository.IsActive], 
-            True AS _from0
-        FROM MainModuleContext.TBL_Admin_ModuleRepository AS T
-    ) AS T1");
-        }
-        
-        /// <Summary>
-        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_Admin_ModuleService
-        /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView27()
-        {
-            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_Admin_ModuleService", @"
-    SELECT VALUE -- Constructing TBL_Admin_ModuleService
-        [SolutionFramework.MainModel.Store.TBL_Admin_ModuleService](T1.[TBL_Admin_ModuleService.IdModuleServices], T1.[TBL_Admin_ModuleService.IdModuleType], T1.[TBL_Admin_ModuleService.servicekey], T1.[TBL_Admin_ModuleService.servicetype], T1.[TBL_Admin_ModuleService.classtype], T1.[TBL_Admin_ModuleService.lifestyle], T1.[TBL_Admin_ModuleService.IsActive])
-    FROM (
-        SELECT 
-            T.IdModuleServices AS [TBL_Admin_ModuleService.IdModuleServices], 
-            T.IdModuleType AS [TBL_Admin_ModuleService.IdModuleType], 
-            T.servicekey AS [TBL_Admin_ModuleService.servicekey], 
-            T.servicetype AS [TBL_Admin_ModuleService.servicetype], 
-            T.classtype AS [TBL_Admin_ModuleService.classtype], 
-            T.lifestyle AS [TBL_Admin_ModuleService.lifestyle], 
-            T.IsActive AS [TBL_Admin_ModuleService.IsActive], 
-            True AS _from0
-        FROM MainModuleContext.TBL_Admin_ModuleService AS T
-    ) AS T1");
-        }
-        
-        /// <Summary>
-        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_Admin_ModuleType
-        /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView28()
-        {
-            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_Admin_ModuleType", @"
-    SELECT VALUE -- Constructing TBL_Admin_ModuleType
-        [SolutionFramework.MainModel.Store.TBL_Admin_ModuleType](T1.[TBL_Admin_ModuleType.IdModuleType], T1.[TBL_Admin_ModuleType.Nombre], T1.[TBL_Admin_ModuleType.NombreEnsamblado], T1.[TBL_Admin_ModuleType.NombreClase], T1.[TBL_Admin_ModuleType.path], T1.[TBL_Admin_ModuleType.PathEdicion], T1.[TBL_Admin_ModuleType.AutoActivar], T1.[TBL_Admin_ModuleType.IsActive], T1.[TBL_Admin_ModuleType.CreateBy], T1.[TBL_Admin_ModuleType.CreateOn], T1.[TBL_Admin_ModuleType.ModifiedBy], T1.[TBL_Admin_ModuleType.ModifiedOn])
-    FROM (
-        SELECT 
-            T.IdModuleType AS [TBL_Admin_ModuleType.IdModuleType], 
-            T.Nombre AS [TBL_Admin_ModuleType.Nombre], 
-            T.NombreEnsamblado AS [TBL_Admin_ModuleType.NombreEnsamblado], 
-            T.NombreClase AS [TBL_Admin_ModuleType.NombreClase], 
-            T.path AS [TBL_Admin_ModuleType.path], 
-            T.PathEdicion AS [TBL_Admin_ModuleType.PathEdicion], 
-            T.AutoActivar AS [TBL_Admin_ModuleType.AutoActivar], 
-            T.IsActive AS [TBL_Admin_ModuleType.IsActive], 
-            T.CreateBy AS [TBL_Admin_ModuleType.CreateBy], 
-            T.CreateOn AS [TBL_Admin_ModuleType.CreateOn], 
-            T.ModifiedBy AS [TBL_Admin_ModuleType.ModifiedBy], 
-            T.ModifiedOn AS [TBL_Admin_ModuleType.ModifiedOn], 
-            True AS _from0
-        FROM MainModuleContext.TBL_Admin_ModuleType AS T
-    ) AS T1");
-        }
-        
-        /// <Summary>
-        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_Admin_Modulos
-        /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView29()
-        {
-            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_Admin_Modulos", @"
-    SELECT VALUE -- Constructing TBL_Admin_Modulos
-        [SolutionFramework.MainModel.Store.TBL_Admin_Modulos](T1.[TBL_Admin_Modulos.IdModulo], T1.[TBL_Admin_Modulos.NombreModulo], T1.[TBL_Admin_Modulos.Descripcion], T1.[TBL_Admin_Modulos.Imagen], T1.[TBL_Admin_Modulos.ImageDisabled], T1.[TBL_Admin_Modulos.ShowInMenu], T1.[TBL_Admin_Modulos.PathFormPreView], T1.[TBL_Admin_Modulos.IsActive], T1.[TBL_Admin_Modulos.CreateBy], T1.[TBL_Admin_Modulos.CreateOn], T1.[TBL_Admin_Modulos.ModifiedBy], T1.[TBL_Admin_Modulos.ModifiedOn])
-    FROM (
-        SELECT 
-            T.IdModulo AS [TBL_Admin_Modulos.IdModulo], 
-            T.NombreModulo AS [TBL_Admin_Modulos.NombreModulo], 
-            T.Descripcion AS [TBL_Admin_Modulos.Descripcion], 
-            T.Imagen AS [TBL_Admin_Modulos.Imagen], 
-            T.ImageDisabled AS [TBL_Admin_Modulos.ImageDisabled], 
-            T.ShowInMenu AS [TBL_Admin_Modulos.ShowInMenu], 
-            T.PathFormPreView AS [TBL_Admin_Modulos.PathFormPreView], 
-            T.IsActive AS [TBL_Admin_Modulos.IsActive], 
-            T.CreateBy AS [TBL_Admin_Modulos.CreateBy], 
-            T.CreateOn AS [TBL_Admin_Modulos.CreateOn], 
-            T.ModifiedBy AS [TBL_Admin_Modulos.ModifiedBy], 
-            T.ModifiedOn AS [TBL_Admin_Modulos.ModifiedOn], 
-            True AS _from0
-        FROM MainModuleContext.TBL_Admin_Modulos AS T
-    ) AS T1");
-        }
-        
-        /// <Summary>
-        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_Admin_OpcionesMenu
-        /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView30()
-        {
-            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_Admin_OpcionesMenu", "\r\n    SELECT VALUE -- Constructing TBL_Admin_OpcionesMenu\r\n        [SolutionFrame" +
-                    "work.MainModel.Store.TBL_Admin_OpcionesMenu](T1.[TBL_Admin_OpcionesMenu.IdOpcion" +
-                    "Menu], T1.[TBL_Admin_OpcionesMenu.IdopcionPadre], T1.[TBL_Admin_OpcionesMenu.Apl" +
-                    "icationId], T1.[TBL_Admin_OpcionesMenu.TituloOpcion], T1.[TBL_Admin_OpcionesMenu" +
-                    ".Posicion], T1.[TBL_Admin_OpcionesMenu.ShowSecondMenu], T1.[TBL_Admin_OpcionesMe" +
-                    "nu.ShowMainMenu], T1.[TBL_Admin_OpcionesMenu.Activo], T1.[TBL_Admin_OpcionesMenu" +
-                    ".LinkUrl], T1.[TBL_Admin_OpcionesMenu.Icono], T1.[TBL_Admin_OpcionesMenu.CreateB" +
-                    "y], T1.[TBL_Admin_OpcionesMenu.CreateOn], T1.[TBL_Admin_OpcionesMenu.ModifiedBy]" +
-                    ", T1.[TBL_Admin_OpcionesMenu.ModifiedOn])\r\n    FROM (\r\n        SELECT \r\n        " +
-                    "    T.IdOpcionMenu AS [TBL_Admin_OpcionesMenu.IdOpcionMenu], \r\n            T.Ido" +
-                    "pcionPadre AS [TBL_Admin_OpcionesMenu.IdopcionPadre], \r\n            T.Aplication" +
-                    "Id AS [TBL_Admin_OpcionesMenu.AplicationId], \r\n            T.TituloOpcion AS [TB" +
-                    "L_Admin_OpcionesMenu.TituloOpcion], \r\n            T.Posicion AS [TBL_Admin_Opcio" +
-                    "nesMenu.Posicion], \r\n            T.ShowSecondMenu AS [TBL_Admin_OpcionesMenu.Sho" +
-                    "wSecondMenu], \r\n            T.ShowMainMenu AS [TBL_Admin_OpcionesMenu.ShowMainMe" +
-                    "nu], \r\n            T.Activo AS [TBL_Admin_OpcionesMenu.Activo], \r\n            T." +
-                    "LinkUrl AS [TBL_Admin_OpcionesMenu.LinkUrl], \r\n            T.Icono AS [TBL_Admin" +
-                    "_OpcionesMenu.Icono], \r\n            T.CreateBy AS [TBL_Admin_OpcionesMenu.Create" +
-                    "By], \r\n            T.CreateOn AS [TBL_Admin_OpcionesMenu.CreateOn], \r\n          " +
-                    "  T.ModifiedBy AS [TBL_Admin_OpcionesMenu.ModifiedBy], \r\n            T.ModifiedO" +
-                    "n AS [TBL_Admin_OpcionesMenu.ModifiedOn], \r\n            True AS _from0\r\n        " +
-                    "FROM MainModuleContext.TBL_Admin_OpcionesMenu AS T\r\n    ) AS T1");
-        }
-        
-        /// <Summary>
-        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_Admin_Roles
-        /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView31()
-        {
-            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_Admin_Roles", @"
-    SELECT VALUE -- Constructing TBL_Admin_Roles
-        [SolutionFramework.MainModel.Store.TBL_Admin_Roles](T1.[TBL_Admin_Roles.IdRol], T1.[TBL_Admin_Roles.NombreRol], T1.[TBL_Admin_Roles.Activo], T1.[TBL_Admin_Roles.IsGroup], T1.[TBL_Admin_Roles.CreateBy], T1.[TBL_Admin_Roles.CreateOn], T1.[TBL_Admin_Roles.ModifiedBy], T1.[TBL_Admin_Roles.ModifiedOn])
-    FROM (
-        SELECT 
-            T.IdRol AS [TBL_Admin_Roles.IdRol], 
-            T.NombreRol AS [TBL_Admin_Roles.NombreRol], 
-            T.Activo AS [TBL_Admin_Roles.Activo], 
-            T.IsGroup AS [TBL_Admin_Roles.IsGroup], 
-            T.CreateBy AS [TBL_Admin_Roles.CreateBy], 
-            T.CreateOn AS [TBL_Admin_Roles.CreateOn], 
-            T.ModifiedBy AS [TBL_Admin_Roles.ModifiedBy], 
-            T.ModifiedOn AS [TBL_Admin_Roles.ModifiedOn], 
-            True AS _from0
-        FROM MainModuleContext.TBL_Admin_Roles AS T
-    ) AS T1");
-        }
-        
-        /// <Summary>
-        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_Admin_Secciones
-        /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView32()
-        {
-            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_Admin_Secciones", "\r\n    SELECT VALUE -- Constructing TBL_Admin_Secciones\r\n        [SolutionFramewor" +
-                    "k.MainModel.Store.TBL_Admin_Secciones](T1.[TBL_Admin_Secciones.IdSeccion], T1.[T" +
-                    "BL_Admin_Secciones.IdModule], T1.[TBL_Admin_Secciones.Posicion], T1.[TBL_Admin_S" +
-                    "ecciones.Titulo], T1.[TBL_Admin_Secciones.TituloEdit], T1.[TBL_Admin_Secciones.P" +
-                    "athPreview], T1.[TBL_Admin_Secciones.PathEdit], T1.[TBL_Admin_Secciones.ShowPrev" +
-                    "iew], T1.[TBL_Admin_Secciones.ShowInEdit], T1.[TBL_Admin_Secciones.IsActive], T1" +
-                    ".[TBL_Admin_Secciones.CreateBy], T1.[TBL_Admin_Secciones.CreateOn], T1.[TBL_Admi" +
-                    "n_Secciones.ModifiedBy], T1.[TBL_Admin_Secciones.ModifiedOn])\r\n    FROM (\r\n     " +
-                    "   SELECT \r\n            T.IdSeccion AS [TBL_Admin_Secciones.IdSeccion], \r\n      " +
-                    "      T.IdModule AS [TBL_Admin_Secciones.IdModule], \r\n            T.Posicion AS " +
-                    "[TBL_Admin_Secciones.Posicion], \r\n            T.Titulo AS [TBL_Admin_Secciones.T" +
-                    "itulo], \r\n            T.TituloEdit AS [TBL_Admin_Secciones.TituloEdit], \r\n      " +
-                    "      T.PathPreview AS [TBL_Admin_Secciones.PathPreview], \r\n            T.PathEd" +
-                    "it AS [TBL_Admin_Secciones.PathEdit], \r\n            T.ShowPreview AS [TBL_Admin_" +
-                    "Secciones.ShowPreview], \r\n            T.ShowInEdit AS [TBL_Admin_Secciones.ShowI" +
-                    "nEdit], \r\n            T.IsActive AS [TBL_Admin_Secciones.IsActive], \r\n          " +
-                    "  T.CreateBy AS [TBL_Admin_Secciones.CreateBy], \r\n            T.CreateOn AS [TBL" +
-                    "_Admin_Secciones.CreateOn], \r\n            T.ModifiedBy AS [TBL_Admin_Secciones.M" +
-                    "odifiedBy], \r\n            T.ModifiedOn AS [TBL_Admin_Secciones.ModifiedOn], \r\n  " +
-                    "          True AS _from0\r\n        FROM MainModuleContext.TBL_Admin_Secciones AS " +
-                    "T\r\n    ) AS T1");
-        }
-        
-        /// <Summary>
-        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_Admin_SistemaNotificaciones
-        /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView33()
-        {
-            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_Admin_SistemaNotificaciones", "\r\n    SELECT VALUE -- Constructing TBL_Admin_SistemaNotificaciones\r\n        [Solu" +
-                    "tionFramework.MainModel.Store.TBL_Admin_SistemaNotificaciones](T1.[TBL_Admin_Sis" +
-                    "temaNotificaciones.IdNotificacion], T1.[TBL_Admin_SistemaNotificaciones.IdUser]," +
-                    " T1.[TBL_Admin_SistemaNotificaciones.Modulo], T1.[TBL_Admin_SistemaNotificacione" +
-                    "s.Subject], T1.[TBL_Admin_SistemaNotificaciones.Url], T1.[TBL_Admin_SistemaNotif" +
-                    "icaciones.Fecha], T1.[TBL_Admin_SistemaNotificaciones.Visitado], T1.[TBL_Admin_S" +
-                    "istemaNotificaciones.IsActive], T1.[TBL_Admin_SistemaNotificaciones.CreateBy], T" +
-                    "1.[TBL_Admin_SistemaNotificaciones.CreateOn], T1.[TBL_Admin_SistemaNotificacione" +
-                    "s.ModifiedBy], T1.[TBL_Admin_SistemaNotificaciones.ModifiedOn], T1.[TBL_Admin_Si" +
-                    "stemaNotificaciones.Contenido])\r\n    FROM (\r\n        SELECT \r\n            T.IdNo" +
-                    "tificacion AS [TBL_Admin_SistemaNotificaciones.IdNotificacion], \r\n            T." +
-                    "IdUser AS [TBL_Admin_SistemaNotificaciones.IdUser], \r\n            T.Modulo AS [T" +
-                    "BL_Admin_SistemaNotificaciones.Modulo], \r\n            T.Subject AS [TBL_Admin_Si" +
-                    "stemaNotificaciones.Subject], \r\n            T.Url AS [TBL_Admin_SistemaNotificac" +
-                    "iones.Url], \r\n            T.Fecha AS [TBL_Admin_SistemaNotificaciones.Fecha], \r\n" +
-                    "            T.Visitado AS [TBL_Admin_SistemaNotificaciones.Visitado], \r\n        " +
-                    "    T.IsActive AS [TBL_Admin_SistemaNotificaciones.IsActive], \r\n            T.Cr" +
-                    "eateBy AS [TBL_Admin_SistemaNotificaciones.CreateBy], \r\n            T.CreateOn A" +
-                    "S [TBL_Admin_SistemaNotificaciones.CreateOn], \r\n            T.ModifiedBy AS [TBL" +
-                    "_Admin_SistemaNotificaciones.ModifiedBy], \r\n            T.ModifiedOn AS [TBL_Adm" +
-                    "in_SistemaNotificaciones.ModifiedOn], \r\n            T.Contenido AS [TBL_Admin_Si" +
-                    "stemaNotificaciones.Contenido], \r\n            True AS _from0\r\n        FROM MainM" +
-                    "oduleContext.TBL_Admin_SistemaNotificaciones AS T\r\n    ) AS T1");
-        }
-        
-        /// <Summary>
-        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_Admin_TypeByModules
-        /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView34()
-        {
-            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_Admin_TypeByModules", "\r\n    SELECT VALUE -- Constructing TBL_Admin_TypeByModules\r\n        [SolutionFram" +
-                    "ework.MainModel.Store.TBL_Admin_TypeByModules](T1.[TBL_Admin_TypeByModules.OID]," +
-                    " T1.[TBL_Admin_TypeByModules.IdModulo], T1.[TBL_Admin_TypeByModules.IdModuleType" +
-                    "], T1.[TBL_Admin_TypeByModules.Titulo], T1.[TBL_Admin_TypeByModules.MostrarTitul" +
-                    "o], T1.[TBL_Admin_TypeByModules.position], T1.[TBL_Admin_TypeByModules.Placehold" +
-                    "er], T1.[TBL_Admin_TypeByModules.IsActive], T1.[TBL_Admin_TypeByModules.CreateBy" +
-                    "], T1.[TBL_Admin_TypeByModules.CreateOn], T1.[TBL_Admin_TypeByModules.ModifiedBy" +
-                    "], T1.[TBL_Admin_TypeByModules.ModifiedOn])\r\n    FROM (\r\n        SELECT \r\n      " +
-                    "      T.OID AS [TBL_Admin_TypeByModules.OID], \r\n            T.IdModulo AS [TBL_A" +
-                    "dmin_TypeByModules.IdModulo], \r\n            T.IdModuleType AS [TBL_Admin_TypeByM" +
-                    "odules.IdModuleType], \r\n            T.Titulo AS [TBL_Admin_TypeByModules.Titulo]" +
-                    ", \r\n            T.MostrarTitulo AS [TBL_Admin_TypeByModules.MostrarTitulo], \r\n  " +
-                    "          T.position AS [TBL_Admin_TypeByModules.position], \r\n            T.Plac" +
-                    "eholder AS [TBL_Admin_TypeByModules.Placeholder], \r\n            T.IsActive AS [T" +
-                    "BL_Admin_TypeByModules.IsActive], \r\n            T.CreateBy AS [TBL_Admin_TypeByM" +
-                    "odules.CreateBy], \r\n            T.CreateOn AS [TBL_Admin_TypeByModules.CreateOn]" +
-                    ", \r\n            T.ModifiedBy AS [TBL_Admin_TypeByModules.ModifiedBy], \r\n        " +
-                    "    T.ModifiedOn AS [TBL_Admin_TypeByModules.ModifiedOn], \r\n            True AS " +
-                    "_from0\r\n        FROM MainModuleContext.TBL_Admin_TypeByModules AS T\r\n    ) AS T1" +
-                    "");
-        }
-        
-        /// <Summary>
-        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_Admin_Usuarios
-        /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView35()
-        {
-            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_Admin_Usuarios", "\r\n    SELECT VALUE -- Constructing TBL_Admin_Usuarios\r\n        [SolutionFramework" +
-                    ".MainModel.Store.TBL_Admin_Usuarios](T1.[TBL_Admin_Usuarios.IdUser], T1.[TBL_Adm" +
-                    "in_Usuarios.CodigoUser], T1.[TBL_Admin_Usuarios.Nombres], T1.[TBL_Admin_Usuarios" +
-                    ".FechaIngreso], T1.[TBL_Admin_Usuarios.lastlogin], T1.[TBL_Admin_Usuarios.lastip" +
-                    "], T1.[TBL_Admin_Usuarios.UserName], T1.[TBL_Admin_Usuarios.Password], T1.[TBL_A" +
-                    "dmin_Usuarios.Email], T1.[TBL_Admin_Usuarios.IsActive], T1.[TBL_Admin_Usuarios.C" +
-                    "reateBy], T1.[TBL_Admin_Usuarios.CreateOn], T1.[TBL_Admin_Usuarios.ModifiedBy], " +
-                    "T1.[TBL_Admin_Usuarios.ModifiedOn])\r\n    FROM (\r\n        SELECT \r\n            T." +
-                    "IdUser AS [TBL_Admin_Usuarios.IdUser], \r\n            T.CodigoUser AS [TBL_Admin_" +
-                    "Usuarios.CodigoUser], \r\n            T.Nombres AS [TBL_Admin_Usuarios.Nombres], \r" +
-                    "\n            T.FechaIngreso AS [TBL_Admin_Usuarios.FechaIngreso], \r\n            " +
-                    "T.lastlogin AS [TBL_Admin_Usuarios.lastlogin], \r\n            T.lastip AS [TBL_Ad" +
-                    "min_Usuarios.lastip], \r\n            T.UserName AS [TBL_Admin_Usuarios.UserName]," +
-                    " \r\n            T.Password AS [TBL_Admin_Usuarios.Password], \r\n            T.Emai" +
-                    "l AS [TBL_Admin_Usuarios.Email], \r\n            T.IsActive AS [TBL_Admin_Usuarios" +
-                    ".IsActive], \r\n            T.CreateBy AS [TBL_Admin_Usuarios.CreateBy], \r\n       " +
-                    "     T.CreateOn AS [TBL_Admin_Usuarios.CreateOn], \r\n            T.ModifiedBy AS " +
-                    "[TBL_Admin_Usuarios.ModifiedBy], \r\n            T.ModifiedOn AS [TBL_Admin_Usuari" +
-                    "os.ModifiedOn], \r\n            True AS _from0\r\n        FROM MainModuleContext.TBL" +
-                    "_Admin_Usuarios AS T\r\n    ) AS T1");
-        }
-        
-        /// <Summary>
-        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_Categorias
-        /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView36()
-        {
-            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_Categorias", @"
-    SELECT VALUE -- Constructing TBL_ModuloDocumentos_Categorias
-        [SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_Categorias](T1.[TBL_ModuloDocumentos_Categorias.IdCategoria], T1.[TBL_ModuloDocumentos_Categorias.Nombre], T1.[TBL_ModuloDocumentos_Categorias.Nivel], T1.[TBL_ModuloDocumentos_Categorias.IsActive], T1.[TBL_ModuloDocumentos_Categorias.CreateBy], T1.[TBL_ModuloDocumentos_Categorias.CreateOn], T1.[TBL_ModuloDocumentos_Categorias.ModifiedBy], T1.[TBL_ModuloDocumentos_Categorias.ModifiedOn])
-    FROM (
-        SELECT 
-            T.IdCategoria AS [TBL_ModuloDocumentos_Categorias.IdCategoria], 
-            T.Nombre AS [TBL_ModuloDocumentos_Categorias.Nombre], 
-            T.Nivel AS [TBL_ModuloDocumentos_Categorias.Nivel], 
-            T.IsActive AS [TBL_ModuloDocumentos_Categorias.IsActive], 
-            T.CreateBy AS [TBL_ModuloDocumentos_Categorias.CreateBy], 
-            T.CreateOn AS [TBL_ModuloDocumentos_Categorias.CreateOn], 
-            T.ModifiedBy AS [TBL_ModuloDocumentos_Categorias.ModifiedBy], 
-            T.ModifiedOn AS [TBL_ModuloDocumentos_Categorias.ModifiedOn], 
-            True AS _from0
-        FROM MainModuleContext.TBL_ModuloDocumentos_Categorias AS T
-    ) AS T1");
-        }
-        
-        /// <Summary>
-        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_Estados
-        /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView37()
-        {
-            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_Estados", @"
-    SELECT VALUE -- Constructing TBL_ModuloDocumentos_Estados
-        [SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_Estados](T1.[TBL_ModuloDocumentos_Estados.IdEstado], T1.[TBL_ModuloDocumentos_Estados.Codigo], T1.[TBL_ModuloDocumentos_Estados.Nombre], T1.[TBL_ModuloDocumentos_Estados.Descripcion], T1.[TBL_ModuloDocumentos_Estados.IsActive], T1.[TBL_ModuloDocumentos_Estados.CreateBy], T1.[TBL_ModuloDocumentos_Estados.CreateOn], T1.[TBL_ModuloDocumentos_Estados.ModifiedBy], T1.[TBL_ModuloDocumentos_Estados.ModifiedOn])
-    FROM (
-        SELECT 
-            T.IdEstado AS [TBL_ModuloDocumentos_Estados.IdEstado], 
-            T.Codigo AS [TBL_ModuloDocumentos_Estados.Codigo], 
-            T.Nombre AS [TBL_ModuloDocumentos_Estados.Nombre], 
-            T.Descripcion AS [TBL_ModuloDocumentos_Estados.Descripcion], 
-            T.IsActive AS [TBL_ModuloDocumentos_Estados.IsActive], 
-            T.CreateBy AS [TBL_ModuloDocumentos_Estados.CreateBy], 
-            T.CreateOn AS [TBL_ModuloDocumentos_Estados.CreateOn], 
-            T.ModifiedBy AS [TBL_ModuloDocumentos_Estados.ModifiedBy], 
-            T.ModifiedOn AS [TBL_ModuloDocumentos_Estados.ModifiedOn], 
-            True AS _from0
-        FROM MainModuleContext.TBL_ModuloDocumentos_Estados AS T
-    ) AS T1");
-        }
-        
-        /// <Summary>
-        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_Documento
-        /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView38()
-        {
-            System.Text.StringBuilder viewString = new System.Text.StringBuilder(2823);
-            viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloDocumentos_Documento\r\n        [Solu");
-            viewString.Append("tionFramework.MainModel.Store.TBL_ModuloDocumentos_Documento](T1.[TBL_ModuloDocu");
-            viewString.Append("mentos_Documento.IdDocumento], T1.[TBL_ModuloDocumentos_Documento.Titulo], T1.[T");
-            viewString.Append("BL_ModuloDocumentos_Documento.Observaciones], T1.[TBL_ModuloDocumentos_Documento");
-            viewString.Append(".Archivo], T1.[TBL_ModuloDocumentos_Documento.Version], T1.[TBL_ModuloDocumentos");
-            viewString.Append("_Documento.IdEstado], T1.[TBL_ModuloDocumentos_Documento.IdCategoria], T1.[TBL_M");
-            viewString.Append("oduloDocumentos_Documento.IdSubCategoria], T1.[TBL_ModuloDocumentos_Documento.Id");
-            viewString.Append("Tipo], T1.[TBL_ModuloDocumentos_Documento.IdUsuarioResponsable], T1.[TBL_ModuloD");
-            viewString.Append("ocumentos_Documento.IdUsuarioCreacion], T1.[TBL_ModuloDocumentos_Documento.IdUsu");
-            viewString.Append("arioModificacion], T1.[TBL_ModuloDocumentos_Documento.FechaCreacion], T1.[TBL_Mo");
-            viewString.Append("duloDocumentos_Documento.FechaModificacion], T1.[TBL_ModuloDocumentos_Documento.");
-            viewString.Append("IsActive], T1.[TBL_ModuloDocumentos_Documento.CreateBy], T1.[TBL_ModuloDocumento");
-            viewString.Append("s_Documento.CreateOn], T1.[TBL_ModuloDocumentos_Documento.ModifiedBy], T1.[TBL_M");
-            viewString.Append("oduloDocumentos_Documento.ModifiedOn], T1.[TBL_ModuloDocumentos_Documento.Nombre");
-            viewString.Append("Archivo])\r\n    FROM (\r\n        SELECT \r\n            T.IdDocumento AS [TBL_Modulo");
-            viewString.Append("Documentos_Documento.IdDocumento], \r\n            T.Titulo AS [TBL_ModuloDocument");
-            viewString.Append("os_Documento.Titulo], \r\n            T.Observaciones AS [TBL_ModuloDocumentos_Doc");
-            viewString.Append("umento.Observaciones], \r\n            T.Archivo AS [TBL_ModuloDocumentos_Document");
-            viewString.Append("o.Archivo], \r\n            T.Version AS [TBL_ModuloDocumentos_Documento.Version],");
-            viewString.Append(" \r\n            T.IdEstado AS [TBL_ModuloDocumentos_Documento.IdEstado], \r\n      ");
-            viewString.Append("      T.IdCategoria AS [TBL_ModuloDocumentos_Documento.IdCategoria], \r\n         ");
-            viewString.Append("   T.IdSubCategoria AS [TBL_ModuloDocumentos_Documento.IdSubCategoria], \r\n      ");
-            viewString.Append("      T.IdTipo AS [TBL_ModuloDocumentos_Documento.IdTipo], \r\n            T.IdUsu");
-            viewString.Append("arioResponsable AS [TBL_ModuloDocumentos_Documento.IdUsuarioResponsable], \r\n    ");
-            viewString.Append("        T.IdUsuarioCreacion AS [TBL_ModuloDocumentos_Documento.IdUsuarioCreacion");
-            viewString.Append("], \r\n            T.IdUsuarioModificacion AS [TBL_ModuloDocumentos_Documento.IdUs");
-            viewString.Append("uarioModificacion], \r\n            T.FechaCreacion AS [TBL_ModuloDocumentos_Docum");
-            viewString.Append("ento.FechaCreacion], \r\n            T.FechaModificacion AS [TBL_ModuloDocumentos_");
-            viewString.Append("Documento.FechaModificacion], \r\n            T.IsActive AS [TBL_ModuloDocumentos_");
-            viewString.Append("Documento.IsActive], \r\n            T.CreateBy AS [TBL_ModuloDocumentos_Documento");
-            viewString.Append(".CreateBy], \r\n            T.CreateOn AS [TBL_ModuloDocumentos_Documento.CreateOn");
-            viewString.Append("], \r\n            T.ModifiedBy AS [TBL_ModuloDocumentos_Documento.ModifiedBy], \r\n");
-            viewString.Append("            T.ModifiedOn AS [TBL_ModuloDocumentos_Documento.ModifiedOn], \r\n     ");
-            viewString.Append("       T.NombreArchivo AS [TBL_ModuloDocumentos_Documento.NombreArchivo], \r\n    ");
-            viewString.Append("        True AS _from0\r\n        FROM MainModuleContext.TBL_ModuloDocumentos_Docu");
-            viewString.Append("mento AS T\r\n    ) AS T1");
-            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_Documento", viewString.ToString());
-        }
-        
-        /// <Summary>
-        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_HistorialDocumento
-        /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView39()
-        {
-            System.Text.StringBuilder viewString = new System.Text.StringBuilder(3189);
-            viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloDocumentos_HistorialDocumento\r\n    ");
-            viewString.Append("    [SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_HistorialDocumento](");
-            viewString.Append("T1.[TBL_ModuloDocumentos_HistorialDocumento.IdHistorial], T1.[TBL_ModuloDocument");
-            viewString.Append("os_HistorialDocumento.IdDocumento], T1.[TBL_ModuloDocumentos_HistorialDocumento.");
-            viewString.Append("Titulo], T1.[TBL_ModuloDocumentos_HistorialDocumento.Observaciones], T1.[TBL_Mod");
-            viewString.Append("uloDocumentos_HistorialDocumento.Archivo], T1.[TBL_ModuloDocumentos_HistorialDoc");
-            viewString.Append("umento.Version], T1.[TBL_ModuloDocumentos_HistorialDocumento.IdCategoria], T1.[T");
-            viewString.Append("BL_ModuloDocumentos_HistorialDocumento.IdEstado], T1.[TBL_ModuloDocumentos_Histo");
-            viewString.Append("rialDocumento.IdSubCategoria], T1.[TBL_ModuloDocumentos_HistorialDocumento.IdTip");
-            viewString.Append("o], T1.[TBL_ModuloDocumentos_HistorialDocumento.IdUsuarioResposable], T1.[TBL_Mo");
-            viewString.Append("duloDocumentos_HistorialDocumento.IdUsuarioCreacion], T1.[TBL_ModuloDocumentos_H");
-            viewString.Append("istorialDocumento.IdUsuarioModificacion], T1.[TBL_ModuloDocumentos_HistorialDocu");
-            viewString.Append("mento.FechaCreacion], T1.[TBL_ModuloDocumentos_HistorialDocumento.IsActive], T1.");
-            viewString.Append("[TBL_ModuloDocumentos_HistorialDocumento.CreateBy], T1.[TBL_ModuloDocumentos_His");
-            viewString.Append("torialDocumento.CreateOn], T1.[TBL_ModuloDocumentos_HistorialDocumento.ModifiedB");
-            viewString.Append("y], T1.[TBL_ModuloDocumentos_HistorialDocumento.ModifiedOn], T1.[TBL_ModuloDocum");
-            viewString.Append("entos_HistorialDocumento.NombreArchivo])\r\n    FROM (\r\n        SELECT \r\n         ");
-            viewString.Append("   T.IdHistorial AS [TBL_ModuloDocumentos_HistorialDocumento.IdHistorial], \r\n   ");
-            viewString.Append("         T.IdDocumento AS [TBL_ModuloDocumentos_HistorialDocumento.IdDocumento],");
-            viewString.Append(" \r\n            T.Titulo AS [TBL_ModuloDocumentos_HistorialDocumento.Titulo], \r\n ");
-            viewString.Append("           T.Observaciones AS [TBL_ModuloDocumentos_HistorialDocumento.Observaci");
-            viewString.Append("ones], \r\n            T.Archivo AS [TBL_ModuloDocumentos_HistorialDocumento.Archi");
-            viewString.Append("vo], \r\n            T.Version AS [TBL_ModuloDocumentos_HistorialDocumento.Version");
-            viewString.Append("], \r\n            T.IdCategoria AS [TBL_ModuloDocumentos_HistorialDocumento.IdCat");
-            viewString.Append("egoria], \r\n            T.IdEstado AS [TBL_ModuloDocumentos_HistorialDocumento.Id");
-            viewString.Append("Estado], \r\n            T.IdSubCategoria AS [TBL_ModuloDocumentos_HistorialDocume");
-            viewString.Append("nto.IdSubCategoria], \r\n            T.IdTipo AS [TBL_ModuloDocumentos_HistorialDo");
-            viewString.Append("cumento.IdTipo], \r\n            T.IdUsuarioResposable AS [TBL_ModuloDocumentos_Hi");
-            viewString.Append("storialDocumento.IdUsuarioResposable], \r\n            T.IdUsuarioCreacion AS [TBL");
-            viewString.Append("_ModuloDocumentos_HistorialDocumento.IdUsuarioCreacion], \r\n            T.IdUsuar");
-            viewString.Append("ioModificacion AS [TBL_ModuloDocumentos_HistorialDocumento.IdUsuarioModificacion");
-            viewString.Append("], \r\n            T.FechaCreacion AS [TBL_ModuloDocumentos_HistorialDocumento.Fec");
-            viewString.Append("haCreacion], \r\n            T.IsActive AS [TBL_ModuloDocumentos_HistorialDocument");
-            viewString.Append("o.IsActive], \r\n            T.CreateBy AS [TBL_ModuloDocumentos_HistorialDocument");
-            viewString.Append("o.CreateBy], \r\n            T.CreateOn AS [TBL_ModuloDocumentos_HistorialDocument");
-            viewString.Append("o.CreateOn], \r\n            T.ModifiedBy AS [TBL_ModuloDocumentos_HistorialDocume");
-            viewString.Append("nto.ModifiedBy], \r\n            T.ModifiedOn AS [TBL_ModuloDocumentos_HistorialDo");
-            viewString.Append("cumento.ModifiedOn], \r\n            T.NombreArchivo AS [TBL_ModuloDocumentos_Hist");
-            viewString.Append("orialDocumento.NombreArchivo], \r\n            True AS _from0\r\n        FROM MainMo");
-            viewString.Append("duleContext.TBL_ModuloDocumentos_HistorialDocumento AS T\r\n    ) AS T1");
-            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_HistorialDocumento", viewString.ToString());
-        }
-        
-        /// <Summary>
-        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_LogCambios
-        /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView40()
-        {
-            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_LogCambios", @"
-    SELECT VALUE -- Constructing TBL_ModuloDocumentos_LogCambios
-        [SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_LogCambios](T1.[TBL_ModuloDocumentos_LogCambios.IdLog], T1.[TBL_ModuloDocumentos_LogCambios.IdDocumento], T1.[TBL_ModuloDocumentos_LogCambios.IdHistorial], T1.[TBL_ModuloDocumentos_LogCambios.Descripcion], T1.[TBL_ModuloDocumentos_LogCambios.IsActive], T1.[TBL_ModuloDocumentos_LogCambios.CreateBy], T1.[TBL_ModuloDocumentos_LogCambios.CreateOn])
-    FROM (
-        SELECT 
-            T.IdLog AS [TBL_ModuloDocumentos_LogCambios.IdLog], 
-            T.IdDocumento AS [TBL_ModuloDocumentos_LogCambios.IdDocumento], 
-            T.IdHistorial AS [TBL_ModuloDocumentos_LogCambios.IdHistorial], 
-            T.Descripcion AS [TBL_ModuloDocumentos_LogCambios.Descripcion], 
-            T.IsActive AS [TBL_ModuloDocumentos_LogCambios.IsActive], 
-            T.CreateBy AS [TBL_ModuloDocumentos_LogCambios.CreateBy], 
-            T.CreateOn AS [TBL_ModuloDocumentos_LogCambios.CreateOn], 
-            True AS _from0
-        FROM MainModuleContext.TBL_ModuloDocumentos_LogCambios AS T
-    ) AS T1");
-        }
-        
-        /// <Summary>
-        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_Admin_ResponsablesAprobacion
-        /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView41()
-        {
-            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_Admin_ResponsablesAprobacion", @"
-    SELECT VALUE -- Constructing TBL_Admin_ResponsablesAprobacion
-        [SolutionFramework.MainModel.Store.TBL_Admin_ResponsablesAprobacion](T1.[TBL_Admin_ResponsablesAprobacion.IdRol], T1.[TBL_Admin_ResponsablesAprobacion.IdUser])
-    FROM (
-        SELECT 
-            Key(T.TBL_Admin_Roles).IdRol AS [TBL_Admin_ResponsablesAprobacion.IdRol], 
-            Key(T.TBL_Admin_Usuarios).IdUser AS [TBL_Admin_ResponsablesAprobacion.IdUser], 
-            True AS _from0
-        FROM MainModuleContext.TBL_Admin_ResponsablesAprobacion AS T
-    ) AS T1");
-        }
-        
-        /// <Summary>
-        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_Admin_RolesPorOpcionMenu
-        /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView42()
-        {
-            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_Admin_RolesPorOpcionMenu", @"
-    SELECT VALUE -- Constructing TBL_Admin_RolesPorOpcionMenu
-        [SolutionFramework.MainModel.Store.TBL_Admin_RolesPorOpcionMenu](T1.[TBL_Admin_RolesPorOpcionMenu.IdRol], T1.[TBL_Admin_RolesPorOpcionMenu.IdopcionMenu])
-    FROM (
-        SELECT 
-            Key(T.TBL_Admin_Roles).IdRol AS [TBL_Admin_RolesPorOpcionMenu.IdRol], 
-            Key(T.TBL_Admin_OpcionesMenu).IdOpcionMenu AS [TBL_Admin_RolesPorOpcionMenu.IdopcionMenu], 
-            True AS _from0
-        FROM MainModuleContext.TBL_Admin_RolesPorOpcionMenu AS T
-    ) AS T1");
-        }
-        
-        /// <Summary>
-        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_Admin_UsuariosByRol
-        /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView43()
-        {
-            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_Admin_UsuariosByRol", @"
-    SELECT VALUE -- Constructing TBL_Admin_UsuariosByRol
-        [SolutionFramework.MainModel.Store.TBL_Admin_UsuariosByRol](T1.[TBL_Admin_UsuariosByRol.IdRol], T1.[TBL_Admin_UsuariosByRol.IdUser])
-    FROM (
-        SELECT 
-            Key(T.TBL_Admin_Roles).IdRol AS [TBL_Admin_UsuariosByRol.IdRol], 
-            Key(T.TBL_Admin_Usuarios).IdUser AS [TBL_Admin_UsuariosByRol.IdUser], 
-            True AS _from0
-        FROM MainModuleContext.TBL_Admin_UsuariosByRol AS T
-    ) AS T1");
+                    "L_ModuloWorkFlow_ValidacionesSalida.ModifiedOn], T1.[TBL_ModuloWorkFlow_Validaci" +
+                    "onesSalida.Ejecutar])\r\n    FROM (\r\n        SELECT \r\n            T.ID AS [TBL_Mod" +
+                    "uloWorkFlow_ValidacionesSalida.ID], \r\n            T.IdRuta AS [TBL_ModuloWorkFlo" +
+                    "w_ValidacionesSalida.IdRuta], \r\n            T.NombreEnsamblado AS [TBL_ModuloWor" +
+                    "kFlow_ValidacionesSalida.NombreEnsamblado], \r\n            T.NombreMetodo AS [TBL" +
+                    "_ModuloWorkFlow_ValidacionesSalida.NombreMetodo], \r\n            T.TipoAccion AS " +
+                    "[TBL_ModuloWorkFlow_ValidacionesSalida.TipoAccion], \r\n            T.IsActive AS " +
+                    "[TBL_ModuloWorkFlow_ValidacionesSalida.IsActive], \r\n            T.CreateBy AS [T" +
+                    "BL_ModuloWorkFlow_ValidacionesSalida.CreateBy], \r\n            T.CreateOn AS [TBL" +
+                    "_ModuloWorkFlow_ValidacionesSalida.CreateOn], \r\n            T.ModifiedBy AS [TBL" +
+                    "_ModuloWorkFlow_ValidacionesSalida.ModifiedBy], \r\n            T.ModifiedOn AS [T" +
+                    "BL_ModuloWorkFlow_ValidacionesSalida.ModifiedOn], \r\n            T.Ejecutar AS [T" +
+                    "BL_ModuloWorkFlow_ValidacionesSalida.Ejecutar], \r\n            True AS _from0\r\n  " +
+                    "      FROM SolutionFrameworkMainModelStoreContainer.TBL_ModuloWorkFlow_Validacio" +
+                    "nesSalida AS T\r\n    ) AS T1");
         }
         
         /// <Summary>
         /// return view for MainModuleContext.TBL_Admin_ModuleRepository
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView44()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView71()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_Admin_ModuleRepository", @"
     SELECT VALUE -- Constructing TBL_Admin_ModuleRepository
@@ -1525,7 +2523,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_Admin_ModuleService
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView45()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView72()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_Admin_ModuleService", @"
     SELECT VALUE -- Constructing TBL_Admin_ModuleService
@@ -1545,63 +2543,9 @@ namespace Edm_EntityMappingGeneratedViews
         }
         
         /// <Summary>
-        /// return view for MainModuleContext.TBL_Admin_ModuleType
-        /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView46()
-        {
-            return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_Admin_ModuleType", @"
-    SELECT VALUE -- Constructing TBL_Admin_ModuleType
-        [SolutionFramework.MainModel.TBL_Admin_ModuleType](T1.[TBL_Admin_ModuleType.IdModuleType], T1.[TBL_Admin_ModuleType.Nombre], T1.[TBL_Admin_ModuleType.NombreEnsamblado], T1.[TBL_Admin_ModuleType.NombreClase], T1.[TBL_Admin_ModuleType.path], T1.[TBL_Admin_ModuleType.PathEdicion], T1.[TBL_Admin_ModuleType.AutoActivar], T1.[TBL_Admin_ModuleType.IsActive], T1.[TBL_Admin_ModuleType.CreateBy], T1.[TBL_Admin_ModuleType.CreateOn], T1.[TBL_Admin_ModuleType.ModifiedBy], T1.[TBL_Admin_ModuleType.ModifiedOn])
-    FROM (
-        SELECT 
-            T.IdModuleType AS [TBL_Admin_ModuleType.IdModuleType], 
-            T.Nombre AS [TBL_Admin_ModuleType.Nombre], 
-            T.NombreEnsamblado AS [TBL_Admin_ModuleType.NombreEnsamblado], 
-            T.NombreClase AS [TBL_Admin_ModuleType.NombreClase], 
-            T.path AS [TBL_Admin_ModuleType.path], 
-            T.PathEdicion AS [TBL_Admin_ModuleType.PathEdicion], 
-            T.AutoActivar AS [TBL_Admin_ModuleType.AutoActivar], 
-            T.IsActive AS [TBL_Admin_ModuleType.IsActive], 
-            T.CreateBy AS [TBL_Admin_ModuleType.CreateBy], 
-            T.CreateOn AS [TBL_Admin_ModuleType.CreateOn], 
-            T.ModifiedBy AS [TBL_Admin_ModuleType.ModifiedBy], 
-            T.ModifiedOn AS [TBL_Admin_ModuleType.ModifiedOn], 
-            True AS _from0
-        FROM SolutionFrameworkMainModelStoreContainer.TBL_Admin_ModuleType AS T
-    ) AS T1");
-        }
-        
-        /// <Summary>
-        /// return view for MainModuleContext.TBL_Admin_Modulos
-        /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView47()
-        {
-            return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_Admin_Modulos", @"
-    SELECT VALUE -- Constructing TBL_Admin_Modulos
-        [SolutionFramework.MainModel.TBL_Admin_Modulos](T1.[TBL_Admin_Modulos.IdModulo], T1.[TBL_Admin_Modulos.NombreModulo], T1.[TBL_Admin_Modulos.Descripcion], T1.[TBL_Admin_Modulos.Imagen], T1.[TBL_Admin_Modulos.ImageDisabled], T1.[TBL_Admin_Modulos.ShowInMenu], T1.[TBL_Admin_Modulos.PathFormPreView], T1.[TBL_Admin_Modulos.IsActive], T1.[TBL_Admin_Modulos.CreateBy], T1.[TBL_Admin_Modulos.CreateOn], T1.[TBL_Admin_Modulos.ModifiedBy], T1.[TBL_Admin_Modulos.ModifiedOn])
-    FROM (
-        SELECT 
-            T.IdModulo AS [TBL_Admin_Modulos.IdModulo], 
-            T.NombreModulo AS [TBL_Admin_Modulos.NombreModulo], 
-            T.Descripcion AS [TBL_Admin_Modulos.Descripcion], 
-            T.Imagen AS [TBL_Admin_Modulos.Imagen], 
-            T.ImageDisabled AS [TBL_Admin_Modulos.ImageDisabled], 
-            T.ShowInMenu AS [TBL_Admin_Modulos.ShowInMenu], 
-            T.PathFormPreView AS [TBL_Admin_Modulos.PathFormPreView], 
-            T.IsActive AS [TBL_Admin_Modulos.IsActive], 
-            T.CreateBy AS [TBL_Admin_Modulos.CreateBy], 
-            T.CreateOn AS [TBL_Admin_Modulos.CreateOn], 
-            T.ModifiedBy AS [TBL_Admin_Modulos.ModifiedBy], 
-            T.ModifiedOn AS [TBL_Admin_Modulos.ModifiedOn], 
-            True AS _from0
-        FROM SolutionFrameworkMainModelStoreContainer.TBL_Admin_Modulos AS T
-    ) AS T1");
-        }
-        
-        /// <Summary>
         /// return view for MainModuleContext.TBL_Admin_OpcionesMenu
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView48()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView73()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_Admin_OpcionesMenu", "\r\n    SELECT VALUE -- Constructing TBL_Admin_OpcionesMenu\r\n        [SolutionFrame" +
                     "work.MainModel.TBL_Admin_OpcionesMenu](T1.[TBL_Admin_OpcionesMenu.IdOpcionMenu]," +
@@ -1631,7 +2575,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_Admin_Roles
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView49()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView74()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_Admin_Roles", @"
     SELECT VALUE -- Constructing TBL_Admin_Roles
@@ -1654,7 +2598,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_Admin_Secciones
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView50()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView75()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_Admin_Secciones", "\r\n    SELECT VALUE -- Constructing TBL_Admin_Secciones\r\n        [SolutionFramewor" +
                     "k.MainModel.TBL_Admin_Secciones](T1.[TBL_Admin_Secciones.IdSeccion], T1.[TBL_Adm" +
@@ -1682,7 +2626,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_Admin_SistemaNotificaciones
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView51()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView76()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_Admin_SistemaNotificaciones", "\r\n    SELECT VALUE -- Constructing TBL_Admin_SistemaNotificaciones\r\n        [Solu" +
                     "tionFramework.MainModel.TBL_Admin_SistemaNotificaciones](T1.[TBL_Admin_SistemaNo" +
@@ -1712,7 +2656,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_Admin_TypeByModules
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView52()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView77()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_Admin_TypeByModules", "\r\n    SELECT VALUE -- Constructing TBL_Admin_TypeByModules\r\n        [SolutionFram" +
                     "ework.MainModel.TBL_Admin_TypeByModules](T1.[TBL_Admin_TypeByModules.OID], T1.[T" +
@@ -1739,7 +2683,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_Admin_Usuarios
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView53()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView78()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_Admin_Usuarios", "\r\n    SELECT VALUE -- Constructing TBL_Admin_Usuarios\r\n        [SolutionFramework" +
                     ".MainModel.TBL_Admin_Usuarios](T1.[TBL_Admin_Usuarios.IdUser], T1.[TBL_Admin_Usu" +
@@ -1766,7 +2710,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloDocumentos_Categorias
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView54()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView79()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloDocumentos_Categorias", @"
     SELECT VALUE -- Constructing TBL_ModuloDocumentos_Categorias
@@ -1787,9 +2731,108 @@ namespace Edm_EntityMappingGeneratedViews
         }
         
         /// <Summary>
+        /// return view for MainModuleContext.TBL_ModuloDocumentos_Documento
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView80()
+        {
+            System.Text.StringBuilder viewString = new System.Text.StringBuilder(2594);
+            viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloDocumentos_Documento\r\n        [Solu");
+            viewString.Append("tionFramework.MainModel.TBL_ModuloDocumentos_Documento](T1.[TBL_ModuloDocumentos");
+            viewString.Append("_Documento.IdDocumento], T1.[TBL_ModuloDocumentos_Documento.Titulo], T1.[TBL_Mod");
+            viewString.Append("uloDocumentos_Documento.Observaciones], T1.[TBL_ModuloDocumentos_Documento.Versi");
+            viewString.Append("on], T1.[TBL_ModuloDocumentos_Documento.IdEstado], T1.[TBL_ModuloDocumentos_Docu");
+            viewString.Append("mento.IdCategoria], T1.[TBL_ModuloDocumentos_Documento.IdSubCategoria], T1.[TBL_");
+            viewString.Append("ModuloDocumentos_Documento.IdTipo], T1.[TBL_ModuloDocumentos_Documento.IdUsuario");
+            viewString.Append("Responsable], T1.[TBL_ModuloDocumentos_Documento.IdUsuarioCreacion], T1.[TBL_Mod");
+            viewString.Append("uloDocumentos_Documento.IdUsuarioModificacion], T1.[TBL_ModuloDocumentos_Documen");
+            viewString.Append("to.FechaCreacion], T1.[TBL_ModuloDocumentos_Documento.FechaModificacion], T1.[TB");
+            viewString.Append("L_ModuloDocumentos_Documento.IsActive], T1.[TBL_ModuloDocumentos_Documento.Creat");
+            viewString.Append("eBy], T1.[TBL_ModuloDocumentos_Documento.CreateOn], T1.[TBL_ModuloDocumentos_Doc");
+            viewString.Append("umento.ModifiedBy], T1.[TBL_ModuloDocumentos_Documento.ModifiedOn])\r\n    FROM (\r");
+            viewString.Append("\n        SELECT \r\n            T.IdDocumento AS [TBL_ModuloDocumentos_Documento.I");
+            viewString.Append("dDocumento], \r\n            T.Titulo AS [TBL_ModuloDocumentos_Documento.Titulo], ");
+            viewString.Append("\r\n            T.Observaciones AS [TBL_ModuloDocumentos_Documento.Observaciones],");
+            viewString.Append(" \r\n            T.Version AS [TBL_ModuloDocumentos_Documento.Version], \r\n        ");
+            viewString.Append("    T.IdEstado AS [TBL_ModuloDocumentos_Documento.IdEstado], \r\n            T.IdC");
+            viewString.Append("ategoria AS [TBL_ModuloDocumentos_Documento.IdCategoria], \r\n            T.IdSubC");
+            viewString.Append("ategoria AS [TBL_ModuloDocumentos_Documento.IdSubCategoria], \r\n            T.IdT");
+            viewString.Append("ipo AS [TBL_ModuloDocumentos_Documento.IdTipo], \r\n            T.IdUsuarioRespons");
+            viewString.Append("able AS [TBL_ModuloDocumentos_Documento.IdUsuarioResponsable], \r\n            T.I");
+            viewString.Append("dUsuarioCreacion AS [TBL_ModuloDocumentos_Documento.IdUsuarioCreacion], \r\n      ");
+            viewString.Append("      T.IdUsuarioModificacion AS [TBL_ModuloDocumentos_Documento.IdUsuarioModifi");
+            viewString.Append("cacion], \r\n            T.FechaCreacion AS [TBL_ModuloDocumentos_Documento.FechaC");
+            viewString.Append("reacion], \r\n            T.FechaModificacion AS [TBL_ModuloDocumentos_Documento.F");
+            viewString.Append("echaModificacion], \r\n            T.IsActive AS [TBL_ModuloDocumentos_Documento.I");
+            viewString.Append("sActive], \r\n            T.CreateBy AS [TBL_ModuloDocumentos_Documento.CreateBy],");
+            viewString.Append(" \r\n            T.CreateOn AS [TBL_ModuloDocumentos_Documento.CreateOn], \r\n      ");
+            viewString.Append("      T.ModifiedBy AS [TBL_ModuloDocumentos_Documento.ModifiedBy], \r\n           ");
+            viewString.Append(" T.ModifiedOn AS [TBL_ModuloDocumentos_Documento.ModifiedOn], \r\n            True");
+            viewString.Append(" AS _from0\r\n        FROM SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocu");
+            viewString.Append("mentos_Documento AS T\r\n    ) AS T1");
+            return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloDocumentos_Documento", viewString.ToString());
+        }
+        
+        /// <Summary>
+        /// return view for MainModuleContext.TBL_ModuloDocumentos_DocumentoAdjunto
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView81()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloDocumentos_DocumentoAdjunto", "\r\n    SELECT VALUE -- Constructing TBL_ModuloDocumentos_DocumentoAdjunto\r\n       " +
+                    " [SolutionFramework.MainModel.TBL_ModuloDocumentos_DocumentoAdjunto](T1.[TBL_Mod" +
+                    "uloDocumentos_DocumentoAdjunto.IdDocumentoAdjunto], T1.[TBL_ModuloDocumentos_Doc" +
+                    "umentoAdjunto.IdDocumento], T1.[TBL_ModuloDocumentos_DocumentoAdjunto.NombreArch" +
+                    "ivo], T1.[TBL_ModuloDocumentos_DocumentoAdjunto.Archivo], T1.[TBL_ModuloDocument" +
+                    "os_DocumentoAdjunto.IsActive], T1.[TBL_ModuloDocumentos_DocumentoAdjunto.CreateB" +
+                    "y], T1.[TBL_ModuloDocumentos_DocumentoAdjunto.CrateOn], T1.[TBL_ModuloDocumentos" +
+                    "_DocumentoAdjunto.ModifiedBy], T1.[TBL_ModuloDocumentos_DocumentoAdjunto.Modifie" +
+                    "dOn])\r\n    FROM (\r\n        SELECT \r\n            T.IdDocumentoAdjunto AS [TBL_Mod" +
+                    "uloDocumentos_DocumentoAdjunto.IdDocumentoAdjunto], \r\n            T.IdDocumento " +
+                    "AS [TBL_ModuloDocumentos_DocumentoAdjunto.IdDocumento], \r\n            T.NombreAr" +
+                    "chivo AS [TBL_ModuloDocumentos_DocumentoAdjunto.NombreArchivo], \r\n            T." +
+                    "Archivo AS [TBL_ModuloDocumentos_DocumentoAdjunto.Archivo], \r\n            T.IsAc" +
+                    "tive AS [TBL_ModuloDocumentos_DocumentoAdjunto.IsActive], \r\n            T.Create" +
+                    "By AS [TBL_ModuloDocumentos_DocumentoAdjunto.CreateBy], \r\n            T.CrateOn " +
+                    "AS [TBL_ModuloDocumentos_DocumentoAdjunto.CrateOn], \r\n            T.ModifiedBy A" +
+                    "S [TBL_ModuloDocumentos_DocumentoAdjunto.ModifiedBy], \r\n            T.ModifiedOn" +
+                    " AS [TBL_ModuloDocumentos_DocumentoAdjunto.ModifiedOn], \r\n            True AS _f" +
+                    "rom0\r\n        FROM SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos" +
+                    "_DocumentoAdjunto AS T\r\n    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for MainModuleContext.TBL_ModuloDocumentos_DocumentoAdjuntoHistorial
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView82()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloDocumentos_DocumentoAdjuntoHistorial", "\r\n    SELECT VALUE -- Constructing TBL_ModuloDocumentos_DocumentoAdjuntoHistorial" +
+                    "\r\n        [SolutionFramework.MainModel.TBL_ModuloDocumentos_DocumentoAdjuntoHist" +
+                    "orial](T1.[TBL_ModuloDocumentos_DocumentoAdjuntoHistorial.IdDocumentoAdjuntoHist" +
+                    "orial], T1.[TBL_ModuloDocumentos_DocumentoAdjuntoHistorial.IdHistorial], T1.[TBL" +
+                    "_ModuloDocumentos_DocumentoAdjuntoHistorial.NombreArchivo], T1.[TBL_ModuloDocume" +
+                    "ntos_DocumentoAdjuntoHistorial.Archivo], T1.[TBL_ModuloDocumentos_DocumentoAdjun" +
+                    "toHistorial.IsActive], T1.[TBL_ModuloDocumentos_DocumentoAdjuntoHistorial.Create" +
+                    "By], T1.[TBL_ModuloDocumentos_DocumentoAdjuntoHistorial.CreateOn], T1.[TBL_Modul" +
+                    "oDocumentos_DocumentoAdjuntoHistorial.ModifiedBy], T1.[TBL_ModuloDocumentos_Docu" +
+                    "mentoAdjuntoHistorial.ModifiedOn])\r\n    FROM (\r\n        SELECT \r\n            T.I" +
+                    "dDocumentoAdjuntoHistorial AS [TBL_ModuloDocumentos_DocumentoAdjuntoHistorial.Id" +
+                    "DocumentoAdjuntoHistorial], \r\n            T.IdHistorial AS [TBL_ModuloDocumentos" +
+                    "_DocumentoAdjuntoHistorial.IdHistorial], \r\n            T.NombreArchivo AS [TBL_M" +
+                    "oduloDocumentos_DocumentoAdjuntoHistorial.NombreArchivo], \r\n            T.Archiv" +
+                    "o AS [TBL_ModuloDocumentos_DocumentoAdjuntoHistorial.Archivo], \r\n            T.I" +
+                    "sActive AS [TBL_ModuloDocumentos_DocumentoAdjuntoHistorial.IsActive], \r\n        " +
+                    "    T.CreateBy AS [TBL_ModuloDocumentos_DocumentoAdjuntoHistorial.CreateBy], \r\n " +
+                    "           T.CreateOn AS [TBL_ModuloDocumentos_DocumentoAdjuntoHistorial.CreateO" +
+                    "n], \r\n            T.ModifiedBy AS [TBL_ModuloDocumentos_DocumentoAdjuntoHistoria" +
+                    "l.ModifiedBy], \r\n            T.ModifiedOn AS [TBL_ModuloDocumentos_DocumentoAdju" +
+                    "ntoHistorial.ModifiedOn], \r\n            True AS _from0\r\n        FROM SolutionFra" +
+                    "meworkMainModelStoreContainer.TBL_ModuloDocumentos_DocumentoAdjuntoHistorial AS " +
+                    "T\r\n    ) AS T1");
+        }
+        
+        /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloDocumentos_Estados
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView55()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView83()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloDocumentos_Estados", @"
     SELECT VALUE -- Constructing TBL_ModuloDocumentos_Estados
@@ -1811,104 +2854,55 @@ namespace Edm_EntityMappingGeneratedViews
         }
         
         /// <Summary>
-        /// return view for MainModuleContext.TBL_ModuloDocumentos_Documento
-        /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView56()
-        {
-            System.Text.StringBuilder viewString = new System.Text.StringBuilder(2840);
-            viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloDocumentos_Documento\r\n        [Solu");
-            viewString.Append("tionFramework.MainModel.TBL_ModuloDocumentos_Documento](T1.[TBL_ModuloDocumentos");
-            viewString.Append("_Documento.IdDocumento], T1.[TBL_ModuloDocumentos_Documento.Titulo], T1.[TBL_Mod");
-            viewString.Append("uloDocumentos_Documento.Observaciones], T1.[TBL_ModuloDocumentos_Documento.Archi");
-            viewString.Append("vo], T1.[TBL_ModuloDocumentos_Documento.Version], T1.[TBL_ModuloDocumentos_Docum");
-            viewString.Append("ento.IdEstado], T1.[TBL_ModuloDocumentos_Documento.IdCategoria], T1.[TBL_ModuloD");
-            viewString.Append("ocumentos_Documento.IdSubCategoria], T1.[TBL_ModuloDocumentos_Documento.IdTipo],");
-            viewString.Append(" T1.[TBL_ModuloDocumentos_Documento.IdUsuarioResponsable], T1.[TBL_ModuloDocumen");
-            viewString.Append("tos_Documento.IdUsuarioCreacion], T1.[TBL_ModuloDocumentos_Documento.IdUsuarioMo");
-            viewString.Append("dificacion], T1.[TBL_ModuloDocumentos_Documento.FechaCreacion], T1.[TBL_ModuloDo");
-            viewString.Append("cumentos_Documento.FechaModificacion], T1.[TBL_ModuloDocumentos_Documento.IsActi");
-            viewString.Append("ve], T1.[TBL_ModuloDocumentos_Documento.CreateBy], T1.[TBL_ModuloDocumentos_Docu");
-            viewString.Append("mento.CreateOn], T1.[TBL_ModuloDocumentos_Documento.ModifiedBy], T1.[TBL_ModuloD");
-            viewString.Append("ocumentos_Documento.ModifiedOn], T1.[TBL_ModuloDocumentos_Documento.NombreArchiv");
-            viewString.Append("o])\r\n    FROM (\r\n        SELECT \r\n            T.IdDocumento AS [TBL_ModuloDocume");
-            viewString.Append("ntos_Documento.IdDocumento], \r\n            T.Titulo AS [TBL_ModuloDocumentos_Doc");
-            viewString.Append("umento.Titulo], \r\n            T.Observaciones AS [TBL_ModuloDocumentos_Documento");
-            viewString.Append(".Observaciones], \r\n            T.Archivo AS [TBL_ModuloDocumentos_Documento.Arch");
-            viewString.Append("ivo], \r\n            T.Version AS [TBL_ModuloDocumentos_Documento.Version], \r\n   ");
-            viewString.Append("         T.IdEstado AS [TBL_ModuloDocumentos_Documento.IdEstado], \r\n            ");
-            viewString.Append("T.IdCategoria AS [TBL_ModuloDocumentos_Documento.IdCategoria], \r\n            T.I");
-            viewString.Append("dSubCategoria AS [TBL_ModuloDocumentos_Documento.IdSubCategoria], \r\n            ");
-            viewString.Append("T.IdTipo AS [TBL_ModuloDocumentos_Documento.IdTipo], \r\n            T.IdUsuarioRe");
-            viewString.Append("sponsable AS [TBL_ModuloDocumentos_Documento.IdUsuarioResponsable], \r\n          ");
-            viewString.Append("  T.IdUsuarioCreacion AS [TBL_ModuloDocumentos_Documento.IdUsuarioCreacion], \r\n ");
-            viewString.Append("           T.IdUsuarioModificacion AS [TBL_ModuloDocumentos_Documento.IdUsuarioM");
-            viewString.Append("odificacion], \r\n            T.FechaCreacion AS [TBL_ModuloDocumentos_Documento.F");
-            viewString.Append("echaCreacion], \r\n            T.FechaModificacion AS [TBL_ModuloDocumentos_Docume");
-            viewString.Append("nto.FechaModificacion], \r\n            T.IsActive AS [TBL_ModuloDocumentos_Docume");
-            viewString.Append("nto.IsActive], \r\n            T.CreateBy AS [TBL_ModuloDocumentos_Documento.Creat");
-            viewString.Append("eBy], \r\n            T.CreateOn AS [TBL_ModuloDocumentos_Documento.CreateOn], \r\n ");
-            viewString.Append("           T.ModifiedBy AS [TBL_ModuloDocumentos_Documento.ModifiedBy], \r\n      ");
-            viewString.Append("      T.ModifiedOn AS [TBL_ModuloDocumentos_Documento.ModifiedOn], \r\n           ");
-            viewString.Append(" T.NombreArchivo AS [TBL_ModuloDocumentos_Documento.NombreArchivo], \r\n          ");
-            viewString.Append("  True AS _from0\r\n        FROM SolutionFrameworkMainModelStoreContainer.TBL_Modu");
-            viewString.Append("loDocumentos_Documento AS T\r\n    ) AS T1");
-            return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloDocumentos_Documento", viewString.ToString());
-        }
-        
-        /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloDocumentos_HistorialDocumento
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView57()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView84()
         {
-            System.Text.StringBuilder viewString = new System.Text.StringBuilder(3206);
+            System.Text.StringBuilder viewString = new System.Text.StringBuilder(2924);
             viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloDocumentos_HistorialDocumento\r\n    ");
             viewString.Append("    [SolutionFramework.MainModel.TBL_ModuloDocumentos_HistorialDocumento](T1.[TB");
             viewString.Append("L_ModuloDocumentos_HistorialDocumento.IdHistorial], T1.[TBL_ModuloDocumentos_His");
             viewString.Append("torialDocumento.IdDocumento], T1.[TBL_ModuloDocumentos_HistorialDocumento.Titulo");
             viewString.Append("], T1.[TBL_ModuloDocumentos_HistorialDocumento.Observaciones], T1.[TBL_ModuloDoc");
-            viewString.Append("umentos_HistorialDocumento.Archivo], T1.[TBL_ModuloDocumentos_HistorialDocumento");
-            viewString.Append(".Version], T1.[TBL_ModuloDocumentos_HistorialDocumento.IdCategoria], T1.[TBL_Mod");
-            viewString.Append("uloDocumentos_HistorialDocumento.IdEstado], T1.[TBL_ModuloDocumentos_HistorialDo");
-            viewString.Append("cumento.IdSubCategoria], T1.[TBL_ModuloDocumentos_HistorialDocumento.IdTipo], T1");
-            viewString.Append(".[TBL_ModuloDocumentos_HistorialDocumento.IdUsuarioResposable], T1.[TBL_ModuloDo");
-            viewString.Append("cumentos_HistorialDocumento.IdUsuarioCreacion], T1.[TBL_ModuloDocumentos_Histori");
-            viewString.Append("alDocumento.IdUsuarioModificacion], T1.[TBL_ModuloDocumentos_HistorialDocumento.");
-            viewString.Append("FechaCreacion], T1.[TBL_ModuloDocumentos_HistorialDocumento.IsActive], T1.[TBL_M");
-            viewString.Append("oduloDocumentos_HistorialDocumento.CreateBy], T1.[TBL_ModuloDocumentos_Historial");
-            viewString.Append("Documento.CreateOn], T1.[TBL_ModuloDocumentos_HistorialDocumento.ModifiedBy], T1");
-            viewString.Append(".[TBL_ModuloDocumentos_HistorialDocumento.ModifiedOn], T1.[TBL_ModuloDocumentos_");
-            viewString.Append("HistorialDocumento.NombreArchivo])\r\n    FROM (\r\n        SELECT \r\n            T.I");
-            viewString.Append("dHistorial AS [TBL_ModuloDocumentos_HistorialDocumento.IdHistorial], \r\n         ");
-            viewString.Append("   T.IdDocumento AS [TBL_ModuloDocumentos_HistorialDocumento.IdDocumento], \r\n   ");
-            viewString.Append("         T.Titulo AS [TBL_ModuloDocumentos_HistorialDocumento.Titulo], \r\n       ");
-            viewString.Append("     T.Observaciones AS [TBL_ModuloDocumentos_HistorialDocumento.Observaciones],");
-            viewString.Append(" \r\n            T.Archivo AS [TBL_ModuloDocumentos_HistorialDocumento.Archivo], \r");
-            viewString.Append("\n            T.Version AS [TBL_ModuloDocumentos_HistorialDocumento.Version], \r\n ");
-            viewString.Append("           T.IdCategoria AS [TBL_ModuloDocumentos_HistorialDocumento.IdCategoria");
-            viewString.Append("], \r\n            T.IdEstado AS [TBL_ModuloDocumentos_HistorialDocumento.IdEstado");
-            viewString.Append("], \r\n            T.IdSubCategoria AS [TBL_ModuloDocumentos_HistorialDocumento.Id");
-            viewString.Append("SubCategoria], \r\n            T.IdTipo AS [TBL_ModuloDocumentos_HistorialDocument");
-            viewString.Append("o.IdTipo], \r\n            T.IdUsuarioResposable AS [TBL_ModuloDocumentos_Historia");
-            viewString.Append("lDocumento.IdUsuarioResposable], \r\n            T.IdUsuarioCreacion AS [TBL_Modul");
-            viewString.Append("oDocumentos_HistorialDocumento.IdUsuarioCreacion], \r\n            T.IdUsuarioModi");
-            viewString.Append("ficacion AS [TBL_ModuloDocumentos_HistorialDocumento.IdUsuarioModificacion], \r\n ");
-            viewString.Append("           T.FechaCreacion AS [TBL_ModuloDocumentos_HistorialDocumento.FechaCrea");
-            viewString.Append("cion], \r\n            T.IsActive AS [TBL_ModuloDocumentos_HistorialDocumento.IsAc");
-            viewString.Append("tive], \r\n            T.CreateBy AS [TBL_ModuloDocumentos_HistorialDocumento.Crea");
-            viewString.Append("teBy], \r\n            T.CreateOn AS [TBL_ModuloDocumentos_HistorialDocumento.Crea");
-            viewString.Append("teOn], \r\n            T.ModifiedBy AS [TBL_ModuloDocumentos_HistorialDocumento.Mo");
-            viewString.Append("difiedBy], \r\n            T.ModifiedOn AS [TBL_ModuloDocumentos_HistorialDocument");
-            viewString.Append("o.ModifiedOn], \r\n            T.NombreArchivo AS [TBL_ModuloDocumentos_HistorialD");
-            viewString.Append("ocumento.NombreArchivo], \r\n            True AS _from0\r\n        FROM SolutionFram");
-            viewString.Append("eworkMainModelStoreContainer.TBL_ModuloDocumentos_HistorialDocumento AS T\r\n    )");
-            viewString.Append(" AS T1");
+            viewString.Append("umentos_HistorialDocumento.Version], T1.[TBL_ModuloDocumentos_HistorialDocumento");
+            viewString.Append(".IdCategoria], T1.[TBL_ModuloDocumentos_HistorialDocumento.IdEstado], T1.[TBL_Mo");
+            viewString.Append("duloDocumentos_HistorialDocumento.IdSubCategoria], T1.[TBL_ModuloDocumentos_Hist");
+            viewString.Append("orialDocumento.IdTipo], T1.[TBL_ModuloDocumentos_HistorialDocumento.IdUsuarioRes");
+            viewString.Append("posable], T1.[TBL_ModuloDocumentos_HistorialDocumento.IdUsuarioCreacion], T1.[TB");
+            viewString.Append("L_ModuloDocumentos_HistorialDocumento.IdUsuarioModificacion], T1.[TBL_ModuloDocu");
+            viewString.Append("mentos_HistorialDocumento.FechaCreacion], T1.[TBL_ModuloDocumentos_HistorialDocu");
+            viewString.Append("mento.IsActive], T1.[TBL_ModuloDocumentos_HistorialDocumento.CreateBy], T1.[TBL_");
+            viewString.Append("ModuloDocumentos_HistorialDocumento.CreateOn], T1.[TBL_ModuloDocumentos_Historia");
+            viewString.Append("lDocumento.ModifiedBy], T1.[TBL_ModuloDocumentos_HistorialDocumento.ModifiedOn])");
+            viewString.Append("\r\n    FROM (\r\n        SELECT \r\n            T.IdHistorial AS [TBL_ModuloDocumento");
+            viewString.Append("s_HistorialDocumento.IdHistorial], \r\n            T.IdDocumento AS [TBL_ModuloDoc");
+            viewString.Append("umentos_HistorialDocumento.IdDocumento], \r\n            T.Titulo AS [TBL_ModuloDo");
+            viewString.Append("cumentos_HistorialDocumento.Titulo], \r\n            T.Observaciones AS [TBL_Modul");
+            viewString.Append("oDocumentos_HistorialDocumento.Observaciones], \r\n            T.Version AS [TBL_M");
+            viewString.Append("oduloDocumentos_HistorialDocumento.Version], \r\n            T.IdCategoria AS [TBL");
+            viewString.Append("_ModuloDocumentos_HistorialDocumento.IdCategoria], \r\n            T.IdEstado AS [");
+            viewString.Append("TBL_ModuloDocumentos_HistorialDocumento.IdEstado], \r\n            T.IdSubCategori");
+            viewString.Append("a AS [TBL_ModuloDocumentos_HistorialDocumento.IdSubCategoria], \r\n            T.I");
+            viewString.Append("dTipo AS [TBL_ModuloDocumentos_HistorialDocumento.IdTipo], \r\n            T.IdUsu");
+            viewString.Append("arioResposable AS [TBL_ModuloDocumentos_HistorialDocumento.IdUsuarioResposable],");
+            viewString.Append(" \r\n            T.IdUsuarioCreacion AS [TBL_ModuloDocumentos_HistorialDocumento.I");
+            viewString.Append("dUsuarioCreacion], \r\n            T.IdUsuarioModificacion AS [TBL_ModuloDocumento");
+            viewString.Append("s_HistorialDocumento.IdUsuarioModificacion], \r\n            T.FechaCreacion AS [T");
+            viewString.Append("BL_ModuloDocumentos_HistorialDocumento.FechaCreacion], \r\n            T.IsActive ");
+            viewString.Append("AS [TBL_ModuloDocumentos_HistorialDocumento.IsActive], \r\n            T.CreateBy ");
+            viewString.Append("AS [TBL_ModuloDocumentos_HistorialDocumento.CreateBy], \r\n            T.CreateOn ");
+            viewString.Append("AS [TBL_ModuloDocumentos_HistorialDocumento.CreateOn], \r\n            T.ModifiedB");
+            viewString.Append("y AS [TBL_ModuloDocumentos_HistorialDocumento.ModifiedBy], \r\n            T.Modif");
+            viewString.Append("iedOn AS [TBL_ModuloDocumentos_HistorialDocumento.ModifiedOn], \r\n            Tru");
+            viewString.Append("e AS _from0\r\n        FROM SolutionFrameworkMainModelStoreContainer.TBL_ModuloDoc");
+            viewString.Append("umentos_HistorialDocumento AS T\r\n    ) AS T1");
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloDocumentos_HistorialDocumento", viewString.ToString());
         }
         
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloDocumentos_LogCambios
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView58()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView85()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloDocumentos_LogCambios", @"
     SELECT VALUE -- Constructing TBL_ModuloDocumentos_LogCambios
@@ -1928,9 +2922,612 @@ namespace Edm_EntityMappingGeneratedViews
         }
         
         /// <Summary>
+        /// return view for MainModuleContext.TBL_ModuloReclamos_Actividades
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView86()
+        {
+            System.Text.StringBuilder viewString = new System.Text.StringBuilder(2096);
+            viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_Actividades\r\n        [Solu");
+            viewString.Append("tionFramework.MainModel.TBL_ModuloReclamos_Actividades](T1.[TBL_ModuloReclamos_A");
+            viewString.Append("ctividades.IdActividad], T1.[TBL_ModuloReclamos_Actividades.IdReclamo], T1.[TBL_");
+            viewString.Append("ModuloReclamos_Actividades.IdActividadReclamo], T1.[TBL_ModuloReclamos_Actividad");
+            viewString.Append("es.Estado], T1.[TBL_ModuloReclamos_Actividades.Descripcion], T1.[TBL_ModuloRecla");
+            viewString.Append("mos_Actividades.Fecha], T1.[TBL_ModuloReclamos_Actividades.IdUsuarioAsignacion],");
+            viewString.Append(" T1.[TBL_ModuloReclamos_Actividades.ObservacionesCierre], T1.[TBL_ModuloReclamos");
+            viewString.Append("_Actividades.ObservacionesCancelacion], T1.[TBL_ModuloReclamos_Actividades.IsAct");
+            viewString.Append("ive], T1.[TBL_ModuloReclamos_Actividades.CreateBy], T1.[TBL_ModuloReclamos_Activ");
+            viewString.Append("idades.CreateOn], T1.[TBL_ModuloReclamos_Actividades.ModifiedBy], T1.[TBL_Modulo");
+            viewString.Append("Reclamos_Actividades.ModifiedOn])\r\n    FROM (\r\n        SELECT \r\n            T.Id");
+            viewString.Append("Actividad AS [TBL_ModuloReclamos_Actividades.IdActividad], \r\n            T.IdRec");
+            viewString.Append("lamo AS [TBL_ModuloReclamos_Actividades.IdReclamo], \r\n            T.IdActividadR");
+            viewString.Append("eclamo AS [TBL_ModuloReclamos_Actividades.IdActividadReclamo], \r\n            T.E");
+            viewString.Append("stado AS [TBL_ModuloReclamos_Actividades.Estado], \r\n            T.Descripcion AS");
+            viewString.Append(" [TBL_ModuloReclamos_Actividades.Descripcion], \r\n            T.Fecha AS [TBL_Mod");
+            viewString.Append("uloReclamos_Actividades.Fecha], \r\n            T.IdUsuarioAsignacion AS [TBL_Modu");
+            viewString.Append("loReclamos_Actividades.IdUsuarioAsignacion], \r\n            T.ObservacionesCierre");
+            viewString.Append(" AS [TBL_ModuloReclamos_Actividades.ObservacionesCierre], \r\n            T.Observ");
+            viewString.Append("acionesCancelacion AS [TBL_ModuloReclamos_Actividades.ObservacionesCancelacion],");
+            viewString.Append(" \r\n            T.IsActive AS [TBL_ModuloReclamos_Actividades.IsActive], \r\n      ");
+            viewString.Append("      T.CreateBy AS [TBL_ModuloReclamos_Actividades.CreateBy], \r\n            T.C");
+            viewString.Append("reateOn AS [TBL_ModuloReclamos_Actividades.CreateOn], \r\n            T.ModifiedBy");
+            viewString.Append(" AS [TBL_ModuloReclamos_Actividades.ModifiedBy], \r\n            T.ModifiedOn AS [");
+            viewString.Append("TBL_ModuloReclamos_Actividades.ModifiedOn], \r\n            True AS _from0\r\n      ");
+            viewString.Append("  FROM SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_Actividades A");
+            viewString.Append("S T\r\n    ) AS T1");
+            return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_Actividades", viewString.ToString());
+        }
+        
+        /// <Summary>
+        /// return view for MainModuleContext.TBL_ModuloReclamos_ActividadesReclamo
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView87()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_ActividadesReclamo", "\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_ActividadesReclamo\r\n       " +
+                    " [SolutionFramework.MainModel.TBL_ModuloReclamos_ActividadesReclamo](T1.[TBL_Mod" +
+                    "uloReclamos_ActividadesReclamo.IdActividad], T1.[TBL_ModuloReclamos_ActividadesR" +
+                    "eclamo.Nombre], T1.[TBL_ModuloReclamos_ActividadesReclamo.Descripcion], T1.[TBL_" +
+                    "ModuloReclamos_ActividadesReclamo.IdTipoReclamo], T1.[TBL_ModuloReclamos_Activid" +
+                    "adesReclamo.IsActive], T1.[TBL_ModuloReclamos_ActividadesReclamo.CreateBy], T1.[" +
+                    "TBL_ModuloReclamos_ActividadesReclamo.CreateOn], T1.[TBL_ModuloReclamos_Activida" +
+                    "desReclamo.ModifiedBy], T1.[TBL_ModuloReclamos_ActividadesReclamo.ModifiedOn])\r\n" +
+                    "    FROM (\r\n        SELECT \r\n            T.IdActividad AS [TBL_ModuloReclamos_Ac" +
+                    "tividadesReclamo.IdActividad], \r\n            T.Nombre AS [TBL_ModuloReclamos_Act" +
+                    "ividadesReclamo.Nombre], \r\n            T.Descripcion AS [TBL_ModuloReclamos_Acti" +
+                    "vidadesReclamo.Descripcion], \r\n            T.IdTipoReclamo AS [TBL_ModuloReclamo" +
+                    "s_ActividadesReclamo.IdTipoReclamo], \r\n            T.IsActive AS [TBL_ModuloRecl" +
+                    "amos_ActividadesReclamo.IsActive], \r\n            T.CreateBy AS [TBL_ModuloReclam" +
+                    "os_ActividadesReclamo.CreateBy], \r\n            T.CreateOn AS [TBL_ModuloReclamos" +
+                    "_ActividadesReclamo.CreateOn], \r\n            T.ModifiedBy AS [TBL_ModuloReclamos" +
+                    "_ActividadesReclamo.ModifiedBy], \r\n            T.ModifiedOn AS [TBL_ModuloReclam" +
+                    "os_ActividadesReclamo.ModifiedOn], \r\n            True AS _from0\r\n        FROM So" +
+                    "lutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_ActividadesReclamo AS " +
+                    "T\r\n    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for MainModuleContext.TBL_ModuloReclamos_Alternativas
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView88()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_Alternativas", "\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_Alternativas\r\n        [Solu" +
+                    "tionFramework.MainModel.TBL_ModuloReclamos_Alternativas](T1.[TBL_ModuloReclamos_" +
+                    "Alternativas.IdAlternativa], T1.[TBL_ModuloReclamos_Alternativas.IdReclamo], T1." +
+                    "[TBL_ModuloReclamos_Alternativas.Causas], T1.[TBL_ModuloReclamos_Alternativas.Fa" +
+                    "ctores], T1.[TBL_ModuloReclamos_Alternativas.Alternativa], T1.[TBL_ModuloReclamo" +
+                    "s_Alternativas.IdResponsable], T1.[TBL_ModuloReclamos_Alternativas.FechaAlternat" +
+                    "iva], T1.[TBL_ModuloReclamos_Alternativas.Seguimiento], T1.[TBL_ModuloReclamos_A" +
+                    "lternativas.Estado], T1.[TBL_ModuloReclamos_Alternativas.IsActive], T1.[TBL_Modu" +
+                    "loReclamos_Alternativas.CreateBy], T1.[TBL_ModuloReclamos_Alternativas.CreateOn]" +
+                    ", T1.[TBL_ModuloReclamos_Alternativas.ModifiedBy], T1.[TBL_ModuloReclamos_Altern" +
+                    "ativas.ModifiedOn])\r\n    FROM (\r\n        SELECT \r\n            T.IdAlternativa AS" +
+                    " [TBL_ModuloReclamos_Alternativas.IdAlternativa], \r\n            T.IdReclamo AS [" +
+                    "TBL_ModuloReclamos_Alternativas.IdReclamo], \r\n            T.Causas AS [TBL_Modul" +
+                    "oReclamos_Alternativas.Causas], \r\n            T.Factores AS [TBL_ModuloReclamos_" +
+                    "Alternativas.Factores], \r\n            T.Alternativa AS [TBL_ModuloReclamos_Alter" +
+                    "nativas.Alternativa], \r\n            T.IdResponsable AS [TBL_ModuloReclamos_Alter" +
+                    "nativas.IdResponsable], \r\n            T.FechaAlternativa AS [TBL_ModuloReclamos_" +
+                    "Alternativas.FechaAlternativa], \r\n            T.Seguimiento AS [TBL_ModuloReclam" +
+                    "os_Alternativas.Seguimiento], \r\n            T.Estado AS [TBL_ModuloReclamos_Alte" +
+                    "rnativas.Estado], \r\n            T.IsActive AS [TBL_ModuloReclamos_Alternativas.I" +
+                    "sActive], \r\n            T.CreateBy AS [TBL_ModuloReclamos_Alternativas.CreateBy]" +
+                    ", \r\n            T.CreateOn AS [TBL_ModuloReclamos_Alternativas.CreateOn], \r\n    " +
+                    "        T.ModifiedBy AS [TBL_ModuloReclamos_Alternativas.ModifiedBy], \r\n        " +
+                    "    T.ModifiedOn AS [TBL_ModuloReclamos_Alternativas.ModifiedOn], \r\n            " +
+                    "True AS _from0\r\n        FROM SolutionFrameworkMainModelStoreContainer.TBL_Modulo" +
+                    "Reclamos_Alternativas AS T\r\n    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for MainModuleContext.TBL_ModuloReclamos_AnexosActividad
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView89()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_AnexosActividad", @"
+    SELECT VALUE -- Constructing TBL_ModuloReclamos_AnexosActividad
+        [SolutionFramework.MainModel.TBL_ModuloReclamos_AnexosActividad](T1.[TBL_ModuloReclamos_AnexosActividad.IdAnexoActividad], T1.[TBL_ModuloReclamos_AnexosActividad.NombreArchivo], T1.[TBL_ModuloReclamos_AnexosActividad.Archivo], T1.[TBL_ModuloReclamos_AnexosActividad.IdActividad], T1.[TBL_ModuloReclamos_AnexosActividad.IsActive], T1.[TBL_ModuloReclamos_AnexosActividad.CreateBy], T1.[TBL_ModuloReclamos_AnexosActividad.CreateOn], T1.[TBL_ModuloReclamos_AnexosActividad.ModifiedBy], T1.[TBL_ModuloReclamos_AnexosActividad.ModifiedOn])
+    FROM (
+        SELECT 
+            T.IdAnexoActividad AS [TBL_ModuloReclamos_AnexosActividad.IdAnexoActividad], 
+            T.NombreArchivo AS [TBL_ModuloReclamos_AnexosActividad.NombreArchivo], 
+            T.Archivo AS [TBL_ModuloReclamos_AnexosActividad.Archivo], 
+            T.IdActividad AS [TBL_ModuloReclamos_AnexosActividad.IdActividad], 
+            T.IsActive AS [TBL_ModuloReclamos_AnexosActividad.IsActive], 
+            T.CreateBy AS [TBL_ModuloReclamos_AnexosActividad.CreateBy], 
+            T.CreateOn AS [TBL_ModuloReclamos_AnexosActividad.CreateOn], 
+            T.ModifiedBy AS [TBL_ModuloReclamos_AnexosActividad.ModifiedBy], 
+            T.ModifiedOn AS [TBL_ModuloReclamos_AnexosActividad.ModifiedOn], 
+            True AS _from0
+        FROM SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_AnexosActividad AS T
+    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for MainModuleContext.TBL_ModuloReclamos_AnexosAlternativa
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView90()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_AnexosAlternativa", "\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_AnexosAlternativa\r\n        " +
+                    "[SolutionFramework.MainModel.TBL_ModuloReclamos_AnexosAlternativa](T1.[TBL_Modul" +
+                    "oReclamos_AnexosAlternativa.IdAnexoAlternativa], T1.[TBL_ModuloReclamos_AnexosAl" +
+                    "ternativa.NombreArchivo], T1.[TBL_ModuloReclamos_AnexosAlternativa.Archivo], T1." +
+                    "[TBL_ModuloReclamos_AnexosAlternativa.IdAlternativa], T1.[TBL_ModuloReclamos_Ane" +
+                    "xosAlternativa.IsActive], T1.[TBL_ModuloReclamos_AnexosAlternativa.CreateBy], T1" +
+                    ".[TBL_ModuloReclamos_AnexosAlternativa.CreateOn], T1.[TBL_ModuloReclamos_AnexosA" +
+                    "lternativa.ModifiedBy], T1.[TBL_ModuloReclamos_AnexosAlternativa.ModifiedOn])\r\n " +
+                    "   FROM (\r\n        SELECT \r\n            T.IdAnexoAlternativa AS [TBL_ModuloRecla" +
+                    "mos_AnexosAlternativa.IdAnexoAlternativa], \r\n            T.NombreArchivo AS [TBL" +
+                    "_ModuloReclamos_AnexosAlternativa.NombreArchivo], \r\n            T.Archivo AS [TB" +
+                    "L_ModuloReclamos_AnexosAlternativa.Archivo], \r\n            T.IdAlternativa AS [T" +
+                    "BL_ModuloReclamos_AnexosAlternativa.IdAlternativa], \r\n            T.IsActive AS " +
+                    "[TBL_ModuloReclamos_AnexosAlternativa.IsActive], \r\n            T.CreateBy AS [TB" +
+                    "L_ModuloReclamos_AnexosAlternativa.CreateBy], \r\n            T.CreateOn AS [TBL_M" +
+                    "oduloReclamos_AnexosAlternativa.CreateOn], \r\n            T.ModifiedBy AS [TBL_Mo" +
+                    "duloReclamos_AnexosAlternativa.ModifiedBy], \r\n            T.ModifiedOn AS [TBL_M" +
+                    "oduloReclamos_AnexosAlternativa.ModifiedOn], \r\n            True AS _from0\r\n     " +
+                    "   FROM SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_AnexosAltern" +
+                    "ativa AS T\r\n    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for MainModuleContext.TBL_ModuloReclamos_AnexosComentarioRespuesta
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView91()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_AnexosComentarioRespuesta", "\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_AnexosComentarioRespuesta\r\n" +
+                    "        [SolutionFramework.MainModel.TBL_ModuloReclamos_AnexosComentarioRespuest" +
+                    "a](T1.[TBL_ModuloReclamos_AnexosComentarioRespuesta.IdAnexoComentarioRespuesta]," +
+                    " T1.[TBL_ModuloReclamos_AnexosComentarioRespuesta.NombreArchivo], T1.[TBL_Modulo" +
+                    "Reclamos_AnexosComentarioRespuesta.Archivo], T1.[TBL_ModuloReclamos_AnexosComent" +
+                    "arioRespuesta.IdComentarioRespuesta], T1.[TBL_ModuloReclamos_AnexosComentarioRes" +
+                    "puesta.IsActive], T1.[TBL_ModuloReclamos_AnexosComentarioRespuesta.CreateBy], T1" +
+                    ".[TBL_ModuloReclamos_AnexosComentarioRespuesta.CreateOn], T1.[TBL_ModuloReclamos" +
+                    "_AnexosComentarioRespuesta.ModifiedBy], T1.[TBL_ModuloReclamos_AnexosComentarioR" +
+                    "espuesta.ModifiedOn])\r\n    FROM (\r\n        SELECT \r\n            T.IdAnexoComenta" +
+                    "rioRespuesta AS [TBL_ModuloReclamos_AnexosComentarioRespuesta.IdAnexoComentarioR" +
+                    "espuesta], \r\n            T.NombreArchivo AS [TBL_ModuloReclamos_AnexosComentario" +
+                    "Respuesta.NombreArchivo], \r\n            T.Archivo AS [TBL_ModuloReclamos_AnexosC" +
+                    "omentarioRespuesta.Archivo], \r\n            T.IdComentarioRespuesta AS [TBL_Modul" +
+                    "oReclamos_AnexosComentarioRespuesta.IdComentarioRespuesta], \r\n            T.IsAc" +
+                    "tive AS [TBL_ModuloReclamos_AnexosComentarioRespuesta.IsActive], \r\n            T" +
+                    ".CreateBy AS [TBL_ModuloReclamos_AnexosComentarioRespuesta.CreateBy], \r\n        " +
+                    "    T.CreateOn AS [TBL_ModuloReclamos_AnexosComentarioRespuesta.CreateOn], \r\n   " +
+                    "         T.ModifiedBy AS [TBL_ModuloReclamos_AnexosComentarioRespuesta.ModifiedB" +
+                    "y], \r\n            T.ModifiedOn AS [TBL_ModuloReclamos_AnexosComentarioRespuesta." +
+                    "ModifiedOn], \r\n            True AS _from0\r\n        FROM SolutionFrameworkMainMod" +
+                    "elStoreContainer.TBL_ModuloReclamos_AnexosComentarioRespuesta AS T\r\n    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for MainModuleContext.TBL_ModuloReclamos_AnexosSolucion
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView92()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_AnexosSolucion", @"
+    SELECT VALUE -- Constructing TBL_ModuloReclamos_AnexosSolucion
+        [SolutionFramework.MainModel.TBL_ModuloReclamos_AnexosSolucion](T1.[TBL_ModuloReclamos_AnexosSolucion.IdAnexoSolucion], T1.[TBL_ModuloReclamos_AnexosSolucion.NombreArchivo], T1.[TBL_ModuloReclamos_AnexosSolucion.Archivo], T1.[TBL_ModuloReclamos_AnexosSolucion.IdSolucion], T1.[TBL_ModuloReclamos_AnexosSolucion.IsActive], T1.[TBL_ModuloReclamos_AnexosSolucion.CreateBy], T1.[TBL_ModuloReclamos_AnexosSolucion.CreateOn], T1.[TBL_ModuloReclamos_AnexosSolucion.ModifiedBy], T1.[TBL_ModuloReclamos_AnexosSolucion.ModifiedOn])
+    FROM (
+        SELECT 
+            T.IdAnexoSolucion AS [TBL_ModuloReclamos_AnexosSolucion.IdAnexoSolucion], 
+            T.NombreArchivo AS [TBL_ModuloReclamos_AnexosSolucion.NombreArchivo], 
+            T.Archivo AS [TBL_ModuloReclamos_AnexosSolucion.Archivo], 
+            T.IdSolucion AS [TBL_ModuloReclamos_AnexosSolucion.IdSolucion], 
+            T.IsActive AS [TBL_ModuloReclamos_AnexosSolucion.IsActive], 
+            T.CreateBy AS [TBL_ModuloReclamos_AnexosSolucion.CreateBy], 
+            T.CreateOn AS [TBL_ModuloReclamos_AnexosSolucion.CreateOn], 
+            T.ModifiedBy AS [TBL_ModuloReclamos_AnexosSolucion.ModifiedBy], 
+            T.ModifiedOn AS [TBL_ModuloReclamos_AnexosSolucion.ModifiedOn], 
+            True AS _from0
+        FROM SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_AnexosSolucion AS T
+    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for MainModuleContext.TBL_ModuloReclamos_Asesores
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView93()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_Asesores", @"
+    SELECT VALUE -- Constructing TBL_ModuloReclamos_Asesores
+        [SolutionFramework.MainModel.TBL_ModuloReclamos_Asesores](T1.[TBL_ModuloReclamos_Asesores.IdUsuario], T1.[TBL_ModuloReclamos_Asesores.IdUnidad], T1.[TBL_ModuloReclamos_Asesores.IdZona])
+    FROM (
+        SELECT 
+            T.IdUsuario AS [TBL_ModuloReclamos_Asesores.IdUsuario], 
+            T.IdUnidad AS [TBL_ModuloReclamos_Asesores.IdUnidad], 
+            T.IdZona AS [TBL_ModuloReclamos_Asesores.IdZona], 
+            True AS _from0
+        FROM SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_Asesores AS T
+    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for MainModuleContext.TBL_ModuloReclamos_CategoriaProducto
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView94()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_CategoriaProducto", @"
+    SELECT VALUE -- Constructing TBL_ModuloReclamos_CategoriaProducto
+        [SolutionFramework.MainModel.TBL_ModuloReclamos_CategoriaProducto](T1.[TBL_ModuloReclamos_CategoriaProducto.IdCategoria], T1.[TBL_ModuloReclamos_CategoriaProducto.Nombre], T1.[TBL_ModuloReclamos_CategoriaProducto.Descripcion], T1.[TBL_ModuloReclamos_CategoriaProducto.IsActive], T1.[TBL_ModuloReclamos_CategoriaProducto.CreateBy], T1.[TBL_ModuloReclamos_CategoriaProducto.CreateOn], T1.[TBL_ModuloReclamos_CategoriaProducto.ModifiedBy], T1.[TBL_ModuloReclamos_CategoriaProducto.ModifiedOn])
+    FROM (
+        SELECT 
+            T.IdCategoria AS [TBL_ModuloReclamos_CategoriaProducto.IdCategoria], 
+            T.Nombre AS [TBL_ModuloReclamos_CategoriaProducto.Nombre], 
+            T.Descripcion AS [TBL_ModuloReclamos_CategoriaProducto.Descripcion], 
+            T.IsActive AS [TBL_ModuloReclamos_CategoriaProducto.IsActive], 
+            T.CreateBy AS [TBL_ModuloReclamos_CategoriaProducto.CreateBy], 
+            T.CreateOn AS [TBL_ModuloReclamos_CategoriaProducto.CreateOn], 
+            T.ModifiedBy AS [TBL_ModuloReclamos_CategoriaProducto.ModifiedBy], 
+            T.ModifiedOn AS [TBL_ModuloReclamos_CategoriaProducto.ModifiedOn], 
+            True AS _from0
+        FROM SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_CategoriaProducto AS T
+    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for MainModuleContext.TBL_ModuloReclamos_CategoriasReclamo
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView95()
+        {
+            System.Text.StringBuilder viewString = new System.Text.StringBuilder(2090);
+            viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_CategoriasReclamo\r\n       ");
+            viewString.Append(" [SolutionFramework.MainModel.TBL_ModuloReclamos_CategoriasReclamo](T1.[TBL_Modu");
+            viewString.Append("loReclamos_CategoriasReclamo.IdCategoriaReclamo], T1.[TBL_ModuloReclamos_Categor");
+            viewString.Append("iasReclamo.Nombre], T1.[TBL_ModuloReclamos_CategoriasReclamo.SubCategoria], T1.[");
+            viewString.Append("TBL_ModuloReclamos_CategoriasReclamo.Descripcion], T1.[TBL_ModuloReclamos_Catego");
+            viewString.Append("riasReclamo.Area], T1.[TBL_ModuloReclamos_CategoriasReclamo.IdResponsable], T1.[");
+            viewString.Append("TBL_ModuloReclamos_CategoriasReclamo.GrupoInformacion], T1.[TBL_ModuloReclamos_C");
+            viewString.Append("ategoriasReclamo.IdTipoReclamo], T1.[TBL_ModuloReclamos_CategoriasReclamo.IsActi");
+            viewString.Append("ve], T1.[TBL_ModuloReclamos_CategoriasReclamo.CreateBy], T1.[TBL_ModuloReclamos_");
+            viewString.Append("CategoriasReclamo.CreateOn], T1.[TBL_ModuloReclamos_CategoriasReclamo.ModifiedBy");
+            viewString.Append("], T1.[TBL_ModuloReclamos_CategoriasReclamo.ModifiedOn])\r\n    FROM (\r\n        SE");
+            viewString.Append("LECT \r\n            T.IdCategoriaReclamo AS [TBL_ModuloReclamos_CategoriasReclamo");
+            viewString.Append(".IdCategoriaReclamo], \r\n            T.Nombre AS [TBL_ModuloReclamos_CategoriasRe");
+            viewString.Append("clamo.Nombre], \r\n            T.SubCategoria AS [TBL_ModuloReclamos_CategoriasRec");
+            viewString.Append("lamo.SubCategoria], \r\n            T.Descripcion AS [TBL_ModuloReclamos_Categoria");
+            viewString.Append("sReclamo.Descripcion], \r\n            T.Area AS [TBL_ModuloReclamos_CategoriasRec");
+            viewString.Append("lamo.Area], \r\n            T.IdResponsable AS [TBL_ModuloReclamos_CategoriasRecla");
+            viewString.Append("mo.IdResponsable], \r\n            T.GrupoInformacion AS [TBL_ModuloReclamos_Categ");
+            viewString.Append("oriasReclamo.GrupoInformacion], \r\n            T.IdTipoReclamo AS [TBL_ModuloRecl");
+            viewString.Append("amos_CategoriasReclamo.IdTipoReclamo], \r\n            T.IsActive AS [TBL_ModuloRe");
+            viewString.Append("clamos_CategoriasReclamo.IsActive], \r\n            T.CreateBy AS [TBL_ModuloRecla");
+            viewString.Append("mos_CategoriasReclamo.CreateBy], \r\n            T.CreateOn AS [TBL_ModuloReclamos");
+            viewString.Append("_CategoriasReclamo.CreateOn], \r\n            T.ModifiedBy AS [TBL_ModuloReclamos_");
+            viewString.Append("CategoriasReclamo.ModifiedBy], \r\n            T.ModifiedOn AS [TBL_ModuloReclamos");
+            viewString.Append("_CategoriasReclamo.ModifiedOn], \r\n            True AS _from0\r\n        FROM Solut");
+            viewString.Append("ionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_CategoriasReclamo AS T\r\n ");
+            viewString.Append("   ) AS T1");
+            return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_CategoriasReclamo", viewString.ToString());
+        }
+        
+        /// <Summary>
+        /// return view for MainModuleContext.TBL_ModuloReclamos_ComentariosRespuesta
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView96()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_ComentariosRespuesta", "\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_ComentariosRespuesta\r\n     " +
+                    "   [SolutionFramework.MainModel.TBL_ModuloReclamos_ComentariosRespuesta](T1.[TBL" +
+                    "_ModuloReclamos_ComentariosRespuesta.IdComentario], T1.[TBL_ModuloReclamos_Comen" +
+                    "tariosRespuesta.IdReclamo], T1.[TBL_ModuloReclamos_ComentariosRespuesta.Asunto]," +
+                    " T1.[TBL_ModuloReclamos_ComentariosRespuesta.Comentario], T1.[TBL_ModuloReclamos" +
+                    "_ComentariosRespuesta.IdUsuarioDestino], T1.[TBL_ModuloReclamos_ComentariosRespu" +
+                    "esta.IdComentarioRelacionado], T1.[TBL_ModuloReclamos_ComentariosRespuesta.IsAct" +
+                    "ive], T1.[TBL_ModuloReclamos_ComentariosRespuesta.CreateBy], T1.[TBL_ModuloRecla" +
+                    "mos_ComentariosRespuesta.CreateOn], T1.[TBL_ModuloReclamos_ComentariosRespuesta." +
+                    "ModifiedBy], T1.[TBL_ModuloReclamos_ComentariosRespuesta.ModifiedOn])\r\n    FROM " +
+                    "(\r\n        SELECT \r\n            T.IdComentario AS [TBL_ModuloReclamos_Comentario" +
+                    "sRespuesta.IdComentario], \r\n            T.IdReclamo AS [TBL_ModuloReclamos_Comen" +
+                    "tariosRespuesta.IdReclamo], \r\n            T.Asunto AS [TBL_ModuloReclamos_Coment" +
+                    "ariosRespuesta.Asunto], \r\n            T.Comentario AS [TBL_ModuloReclamos_Coment" +
+                    "ariosRespuesta.Comentario], \r\n            T.IdUsuarioDestino AS [TBL_ModuloRecla" +
+                    "mos_ComentariosRespuesta.IdUsuarioDestino], \r\n            T.IdComentarioRelacion" +
+                    "ado AS [TBL_ModuloReclamos_ComentariosRespuesta.IdComentarioRelacionado], \r\n    " +
+                    "        T.IsActive AS [TBL_ModuloReclamos_ComentariosRespuesta.IsActive], \r\n    " +
+                    "        T.CreateBy AS [TBL_ModuloReclamos_ComentariosRespuesta.CreateBy], \r\n    " +
+                    "        T.CreateOn AS [TBL_ModuloReclamos_ComentariosRespuesta.CreateOn], \r\n    " +
+                    "        T.ModifiedBy AS [TBL_ModuloReclamos_ComentariosRespuesta.ModifiedBy], \r\n" +
+                    "            T.ModifiedOn AS [TBL_ModuloReclamos_ComentariosRespuesta.ModifiedOn]" +
+                    ", \r\n            True AS _from0\r\n        FROM SolutionFrameworkMainModelStoreCont" +
+                    "ainer.TBL_ModuloReclamos_ComentariosRespuesta AS T\r\n    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for MainModuleContext.TBL_ModuloReclamos_CostosProducto
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView97()
+        {
+            System.Text.StringBuilder viewString = new System.Text.StringBuilder(2534);
+            viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_CostosProducto\r\n        [S");
+            viewString.Append("olutionFramework.MainModel.TBL_ModuloReclamos_CostosProducto](T1.[TBL_ModuloRecl");
+            viewString.Append("amos_CostosProducto.IdCostoProducto], T1.[TBL_ModuloReclamos_CostosProducto.IdRe");
+            viewString.Append("clamo], T1.[TBL_ModuloReclamos_CostosProducto.NumItem], T1.[TBL_ModuloReclamos_C");
+            viewString.Append("ostosProducto.CodigoProducto], T1.[TBL_ModuloReclamos_CostosProducto.NombreProdu");
+            viewString.Append("cto], T1.[TBL_ModuloReclamos_CostosProducto.PesoNeto], T1.[TBL_ModuloReclamos_Co");
+            viewString.Append("stosProducto.PrecioLista], T1.[TBL_ModuloReclamos_CostosProducto.Unidades], T1.[");
+            viewString.Append("TBL_ModuloReclamos_CostosProducto.CostoProducto], T1.[TBL_ModuloReclamos_CostosP");
+            viewString.Append("roducto.Kilos], T1.[TBL_ModuloReclamos_CostosProducto.UnidadesDisponibles], T1.[");
+            viewString.Append("TBL_ModuloReclamos_CostosProducto.CostoDisponible], T1.[TBL_ModuloReclamos_Costo");
+            viewString.Append("sProducto.IsActive], T1.[TBL_ModuloReclamos_CostosProducto.CreateBy], T1.[TBL_Mo");
+            viewString.Append("duloReclamos_CostosProducto.CreateOn], T1.[TBL_ModuloReclamos_CostosProducto.Mod");
+            viewString.Append("ifiedBy], T1.[TBL_ModuloReclamos_CostosProducto.ModifiedOn])\r\n    FROM (\r\n      ");
+            viewString.Append("  SELECT \r\n            T.IdCostoProducto AS [TBL_ModuloReclamos_CostosProducto.I");
+            viewString.Append("dCostoProducto], \r\n            T.IdReclamo AS [TBL_ModuloReclamos_CostosProducto");
+            viewString.Append(".IdReclamo], \r\n            T.NumItem AS [TBL_ModuloReclamos_CostosProducto.NumIt");
+            viewString.Append("em], \r\n            T.CodigoProducto AS [TBL_ModuloReclamos_CostosProducto.Codigo");
+            viewString.Append("Producto], \r\n            T.NombreProducto AS [TBL_ModuloReclamos_CostosProducto.");
+            viewString.Append("NombreProducto], \r\n            T.PesoNeto AS [TBL_ModuloReclamos_CostosProducto.");
+            viewString.Append("PesoNeto], \r\n            T.PrecioLista AS [TBL_ModuloReclamos_CostosProducto.Pre");
+            viewString.Append("cioLista], \r\n            T.Unidades AS [TBL_ModuloReclamos_CostosProducto.Unidad");
+            viewString.Append("es], \r\n            T.CostoProducto AS [TBL_ModuloReclamos_CostosProducto.CostoPr");
+            viewString.Append("oducto], \r\n            T.Kilos AS [TBL_ModuloReclamos_CostosProducto.Kilos], \r\n ");
+            viewString.Append("           T.UnidadesDisponibles AS [TBL_ModuloReclamos_CostosProducto.UnidadesD");
+            viewString.Append("isponibles], \r\n            T.CostoDisponible AS [TBL_ModuloReclamos_CostosProduc");
+            viewString.Append("to.CostoDisponible], \r\n            T.IsActive AS [TBL_ModuloReclamos_CostosProdu");
+            viewString.Append("cto.IsActive], \r\n            T.CreateBy AS [TBL_ModuloReclamos_CostosProducto.Cr");
+            viewString.Append("eateBy], \r\n            T.CreateOn AS [TBL_ModuloReclamos_CostosProducto.CreateOn");
+            viewString.Append("], \r\n            T.ModifiedBy AS [TBL_ModuloReclamos_CostosProducto.ModifiedBy],");
+            viewString.Append(" \r\n            T.ModifiedOn AS [TBL_ModuloReclamos_CostosProducto.ModifiedOn], \r");
+            viewString.Append("\n            True AS _from0\r\n        FROM SolutionFrameworkMainModelStoreContain");
+            viewString.Append("er.TBL_ModuloReclamos_CostosProducto AS T\r\n    ) AS T1");
+            return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_CostosProducto", viewString.ToString());
+        }
+        
+        /// <Summary>
+        /// return view for MainModuleContext.TBL_ModuloReclamos_Reclamo
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView98()
+        {
+            System.Text.StringBuilder viewString = new System.Text.StringBuilder(10150);
+            viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_Reclamo\r\n        [Solution");
+            viewString.Append("Framework.MainModel.TBL_ModuloReclamos_Reclamo](T1.[TBL_ModuloReclamos_Reclamo.I");
+            viewString.Append("dReclamo], T1.[TBL_ModuloReclamos_Reclamo.IdDocumentoLotus], T1.[TBL_ModuloRecla");
+            viewString.Append("mos_Reclamo.IdDocumentoLotusRelacionado], T1.[TBL_ModuloReclamos_Reclamo.Consecu");
+            viewString.Append("tivo], T1.[TBL_ModuloReclamos_Reclamo.IdSolicitante], T1.[TBL_ModuloReclamos_Rec");
+            viewString.Append("lamo.IdTipoReclamo], T1.[TBL_ModuloReclamos_Reclamo.FechaReclamo], T1.[TBL_Modul");
+            viewString.Append("oReclamos_Reclamo.IdReclamoRelacionado], T1.[TBL_ModuloReclamos_Reclamo.CampoRel");
+            viewString.Append("acion], T1.[TBL_ModuloReclamos_Reclamo.NumeroReclamo], T1.[TBL_ModuloReclamos_Re");
+            viewString.Append("clamo.IdAsesoradoPor], T1.[TBL_ModuloReclamos_Reclamo.Planta], T1.[TBL_ModuloRec");
+            viewString.Append("lamos_Reclamo.CodigoProducto], T1.[TBL_ModuloReclamos_Reclamo.CantidadVendida], ");
+            viewString.Append("T1.[TBL_ModuloReclamos_Reclamo.CantidadReclamada], T1.[TBL_ModuloReclamos_Reclam");
+            viewString.Append("o.Aplicado], T1.[TBL_ModuloReclamos_Reclamo.FechaAplicacion], T1.[TBL_ModuloRecl");
+            viewString.Append("amos_Reclamo.FechaVenta], T1.[TBL_ModuloReclamos_Reclamo.NumeroDeVeces], T1.[TBL");
+            viewString.Append("_ModuloReclamos_Reclamo.IdAtendidoPor], T1.[TBL_ModuloReclamos_Reclamo.TipoContr");
+            viewString.Append("ato], T1.[TBL_ModuloReclamos_Reclamo.RespuestaInmediata], T1.[TBL_ModuloReclamos");
+            viewString.Append("_Reclamo.CodigoCliente], T1.[TBL_ModuloReclamos_Reclamo.UnidadZona], T1.[TBL_Mod");
+            viewString.Append("uloReclamos_Reclamo.Contacto], T1.[TBL_ModuloReclamos_Reclamo.EmailContacto], T1");
+            viewString.Append(".[TBL_ModuloReclamos_Reclamo.NombreObra], T1.[TBL_ModuloReclamos_Reclamo.Aplicad");
+            viewString.Append("oPor], T1.[TBL_ModuloReclamos_Reclamo.EmailQuienAplica], T1.[TBL_ModuloReclamos_");
+            viewString.Append("Reclamo.PropietarioObra], T1.[TBL_ModuloReclamos_Reclamo.EmailPropietarioObra], ");
+            viewString.Append("T1.[TBL_ModuloReclamos_Reclamo.Contratista], T1.[TBL_ModuloReclamos_Reclamo.Emai");
+            viewString.Append("lContratista], T1.[TBL_ModuloReclamos_Reclamo.AspectoEnvase], T1.[TBL_ModuloRecl");
+            viewString.Append("amos_Reclamo.AspectoProducto], T1.[TBL_ModuloReclamos_Reclamo.UsoDescripcion], T");
+            viewString.Append("1.[TBL_ModuloReclamos_Reclamo.Lote], T1.[TBL_ModuloReclamos_Reclamo.MuestraDispo");
+            viewString.Append("nible], T1.[TBL_ModuloReclamos_Reclamo.IdCategoriaReclamo], T1.[TBL_ModuloReclam");
+            viewString.Append("os_Reclamo.Area], T1.[TBL_ModuloReclamos_Reclamo.SubCategoria], T1.[TBL_ModuloRe");
+            viewString.Append("clamos_Reclamo.NumPFR], T1.[TBL_ModuloReclamos_Reclamo.NumDiarioInventario], T1.");
+            viewString.Append("[TBL_ModuloReclamos_Reclamo.FechaPedido], T1.[TBL_ModuloReclamos_Reclamo.FechaCo");
+            viewString.Append("mpromiso], T1.[TBL_ModuloReclamos_Reclamo.FechaRealEntrega], T1.[TBL_ModuloRecla");
+            viewString.Append("mos_Reclamo.DiasDiferencia], T1.[TBL_ModuloReclamos_Reclamo.NombreReclama], T1.[");
+            viewString.Append("TBL_ModuloReclamos_Reclamo.AreaIncumple], T1.[TBL_ModuloReclamos_Reclamo.Procedi");
+            viewString.Append("mientoInternoAfectado], T1.[TBL_ModuloReclamos_Reclamo.DescripcionProblema], T1.");
+            viewString.Append("[TBL_ModuloReclamos_Reclamo.DiagnosticoPrevio], T1.[TBL_ModuloReclamos_Reclamo.C");
+            viewString.Append("onclusionesPrevias], T1.[TBL_ModuloReclamos_Reclamo.ProblemaSolucionado], T1.[TB");
+            viewString.Append("L_ModuloReclamos_Reclamo.ObservacionesSolucion], T1.[TBL_ModuloReclamos_Reclamo.");
+            viewString.Append("CostoReposicionProducto], T1.[TBL_ModuloReclamos_Reclamo.CostoTransporteMaterial");
+            viewString.Append("es], T1.[TBL_ModuloReclamos_Reclamo.CostoDisposicion], T1.[TBL_ModuloReclamos_Re");
+            viewString.Append("clamo.CostoPruebas], T1.[TBL_ModuloReclamos_Reclamo.CostoManoObraDirecta], T1.[T");
+            viewString.Append("BL_ModuloReclamos_Reclamo.CostoExterno], T1.[TBL_ModuloReclamos_Reclamo.CostoAsi");
+            viewString.Append("stenciaTecnica], T1.[TBL_ModuloReclamos_Reclamo.CostoAsistenciaTecnicaRegional],");
+            viewString.Append(" T1.[TBL_ModuloReclamos_Reclamo.CostoViajes], T1.[TBL_ModuloReclamos_Reclamo.Cos");
+            viewString.Append("toArriendosEyH], T1.[TBL_ModuloReclamos_Reclamo.CostoTotal], T1.[TBL_ModuloRecla");
+            viewString.Append("mos_Reclamo.ObservacionesCostos], T1.[TBL_ModuloReclamos_Reclamo.IdIngenieroResp");
+            viewString.Append("onsable], T1.[TBL_ModuloReclamos_Reclamo.FechaCierre], T1.[TBL_ModuloReclamos_Re");
+            viewString.Append("clamo.IdUsuarioCierre], T1.[TBL_ModuloReclamos_Reclamo.IsActive], T1.[TBL_Modulo");
+            viewString.Append("Reclamos_Reclamo.CreateBy], T1.[TBL_ModuloReclamos_Reclamo.CreateOn], T1.[TBL_Mo");
+            viewString.Append("duloReclamos_Reclamo.ModifiedBy], T1.[TBL_ModuloReclamos_Reclamo.ModifiedOn], T1");
+            viewString.Append(".[TBL_ModuloReclamos_Reclamo.IdResponsableActual], T1.[TBL_ModuloReclamos_Reclam");
+            viewString.Append("o.IdEstado])\r\n    FROM (\r\n        SELECT \r\n            T.IdReclamo AS [TBL_Modul");
+            viewString.Append("oReclamos_Reclamo.IdReclamo], \r\n            T.IdDocumentoLotus AS [TBL_ModuloRec");
+            viewString.Append("lamos_Reclamo.IdDocumentoLotus], \r\n            T.IdDocumentoLotusRelacionado AS ");
+            viewString.Append("[TBL_ModuloReclamos_Reclamo.IdDocumentoLotusRelacionado], \r\n            T.Consec");
+            viewString.Append("utivo AS [TBL_ModuloReclamos_Reclamo.Consecutivo], \r\n            T.IdSolicitante");
+            viewString.Append(" AS [TBL_ModuloReclamos_Reclamo.IdSolicitante], \r\n            T.IdTipoReclamo AS");
+            viewString.Append(" [TBL_ModuloReclamos_Reclamo.IdTipoReclamo], \r\n            T.FechaReclamo AS [TB");
+            viewString.Append("L_ModuloReclamos_Reclamo.FechaReclamo], \r\n            T.IdReclamoRelacionado AS ");
+            viewString.Append("[TBL_ModuloReclamos_Reclamo.IdReclamoRelacionado], \r\n            T.CampoRelacion");
+            viewString.Append(" AS [TBL_ModuloReclamos_Reclamo.CampoRelacion], \r\n            T.NumeroReclamo AS");
+            viewString.Append(" [TBL_ModuloReclamos_Reclamo.NumeroReclamo], \r\n            T.IdAsesoradoPor AS [");
+            viewString.Append("TBL_ModuloReclamos_Reclamo.IdAsesoradoPor], \r\n            T.Planta AS [TBL_Modul");
+            viewString.Append("oReclamos_Reclamo.Planta], \r\n            T.CodigoProducto AS [TBL_ModuloReclamos");
+            viewString.Append("_Reclamo.CodigoProducto], \r\n            T.CantidadVendida AS [TBL_ModuloReclamos");
+            viewString.Append("_Reclamo.CantidadVendida], \r\n            T.CantidadReclamada AS [TBL_ModuloRecla");
+            viewString.Append("mos_Reclamo.CantidadReclamada], \r\n            T.Aplicado AS [TBL_ModuloReclamos_");
+            viewString.Append("Reclamo.Aplicado], \r\n            T.FechaAplicacion AS [TBL_ModuloReclamos_Reclam");
+            viewString.Append("o.FechaAplicacion], \r\n            T.FechaVenta AS [TBL_ModuloReclamos_Reclamo.Fe");
+            viewString.Append("chaVenta], \r\n            T.NumeroDeVeces AS [TBL_ModuloReclamos_Reclamo.NumeroDe");
+            viewString.Append("Veces], \r\n            T.IdAtendidoPor AS [TBL_ModuloReclamos_Reclamo.IdAtendidoP");
+            viewString.Append("or], \r\n            T.TipoContrato AS [TBL_ModuloReclamos_Reclamo.TipoContrato], ");
+            viewString.Append("\r\n            T.RespuestaInmediata AS [TBL_ModuloReclamos_Reclamo.RespuestaInmed");
+            viewString.Append("iata], \r\n            T.CodigoCliente AS [TBL_ModuloReclamos_Reclamo.CodigoClient");
+            viewString.Append("e], \r\n            T.UnidadZona AS [TBL_ModuloReclamos_Reclamo.UnidadZona], \r\n   ");
+            viewString.Append("         T.Contacto AS [TBL_ModuloReclamos_Reclamo.Contacto], \r\n            T.Em");
+            viewString.Append("ailContacto AS [TBL_ModuloReclamos_Reclamo.EmailContacto], \r\n            T.Nombr");
+            viewString.Append("eObra AS [TBL_ModuloReclamos_Reclamo.NombreObra], \r\n            T.AplicadoPor AS");
+            viewString.Append(" [TBL_ModuloReclamos_Reclamo.AplicadoPor], \r\n            T.EmailQuienAplica AS [");
+            viewString.Append("TBL_ModuloReclamos_Reclamo.EmailQuienAplica], \r\n            T.PropietarioObra AS");
+            viewString.Append(" [TBL_ModuloReclamos_Reclamo.PropietarioObra], \r\n            T.EmailPropietarioO");
+            viewString.Append("bra AS [TBL_ModuloReclamos_Reclamo.EmailPropietarioObra], \r\n            T.Contra");
+            viewString.Append("tista AS [TBL_ModuloReclamos_Reclamo.Contratista], \r\n            T.EmailContrati");
+            viewString.Append("sta AS [TBL_ModuloReclamos_Reclamo.EmailContratista], \r\n            T.AspectoEnv");
+            viewString.Append("ase AS [TBL_ModuloReclamos_Reclamo.AspectoEnvase], \r\n            T.AspectoProduc");
+            viewString.Append("to AS [TBL_ModuloReclamos_Reclamo.AspectoProducto], \r\n            T.UsoDescripci");
+            viewString.Append("on AS [TBL_ModuloReclamos_Reclamo.UsoDescripcion], \r\n            T.Lote AS [TBL_");
+            viewString.Append("ModuloReclamos_Reclamo.Lote], \r\n            T.MuestraDisponible AS [TBL_ModuloRe");
+            viewString.Append("clamos_Reclamo.MuestraDisponible], \r\n            T.IdCategoriaReclamo AS [TBL_Mo");
+            viewString.Append("duloReclamos_Reclamo.IdCategoriaReclamo], \r\n            T.Area AS [TBL_ModuloRec");
+            viewString.Append("lamos_Reclamo.Area], \r\n            T.SubCategoria AS [TBL_ModuloReclamos_Reclamo");
+            viewString.Append(".SubCategoria], \r\n            T.NumPFR AS [TBL_ModuloReclamos_Reclamo.NumPFR], \r");
+            viewString.Append("\n            T.NumDiarioInventario AS [TBL_ModuloReclamos_Reclamo.NumDiarioInven");
+            viewString.Append("tario], \r\n            T.FechaPedido AS [TBL_ModuloReclamos_Reclamo.FechaPedido],");
+            viewString.Append(" \r\n            T.FechaCompromiso AS [TBL_ModuloReclamos_Reclamo.FechaCompromiso]");
+            viewString.Append(", \r\n            T.FechaRealEntrega AS [TBL_ModuloReclamos_Reclamo.FechaRealEntre");
+            viewString.Append("ga], \r\n            T.DiasDiferencia AS [TBL_ModuloReclamos_Reclamo.DiasDiferenci");
+            viewString.Append("a], \r\n            T.NombreReclama AS [TBL_ModuloReclamos_Reclamo.NombreReclama],");
+            viewString.Append(" \r\n            T.AreaIncumple AS [TBL_ModuloReclamos_Reclamo.AreaIncumple], \r\n  ");
+            viewString.Append("          T.ProcedimientoInternoAfectado AS [TBL_ModuloReclamos_Reclamo.Procedim");
+            viewString.Append("ientoInternoAfectado], \r\n            T.DescripcionProblema AS [TBL_ModuloReclamo");
+            viewString.Append("s_Reclamo.DescripcionProblema], \r\n            T.DiagnosticoPrevio AS [TBL_Modulo");
+            viewString.Append("Reclamos_Reclamo.DiagnosticoPrevio], \r\n            T.ConclusionesPrevias AS [TBL");
+            viewString.Append("_ModuloReclamos_Reclamo.ConclusionesPrevias], \r\n            T.ProblemaSolucionad");
+            viewString.Append("o AS [TBL_ModuloReclamos_Reclamo.ProblemaSolucionado], \r\n            T.Observaci");
+            viewString.Append("onesSolucion AS [TBL_ModuloReclamos_Reclamo.ObservacionesSolucion], \r\n          ");
+            viewString.Append("  T.CostoReposicionProducto AS [TBL_ModuloReclamos_Reclamo.CostoReposicionProduc");
+            viewString.Append("to], \r\n            T.CostoTransporteMateriales AS [TBL_ModuloReclamos_Reclamo.Co");
+            viewString.Append("stoTransporteMateriales], \r\n            T.CostoDisposicion AS [TBL_ModuloReclamo");
+            viewString.Append("s_Reclamo.CostoDisposicion], \r\n            T.CostoPruebas AS [TBL_ModuloReclamos");
+            viewString.Append("_Reclamo.CostoPruebas], \r\n            T.CostoManoObraDirecta AS [TBL_ModuloRecla");
+            viewString.Append("mos_Reclamo.CostoManoObraDirecta], \r\n            T.CostoExterno AS [TBL_ModuloRe");
+            viewString.Append("clamos_Reclamo.CostoExterno], \r\n            T.CostoAsistenciaTecnica AS [TBL_Mod");
+            viewString.Append("uloReclamos_Reclamo.CostoAsistenciaTecnica], \r\n            T.CostoAsistenciaTecn");
+            viewString.Append("icaRegional AS [TBL_ModuloReclamos_Reclamo.CostoAsistenciaTecnicaRegional], \r\n  ");
+            viewString.Append("          T.CostoViajes AS [TBL_ModuloReclamos_Reclamo.CostoViajes], \r\n         ");
+            viewString.Append("   T.CostoArriendosEyH AS [TBL_ModuloReclamos_Reclamo.CostoArriendosEyH], \r\n    ");
+            viewString.Append("        T.CostoTotal AS [TBL_ModuloReclamos_Reclamo.CostoTotal], \r\n            T");
+            viewString.Append(".ObservacionesCostos AS [TBL_ModuloReclamos_Reclamo.ObservacionesCostos], \r\n    ");
+            viewString.Append("        T.IdIngenieroResponsable AS [TBL_ModuloReclamos_Reclamo.IdIngenieroRespo");
+            viewString.Append("nsable], \r\n            T.FechaCierre AS [TBL_ModuloReclamos_Reclamo.FechaCierre]");
+            viewString.Append(", \r\n            T.IdUsuarioCierre AS [TBL_ModuloReclamos_Reclamo.IdUsuarioCierre");
+            viewString.Append("], \r\n            T.IsActive AS [TBL_ModuloReclamos_Reclamo.IsActive], \r\n        ");
+            viewString.Append("    T.CreateBy AS [TBL_ModuloReclamos_Reclamo.CreateBy], \r\n            T.CreateO");
+            viewString.Append("n AS [TBL_ModuloReclamos_Reclamo.CreateOn], \r\n            T.ModifiedBy AS [TBL_M");
+            viewString.Append("oduloReclamos_Reclamo.ModifiedBy], \r\n            T.ModifiedOn AS [TBL_ModuloRecl");
+            viewString.Append("amos_Reclamo.ModifiedOn], \r\n            T.IdResponsableActual AS [TBL_ModuloRecl");
+            viewString.Append("amos_Reclamo.IdResponsableActual], \r\n            T.IdEstado AS [TBL_ModuloReclam");
+            viewString.Append("os_Reclamo.IdEstado], \r\n            True AS _from0\r\n        FROM SolutionFramewo");
+            viewString.Append("rkMainModelStoreContainer.TBL_ModuloReclamos_Reclamo AS T\r\n    ) AS T1");
+            return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_Reclamo", viewString.ToString());
+        }
+        
+        /// <Summary>
+        /// return view for MainModuleContext.TBL_ModuloReclamos_Soluciones
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView99()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_Soluciones", @"
+    SELECT VALUE -- Constructing TBL_ModuloReclamos_Soluciones
+        [SolutionFramework.MainModel.TBL_ModuloReclamos_Soluciones](T1.[TBL_ModuloReclamos_Soluciones.IdSolucion], T1.[TBL_ModuloReclamos_Soluciones.IdReclamo], T1.[TBL_ModuloReclamos_Soluciones.Departamento], T1.[TBL_ModuloReclamos_Soluciones.Referencia], T1.[TBL_ModuloReclamos_Soluciones.Observaciones], T1.[TBL_ModuloReclamos_Soluciones.IsActive], T1.[TBL_ModuloReclamos_Soluciones.CreateBy], T1.[TBL_ModuloReclamos_Soluciones.CreateOn], T1.[TBL_ModuloReclamos_Soluciones.ModifiedBy], T1.[TBL_ModuloReclamos_Soluciones.ModifiedOn])
+    FROM (
+        SELECT 
+            T.IdSolucion AS [TBL_ModuloReclamos_Soluciones.IdSolucion], 
+            T.IdReclamo AS [TBL_ModuloReclamos_Soluciones.IdReclamo], 
+            T.Departamento AS [TBL_ModuloReclamos_Soluciones.Departamento], 
+            T.Referencia AS [TBL_ModuloReclamos_Soluciones.Referencia], 
+            T.Observaciones AS [TBL_ModuloReclamos_Soluciones.Observaciones], 
+            T.IsActive AS [TBL_ModuloReclamos_Soluciones.IsActive], 
+            T.CreateBy AS [TBL_ModuloReclamos_Soluciones.CreateBy], 
+            T.CreateOn AS [TBL_ModuloReclamos_Soluciones.CreateOn], 
+            T.ModifiedBy AS [TBL_ModuloReclamos_Soluciones.ModifiedBy], 
+            T.ModifiedOn AS [TBL_ModuloReclamos_Soluciones.ModifiedOn], 
+            True AS _from0
+        FROM SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_Soluciones AS T
+    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for MainModuleContext.TBL_ModuloReclamos_TipoReclamo
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView100()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_TipoReclamo", @"
+    SELECT VALUE -- Constructing TBL_ModuloReclamos_TipoReclamo
+        [SolutionFramework.MainModel.TBL_ModuloReclamos_TipoReclamo](T1.[TBL_ModuloReclamos_TipoReclamo.IdTipoReclamo], T1.[TBL_ModuloReclamos_TipoReclamo.Nombre], T1.[TBL_ModuloReclamos_TipoReclamo.IsActive], T1.[TBL_ModuloReclamos_TipoReclamo.CreateBy], T1.[TBL_ModuloReclamos_TipoReclamo.CreateOn], T1.[TBL_ModuloReclamos_TipoReclamo.ModifiedBy], T1.[TBL_ModuloReclamos_TipoReclamo.ModifiedOn])
+    FROM (
+        SELECT 
+            T.IdTipoReclamo AS [TBL_ModuloReclamos_TipoReclamo.IdTipoReclamo], 
+            T.Nombre AS [TBL_ModuloReclamos_TipoReclamo.Nombre], 
+            T.IsActive AS [TBL_ModuloReclamos_TipoReclamo.IsActive], 
+            T.CreateBy AS [TBL_ModuloReclamos_TipoReclamo.CreateBy], 
+            T.CreateOn AS [TBL_ModuloReclamos_TipoReclamo.CreateOn], 
+            T.ModifiedBy AS [TBL_ModuloReclamos_TipoReclamo.ModifiedBy], 
+            T.ModifiedOn AS [TBL_ModuloReclamos_TipoReclamo.ModifiedOn], 
+            True AS _from0
+        FROM SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_TipoReclamo AS T
+    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for MainModuleContext.TBL_ModuloReclamos_Unidad
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView101()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_Unidad", @"
+    SELECT VALUE -- Constructing TBL_ModuloReclamos_Unidad
+        [SolutionFramework.MainModel.TBL_ModuloReclamos_Unidad](T1.[TBL_ModuloReclamos_Unidad.IdUnidad], T1.[TBL_ModuloReclamos_Unidad.Nombre], T1.[TBL_ModuloReclamos_Unidad.IsActive], T1.[TBL_ModuloReclamos_Unidad.CreateBy], T1.[TBL_ModuloReclamos_Unidad.CreateOn], T1.[TBL_ModuloReclamos_Unidad.ModifiedBy], T1.[TBL_ModuloReclamos_Unidad.ModifiedOn])
+    FROM (
+        SELECT 
+            T.IdUnidad AS [TBL_ModuloReclamos_Unidad.IdUnidad], 
+            T.Nombre AS [TBL_ModuloReclamos_Unidad.Nombre], 
+            T.IsActive AS [TBL_ModuloReclamos_Unidad.IsActive], 
+            T.CreateBy AS [TBL_ModuloReclamos_Unidad.CreateBy], 
+            T.CreateOn AS [TBL_ModuloReclamos_Unidad.CreateOn], 
+            T.ModifiedBy AS [TBL_ModuloReclamos_Unidad.ModifiedBy], 
+            T.ModifiedOn AS [TBL_ModuloReclamos_Unidad.ModifiedOn], 
+            True AS _from0
+        FROM SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_Unidad AS T
+    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for MainModuleContext.TBL_ModuloReclamos_UnidadesZonas
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView102()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_UnidadesZonas", "\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_UnidadesZonas\r\n        [Sol" +
+                    "utionFramework.MainModel.TBL_ModuloReclamos_UnidadesZonas](T1.[TBL_ModuloReclamo" +
+                    "s_UnidadesZonas.IdUnidad], T1.[TBL_ModuloReclamos_UnidadesZonas.IdZona], T1.[TBL" +
+                    "_ModuloReclamos_UnidadesZonas.Descripcion], T1.[TBL_ModuloReclamos_UnidadesZonas" +
+                    ".IdGerente], T1.[TBL_ModuloReclamos_UnidadesZonas.TarifaFletes], T1.[TBL_ModuloR" +
+                    "eclamos_UnidadesZonas.IsActive], T1.[TBL_ModuloReclamos_UnidadesZonas.CreateBy]," +
+                    " T1.[TBL_ModuloReclamos_UnidadesZonas.CreateOn], T1.[TBL_ModuloReclamos_Unidades" +
+                    "Zonas.ModifiedBy], T1.[TBL_ModuloReclamos_UnidadesZonas.ModifiedOn])\r\n    FROM (" +
+                    "\r\n        SELECT \r\n            T.IdUnidad AS [TBL_ModuloReclamos_UnidadesZonas.I" +
+                    "dUnidad], \r\n            T.IdZona AS [TBL_ModuloReclamos_UnidadesZonas.IdZona], \r" +
+                    "\n            T.Descripcion AS [TBL_ModuloReclamos_UnidadesZonas.Descripcion], \r\n" +
+                    "            T.IdGerente AS [TBL_ModuloReclamos_UnidadesZonas.IdGerente], \r\n     " +
+                    "       T.TarifaFletes AS [TBL_ModuloReclamos_UnidadesZonas.TarifaFletes], \r\n    " +
+                    "        T.IsActive AS [TBL_ModuloReclamos_UnidadesZonas.IsActive], \r\n           " +
+                    " T.CreateBy AS [TBL_ModuloReclamos_UnidadesZonas.CreateBy], \r\n            T.Crea" +
+                    "teOn AS [TBL_ModuloReclamos_UnidadesZonas.CreateOn], \r\n            T.ModifiedBy " +
+                    "AS [TBL_ModuloReclamos_UnidadesZonas.ModifiedBy], \r\n            T.ModifiedOn AS " +
+                    "[TBL_ModuloReclamos_UnidadesZonas.ModifiedOn], \r\n            True AS _from0\r\n   " +
+                    "     FROM SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_UnidadesZo" +
+                    "nas AS T\r\n    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for MainModuleContext.TBL_ModuloReclamos_Zona
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView103()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_Zona", @"
+    SELECT VALUE -- Constructing TBL_ModuloReclamos_Zona
+        [SolutionFramework.MainModel.TBL_ModuloReclamos_Zona](T1.[TBL_ModuloReclamos_Zona.IdZona], T1.[TBL_ModuloReclamos_Zona.Descripcion], T1.[TBL_ModuloReclamos_Zona.IsActive], T1.[TBL_ModuloReclamos_Zona.CreateBy], T1.[TBL_ModuloReclamos_Zona.CreateOn], T1.[TBL_ModuloReclamos_Zona.ModifiedBy], T1.[TBL_ModuloReclamos_Zona.ModifiedOn])
+    FROM (
+        SELECT 
+            T.IdZona AS [TBL_ModuloReclamos_Zona.IdZona], 
+            T.Descripcion AS [TBL_ModuloReclamos_Zona.Descripcion], 
+            T.IsActive AS [TBL_ModuloReclamos_Zona.IsActive], 
+            T.CreateBy AS [TBL_ModuloReclamos_Zona.CreateBy], 
+            T.CreateOn AS [TBL_ModuloReclamos_Zona.CreateOn], 
+            T.ModifiedBy AS [TBL_ModuloReclamos_Zona.ModifiedBy], 
+            T.ModifiedOn AS [TBL_ModuloReclamos_Zona.ModifiedOn], 
+            True AS _from0
+        FROM SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_Zona AS T
+    ) AS T1");
+        }
+        
+        /// <Summary>
         /// return view for MainModuleContext.TBL_Admin_ResponsablesAprobacion
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView59()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView104()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_Admin_ResponsablesAprobacion", @"
     SELECT VALUE -- Constructing TBL_Admin_ResponsablesAprobacion
@@ -1957,7 +3554,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_Admin_RolesPorOpcionMenu
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView60()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView105()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_Admin_RolesPorOpcionMenu", @"
     SELECT VALUE -- Constructing TBL_Admin_RolesPorOpcionMenu
@@ -1984,7 +3581,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_Admin_UsuariosByRol
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView61()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView106()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_Admin_UsuariosByRol", @"
     SELECT VALUE -- Constructing TBL_Admin_UsuariosByRol
@@ -2009,9 +3606,155 @@ namespace Edm_EntityMappingGeneratedViews
         }
         
         /// <Summary>
+        /// return view for MainModuleContext.TBL_ModuloReclamos_AsesorJefe
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView107()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_AsesorJefe", @"
+    SELECT VALUE -- Constructing TBL_ModuloReclamos_AsesorJefe
+        [SolutionFramework.MainModel.TBL_ModuloReclamos_AsesorJefe](T3.[TBL_ModuloReclamos_AsesorJefe.TBL_Admin_Usuarios], T3.[TBL_ModuloReclamos_AsesorJefe.TBL_ModuloReclamos_Asesores])
+    FROM (
+        SELECT -- Constructing TBL_Admin_Usuarios
+            CreateRef(MainModuleContext.TBL_Admin_Usuarios, row(T2.[TBL_ModuloReclamos_AsesorJefe.TBL_Admin_Usuarios.IdUser]), [SolutionFramework.MainModel.TBL_Admin_Usuarios]) AS [TBL_ModuloReclamos_AsesorJefe.TBL_Admin_Usuarios], 
+            T2.[TBL_ModuloReclamos_AsesorJefe.TBL_ModuloReclamos_Asesores]
+        FROM (
+            SELECT -- Constructing TBL_ModuloReclamos_Asesores
+                T1.[TBL_ModuloReclamos_AsesorJefe.TBL_Admin_Usuarios.IdUser], 
+                CreateRef(MainModuleContext.TBL_ModuloReclamos_Asesores, row(T1.[TBL_ModuloReclamos_AsesorJefe.TBL_ModuloReclamos_Asesores.IdUsuario]), [SolutionFramework.MainModel.TBL_ModuloReclamos_Asesores]) AS [TBL_ModuloReclamos_AsesorJefe.TBL_ModuloReclamos_Asesores]
+            FROM (
+                SELECT 
+                    T.IdJefe AS [TBL_ModuloReclamos_AsesorJefe.TBL_Admin_Usuarios.IdUser], 
+                    T.IdAsesor AS [TBL_ModuloReclamos_AsesorJefe.TBL_ModuloReclamos_Asesores.IdUsuario], 
+                    True AS _from0
+                FROM SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_AsesorJefe AS T
+            ) AS T1
+        ) AS T2
+    ) AS T3");
+        }
+        
+        /// <Summary>
+        /// return view for MainModuleContext.TBL_ModuloReclamos_IngenierosResponsablesByCategoriaProducto
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView108()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_IngenierosResponsablesByCategoriaProducto", "\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_IngenierosResponsablesByCat" +
+                    "egoriaProducto\r\n        [SolutionFramework.MainModel.TBL_ModuloReclamos_Ingenier" +
+                    "osResponsablesByCategoriaProducto](T3.[TBL_ModuloReclamos_IngenierosResponsables" +
+                    "ByCategoriaProducto.TBL_Admin_Usuarios], T3.[TBL_ModuloReclamos_IngenierosRespon" +
+                    "sablesByCategoriaProducto.TBL_ModuloReclamos_CategoriaProducto])\r\n    FROM (\r\n  " +
+                    "      SELECT -- Constructing TBL_Admin_Usuarios\r\n            CreateRef(MainModul" +
+                    "eContext.TBL_Admin_Usuarios, row(T2.[TBL_ModuloReclamos_IngenierosResponsablesBy" +
+                    "CategoriaProducto.TBL_Admin_Usuarios.IdUser]), [SolutionFramework.MainModel.TBL_" +
+                    "Admin_Usuarios]) AS [TBL_ModuloReclamos_IngenierosResponsablesByCategoriaProduct" +
+                    "o.TBL_Admin_Usuarios], \r\n            T2.[TBL_ModuloReclamos_IngenierosResponsabl" +
+                    "esByCategoriaProducto.TBL_ModuloReclamos_CategoriaProducto]\r\n        FROM (\r\n   " +
+                    "         SELECT -- Constructing TBL_ModuloReclamos_CategoriaProducto\r\n          " +
+                    "      T1.[TBL_ModuloReclamos_IngenierosResponsablesByCategoriaProducto.TBL_Admin" +
+                    "_Usuarios.IdUser], \r\n                CreateRef(MainModuleContext.TBL_ModuloRecla" +
+                    "mos_CategoriaProducto, row(T1.[TBL_ModuloReclamos_IngenierosResponsablesByCatego" +
+                    "riaProducto.TBL_ModuloReclamos_CategoriaProducto.IdCategoria]), [SolutionFramewo" +
+                    "rk.MainModel.TBL_ModuloReclamos_CategoriaProducto]) AS [TBL_ModuloReclamos_Ingen" +
+                    "ierosResponsablesByCategoriaProducto.TBL_ModuloReclamos_CategoriaProducto]\r\n    " +
+                    "        FROM (\r\n                SELECT \r\n                    T.IdIngeniero AS [T" +
+                    "BL_ModuloReclamos_IngenierosResponsablesByCategoriaProducto.TBL_Admin_Usuarios.I" +
+                    "dUser], \r\n                    T.IdCategoria AS [TBL_ModuloReclamos_IngenierosRes" +
+                    "ponsablesByCategoriaProducto.TBL_ModuloReclamos_CategoriaProducto.IdCategoria], " +
+                    "\r\n                    True AS _from0\r\n                FROM SolutionFrameworkMain" +
+                    "ModelStoreContainer.TBL_ModuloReclamos_IngenierosResponsablesByCategoriaProducto" +
+                    " AS T\r\n            ) AS T1\r\n        ) AS T2\r\n    ) AS T3");
+        }
+        
+        /// <Summary>
+        /// return view for MainModuleContext.TBL_ModuloReclamos_ReclamoJefeAsesor
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView109()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_ReclamoJefeAsesor", "\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_ReclamoJefeAsesor\r\n        " +
+                    "[SolutionFramework.MainModel.TBL_ModuloReclamos_ReclamoJefeAsesor](T3.[TBL_Modul" +
+                    "oReclamos_ReclamoJefeAsesor.TBL_Admin_Usuarios], T3.[TBL_ModuloReclamos_ReclamoJ" +
+                    "efeAsesor.TBL_ModuloReclamos_Reclamo])\r\n    FROM (\r\n        SELECT -- Constructi" +
+                    "ng TBL_Admin_Usuarios\r\n            CreateRef(MainModuleContext.TBL_Admin_Usuario" +
+                    "s, row(T2.[TBL_ModuloReclamos_ReclamoJefeAsesor.TBL_Admin_Usuarios.IdUser]), [So" +
+                    "lutionFramework.MainModel.TBL_Admin_Usuarios]) AS [TBL_ModuloReclamos_ReclamoJef" +
+                    "eAsesor.TBL_Admin_Usuarios], \r\n            T2.[TBL_ModuloReclamos_ReclamoJefeAse" +
+                    "sor.TBL_ModuloReclamos_Reclamo]\r\n        FROM (\r\n            SELECT -- Construct" +
+                    "ing TBL_ModuloReclamos_Reclamo\r\n                T1.[TBL_ModuloReclamos_ReclamoJe" +
+                    "feAsesor.TBL_Admin_Usuarios.IdUser], \r\n                CreateRef(MainModuleConte" +
+                    "xt.TBL_ModuloReclamos_Reclamo, row(T1.[TBL_ModuloReclamos_ReclamoJefeAsesor.TBL_" +
+                    "ModuloReclamos_Reclamo.IdReclamo]), [SolutionFramework.MainModel.TBL_ModuloRecla" +
+                    "mos_Reclamo]) AS [TBL_ModuloReclamos_ReclamoJefeAsesor.TBL_ModuloReclamos_Reclam" +
+                    "o]\r\n            FROM (\r\n                SELECT \r\n                    T.IdJefeAse" +
+                    "sor AS [TBL_ModuloReclamos_ReclamoJefeAsesor.TBL_Admin_Usuarios.IdUser], \r\n     " +
+                    "               T.IdReclamo AS [TBL_ModuloReclamos_ReclamoJefeAsesor.TBL_ModuloRe" +
+                    "clamos_Reclamo.IdReclamo], \r\n                    True AS _from0\r\n               " +
+                    " FROM SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_ReclamoJefeAse" +
+                    "sor AS T\r\n            ) AS T1\r\n        ) AS T2\r\n    ) AS T3");
+        }
+        
+        /// <Summary>
+        /// return view for MainModuleContext.TBL_ModuloReclamos_UsuarioCopiaComentariosRespuesta
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView110()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_UsuarioCopiaComentariosRespuesta", "\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_UsuarioCopiaComentariosResp" +
+                    "uesta\r\n        [SolutionFramework.MainModel.TBL_ModuloReclamos_UsuarioCopiaComen" +
+                    "tariosRespuesta](T3.[TBL_ModuloReclamos_UsuarioCopiaComentariosRespuesta.TBL_Adm" +
+                    "in_Usuarios], T3.[TBL_ModuloReclamos_UsuarioCopiaComentariosRespuesta.TBL_Modulo" +
+                    "Reclamos_ComentariosRespuesta])\r\n    FROM (\r\n        SELECT -- Constructing TBL_" +
+                    "Admin_Usuarios\r\n            CreateRef(MainModuleContext.TBL_Admin_Usuarios, row(" +
+                    "T2.[TBL_ModuloReclamos_UsuarioCopiaComentariosRespuesta.TBL_Admin_Usuarios.IdUse" +
+                    "r]), [SolutionFramework.MainModel.TBL_Admin_Usuarios]) AS [TBL_ModuloReclamos_Us" +
+                    "uarioCopiaComentariosRespuesta.TBL_Admin_Usuarios], \r\n            T2.[TBL_Modulo" +
+                    "Reclamos_UsuarioCopiaComentariosRespuesta.TBL_ModuloReclamos_ComentariosRespuest" +
+                    "a]\r\n        FROM (\r\n            SELECT -- Constructing TBL_ModuloReclamos_Coment" +
+                    "ariosRespuesta\r\n                T1.[TBL_ModuloReclamos_UsuarioCopiaComentariosRe" +
+                    "spuesta.TBL_Admin_Usuarios.IdUser], \r\n                CreateRef(MainModuleContex" +
+                    "t.TBL_ModuloReclamos_ComentariosRespuesta, row(T1.[TBL_ModuloReclamos_UsuarioCop" +
+                    "iaComentariosRespuesta.TBL_ModuloReclamos_ComentariosRespuesta.IdComentario]), [" +
+                    "SolutionFramework.MainModel.TBL_ModuloReclamos_ComentariosRespuesta]) AS [TBL_Mo" +
+                    "duloReclamos_UsuarioCopiaComentariosRespuesta.TBL_ModuloReclamos_ComentariosResp" +
+                    "uesta]\r\n            FROM (\r\n                SELECT \r\n                    T.IdUsu" +
+                    "ario AS [TBL_ModuloReclamos_UsuarioCopiaComentariosRespuesta.TBL_Admin_Usuarios." +
+                    "IdUser], \r\n                    T.IdComentario AS [TBL_ModuloReclamos_UsuarioCopi" +
+                    "aComentariosRespuesta.TBL_ModuloReclamos_ComentariosRespuesta.IdComentario], \r\n " +
+                    "                   True AS _from0\r\n                FROM SolutionFrameworkMainMod" +
+                    "elStoreContainer.TBL_ModuloReclamos_UsuarioCopiaComentariosRespuesta AS T\r\n     " +
+                    "       ) AS T1\r\n        ) AS T2\r\n    ) AS T3");
+        }
+        
+        /// <Summary>
+        /// return view for MainModuleContext.TBL_ModuloReclamos_UsuariosCopiaActividades
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView111()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_UsuariosCopiaActividades", "\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_UsuariosCopiaActividades\r\n " +
+                    "       [SolutionFramework.MainModel.TBL_ModuloReclamos_UsuariosCopiaActividades]" +
+                    "(T3.[TBL_ModuloReclamos_UsuariosCopiaActividades.TBL_Admin_Usuarios], T3.[TBL_Mo" +
+                    "duloReclamos_UsuariosCopiaActividades.TBL_ModuloReclamos_Actividades])\r\n    FROM" +
+                    " (\r\n        SELECT -- Constructing TBL_Admin_Usuarios\r\n            CreateRef(Mai" +
+                    "nModuleContext.TBL_Admin_Usuarios, row(T2.[TBL_ModuloReclamos_UsuariosCopiaActiv" +
+                    "idades.TBL_Admin_Usuarios.IdUser]), [SolutionFramework.MainModel.TBL_Admin_Usuar" +
+                    "ios]) AS [TBL_ModuloReclamos_UsuariosCopiaActividades.TBL_Admin_Usuarios], \r\n   " +
+                    "         T2.[TBL_ModuloReclamos_UsuariosCopiaActividades.TBL_ModuloReclamos_Acti" +
+                    "vidades]\r\n        FROM (\r\n            SELECT -- Constructing TBL_ModuloReclamos_" +
+                    "Actividades\r\n                T1.[TBL_ModuloReclamos_UsuariosCopiaActividades.TBL" +
+                    "_Admin_Usuarios.IdUser], \r\n                CreateRef(MainModuleContext.TBL_Modul" +
+                    "oReclamos_Actividades, row(T1.[TBL_ModuloReclamos_UsuariosCopiaActividades.TBL_M" +
+                    "oduloReclamos_Actividades.IdActividad]), [SolutionFramework.MainModel.TBL_Modulo" +
+                    "Reclamos_Actividades]) AS [TBL_ModuloReclamos_UsuariosCopiaActividades.TBL_Modul" +
+                    "oReclamos_Actividades]\r\n            FROM (\r\n                SELECT \r\n           " +
+                    "         T.IdUsuario AS [TBL_ModuloReclamos_UsuariosCopiaActividades.TBL_Admin_U" +
+                    "suarios.IdUser], \r\n                    T.IdActividad AS [TBL_ModuloReclamos_Usua" +
+                    "riosCopiaActividades.TBL_ModuloReclamos_Actividades.IdActividad], \r\n            " +
+                    "        True AS _from0\r\n                FROM SolutionFrameworkMainModelStoreCont" +
+                    "ainer.TBL_ModuloReclamos_UsuariosCopiaActividades AS T\r\n            ) AS T1\r\n   " +
+                    "     ) AS T2\r\n    ) AS T3");
+        }
+        
+        /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_Admin_ModuleVersion
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView62()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView112()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_Admin_ModuleVersion", @"
     SELECT VALUE -- Constructing TBL_Admin_ModuleVersion
@@ -2031,7 +3774,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_Admin_ModuleVersion
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView63()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView113()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_Admin_ModuleVersion", @"
     SELECT VALUE -- Constructing TBL_Admin_ModuleVersion
@@ -2051,17 +3794,18 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_Admin_OptionList
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView64()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView114()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_Admin_OptionList", @"
     SELECT VALUE -- Constructing TBL_Admin_OptionList
-        [SolutionFramework.MainModel.Store.TBL_Admin_OptionList](T1.[TBL_Admin_OptionList.IdOpcion], T1.[TBL_Admin_OptionList.IdModule], T1.[TBL_Admin_OptionList.Key], T1.[TBL_Admin_OptionList.Value], T1.[TBL_Admin_OptionList.IsActive], T1.[TBL_Admin_OptionList.CreateBy], T1.[TBL_Admin_OptionList.CreateOn], T1.[TBL_Admin_OptionList.ModifiedBy], T1.[TBL_Admin_OptionList.ModifiedOn])
+        [SolutionFramework.MainModel.Store.TBL_Admin_OptionList](T1.[TBL_Admin_OptionList.IdOpcion], T1.[TBL_Admin_OptionList.IdModule], T1.[TBL_Admin_OptionList.Key], T1.[TBL_Admin_OptionList.Value], T1.[TBL_Admin_OptionList.Descripcion], T1.[TBL_Admin_OptionList.IsActive], T1.[TBL_Admin_OptionList.CreateBy], T1.[TBL_Admin_OptionList.CreateOn], T1.[TBL_Admin_OptionList.ModifiedBy], T1.[TBL_Admin_OptionList.ModifiedOn])
     FROM (
         SELECT 
             T.IdOpcion AS [TBL_Admin_OptionList.IdOpcion], 
             T.IdModule AS [TBL_Admin_OptionList.IdModule], 
             T.[Key] AS [TBL_Admin_OptionList.Key], 
             T.[Value] AS [TBL_Admin_OptionList.Value], 
+            T.Descripcion AS [TBL_Admin_OptionList.Descripcion], 
             T.IsActive AS [TBL_Admin_OptionList.IsActive], 
             T.CreateBy AS [TBL_Admin_OptionList.CreateBy], 
             T.CreateOn AS [TBL_Admin_OptionList.CreateOn], 
@@ -2075,17 +3819,18 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_Admin_OptionList
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView65()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView115()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_Admin_OptionList", @"
     SELECT VALUE -- Constructing TBL_Admin_OptionList
-        [SolutionFramework.MainModel.TBL_Admin_OptionList](T1.[TBL_Admin_OptionList.IdOpcion], T1.[TBL_Admin_OptionList.IdModule], T1.[TBL_Admin_OptionList.Key], T1.[TBL_Admin_OptionList.Value], T1.[TBL_Admin_OptionList.IsActive], T1.[TBL_Admin_OptionList.CreateBy], T1.[TBL_Admin_OptionList.CreateOn], T1.[TBL_Admin_OptionList.ModifiedBy], T1.[TBL_Admin_OptionList.ModifiedOn])
+        [SolutionFramework.MainModel.TBL_Admin_OptionList](T1.[TBL_Admin_OptionList.IdOpcion], T1.[TBL_Admin_OptionList.IdModule], T1.[TBL_Admin_OptionList.Key], T1.[TBL_Admin_OptionList.Value], T1.[TBL_Admin_OptionList.Descripcion], T1.[TBL_Admin_OptionList.IsActive], T1.[TBL_Admin_OptionList.CreateBy], T1.[TBL_Admin_OptionList.CreateOn], T1.[TBL_Admin_OptionList.ModifiedBy], T1.[TBL_Admin_OptionList.ModifiedOn])
     FROM (
         SELECT 
             T.IdOpcion AS [TBL_Admin_OptionList.IdOpcion], 
             T.IdModule AS [TBL_Admin_OptionList.IdModule], 
             T.[Key] AS [TBL_Admin_OptionList.Key], 
             T.[Value] AS [TBL_Admin_OptionList.Value], 
+            T.Descripcion AS [TBL_Admin_OptionList.Descripcion], 
             T.IsActive AS [TBL_Admin_OptionList.IsActive], 
             T.CreateBy AS [TBL_Admin_OptionList.CreateBy], 
             T.CreateOn AS [TBL_Admin_OptionList.CreateOn], 
@@ -2099,7 +3844,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloPlanAccion_BancoActividades
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView66()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView116()
         {
             System.Text.StringBuilder viewString = new System.Text.StringBuilder(2430);
             viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloPlanAccion_BancoActividades\r\n      ");
@@ -2139,7 +3884,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloPlanAccion_Categorias
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView67()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView117()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloPlanAccion_Categorias", @"
     SELECT VALUE -- Constructing TBL_ModuloPlanAccion_Categorias
@@ -2163,7 +3908,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloPlanAccion_ConfiguracionActividades
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView68()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView118()
         {
             System.Text.StringBuilder viewString = new System.Text.StringBuilder(2643);
             viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloPlanAccion_ConfiguracionActividades");
@@ -2207,7 +3952,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloPlanAccion_BancoActividades
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView69()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView119()
         {
             System.Text.StringBuilder viewString = new System.Text.StringBuilder(2447);
             viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloPlanAccion_BancoActividades\r\n      ");
@@ -2247,7 +3992,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloPlanAccion_Categorias
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView70()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView120()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloPlanAccion_Categorias", @"
     SELECT VALUE -- Constructing TBL_ModuloPlanAccion_Categorias
@@ -2271,7 +4016,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloPlanAccion_ConfiguracionActividades
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView71()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView121()
         {
             System.Text.StringBuilder viewString = new System.Text.StringBuilder(2660);
             viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloPlanAccion_ConfiguracionActividades");

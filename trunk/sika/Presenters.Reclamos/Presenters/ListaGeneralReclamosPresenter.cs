@@ -5,8 +5,6 @@ using Application.MainModule.Reclamos.IServices;
 using System.Reflection;
 using Infrastructure.CrossCutting.NetFramework.Enums;
 using Domain.MainModule.Reclamos.Enum;
-using Applications.MainModule.Admin.IServices;
-using System.Collections.Generic;
 
 namespace Presenters.Reclamos.Presenters
 {

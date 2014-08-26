@@ -17,7 +17,7 @@ namespace ASP.NETCLIENTE.UI
 
         public event EventHandler<ViewResulteventArgs> ActualizarEvent;
 
-        protected void InvokeActualizarEvent(ViewResulteventArgs e)
+        public void InvokeActualizarEvent(ViewResulteventArgs e)
         {
             var handler = ActualizarEvent;
             if (handler != null) handler(this, e);
@@ -36,6 +36,14 @@ namespace ASP.NETCLIENTE.UI
         public void InvokeResponseeventHandler(ViewResulteventArgs e)
         {
             var handler = ResponseeventHandler;
+            if (handler != null) handler(this, e);
+        }
+
+        public event EventHandler<ViewResulteventArgs> CloseWizardEvent;
+
+        protected void InvokeCloseWizardEvent(ViewResulteventArgs e)
+        {
+            EventHandler<ViewResulteventArgs> handler = CloseWizardEvent;
             if (handler != null) handler(this, e);
         }
 
@@ -94,13 +102,8 @@ namespace ASP.NETCLIENTE.UI
         #endregion
 
         #region Members
-        
-        public string NumeroCotizacion
-        {
-            get;
-            set;
-        }
 
+        
         public ModuleBase Module
         {
             get { return _module; }
@@ -108,7 +111,7 @@ namespace ASP.NETCLIENTE.UI
         }
 
 
-            /// <summary>
+        /// <summary>
         /// Lee el Parámetro ModuleId desde el QueryString
         /// </summary>
         protected string ModuleId
@@ -121,16 +124,20 @@ namespace ASP.NETCLIENTE.UI
             get { return ((TBL_Admin_Usuarios)HttpContext.Current.User.Identity); }
         }
 
-        private string GetUrl
+        private static string GetUrl
         {
             get { return HttpContext.Current.Request.AppRelativeCurrentExecutionFilePath; }
         }
 
         protected bool IsLoadUserControl
         {
-            get { return ViewState["IsLoadUserControl"] == null ? false : (bool) ViewState["IsLoadUserControl"]; }
+            get { return ViewState["IsLoadUserControl"] == null ? false : (bool)ViewState["IsLoadUserControl"]; }
             set { ViewState["IsLoadUserControl"] = value; }
         }
+
+        public string IdDocument { get; set; }
+
+        public string IdResponsable { get; set; }
 
         #endregion
     }

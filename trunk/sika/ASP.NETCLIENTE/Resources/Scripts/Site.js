@@ -68,11 +68,12 @@ function InhabilitarControl(Obs, div2) {
 
     }
     else if (document.getElementById) {
-        vista = (document.getElementById(Obs).style.visibility == 'none') ? 'block' : 'none';
-        document.getElementById(Obs).style.visibility = vista;
 
-        vista1 = (document.all[div2].style.display == 'none') ? 'block' : 'none';
-        document.all[div2].style.display = vista1;
+        vista = (document.getElementById(Obs).style.display == 'none') ? 'block' : 'none';
+        document.getElementById(Obs).style.display = vista;
+
+        vista1 = (document.getElementById(div2).style.display == 'none') ? 'block' : 'none';
+        document.getElementById(div2).style.display = vista1;
 
     }
 }

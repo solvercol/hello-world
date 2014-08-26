@@ -49,7 +49,7 @@ namespace Domain.MainModules.Entities
         private decimal _idComentario;
     
         [DataMember]
-        public decimal IdReclamo
+        public int IdReclamo
         {
             get { return _idReclamo; }
             set
@@ -69,7 +69,7 @@ namespace Domain.MainModules.Entities
                 }
             }
         }
-        private decimal _idReclamo;
+        private int _idReclamo;
     
         [DataMember]
         public string Asunto

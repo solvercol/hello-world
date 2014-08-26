@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 using Application.Core;
 using Application.MainModule.Documentos.IServices;
-using Application.MainModule.Documentos.Services;
 using Applications.MainModule.Admin.IServices;
 using Domain.MainModules.Entities;
 using Infrastructure.CrossCutting.NetFramework.Enums;
@@ -18,14 +15,14 @@ namespace Presenters.Documentos.Presenters
     {
         private List<TBL_ModuloDocumentos_Estados> Estados { get; set; }
 
-        private readonly ISfTBL_ModuloDocumentos_DocumentoAdjuntoManagementServices docAdjuntoServices;
-        private readonly ISfTBL_ModuloDocumentos_DocumentoAdjuntoHistorialManagementServices docAdjuntoHistServices;
-        private readonly ISfTBL_ModuloDocumentos_DocumentoManagementServices documentoServices;
-        private readonly ISfTBL_ModuloDocumentos_CategoriasManagementServices categoriasServices;
-        private readonly ISfTBL_ModuloDocumentos_EstadosManagementServices estadosServices;
-        private readonly ISfTBL_ModuloDocumentos_LogCambiosManagementServices logCambiosServices;
-        private readonly ISfTBL_ModuloDocumentos_HistorialDocumentoManagementServices historialDocumentoServices;
-        private readonly ISfTBL_Admin_UsuariosManagementServices usuariosServices;
+        private readonly ISfTBL_ModuloDocumentos_DocumentoAdjuntoManagementServices _docAdjuntoServices;
+        private readonly ISfTBL_ModuloDocumentos_DocumentoAdjuntoHistorialManagementServices _docAdjuntoHistServices;
+        private readonly ISfTBL_ModuloDocumentos_DocumentoManagementServices _documentoServices;
+        private readonly ISfTBL_ModuloDocumentos_CategoriasManagementServices _categoriasServices;
+        private readonly ISfTBL_ModuloDocumentos_EstadosManagementServices _estadosServices;
+        private readonly ISfTBL_ModuloDocumentos_LogCambiosManagementServices _logCambiosServices;
+        private readonly ISfTBL_ModuloDocumentos_HistorialDocumentoManagementServices _historialDocumentoServices;
+        private readonly ISfTBL_Admin_UsuariosManagementServices _usuariosServices;
 
         public EditarDocumentoPresenter
             (
@@ -39,16 +36,16 @@ namespace Presenters.Documentos.Presenters
                 ,ISfTBL_ModuloDocumentos_DocumentoAdjuntoHistorialManagementServices docAdjuntoHistServices
             )
         {
-            this.documentoServices = documentoManagementServices;
-            this.categoriasServices = categoriasManagementServices;
-            this.estadosServices = estadosManagementServices;
-            this.logCambiosServices = logCambiosManagementServices;
-            this.usuariosServices = usuariosManagementServices;
-            this.historialDocumentoServices = historialDocumentoManagementServices;
-            this.docAdjuntoServices = docAdjuntoServices;
-            this.docAdjuntoHistServices = docAdjuntoHistServices;
+            this._documentoServices = documentoManagementServices;
+            this._categoriasServices = categoriasManagementServices;
+            this._estadosServices = estadosManagementServices;
+            this._logCambiosServices = logCambiosManagementServices;
+            this._usuariosServices = usuariosManagementServices;
+            this._historialDocumentoServices = historialDocumentoManagementServices;
+            this._docAdjuntoServices = docAdjuntoServices;
+            this._docAdjuntoHistServices = docAdjuntoHistServices;
 
-            Estados = estadosServices.FindBySpec(true);
+            Estados = _estadosServices.FindBySpec(true);
         }
 
         public override void SubscribeViewToEvents()
@@ -93,7 +90,7 @@ namespace Presenters.Documentos.Presenters
         void ViewDescargarArchivoEvent(object sender, EventArgs e)
         {
             var idDocAdjunto = (Int32) sender;
-            var adjunto = docAdjuntoServices.FindById(idDocAdjunto);
+            var adjunto = _docAdjuntoServices.FindById(idDocAdjunto);
             View.DescargarArchivo(adjunto);
         }
 
@@ -108,7 +105,7 @@ namespace Presenters.Documentos.Presenters
         {
             try
             {
-                var responsables = usuariosServices.FindBySpec(true);
+                var responsables = _usuariosServices.FindBySpec(true);
                 if (responsables == null) return;
                 View.Responsables(responsables);
             }
@@ -126,7 +123,7 @@ namespace Presenters.Documentos.Presenters
                 if(View.IdDocumento == 0)
                     return;
 
-                var oDocumento = documentoServices.GetDocumentoByIdWithAttachments(Convert.ToInt32(View.IdDocumento));
+                var oDocumento = _documentoServices.GetDocumentoByIdWithAttachments(Convert.ToInt32(View.IdDocumento));
                 
                 if (oDocumento == null)
                 {
@@ -176,7 +173,7 @@ namespace Presenters.Documentos.Presenters
                     IdTipoDocumento = GuardarCategoria(3,View.TipoDocumento);
 
                 DateTime fechaAhora = DateTime.Now;
-                var oDocumento = documentoServices.NewEntity();
+                var oDocumento = _documentoServices.NewEntity();
                 oDocumento.Titulo = View.Titulo;
                 oDocumento.Observaciones = View.Observaciones;
                 oDocumento.Version = "001";
@@ -196,7 +193,7 @@ namespace Presenters.Documentos.Presenters
                 oDocumento.CreateOn = fechaAhora;
                 oDocumento.ModifiedBy = View.UserSession.IdUser;
                 oDocumento.ModifiedOn = fechaAhora;
-                documentoServices.Add(oDocumento);
+                _documentoServices.Add(oDocumento);
 
                 View.IdDocCreado = oDocumento.IdDocumento;
 
@@ -234,7 +231,7 @@ namespace Presenters.Documentos.Presenters
                     return;
                 }
 
-                var adjunto = docAdjuntoServices.NewEntity();
+                var adjunto = _docAdjuntoServices.NewEntity();
                 adjunto.IdDocumento = idDocumento;
                 adjunto.Archivo = View.Archivo;
                 adjunto.IsActive = true;
@@ -243,9 +240,9 @@ namespace Presenters.Documentos.Presenters
                 adjunto.CreateBy = View.UserSession.IdUser.ToString();
                 adjunto.CrateOn = DateTime.Now;
                 adjunto.NombreArchivo = nombreArchivo;
-                docAdjuntoServices.Add(adjunto);
+                _docAdjuntoServices.Add(adjunto);
 
-                var oDocumento = documentoServices.GetDocumentoByIdWithAttachments(idDocumento);
+                var oDocumento = _documentoServices.GetDocumentoByIdWithAttachments(idDocumento);
 
                 GuardarLog(oDocumento, null, "Se agregó archivo adjunto");
 
@@ -265,7 +262,7 @@ namespace Presenters.Documentos.Presenters
             int result = 0;
             try
             {
-                var categoria = categoriasServices.NewEntity();
+                var categoria = _categoriasServices.NewEntity();
                 categoria.Nombre = nombre;
                 categoria.Nivel = nivel;
                 categoria.IsActive = true;
@@ -273,7 +270,7 @@ namespace Presenters.Documentos.Presenters
                 categoria.CreateOn = DateTime.Now;
                 categoria.ModifiedBy = View.UserSession.IdUser.ToString();
                 categoria.ModifiedOn = DateTime.Now;
-                categoriasServices.Add(categoria);
+                _categoriasServices.Add(categoria);
                 result = categoria.IdCategoria;
             }
             catch (Exception ex)
@@ -286,14 +283,14 @@ namespace Presenters.Documentos.Presenters
 
         private void GuardarLog(TBL_ModuloDocumentos_Documento oDocumento, decimal? idHistorial, string mensaje)
         {
-            var logDoc = logCambiosServices.NewEntity();
+            var logDoc = _logCambiosServices.NewEntity();
             logDoc.IdDocumento = oDocumento.IdDocumento;
             logDoc.IdHistorial = idHistorial;
             logDoc.Descripcion = string.Format("{0}: {1}", mensaje, oDocumento.Titulo);
             logDoc.IsActive = true;
             logDoc.CreateBy = View.UserSession.IdUser.ToString();
             logDoc.CreateOn = DateTime.Now;
-            logCambiosServices.Add(logDoc);
+            _logCambiosServices.Add(logDoc);
         }
 
         private void Actualizar()
@@ -306,7 +303,7 @@ namespace Presenters.Documentos.Presenters
                     InvokeMessageBox(new MessageBoxEventArgs(string.Format(Message.ErrorLecturaID, " registro Documento"), TypeError.Error));
                     return;
                 }
-                var oDocumento = documentoServices.GetDocumentoByIdWithAttachments(Convert.ToInt32(View.IdDocumento));
+                var oDocumento = _documentoServices.GetDocumentoByIdWithAttachments(Convert.ToInt32(View.IdDocumento));
                 if (oDocumento == null)
                 {
                     InvokeMessageBox(new MessageBoxEventArgs(string.Format(Message.GetObjectError, "Documento"), TypeError.Error));
@@ -323,7 +320,7 @@ namespace Presenters.Documentos.Presenters
 
 
                 ///CREACION DEL HISTORICO SI ESTA PUBLICADO
-                var estado = estadosServices.FindById(oDocumento.IdEstado.GetValueOrDefault());
+                var estado = _estadosServices.FindById(oDocumento.IdEstado.GetValueOrDefault());
                 decimal? idHistorial = null;
                 if (estado.Codigo.Equals("PUBLICADO"))
                     idHistorial = GuardarHistorico(oDocumento);
@@ -355,7 +352,7 @@ namespace Presenters.Documentos.Presenters
                 oDocumento.IsActive = View.Activo;
                 oDocumento.ModifiedBy = View.UserSession.IdUser;
                 oDocumento.ModifiedOn = DateTime.Now;
-                documentoServices.Modify(oDocumento);
+                _documentoServices.Modify(oDocumento);
 
                 InvokeMessageBox(new MessageBoxEventArgs(Message.ProcessOk, TypeError.Ok));
 
@@ -378,7 +375,7 @@ namespace Presenters.Documentos.Presenters
                     InvokeMessageBox(new MessageBoxEventArgs(string.Format(Message.ErrorLecturaID, " registro Documento"), TypeError.Error));
                     return;
                 }
-                var oDocumento = documentoServices.FindById(Convert.ToInt32(View.IdDocumento));
+                var oDocumento = _documentoServices.FindById(Convert.ToInt32(View.IdDocumento));
                 if (oDocumento == null)
                 {
                     InvokeMessageBox(new MessageBoxEventArgs(string.Format(Message.GetObjectError, "Documento"), TypeError.Error));
@@ -386,7 +383,7 @@ namespace Presenters.Documentos.Presenters
                 }
                 oDocumento.IdEstado = Estados.Find(est => est.Codigo.Equals("PUBLICADO")).IdEstado;
                 oDocumento.IsActive = true;
-                documentoServices.Modify(oDocumento);
+                _documentoServices.Modify(oDocumento);
 
                 ///LOG DE DOCUMENTO
                 GuardarLog(oDocumento, null, "Documento Publicado");
@@ -404,7 +401,7 @@ namespace Presenters.Documentos.Presenters
         private string GetNextVersion(string actualVersion, int idEstadoActual)
         {
             string result = actualVersion;
-            var estado = estadosServices.FindById(idEstadoActual);
+            var estado = _estadosServices.FindById(idEstadoActual);
             if (estado.Codigo.Equals("PUBLICADO"))
                 result = Convert.ToString(Convert.ToInt32(actualVersion) + 1).PadLeft(3, '0');
             return result;
@@ -419,7 +416,7 @@ namespace Presenters.Documentos.Presenters
                     InvokeMessageBox(new MessageBoxEventArgs(string.Format(Message.ErrorLecturaID, " registro Documento"), TypeError.Error));
                     return;
                 }
-                var oDocumento = documentoServices.GetDocumentoByIdWithAttachments(Convert.ToInt32(View.IdDocumento));
+                var oDocumento = _documentoServices.GetDocumentoByIdWithAttachments(Convert.ToInt32(View.IdDocumento));
                 if (oDocumento == null)
                 {
                     InvokeMessageBox(new MessageBoxEventArgs(string.Format(Message.GetObjectError, "Documento"), TypeError.Error));
@@ -427,7 +424,7 @@ namespace Presenters.Documentos.Presenters
                 }
 
                 ///CREACION DEL HISTORICO SI ESTA PUBLICADO
-                var estado = estadosServices.FindById(oDocumento.IdEstado.GetValueOrDefault());
+                var estado = _estadosServices.FindById(oDocumento.IdEstado.GetValueOrDefault());
                 decimal? idHistorial = null;
                 if (estado.Codigo.Equals("PUBLICADO"))
                     idHistorial = GuardarHistorico(oDocumento);
@@ -436,7 +433,7 @@ namespace Presenters.Documentos.Presenters
 
                 oDocumento.IsActive = false;
                 oDocumento.IdEstado = Estados.Find(est => est.Codigo.Equals("CANCELADO")).IdEstado;
-                documentoServices.Modify(oDocumento);
+                _documentoServices.Modify(oDocumento);
 
                 
                 LimpiarVista();
@@ -458,19 +455,19 @@ namespace Presenters.Documentos.Presenters
                     InvokeMessageBox(new MessageBoxEventArgs(string.Format(Message.ErrorLecturaID, " registro Adjunto"), TypeError.Error));
                     return;
                 }
-                var oAdjunto = docAdjuntoServices.FindById(IdAdjunto);
+                var oAdjunto = _docAdjuntoServices.FindById(IdAdjunto);
                 if (oAdjunto == null)
                 {
                     InvokeMessageBox(new MessageBoxEventArgs(string.Format(Message.GetObjectError, "Adjunto"), TypeError.Error));
                     return;
                 }
 
-                var oDocumento = documentoServices.GetDocumentoByIdWithAttachments(oAdjunto.IdDocumento);
+                var oDocumento = _documentoServices.GetDocumentoByIdWithAttachments(oAdjunto.IdDocumento);
 
                 ///LOG DE DOCUMENTO
                 GuardarLog(oDocumento, null, "Se eliminó un archivo adjunto");
 
-                docAdjuntoServices.Remove(oAdjunto);
+                _docAdjuntoServices.Remove(oAdjunto);
                 
                 InvokeMessageBox(new MessageBoxEventArgs(Message.ProcessOk, TypeError.Ok));
 
@@ -503,7 +500,7 @@ namespace Presenters.Documentos.Presenters
             decimal result = 0;
             try
             {
-                var historial = historialDocumentoServices.NewEntity();
+                var historial = _historialDocumentoServices.NewEntity();
                 historial.IdDocumento = oDocumento.IdDocumento;
                 historial.Titulo = oDocumento.Titulo;
                 historial.Observaciones = oDocumento.Observaciones;
@@ -521,13 +518,13 @@ namespace Presenters.Documentos.Presenters
                 historial.CreateOn = oDocumento.CreateOn;
                 historial.ModifiedBy = oDocumento.ModifiedBy.ToString();
                 historial.ModifiedOn = oDocumento.ModifiedOn;
-                historialDocumentoServices.Add(historial);
+                _historialDocumentoServices.Add(historial);
                 result = historial.IdHistorial;
 
                 ///Se crea el historico de adjuntos
                 foreach (var docAdjunto in oDocumento.TBL_ModuloDocumentos_DocumentoAdjunto)
                 {
-                    var adjhist = docAdjuntoHistServices.NewEntity();
+                    var adjhist = _docAdjuntoHistServices.NewEntity();
                     adjhist.IdHistorial = result;
                     adjhist.IsActive = true;
                     adjhist.ModifiedBy = docAdjunto.ModifiedBy;
@@ -536,7 +533,7 @@ namespace Presenters.Documentos.Presenters
                     adjhist.Archivo = docAdjunto.Archivo;
                     adjhist.CreateBy = docAdjunto.CreateBy;
                     adjhist.CreateOn = docAdjunto.CrateOn;
-                    docAdjuntoHistServices.Add(adjhist);
+                    _docAdjuntoHistServices.Add(adjhist);
                 }
 
             }

@@ -205,7 +205,7 @@ namespace Modules.WorkFlow.Admin
                 oRuta.ValidaRequeridos = ((CheckBox)dvRutas.FindControl("chkValidaRequeridosEdit")).Checked;
                 oRuta.RolResponsableActual = ((TextBox)dvRutas.FindControl("txtRolResponsableEdit")).Text;
                 //oRuta.AccionesSistema = ((TextBox)dvRutas.FindControl("txtAccionesSistemaEdit")).Text;
-                oRuta.TipoModulo = ModulosAplicacion.Pedidos.ToString();
+                oRuta.TipoModulo = ModulosAplicacion.Reclamos.ToString();
                 _module.RutasWorkFlowServices.Add(oRuta);
                 InvokeViewResult(new MessageBoxEventArgs(string.Format("Proceso realizado satisfactoriamente!!"), TypeError.Ok));
             }
@@ -280,7 +280,7 @@ namespace Modules.WorkFlow.Admin
             try
             {
 
-                var list = _module.RutasWorkFlowServices.ListadoRutasPorIdModule(ModulosAplicacion.Pedidos);
+                var list = _module.RutasWorkFlowServices.ListadoRutasPorIdModule(ModulosAplicacion.Reclamos);
                 wdtRutas.Nodes.Clear();
 
                 var rootNode = new DataTreeNode
