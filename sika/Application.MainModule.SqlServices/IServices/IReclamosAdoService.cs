@@ -20,5 +20,11 @@ namespace Application.MainModule.SqlServices.IServices
         string EjecutarSpToBool(string spName, Dictionary<string, string> parametros);
 
         DataTable ResumenReclamosPanelWorkFlow(string idReclamo);
+
+        #region Vistas Y Reportes
+
+        DataTable GetVistaGeneralReclamos(DateTime from, DateTime end, string serverHost, string moduleId);
+
+        #endregion
     }
 }
