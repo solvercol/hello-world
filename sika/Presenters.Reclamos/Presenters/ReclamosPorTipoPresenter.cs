@@ -9,12 +9,12 @@ using Presenters.Reclamos.IViews;
 
 namespace Presenters.Reclamos.Presenters
 {
-    public class ListaGeneralReclamosPresenter : Presenter<IListaGeneralReclamosView>
+    public class ReclamosPorTipoPresenter : Presenter<IReclamosPorTipoView>
     {
         readonly ISfTBL_ModuloReclamos_CategoriasReclamoManagementServices _categoriasReclamoService;
         readonly IReclamosAdoService _recladoAdoService;
 
-        public ListaGeneralReclamosPresenter(ISfTBL_ModuloReclamos_CategoriasReclamoManagementServices categoriasReclamoService
+        public ReclamosPorTipoPresenter(ISfTBL_ModuloReclamos_CategoriasReclamoManagementServices categoriasReclamoService
                                             ,IReclamosAdoService recladoAdoService)
         {
             _categoriasReclamoService = categoriasReclamoService;
@@ -46,7 +46,8 @@ namespace Presenters.Reclamos.Presenters
         {
             try
             {
-                var dt = _recladoAdoService.GetVistaGeneralReclamos(View.FechaFilterFrom, View.FechaFilterTo, View.ServerHostPath, View.IdModule);
+                var dt = _recladoAdoService.GetVistaReclamosPorTipo(View.FechaFilterFrom, View.FechaFilterTo, View.ServerHostPath, View.IdModule
+                                                                    , View.FilterNoReclamo, View.FilterCliente, View.FilterProducto, View.FilterServicio);
                 View.LoadViewReclamos(dt);
             }
             catch (Exception ex)

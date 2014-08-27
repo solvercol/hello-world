@@ -116,6 +116,13 @@
     <Content Include="UserControls\WUCReadingReclamoServicioT4Detalle.ascx" />
     <Content Include="UserControls\WUCReadingReclamoServicioT5Detalle.ascx" />
     <Content Include="UserControls\WucRenderMessagesError.ascx" />
+    <Content Include="Views\FrmMisPendientes.aspx" />
+    <Content Include="Views\FrmMisReclamosPorEstado.aspx" />
+    <Content Include="Views\FrmMisReclamosPorFecha.aspx" />
+    <Content Include="Views\FrmReclamosPorEstado.aspx" />
+    <Content Include="Views\FrmReclamosPorNumero.aspx" />
+    <Content Include="Views\FrmReclamosPorTargetMarket.aspx" />
+    <Content Include="Views\FrmReclamosPorTipo.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -329,6 +336,55 @@
     <Compile Include="UserControls\WucRenderMessagesError.ascx.designer.cs">
       <DependentUpon>WucRenderMessagesError.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Views\FrmMisPendientes.aspx.cs">
+      <DependentUpon>FrmMisPendientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FrmMisPendientes.aspx.designer.cs">
+      <DependentUpon>FrmMisPendientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmMisReclamosPorEstado.aspx.cs">
+      <DependentUpon>FrmMisReclamosPorEstado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FrmMisReclamosPorEstado.aspx.designer.cs">
+      <DependentUpon>FrmMisReclamosPorEstado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmMisReclamosPorFecha.aspx.cs">
+      <DependentUpon>FrmMisReclamosPorFecha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FrmMisReclamosPorFecha.aspx.designer.cs">
+      <DependentUpon>FrmMisReclamosPorFecha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmReclamosPorEstado.aspx.cs">
+      <DependentUpon>FrmReclamosPorEstado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FrmReclamosPorEstado.aspx.designer.cs">
+      <DependentUpon>FrmReclamosPorEstado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmReclamosPorNumero.aspx.cs">
+      <DependentUpon>FrmReclamosPorNumero.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FrmReclamosPorNumero.aspx.designer.cs">
+      <DependentUpon>FrmReclamosPorNumero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmReclamosPorTargetMarket.aspx.cs">
+      <DependentUpon>FrmReclamosPorTargetMarket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FrmReclamosPorTargetMarket.aspx.designer.cs">
+      <DependentUpon>FrmReclamosPorTargetMarket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmReclamosPorTipo.aspx.cs">
+      <DependentUpon>FrmReclamosPorTipo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FrmReclamosPorTipo.aspx.designer.cs">
+      <DependentUpon>FrmReclamosPorTipo.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Site.Master" />
@@ -381,7 +437,11 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Resources\ReportViewer\RptVistaMisReclamosPorEstado.rdlc" />
+    <EmbeddedResource Include="Resources\ReportViewer\RptVistaMisReclamosPorFecha.rdlc" />
+    <EmbeddedResource Include="Resources\ReportViewer\RptVistaReclamosMisPendientes.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\RptVistaGeneralReclamos.rdlc" />
+    <EmbeddedResource Include="Resources\ReportViewer\RptVistaReclamosPorTipo.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataSets\DS_Report.xsc">
@@ -396,9 +456,7 @@
       <DependentUpon>DS_Report.xsd</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>
