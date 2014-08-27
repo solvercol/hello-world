@@ -6,7 +6,7 @@ using Domain.MainModules.Entities;
 
 namespace Presenters.Reclamos.IViews
 {
-    public interface IListaGeneralReclamosView : IView
+    public interface IMisPendientesView : IView
     {
         void ShowNewReclamoWindow(bool visible);
 

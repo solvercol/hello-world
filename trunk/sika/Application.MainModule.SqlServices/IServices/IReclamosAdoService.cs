@@ -25,6 +25,18 @@ namespace Application.MainModule.SqlServices.IServices
 
         DataTable GetVistaGeneralReclamos(DateTime from, DateTime end, string serverHost, string moduleId);
 
+        DataTable GetVistaReclamosMisPendientes(DateTime from, DateTime end, string serverHost, string moduleId,
+                                                int idResponsable, string noReclamo, string cliente, string producto, string servicio);
+
+        DataTable GetVistaMisReclamosPorFecha(DateTime from, DateTime end, string serverHost, string moduleId,
+                                                int idCreador, string noReclamo, string cliente, string producto, string servicio);
+
+        DataTable GetVistaMisReclamosPorEstado(DateTime from, DateTime end, string serverHost, string moduleId,
+                                                int idCreador, string noReclamo, string cliente, string producto, string servicio);
+
+        DataTable GetVistaReclamosPorTipo(DateTime from, DateTime end, string serverHost, string moduleId,
+                                          string noReclamo, string cliente, string producto, string servicio);
+
         #endregion
     }
 }

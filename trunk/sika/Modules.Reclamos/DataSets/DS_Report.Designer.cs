@@ -26,6 +26,14 @@ namespace Modules.Reclamos.DataSets {
         
         private Vistas_VistaGeneralReclamosDataTable tableVistas_VistaGeneralReclamos;
         
+        private Vistas_MisPendientesDataTable tableVistas_MisPendientes;
+        
+        private Vistas_MisReclamosPorFechaDataTable tableVistas_MisReclamosPorFecha;
+        
+        private Vistas_MisReclamosPorEstadoDataTable tableVistas_MisReclamosPorEstado;
+        
+        private Vistas_ReclamosPorTipoDataTable tableVistas_ReclamosPorTipo;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -57,6 +65,18 @@ namespace Modules.Reclamos.DataSets {
                 if ((ds.Tables["Vistas_VistaGeneralReclamos"] != null)) {
                     base.Tables.Add(new Vistas_VistaGeneralReclamosDataTable(ds.Tables["Vistas_VistaGeneralReclamos"]));
                 }
+                if ((ds.Tables["Vistas_MisPendientes"] != null)) {
+                    base.Tables.Add(new Vistas_MisPendientesDataTable(ds.Tables["Vistas_MisPendientes"]));
+                }
+                if ((ds.Tables["Vistas_MisReclamosPorFecha"] != null)) {
+                    base.Tables.Add(new Vistas_MisReclamosPorFechaDataTable(ds.Tables["Vistas_MisReclamosPorFecha"]));
+                }
+                if ((ds.Tables["Vistas_MisReclamosPorEstado"] != null)) {
+                    base.Tables.Add(new Vistas_MisReclamosPorEstadoDataTable(ds.Tables["Vistas_MisReclamosPorEstado"]));
+                }
+                if ((ds.Tables["Vistas_ReclamosPorTipo"] != null)) {
+                    base.Tables.Add(new Vistas_ReclamosPorTipoDataTable(ds.Tables["Vistas_ReclamosPorTipo"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -82,6 +102,46 @@ namespace Modules.Reclamos.DataSets {
         public Vistas_VistaGeneralReclamosDataTable Vistas_VistaGeneralReclamos {
             get {
                 return this.tableVistas_VistaGeneralReclamos;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public Vistas_MisPendientesDataTable Vistas_MisPendientes {
+            get {
+                return this.tableVistas_MisPendientes;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public Vistas_MisReclamosPorFechaDataTable Vistas_MisReclamosPorFecha {
+            get {
+                return this.tableVistas_MisReclamosPorFecha;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public Vistas_MisReclamosPorEstadoDataTable Vistas_MisReclamosPorEstado {
+            get {
+                return this.tableVistas_MisReclamosPorEstado;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public Vistas_ReclamosPorTipoDataTable Vistas_ReclamosPorTipo {
+            get {
+                return this.tableVistas_ReclamosPorTipo;
             }
         }
         
@@ -155,6 +215,18 @@ namespace Modules.Reclamos.DataSets {
                 if ((ds.Tables["Vistas_VistaGeneralReclamos"] != null)) {
                     base.Tables.Add(new Vistas_VistaGeneralReclamosDataTable(ds.Tables["Vistas_VistaGeneralReclamos"]));
                 }
+                if ((ds.Tables["Vistas_MisPendientes"] != null)) {
+                    base.Tables.Add(new Vistas_MisPendientesDataTable(ds.Tables["Vistas_MisPendientes"]));
+                }
+                if ((ds.Tables["Vistas_MisReclamosPorFecha"] != null)) {
+                    base.Tables.Add(new Vistas_MisReclamosPorFechaDataTable(ds.Tables["Vistas_MisReclamosPorFecha"]));
+                }
+                if ((ds.Tables["Vistas_MisReclamosPorEstado"] != null)) {
+                    base.Tables.Add(new Vistas_MisReclamosPorEstadoDataTable(ds.Tables["Vistas_MisReclamosPorEstado"]));
+                }
+                if ((ds.Tables["Vistas_ReclamosPorTipo"] != null)) {
+                    base.Tables.Add(new Vistas_ReclamosPorTipoDataTable(ds.Tables["Vistas_ReclamosPorTipo"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -194,6 +266,30 @@ namespace Modules.Reclamos.DataSets {
                     this.tableVistas_VistaGeneralReclamos.InitVars();
                 }
             }
+            this.tableVistas_MisPendientes = ((Vistas_MisPendientesDataTable)(base.Tables["Vistas_MisPendientes"]));
+            if ((initTable == true)) {
+                if ((this.tableVistas_MisPendientes != null)) {
+                    this.tableVistas_MisPendientes.InitVars();
+                }
+            }
+            this.tableVistas_MisReclamosPorFecha = ((Vistas_MisReclamosPorFechaDataTable)(base.Tables["Vistas_MisReclamosPorFecha"]));
+            if ((initTable == true)) {
+                if ((this.tableVistas_MisReclamosPorFecha != null)) {
+                    this.tableVistas_MisReclamosPorFecha.InitVars();
+                }
+            }
+            this.tableVistas_MisReclamosPorEstado = ((Vistas_MisReclamosPorEstadoDataTable)(base.Tables["Vistas_MisReclamosPorEstado"]));
+            if ((initTable == true)) {
+                if ((this.tableVistas_MisReclamosPorEstado != null)) {
+                    this.tableVistas_MisReclamosPorEstado.InitVars();
+                }
+            }
+            this.tableVistas_ReclamosPorTipo = ((Vistas_ReclamosPorTipoDataTable)(base.Tables["Vistas_ReclamosPorTipo"]));
+            if ((initTable == true)) {
+                if ((this.tableVistas_ReclamosPorTipo != null)) {
+                    this.tableVistas_ReclamosPorTipo.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -206,11 +302,43 @@ namespace Modules.Reclamos.DataSets {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableVistas_VistaGeneralReclamos = new Vistas_VistaGeneralReclamosDataTable();
             base.Tables.Add(this.tableVistas_VistaGeneralReclamos);
+            this.tableVistas_MisPendientes = new Vistas_MisPendientesDataTable();
+            base.Tables.Add(this.tableVistas_MisPendientes);
+            this.tableVistas_MisReclamosPorFecha = new Vistas_MisReclamosPorFechaDataTable();
+            base.Tables.Add(this.tableVistas_MisReclamosPorFecha);
+            this.tableVistas_MisReclamosPorEstado = new Vistas_MisReclamosPorEstadoDataTable();
+            base.Tables.Add(this.tableVistas_MisReclamosPorEstado);
+            this.tableVistas_ReclamosPorTipo = new Vistas_ReclamosPorTipoDataTable();
+            base.Tables.Add(this.tableVistas_ReclamosPorTipo);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeVistas_VistaGeneralReclamos() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeVistas_MisPendientes() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeVistas_MisReclamosPorFecha() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeVistas_MisReclamosPorEstado() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeVistas_ReclamosPorTipo() {
             return false;
         }
         
@@ -271,6 +399,18 @@ namespace Modules.Reclamos.DataSets {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void Vistas_VistaGeneralReclamosRowChangeEventHandler(object sender, Vistas_VistaGeneralReclamosRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void Vistas_MisPendientesRowChangeEventHandler(object sender, Vistas_MisPendientesRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void Vistas_MisReclamosPorFechaRowChangeEventHandler(object sender, Vistas_MisReclamosPorFechaRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void Vistas_MisReclamosPorEstadoRowChangeEventHandler(object sender, Vistas_MisReclamosPorEstadoRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void Vistas_ReclamosPorTipoRowChangeEventHandler(object sender, Vistas_ReclamosPorTipoRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -668,6 +808,1659 @@ namespace Modules.Reclamos.DataSets {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class Vistas_MisPendientesDataTable : global::System.Data.TypedTableBase<Vistas_MisPendientesRow> {
+            
+            private global::System.Data.DataColumn columnIdReclamo;
+            
+            private global::System.Data.DataColumn columnAsesor;
+            
+            private global::System.Data.DataColumn columnTipoReclamo;
+            
+            private global::System.Data.DataColumn columnNumeroReclamo;
+            
+            private global::System.Data.DataColumn columnEstado;
+            
+            private global::System.Data.DataColumn columnTotalCostos;
+            
+            private global::System.Data.DataColumn columnFechaReclamo;
+            
+            private global::System.Data.DataColumn columnDescripcionProducto;
+            
+            private global::System.Data.DataColumn columnDescripcionServicio;
+            
+            private global::System.Data.DataColumn columnDescripcionReclamo;
+            
+            private global::System.Data.DataColumn columnUrlReclamo;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Vistas_MisPendientesDataTable() {
+                this.TableName = "Vistas_MisPendientes";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal Vistas_MisPendientesDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected Vistas_MisPendientesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IdReclamoColumn {
+                get {
+                    return this.columnIdReclamo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AsesorColumn {
+                get {
+                    return this.columnAsesor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TipoReclamoColumn {
+                get {
+                    return this.columnTipoReclamo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NumeroReclamoColumn {
+                get {
+                    return this.columnNumeroReclamo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EstadoColumn {
+                get {
+                    return this.columnEstado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TotalCostosColumn {
+                get {
+                    return this.columnTotalCostos;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FechaReclamoColumn {
+                get {
+                    return this.columnFechaReclamo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DescripcionProductoColumn {
+                get {
+                    return this.columnDescripcionProducto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DescripcionServicioColumn {
+                get {
+                    return this.columnDescripcionServicio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DescripcionReclamoColumn {
+                get {
+                    return this.columnDescripcionReclamo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn UrlReclamoColumn {
+                get {
+                    return this.columnUrlReclamo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Vistas_MisPendientesRow this[int index] {
+                get {
+                    return ((Vistas_MisPendientesRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Vistas_MisPendientesRowChangeEventHandler Vistas_MisPendientesRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Vistas_MisPendientesRowChangeEventHandler Vistas_MisPendientesRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Vistas_MisPendientesRowChangeEventHandler Vistas_MisPendientesRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Vistas_MisPendientesRowChangeEventHandler Vistas_MisPendientesRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddVistas_MisPendientesRow(Vistas_MisPendientesRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Vistas_MisPendientesRow AddVistas_MisPendientesRow(decimal IdReclamo, string Asesor, string TipoReclamo, string NumeroReclamo, string Estado, decimal TotalCostos, System.DateTime FechaReclamo, string DescripcionProducto, string DescripcionServicio, string DescripcionReclamo, string UrlReclamo) {
+                Vistas_MisPendientesRow rowVistas_MisPendientesRow = ((Vistas_MisPendientesRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        IdReclamo,
+                        Asesor,
+                        TipoReclamo,
+                        NumeroReclamo,
+                        Estado,
+                        TotalCostos,
+                        FechaReclamo,
+                        DescripcionProducto,
+                        DescripcionServicio,
+                        DescripcionReclamo,
+                        UrlReclamo};
+                rowVistas_MisPendientesRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowVistas_MisPendientesRow);
+                return rowVistas_MisPendientesRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                Vistas_MisPendientesDataTable cln = ((Vistas_MisPendientesDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new Vistas_MisPendientesDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnIdReclamo = base.Columns["IdReclamo"];
+                this.columnAsesor = base.Columns["Asesor"];
+                this.columnTipoReclamo = base.Columns["TipoReclamo"];
+                this.columnNumeroReclamo = base.Columns["NumeroReclamo"];
+                this.columnEstado = base.Columns["Estado"];
+                this.columnTotalCostos = base.Columns["TotalCostos"];
+                this.columnFechaReclamo = base.Columns["FechaReclamo"];
+                this.columnDescripcionProducto = base.Columns["DescripcionProducto"];
+                this.columnDescripcionServicio = base.Columns["DescripcionServicio"];
+                this.columnDescripcionReclamo = base.Columns["DescripcionReclamo"];
+                this.columnUrlReclamo = base.Columns["UrlReclamo"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnIdReclamo = new global::System.Data.DataColumn("IdReclamo", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdReclamo);
+                this.columnAsesor = new global::System.Data.DataColumn("Asesor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAsesor);
+                this.columnTipoReclamo = new global::System.Data.DataColumn("TipoReclamo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTipoReclamo);
+                this.columnNumeroReclamo = new global::System.Data.DataColumn("NumeroReclamo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumeroReclamo);
+                this.columnEstado = new global::System.Data.DataColumn("Estado", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEstado);
+                this.columnTotalCostos = new global::System.Data.DataColumn("TotalCostos", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalCostos);
+                this.columnFechaReclamo = new global::System.Data.DataColumn("FechaReclamo", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFechaReclamo);
+                this.columnDescripcionProducto = new global::System.Data.DataColumn("DescripcionProducto", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescripcionProducto);
+                this.columnDescripcionServicio = new global::System.Data.DataColumn("DescripcionServicio", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescripcionServicio);
+                this.columnDescripcionReclamo = new global::System.Data.DataColumn("DescripcionReclamo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescripcionReclamo);
+                this.columnUrlReclamo = new global::System.Data.DataColumn("UrlReclamo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUrlReclamo);
+                this.columnAsesor.MaxLength = 512;
+                this.columnTipoReclamo.MaxLength = 50;
+                this.columnNumeroReclamo.MaxLength = 50;
+                this.columnEstado.MaxLength = 50;
+                this.columnDescripcionProducto.MaxLength = 1024;
+                this.columnDescripcionServicio.MaxLength = 1024;
+                this.columnDescripcionReclamo.MaxLength = 1024;
+                this.columnUrlReclamo.MaxLength = 2048;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Vistas_MisPendientesRow NewVistas_MisPendientesRow() {
+                return ((Vistas_MisPendientesRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new Vistas_MisPendientesRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(Vistas_MisPendientesRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.Vistas_MisPendientesRowChanged != null)) {
+                    this.Vistas_MisPendientesRowChanged(this, new Vistas_MisPendientesRowChangeEvent(((Vistas_MisPendientesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.Vistas_MisPendientesRowChanging != null)) {
+                    this.Vistas_MisPendientesRowChanging(this, new Vistas_MisPendientesRowChangeEvent(((Vistas_MisPendientesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.Vistas_MisPendientesRowDeleted != null)) {
+                    this.Vistas_MisPendientesRowDeleted(this, new Vistas_MisPendientesRowChangeEvent(((Vistas_MisPendientesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.Vistas_MisPendientesRowDeleting != null)) {
+                    this.Vistas_MisPendientesRowDeleting(this, new Vistas_MisPendientesRowChangeEvent(((Vistas_MisPendientesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveVistas_MisPendientesRow(Vistas_MisPendientesRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DS_Report ds = new DS_Report();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "Vistas_MisPendientesDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class Vistas_MisReclamosPorFechaDataTable : global::System.Data.TypedTableBase<Vistas_MisReclamosPorFechaRow> {
+            
+            private global::System.Data.DataColumn columnIdReclamo;
+            
+            private global::System.Data.DataColumn columnAsesor;
+            
+            private global::System.Data.DataColumn columnTipoReclamo;
+            
+            private global::System.Data.DataColumn columnIdMes;
+            
+            private global::System.Data.DataColumn columnMes;
+            
+            private global::System.Data.DataColumn columnNumeroReclamo;
+            
+            private global::System.Data.DataColumn columnEstado;
+            
+            private global::System.Data.DataColumn columnTotalCostos;
+            
+            private global::System.Data.DataColumn columnFechaReclamo;
+            
+            private global::System.Data.DataColumn columnDescripcionProducto;
+            
+            private global::System.Data.DataColumn columnDescripcionServicio;
+            
+            private global::System.Data.DataColumn columnDescripcionReclamo;
+            
+            private global::System.Data.DataColumn columnUrlReclamo;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Vistas_MisReclamosPorFechaDataTable() {
+                this.TableName = "Vistas_MisReclamosPorFecha";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal Vistas_MisReclamosPorFechaDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected Vistas_MisReclamosPorFechaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IdReclamoColumn {
+                get {
+                    return this.columnIdReclamo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AsesorColumn {
+                get {
+                    return this.columnAsesor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TipoReclamoColumn {
+                get {
+                    return this.columnTipoReclamo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IdMesColumn {
+                get {
+                    return this.columnIdMes;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MesColumn {
+                get {
+                    return this.columnMes;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NumeroReclamoColumn {
+                get {
+                    return this.columnNumeroReclamo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EstadoColumn {
+                get {
+                    return this.columnEstado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TotalCostosColumn {
+                get {
+                    return this.columnTotalCostos;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FechaReclamoColumn {
+                get {
+                    return this.columnFechaReclamo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DescripcionProductoColumn {
+                get {
+                    return this.columnDescripcionProducto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DescripcionServicioColumn {
+                get {
+                    return this.columnDescripcionServicio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DescripcionReclamoColumn {
+                get {
+                    return this.columnDescripcionReclamo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn UrlReclamoColumn {
+                get {
+                    return this.columnUrlReclamo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Vistas_MisReclamosPorFechaRow this[int index] {
+                get {
+                    return ((Vistas_MisReclamosPorFechaRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Vistas_MisReclamosPorFechaRowChangeEventHandler Vistas_MisReclamosPorFechaRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Vistas_MisReclamosPorFechaRowChangeEventHandler Vistas_MisReclamosPorFechaRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Vistas_MisReclamosPorFechaRowChangeEventHandler Vistas_MisReclamosPorFechaRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Vistas_MisReclamosPorFechaRowChangeEventHandler Vistas_MisReclamosPorFechaRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddVistas_MisReclamosPorFechaRow(Vistas_MisReclamosPorFechaRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Vistas_MisReclamosPorFechaRow AddVistas_MisReclamosPorFechaRow(decimal IdReclamo, string Asesor, string TipoReclamo, int IdMes, string Mes, string NumeroReclamo, string Estado, decimal TotalCostos, System.DateTime FechaReclamo, string DescripcionProducto, string DescripcionServicio, string DescripcionReclamo, string UrlReclamo) {
+                Vistas_MisReclamosPorFechaRow rowVistas_MisReclamosPorFechaRow = ((Vistas_MisReclamosPorFechaRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        IdReclamo,
+                        Asesor,
+                        TipoReclamo,
+                        IdMes,
+                        Mes,
+                        NumeroReclamo,
+                        Estado,
+                        TotalCostos,
+                        FechaReclamo,
+                        DescripcionProducto,
+                        DescripcionServicio,
+                        DescripcionReclamo,
+                        UrlReclamo};
+                rowVistas_MisReclamosPorFechaRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowVistas_MisReclamosPorFechaRow);
+                return rowVistas_MisReclamosPorFechaRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                Vistas_MisReclamosPorFechaDataTable cln = ((Vistas_MisReclamosPorFechaDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new Vistas_MisReclamosPorFechaDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnIdReclamo = base.Columns["IdReclamo"];
+                this.columnAsesor = base.Columns["Asesor"];
+                this.columnTipoReclamo = base.Columns["TipoReclamo"];
+                this.columnIdMes = base.Columns["IdMes"];
+                this.columnMes = base.Columns["Mes"];
+                this.columnNumeroReclamo = base.Columns["NumeroReclamo"];
+                this.columnEstado = base.Columns["Estado"];
+                this.columnTotalCostos = base.Columns["TotalCostos"];
+                this.columnFechaReclamo = base.Columns["FechaReclamo"];
+                this.columnDescripcionProducto = base.Columns["DescripcionProducto"];
+                this.columnDescripcionServicio = base.Columns["DescripcionServicio"];
+                this.columnDescripcionReclamo = base.Columns["DescripcionReclamo"];
+                this.columnUrlReclamo = base.Columns["UrlReclamo"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnIdReclamo = new global::System.Data.DataColumn("IdReclamo", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdReclamo);
+                this.columnAsesor = new global::System.Data.DataColumn("Asesor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAsesor);
+                this.columnTipoReclamo = new global::System.Data.DataColumn("TipoReclamo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTipoReclamo);
+                this.columnIdMes = new global::System.Data.DataColumn("IdMes", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdMes);
+                this.columnMes = new global::System.Data.DataColumn("Mes", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMes);
+                this.columnNumeroReclamo = new global::System.Data.DataColumn("NumeroReclamo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumeroReclamo);
+                this.columnEstado = new global::System.Data.DataColumn("Estado", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEstado);
+                this.columnTotalCostos = new global::System.Data.DataColumn("TotalCostos", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalCostos);
+                this.columnFechaReclamo = new global::System.Data.DataColumn("FechaReclamo", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFechaReclamo);
+                this.columnDescripcionProducto = new global::System.Data.DataColumn("DescripcionProducto", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescripcionProducto);
+                this.columnDescripcionServicio = new global::System.Data.DataColumn("DescripcionServicio", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescripcionServicio);
+                this.columnDescripcionReclamo = new global::System.Data.DataColumn("DescripcionReclamo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescripcionReclamo);
+                this.columnUrlReclamo = new global::System.Data.DataColumn("UrlReclamo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUrlReclamo);
+                this.columnAsesor.MaxLength = 512;
+                this.columnTipoReclamo.MaxLength = 50;
+                this.columnMes.MaxLength = 50;
+                this.columnNumeroReclamo.MaxLength = 50;
+                this.columnEstado.MaxLength = 50;
+                this.columnDescripcionProducto.MaxLength = 1024;
+                this.columnDescripcionServicio.MaxLength = 1024;
+                this.columnDescripcionReclamo.MaxLength = 1024;
+                this.columnUrlReclamo.MaxLength = 2048;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Vistas_MisReclamosPorFechaRow NewVistas_MisReclamosPorFechaRow() {
+                return ((Vistas_MisReclamosPorFechaRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new Vistas_MisReclamosPorFechaRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(Vistas_MisReclamosPorFechaRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.Vistas_MisReclamosPorFechaRowChanged != null)) {
+                    this.Vistas_MisReclamosPorFechaRowChanged(this, new Vistas_MisReclamosPorFechaRowChangeEvent(((Vistas_MisReclamosPorFechaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.Vistas_MisReclamosPorFechaRowChanging != null)) {
+                    this.Vistas_MisReclamosPorFechaRowChanging(this, new Vistas_MisReclamosPorFechaRowChangeEvent(((Vistas_MisReclamosPorFechaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.Vistas_MisReclamosPorFechaRowDeleted != null)) {
+                    this.Vistas_MisReclamosPorFechaRowDeleted(this, new Vistas_MisReclamosPorFechaRowChangeEvent(((Vistas_MisReclamosPorFechaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.Vistas_MisReclamosPorFechaRowDeleting != null)) {
+                    this.Vistas_MisReclamosPorFechaRowDeleting(this, new Vistas_MisReclamosPorFechaRowChangeEvent(((Vistas_MisReclamosPorFechaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveVistas_MisReclamosPorFechaRow(Vistas_MisReclamosPorFechaRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DS_Report ds = new DS_Report();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "Vistas_MisReclamosPorFechaDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class Vistas_MisReclamosPorEstadoDataTable : global::System.Data.TypedTableBase<Vistas_MisReclamosPorEstadoRow> {
+            
+            private global::System.Data.DataColumn columnIdReclamo;
+            
+            private global::System.Data.DataColumn columnAsesor;
+            
+            private global::System.Data.DataColumn columnTipoReclamo;
+            
+            private global::System.Data.DataColumn columnIdMes;
+            
+            private global::System.Data.DataColumn columnMes;
+            
+            private global::System.Data.DataColumn columnNumeroReclamo;
+            
+            private global::System.Data.DataColumn columnEstado;
+            
+            private global::System.Data.DataColumn columnTotalCostos;
+            
+            private global::System.Data.DataColumn columnFechaReclamo;
+            
+            private global::System.Data.DataColumn columnDescripcionProducto;
+            
+            private global::System.Data.DataColumn columnDescripcionServicio;
+            
+            private global::System.Data.DataColumn columnDescripcionReclamo;
+            
+            private global::System.Data.DataColumn columnUrlReclamo;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Vistas_MisReclamosPorEstadoDataTable() {
+                this.TableName = "Vistas_MisReclamosPorEstado";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal Vistas_MisReclamosPorEstadoDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected Vistas_MisReclamosPorEstadoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IdReclamoColumn {
+                get {
+                    return this.columnIdReclamo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AsesorColumn {
+                get {
+                    return this.columnAsesor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TipoReclamoColumn {
+                get {
+                    return this.columnTipoReclamo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IdMesColumn {
+                get {
+                    return this.columnIdMes;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MesColumn {
+                get {
+                    return this.columnMes;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NumeroReclamoColumn {
+                get {
+                    return this.columnNumeroReclamo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EstadoColumn {
+                get {
+                    return this.columnEstado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TotalCostosColumn {
+                get {
+                    return this.columnTotalCostos;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FechaReclamoColumn {
+                get {
+                    return this.columnFechaReclamo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DescripcionProductoColumn {
+                get {
+                    return this.columnDescripcionProducto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DescripcionServicioColumn {
+                get {
+                    return this.columnDescripcionServicio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DescripcionReclamoColumn {
+                get {
+                    return this.columnDescripcionReclamo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn UrlReclamoColumn {
+                get {
+                    return this.columnUrlReclamo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Vistas_MisReclamosPorEstadoRow this[int index] {
+                get {
+                    return ((Vistas_MisReclamosPorEstadoRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Vistas_MisReclamosPorEstadoRowChangeEventHandler Vistas_MisReclamosPorEstadoRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Vistas_MisReclamosPorEstadoRowChangeEventHandler Vistas_MisReclamosPorEstadoRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Vistas_MisReclamosPorEstadoRowChangeEventHandler Vistas_MisReclamosPorEstadoRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Vistas_MisReclamosPorEstadoRowChangeEventHandler Vistas_MisReclamosPorEstadoRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddVistas_MisReclamosPorEstadoRow(Vistas_MisReclamosPorEstadoRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Vistas_MisReclamosPorEstadoRow AddVistas_MisReclamosPorEstadoRow(decimal IdReclamo, string Asesor, string TipoReclamo, int IdMes, string Mes, string NumeroReclamo, string Estado, decimal TotalCostos, System.DateTime FechaReclamo, string DescripcionProducto, string DescripcionServicio, string DescripcionReclamo, string UrlReclamo) {
+                Vistas_MisReclamosPorEstadoRow rowVistas_MisReclamosPorEstadoRow = ((Vistas_MisReclamosPorEstadoRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        IdReclamo,
+                        Asesor,
+                        TipoReclamo,
+                        IdMes,
+                        Mes,
+                        NumeroReclamo,
+                        Estado,
+                        TotalCostos,
+                        FechaReclamo,
+                        DescripcionProducto,
+                        DescripcionServicio,
+                        DescripcionReclamo,
+                        UrlReclamo};
+                rowVistas_MisReclamosPorEstadoRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowVistas_MisReclamosPorEstadoRow);
+                return rowVistas_MisReclamosPorEstadoRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                Vistas_MisReclamosPorEstadoDataTable cln = ((Vistas_MisReclamosPorEstadoDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new Vistas_MisReclamosPorEstadoDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnIdReclamo = base.Columns["IdReclamo"];
+                this.columnAsesor = base.Columns["Asesor"];
+                this.columnTipoReclamo = base.Columns["TipoReclamo"];
+                this.columnIdMes = base.Columns["IdMes"];
+                this.columnMes = base.Columns["Mes"];
+                this.columnNumeroReclamo = base.Columns["NumeroReclamo"];
+                this.columnEstado = base.Columns["Estado"];
+                this.columnTotalCostos = base.Columns["TotalCostos"];
+                this.columnFechaReclamo = base.Columns["FechaReclamo"];
+                this.columnDescripcionProducto = base.Columns["DescripcionProducto"];
+                this.columnDescripcionServicio = base.Columns["DescripcionServicio"];
+                this.columnDescripcionReclamo = base.Columns["DescripcionReclamo"];
+                this.columnUrlReclamo = base.Columns["UrlReclamo"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnIdReclamo = new global::System.Data.DataColumn("IdReclamo", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdReclamo);
+                this.columnAsesor = new global::System.Data.DataColumn("Asesor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAsesor);
+                this.columnTipoReclamo = new global::System.Data.DataColumn("TipoReclamo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTipoReclamo);
+                this.columnIdMes = new global::System.Data.DataColumn("IdMes", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdMes);
+                this.columnMes = new global::System.Data.DataColumn("Mes", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMes);
+                this.columnNumeroReclamo = new global::System.Data.DataColumn("NumeroReclamo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumeroReclamo);
+                this.columnEstado = new global::System.Data.DataColumn("Estado", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEstado);
+                this.columnTotalCostos = new global::System.Data.DataColumn("TotalCostos", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalCostos);
+                this.columnFechaReclamo = new global::System.Data.DataColumn("FechaReclamo", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFechaReclamo);
+                this.columnDescripcionProducto = new global::System.Data.DataColumn("DescripcionProducto", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescripcionProducto);
+                this.columnDescripcionServicio = new global::System.Data.DataColumn("DescripcionServicio", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescripcionServicio);
+                this.columnDescripcionReclamo = new global::System.Data.DataColumn("DescripcionReclamo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescripcionReclamo);
+                this.columnUrlReclamo = new global::System.Data.DataColumn("UrlReclamo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUrlReclamo);
+                this.columnAsesor.MaxLength = 512;
+                this.columnTipoReclamo.MaxLength = 50;
+                this.columnMes.MaxLength = 50;
+                this.columnNumeroReclamo.MaxLength = 50;
+                this.columnEstado.MaxLength = 50;
+                this.columnDescripcionProducto.MaxLength = 1024;
+                this.columnDescripcionServicio.MaxLength = 1024;
+                this.columnDescripcionReclamo.MaxLength = 1024;
+                this.columnUrlReclamo.MaxLength = 2048;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Vistas_MisReclamosPorEstadoRow NewVistas_MisReclamosPorEstadoRow() {
+                return ((Vistas_MisReclamosPorEstadoRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new Vistas_MisReclamosPorEstadoRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(Vistas_MisReclamosPorEstadoRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.Vistas_MisReclamosPorEstadoRowChanged != null)) {
+                    this.Vistas_MisReclamosPorEstadoRowChanged(this, new Vistas_MisReclamosPorEstadoRowChangeEvent(((Vistas_MisReclamosPorEstadoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.Vistas_MisReclamosPorEstadoRowChanging != null)) {
+                    this.Vistas_MisReclamosPorEstadoRowChanging(this, new Vistas_MisReclamosPorEstadoRowChangeEvent(((Vistas_MisReclamosPorEstadoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.Vistas_MisReclamosPorEstadoRowDeleted != null)) {
+                    this.Vistas_MisReclamosPorEstadoRowDeleted(this, new Vistas_MisReclamosPorEstadoRowChangeEvent(((Vistas_MisReclamosPorEstadoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.Vistas_MisReclamosPorEstadoRowDeleting != null)) {
+                    this.Vistas_MisReclamosPorEstadoRowDeleting(this, new Vistas_MisReclamosPorEstadoRowChangeEvent(((Vistas_MisReclamosPorEstadoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveVistas_MisReclamosPorEstadoRow(Vistas_MisReclamosPorEstadoRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DS_Report ds = new DS_Report();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "Vistas_MisReclamosPorEstadoDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class Vistas_ReclamosPorTipoDataTable : global::System.Data.TypedTableBase<Vistas_ReclamosPorTipoRow> {
+            
+            private global::System.Data.DataColumn columnIdReclamo;
+            
+            private global::System.Data.DataColumn columnAsesor;
+            
+            private global::System.Data.DataColumn columnTipoReclamo;
+            
+            private global::System.Data.DataColumn columnCategoria;
+            
+            private global::System.Data.DataColumn columnNumeroReclamo;
+            
+            private global::System.Data.DataColumn columnEstado;
+            
+            private global::System.Data.DataColumn columnTotalCostos;
+            
+            private global::System.Data.DataColumn columnFechaReclamo;
+            
+            private global::System.Data.DataColumn columnDescripcionProducto;
+            
+            private global::System.Data.DataColumn columnDescripcionServicio;
+            
+            private global::System.Data.DataColumn columnDescripcionReclamo;
+            
+            private global::System.Data.DataColumn columnUrlReclamo;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Vistas_ReclamosPorTipoDataTable() {
+                this.TableName = "Vistas_ReclamosPorTipo";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal Vistas_ReclamosPorTipoDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected Vistas_ReclamosPorTipoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IdReclamoColumn {
+                get {
+                    return this.columnIdReclamo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AsesorColumn {
+                get {
+                    return this.columnAsesor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TipoReclamoColumn {
+                get {
+                    return this.columnTipoReclamo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CategoriaColumn {
+                get {
+                    return this.columnCategoria;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NumeroReclamoColumn {
+                get {
+                    return this.columnNumeroReclamo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EstadoColumn {
+                get {
+                    return this.columnEstado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TotalCostosColumn {
+                get {
+                    return this.columnTotalCostos;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FechaReclamoColumn {
+                get {
+                    return this.columnFechaReclamo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DescripcionProductoColumn {
+                get {
+                    return this.columnDescripcionProducto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DescripcionServicioColumn {
+                get {
+                    return this.columnDescripcionServicio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DescripcionReclamoColumn {
+                get {
+                    return this.columnDescripcionReclamo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn UrlReclamoColumn {
+                get {
+                    return this.columnUrlReclamo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Vistas_ReclamosPorTipoRow this[int index] {
+                get {
+                    return ((Vistas_ReclamosPorTipoRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Vistas_ReclamosPorTipoRowChangeEventHandler Vistas_ReclamosPorTipoRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Vistas_ReclamosPorTipoRowChangeEventHandler Vistas_ReclamosPorTipoRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Vistas_ReclamosPorTipoRowChangeEventHandler Vistas_ReclamosPorTipoRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Vistas_ReclamosPorTipoRowChangeEventHandler Vistas_ReclamosPorTipoRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddVistas_ReclamosPorTipoRow(Vistas_ReclamosPorTipoRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Vistas_ReclamosPorTipoRow AddVistas_ReclamosPorTipoRow(decimal IdReclamo, string Asesor, string TipoReclamo, string Categoria, string NumeroReclamo, string Estado, decimal TotalCostos, System.DateTime FechaReclamo, string DescripcionProducto, string DescripcionServicio, string DescripcionReclamo, string UrlReclamo) {
+                Vistas_ReclamosPorTipoRow rowVistas_ReclamosPorTipoRow = ((Vistas_ReclamosPorTipoRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        IdReclamo,
+                        Asesor,
+                        TipoReclamo,
+                        Categoria,
+                        NumeroReclamo,
+                        Estado,
+                        TotalCostos,
+                        FechaReclamo,
+                        DescripcionProducto,
+                        DescripcionServicio,
+                        DescripcionReclamo,
+                        UrlReclamo};
+                rowVistas_ReclamosPorTipoRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowVistas_ReclamosPorTipoRow);
+                return rowVistas_ReclamosPorTipoRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                Vistas_ReclamosPorTipoDataTable cln = ((Vistas_ReclamosPorTipoDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new Vistas_ReclamosPorTipoDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnIdReclamo = base.Columns["IdReclamo"];
+                this.columnAsesor = base.Columns["Asesor"];
+                this.columnTipoReclamo = base.Columns["TipoReclamo"];
+                this.columnCategoria = base.Columns["Categoria"];
+                this.columnNumeroReclamo = base.Columns["NumeroReclamo"];
+                this.columnEstado = base.Columns["Estado"];
+                this.columnTotalCostos = base.Columns["TotalCostos"];
+                this.columnFechaReclamo = base.Columns["FechaReclamo"];
+                this.columnDescripcionProducto = base.Columns["DescripcionProducto"];
+                this.columnDescripcionServicio = base.Columns["DescripcionServicio"];
+                this.columnDescripcionReclamo = base.Columns["DescripcionReclamo"];
+                this.columnUrlReclamo = base.Columns["UrlReclamo"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnIdReclamo = new global::System.Data.DataColumn("IdReclamo", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdReclamo);
+                this.columnAsesor = new global::System.Data.DataColumn("Asesor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAsesor);
+                this.columnTipoReclamo = new global::System.Data.DataColumn("TipoReclamo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTipoReclamo);
+                this.columnCategoria = new global::System.Data.DataColumn("Categoria", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCategoria);
+                this.columnNumeroReclamo = new global::System.Data.DataColumn("NumeroReclamo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumeroReclamo);
+                this.columnEstado = new global::System.Data.DataColumn("Estado", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEstado);
+                this.columnTotalCostos = new global::System.Data.DataColumn("TotalCostos", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalCostos);
+                this.columnFechaReclamo = new global::System.Data.DataColumn("FechaReclamo", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFechaReclamo);
+                this.columnDescripcionProducto = new global::System.Data.DataColumn("DescripcionProducto", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescripcionProducto);
+                this.columnDescripcionServicio = new global::System.Data.DataColumn("DescripcionServicio", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescripcionServicio);
+                this.columnDescripcionReclamo = new global::System.Data.DataColumn("DescripcionReclamo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescripcionReclamo);
+                this.columnUrlReclamo = new global::System.Data.DataColumn("UrlReclamo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUrlReclamo);
+                this.columnAsesor.MaxLength = 512;
+                this.columnTipoReclamo.MaxLength = 50;
+                this.columnCategoria.MaxLength = 512;
+                this.columnNumeroReclamo.MaxLength = 50;
+                this.columnEstado.MaxLength = 50;
+                this.columnDescripcionProducto.MaxLength = 1024;
+                this.columnDescripcionServicio.MaxLength = 1024;
+                this.columnDescripcionReclamo.MaxLength = 1024;
+                this.columnUrlReclamo.MaxLength = 2048;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Vistas_ReclamosPorTipoRow NewVistas_ReclamosPorTipoRow() {
+                return ((Vistas_ReclamosPorTipoRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new Vistas_ReclamosPorTipoRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(Vistas_ReclamosPorTipoRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.Vistas_ReclamosPorTipoRowChanged != null)) {
+                    this.Vistas_ReclamosPorTipoRowChanged(this, new Vistas_ReclamosPorTipoRowChangeEvent(((Vistas_ReclamosPorTipoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.Vistas_ReclamosPorTipoRowChanging != null)) {
+                    this.Vistas_ReclamosPorTipoRowChanging(this, new Vistas_ReclamosPorTipoRowChangeEvent(((Vistas_ReclamosPorTipoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.Vistas_ReclamosPorTipoRowDeleted != null)) {
+                    this.Vistas_ReclamosPorTipoRowDeleted(this, new Vistas_ReclamosPorTipoRowChangeEvent(((Vistas_ReclamosPorTipoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.Vistas_ReclamosPorTipoRowDeleting != null)) {
+                    this.Vistas_ReclamosPorTipoRowDeleting(this, new Vistas_ReclamosPorTipoRowChangeEvent(((Vistas_ReclamosPorTipoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveVistas_ReclamosPorTipoRow(Vistas_ReclamosPorTipoRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DS_Report ds = new DS_Report();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "Vistas_ReclamosPorTipoDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class Vistas_VistaGeneralReclamosRow : global::System.Data.DataRow {
@@ -1000,6 +2793,1463 @@ namespace Modules.Reclamos.DataSets {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class Vistas_MisPendientesRow : global::System.Data.DataRow {
+            
+            private Vistas_MisPendientesDataTable tableVistas_MisPendientes;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal Vistas_MisPendientesRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableVistas_MisPendientes = ((Vistas_MisPendientesDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal IdReclamo {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableVistas_MisPendientes.IdReclamoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IdReclamo\' in table \'Vistas_MisPendientes\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisPendientes.IdReclamoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Asesor {
+                get {
+                    try {
+                        return ((string)(this[this.tableVistas_MisPendientes.AsesorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Asesor\' in table \'Vistas_MisPendientes\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisPendientes.AsesorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TipoReclamo {
+                get {
+                    try {
+                        return ((string)(this[this.tableVistas_MisPendientes.TipoReclamoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TipoReclamo\' in table \'Vistas_MisPendientes\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisPendientes.TipoReclamoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NumeroReclamo {
+                get {
+                    try {
+                        return ((string)(this[this.tableVistas_MisPendientes.NumeroReclamoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NumeroReclamo\' in table \'Vistas_MisPendientes\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisPendientes.NumeroReclamoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Estado {
+                get {
+                    try {
+                        return ((string)(this[this.tableVistas_MisPendientes.EstadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Estado\' in table \'Vistas_MisPendientes\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisPendientes.EstadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal TotalCostos {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableVistas_MisPendientes.TotalCostosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TotalCostos\' in table \'Vistas_MisPendientes\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisPendientes.TotalCostosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime FechaReclamo {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableVistas_MisPendientes.FechaReclamoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FechaReclamo\' in table \'Vistas_MisPendientes\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisPendientes.FechaReclamoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DescripcionProducto {
+                get {
+                    try {
+                        return ((string)(this[this.tableVistas_MisPendientes.DescripcionProductoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DescripcionProducto\' in table \'Vistas_MisPendientes\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisPendientes.DescripcionProductoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DescripcionServicio {
+                get {
+                    try {
+                        return ((string)(this[this.tableVistas_MisPendientes.DescripcionServicioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DescripcionServicio\' in table \'Vistas_MisPendientes\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisPendientes.DescripcionServicioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DescripcionReclamo {
+                get {
+                    try {
+                        return ((string)(this[this.tableVistas_MisPendientes.DescripcionReclamoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DescripcionReclamo\' in table \'Vistas_MisPendientes\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisPendientes.DescripcionReclamoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string UrlReclamo {
+                get {
+                    try {
+                        return ((string)(this[this.tableVistas_MisPendientes.UrlReclamoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'UrlReclamo\' in table \'Vistas_MisPendientes\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisPendientes.UrlReclamoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsIdReclamoNull() {
+                return this.IsNull(this.tableVistas_MisPendientes.IdReclamoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetIdReclamoNull() {
+                this[this.tableVistas_MisPendientes.IdReclamoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAsesorNull() {
+                return this.IsNull(this.tableVistas_MisPendientes.AsesorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAsesorNull() {
+                this[this.tableVistas_MisPendientes.AsesorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTipoReclamoNull() {
+                return this.IsNull(this.tableVistas_MisPendientes.TipoReclamoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTipoReclamoNull() {
+                this[this.tableVistas_MisPendientes.TipoReclamoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNumeroReclamoNull() {
+                return this.IsNull(this.tableVistas_MisPendientes.NumeroReclamoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNumeroReclamoNull() {
+                this[this.tableVistas_MisPendientes.NumeroReclamoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEstadoNull() {
+                return this.IsNull(this.tableVistas_MisPendientes.EstadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEstadoNull() {
+                this[this.tableVistas_MisPendientes.EstadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTotalCostosNull() {
+                return this.IsNull(this.tableVistas_MisPendientes.TotalCostosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTotalCostosNull() {
+                this[this.tableVistas_MisPendientes.TotalCostosColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFechaReclamoNull() {
+                return this.IsNull(this.tableVistas_MisPendientes.FechaReclamoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFechaReclamoNull() {
+                this[this.tableVistas_MisPendientes.FechaReclamoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDescripcionProductoNull() {
+                return this.IsNull(this.tableVistas_MisPendientes.DescripcionProductoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDescripcionProductoNull() {
+                this[this.tableVistas_MisPendientes.DescripcionProductoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDescripcionServicioNull() {
+                return this.IsNull(this.tableVistas_MisPendientes.DescripcionServicioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDescripcionServicioNull() {
+                this[this.tableVistas_MisPendientes.DescripcionServicioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDescripcionReclamoNull() {
+                return this.IsNull(this.tableVistas_MisPendientes.DescripcionReclamoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDescripcionReclamoNull() {
+                this[this.tableVistas_MisPendientes.DescripcionReclamoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsUrlReclamoNull() {
+                return this.IsNull(this.tableVistas_MisPendientes.UrlReclamoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetUrlReclamoNull() {
+                this[this.tableVistas_MisPendientes.UrlReclamoColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class Vistas_MisReclamosPorFechaRow : global::System.Data.DataRow {
+            
+            private Vistas_MisReclamosPorFechaDataTable tableVistas_MisReclamosPorFecha;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal Vistas_MisReclamosPorFechaRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableVistas_MisReclamosPorFecha = ((Vistas_MisReclamosPorFechaDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal IdReclamo {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableVistas_MisReclamosPorFecha.IdReclamoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IdReclamo\' in table \'Vistas_MisReclamosPorFecha\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisReclamosPorFecha.IdReclamoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Asesor {
+                get {
+                    try {
+                        return ((string)(this[this.tableVistas_MisReclamosPorFecha.AsesorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Asesor\' in table \'Vistas_MisReclamosPorFecha\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisReclamosPorFecha.AsesorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TipoReclamo {
+                get {
+                    try {
+                        return ((string)(this[this.tableVistas_MisReclamosPorFecha.TipoReclamoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TipoReclamo\' in table \'Vistas_MisReclamosPorFecha\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisReclamosPorFecha.TipoReclamoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int IdMes {
+                get {
+                    try {
+                        return ((int)(this[this.tableVistas_MisReclamosPorFecha.IdMesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IdMes\' in table \'Vistas_MisReclamosPorFecha\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisReclamosPorFecha.IdMesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Mes {
+                get {
+                    try {
+                        return ((string)(this[this.tableVistas_MisReclamosPorFecha.MesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Mes\' in table \'Vistas_MisReclamosPorFecha\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisReclamosPorFecha.MesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NumeroReclamo {
+                get {
+                    try {
+                        return ((string)(this[this.tableVistas_MisReclamosPorFecha.NumeroReclamoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NumeroReclamo\' in table \'Vistas_MisReclamosPorFecha\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisReclamosPorFecha.NumeroReclamoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Estado {
+                get {
+                    try {
+                        return ((string)(this[this.tableVistas_MisReclamosPorFecha.EstadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Estado\' in table \'Vistas_MisReclamosPorFecha\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisReclamosPorFecha.EstadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal TotalCostos {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableVistas_MisReclamosPorFecha.TotalCostosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TotalCostos\' in table \'Vistas_MisReclamosPorFecha\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisReclamosPorFecha.TotalCostosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime FechaReclamo {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableVistas_MisReclamosPorFecha.FechaReclamoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FechaReclamo\' in table \'Vistas_MisReclamosPorFecha\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisReclamosPorFecha.FechaReclamoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DescripcionProducto {
+                get {
+                    try {
+                        return ((string)(this[this.tableVistas_MisReclamosPorFecha.DescripcionProductoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DescripcionProducto\' in table \'Vistas_MisReclamosPorFecha\' " +
+                                "is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisReclamosPorFecha.DescripcionProductoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DescripcionServicio {
+                get {
+                    try {
+                        return ((string)(this[this.tableVistas_MisReclamosPorFecha.DescripcionServicioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DescripcionServicio\' in table \'Vistas_MisReclamosPorFecha\' " +
+                                "is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisReclamosPorFecha.DescripcionServicioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DescripcionReclamo {
+                get {
+                    try {
+                        return ((string)(this[this.tableVistas_MisReclamosPorFecha.DescripcionReclamoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DescripcionReclamo\' in table \'Vistas_MisReclamosPorFecha\' i" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisReclamosPorFecha.DescripcionReclamoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string UrlReclamo {
+                get {
+                    try {
+                        return ((string)(this[this.tableVistas_MisReclamosPorFecha.UrlReclamoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'UrlReclamo\' in table \'Vistas_MisReclamosPorFecha\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisReclamosPorFecha.UrlReclamoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsIdReclamoNull() {
+                return this.IsNull(this.tableVistas_MisReclamosPorFecha.IdReclamoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetIdReclamoNull() {
+                this[this.tableVistas_MisReclamosPorFecha.IdReclamoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAsesorNull() {
+                return this.IsNull(this.tableVistas_MisReclamosPorFecha.AsesorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAsesorNull() {
+                this[this.tableVistas_MisReclamosPorFecha.AsesorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTipoReclamoNull() {
+                return this.IsNull(this.tableVistas_MisReclamosPorFecha.TipoReclamoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTipoReclamoNull() {
+                this[this.tableVistas_MisReclamosPorFecha.TipoReclamoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsIdMesNull() {
+                return this.IsNull(this.tableVistas_MisReclamosPorFecha.IdMesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetIdMesNull() {
+                this[this.tableVistas_MisReclamosPorFecha.IdMesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMesNull() {
+                return this.IsNull(this.tableVistas_MisReclamosPorFecha.MesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMesNull() {
+                this[this.tableVistas_MisReclamosPorFecha.MesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNumeroReclamoNull() {
+                return this.IsNull(this.tableVistas_MisReclamosPorFecha.NumeroReclamoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNumeroReclamoNull() {
+                this[this.tableVistas_MisReclamosPorFecha.NumeroReclamoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEstadoNull() {
+                return this.IsNull(this.tableVistas_MisReclamosPorFecha.EstadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEstadoNull() {
+                this[this.tableVistas_MisReclamosPorFecha.EstadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTotalCostosNull() {
+                return this.IsNull(this.tableVistas_MisReclamosPorFecha.TotalCostosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTotalCostosNull() {
+                this[this.tableVistas_MisReclamosPorFecha.TotalCostosColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFechaReclamoNull() {
+                return this.IsNull(this.tableVistas_MisReclamosPorFecha.FechaReclamoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFechaReclamoNull() {
+                this[this.tableVistas_MisReclamosPorFecha.FechaReclamoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDescripcionProductoNull() {
+                return this.IsNull(this.tableVistas_MisReclamosPorFecha.DescripcionProductoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDescripcionProductoNull() {
+                this[this.tableVistas_MisReclamosPorFecha.DescripcionProductoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDescripcionServicioNull() {
+                return this.IsNull(this.tableVistas_MisReclamosPorFecha.DescripcionServicioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDescripcionServicioNull() {
+                this[this.tableVistas_MisReclamosPorFecha.DescripcionServicioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDescripcionReclamoNull() {
+                return this.IsNull(this.tableVistas_MisReclamosPorFecha.DescripcionReclamoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDescripcionReclamoNull() {
+                this[this.tableVistas_MisReclamosPorFecha.DescripcionReclamoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsUrlReclamoNull() {
+                return this.IsNull(this.tableVistas_MisReclamosPorFecha.UrlReclamoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetUrlReclamoNull() {
+                this[this.tableVistas_MisReclamosPorFecha.UrlReclamoColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class Vistas_MisReclamosPorEstadoRow : global::System.Data.DataRow {
+            
+            private Vistas_MisReclamosPorEstadoDataTable tableVistas_MisReclamosPorEstado;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal Vistas_MisReclamosPorEstadoRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableVistas_MisReclamosPorEstado = ((Vistas_MisReclamosPorEstadoDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal IdReclamo {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableVistas_MisReclamosPorEstado.IdReclamoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IdReclamo\' in table \'Vistas_MisReclamosPorEstado\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisReclamosPorEstado.IdReclamoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Asesor {
+                get {
+                    try {
+                        return ((string)(this[this.tableVistas_MisReclamosPorEstado.AsesorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Asesor\' in table \'Vistas_MisReclamosPorEstado\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisReclamosPorEstado.AsesorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TipoReclamo {
+                get {
+                    try {
+                        return ((string)(this[this.tableVistas_MisReclamosPorEstado.TipoReclamoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TipoReclamo\' in table \'Vistas_MisReclamosPorEstado\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisReclamosPorEstado.TipoReclamoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int IdMes {
+                get {
+                    try {
+                        return ((int)(this[this.tableVistas_MisReclamosPorEstado.IdMesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IdMes\' in table \'Vistas_MisReclamosPorEstado\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisReclamosPorEstado.IdMesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Mes {
+                get {
+                    try {
+                        return ((string)(this[this.tableVistas_MisReclamosPorEstado.MesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Mes\' in table \'Vistas_MisReclamosPorEstado\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisReclamosPorEstado.MesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NumeroReclamo {
+                get {
+                    try {
+                        return ((string)(this[this.tableVistas_MisReclamosPorEstado.NumeroReclamoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NumeroReclamo\' in table \'Vistas_MisReclamosPorEstado\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisReclamosPorEstado.NumeroReclamoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Estado {
+                get {
+                    try {
+                        return ((string)(this[this.tableVistas_MisReclamosPorEstado.EstadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Estado\' in table \'Vistas_MisReclamosPorEstado\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisReclamosPorEstado.EstadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal TotalCostos {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableVistas_MisReclamosPorEstado.TotalCostosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TotalCostos\' in table \'Vistas_MisReclamosPorEstado\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisReclamosPorEstado.TotalCostosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime FechaReclamo {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableVistas_MisReclamosPorEstado.FechaReclamoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FechaReclamo\' in table \'Vistas_MisReclamosPorEstado\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisReclamosPorEstado.FechaReclamoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DescripcionProducto {
+                get {
+                    try {
+                        return ((string)(this[this.tableVistas_MisReclamosPorEstado.DescripcionProductoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DescripcionProducto\' in table \'Vistas_MisReclamosPorEstado\'" +
+                                " is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisReclamosPorEstado.DescripcionProductoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DescripcionServicio {
+                get {
+                    try {
+                        return ((string)(this[this.tableVistas_MisReclamosPorEstado.DescripcionServicioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DescripcionServicio\' in table \'Vistas_MisReclamosPorEstado\'" +
+                                " is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisReclamosPorEstado.DescripcionServicioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DescripcionReclamo {
+                get {
+                    try {
+                        return ((string)(this[this.tableVistas_MisReclamosPorEstado.DescripcionReclamoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DescripcionReclamo\' in table \'Vistas_MisReclamosPorEstado\' " +
+                                "is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisReclamosPorEstado.DescripcionReclamoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string UrlReclamo {
+                get {
+                    try {
+                        return ((string)(this[this.tableVistas_MisReclamosPorEstado.UrlReclamoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'UrlReclamo\' in table \'Vistas_MisReclamosPorEstado\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_MisReclamosPorEstado.UrlReclamoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsIdReclamoNull() {
+                return this.IsNull(this.tableVistas_MisReclamosPorEstado.IdReclamoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetIdReclamoNull() {
+                this[this.tableVistas_MisReclamosPorEstado.IdReclamoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAsesorNull() {
+                return this.IsNull(this.tableVistas_MisReclamosPorEstado.AsesorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAsesorNull() {
+                this[this.tableVistas_MisReclamosPorEstado.AsesorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTipoReclamoNull() {
+                return this.IsNull(this.tableVistas_MisReclamosPorEstado.TipoReclamoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTipoReclamoNull() {
+                this[this.tableVistas_MisReclamosPorEstado.TipoReclamoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsIdMesNull() {
+                return this.IsNull(this.tableVistas_MisReclamosPorEstado.IdMesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetIdMesNull() {
+                this[this.tableVistas_MisReclamosPorEstado.IdMesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMesNull() {
+                return this.IsNull(this.tableVistas_MisReclamosPorEstado.MesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMesNull() {
+                this[this.tableVistas_MisReclamosPorEstado.MesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNumeroReclamoNull() {
+                return this.IsNull(this.tableVistas_MisReclamosPorEstado.NumeroReclamoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNumeroReclamoNull() {
+                this[this.tableVistas_MisReclamosPorEstado.NumeroReclamoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEstadoNull() {
+                return this.IsNull(this.tableVistas_MisReclamosPorEstado.EstadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEstadoNull() {
+                this[this.tableVistas_MisReclamosPorEstado.EstadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTotalCostosNull() {
+                return this.IsNull(this.tableVistas_MisReclamosPorEstado.TotalCostosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTotalCostosNull() {
+                this[this.tableVistas_MisReclamosPorEstado.TotalCostosColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFechaReclamoNull() {
+                return this.IsNull(this.tableVistas_MisReclamosPorEstado.FechaReclamoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFechaReclamoNull() {
+                this[this.tableVistas_MisReclamosPorEstado.FechaReclamoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDescripcionProductoNull() {
+                return this.IsNull(this.tableVistas_MisReclamosPorEstado.DescripcionProductoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDescripcionProductoNull() {
+                this[this.tableVistas_MisReclamosPorEstado.DescripcionProductoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDescripcionServicioNull() {
+                return this.IsNull(this.tableVistas_MisReclamosPorEstado.DescripcionServicioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDescripcionServicioNull() {
+                this[this.tableVistas_MisReclamosPorEstado.DescripcionServicioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDescripcionReclamoNull() {
+                return this.IsNull(this.tableVistas_MisReclamosPorEstado.DescripcionReclamoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDescripcionReclamoNull() {
+                this[this.tableVistas_MisReclamosPorEstado.DescripcionReclamoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsUrlReclamoNull() {
+                return this.IsNull(this.tableVistas_MisReclamosPorEstado.UrlReclamoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetUrlReclamoNull() {
+                this[this.tableVistas_MisReclamosPorEstado.UrlReclamoColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class Vistas_ReclamosPorTipoRow : global::System.Data.DataRow {
+            
+            private Vistas_ReclamosPorTipoDataTable tableVistas_ReclamosPorTipo;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal Vistas_ReclamosPorTipoRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableVistas_ReclamosPorTipo = ((Vistas_ReclamosPorTipoDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal IdReclamo {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableVistas_ReclamosPorTipo.IdReclamoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IdReclamo\' in table \'Vistas_ReclamosPorTipo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_ReclamosPorTipo.IdReclamoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Asesor {
+                get {
+                    try {
+                        return ((string)(this[this.tableVistas_ReclamosPorTipo.AsesorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Asesor\' in table \'Vistas_ReclamosPorTipo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_ReclamosPorTipo.AsesorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TipoReclamo {
+                get {
+                    try {
+                        return ((string)(this[this.tableVistas_ReclamosPorTipo.TipoReclamoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TipoReclamo\' in table \'Vistas_ReclamosPorTipo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_ReclamosPorTipo.TipoReclamoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Categoria {
+                get {
+                    try {
+                        return ((string)(this[this.tableVistas_ReclamosPorTipo.CategoriaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Categoria\' in table \'Vistas_ReclamosPorTipo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_ReclamosPorTipo.CategoriaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NumeroReclamo {
+                get {
+                    try {
+                        return ((string)(this[this.tableVistas_ReclamosPorTipo.NumeroReclamoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NumeroReclamo\' in table \'Vistas_ReclamosPorTipo\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_ReclamosPorTipo.NumeroReclamoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Estado {
+                get {
+                    try {
+                        return ((string)(this[this.tableVistas_ReclamosPorTipo.EstadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Estado\' in table \'Vistas_ReclamosPorTipo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_ReclamosPorTipo.EstadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal TotalCostos {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableVistas_ReclamosPorTipo.TotalCostosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TotalCostos\' in table \'Vistas_ReclamosPorTipo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_ReclamosPorTipo.TotalCostosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime FechaReclamo {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableVistas_ReclamosPorTipo.FechaReclamoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FechaReclamo\' in table \'Vistas_ReclamosPorTipo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_ReclamosPorTipo.FechaReclamoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DescripcionProducto {
+                get {
+                    try {
+                        return ((string)(this[this.tableVistas_ReclamosPorTipo.DescripcionProductoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DescripcionProducto\' in table \'Vistas_ReclamosPorTipo\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_ReclamosPorTipo.DescripcionProductoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DescripcionServicio {
+                get {
+                    try {
+                        return ((string)(this[this.tableVistas_ReclamosPorTipo.DescripcionServicioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DescripcionServicio\' in table \'Vistas_ReclamosPorTipo\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_ReclamosPorTipo.DescripcionServicioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DescripcionReclamo {
+                get {
+                    try {
+                        return ((string)(this[this.tableVistas_ReclamosPorTipo.DescripcionReclamoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DescripcionReclamo\' in table \'Vistas_ReclamosPorTipo\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_ReclamosPorTipo.DescripcionReclamoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string UrlReclamo {
+                get {
+                    try {
+                        return ((string)(this[this.tableVistas_ReclamosPorTipo.UrlReclamoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'UrlReclamo\' in table \'Vistas_ReclamosPorTipo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistas_ReclamosPorTipo.UrlReclamoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsIdReclamoNull() {
+                return this.IsNull(this.tableVistas_ReclamosPorTipo.IdReclamoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetIdReclamoNull() {
+                this[this.tableVistas_ReclamosPorTipo.IdReclamoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAsesorNull() {
+                return this.IsNull(this.tableVistas_ReclamosPorTipo.AsesorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAsesorNull() {
+                this[this.tableVistas_ReclamosPorTipo.AsesorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTipoReclamoNull() {
+                return this.IsNull(this.tableVistas_ReclamosPorTipo.TipoReclamoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTipoReclamoNull() {
+                this[this.tableVistas_ReclamosPorTipo.TipoReclamoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCategoriaNull() {
+                return this.IsNull(this.tableVistas_ReclamosPorTipo.CategoriaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCategoriaNull() {
+                this[this.tableVistas_ReclamosPorTipo.CategoriaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNumeroReclamoNull() {
+                return this.IsNull(this.tableVistas_ReclamosPorTipo.NumeroReclamoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNumeroReclamoNull() {
+                this[this.tableVistas_ReclamosPorTipo.NumeroReclamoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEstadoNull() {
+                return this.IsNull(this.tableVistas_ReclamosPorTipo.EstadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEstadoNull() {
+                this[this.tableVistas_ReclamosPorTipo.EstadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTotalCostosNull() {
+                return this.IsNull(this.tableVistas_ReclamosPorTipo.TotalCostosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTotalCostosNull() {
+                this[this.tableVistas_ReclamosPorTipo.TotalCostosColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFechaReclamoNull() {
+                return this.IsNull(this.tableVistas_ReclamosPorTipo.FechaReclamoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFechaReclamoNull() {
+                this[this.tableVistas_ReclamosPorTipo.FechaReclamoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDescripcionProductoNull() {
+                return this.IsNull(this.tableVistas_ReclamosPorTipo.DescripcionProductoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDescripcionProductoNull() {
+                this[this.tableVistas_ReclamosPorTipo.DescripcionProductoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDescripcionServicioNull() {
+                return this.IsNull(this.tableVistas_ReclamosPorTipo.DescripcionServicioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDescripcionServicioNull() {
+                this[this.tableVistas_ReclamosPorTipo.DescripcionServicioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDescripcionReclamoNull() {
+                return this.IsNull(this.tableVistas_ReclamosPorTipo.DescripcionReclamoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDescripcionReclamoNull() {
+                this[this.tableVistas_ReclamosPorTipo.DescripcionReclamoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsUrlReclamoNull() {
+                return this.IsNull(this.tableVistas_ReclamosPorTipo.UrlReclamoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetUrlReclamoNull() {
+                this[this.tableVistas_ReclamosPorTipo.UrlReclamoColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1019,6 +4269,142 @@ namespace Modules.Reclamos.DataSets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public Vistas_VistaGeneralReclamosRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class Vistas_MisPendientesRowChangeEvent : global::System.EventArgs {
+            
+            private Vistas_MisPendientesRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Vistas_MisPendientesRowChangeEvent(Vistas_MisPendientesRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Vistas_MisPendientesRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class Vistas_MisReclamosPorFechaRowChangeEvent : global::System.EventArgs {
+            
+            private Vistas_MisReclamosPorFechaRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Vistas_MisReclamosPorFechaRowChangeEvent(Vistas_MisReclamosPorFechaRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Vistas_MisReclamosPorFechaRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class Vistas_MisReclamosPorEstadoRowChangeEvent : global::System.EventArgs {
+            
+            private Vistas_MisReclamosPorEstadoRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Vistas_MisReclamosPorEstadoRowChangeEvent(Vistas_MisReclamosPorEstadoRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Vistas_MisReclamosPorEstadoRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class Vistas_ReclamosPorTipoRowChangeEvent : global::System.EventArgs {
+            
+            private Vistas_ReclamosPorTipoRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Vistas_ReclamosPorTipoRowChangeEvent(Vistas_ReclamosPorTipoRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Vistas_ReclamosPorTipoRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1262,6 +4648,1178 @@ namespace Modules.Reclamos.DataSets.DS_ReportTableAdapters {
                 this.Adapter.SelectCommand.Parameters[4].Value = ((string)(ModuleId));
             }
             DS_Report.Vistas_VistaGeneralReclamosDataTable dataTable = new DS_Report.Vistas_VistaGeneralReclamosDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class Vistas_MisPendientesTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public Vistas_MisPendientesTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Vistas_MisPendientes";
+            tableMapping.ColumnMappings.Add("IdReclamo", "IdReclamo");
+            tableMapping.ColumnMappings.Add("Asesor", "Asesor");
+            tableMapping.ColumnMappings.Add("TipoReclamo", "TipoReclamo");
+            tableMapping.ColumnMappings.Add("NumeroReclamo", "NumeroReclamo");
+            tableMapping.ColumnMappings.Add("Estado", "Estado");
+            tableMapping.ColumnMappings.Add("TotalCostos", "TotalCostos");
+            tableMapping.ColumnMappings.Add("FechaReclamo", "FechaReclamo");
+            tableMapping.ColumnMappings.Add("DescripcionProducto", "DescripcionProducto");
+            tableMapping.ColumnMappings.Add("DescripcionServicio", "DescripcionServicio");
+            tableMapping.ColumnMappings.Add("DescripcionReclamo", "DescripcionReclamo");
+            tableMapping.ColumnMappings.Add("UrlReclamo", "UrlReclamo");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Sika_ConnectionString"].ConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.Vistas_MisPendientes";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateFrom", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateEnd", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ServerHostPath", global::System.Data.SqlDbType.VarChar, 512, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModuleId", global::System.Data.SqlDbType.VarChar, 4, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdResponsable", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NoReclamo", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cliente", global::System.Data.SqlDbType.VarChar, 512, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Producto", global::System.Data.SqlDbType.VarChar, 512, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Servicio", global::System.Data.SqlDbType.VarChar, 512, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DS_Report.Vistas_MisPendientesDataTable dataTable, global::System.Nullable<global::System.DateTime> dateFrom, global::System.Nullable<global::System.DateTime> dateEnd, string ServerHostPath, string ModuleId, global::System.Nullable<int> IdResponsable, string NoReclamo, string Cliente, string Producto, string Servicio) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((dateFrom.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(dateFrom.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((dateEnd.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(dateEnd.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((ServerHostPath == null)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(ServerHostPath));
+            }
+            if ((ModuleId == null)) {
+                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[4].Value = ((string)(ModuleId));
+            }
+            if ((IdResponsable.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[5].Value = ((int)(IdResponsable.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((NoReclamo == null)) {
+                this.Adapter.SelectCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[6].Value = ((string)(NoReclamo));
+            }
+            if ((Cliente == null)) {
+                this.Adapter.SelectCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[7].Value = ((string)(Cliente));
+            }
+            if ((Producto == null)) {
+                this.Adapter.SelectCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[8].Value = ((string)(Producto));
+            }
+            if ((Servicio == null)) {
+                this.Adapter.SelectCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[9].Value = ((string)(Servicio));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DS_Report.Vistas_MisPendientesDataTable GetData(global::System.Nullable<global::System.DateTime> dateFrom, global::System.Nullable<global::System.DateTime> dateEnd, string ServerHostPath, string ModuleId, global::System.Nullable<int> IdResponsable, string NoReclamo, string Cliente, string Producto, string Servicio) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((dateFrom.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(dateFrom.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((dateEnd.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(dateEnd.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((ServerHostPath == null)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(ServerHostPath));
+            }
+            if ((ModuleId == null)) {
+                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[4].Value = ((string)(ModuleId));
+            }
+            if ((IdResponsable.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[5].Value = ((int)(IdResponsable.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((NoReclamo == null)) {
+                this.Adapter.SelectCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[6].Value = ((string)(NoReclamo));
+            }
+            if ((Cliente == null)) {
+                this.Adapter.SelectCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[7].Value = ((string)(Cliente));
+            }
+            if ((Producto == null)) {
+                this.Adapter.SelectCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[8].Value = ((string)(Producto));
+            }
+            if ((Servicio == null)) {
+                this.Adapter.SelectCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[9].Value = ((string)(Servicio));
+            }
+            DS_Report.Vistas_MisPendientesDataTable dataTable = new DS_Report.Vistas_MisPendientesDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class Vistas_MisReclamosPorFechaTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public Vistas_MisReclamosPorFechaTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Vistas_MisReclamosPorFecha";
+            tableMapping.ColumnMappings.Add("IdReclamo", "IdReclamo");
+            tableMapping.ColumnMappings.Add("Asesor", "Asesor");
+            tableMapping.ColumnMappings.Add("TipoReclamo", "TipoReclamo");
+            tableMapping.ColumnMappings.Add("IdMes", "IdMes");
+            tableMapping.ColumnMappings.Add("Mes", "Mes");
+            tableMapping.ColumnMappings.Add("NumeroReclamo", "NumeroReclamo");
+            tableMapping.ColumnMappings.Add("Estado", "Estado");
+            tableMapping.ColumnMappings.Add("TotalCostos", "TotalCostos");
+            tableMapping.ColumnMappings.Add("FechaReclamo", "FechaReclamo");
+            tableMapping.ColumnMappings.Add("DescripcionProducto", "DescripcionProducto");
+            tableMapping.ColumnMappings.Add("DescripcionServicio", "DescripcionServicio");
+            tableMapping.ColumnMappings.Add("DescripcionReclamo", "DescripcionReclamo");
+            tableMapping.ColumnMappings.Add("UrlReclamo", "UrlReclamo");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Sika_ConnectionString"].ConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.Vistas_MisReclamosPorFecha";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateFrom", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateEnd", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ServerHostPath", global::System.Data.SqlDbType.VarChar, 512, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModuleId", global::System.Data.SqlDbType.VarChar, 4, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdCreador", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NoReclamo", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cliente", global::System.Data.SqlDbType.VarChar, 512, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Producto", global::System.Data.SqlDbType.VarChar, 512, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Servicio", global::System.Data.SqlDbType.VarChar, 512, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DS_Report.Vistas_MisReclamosPorFechaDataTable dataTable, global::System.Nullable<global::System.DateTime> dateFrom, global::System.Nullable<global::System.DateTime> dateEnd, string ServerHostPath, string ModuleId, global::System.Nullable<int> IdCreador, string NoReclamo, string Cliente, string Producto, string Servicio) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((dateFrom.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(dateFrom.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((dateEnd.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(dateEnd.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((ServerHostPath == null)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(ServerHostPath));
+            }
+            if ((ModuleId == null)) {
+                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[4].Value = ((string)(ModuleId));
+            }
+            if ((IdCreador.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[5].Value = ((int)(IdCreador.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((NoReclamo == null)) {
+                this.Adapter.SelectCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[6].Value = ((string)(NoReclamo));
+            }
+            if ((Cliente == null)) {
+                this.Adapter.SelectCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[7].Value = ((string)(Cliente));
+            }
+            if ((Producto == null)) {
+                this.Adapter.SelectCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[8].Value = ((string)(Producto));
+            }
+            if ((Servicio == null)) {
+                this.Adapter.SelectCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[9].Value = ((string)(Servicio));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DS_Report.Vistas_MisReclamosPorFechaDataTable GetData(global::System.Nullable<global::System.DateTime> dateFrom, global::System.Nullable<global::System.DateTime> dateEnd, string ServerHostPath, string ModuleId, global::System.Nullable<int> IdCreador, string NoReclamo, string Cliente, string Producto, string Servicio) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((dateFrom.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(dateFrom.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((dateEnd.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(dateEnd.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((ServerHostPath == null)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(ServerHostPath));
+            }
+            if ((ModuleId == null)) {
+                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[4].Value = ((string)(ModuleId));
+            }
+            if ((IdCreador.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[5].Value = ((int)(IdCreador.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((NoReclamo == null)) {
+                this.Adapter.SelectCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[6].Value = ((string)(NoReclamo));
+            }
+            if ((Cliente == null)) {
+                this.Adapter.SelectCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[7].Value = ((string)(Cliente));
+            }
+            if ((Producto == null)) {
+                this.Adapter.SelectCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[8].Value = ((string)(Producto));
+            }
+            if ((Servicio == null)) {
+                this.Adapter.SelectCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[9].Value = ((string)(Servicio));
+            }
+            DS_Report.Vistas_MisReclamosPorFechaDataTable dataTable = new DS_Report.Vistas_MisReclamosPorFechaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class Vistas_MisReclamosPorEstadoTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public Vistas_MisReclamosPorEstadoTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Vistas_MisReclamosPorEstado";
+            tableMapping.ColumnMappings.Add("IdReclamo", "IdReclamo");
+            tableMapping.ColumnMappings.Add("Asesor", "Asesor");
+            tableMapping.ColumnMappings.Add("TipoReclamo", "TipoReclamo");
+            tableMapping.ColumnMappings.Add("IdMes", "IdMes");
+            tableMapping.ColumnMappings.Add("Mes", "Mes");
+            tableMapping.ColumnMappings.Add("NumeroReclamo", "NumeroReclamo");
+            tableMapping.ColumnMappings.Add("Estado", "Estado");
+            tableMapping.ColumnMappings.Add("TotalCostos", "TotalCostos");
+            tableMapping.ColumnMappings.Add("FechaReclamo", "FechaReclamo");
+            tableMapping.ColumnMappings.Add("DescripcionProducto", "DescripcionProducto");
+            tableMapping.ColumnMappings.Add("DescripcionServicio", "DescripcionServicio");
+            tableMapping.ColumnMappings.Add("DescripcionReclamo", "DescripcionReclamo");
+            tableMapping.ColumnMappings.Add("UrlReclamo", "UrlReclamo");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Sika_ConnectionString"].ConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.Vistas_MisReclamosPorEstado";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateFrom", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateEnd", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ServerHostPath", global::System.Data.SqlDbType.VarChar, 512, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModuleId", global::System.Data.SqlDbType.VarChar, 4, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdCreador", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NoReclamo", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cliente", global::System.Data.SqlDbType.VarChar, 512, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Producto", global::System.Data.SqlDbType.VarChar, 512, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Servicio", global::System.Data.SqlDbType.VarChar, 512, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DS_Report.Vistas_MisReclamosPorEstadoDataTable dataTable, global::System.Nullable<global::System.DateTime> dateFrom, global::System.Nullable<global::System.DateTime> dateEnd, string ServerHostPath, string ModuleId, global::System.Nullable<int> IdCreador, string NoReclamo, string Cliente, string Producto, string Servicio) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((dateFrom.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(dateFrom.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((dateEnd.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(dateEnd.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((ServerHostPath == null)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(ServerHostPath));
+            }
+            if ((ModuleId == null)) {
+                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[4].Value = ((string)(ModuleId));
+            }
+            if ((IdCreador.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[5].Value = ((int)(IdCreador.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((NoReclamo == null)) {
+                this.Adapter.SelectCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[6].Value = ((string)(NoReclamo));
+            }
+            if ((Cliente == null)) {
+                this.Adapter.SelectCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[7].Value = ((string)(Cliente));
+            }
+            if ((Producto == null)) {
+                this.Adapter.SelectCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[8].Value = ((string)(Producto));
+            }
+            if ((Servicio == null)) {
+                this.Adapter.SelectCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[9].Value = ((string)(Servicio));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DS_Report.Vistas_MisReclamosPorEstadoDataTable GetData(global::System.Nullable<global::System.DateTime> dateFrom, global::System.Nullable<global::System.DateTime> dateEnd, string ServerHostPath, string ModuleId, global::System.Nullable<int> IdCreador, string NoReclamo, string Cliente, string Producto, string Servicio) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((dateFrom.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(dateFrom.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((dateEnd.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(dateEnd.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((ServerHostPath == null)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(ServerHostPath));
+            }
+            if ((ModuleId == null)) {
+                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[4].Value = ((string)(ModuleId));
+            }
+            if ((IdCreador.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[5].Value = ((int)(IdCreador.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((NoReclamo == null)) {
+                this.Adapter.SelectCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[6].Value = ((string)(NoReclamo));
+            }
+            if ((Cliente == null)) {
+                this.Adapter.SelectCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[7].Value = ((string)(Cliente));
+            }
+            if ((Producto == null)) {
+                this.Adapter.SelectCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[8].Value = ((string)(Producto));
+            }
+            if ((Servicio == null)) {
+                this.Adapter.SelectCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[9].Value = ((string)(Servicio));
+            }
+            DS_Report.Vistas_MisReclamosPorEstadoDataTable dataTable = new DS_Report.Vistas_MisReclamosPorEstadoDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class Vistas_ReclamosPorTipoTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public Vistas_ReclamosPorTipoTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Vistas_ReclamosPorTipo";
+            tableMapping.ColumnMappings.Add("IdReclamo", "IdReclamo");
+            tableMapping.ColumnMappings.Add("Asesor", "Asesor");
+            tableMapping.ColumnMappings.Add("TipoReclamo", "TipoReclamo");
+            tableMapping.ColumnMappings.Add("Categoria", "Categoria");
+            tableMapping.ColumnMappings.Add("NumeroReclamo", "NumeroReclamo");
+            tableMapping.ColumnMappings.Add("Estado", "Estado");
+            tableMapping.ColumnMappings.Add("TotalCostos", "TotalCostos");
+            tableMapping.ColumnMappings.Add("FechaReclamo", "FechaReclamo");
+            tableMapping.ColumnMappings.Add("DescripcionProducto", "DescripcionProducto");
+            tableMapping.ColumnMappings.Add("DescripcionServicio", "DescripcionServicio");
+            tableMapping.ColumnMappings.Add("DescripcionReclamo", "DescripcionReclamo");
+            tableMapping.ColumnMappings.Add("UrlReclamo", "UrlReclamo");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Sika_ConnectionString"].ConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.Vistas_ReclamosPorTipo";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateFrom", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateEnd", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ServerHostPath", global::System.Data.SqlDbType.VarChar, 512, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModuleId", global::System.Data.SqlDbType.VarChar, 4, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NoReclamo", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cliente", global::System.Data.SqlDbType.VarChar, 512, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Producto", global::System.Data.SqlDbType.VarChar, 512, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Servicio", global::System.Data.SqlDbType.VarChar, 512, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DS_Report.Vistas_ReclamosPorTipoDataTable dataTable, global::System.Nullable<global::System.DateTime> dateFrom, global::System.Nullable<global::System.DateTime> dateEnd, string ServerHostPath, string ModuleId, string NoReclamo, string Cliente, string Producto, string Servicio) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((dateFrom.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(dateFrom.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((dateEnd.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(dateEnd.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((ServerHostPath == null)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(ServerHostPath));
+            }
+            if ((ModuleId == null)) {
+                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[4].Value = ((string)(ModuleId));
+            }
+            if ((NoReclamo == null)) {
+                this.Adapter.SelectCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[5].Value = ((string)(NoReclamo));
+            }
+            if ((Cliente == null)) {
+                this.Adapter.SelectCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[6].Value = ((string)(Cliente));
+            }
+            if ((Producto == null)) {
+                this.Adapter.SelectCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[7].Value = ((string)(Producto));
+            }
+            if ((Servicio == null)) {
+                this.Adapter.SelectCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[8].Value = ((string)(Servicio));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DS_Report.Vistas_ReclamosPorTipoDataTable GetData(global::System.Nullable<global::System.DateTime> dateFrom, global::System.Nullable<global::System.DateTime> dateEnd, string ServerHostPath, string ModuleId, string NoReclamo, string Cliente, string Producto, string Servicio) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((dateFrom.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(dateFrom.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((dateEnd.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(dateEnd.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((ServerHostPath == null)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(ServerHostPath));
+            }
+            if ((ModuleId == null)) {
+                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[4].Value = ((string)(ModuleId));
+            }
+            if ((NoReclamo == null)) {
+                this.Adapter.SelectCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[5].Value = ((string)(NoReclamo));
+            }
+            if ((Cliente == null)) {
+                this.Adapter.SelectCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[6].Value = ((string)(Cliente));
+            }
+            if ((Producto == null)) {
+                this.Adapter.SelectCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[7].Value = ((string)(Producto));
+            }
+            if ((Servicio == null)) {
+                this.Adapter.SelectCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[8].Value = ((string)(Servicio));
+            }
+            DS_Report.Vistas_ReclamosPorTipoDataTable dataTable = new DS_Report.Vistas_ReclamosPorTipoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

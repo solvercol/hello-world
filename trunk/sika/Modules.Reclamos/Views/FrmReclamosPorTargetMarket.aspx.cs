@@ -7,9 +7,9 @@ using Microsoft.Reporting.WebForms;
 using Presenters.Reclamos.IViews;
 using Presenters.Reclamos.Presenters;
 
-namespace Modules.Reclamos.Admin
+namespace Modules.Reclamos.Views
 {
-    public partial class FrmListaGeneralReclamos : ViewPage<ListaGeneralReclamosPresenter, IListaGeneralReclamosView>, IListaGeneralReclamosView
+    public partial class FrmReclamosPorTargetMarket : ViewPage<ReclamosPorTargetMarketPresenter, IReclamosPorTargetMarketView>, IReclamosPorTargetMarketView
     {
         #region Page Events
 
@@ -17,7 +17,7 @@ namespace Modules.Reclamos.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ImprimirTituloVentana("Vista General de Reclamos");
+            ImprimirTituloVentana("Reclamos Por Target Market");
         }
 
         #endregion
@@ -39,7 +39,7 @@ namespace Modules.Reclamos.Admin
             else
             {
                 Response.Redirect(string.Format("FrmAddReclamo.aspx?ModuleId={0}&tr={1}&cat={2}&gruinf={3}",
-                                                ModuleId,TipoReclamo,IdCategoriaReclamo,IdGrupoInformacion
+                                                ModuleId, TipoReclamo, IdCategoriaReclamo, IdGrupoInformacion
                                                 ));
             }
         }
@@ -253,7 +253,7 @@ namespace Modules.Reclamos.Admin
         }
 
         #endregion
-        
+
         #endregion
     }
 }

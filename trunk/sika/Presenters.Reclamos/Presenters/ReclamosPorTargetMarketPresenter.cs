@@ -9,12 +9,12 @@ using Presenters.Reclamos.IViews;
 
 namespace Presenters.Reclamos.Presenters
 {
-    public class ListaGeneralReclamosPresenter : Presenter<IListaGeneralReclamosView>
+    public class ReclamosPorTargetMarketPresenter : Presenter<IReclamosPorTargetMarketView>
     {
         readonly ISfTBL_ModuloReclamos_CategoriasReclamoManagementServices _categoriasReclamoService;
         readonly IReclamosAdoService _recladoAdoService;
 
-        public ListaGeneralReclamosPresenter(ISfTBL_ModuloReclamos_CategoriasReclamoManagementServices categoriasReclamoService
+        public ReclamosPorTargetMarketPresenter(ISfTBL_ModuloReclamos_CategoriasReclamoManagementServices categoriasReclamoService
                                             ,IReclamosAdoService recladoAdoService)
         {
             _categoriasReclamoService = categoriasReclamoService;

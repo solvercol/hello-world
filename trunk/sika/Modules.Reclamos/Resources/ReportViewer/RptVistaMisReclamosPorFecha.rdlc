@@ -24,6 +24,14 @@
           <DataField>TipoReclamo</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="IdMes">
+          <DataField>IdMes</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Mes">
+          <DataField>Mes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="NumeroReclamo">
           <DataField>NumeroReclamo</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -64,10 +72,10 @@
       <rd:DataSetInfo>
         <rd:DataSetName>DS_Report</rd:DataSetName>
         <rd:SchemaPath>E:\DEV\Sika\Dev\V1\Modules.Reclamos\DataSets\DS_Report.xsd</rd:SchemaPath>
-        <rd:TableName>Vistas_VistaGeneralReclamos</rd:TableName>
+        <rd:TableName>Vistas_MisReclamosPorFecha</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>Vistas_VistaGeneralReclamosTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>Vistas_MisReclamosPorFechaTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -77,10 +85,10 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.21342in</Width>
+              <Width>1.11967in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.85925in</Width>
+              <Width>0.73425in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.08169in</Width>
@@ -373,14 +381,14 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Asesor">
+                    <Textbox Name="TipoReclamo1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Asesor.Value</Value>
+                              <Value>=Fields!TipoReclamo.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -391,7 +399,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Asesor</rd:DefaultName>
+                      <rd:DefaultName>TipoReclamo1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -659,14 +667,14 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="TipoReclamo">
+                    <Textbox Name="Mes">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!TipoReclamo.Value</Value>
+                              <Value>=Fields!Mes.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -679,7 +687,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>TipoReclamo</rd:DefaultName>
+                      <rd:DefaultName>Mes</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -1475,7 +1483,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1542,12 +1549,12 @@
             <TablixMember>
               <Group Name="Asesor">
                 <GroupExpressions>
-                  <GroupExpression>=Fields!Asesor.Value</GroupExpression>
+                  <GroupExpression>=Fields!TipoReclamo.Value</GroupExpression>
                 </GroupExpressions>
               </Group>
               <SortExpressions>
                 <SortExpression>
-                  <Value>=Fields!Asesor.Value</Value>
+                  <Value>=Fields!TipoReclamo.Value</Value>
                 </SortExpression>
               </SortExpressions>
               <TablixMembers>
@@ -1555,12 +1562,12 @@
                 <TablixMember>
                   <Group Name="TipoReclamo">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!TipoReclamo.Value</GroupExpression>
+                      <GroupExpression>=Fields!Mes.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!TipoReclamo.Value</Value>
+                      <Value>=Fields!IdMes.Value</Value>
                     </SortExpression>
                   </SortExpressions>
                   <TablixMembers>
@@ -1583,13 +1590,13 @@
                       </TablixMembers>
                       <Visibility>
                         <Hidden>true</Hidden>
-                        <ToggleItem>TipoReclamo</ToggleItem>
+                        <ToggleItem>Mes</ToggleItem>
                       </Visibility>
                     </TablixMember>
                   </TablixMembers>
                   <Visibility>
                     <Hidden>true</Hidden>
-                    <ToggleItem>Asesor</ToggleItem>
+                    <ToggleItem>TipoReclamo1</ToggleItem>
                   </Visibility>
                 </TablixMember>
               </TablixMembers>
@@ -1599,7 +1606,7 @@
         </TablixRowHierarchy>
         <DataSetName>DS_Report</DataSetName>
         <Height>2.5cm</Height>
-        <Width>24.72499cm</Width>
+        <Width>24.16937cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1610,7 +1617,7 @@
     <Height>0.98425in</Height>
     <Style />
   </Body>
-  <Width>9.73425in</Width>
+  <Width>9.5155in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>

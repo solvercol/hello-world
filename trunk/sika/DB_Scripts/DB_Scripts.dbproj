@@ -121,5 +121,17 @@
     <NotInBuild Include="Scripts\Modules\Reclamos\Vistas\01_Vistas_VistaGeneralReclamos.sql">
       <SubType>NotInBuild</SubType>
     </NotInBuild>
+    <NotInBuild Include="Scripts\Modules\Reclamos\Vistas\02_Vistas_MisPendientes.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Scripts\Modules\Reclamos\Vistas\03_Vistas_MisReclamosPorFecha.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Scripts\Modules\Reclamos\Vistas\04_Vistas_MisReclamosPorEstado.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Scripts\Modules\Reclamos\Vistas\05_Vistas_ReclamosPorTipo.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
   </ItemGroup>
 </Project>

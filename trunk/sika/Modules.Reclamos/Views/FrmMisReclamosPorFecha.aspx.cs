@@ -7,9 +7,9 @@ using Microsoft.Reporting.WebForms;
 using Presenters.Reclamos.IViews;
 using Presenters.Reclamos.Presenters;
 
-namespace Modules.Reclamos.Admin
+namespace Modules.Reclamos.Views
 {
-    public partial class FrmListaGeneralReclamos : ViewPage<ListaGeneralReclamosPresenter, IListaGeneralReclamosView>, IListaGeneralReclamosView
+    public partial class FrmMisReclamosPorFecha : ViewPage<MisReclamosPorFechaPresenter, IMisReclamosPorFechaView>, IMisReclamosPorFechaView
     {
         #region Page Events
 
@@ -17,7 +17,7 @@ namespace Modules.Reclamos.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ImprimirTituloVentana("Vista General de Reclamos");
+            ImprimirTituloVentana("Mis Reclamos Por Fecha");
         }
 
         #endregion
@@ -39,7 +39,7 @@ namespace Modules.Reclamos.Admin
             else
             {
                 Response.Redirect(string.Format("FrmAddReclamo.aspx?ModuleId={0}&tr={1}&cat={2}&gruinf={3}",
-                                                ModuleId,TipoReclamo,IdCategoriaReclamo,IdGrupoInformacion
+                                                ModuleId, TipoReclamo, IdCategoriaReclamo, IdGrupoInformacion
                                                 ));
             }
         }
@@ -102,7 +102,7 @@ namespace Modules.Reclamos.Admin
             rptReclamos.Reset();
             rptReclamos.LocalReport.DataSources.Clear();
             rptReclamos.ProcessingMode = ProcessingMode.Local;
-            rptReclamos.LocalReport.ReportPath = Server.MapPath(@"~/Pages/Modules/Reclamos/Resources/ReportViewer/RptVistaGeneralReclamos.rdlc");
+            rptReclamos.LocalReport.ReportPath = Server.MapPath(@"~/Pages/Modules/Reclamos/Resources/ReportViewer/RptVistaMisReclamosPorFecha.rdlc");
             rptReclamos.LocalReport.EnableHyperlinks = true;
             rptReclamos.LocalReport.DataSources.Add(new ReportDataSource("DS_Report", dt));
             rptReclamos.DataBind();
@@ -253,7 +253,7 @@ namespace Modules.Reclamos.Admin
         }
 
         #endregion
-        
+
         #endregion
     }
 }
