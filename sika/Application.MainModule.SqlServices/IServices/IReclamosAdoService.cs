@@ -37,6 +37,15 @@ namespace Application.MainModule.SqlServices.IServices
         DataTable GetVistaReclamosPorTipo(DateTime from, DateTime end, string serverHost, string moduleId,
                                           string noReclamo, string cliente, string producto, string servicio);
 
+        DataTable GetVistaReclamosPorEstado(DateTime from, DateTime end, string serverHost, string moduleId,
+                                            string noReclamo, string cliente, string producto, string servicio);
+
+        DataTable GetVistaReclamosPorNumero(DateTime from, DateTime end, string serverHost, string moduleId,
+                                            string noReclamo, string cliente, string producto, string servicio);
+
+        DataTable GetVistaReclamosPorTargetMarket(DateTime from, DateTime end, string serverHost, string moduleId,
+                                                  string noReclamo, string cliente, string producto);
+
         #endregion
     }
 }

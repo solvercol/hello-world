@@ -236,6 +236,74 @@ namespace Application.MainModule.SqlServices.Services
             }
         }
 
+        public DataTable GetVistaReclamosPorEstado(DateTime from, DateTime end, string serverHost, string moduleId, string noReclamo, string cliente, string producto, string servicio)
+        {
+            try
+            {
+                string strSql = "Vistas_ReclamosPorEstado";
+                var result = _sql.ExecuteDataTable(strSql, CommandType.StoredProcedure
+                                       , new SqlParameter("@dateFrom", from)
+                                       , new SqlParameter("@dateEnd", end)
+                                       , new SqlParameter("@ServerHostPath", serverHost)
+                                       , new SqlParameter("@ModuleId", moduleId)
+                                       , new SqlParameter("@NoReclamo", noReclamo)
+                                       , new SqlParameter("@Cliente", cliente)
+                                       , new SqlParameter("@Producto", producto)
+                                       , new SqlParameter("@Servicio", servicio));
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new SqlExecutionException("Vistas_ReclamosPorEstado", ex);
+            }
+        }
+
+        public DataTable GetVistaReclamosPorNumero(DateTime from, DateTime end, string serverHost, string moduleId, string noReclamo, string cliente, string producto, string servicio)
+        {
+            try
+            {
+                string strSql = "Vistas_ReclamosPorNumero";
+                var result = _sql.ExecuteDataTable(strSql, CommandType.StoredProcedure
+                                       , new SqlParameter("@dateFrom", from)
+                                       , new SqlParameter("@dateEnd", end)
+                                       , new SqlParameter("@ServerHostPath", serverHost)
+                                       , new SqlParameter("@ModuleId", moduleId)
+                                       , new SqlParameter("@NoReclamo", noReclamo)
+                                       , new SqlParameter("@Cliente", cliente)
+                                       , new SqlParameter("@Producto", producto)
+                                       , new SqlParameter("@Servicio", servicio));
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new SqlExecutionException("Vistas_ReclamosPorNumero", ex);
+            }
+        }
+
+        public DataTable GetVistaReclamosPorTargetMarket(DateTime from, DateTime end, string serverHost, string moduleId, string noReclamo, string cliente, string producto)
+        {
+            try
+            {
+                string strSql = "Vistas_ReclamosPorTargetMarket";
+                var result = _sql.ExecuteDataTable(strSql, CommandType.StoredProcedure
+                                       , new SqlParameter("@dateFrom", from)
+                                       , new SqlParameter("@dateEnd", end)
+                                       , new SqlParameter("@ServerHostPath", serverHost)
+                                       , new SqlParameter("@ModuleId", moduleId)
+                                       , new SqlParameter("@NoReclamo", noReclamo)
+                                       , new SqlParameter("@Cliente", cliente)
+                                       , new SqlParameter("@Producto", producto));
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new SqlExecutionException("Vistas_ReclamosPorTargetMarket", ex);
+            }
+        }
+
         #endregion
     }
 }
