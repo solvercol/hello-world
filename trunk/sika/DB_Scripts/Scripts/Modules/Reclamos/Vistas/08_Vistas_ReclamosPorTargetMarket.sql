@@ -81,7 +81,7 @@ select	distinct
 		,reclamo.CreateOn																		as FechaReclamo
 		,asesor.Nombres																			as Asesor
 		,responsable.Nombres																	as Responsable
-		,@ServerHostPath + '/Pages/Modules/Reclamos/Admin/FrmReclamo.aspx?ModuleId=' + @ModuleId + '&IdReclamo=' + cast(reclamo.IdReclamo as varchar(18))
+		,@ServerHostPath + '/Pages/Modules/Reclamos/Admin/FrmReclamo.aspx?ModuleId=' + @ModuleId + '&IdReclamo=' + cast(reclamo.IdReclamo as varchar(18)) + '&from=rectargetmarket'
 from	TBL_ModuloReclamos_Reclamo reclamo with(nolock)
 		inner join TBL_Admin_EstadosProceso estado with(nolock)
 			on reclamo.IdEstado = estado.IdEstado

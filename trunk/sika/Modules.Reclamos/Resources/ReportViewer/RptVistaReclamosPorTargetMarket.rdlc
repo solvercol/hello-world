@@ -89,34 +89,34 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.63009in</Width>
+              <Width>1.33014in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.98425in</Width>
+              <Width>0.64264in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.98425in</Width>
+              <Width>0.56972in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.43217in</Width>
+              <Width>1.58014in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.28634in</Width>
+              <Width>1.14402in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.79675in</Width>
+              <Width>0.75032in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.29675in</Width>
+              <Width>1.14402in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.38008in</Width>
+              <Width>1.10097in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.98425in</Width>
+              <Width>0.58014in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.98425in</Width>
+              <Width>0.70514in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -424,7 +424,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Total Reclamos</Value>
+                              <Value>Total </Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -510,6 +510,7 @@
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
+                                <Color>DarkBlue</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -557,7 +558,7 @@
                               <Value>=Count(Fields!IdReclamo.Value)</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Format>#,0;(#,0);'-'</Format>
                               </Style>
@@ -597,9 +598,10 @@
                               <Value>=Sum(Fields!TotalCostos.Value)</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Format>#,0.00;(#,0.00);'-'</Format>
+                                <Color>DarkRed</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -648,6 +650,7 @@
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
+                                <Color>DarkBlue</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -696,7 +699,7 @@
                               <Value>=Count(Fields!IdReclamo.Value)</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Format>#,0;(#,0);'-'</Format>
                               </Style>
@@ -736,9 +739,10 @@
                               <Value>=Sum(Fields!TotalCostos.Value)</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Format>#,0.00;(#,0.00);'-'</Format>
+                                <Color>DarkRed</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -787,6 +791,7 @@
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
+                                <Color>DarkBlue</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -835,7 +840,7 @@
                               <Value>=Count(Fields!IdReclamo.Value)</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Format>#,0;(#,0);'-'</Format>
                               </Style>
@@ -875,9 +880,10 @@
                               <Value>=Sum(Fields!TotalCostos.Value)</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Format>#,0.00;(#,0.00);'-'</Format>
+                                <Color>DarkRed</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -926,6 +932,7 @@
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
+                                <Color>DarkBlue</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -953,6 +960,7 @@
                       </Style>
                     </Textbox>
                     <ColSpan>8</ColSpan>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell />
@@ -974,7 +982,7 @@
                               <Value>=Count(Fields!IdReclamo.Value)</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Format>#,0;(#,0);'-'</Format>
                               </Style>
@@ -1014,9 +1022,10 @@
                               <Value>=Sum(Fields!TotalCostos.Value)</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Format>#,0.00;(#,0.00);'-'</Format>
+                                <Color>DarkRed</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1063,7 +1072,7 @@
                               <Value>=Fields!IdReclamo.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
                               </Style>
@@ -1106,7 +1115,7 @@
                               <Value>=Fields!NumeroReclamo.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>DarkBlue</Color>
                               </Style>
@@ -1153,7 +1162,7 @@
                               <Value>=Fields!FechaReclamo.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Format>dd/MM/yyyy</Format>
                               </Style>
@@ -1193,7 +1202,7 @@
                               <Value>=Fields!Cliente.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -1230,7 +1239,7 @@
                               <Value>=Fields!UnidadZona.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -1267,7 +1276,7 @@
                               <Value>=Fields!Estado.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -1304,7 +1313,7 @@
                               <Value>=Fields!Asesor.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -1341,7 +1350,7 @@
                               <Value>=Fields!ResponsableActual.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -1378,7 +1387,7 @@
                               <Value />
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -1417,9 +1426,10 @@
                               <Value>=Sum(Fields!TotalCostos.Value)</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Format>#,0.00;(#,0.00);'-'</Format>
+                                <Color>DarkRed</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1800,7 +1810,7 @@
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Format>#,0.00;(#,0.00);'-'</Format>
-                                <Color>DimGray</Color>
+                                <Color>DarkRed</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1942,8 +1952,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DS_Report</DataSetName>
-        <Height>4.2cm</Height>
-        <Width>29.86833cm</Width>
+        <Height>4.19999cm</Height>
+        <Width>24.25cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1954,7 +1964,7 @@
     <Height>1.65354in</Height>
     <Style />
   </Body>
-  <Width>11.75919in</Width>
+  <Width>9.54724in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>

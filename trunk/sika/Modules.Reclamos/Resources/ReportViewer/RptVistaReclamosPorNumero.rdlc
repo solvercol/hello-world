@@ -97,39 +97,39 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>0.72384in</Width>
+              <Width>0.67244in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.90092in</Width>
+              <Width>0.87035in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.98425in</Width>
+              <Width>0.81826in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.5155in</Width>
+              <Width>1.78701in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.36967in</Width>
+              <Width>2.35993in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.52592in</Width>
+              <Width>1.41202in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.81759in</Width>
+              <Width>0.87035in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.27592in</Width>
+              <Width>1.5748in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.10925in</Width>
+              <Width>1.5748in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.98425in</Width>
+              <Width>0.81826in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.23622in</Height>
+              <Height>0.19685in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -214,7 +214,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Tipo Reclamo</Value>
+                              <Value>Tipo </Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -223,7 +223,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox12</rd:DefaultName>
@@ -490,7 +492,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.23622in</Height>
+              <Height>0.19685in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -504,7 +506,7 @@
                               <Value>=Fields!NumeroReclamo.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>DarkBlue</Color>
                               </Style>
@@ -555,7 +557,7 @@
                               <Value>=Fields!FechaReclamo.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Format>dd/MM/yyyy</Format>
                               </Style>
@@ -595,7 +597,7 @@
                               <Value>=Fields!TipoReclamo.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -632,7 +634,7 @@
                               <Value>=Fields!Producto.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -669,7 +671,7 @@
                               <Value>=Fields!Categoria.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -706,7 +708,7 @@
                               <Value>=Fields!Area.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -743,7 +745,7 @@
                               <Value>=Fields!Estado.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -780,7 +782,7 @@
                               <Value>=Fields!Asesor.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -817,7 +819,7 @@
                               <Value>=Fields!ResponsableActual.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -854,9 +856,10 @@
                               <Value>=Fields!TotalCostos.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Format>#,0.00;(#,0.00);'-'</Format>
+                                <Color>DarkRed</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -889,7 +892,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.23622in</Height>
+              <Height>0.19685in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1184,7 +1187,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>Total</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -1225,7 +1228,7 @@
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Format>#,0.00;(#,0.00);'-'</Format>
-                                <Color>DimGray</Color>
+                                <Color>DarkRed</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1280,8 +1283,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DS_Report</DataSetName>
-        <Height>1.8cm</Height>
-        <Width>28.46604cm</Width>
+        <Height>1.5cm</Height>
+        <Width>32.40592cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1289,10 +1292,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>0.70866in</Height>
+    <Height>0.59055in</Height>
     <Style />
   </Body>
-  <Width>11.2071in</Width>
+  <Width>12.75824in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>

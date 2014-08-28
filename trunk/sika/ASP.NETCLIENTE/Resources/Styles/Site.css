@@ -717,7 +717,7 @@ text-align:right;
 }
 
 table.tblPreView .line {
-color:#526C8C;
+color:#000;
 font-size:0.82em;
 font-family: Calibri;
 font-weight: normal;
@@ -740,7 +740,7 @@ font-size:0.88em;
 font-family: Calibri;
 font-weight: normal;
 text-align:right;
-border:1px solid #F5BA38; 
+border:1px solid #808080; 
 background-color:#F6F7F8;
 }
 
@@ -751,7 +751,7 @@ font-size:0.88em;
 font-family: Calibri;
 font-weight: normal;
 text-align:right;
-border:1px solid #F5BA38; 
+border:1px solid #808080; 
 background-color:#F6F7F8;
 }
 
@@ -822,7 +822,8 @@ width:100%;
 }
 
 table.tblSecciones th {
-color:#526C8C;
+/*color:#526C8C;*/
+color:#808080;
 padding: 4px 10px;
 font-size:0.82em;
 font-family: Calibri;
@@ -832,7 +833,7 @@ width:16%;
 }
 
 table.tblSecciones .Line {
-color:#9A9A9A;
+color:#000;
 font-size:0.82em;
 font-family: Calibri;
 font-weight: normal;
@@ -936,8 +937,8 @@ table.tblBuscador .Separador15
 .TituloVentana
 {
     font-size:14pt;
-    color:#545A68;
-    border-bottom: 2px solid #FBFF00;
+    color:#808080;
+    border-bottom: 2px solid #808080;
     font-weight:bold;
     font-family:Calibri;
 }
@@ -1032,7 +1033,8 @@ color: #bbbbbb;
 }
 
 .popup_Titlebar {
-	background: url(../Images/titlebar_bg.png);
+	/*background: url(../Images/titlebar_bg.png);*/
+	background-color:#808080;
 	height: 29px;
 }
 
@@ -1222,8 +1224,8 @@ text-transform:uppercase;
 .FondoGrisSeccionesMenu
 {
     margin-top:5px;
-    background-color:#F5BA38;
-    border-bottom:2px solid #F5BA38;
+    background-color:#808080;
+    border-bottom:2px solid #808080;
     vertical-align:middle;
 }
 
