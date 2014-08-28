@@ -19,6 +19,14 @@ namespace Modules.Reclamos.Admin
 
         public const string ROOTUC = "../UserControls/";
 
+        public string FromPage
+        {
+            get
+            {
+                return Request.QueryString["from"];
+            }
+        }
+
         private string LastLoadedControl
         {
             get
@@ -99,7 +107,35 @@ namespace Modules.Reclamos.Admin
 
         protected void BtnRegresarClick(object sender, EventArgs e)
         {
-            Response.Redirect(string.Format("FrmListaGeneralReclamos.aspx?ModuleId={0}", ModuleId));
+            if (string.IsNullOrEmpty(FromPage))
+            {
+                Response.Redirect(string.Format("../Views/FrmMisPendientes.aspx?ModuleId={0}", ModuleId));
+            }
+
+            switch (FromPage)
+            {
+                case "pendientes":
+                    Response.Redirect(string.Format("../Views/FrmMisPendientes.aspx?ModuleId={0}", ModuleId));
+                    break;
+                case "misfecha":
+                    Response.Redirect(string.Format("../Views/FrmMisReclamosPorFecha.aspx?ModuleId={0}", ModuleId));
+                    break;
+                case "misestado":
+                    Response.Redirect(string.Format("../Views/FrmMisReclamosPorEstado.aspx?ModuleId={0}", ModuleId));
+                    break;
+                case "rectipo":
+                    Response.Redirect(string.Format("../Views/FrmReclamosPorTipo.aspx?ModuleId={0}", ModuleId));
+                    break;
+                case "recestado":
+                    Response.Redirect(string.Format("../Views/FrmReclamosPorEstado.aspx?ModuleId={0}", ModuleId));
+                    break;
+                case "recnumero":
+                    Response.Redirect(string.Format("../Views/FrmReclamosPorNumero.aspx?ModuleId={0}", ModuleId));
+                    break;
+                case "rectargetmarket":
+                    Response.Redirect(string.Format("../Views/FrmReclamosPorTargetMarket.aspx?ModuleId={0}", ModuleId));
+                    break;
+            }
         }
 
         protected void BtnEditReclamoClick(object sender, EventArgs e)

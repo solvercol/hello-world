@@ -105,7 +105,7 @@ select	distinct
 		,reclamo.CreateOn																		as FechaReclamo
 		,producto.PRODUCTO + ' (' + producto.CATEGORIA + ') - Cliente: ' + cliente.CLIENTE		as DescripcionProducto
 		,categorias.Nombre + ' - Area: ' + categorias.Area										as DescripcionArea
-		,@ServerHostPath + '/Pages/Modules/Reclamos/Admin/FrmReclamo.aspx?ModuleId=' + @ModuleId + '&IdReclamo=' + cast(reclamo.IdReclamo as varchar(18))
+		,@ServerHostPath + '/Pages/Modules/Reclamos/Admin/FrmReclamo.aspx?ModuleId=' + @ModuleId + '&IdReclamo=' + cast(reclamo.IdReclamo as varchar(18)) + '&from=misfecha'
 from	TBL_ModuloReclamos_Reclamo reclamo with(nolock)
 		inner join TBL_Admin_EstadosProceso estado with(nolock)
 			on reclamo.IdEstado = estado.IdEstado
