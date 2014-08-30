@@ -34,11 +34,11 @@ namespace Modules.Reclamos.Views
         {
             if (TipoReclamo == "Producto")
             {
-                Response.Redirect(string.Format("FrmAddReclamo.aspx?ModuleId={0}&tr={1}", ModuleId, TipoReclamo));
+                Response.Redirect(string.Format("../Admin/FrmAddReclamo.aspx?ModuleId={0}&tr={1}", ModuleId, TipoReclamo));
             }
             else
             {
-                Response.Redirect(string.Format("FrmAddReclamo.aspx?ModuleId={0}&tr={1}&cat={2}&gruinf={3}",
+                Response.Redirect(string.Format("../Admin/FrmAddReclamo.aspx?ModuleId={0}&tr={1}&cat={2}&gruinf={3}",
                                                 ModuleId, TipoReclamo, IdCategoriaReclamo, IdGrupoInformacion
                                                 ));
             }

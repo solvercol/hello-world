@@ -90,6 +90,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\FrmAddReclamo.aspx" />
+    <Content Include="Admin\FrmAdminActividadReclamo.aspx" />
+    <Content Include="Admin\FrmAdminAlternativaReclamo.aspx" />
     <Content Include="Admin\FrmListaGeneralReclamos.aspx" />
     <Content Include="Admin\FrmReclamo.aspx" />
     <Content Include="UserControls\WUCAdminActividadesReclamo.ascx" />
@@ -116,6 +118,8 @@
     <Content Include="UserControls\WUCReadingReclamoServicioT4Detalle.ascx" />
     <Content Include="UserControls\WUCReadingReclamoServicioT5Detalle.ascx" />
     <Content Include="UserControls\WucRenderMessagesError.ascx" />
+    <Content Include="Views\FrmMisActividadesPendientes.aspx" />
+    <Content Include="Views\FrmMisAlternativasPendientes.aspx" />
     <Content Include="Views\FrmMisPendientes.aspx" />
     <Content Include="Views\FrmMisReclamosPorEstado.aspx" />
     <Content Include="Views\FrmMisReclamosPorFecha.aspx" />
@@ -139,6 +143,20 @@
     <Compile Include="Admin\FrmAddReclamo.aspx.designer.cs">
       <DependentUpon>FrmAddReclamo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\FrmAdminActividadReclamo.aspx.cs">
+      <DependentUpon>FrmAdminActividadReclamo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FrmAdminActividadReclamo.aspx.designer.cs">
+      <DependentUpon>FrmAdminActividadReclamo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FrmAdminAlternativaReclamo.aspx.cs">
+      <DependentUpon>FrmAdminAlternativaReclamo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FrmAdminAlternativaReclamo.aspx.designer.cs">
+      <DependentUpon>FrmAdminAlternativaReclamo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\FrmListaGeneralReclamos.aspx.cs">
       <DependentUpon>FrmListaGeneralReclamos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -153,6 +171,7 @@
     <Compile Include="Admin\FrmReclamo.aspx.designer.cs">
       <DependentUpon>FrmReclamo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\ScriptManager.cs" />
     <Compile Include="DataSets\DS_Report.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -336,6 +355,20 @@
     <Compile Include="UserControls\WucRenderMessagesError.ascx.designer.cs">
       <DependentUpon>WucRenderMessagesError.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Views\FrmMisActividadesPendientes.aspx.cs">
+      <DependentUpon>FrmMisActividadesPendientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FrmMisActividadesPendientes.aspx.designer.cs">
+      <DependentUpon>FrmMisActividadesPendientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmMisAlternativasPendientes.aspx.cs">
+      <DependentUpon>FrmMisAlternativasPendientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FrmMisAlternativasPendientes.aspx.designer.cs">
+      <DependentUpon>FrmMisAlternativasPendientes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\FrmMisPendientes.aspx.cs">
       <DependentUpon>FrmMisPendientes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -437,6 +470,8 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Resources\ReportViewer\RptVistaMisActividadesPendientes.rdlc" />
+    <EmbeddedResource Include="Resources\ReportViewer\RptVistaMisAlternativasPendientes.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\RptVistaReclamosPorEstado.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\RptVistaMisReclamosPorEstado.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\RptVistaMisReclamosPorFecha.rdlc" />

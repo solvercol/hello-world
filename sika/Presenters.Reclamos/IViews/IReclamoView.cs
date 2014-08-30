@@ -15,7 +15,6 @@ namespace Presenters.Reclamos.IViews
         string IdGrupoInformacion { get; set; }
         string MonedaLocal { get; set; }
 
-
         // Seccion Info Reclamo
         string TitleReclamo { get; set; }
         string TitleReclamoFrom { get; set; }

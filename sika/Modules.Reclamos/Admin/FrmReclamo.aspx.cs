@@ -27,6 +27,14 @@ namespace Modules.Reclamos.Admin
             }
         }
 
+        public string IdFrom
+        {
+            get
+            {
+                return Request.QueryString["idfrom"];
+            }
+        }
+
         private string LastLoadedControl
         {
             get
@@ -134,6 +142,12 @@ namespace Modules.Reclamos.Admin
                     break;
                 case "rectargetmarket":
                     Response.Redirect(string.Format("../Views/FrmReclamosPorTargetMarket.aspx?ModuleId={0}", ModuleId));
+                    break;
+                case "admactividad":
+                    Response.Redirect(string.Format("FrmAdminActividadReclamo.aspx?ModuleId={0}&IdActividad={1}", ModuleId, IdFrom));
+                    break;
+                case "admalternativa":
+                    Response.Redirect(string.Format("FrmAdminAlternativaReclamo.aspx?ModuleId={0}&IdAlternativa={1}", ModuleId, IdFrom));
                     break;
             }
         }

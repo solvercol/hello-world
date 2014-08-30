@@ -270,7 +270,7 @@ namespace Presenters.Reclamos.Presenters
             model.Fecha = View.FechaActividad;
             model.IdUsuarioAsignacion = Convert.ToInt32(View.IdUsuarioAsignacion);
             model.ObservacionesCierre = View.Observaciones;
-            model.Estado = "Creado";
+            model.Estado = "Registrada";
             model.IsActive = true;
             model.CreateBy = View.UserSession.IdUser;
             model.CreateOn = DateTime.Now;

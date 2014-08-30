@@ -46,6 +46,10 @@ namespace Application.MainModule.SqlServices.IServices
         DataTable GetVistaReclamosPorTargetMarket(DateTime from, DateTime end, string serverHost, string moduleId,
                                                   string noReclamo, string cliente, string producto);
 
+        DataTable GetVistaMisAlternativasPendientes(string serverHost, string moduleId,int idResponsable);
+
+        DataTable GetVistaMisActividadesPendientes(string serverHost, string moduleId, int idResponsable);
+
         #endregion
     }
 }
