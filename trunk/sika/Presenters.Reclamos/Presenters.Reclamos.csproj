@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IViews\IAdminActividadReclamoView.cs" />
+    <Compile Include="IViews\IAdminAlternativaReclamoView.cs" />
     <Compile Include="IViews\IAdminInformacionReclamoView.cs" />
     <Compile Include="IViews\IAdminRecServicioT5View.cs" />
     <Compile Include="IViews\IAdminRecServicioT4View.cs" />
@@ -56,6 +58,8 @@
     <Compile Include="IViews\IFilterClientView.cs" />
     <Compile Include="IViews\IFilterProductView.cs" />
     <Compile Include="IViews\IListaGeneralReclamosView.cs" />
+    <Compile Include="IViews\IMisActividadesPendientesView.cs" />
+    <Compile Include="IViews\IMisAlternativasPendientesView.cs" />
     <Compile Include="IViews\IMisPendientesView.cs" />
     <Compile Include="IViews\IMisReclamosPorEstadoView.cs" />
     <Compile Include="IViews\IMisReclamosPorFechaView.cs" />
@@ -75,6 +79,8 @@
     <Compile Include="IViews\IReclamoView.cs" />
     <Compile Include="Presenters\AddReclamoPresenter.cs" />
     <Compile Include="Presenters\AdminActividadesReclamoPresenter.cs" />
+    <Compile Include="Presenters\AdminActividadReclamoPresentador.cs" />
+    <Compile Include="Presenters\AdminAlternativaReclamoPresenter.cs" />
     <Compile Include="Presenters\AdminAlternativasReclamoPresenter.cs" />
     <Compile Include="Presenters\AdminComentariosRespuestaReclamoPresenter.cs" />
     <Compile Include="Presenters\AdminCostosReclamoPresenter.cs" />
@@ -89,6 +95,8 @@
     <Compile Include="Presenters\FilterClientPresenter.cs" />
     <Compile Include="Presenters\FilterProductPresenter.cs" />
     <Compile Include="Presenters\ListaGeneralReclamosPresenter.cs" />
+    <Compile Include="Presenters\MisActividadesPendientesPresenter.cs" />
+    <Compile Include="Presenters\MisAlternativasPendientesPresenter.cs" />
     <Compile Include="Presenters\MisPendientesPresenter.cs" />
     <Compile Include="Presenters\MisReclamosPorEstadoPresenter.cs" />
     <Compile Include="Presenters\MisReclamosPorFechaPresenter.cs" />

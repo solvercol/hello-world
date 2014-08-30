@@ -304,6 +304,42 @@ namespace Application.MainModule.SqlServices.Services
             }
         }
 
+        public DataTable GetVistaMisAlternativasPendientes(string serverHost, string moduleId, int idResponsable)
+        {
+            try
+            {
+                string strSql = "Vistas_MisAlternativasPendientes";
+                var result = _sql.ExecuteDataTable(strSql, CommandType.StoredProcedure
+                                       , new SqlParameter("@ServerHostPath", serverHost)
+                                       , new SqlParameter("@ModuleId", moduleId)
+                                       , new SqlParameter("@IdResponsable", idResponsable));
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new SqlExecutionException("Vistas_MisAlternativasPendientes", ex);
+            }
+        }
+
+        public DataTable GetVistaMisActividadesPendientes(string serverHost, string moduleId, int idResponsable)
+        {
+            try
+            {
+                string strSql = "Vistas_MisActividadesPendientes";
+                var result = _sql.ExecuteDataTable(strSql, CommandType.StoredProcedure
+                                       , new SqlParameter("@ServerHostPath", serverHost)
+                                       , new SqlParameter("@ModuleId", moduleId)
+                                       , new SqlParameter("@IdResponsable", idResponsable));
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new SqlExecutionException("Vistas_MisActividadesPendientes", ex);
+            }
+        }
+
         #endregion
     }
 }

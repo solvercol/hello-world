@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Application.Core;
@@ -7,7 +8,6 @@ using Applications.MainModule.Admin.IServices;
 using Domain.MainModules.Entities;
 using Infrastructure.CrossCutting.NetFramework.Enums;
 using Presenters.Reclamos.IViews;
-using System.Collections.Generic;
 
 namespace Presenters.Reclamos.Presenters
 {
@@ -210,7 +210,7 @@ namespace Presenters.Reclamos.Presenters
             model.IdResponsable = Convert.ToInt32(View.IdResponsable);
             model.FechaAlternativa = View.FechaAlternativa;
             model.Seguimiento = View.Seguimiento;
-            model.Estado = "Programada";
+            model.Estado = "Asignada";
             model.IsActive = true;
             model.CreateBy = View.UserSession.IdUser;
             model.CreateOn = DateTime.Now;
