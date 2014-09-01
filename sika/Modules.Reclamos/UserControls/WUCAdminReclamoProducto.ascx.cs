@@ -15,6 +15,18 @@ namespace Modules.Reclamos.UserControls
 {
     public partial class WUCAdminReclamoProducto : ViewUserControl<AdminReclamoProductoPresenter, IAdminReclamoProductoView>, IAdminReclamoProductoView
     {
+        #region Members
+
+        public string FromPage
+        {
+            get
+            {
+                return Request.QueryString["from"];
+            }
+        }
+
+        #endregion
+
         #region Page Events
 
         #region Load
@@ -43,7 +55,32 @@ namespace Modules.Reclamos.UserControls
         protected void BtnRegresar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(IdReclamo))
-                Response.Redirect(string.Format("../Admin/FrmListaGeneralReclamos.aspx?ModuleId={0}", ModuleId));
+            {
+                switch (FromPage)
+                {
+                    case "pendientes":
+                        Response.Redirect(string.Format("../Views/FrmMisPendientes.aspx?ModuleId={0}", ModuleId));
+                        break;
+                    case "misfecha":
+                        Response.Redirect(string.Format("../Views/FrmMisReclamosPorFecha.aspx?ModuleId={0}", ModuleId));
+                        break;
+                    case "misestado":
+                        Response.Redirect(string.Format("../Views/FrmMisReclamosPorEstado.aspx?ModuleId={0}", ModuleId));
+                        break;
+                    case "rectipo":
+                        Response.Redirect(string.Format("../Views/FrmReclamosPorTipo.aspx?ModuleId={0}", ModuleId));
+                        break;
+                    case "recestado":
+                        Response.Redirect(string.Format("../Views/FrmReclamosPorEstado.aspx?ModuleId={0}", ModuleId));
+                        break;
+                    case "recnumero":
+                        Response.Redirect(string.Format("../Views/FrmReclamosPorNumero.aspx?ModuleId={0}", ModuleId));
+                        break;
+                    case "rectargetmarket":
+                        Response.Redirect(string.Format("../Views/FrmReclamosPorTargetMarket.aspx?ModuleId={0}", ModuleId));
+                        break;
+                }
+            }                
             else
                 Response.Redirect(string.Format("../Admin/FrmReclamo.aspx?ModuleId={0}&IdReclamo={1}", ModuleId, IdReclamo));
         }
@@ -557,6 +594,18 @@ namespace Modules.Reclamos.UserControls
         public string IdReclamo
         {
             get { return Request.QueryString.Get("IdReclamo"); }
+        }
+
+        public bool ProblemaSolucionado
+        {
+            get
+            {
+                return Convert.ToBoolean(rblSolucionado.SelectedValue);
+            }
+            set
+            {
+                rblSolucionado.SelectedValue = value.ToString();
+            }
         }
 
         #endregion

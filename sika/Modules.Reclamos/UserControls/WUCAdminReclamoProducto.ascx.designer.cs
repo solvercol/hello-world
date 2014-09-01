@@ -454,6 +454,15 @@ namespace Modules.Reclamos.UserControls {
         protected global::AjaxControlToolkit.AccordionPane PaneSolucion;
         
         /// <summary>
+        /// rblSolucionado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList rblSolucionado;
+        
+        /// <summary>
         /// txtObservacionesSolucion control.
         /// </summary>
         /// <remarks>

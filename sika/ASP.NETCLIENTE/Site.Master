@@ -22,7 +22,7 @@
     </script> 
         
 </head>
-<body>
+<body >
     <form id="Form1" runat="server" enctype="multipart/form-data">
             <%--<ajaxToolkit:ToolkitScriptManager 
             runat="Server" 

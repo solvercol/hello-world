@@ -3,6 +3,20 @@
 <%@ Register TagPrefix="csc" Namespace="ServerControls" Assembly="ServerControls" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 
+
+<script language="javascript" type="text/javascript">
+    function clickButtonClient(e, buttonid) {
+        var evt = e ? e : window.event;
+        var bt = document.getElementById(buttonid);
+        if (bt) {
+            if (evt.keyCode == 13) {
+                bt.click();
+                return false;
+            }
+        }
+    }
+</script>
+
 <table width="100%" >
     <tr>
         <td style="width:95%; font-size:12pt; color:#000090;" align="left" class="Line">

@@ -9,6 +9,7 @@ using Infrastructure.CrossCutting.NetFramework.Enums;
 using Presenters.Reclamos.IViews;
 using Application.MainModule.SqlServices.IServices;
 using System.Collections.Generic;
+using Presenters.Reclamos.Resources;
 
 namespace Presenters.Reclamos.Presenters
 {
@@ -20,13 +21,15 @@ namespace Presenters.Reclamos.Presenters
         readonly ISfTBL_Admin_UsuariosManagementServices _usuariosService;
         readonly IReclamosAdoService _reclamoAdoService;
         readonly ISfTBL_ModuloReclamos_AnexosActividadManagementServices _anexosService;
+        readonly ISfTBL_ModuloReclamos_LogReclamosManagementServices _logReclamoService;
 
         public AdminActividadesReclamoPresenter(ISfTBL_ModuloReclamos_ActividadesManagementServices actividadesService,
                                                 ISfTBL_ModuloReclamos_ActividadesReclamoManagementServices actividadesReclamoAdmService,
                                                 ISfTBL_ModuloReclamos_ReclamoManagementServices reclamoService,
                                                 ISfTBL_Admin_UsuariosManagementServices usuariosService,
                                                 IReclamosAdoService reclamoAdoService,
-                                                ISfTBL_ModuloReclamos_AnexosActividadManagementServices anexosService)
+                                                ISfTBL_ModuloReclamos_AnexosActividadManagementServices anexosService,
+                                                ISfTBL_ModuloReclamos_LogReclamosManagementServices logReclamoService)
         {
             _actividadesService = actividadesService;
             _actividadesReclamoAdmService = actividadesReclamoAdmService;
@@ -34,6 +37,7 @@ namespace Presenters.Reclamos.Presenters
             _usuariosService = usuariosService;
             _reclamoAdoService = reclamoAdoService;
             _anexosService = anexosService;
+            _logReclamoService = logReclamoService;
         }
 
         public override void SubscribeViewToEvents()
@@ -153,6 +157,15 @@ namespace Presenters.Reclamos.Presenters
                     }
                 }
 
+                var log = new TBL_ModuloReclamos_LogReclamos();
+                log.IdReclamo = model.IdReclamo;
+                log.Descripcion = string.Format(Messages.AddActividadToReclamo, View.UserSession.Nombres, DateTime.Now);
+                log.IsActive = true;
+                log.CreateBy = View.UserSession.IdUser;
+                log.CreateOn = DateTime.Now;
+
+                _logReclamoService.Add(log);
+
                 LoadActividadesReclamo();
             }
             catch (Exception ex)
@@ -181,7 +194,7 @@ namespace Presenters.Reclamos.Presenters
 
                     _actividadesService.Modify(model);
 
-                    LoadActividadesReclamo();
+                    LoadActividadesReclamo();                    
                 }
             }
             catch (Exception ex)

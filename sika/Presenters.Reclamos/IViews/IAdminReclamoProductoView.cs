@@ -50,6 +50,7 @@ namespace Presenters.Reclamos.IViews
         string Diagnostico { get; set; }
         string ConclusionesPrevias { get; set; }
         string Solucion { get; set; }
+        bool ProblemaSolucionado { get; set; }
         string MensajeDescripcionProblema { get; set; }
 
         // Carga

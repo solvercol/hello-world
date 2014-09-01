@@ -9,6 +9,7 @@ using Presenters.Reclamos.IViews;
 using System.Collections.Generic;
 using Domain.MainModule.Reclamos.DTO;
 using Application.MainModule.SqlServices.IServices;
+using Presenters.Reclamos.Resources;
 
 namespace Presenters.Reclamos.Presenters
 {
@@ -19,18 +20,21 @@ namespace Presenters.Reclamos.Presenters
         readonly ISfTBL_ModuloReclamos_ReclamoManagementServices _reclamoService;
         readonly ISfTBL_ModuloReclamos_CategoriasReclamoManagementServices _categoriasReclamoService;
         readonly IReclamosAdoService _reclamosAdoService;
+        readonly ISfTBL_ModuloReclamos_LogReclamosManagementServices _logReclamoService;
 
         public AdminRecServicioT2Presenter(ISfTBL_Admin_UsuariosManagementServices usuariosService,
                                             ISfTBL_Admin_OptionListManagementServices optionListService,
                                             ISfTBL_ModuloReclamos_ReclamoManagementServices reclamoService,
                                             ISfTBL_ModuloReclamos_CategoriasReclamoManagementServices categoriasReclamoService,
-                                            IReclamosAdoService reclamosAdoService)
+                                            IReclamosAdoService reclamosAdoService,
+                                            ISfTBL_ModuloReclamos_LogReclamosManagementServices logReclamoService)
         {
             _usuariosService = usuariosService;
             _optionListService = optionListService;
             _reclamoService = reclamoService;
             _categoriasReclamoService = categoriasReclamoService;
             _reclamosAdoService = reclamosAdoService;
+            _logReclamoService = logReclamoService;
         }
 
         public override void SubscribeViewToEvents()
@@ -216,6 +220,15 @@ namespace Presenters.Reclamos.Presenters
                 IncrementConsecutivoReclamo();
                 InvokeMessageBox(new MessageBoxEventArgs(string.Format("Datos Guardados Con Exito."), TypeError.Ok));
 
+                var log = new TBL_ModuloReclamos_LogReclamos();
+                log.IdReclamo = model.IdReclamo;
+                log.Descripcion = string.Format(Messages.SaveReclamo, View.UserSession.Nombres, DateTime.Now);
+                log.IsActive = true;
+                log.CreateBy = View.UserSession.IdUser;
+                log.CreateOn = DateTime.Now;
+
+                _logReclamoService.Add(log);
+
                 View.GoToReclamoView(string.Format("{0}", model.IdReclamo));
             }
             catch (Exception ex)
@@ -257,6 +270,15 @@ namespace Presenters.Reclamos.Presenters
                 _reclamoService.Modify(model);
 
                 InvokeMessageBox(new MessageBoxEventArgs(string.Format("Datos Guardados Con Exito."), TypeError.Ok));
+
+                var log = new TBL_ModuloReclamos_LogReclamos();
+                log.IdReclamo = model.IdReclamo;
+                log.Descripcion = string.Format(Messages.UpdateReclamo, View.UserSession.Nombres, DateTime.Now);
+                log.IsActive = true;
+                log.CreateBy = View.UserSession.IdUser;
+                log.CreateOn = DateTime.Now;
+
+                _logReclamoService.Add(log);
 
                 View.GoToReclamoView(string.Format("{0}", model.IdReclamo));
             }

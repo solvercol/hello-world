@@ -53,7 +53,7 @@
                 <Content>
                     <table width="100%" class="tblSecciones">
                         <tr>
-                            <th style="width: 10%; text-align:left">
+                            <th style="width: 10%; text-align:left; vertical-align:top">
                                 Categoría Reclamo :
                             </th>
 
@@ -65,7 +65,7 @@
 
                             <td class="Separador"></td>
 
-                            <th style="width: 10%; text-align:left">
+                            <th style="width: 10%; text-align:left; vertical-align:top">
                                 Area :
                             </th>
 
@@ -77,7 +77,7 @@
 
                         </tr>
                         <tr>
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 Planta :
                             </th>
 
@@ -109,7 +109,7 @@
 
                         </tr>
                         <tr>
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 Reclamo Atendido Por :
                             </th>
 
@@ -131,7 +131,7 @@
 
                             <td class="Separador"></td>
 
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 No. Recordatorios :
                             </th>
 
@@ -144,7 +144,7 @@
 
                         </tr>
                         <tr>
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 * Unidad / Zona :
                             </th>
 
@@ -166,7 +166,7 @@
 
                         </tr>
                         <tr>
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 Nombre de quien plantea el reclamo :
                             </th>
 
@@ -198,7 +198,7 @@
 
                         </tr>
                         <tr>
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 Procedimiento interno afectado :
                             </th>
 
@@ -230,7 +230,7 @@
 
                         </tr>
                         <tr>
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 Area que incumple el procedimiento :
                             </th>
 
@@ -277,7 +277,7 @@
                                     <table width="100%">
                                         <tr>
                                             <td style="width:95%">
-                                                <asp:TextBox ID="txtDescripcionProblema" runat="server" TextMode="MultiLine" Width="97%" Rows="4" />
+                                                <asp:TextBox ID="txtDescripcionProblema" runat="server" TextMode="MultiLine" Width="97%" Rows="4" MaxLength="1024" />
                                             </td>
                                             <td style="width:5%">
                                                 <asp:RequiredFieldValidator ID="reqTxtDescripcionProblema"

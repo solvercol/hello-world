@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FrmReclamo.aspx.cs" Inherits="Modules.Reclamos.Admin.FrmReclamo" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 <%@ Register src="../UserControls/WucPanelEstado.ascx" tagname="WucPanelEstado" tagprefix="uc1" %>
+<%@ Register src="../UserControls/WUCLogReclamoView.ascx" tagname="WucLogReclamo" tagprefix="ucLogReclamo" %>
  
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
@@ -22,19 +23,6 @@
     </div>
 </div>
 
-<%--
-<asp:UpdatePanel ID="upMenuPrincipal" runat="server">
-    <ContentTemplate>
-         <div style="padding:3px; text-align:right;">
-            <asp:Button ID="btnRegresar" runat="server" Text="Regresar" OnClick="BtnRegresarClick" />
-            <asp:Button ID="btnEdit" runat="server" Text="Editar" OnClick="BtnEditReclamoClick" />
-            <asp:PlaceHolder ID="plhWf" runat="server"></asp:PlaceHolder>
-        </div>
-    </ContentTemplate>
-</asp:UpdatePanel>--%>
-   
-
-
 <table width="100%" cellpadding="0" cellspacing="0" >
     
     <tr>
@@ -51,7 +39,7 @@
                         <asp:PlaceHolder ID="phInfoReclamo"  runat="server"></asp:PlaceHolder>                
 
                     <td valign="top">
-                        <%--<asp:PlaceHolder ID="phInfoReclamo"  runat="server"></asp:PlaceHolder>                --%>
+                        
                         <table width="100%" >
                             <tr>
                                 <td class="SeccionesH1" colspan="2">
@@ -157,7 +145,7 @@
                     </tr>
                 </table>    
         </ContentTemplate>
-    </asp:UpdatePanel>
+    </asp:UpdatePanel>    
 
     <div style=" margin-top:2px;">    
         <asp:UpdatePanel ID="UpdatePanel1" runat="server" ChildrenAsTriggers="true">
@@ -167,7 +155,9 @@
                 </div>  
             </ContentTemplate>
         </asp:UpdatePanel>
-    </div>                     
+    </div>  
+    
+<ucLogReclamo:WucLogReclamo ID="wucLogReclamo" runat="server" />
 
 
 
@@ -192,8 +182,7 @@
                         <td style=" width:30%">
                         </td>
                         <td class="Separador15"></td>
-                        <td>
-                            <%--<asp:Button ID="btnEnviarFecha" runat="server" Text="Aceptar" OnClick="BtnEnviarFechaCick" ValidationGroup="grpFechaEntrega" />--%>
+                        <td>                            
                         </td>
                     </tr>
                 </table>

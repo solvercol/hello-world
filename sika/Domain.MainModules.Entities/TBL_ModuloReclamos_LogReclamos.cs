@@ -27,7 +27,7 @@ namespace Domain.MainModules.Entities
         #region Primitive Properties
     
         [DataMember]
-        public int IdLog
+        public System.Guid IdLog
         {
             get { return _idLog; }
             set
@@ -43,7 +43,7 @@ namespace Domain.MainModules.Entities
                 }
             }
         }
-        private int _idLog;
+        private System.Guid _idLog;
     
         [DataMember]
         public decimal IdReclamo

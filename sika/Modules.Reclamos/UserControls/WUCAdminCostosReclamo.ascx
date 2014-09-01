@@ -6,6 +6,19 @@
                 Namespace="Infragistics.Web.UI.EditorControls" TagPrefix="ig" %> 
 <%@ Register TagPrefix="csc" Namespace="ServerControls" Assembly="ServerControls" %>
 
+<script language="javascript" type="text/javascript">
+    function clickButtonProduct(e, buttonid) {
+        var evt = e ? e : window.event;
+        var bt = document.getElementById(buttonid);
+        if (bt) {
+            if (evt.keyCode == 13) {
+                bt.click();
+                return false;
+            }
+        }
+    }
+</script>
+
 <table width="100%">
     <tr class="SectionMainTitle">
         <td >
@@ -415,7 +428,7 @@ cancelcontrolid="divCloseAdminCosto">
                 </td>
                 <td class="Separador15"></td>
                 <td valign="middle" style="width:70%;" class="Line">
-                    <asp:TextBox ID="txtFilterProduct" runat="server" Width="90%" MaxLength="100" onKeyDown="return EnterEvent(event);" AutoPostBack="false"></asp:TextBox>                  
+                    <asp:TextBox ID="txtFilterProduct" runat="server" Width="90%" MaxLength="100" ></asp:TextBox>                  
                 </td>
                 <td align="right" style="width:10%;">   
                     <asp:Button ID="btnFiltrar" runat="server" CausesValidation="false" Text="Filtrar" OnClick="BtnFiltrarClick" />                                  

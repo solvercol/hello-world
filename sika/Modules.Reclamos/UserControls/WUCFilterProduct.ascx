@@ -4,9 +4,14 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 
 <script language="javascript" type="text/javascript">
-    function EnterEvent(e) {
-        if (e.keyCode == 13) {
-            $('#btnFiltrar').trigger('click');
+    function clickButtonProduct(e, buttonid) {
+        var evt = e ? e : window.event;
+        var bt = document.getElementById(buttonid);
+        if (bt) {
+            if (evt.keyCode == 13) {
+                bt.click();
+                return false;
+            }
         }
     }
 </script>
@@ -65,7 +70,7 @@
     </tr>               
 </table>
 
- <asp:Panel ID="pnlImg"  runat="server" CssClass="popup_Container" Width="920" Height="350" style="display:none;">  
+ <asp:Panel ID="pnlImg"  runat="server" CssClass="popup_Container" Width="920" Height="350" style="display:none;">
 
     <div class="popup_Titlebar" id="PopupHeader">
         <div class="TitlebarLeft">
@@ -84,7 +89,7 @@
                 </td>
                 <td class="Separador15"></td>
                 <td valign="middle" style="width:70%;" class="Line">
-                    <asp:TextBox ID="txtFilterProduct" runat="server" Width="90%" MaxLength="100" onKeyDown="return EnterEvent(event);" AutoPostBack="false"></asp:TextBox>                  
+                    <asp:TextBox ID="txtFilterProduct" runat="server" Width="90%" MaxLength="100" ></asp:TextBox>                  
                 </td>
                 <td align="right" style="width:10%;">   
                     <asp:Button ID="btnFiltrar" runat="server" CausesValidation="false" Text="Filtrar" OnClick="BtnFiltrarClick" />                                  

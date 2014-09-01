@@ -53,7 +53,7 @@
                 <Content>
                     <table width="100%" class="tblSecciones">
                         <tr>
-                            <th style="width: 10%; text-align:left">
+                            <th style="width: 10%; text-align:left; vertical-align:top">
                                 Categoría Reclamo :
                             </th>
 
@@ -65,7 +65,7 @@
 
                             <td class="Separador"></td>
 
-                            <th style="width: 10%; text-align:left">
+                            <th style="width: 10%; text-align:left; vertical-align:top">
                                 Area :
                             </th>
 
@@ -77,7 +77,7 @@
 
                         </tr>
                         <tr>
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 * Asesor :
                             </th>
 
@@ -101,7 +101,7 @@
 
                             <td class="Separador"></td>
 
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 Planta :                                    
                             </th>
 
@@ -122,7 +122,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 # Pedido <br />
                                 # Factura <br />
                                 # Remisión :
@@ -131,12 +131,12 @@
                             <td class="Separador"></td>
 
                             <td class="Line" style="vertical-align:middle;" >
-                                <asp:TextBox ID="txtPedidoFacturaRemision" runat="server" Width="90%" />
+                                <asp:TextBox ID="txtPedidoFacturaRemision" runat="server" Width="90%" MaxLength="50" />
                             </td>
 
                             <td class="Separador"></td>
 
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 # Diario de Inventario :
                             </th>
 
@@ -148,7 +148,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 Reclamo Atendido Por :
                             </th>
 
@@ -170,7 +170,7 @@
 
                             <td class="Separador"></td>
 
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 No. Recordatorios :
                             </th>
 
@@ -183,7 +183,7 @@
 
                         </tr>
                         <tr>
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 Respuesta Inmediata :
                             </th>
 
@@ -198,7 +198,7 @@
 
                             <td class="Separador"></td>
 
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 Tipo de Contacto :                
                             </th>
 
@@ -224,7 +224,7 @@
                     <table width="100%" class="tblSecciones">
                         <!-- INICIO Datos CLiente Obra -->
                         <tr>
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 * Cliente :
                             </th>
 
@@ -236,7 +236,7 @@
 
                         </tr>
                         <tr>
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 * Unidad / Zona :
                             </th>
 
@@ -258,7 +258,7 @@
 
                         </tr>
                         <tr>
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 * Nombre Contacto :
                             </th>
 
@@ -268,7 +268,7 @@
                                 <table width="100%">
                                     <tr>
                                         <td style="width:95%">
-                                            <asp:TextBox ID="txtNombreContacto" Width="100%" runat="server" />
+                                            <asp:TextBox ID="txtNombreContacto" Width="100%" runat="server" MaxLength="512" />
                                         </td>
                                         <td style="width:5%">
                                             <asp:RequiredFieldValidator ID="reqNombreContacto"
@@ -284,7 +284,7 @@
 
                             <td class="Separador"></td>
 
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 * Email Contacto :
                             </th>
 
@@ -294,7 +294,7 @@
                                 <table width="100%">
                                     <tr>
                                         <td style="width:95%">
-                                            <asp:TextBox ID="txtEmailContacto" Width="100%" runat="server" />
+                                            <asp:TextBox ID="txtEmailContacto" Width="100%" runat="server" MaxLength="512" />
                                         </td>
                                         <td style="width:5%">
                                             <asp:RequiredFieldValidator ID="reqEmailContacto"
@@ -317,7 +317,7 @@
 
                         </tr>  
                         <tr>
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 Fecha Pedido :
                             </th>
 
@@ -337,7 +337,7 @@
 
                             <td class="Separador"></td>
 
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 Fecha del Compromiso :
                             </th>
 
@@ -357,14 +357,14 @@
 
                         </tr>
                         <tr>
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 Fecha Real Entrega :
                             </th>
 
                             <td class="Separador"></td>
 
                             <td class="Line" >
-                                <asp:TextBox ID="txtFechaRealEntrega" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtFechaRealEntrega" runat="server" ></asp:TextBox>
                                 <ajaxToolkit:CalendarExtender 
                                     ID="cexTxtFechaRealEntrega" 
                                     runat="server"  
@@ -377,7 +377,7 @@
 
                             <td class="Separador"></td>
 
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 Días de Incumplimiento :
                             </th>
 
@@ -406,7 +406,7 @@
                                 <table width="100%">
                                     <tr>
                                         <td style="width:95%">
-                                            <asp:TextBox ID="txtDescripcionProblema" runat="server" TextMode="MultiLine" Width="97%" Rows="4" />
+                                            <asp:TextBox ID="txtDescripcionProblema" runat="server" TextMode="MultiLine" Width="97%" Rows="4" MaxLength="1024" />
                                         </td>
                                         <td style="width:5%">
                                             <asp:RequiredFieldValidator ID="reqTxtDescripcionProblema"
