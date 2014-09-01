@@ -42,6 +42,7 @@ namespace Modules.Reclamos.UserControls
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            txtFilterProduct.Attributes.Add("onkeypress", "return clickButtonProduct(event,'" + btnFiltrar.ClientID + "')");
         }
 
         #endregion
@@ -129,12 +130,16 @@ namespace Modules.Reclamos.UserControls
 
         protected void BtnSearchProduct_Click(object sender, EventArgs e)
         {
-            FilterText = string.Empty;                        
+            FilterText = string.Empty;
+
+            Presenter.LoadTotalProductos();
+            Presenter.LoadProductos(0);
 
             if (PostBackEvent != null)
                 PostBackEvent();
 
             ShowSelectProductWindow(true);
+            txtFilterProduct.Focus();
         }
 
         protected void BtnFiltrarClick(object sender, EventArgs e)
@@ -146,6 +151,8 @@ namespace Modules.Reclamos.UserControls
                 PostBackEvent();
 
             ShowSelectProductWindow(true);
+
+            txtFilterProduct.Focus();
         }
 
         protected void BtnSelect_Click(object sender, EventArgs e)

@@ -8,6 +8,7 @@ using Applications.MainModule.Admin.IServices;
 using Domain.MainModules.Entities;
 using Infrastructure.CrossCutting.NetFramework.Enums;
 using Presenters.Reclamos.IViews;
+using Presenters.Reclamos.Resources;
 
 namespace Presenters.Reclamos.Presenters
 {
@@ -16,14 +17,17 @@ namespace Presenters.Reclamos.Presenters
         readonly ISfTBL_ModuloReclamos_AlternativasManagementServices _alternativaReclamoService;
         readonly ISfTBL_Admin_UsuariosManagementServices _usuariosService;
         readonly ISfTBL_ModuloReclamos_AnexosAlternativaManagementServices _anexosService;
+        readonly ISfTBL_ModuloReclamos_LogReclamosManagementServices _logReclamoService;
 
         public AdminAlternativasReclamoPresenter(ISfTBL_ModuloReclamos_AlternativasManagementServices alternativaReclamoService,
                                                  ISfTBL_Admin_UsuariosManagementServices usuariosService,
-                                                 ISfTBL_ModuloReclamos_AnexosAlternativaManagementServices anexosService)
+                                                 ISfTBL_ModuloReclamos_AnexosAlternativaManagementServices anexosService,
+                                                ISfTBL_ModuloReclamos_LogReclamosManagementServices logReclamoService)
         {
             _alternativaReclamoService = alternativaReclamoService;
             _usuariosService = usuariosService;
             _anexosService = anexosService;
+            _logReclamoService = logReclamoService;
         }
 
         public override void SubscribeViewToEvents()
@@ -99,6 +103,15 @@ namespace Presenters.Reclamos.Presenters
                         _anexosService.Add(anexo);
                     }
                 }
+
+                var log = new TBL_ModuloReclamos_LogReclamos();
+                log.IdReclamo = model.IdReclamo;
+                log.Descripcion = string.Format(Messages.AddAlternativaToReclamo, View.UserSession.Nombres, DateTime.Now);
+                log.IsActive = true;
+                log.CreateBy = View.UserSession.IdUser;
+                log.CreateOn = DateTime.Now;
+
+                _logReclamoService.Add(log);
 
                 LoadAlternativasReclamo();
             }

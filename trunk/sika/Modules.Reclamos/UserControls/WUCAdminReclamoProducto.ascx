@@ -57,7 +57,7 @@
                 <Content>
                     <table width="100%" class="tblSecciones">
                         <tr>
-                            <th style="width: 10%; text-align:left">
+                            <th style="width: 10%; text-align:left; vertical-align:top">
                                 * Asesor :
                             </th>
 
@@ -81,7 +81,7 @@
 
                             <td class="Separador"></td>
 
-                            <th style="width: 10%; text-align:left">
+                            <th style="width: 10%; text-align:left; vertical-align:top">
                                 Planta :
                             </th>
 
@@ -103,7 +103,7 @@
 
                         </tr>
                         <tr>
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 * Producto :
                             </th>
 
@@ -114,7 +114,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 Cantidad Vendida Und :
                             </th>
 
@@ -127,7 +127,7 @@
 
                             <td class="Separador"></td>
 
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 Cantidad Reclamada Und :
                             </th>
 
@@ -140,7 +140,7 @@
 
                         </tr>
                         <tr>
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 * Aplicado? :
                             </th>
 
@@ -166,7 +166,7 @@
 
                         </tr>
                         <tr>
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 Fecha de venta :
                             </th>
 
@@ -186,7 +186,7 @@
 
                             <td class="Separador"></td>
 
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 No. Recordatorios :
                             </th>
 
@@ -199,7 +199,7 @@
 
                         </tr>
                         <tr>
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 Reclamo Atendido por :
                             </th>
 
@@ -221,7 +221,7 @@
 
                             <td class="Separador"></td>
 
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 Tipo de Contacto :
                             </th>
 
@@ -236,7 +236,7 @@
 
                         </tr>
                         <tr>
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 Respuesta Inmediata :
                             </th>
 
@@ -273,7 +273,7 @@
                     <table width="100%" class="tblSecciones">
                         <!-- INICIO Datos CLiente Obra -->
                         <tr>
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 * Cliente :
                             </th>
 
@@ -295,7 +295,7 @@
 
                         </tr>
                         <tr>
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 * Unidad / Zona :
                             </th>
 
@@ -317,7 +317,7 @@
 
                         </tr>
                         <tr>
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 * Nombre Contacto :
                             </th>
 
@@ -327,7 +327,7 @@
                                 <table width="100%">
                                     <tr>
                                         <td style="width:95%">
-                                            <asp:TextBox ID="txtNombreContacto" Width="100%" runat="server" />
+                                            <asp:TextBox ID="txtNombreContacto" Width="100%" runat="server" MaxLength="512" />
                                         </td>
                                         <td style="width:5%">
                                             <asp:RequiredFieldValidator ID="reqNombreContacto"
@@ -343,7 +343,7 @@
 
                             <td class="Separador"></td>
 
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 * Email Contacto :
                             </th>
 
@@ -353,7 +353,7 @@
                                 <table width="100%">
                                     <tr>
                                         <td style="width:95%">
-                                            <asp:TextBox ID="txtEmailContacto" Width="100%" runat="server" />
+                                            <asp:TextBox ID="txtEmailContacto" Width="100%" runat="server" MaxLength="512" />
                                         </td>
                                         <td style="width:5%">
                                             <asp:RequiredFieldValidator ID="reqEmailContacto"
@@ -376,43 +376,43 @@
 
                         </tr>
                         <tr>
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 Nombre de la Obra :
                             </th>
 
                             <td class="Separador"></td>
 
                             <td class="Line" >
-                                <asp:TextBox ID="txtNombreObra" Width="100%" runat="server" />
+                                <asp:TextBox ID="txtNombreObra" Width="100%" runat="server" MaxLength="512" />
                             </td>
 
                             <td class="Separador"></td>
 
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 Aplicado por :
                             </th>
 
                             <td class="Separador"></td>
 
                             <td class="Line" >
-                                <asp:TextBox ID="txtAplicadoPor" Width="100%" runat="server" />
+                                <asp:TextBox ID="txtAplicadoPor" Width="100%" runat="server" MaxLength="512" />
                             </td>
 
                         </tr>
                         <tr>
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 Propietario de la Obra :
                             </th>
 
                             <td class="Separador"></td>
 
                             <td class="Line" >
-                                <asp:TextBox ID="txtPropietarioObra" Width="100%" runat="server" />
+                                <asp:TextBox ID="txtPropietarioObra" Width="100%" runat="server" MaxLength="512" />
                             </td>
 
                             <td class="Separador"></td>
 
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 Email de quien aplica :
                             </th>
 
@@ -422,7 +422,7 @@
                                 <table width="100%">
                                     <tr>
                                         <td style="width:95%">
-                                            <asp:TextBox ID="txtEmailQuienAplica" Width="100%" runat="server" />
+                                            <asp:TextBox ID="txtEmailQuienAplica" Width="100%" runat="server" MaxLength="512" />
                                         </td>
                                         <td style="width:5%">
                                             <asp:RegularExpressionValidator ID="reqExpTxtEmailQuienAplica"
@@ -438,7 +438,7 @@
 
                         </tr>
                         <tr>
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 Email Propietario :
                             </th>
 
@@ -448,7 +448,7 @@
                                  <table width="100%">
                                     <tr>
                                         <td style="width:95%">
-                                            <asp:TextBox ID="txtEmailPropietario" Width="100%" runat="server" />
+                                            <asp:TextBox ID="txtEmailPropietario" Width="100%" runat="server" MaxLength="512" />
                                         </td>
                                         <td style="width:5%">
                                             <asp:RegularExpressionValidator ID="reqExpTxtEmailPropietario"
@@ -487,7 +487,7 @@
                     <table width="100%" class="tblSecciones">
                         <!-- INICIO Estado del Producto -->
                         <tr>
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 Aspecto exterior envase :
                             </th>
 
@@ -502,7 +502,7 @@
 
                             <td class="Separador"></td>
 
-                            <th style="text-align:left"> 
+                            <th style="text-align:left; vertical-align:top"> 
                                 Aspecto del Producto :              
                             </th>
 
@@ -517,14 +517,14 @@
 
                         </tr>
                         <tr>
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 Descripción :
                             </th>
 
                             <td class="Separador"></td>
 
                             <td class="Line">
-                                <asp:TextBox ID="txtDescripcionProducto" Width="100%" runat="server" />
+                                <asp:TextBox ID="txtDescripcionProducto" Width="100%" runat="server" MaxLength="512" />
                             </td>
 
                             <td class="Separador"></td>
@@ -539,7 +539,7 @@
 
                         </tr>
                         <tr>
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 * Número de Lote :
                             </th>
 
@@ -549,7 +549,7 @@
                                  <table width="100%">
                                     <tr>
                                         <td style="width:95%">
-                                            <asp:TextBox ID="txtNumeroLote" Width="100%" runat="server" />
+                                            <asp:TextBox ID="txtNumeroLote" Width="100%" runat="server" MaxLength="50" />
                                         </td>
                                         <td style="width:5%">
                                             <asp:RequiredFieldValidator ID="reqTxtNumeroLote"
@@ -565,7 +565,7 @@
 
                             <td class="Separador"></td>
 
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 * Muestra disponible :
                             </th>
 
@@ -596,7 +596,7 @@
                                 <table width="100%">
                                     <tr>
                                         <td style="width:95%">
-                                            <asp:TextBox ID="txtDescripcionProblema" runat="server" TextMode="MultiLine" Width="97%" Rows="4" />
+                                            <asp:TextBox ID="txtDescripcionProblema" runat="server" TextMode="MultiLine" Width="97%" Rows="4" MaxLength="1024" />
                                         </td>
                                         <td style="width:5%">
                                             <asp:RequiredFieldValidator ID="reqTxtDescripcionProblema"
@@ -629,12 +629,12 @@
                     <table width="100%" class="tblSecciones">
                         <!-- INICIO Diagnostico y conclusiones previas -->
                         <tr>
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 Diagnóstico :
                             </th>
                             <td class="Separador"></td>
                             <td colspan="4">
-                                <asp:TextBox ID="txtDiagnostico" runat="server" TextMode="MultiLine" Width="100%" Rows="4" />
+                                <asp:TextBox ID="txtDiagnostico" runat="server" TextMode="MultiLine" Width="100%" Rows="4" MaxLength="1024" />
                             </td>      
                             <td>
                                 <asp:RequiredFieldValidator ID="reqTxtDiagnostico"
@@ -646,12 +646,12 @@
                             </td>      
                         </tr>
                         <tr>
-                            <th style="text-align:left">
+                            <th style="text-align:left; vertical-align:top">
                                 Conclusiones Previa :
                             </th>
                             <td class="Separador"></td>
                             <td colspan="4">
-                                <asp:TextBox ID="txtConclusionesPrevias" runat="server" TextMode="MultiLine" Width="100%" Rows="4" />
+                                <asp:TextBox ID="txtConclusionesPrevias" runat="server" TextMode="MultiLine" Width="100%" Rows="4" MaxLength="1024" />
                             </td>            
                             <td></td>
                         </tr>
@@ -668,12 +668,17 @@
                     <table width="100%" class="tblSecciones">
                         <!-- INICIO Solucion -->
                         <tr>
-                            <th style="text-align:left">
-                                Solucionado? :
+                            <th style="text-align:left; vertical-align:top">
+                                Solucionado :
                             </th>
                             <td class="Separador"></td>
                             <td colspan="5">
-                                <asp:TextBox ID="txtObservacionesSolucion" runat="server" TextMode="MultiLine" Width="97%" Rows="4" />
+                                <asp:RadioButtonList ID="rblSolucionado" runat="server" RepeatColumns="2" RepeatDirection="Horizontal" RepeatLayout="Table">
+                                    <asp:ListItem Value="true" Text="Si" />
+                                    <asp:ListItem Selected="True" Value="false" Text="No" />
+                                </asp:RadioButtonList>
+                                <br />
+                                <asp:TextBox ID="txtObservacionesSolucion" runat="server" TextMode="MultiLine" Width="97%" Rows="4" MaxLength="1024" />
                             </td>            
                         </tr>
                         <!-- FIN Solucion -->
