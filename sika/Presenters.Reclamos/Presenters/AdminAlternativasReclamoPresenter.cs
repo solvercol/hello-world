@@ -105,6 +105,7 @@ namespace Presenters.Reclamos.Presenters
                 }
 
                 var log = new TBL_ModuloReclamos_LogReclamos();
+                log.IdLog = Guid.NewGuid();
                 log.IdReclamo = model.IdReclamo;
                 log.Descripcion = string.Format(Messages.AddAlternativaToReclamo, View.UserSession.Nombres, DateTime.Now);
                 log.IsActive = true;

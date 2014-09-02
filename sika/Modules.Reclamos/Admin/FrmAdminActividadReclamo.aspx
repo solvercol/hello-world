@@ -108,7 +108,7 @@
                     
                             <td align="right" style="width:25%" valign="top">                        
                                 <div style="padding:3px; text-align:right;">
-                                    <asp:Button ID="btnRegresar" runat="server" Text="Regresar"  />
+                                    <asp:Button ID="btnRegresar" runat="server" Text="Regresar" OnClick="BtnRegresarClick"  />
                                     <asp:Button ID="btnEdit" runat="server" Text="Editar" OnClick="BtnEditActividadClick" OnClientClick="return ShowSplashModalLoading();" />
                                     <asp:Button ID="btnCancel" runat="server" Text="Cancelar" Visible="false" OnClick="BtnCancelActividadClick" OnClientClick="return ShowSplashModalLoading();" />
                                     <asp:Button ID="btnSave" runat="server" Text="Guardar" Visible="false" OnClick="BtnSaveActividadClick" OnClientClick="return ShowSplashModalLoading();" />

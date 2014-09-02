@@ -21,7 +21,21 @@ namespace Modules.Reclamos.UserControls
 
         private decimal _totalCostosProductoReclamo = 0;
         private decimal _totalCostosTransporte = 0;
-        private decimal _totalCostosDisposicion = 0;       
+        private decimal _totalCostosDisposicion = 0;
+
+        public bool CanEdit
+        {
+            get
+            {
+                if (ViewState["AdminCostos_CanEdit"] == null)
+                    ViewState["AdminCostos_CanEdit"] = false;
+                return Convert.ToBoolean(ViewState["AdminCostos_CanEdit"]);
+            }
+            set
+            {
+                ViewState["AdminCostos_CanEdit"] = value;
+            }
+        }
 
         #endregion
 
@@ -31,12 +45,12 @@ namespace Modules.Reclamos.UserControls
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
         }
 
         public void LoadControlData()
         {
             Presenter.LoadInitData();
+            EditCostos(false);
             txtFilterProduct.Attributes.Add("onkeypress", "return clickButtonProduct(event,'" + btnFiltrar.ClientID + "')");
         }
 
@@ -44,20 +58,34 @@ namespace Modules.Reclamos.UserControls
 
         #region Buttons
 
+        protected void BtnEditCostos_Click(object sender, EventArgs e)
+        {
+            EditCostos(true);
+            Presenter.LoadCostosReclamo();
+        }
+
         protected void BtnSaveCostos_Click(object sender, EventArgs e)
         {
-            Presenter.UpdateCostosReclamo();
+            EditCostos(false);
+            Presenter.UpdateCostosReclamo();            
         }
 
         protected void BtnAddCosto_Click(object sender, EventArgs e)
         {
             InitAdminProducto();
             ShowAdminProductoWindow(true);
+            EditCostos(true);
+        }
+
+        protected void BtnCancelCosto_Click(object sender, EventArgs e)
+        {
+            EditCostos(true);
         }
 
         protected void BtnSaveCosto_Click(object sender, EventArgs e)
         {
-            Presenter.AddCostosReclamo();
+            EditCostos(true);
+            Presenter.AddCostosReclamo();            
         }
 
         protected void BtnRemoveCosto_Click(object sender, EventArgs e)
@@ -66,7 +94,8 @@ namespace Modules.Reclamos.UserControls
 
             var idCosto = Convert.ToDecimal(btn.CommandArgument);
 
-            Presenter.RemoveCostosReclamo(idCosto);
+            EditCostos(true);
+            Presenter.RemoveCostosReclamo(idCosto);            
         }
 
         protected void BtnSearchProduct_Click(object sender, EventArgs e)
@@ -94,6 +123,7 @@ namespace Modules.Reclamos.UserControls
         protected void BtnCancelFiltrarClick(object sender, EventArgs e)
         {
             ShowAdminProductoWindow(true);
+            EditCostos(true);
         }
 
         protected void BtnSelect_Click(object sender, EventArgs e)
@@ -149,7 +179,11 @@ namespace Modules.Reclamos.UserControls
                 if (lblCostoDisponible != null) lblCostoDisponible.Text = string.Format("{0:0,0.0}", item.CostoDisponible);
 
                 var imgDeleteCosto = e.Item.FindControl("imgDeleteCosto") as ImageButton;
-                if (imgDeleteCosto != null) imgDeleteCosto.CommandArgument = string.Format("{0}", item.IdCostoProducto);
+                if (imgDeleteCosto != null)
+                {
+                    imgDeleteCosto.CommandArgument = string.Format("{0}", item.IdCostoProducto);
+                    imgDeleteCosto.Visible = CanEdit;
+                }
 
                 _totalCostosProductoReclamo += item.CostoProducto;
                 _totalCostosTransporte += item.Kilos; // Falta los Fletes
@@ -248,6 +282,7 @@ namespace Modules.Reclamos.UserControls
         protected void TxtTotalCostosTextChanged(object sender, EventArgs e)
         {
             CheckTotales();
+            EditCostos(true);
         }
 
         #endregion
@@ -275,6 +310,39 @@ namespace Modules.Reclamos.UserControls
             TotalCostosReclamo = CostoProductoReclamo + CostoTransporte + CostoDisposicion + CostoPruebasCampo +
                                     CostoManoObra + OtrosCostos + CostosAsistenciaTecnica + CostosAsistenciaRegional +
                                     CostoViajePersonas + CostoEquiposHerramientas;            
+        }
+
+        void EditCostos(bool enable)
+        {
+            CanEdit = enable;
+
+            txtCostoPruebasCampo.Visible = enable;
+            lblCostoPruebasCampo.Visible = !enable;
+
+            txtCostoManoObra.Visible = enable;
+            lblCostoManoObra.Visible = !enable;
+
+            txtOtrosCostos.Visible = enable;
+            lblOtrosCostos.Visible = !enable;
+
+            txtCostosAsistenciaTecnica.Visible = enable;
+            lblCostosAsistenciaTecnica.Visible = !enable;
+
+            txtCostosAsistenciaRegional.Visible = enable;
+            lblCostosAsistenciaRegional.Visible = !enable;
+
+            txtCostoViajePersonas.Visible = enable;
+            lblCostoViajePersonas.Visible = !enable;
+
+            txtCostoEquiposHerramientas.Visible = enable;
+            lblCostoEquiposHerramientas.Visible = !enable;
+
+            txtCostoEquiposHerramientas.Visible = enable;
+            lblCostoEquiposHerramientas.Visible = !enable;
+
+            btnNuevoGasto.Visible = enable;
+            btnSaveCostos.Visible = enable;
+            btnEditar.Visible = !enable;
         }
 
         #endregion
@@ -504,6 +572,7 @@ namespace Modules.Reclamos.UserControls
             set
             {
                 txtCostoPruebasCampo.ValueDecimal = value;
+                lblCostoPruebasCampo.Text = string.Format("{0:0,0.0}", value);
             }
         }
 
@@ -516,6 +585,7 @@ namespace Modules.Reclamos.UserControls
             set
             {
                 txtCostoManoObra.ValueDecimal = value;
+                lblCostoManoObra.Text = string.Format("{0:0,0.0}", value);
             }
         }
 
@@ -528,6 +598,7 @@ namespace Modules.Reclamos.UserControls
             set
             {
                 txtOtrosCostos.ValueDecimal = value;
+                lblOtrosCostos.Text = string.Format("{0:0,0.0}", value);
             }
         }
 
@@ -540,6 +611,7 @@ namespace Modules.Reclamos.UserControls
             set
             {
                 txtCostosAsistenciaTecnica.ValueDecimal = value;
+                lblCostosAsistenciaTecnica.Text = string.Format("{0:0,0.0}", value);
             }
         }
 
@@ -552,6 +624,7 @@ namespace Modules.Reclamos.UserControls
             set
             {
                 txtCostosAsistenciaRegional.ValueDecimal = value;
+                lblCostosAsistenciaRegional.Text = string.Format("{0:0,0.0}", value);
             }
         }
 
@@ -564,6 +637,7 @@ namespace Modules.Reclamos.UserControls
             set
             {
                 txtCostoViajePersonas.ValueDecimal = value;
+                lblCostoViajePersonas.Text = string.Format("{0:0,0.0}", value);
             }
         }
 
@@ -576,6 +650,7 @@ namespace Modules.Reclamos.UserControls
             set
             {
                 txtCostoEquiposHerramientas.ValueDecimal = value;
+                lblCostoEquiposHerramientas.Text = string.Format("{0:0,0.0}", value);
             }
         }
 

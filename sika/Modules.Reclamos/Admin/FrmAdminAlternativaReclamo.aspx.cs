@@ -52,7 +52,7 @@ namespace Modules.Reclamos.Admin
 
         protected void BtnRegresarClick(object sender, EventArgs e)
         {
-           
+            Response.Redirect(string.Format("../Views/FrmMisAlternativasPendientes.aspx?ModuleId={0}", ModuleId));
         }
 
         protected void BtnViewReclamo_Click(object sender, EventArgs e)

@@ -232,6 +232,7 @@ namespace Presenters.Reclamos.Presenters
                 InvokeMessageBox(new MessageBoxEventArgs(string.Format("Datos Guardados Con Exito."), TypeError.Ok));
 
                 var log = new TBL_ModuloReclamos_LogReclamos();
+                log.IdLog = Guid.NewGuid();
                 log.IdReclamo = model.IdReclamo;
                 log.Descripcion = string.Format(Messages.SaveReclamo, View.UserSession.Nombres, DateTime.Now);
                 log.IsActive = true;
@@ -274,6 +275,7 @@ namespace Presenters.Reclamos.Presenters
                 InvokeMessageBox(new MessageBoxEventArgs(string.Format("Datos Guardados Con Exito."), TypeError.Ok));
 
                 var log = new TBL_ModuloReclamos_LogReclamos();
+                log.IdLog = Guid.NewGuid();
                 log.IdReclamo = model.IdReclamo;
                 log.Descripcion = string.Format(Messages.UpdateReclamo, View.UserSession.Nombres, DateTime.Now);
                 log.IsActive = true;
