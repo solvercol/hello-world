@@ -28,8 +28,9 @@
     <tr>
         <td >
             <div style="padding:3px; text-align:right;">
-                <asp:Button ID="btnNuevoGasto" runat="server" Text="Adicionar Costo Producto" OnClick="BtnAddCosto_Click" />
-                <asp:Button ID="btnSaveCostos" runat="server" Text="Guardar Costos Reclamo" OnClick="BtnSaveCostos_Click" />
+                <asp:Button ID="btnNuevoGasto" runat="server" Text="Adicionar Costo Producto" OnClick="BtnAddCosto_Click" Visible="false" />
+                <asp:Button ID="btnSaveCostos" runat="server" Text="Guardar Costos Reclamo" OnClick="BtnSaveCostos_Click" Visible="false" />
+                <asp:Button ID="btnEditar" runat="server" Text="Editar Costos Reclamo" OnClick="BtnEditCostos_Click" />
             </div>
         </td>
     </tr>
@@ -155,6 +156,7 @@
                         Costo Pruebas de Campo
                     </td>
                     <td style="text-align:right">
+                        <asp:Label ID="lblCostoPruebasCampo" runat="server" />
                         <ig:WebNumericEditor    Id="txtCostoPruebasCampo" runat="server" 
                                                 Nullable="false" MinValue="0" Width="90%"
                                                 OnTextChanged="TxtTotalCostosTextChanged" AutoPostBackFlags-ValueChanged="On"  />
@@ -165,6 +167,7 @@
                         Costo Mano de Obra
                     </td>
                     <td style="text-align:right">
+                        <asp:Label ID="lblCostoManoObra" runat="server" />
                         <ig:WebNumericEditor    Id="txtCostoManoObra" runat="server" 
                                                 Nullable="false" MinValue="0" Width="90%"
                                                 OnTextChanged="TxtTotalCostosTextChanged" AutoPostBackFlags-ValueChanged="On"  />
@@ -175,6 +178,7 @@
                         Otros Costos
                     </td>
                     <td style="text-align:right">
+                        <asp:Label ID="lblOtrosCostos" runat="server" />
                         <ig:WebNumericEditor    Id="txtOtrosCostos" runat="server" 
                                                 Nullable="false" MinValue="0" Width="90%"
                                                 OnTextChanged="TxtTotalCostosTextChanged" AutoPostBackFlags-ValueChanged="On"  />
@@ -193,6 +197,7 @@
                         Costo Asistencia Técnica
                     </td>
                     <td style="text-align:right">
+                        <asp:Label ID="lblCostosAsistenciaTecnica" runat="server" />
                         <ig:WebNumericEditor    Id="txtCostosAsistenciaTecnica" runat="server" 
                                                 Nullable="false" MinValue="0" Width="90%"
                                                 OnTextChanged="TxtTotalCostosTextChanged" AutoPostBackFlags-ValueChanged="On"  />
@@ -203,6 +208,7 @@
                         Costo Asistencia Técnica Regional
                     </td>
                     <td style="text-align:right">
+                        <asp:Label ID="lblCostosAsistenciaRegional" runat="server" />
                         <ig:WebNumericEditor    Id="txtCostosAsistenciaRegional" runat="server" 
                                                 Nullable="false" MinValue="0" Width="90%"
                                                 OnTextChanged="TxtTotalCostosTextChanged" AutoPostBackFlags-ValueChanged="On"  />
@@ -213,6 +219,7 @@
                         Costo Viaje Personas (Tickets, Viáticos)
                     </td>
                     <td style="text-align:right">
+                        <asp:Label ID="lblCostoViajePersonas" runat="server" />
                         <ig:WebNumericEditor    Id="txtCostoViajePersonas" runat="server" 
                                                 Nullable="false" MinValue="0" Width="90%"
                                                 OnTextChanged="TxtTotalCostosTextChanged" AutoPostBackFlags-ValueChanged="On"  />
@@ -223,6 +230,7 @@
                         Costo Equipos y Herramientas (Arrendamiento)
                     </td>
                     <td style="text-align:right">
+                        <asp:Label ID="lblCostoEquiposHerramientas" runat="server" />
                         <ig:WebNumericEditor    Id="txtCostoEquiposHerramientas" runat="server" 
                                                 Nullable="false" MinValue="0" Width="90%"
                                                 OnTextChanged="TxtTotalCostosTextChanged" AutoPostBackFlags-ValueChanged="On"  />
@@ -260,7 +268,7 @@
     </div>
 
     <div style="padding:3px; text-align:right;">
-        <asp:Button ID="btnRegresar" runat="server" Text="Regresar"  />
+        <asp:Button ID="btnRegresar" runat="server" Text="Regresar" OnClick="BtnCancelCosto_Click"  />
         <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="BtnSaveCosto_Click"  />
     </div>
 

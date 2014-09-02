@@ -77,7 +77,7 @@ namespace Presenters.Reclamos.Presenters
             }
         }
 
-        void LoadCostosReclamo()
+        public void LoadCostosReclamo()
         {
             if (string.IsNullOrEmpty(View.IdReclamo)) return;
 
@@ -155,6 +155,8 @@ namespace Presenters.Reclamos.Presenters
                     reclamo.ModifiedOn = DateTime.Now;
 
                     _reclamoService.Modify(reclamo);
+
+                    LoadCostosReclamo();
                 }
             }
             catch (Exception ex)

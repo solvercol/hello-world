@@ -31,6 +31,15 @@ namespace Modules.Reclamos.UserControls {
         protected global::System.Web.UI.WebControls.Button btnSaveCostos;
         
         /// <summary>
+        /// btnEditar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEditar;
+        
+        /// <summary>
         /// rptCostosList control.
         /// </summary>
         /// <remarks>
@@ -67,6 +76,15 @@ namespace Modules.Reclamos.UserControls {
         protected global::System.Web.UI.WebControls.Label lblCostoDisposicion;
         
         /// <summary>
+        /// lblCostoPruebasCampo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCostoPruebasCampo;
+        
+        /// <summary>
         /// txtCostoPruebasCampo control.
         /// </summary>
         /// <remarks>
@@ -74,6 +92,15 @@ namespace Modules.Reclamos.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Infragistics.Web.UI.EditorControls.WebNumericEditor txtCostoPruebasCampo;
+        
+        /// <summary>
+        /// lblCostoManoObra control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCostoManoObra;
         
         /// <summary>
         /// txtCostoManoObra control.
@@ -85,6 +112,15 @@ namespace Modules.Reclamos.UserControls {
         protected global::Infragistics.Web.UI.EditorControls.WebNumericEditor txtCostoManoObra;
         
         /// <summary>
+        /// lblOtrosCostos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblOtrosCostos;
+        
+        /// <summary>
         /// txtOtrosCostos control.
         /// </summary>
         /// <remarks>
@@ -92,6 +128,15 @@ namespace Modules.Reclamos.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Infragistics.Web.UI.EditorControls.WebNumericEditor txtOtrosCostos;
+        
+        /// <summary>
+        /// lblCostosAsistenciaTecnica control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCostosAsistenciaTecnica;
         
         /// <summary>
         /// txtCostosAsistenciaTecnica control.
@@ -103,6 +148,15 @@ namespace Modules.Reclamos.UserControls {
         protected global::Infragistics.Web.UI.EditorControls.WebNumericEditor txtCostosAsistenciaTecnica;
         
         /// <summary>
+        /// lblCostosAsistenciaRegional control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCostosAsistenciaRegional;
+        
+        /// <summary>
         /// txtCostosAsistenciaRegional control.
         /// </summary>
         /// <remarks>
@@ -112,6 +166,15 @@ namespace Modules.Reclamos.UserControls {
         protected global::Infragistics.Web.UI.EditorControls.WebNumericEditor txtCostosAsistenciaRegional;
         
         /// <summary>
+        /// lblCostoViajePersonas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCostoViajePersonas;
+        
+        /// <summary>
         /// txtCostoViajePersonas control.
         /// </summary>
         /// <remarks>
@@ -119,6 +182,15 @@ namespace Modules.Reclamos.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Infragistics.Web.UI.EditorControls.WebNumericEditor txtCostoViajePersonas;
+        
+        /// <summary>
+        /// lblCostoEquiposHerramientas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCostoEquiposHerramientas;
         
         /// <summary>
         /// txtCostoEquiposHerramientas control.
