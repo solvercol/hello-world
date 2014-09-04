@@ -249,7 +249,7 @@ namespace Modules.Reclamos.Admin
             lblObservaciones.Visible = !enabled;
             //lblEstado.Visible = !enabled;
 
-            btnCancel.Visible = enabled;
+            //btnCancel.Visible = enabled;
             btnSave.Visible = enabled;
             btnSaveRealizada.Visible = enabled;
             btnCancelActividad.Visible = enabled;
@@ -270,6 +270,8 @@ namespace Modules.Reclamos.Admin
         {
             rptArchivosAdjuntos.DataSource = items;
             rptArchivosAdjuntos.DataBind();
+
+            trAnexos.Visible = items.Any();            
         }
 
         public void DescargarArchivo(DTO_ValueKey archivo)
@@ -280,6 +282,7 @@ namespace Modules.Reclamos.Admin
         public void ShoeObservaciones(bool visible)
         {
             trObservaciones.Visible = visible;
+            trLogCierre.Visible = visible;
         }
 
         #endregion
@@ -520,8 +523,20 @@ namespace Modules.Reclamos.Admin
             set { txtObservacionesCancelacion.Text = value; }
         }
 
+        public string LogCierre
+        {
+            get
+            {
+                return lblLogCierre.Text;
+            }
+            set
+            {
+                lblLogCierre.Text = value;
+            }
+        }
+
         #endregion
 
-        #endregion    
+        #endregion
     }
 }

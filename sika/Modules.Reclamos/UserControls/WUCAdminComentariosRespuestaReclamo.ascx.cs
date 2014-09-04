@@ -170,7 +170,7 @@ namespace Modules.Reclamos.UserControls
 
                     hasChild = true;
                 }
-
+                imgDetalle.Visible = hasChild;
                 // Adicionando comportamiento de colapse para hijos
                 var trParent = e.Item.FindControl("rowParent") as HtmlTableRow;
                 if (trParent != null)

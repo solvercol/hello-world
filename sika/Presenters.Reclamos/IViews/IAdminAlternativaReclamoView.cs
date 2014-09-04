@@ -15,6 +15,7 @@ namespace Presenters.Reclamos.IViews
         DateTime FechaAlternativa { get; set; }
         string Seguimiento { get; set; }
         string Estado { get; set; }
+        string LogCierre { get; set; }
 
         // Seccion Info Reclamo
         string IdReclamo { get; set; }

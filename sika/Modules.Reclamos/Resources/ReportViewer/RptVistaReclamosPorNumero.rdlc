@@ -1283,8 +1283,14 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DS_Report</DataSetName>
+        <SortExpressions>
+          <SortExpression>
+            <Value>=Fields!NumeroReclamo.Value</Value>
+            <Direction>Descending</Direction>
+          </SortExpression>
+        </SortExpressions>
         <Height>1.5cm</Height>
-        <Width>32.40592cm</Width>
+        <Width>32.40588cm</Width>
         <Style>
           <Border>
             <Style>None</Style>

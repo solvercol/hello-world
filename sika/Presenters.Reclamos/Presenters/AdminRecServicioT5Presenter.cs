@@ -351,14 +351,15 @@ namespace Presenters.Reclamos.Presenters
             model.Planta = View.Planta;
             model.NumeroDeVeces = View.NoRecordatorios;
             model.IdAtendidoPor = Convert.ToInt32(View.IdAtendidoPor);
-            model.UnidadZona = View.UnidadZona;            
-            model.NombreReclama  = View.QuienReclama;
+            model.UnidadZona = View.UnidadZona;
+            model.NombreReclama = View.NombreQuienReclama;
             model.AreaIncumple = View.AreaIncumpleProcedimiento;
             model.ProcedimientoInternoAfectado = View.ProcedimientoInternoAfectado;
             model.DescripcionProblema = View.DescripcionProblema;
             model.IdResponsableActual = View.UserSession.IdUser;
             model.IdEstado = 1; // Registrado
             model.IsActive = true;
+            model.IdAsesoradoPor = View.UserSession.IdUser;
             model.CreateBy = View.UserSession.IdUser;
             model.CreateOn = DateTime.Now;
             model.ModifiedBy = View.UserSession.IdUser;

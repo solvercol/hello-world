@@ -78,6 +78,7 @@ from	TBL_ModuloReclamos_Alternativas alternativa with(nolock)
 		left join TBL_ModuloReclamos_CategoriasReclamo categorias with(nolock)
 			on reclamo.IdCategoriaReclamo = categorias.IdCategoriaReclamo
 where	alternativa.IdResponsable = @IdResponsable
+		and alternativa.Estado != 'Realizada'
 
 update	@TblReport
 set		DescripcionReclamo = DescripcionProducto

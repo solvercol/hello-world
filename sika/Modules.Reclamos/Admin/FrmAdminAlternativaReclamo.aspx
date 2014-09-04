@@ -212,7 +212,7 @@
 
                             <td class="Separador"></td>
                         </tr>
-                        <tr>
+                        <tr id="trAnexos" runat="server">
                             <td></td>
                             <td class="Separador"></td>
 
@@ -251,6 +251,11 @@
                             </td>
 
                             <td class="Separador"></td>
+                        </tr>
+                        <tr id="trLogCierre" runat="server">
+                            <th style="text-align:left; vertical-align:top; padding-left: 10px; background-color:#e0e0e0" colspan="4">
+                                <asp:Label ID="lblLogCierre" runat="server" Font-Bold="true" />
+                            </th>
                         </tr>
                     </table>
                 </td>

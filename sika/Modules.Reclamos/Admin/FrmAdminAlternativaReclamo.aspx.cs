@@ -228,7 +228,7 @@ namespace Modules.Reclamos.Admin
             lblSeguimiento.Visible = !enabled;
             //lblEstado.Visible = !enabled;
 
-            btnCancel.Visible = enabled;
+            //btnCancel.Visible = enabled;
             btnSave.Visible = enabled;
             btnSaveRealizada.Visible = enabled;
             btnEdit.Visible = !enabled;
@@ -238,6 +238,8 @@ namespace Modules.Reclamos.Admin
         {
             rptArchivosAdjuntos.DataSource = items;
             rptArchivosAdjuntos.DataBind();
+
+            trAnexos.Visible = items.Any();
         }
 
         public void DescargarArchivo(DTO_ValueKey archivo)
@@ -461,6 +463,7 @@ namespace Modules.Reclamos.Admin
             {
                 ddlEstado.SelectedValue = value;
                 lblEstado.Text = value;
+                trLogCierre.Visible = value == "Realizada";
             }
         }
 
@@ -483,6 +486,18 @@ namespace Modules.Reclamos.Admin
             set
             {
                 btnEdit.Visible = value;
+            }
+        }
+
+        public string LogCierre
+        {
+            get
+            {
+                return lblLogCierre.Text;
+            }
+            set
+            {
+                lblLogCierre.Text = value;
             }
         }
 

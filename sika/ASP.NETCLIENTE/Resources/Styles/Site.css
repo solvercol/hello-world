@@ -394,12 +394,25 @@ a
     vertical-align:middle;
 }
 
+.container980
+{
+    width:980px;
+    background-color:#F6C000;
+    height:20px;
+    color:#060000;
+    text-align:center;
+    font-family:Calibri;
+    margin:auto;
+    vertical-align:middle;
+}
+
+
 #HeadderBg
 {
     background-image:url(../Images/CabezoteHome.jpg);
     background-repeat:no-repeat;
-    width:1280px;
-    height:380px;
+    width:980px;
+    height:398px;
     margin:auto;
 }
 
@@ -409,7 +422,7 @@ a
     background-image:url(../Images/LogoPropac.jpg);
     background-repeat:no-repeat;
     float:left;
-    width:460px;
+    width:285px;
     background-color:transparent;
     margin:auto;
     height:256px;
@@ -421,7 +434,7 @@ a
     background-image:url(../Images/Bienvenida.jpg);
     background-repeat:no-repeat;
     float:right;
-    width:460px;
+    width:260px;
     background-color:transparent;
     margin-right:35px;
     height:256px;

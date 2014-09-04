@@ -343,6 +343,14 @@ namespace Modules.Reclamos.UserControls
             }
         }
 
+        public string NombreQuienReclama
+        {
+            get
+            {
+                return wddQuienReclama.SelectedItem.Text;
+            }
+        }
+
         public string ProcedimientoInternoAfectado
         {
             get

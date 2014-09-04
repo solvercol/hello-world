@@ -15,6 +15,7 @@ namespace Presenters.Reclamos.IViews
         DateTime FechaActividad { get; set; }
         string UsuarioAsignacion { get; set; }
         string Observaciones { get; set; }
+        string LogCierre { get; set; }
         void LoadUsuariosCopia(List<DTO_ValueKey> items);
 
         string ObservacionesCierre { get; set; }

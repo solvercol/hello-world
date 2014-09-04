@@ -20,7 +20,7 @@
             </div>
 
             <div class="popup_Body">      
-                <asp:PlaceHolder ID="phloadControl" runat="server"></asp:PlaceHolder>                  
+                <asp:PlaceHolder ID="phloadControlLoadFile" runat="server"></asp:PlaceHolder>                  
             </div>
         </asp:Panel>
     
