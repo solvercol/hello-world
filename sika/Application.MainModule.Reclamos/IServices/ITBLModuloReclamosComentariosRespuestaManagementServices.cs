@@ -9,5 +9,6 @@ namespace Application.MainModule.Reclamos.IServices
     {
         TBL_ModuloReclamos_ComentariosRespuesta GetById(decimal id);
         List<TBL_ModuloReclamos_ComentariosRespuesta> GetByIdReclamo(decimal idReclamo);
+        List<TBL_ModuloReclamos_ComentariosRespuesta> GetByIdComentarioRelacionado(decimal idComentario);
     }
 }

@@ -1,7 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FrmAdminActividadReclamo.aspx.cs" Inherits="Modules.Reclamos.Admin.FrmAdminActividadReclamo" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FrmAdminComentarioRespuestaReclamo.aspx.cs" Inherits="Modules.Reclamos.Admin.FrmAdminComentarioRespuestaReclamo" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
- 
+<%@ Register Assembly="Infragistics4.Web.v11.1, Version=11.1.20111.2238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb"
+             Namespace="Infragistics.Web.UI.ListControls" TagPrefix="ig" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -76,11 +77,9 @@
                             <td align="right" style="width:35%" valign="top">                        
                                 <div style="padding:3px; text-align:right;">
                                     <asp:Button ID="btnRegresar" runat="server" Text="Regresar" OnClick="BtnRegresarClick"  />
-                                    <asp:Button ID="btnEdit" runat="server" Text="Editar" OnClick="BtnEditActividadClick" OnClientClick="return ShowSplashModalLoading();" />
-                                    <asp:Button ID="btnCancel" runat="server" Text="Salir" Visible="false" OnClick="BtnCancelActividadClick" OnClientClick="return ShowSplashModalLoading();" />
-                                    <asp:Button ID="btnSave" runat="server" Text="Guardar" Visible="false" OnClick="BtnSaveActividadClick" OnClientClick="return ShowSplashModalLoading();" />
-                                    <asp:Button ID="btnSaveRealizada" runat="server" Text="Marcar Realizada" Visible="false" OnClick="BtnSaveRealizadaClick" OnClientClick="return ShowSplashModalLoading();" />
-                                    <asp:Button ID="btnCancelActividad" runat="server" Text="Cancelar Actividad" Visible="false" OnClick="BtnCancelarActividadClick" OnClientClick="return ShowSplashModalLoading();" />
+                                    <asp:Button ID="btnEdit" runat="server" Text="Editar" OnClick="BtnEditComentarioClick" OnClientClick="return ShowSplashModalLoading();" />
+                                    <asp:Button ID="btnCancel" runat="server" Text="Salir" Visible="false" OnClick="BtnCancelComentarioClick" OnClientClick="return ShowSplashModalLoading();" />
+                                    <asp:Button ID="btnSave" runat="server" Text="Guardar" Visible="false" OnClick="BtnSaveComentarioClick" OnClientClick="return ShowSplashModalLoading();" />
                                 </div>
                             </td>
                         </tr>                
@@ -96,57 +95,51 @@
                     <table width="100%" cellpadding="0" cellspacing="0" class="tblSecciones">
                         <tr>
                             <td colspan="4" class="TituloSeccion">
-                                Datos Actividad
+                                Datos Comentarios y Respuestas
                             </td>
                         </tr>
                         <tr>
                             <th style="width:7%; text-align:left; vertical-align:top">
-                                Estado :
+                                Asunto :
                             </th>
 
                             <td class="Separador"></td>
 
                             <td class="Line" style="width: 90%">
-                                <asp:Label ID="lblEstado" runat="server" />
-                                <asp:DropDownList ID="ddlEstado" runat="server" Visible="false">
-                                    <asp:ListItem Text="Registrada" Value="Registrada" />
-                                    <asp:ListItem Text="Programada" Value="Programada" />
-                                    <asp:ListItem Text="Realizada" Value="Realizada" />
-                                    <asp:ListItem Text="Cancelada" Value="Cancelada" />
-                                </asp:DropDownList>
+                                <asp:Label ID="lblAsunto" runat="server" />
                             </td>
 
                             <td class="Separador"></td>
                         </tr>
                         <tr>
                             <th style="text-align:left; vertical-align:top">
-                                Actividad :
+                                Mensaje :
                             </th>
 
                             <td class="Separador"></td>
 
                             <td class="Line">
-                                <asp:Label ID="lblActividad" runat="server" />
+                                <asp:Label ID="lblMensaje" runat="server" />
                             </td>
 
                             <td class="Separador"></td>
                         </tr>
                         <tr>
                             <th style="text-align:left; vertical-align:top">
-                                Descripción :
+                                Destinatario :
                             </th>
 
                             <td class="Separador"></td>
 
                             <td class="Line">
-                                <asp:Label ID="lblDescripcion" runat="server" />
+                                <asp:Label ID="lblDestinatario" runat="server" />
                             </td>
 
                             <td class="Separador"></td>
                         </tr>
                         <tr>
                             <th style="text-align:left; vertical-align:top">
-                                Fecha Actividad :
+                                Fecha :
                             </th>
 
                             <td class="Separador"></td>
@@ -157,46 +150,73 @@
 
                             <td class="Separador"></td>
                         </tr>
-                        <tr>
+                        <tr id="tr1" runat="server">
                             <th style="text-align:left; vertical-align:top">
-                                Asignado a :
-                            </th>
-
-                            <td class="Separador"></td>
-
-                            <td class="Line" >
-                                <asp:Label ID="lblAsignado" runat="server" />
-                            </td>
-
-                            <td class="Separador"></td>
-                        </tr>
-                        <tr id="trUsuariosCopia" runat="server">
-                            <th style=" text-align:left; vertical-align:top">
-                                Usuarios Copia :
-                            </th>
-
-                            <td class="Separador"></td>
-
-                            <td class="Line" >
-                                <asp:ListBox ID="lstUsuariosCopia" runat="server" SelectionMode="Single" Width="98%" Height="80px" />
-                            </td>
-
-                            <td class="Separador"></td>
-                        </tr>
-                        <tr id="trObservaciones" runat="server">
-                            <th style="text-align:left; vertical-align:top">
-                                Observaciones :
+                                Comentarios y Respuestas :
                             </th>
 
                             <td class="Separador"></td>
 
                             <td class="Line">
-                                <asp:Label ID="lblObservaciones" runat="server" />
-                                <asp:TextBox ID="txtObservaciones" runat="server" Width="98%" TextMode="MultiLine" Rows="3" />
+                                <table width="100%" >
+                                    <asp:repeater id="rptComentariosAsociados" runat="server" OnItemDataBound="RptComentariosAsociados_ItemDataBound"  >                                                                 
+                                        <ItemTemplate>
+                                            <tr class="Line">
+                                                <td style="width:13%; vertical-align:top">
+                                                    <asp:Label ID="lblFechaComentario" runat="server" />
+                                                </td>
+                                                <td style="width:10%; vertical-align:top">
+                                                    <asp:Label ID="lblCreadoPor" runat="server" />
+                                                </td>
+                                                <td>
+                                                    <asp:Label ID="lblComentario" runat="server" />
+                                                </td>
+                                            </tr>
+                                        </ItemTemplate>
+                                    </asp:repeater>
+                                </table> 
+                            </td>
+
+                            <td class="Separador"></td>
+                        </tr>  
+                        <tr id="trComentarios" runat="server">
+                            <th style="text-align:left; vertical-align:top">
+                                Nuevo Comentario :
+                            </th>
+
+                            <td class="Separador"></td>
+
+                            <td class="Line">
+                                <asp:TextBox ID="txtComentario" runat="server" Width="98%" TextMode="MultiLine" Rows="3" />
                             </td>
 
                             <td class="Separador"></td>
                         </tr>
+                        
+                        <tr id="trDestinatarios" runat="server">
+                            <th style="text-align:left; vertical-align:top">
+                                Destinatario :
+                            </th>
+
+                            <td class="Separador"></td>
+
+                            <td class="Line">
+                                <ig:WebDropDown ID="wddDestinatarios" 
+                                            runat="server" 
+                                            EnableMultipleSelection="false"
+                                            MultipleSelectionType="Checkbox" 
+                                            DisplayMode="DropDown"
+                                            EnableClosingDropDownOnSelect="false"
+                                            StyleSetName="Claymation"
+                                            DropDownContainerWidth="300px"
+                                            DropDownContainerHeight="220px"
+                                            Width="50%">
+                            </ig:WebDropDown>
+                            </td>
+
+                            <td class="Separador"></td>
+                        </tr> 
+                                               
                         <tr>
                             <th style="text-align:left; vertical-align:top">
                                 Anexos :
@@ -262,79 +282,5 @@
         <asp:PostBackTrigger ControlID="btnAddArchivoAdjunto" />
     </Triggers>
 </asp:UpdatePanel>
-
-
-<asp:UpdatePanel ID="upPanelCierreActividad" runat="server">
-    <ContentTemplate> 
-        <asp:Panel ID="pCiereActividad"  runat="server" CssClass="popup_Container" Width="500" Height="200" style="display:none;">  
-
-            <div class="popup_Titlebar" id="Div1">
-                <div class="TitlebarLeft">
-                    Administrar Actividad
-                </div>
-                <div class="TitlebarRight" id="div2">
-                </div>
-            </div>
-
-            <div style="padding:3px; text-align:right;">
-                <asp:Button ID="btnCancelCierre" runat="server" Text="Regresar"  OnClick="BtnCancelCierreClick" CausesValidation="false" />
-                <asp:Button ID="btnSaveRealizarActividad" runat="server" Text="Guardar" Visible="false" OnClick="BtnSaveRealizarActividad_Click"  CausesValidation="false" />
-                <asp:Button ID="btnSaveCancelarActividad" runat="server" Text="Guardar" Visible="false" OnClick="BtnSaveCancelarActividad_Click" ValidationGroup="vgCancelarActividad"  />
-            </div>
-
-            <asp:ValidationSummary ID="vsCierreActividad" runat="server" DisplayMode="BulletList" Font-Size="8pt" ShowMessageBox="false" CssClass="validator" ShowSummary="true" ValidationGroup="vgCancelarActividad"/>
-
-            <div class="popup_Body">                                                    
-                <table width="100%" class="tblSecciones">                    
-                    <tr id="trObservacionesCierre" runat="server">
-                        <th style="text-align:left; vertical-align:top">
-                            Observaciones Cierre :
-                        </th>
-
-                        <td class="Separador"></td>
-
-                        <td class="Line">
-                            <asp:TextBox ID="txtObservacionesCierre" runat="server" TextMode="MultiLine" Rows="7" Width="95%" MaxLength="512" />
-                        </td>
-
-                        <td class="Separador"></td>
-                    </tr>
-                    <tr id="trObservacionesCancelacion" runat="server">
-                        <th style="text-align:left; vertical-align:top">
-                            Observaciones Cancelacion :
-                        </th>
-
-                        <td class="Separador"></td>
-
-                        <td class="Line">
-                            <asp:TextBox ID="txtObservacionesCancelacion" runat="server" TextMode="MultiLine" Rows="7" Width="95%" MaxLength="512" />
-                        </td>
-
-                        <td class="Separador">
-                            <asp:RequiredFieldValidator ID="reqObservacionesCcancelcacion" runat="server"
-                                                        ErrorMessage="Es necesario ingresar las observaciones de la cancelación de la actividad"
-                                                        ControlToValidate="txtObservacionesCancelacion" ForeColor="Red"
-                                                        ValidationGroup="vgCancelarActividad" >*</asp:RequiredFieldValidator>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </asp:Panel>
-    
-    <asp:Button ID="btnPopUpCierreActividadTargetControl" runat="server" style="display:none; "/>    
-
-    <ajaxToolkit:ModalPopupExtender 
-        ID="mpeCierreActividad" 
-        runat="server" 
-        TargetControlID="btnPopUpCierreActividadTargetControl" 
-        PopupControlID="pCiereActividad" 
-        BackgroundCssClass="ModalPopupBG" DropShadow="true" 
-        > 
-        </ajaxToolkit:ModalPopupExtender>   
-    </ContentTemplate>
-    <Triggers>
-        <asp:PostBackTrigger ControlID="btnAddArchivoAdjunto" />
-    </Triggers>
-</asp:UpdatePanel> 
 
 </asp:Content>

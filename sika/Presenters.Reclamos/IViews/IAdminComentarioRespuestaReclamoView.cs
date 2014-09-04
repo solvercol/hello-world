@@ -1,20 +1,20 @@
 ﻿using System;
 using Application.Core;
+using Domain.MainModules.Entities;
 using System.Collections.Generic;
 
 namespace Presenters.Reclamos.IViews
 {
-    public interface IAdminAlternativaReclamoView : IView
+    public interface IAdminComentarioRespuestaReclamoView : IView
     {
-        // Admin Alternativa
-        string IdAlternativa { get; }
-        string Alternativa { get; set; }
-        string Causas { get; set; }
-        string Factores { get; set; }
-        string Responsable { get; set; }
-        DateTime FechaAlternativa { get; set; }
-        string Seguimiento { get; set; }
-        string Estado { get; set; }
+        // Admin Comentario Respuesta
+        string IdComentario { get; }
+        string Asunto { get; set; }
+        string Mensaje { get; set; }
+        string Destinatario { get; set; }
+        DateTime FechaComentario { get; set; }
+        string NuevoComentario { get; set; }
+        string IdUsuarioDestino { get; set; }
 
         // Seccion Info Reclamo
         string IdReclamo { get; set; }
@@ -29,6 +29,8 @@ namespace Presenters.Reclamos.IViews
 
         // Methods
         void EnableEdit(bool enabled);
+        void LoadDestinatarios(List<TBL_Admin_Usuarios> items);
+        void LoadComentariosRelacionados(List<TBL_ModuloReclamos_ComentariosRespuesta> items);
 
         // Archivos Adjuntos        
         byte[] ArchivoAdjunto { get; }
@@ -36,7 +38,5 @@ namespace Presenters.Reclamos.IViews
         void LoadArchivosAdjuntos(List<DTO_ValueKey> items);
         void DescargarArchivo(DTO_ValueKey archivo);
 
-        // Register
-        bool CanRegister { get; set; }
     }
 }

@@ -33,8 +33,13 @@ namespace Presenters.Reclamos.Presenters
 
         void View_Load(object sender, EventArgs e)
         {
-            if (View.IsPostBack) return;
+            if (View.IsPostBack) return;            
             LoadInitData();
+        }
+
+        void CheckUserAction()
+        {
+
         }
 
         public void LoadInitData()
@@ -61,6 +66,7 @@ namespace Presenters.Reclamos.Presenters
                     View.Estado = model.Estado;
 
                     View.EnableEdit(false);
+                    View.CanRegister = View.UserSession.IdUser == model.IdResponsable && model.Estado == "Asignada";
 
                     LoadReclamo(model.IdReclamo);
                     LoadArhchivosAdjuntos();
@@ -92,11 +98,8 @@ namespace Presenters.Reclamos.Presenters
                         View.TitleReclamo = dtoProducto.NombreProducto;
                         View.TitleReclamoFrom = dtoCliente.NombreCliente;
                         View.Unidad = reclamo.UnidadZona;
-                        if (reclamo.TBL_ModuloReclamos_CategoriasReclamo != null)
-                            View.Area = string.Format("{0} / {1}", reclamo.TBL_ModuloReclamos_CategoriasReclamo.Area, reclamo.TBL_ModuloReclamos_CategoriasReclamo.TBL_Admin_Usuarios.Nombres);
                         View.FechaReclamo = string.Format("{0:dd/MM/yyyy}", reclamo.CreateOn);
-                        View.Asesor = reclamo.AsesoradoPor.Nombres;
-                        View.TotalCostoReclamo = string.Format("{0:0,0.0} {1}", reclamo.CostoTotal, View.MonedaLocal);
+                        View.Asesor = reclamo.AsesoradoPor.Nombres;                        
                     }
                     else
                     {
@@ -110,11 +113,9 @@ namespace Presenters.Reclamos.Presenters
                             View.TitleReclamoFrom = string.Format("{0} / {1}", reclamo.NombreReclama, reclamo.ProcedimientoInternoAfectado);
                         }
                         View.Unidad = reclamo.UnidadZona;
-                        View.Area = string.Format("{0} / {1}", reclamo.TBL_ModuloReclamos_CategoriasReclamo.Area, reclamo.TBL_ModuloReclamos_CategoriasReclamo.TBL_Admin_Usuarios.Nombres);
                         View.FechaReclamo = string.Format("{0:dd/MM/yyyy}", reclamo.CreateOn);
                         if (reclamo.AsesoradoPor != null)
                             View.Asesor = reclamo.AsesoradoPor.Nombres;
-                        View.TotalCostoReclamo = string.Format("{0:0,0.0} {1}", reclamo.CostoTotal, View.MonedaLocal);
                     }
                 }
             }
@@ -138,7 +139,7 @@ namespace Presenters.Reclamos.Presenters
                     model.Factores = View.Factores;
                     model.Alternativa = View.Alternativa;
                     model.Seguimiento = View.Seguimiento;
-                    model.Estado = View.Estado;
+                    //model.Estado = View.Estado;
                     model.ModifiedBy = View.UserSession.IdUser;
                     model.ModifiedOn = DateTime.Now;
 
@@ -152,6 +153,32 @@ namespace Presenters.Reclamos.Presenters
                 CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
             }
         }
+
+        public void MarcarRealizadaAlternativaReclamo()
+        {
+            if (string.IsNullOrEmpty(View.IdAlternativa)) return;
+
+            try
+            {
+                var model = _alternativaReclamoService.GetById(Convert.ToDecimal(View.IdAlternativa));
+
+                if (model != null)
+                {
+                    model.Estado = "Realizada";
+                    model.ModifiedBy = View.UserSession.IdUser;
+                    model.ModifiedOn = DateTime.Now;
+
+                    _alternativaReclamoService.Modify(model);
+
+                    LoadAlternativaReclamo();
+                }
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
+        }
+
 
         public void AddArchivoAdjunto()
         {

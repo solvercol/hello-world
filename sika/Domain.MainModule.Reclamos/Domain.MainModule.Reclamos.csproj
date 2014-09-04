@@ -70,6 +70,7 @@
     <Compile Include="Spec\TBL_ModuloReclamos_Asesores_Spec.cs" />
     <Compile Include="Spec\TBL_ModuloReclamos_CategoriasReclamo_Spec.cs" />
     <Compile Include="Spec\TBL_ModuloReclamos_Reclamo_Spec.cs" />
+    <Compile Include="Spec\TBL_ModuloReclamos_UnidadesZonas_Spec.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain.Core.Entities\Domain.Core.Entities.csproj">

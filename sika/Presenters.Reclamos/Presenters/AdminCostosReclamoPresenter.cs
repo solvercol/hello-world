@@ -17,16 +17,19 @@ namespace Presenters.Reclamos.Presenters
         readonly ISfTBL_ModuloReclamos_CostosProductoManagementServices _costosReclamoService;
         readonly ISfTBL_ModuloReclamos_ReclamoManagementServices _reclamoService;
         readonly IReclamosExternalInterfacesService _reclmaosInterfaceService;
+        readonly ISfTBL_ModuloReclamos_UnidadesZonasManagementServices _unidadesZonaService;
 
         public AdminCostosReclamoPresenter(ISfTBL_Admin_OptionListManagementServices optionListService,
                                            ISfTBL_ModuloReclamos_CostosProductoManagementServices costosReclamoService,
                                            ISfTBL_ModuloReclamos_ReclamoManagementServices reclamoService,
-                                           IReclamosExternalInterfacesService reclmaosInterfaceService)
+                                           IReclamosExternalInterfacesService reclmaosInterfaceService,
+                                           ISfTBL_ModuloReclamos_UnidadesZonasManagementServices unidadesZonaService)
         {
             _optionListService = optionListService;
             _costosReclamoService = costosReclamoService;
             _reclamoService = reclamoService;
             _reclmaosInterfaceService = reclmaosInterfaceService;
+            _unidadesZonaService = unidadesZonaService;
         }
 
         public override void SubscribeViewToEvents()
@@ -122,6 +125,19 @@ namespace Presenters.Reclamos.Presenters
                     View.CostoViajePersonas = reclamo.CostoViajes;
                     View.CostoEquiposHerramientas = reclamo.CostoArriendosEyH;
                     View.TotalCostosReclamo = reclamo.CostoTotal;
+
+                    if (!string.IsNullOrEmpty(reclamo.UnidadZona) && reclamo.UnidadZona.Contains('-'))
+                    {
+                        string unidad = reclamo.UnidadZona.Split('-')[0];
+                        string zona = reclamo.UnidadZona.Split('-')[1];
+
+                        var unidadZona = _unidadesZonaService.GetByUnidadZona(unidad, zona);
+
+                        if (unidadZona != null)
+                        {
+                            View.TarifaFetes = unidadZona.TarifaFletes;
+                        }
+                    }
                 }
             }
             catch (Exception ex)

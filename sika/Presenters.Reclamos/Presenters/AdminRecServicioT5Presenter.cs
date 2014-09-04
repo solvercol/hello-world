@@ -8,6 +8,7 @@ using Infrastructure.CrossCutting.NetFramework.Enums;
 using Presenters.Reclamos.IViews;
 using System.Collections.Generic;
 using Presenters.Reclamos.Resources;
+using Application.MainModule.SqlServices.IServices;
 
 namespace Presenters.Reclamos.Presenters
 {
@@ -18,18 +19,21 @@ namespace Presenters.Reclamos.Presenters
         readonly ISfTBL_ModuloReclamos_ReclamoManagementServices _reclamoService;
         readonly ISfTBL_ModuloReclamos_CategoriasReclamoManagementServices _categoriasReclamoService;
         readonly ISfTBL_ModuloReclamos_LogReclamosManagementServices _logReclamoService;
+        readonly IReclamosAdoService _reclamosAdoService;
 
         public AdminRecServicioT5Presenter(ISfTBL_Admin_UsuariosManagementServices usuariosService,
                                             ISfTBL_Admin_OptionListManagementServices optionListService,
                                             ISfTBL_ModuloReclamos_ReclamoManagementServices reclamoService,
                                             ISfTBL_ModuloReclamos_CategoriasReclamoManagementServices categoriasReclamoService,
-                                            ISfTBL_ModuloReclamos_LogReclamosManagementServices logReclamoService)
+                                            ISfTBL_ModuloReclamos_LogReclamosManagementServices logReclamoService,
+                                            IReclamosAdoService reclamosAdoService)
         {
             _usuariosService = usuariosService;
             _optionListService = optionListService;
             _reclamoService = reclamoService;
             _categoriasReclamoService = categoriasReclamoService;
             _logReclamoService = logReclamoService;
+            _reclamosAdoService = reclamosAdoService;
         }
 
         public override void SubscribeViewToEvents()
@@ -47,6 +51,7 @@ namespace Presenters.Reclamos.Presenters
             LoadMensajesReclamoConf();
             LoadConsecutivoReclamo();
             LoadCategoria();
+            LoadUnidadZonaAsesor();
             InitViewValues();
 
             if (!string.IsNullOrEmpty(View.IdReclamo))
@@ -214,6 +219,21 @@ namespace Presenters.Reclamos.Presenters
                 {
                     View.MensajeDescripcionProblema = optionList.Value;
                 }
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
+        }
+
+        public void LoadUnidadZonaAsesor()
+        {
+            try
+            {
+                var asesor = _reclamosAdoService.GetByIdAsesor(Convert.ToInt32(View.UserSession.IdUser));
+
+                if (asesor != null)
+                    View.UnidadZona = string.Format("{0}-{1}", asesor.Unidad, asesor.Zona);
             }
             catch (Exception ex)
             {

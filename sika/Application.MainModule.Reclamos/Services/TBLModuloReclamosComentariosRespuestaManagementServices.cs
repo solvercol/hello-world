@@ -167,6 +167,14 @@ namespace Application.MainModule.Reclamos.Services
 
             return _TBLModuloReclamosComentariosRespuestaRepository.GetCompleteListBySpec(spec);
         }
+
+
+        public List<TBL_ModuloReclamos_ComentariosRespuesta> GetByIdComentarioRelacionado(decimal idComentario)
+        {
+            Specification<TBL_ModuloReclamos_ComentariosRespuesta> spec = new DirectSpecification<TBL_ModuloReclamos_ComentariosRespuesta>(u => u.IdComentarioRelacionado == idComentario);
+
+            return _TBLModuloReclamosComentariosRespuestaRepository.GetCompleteListBySpec(spec);
+        }
     }
 }
     

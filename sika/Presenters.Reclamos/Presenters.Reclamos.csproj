@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="IViews\IAdminActividadReclamoView.cs" />
     <Compile Include="IViews\IAdminAlternativaReclamoView.cs" />
+    <Compile Include="IViews\IAdminComentarioRespuestaReclamoView.cs" />
     <Compile Include="IViews\IAdminInformacionReclamoView.cs" />
     <Compile Include="IViews\IAdminRecServicioT5View.cs" />
     <Compile Include="IViews\IAdminRecServicioT4View.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="Presenters\AdminActividadReclamoPresentador.cs" />
     <Compile Include="Presenters\AdminAlternativaReclamoPresenter.cs" />
     <Compile Include="Presenters\AdminAlternativasReclamoPresenter.cs" />
+    <Compile Include="Presenters\AdminComentarioRespuestaReclamoPresenter.cs" />
     <Compile Include="Presenters\AdminComentariosRespuestaReclamoPresenter.cs" />
     <Compile Include="Presenters\AdminCostosReclamoPresenter.cs" />
     <Compile Include="Presenters\AdminInformacionReclamoPresenter.cs" />

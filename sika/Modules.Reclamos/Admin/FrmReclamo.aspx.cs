@@ -204,7 +204,12 @@ namespace Modules.Reclamos.Admin
             phlContent.Controls.Add(uc);
 
             if (uc is IReclamoWebUserControl)
-                ((IReclamoWebUserControl)uc).LoadControlData();
+            {
+                var ucReclamo = ((IReclamoWebUserControl)uc);
+                ucReclamo.LoadControlData();
+                ucReclamo.RiseFatherPostback += RefreshReclamoInfo;
+                
+            }                
         }
 
         private void LoadUserControlVentanaMensajes(IEnumerable<string> items)
@@ -239,6 +244,11 @@ namespace Modules.Reclamos.Admin
         #region View Members
 
         #region Methods
+
+        void RefreshReclamoInfo()
+        {
+            Presenter.LoadReclamo();
+        }
 
         public void LoadSecciones(IEnumerable<TBL_Admin_Secciones> secciones)
         {

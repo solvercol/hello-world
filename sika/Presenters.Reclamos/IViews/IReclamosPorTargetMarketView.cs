@@ -26,5 +26,7 @@ namespace Presenters.Reclamos.IViews
         DateTime FechaFilterTo { get; set; }
 
         void LoadViewReclamos(DataTable dt);
+
+        bool CanRegister { get; set; }
     }
 }

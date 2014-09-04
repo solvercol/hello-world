@@ -14,6 +14,26 @@ namespace Modules.Reclamos.UserControls
 {
     public partial class WUCAdminAlternativasReclamo : ViewUserControl<AdminAlternativasReclamoPresenter, IAdminAlternativasReclamoView>, IAdminAlternativasReclamoView, IReclamoWebUserControl
     {
+        #region Members
+
+        public string FromPage
+        {
+            get
+            {
+                return Request.QueryString["from"];
+            }
+        }
+
+        public string IdFrom
+        {
+            get
+            {
+                return Request.QueryString["idfrom"];
+            }
+        }
+
+        #endregion
+
         #region Page Events
 
         #region Load
@@ -55,7 +75,10 @@ namespace Modules.Reclamos.UserControls
 
             IdSelectedAlternativa = btn.CommandArgument;
 
-            Presenter.LoadAlternativaReclamo();
+
+            Response.Redirect(string.Format("../Admin/FrmAdminAlternativaReclamo.aspx?ModuleId={0}&IdAlternativa={1}&from=reclamo&IdReclamo={2}&fromaux={3}&idfromaux={4}", IdModule, IdSelectedAlternativa, IdReclamo, FromPage,IdFrom));
+
+            //Presenter.LoadAlternativaReclamo();
         }
         
         protected void BtnAddArchivoAdjunto_Click(object sender, EventArgs e)
@@ -266,6 +289,8 @@ namespace Modules.Reclamos.UserControls
         #endregion
 
         #region Properties
+
+        public event Action RiseFatherPostback;
 
         public TBL_Admin_Usuarios UserSession
         {

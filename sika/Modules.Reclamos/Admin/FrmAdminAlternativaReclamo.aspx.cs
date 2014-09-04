@@ -30,6 +30,46 @@ namespace Modules.Reclamos.Admin
             }
         }
 
+        public string FromPage
+        {
+            get
+            {
+                return Request.QueryString["from"];
+            }
+        }
+
+        public string IdReclamoQS
+        {
+            get
+            {
+                return Request.QueryString["IdReclamo"];
+            }
+        }
+
+        public string FromPageAux
+        {
+            get
+            {
+                return Request.QueryString["fromaux"];
+            }
+        }
+
+        public string IdFrom
+        {
+            get
+            {
+                return Request.QueryString["idfrom"];
+            }
+        }
+
+        public string IdFromAux
+        {
+            get
+            {
+                return Request.QueryString["idfromaux"];
+            }
+        }
+
         #endregion
 
         #region Page Events
@@ -39,6 +79,8 @@ namespace Modules.Reclamos.Admin
         protected void Page_Load(object sender, EventArgs e)
         {
             ImprimirTituloVentana(string.Format("Alternativa Solución - Reclamo de {0} No. {1}", TipoReclamo, NumeroReclamo));
+
+            ImgSearch.Visible = string.IsNullOrEmpty(FromPageAux);
         }
 
         protected override void OnInit(EventArgs e)
@@ -52,7 +94,19 @@ namespace Modules.Reclamos.Admin
 
         protected void BtnRegresarClick(object sender, EventArgs e)
         {
-            Response.Redirect(string.Format("../Views/FrmMisAlternativasPendientes.aspx?ModuleId={0}", ModuleId));
+            if (string.IsNullOrEmpty(FromPage))
+            {
+                Response.Redirect(string.Format("../Views/FrmMisAlternativasPendientes.aspx?ModuleId={0}", ModuleId));
+            }
+            else
+            {
+                switch (FromPage)
+                {
+                    case "reclamo":
+                        Response.Redirect(string.Format("FrmReclamo.aspx?ModuleId={0}&IdReclamo={1}&from={2}", ModuleId, IdReclamoQS, FromPageAux));
+                        break;
+                }
+            }
         }
 
         protected void BtnViewReclamo_Click(object sender, EventArgs e)
@@ -75,6 +129,11 @@ namespace Modules.Reclamos.Admin
         protected void BtnSaveAlternativaClick(object sender, EventArgs e)
         {
             Presenter.UpdateAlternativaReclamo();
+        }
+
+        protected void BtnSaveMarcarRealizadaAlternativaClick(object sender, EventArgs e)
+        {
+            Presenter.MarcarRealizadaAlternativaReclamo();
         }
 
         protected void BtnAddArchivoAdjunto_Click(object sender, EventArgs e)
@@ -158,7 +217,7 @@ namespace Modules.Reclamos.Admin
             txtCausas.Visible = enabled;
             txtFactores.Visible = enabled;
             txtSeguimiento.Visible = enabled;
-            ddlEstado.Visible = enabled;
+            //ddlEstado.Visible = enabled;
 
             fupAnexoArchivo.Visible = enabled;
             btnAddArchivoAdjunto.Visible = enabled;
@@ -167,10 +226,11 @@ namespace Modules.Reclamos.Admin
             lblCausas.Visible = !enabled;
             lblFactores.Visible = !enabled;
             lblSeguimiento.Visible = !enabled;
-            lblEstado.Visible = !enabled;
+            //lblEstado.Visible = !enabled;
 
             btnCancel.Visible = enabled;
             btnSave.Visible = enabled;
+            btnSaveRealizada.Visible = enabled;
             btnEdit.Visible = !enabled;
         }
 
@@ -291,18 +351,6 @@ namespace Modules.Reclamos.Admin
             }
         }
 
-        public string Area
-        {
-            get
-            {
-                return lblArea.Text;
-            }
-            set
-            {
-                lblArea.Text = value;
-            }
-        }
-
         public string FechaReclamo
         {
             get
@@ -324,18 +372,6 @@ namespace Modules.Reclamos.Admin
             set
             {
                 lblAsesor.Text = value;
-            }
-        }
-
-        public string TotalCostoReclamo
-        {
-            get
-            {
-                return lblTotalCostoReclamo.Text;
-            }
-            set
-            {
-                lblTotalCostoReclamo.Text = value;
             }
         }
 
@@ -438,8 +474,20 @@ namespace Modules.Reclamos.Admin
             get { return fupAnexoArchivo.FileName; }
         }
 
-        #endregion
+        public bool CanRegister
+        {
+            get
+            {
+                return btnEdit.Visible;
+            }
+            set
+            {
+                btnEdit.Visible = value;
+            }
+        }
 
         #endregion
+
+        #endregion        
     }
 }

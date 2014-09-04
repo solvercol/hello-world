@@ -268,20 +268,6 @@
                     </tr>
                     <tr>
                         <th style="text-align:left; vertical-align:top">
-                            Observaciones :
-                        </th>
-
-                        <td class="Separador"></td>
-
-                        <td class="Line">
-                            <asp:TextBox ID="txtObservaciones" runat="server" TextMode="MultiLine" Rows="3" Width="90%" />
-                            <asp:Label ID="lblObservaciones" runat="server" />
-                        </td>
-
-                        <td class="Separador"></td>
-                    </tr>
-                    <tr>
-                        <th style="text-align:left; vertical-align:top">
                             Anexos :
                         </th>
 

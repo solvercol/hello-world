@@ -242,6 +242,8 @@ namespace Modules.Reclamos.UserControls
 
         #region Properties
 
+        public event Action RiseFatherPostback;
+
         public TBL_Admin_Usuarios UserSession
         {
             get { return AuthenticatedUser; }

@@ -44,6 +44,11 @@ namespace Domain.MainModules.Entities
             return _tBL_Admin_Roles.Any(x => x.NombreRol.Equals(roleName));
         }
 
+        public bool IsInRoleId(int idRol)
+        {
+            return _tBL_Admin_Roles1.Any(x => x.IdRol == idRol);
+        }
+
         /// <summary>
         /// Create a MD5 hash of the password.
         /// </summary>

@@ -47,6 +47,7 @@ namespace Infrastructure.Data.MainModule.Repositories
                 var specific = specification.SatisfiedBy();
                 return activeContext.TBL_Admin_Usuarios
                                     .Include(r => r.TBL_Admin_Roles)
+                                    .Include(r => r.TBL_Admin_Roles1)
                                     .Where(specific)
                                     .SingleOrDefault();
             }

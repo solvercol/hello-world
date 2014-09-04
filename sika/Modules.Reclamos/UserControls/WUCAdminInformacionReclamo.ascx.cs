@@ -23,6 +23,8 @@ namespace Modules.Reclamos.UserControls
 
         #endregion
 
+        public event Action RiseFatherPostback;
+
         public TBL_Admin_Usuarios UserSession
         {
             get { return AuthenticatedUser; }

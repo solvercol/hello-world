@@ -52,5 +52,8 @@ namespace Presenters.Reclamos.IViews
         int TotalRegistrosPaginador { set; }
         int PageZise { get; }
         event EventHandler Filterevent;
+
+        // Fletes Reclamo
+        decimal TarifaFetes { get; set; }
     }
 }

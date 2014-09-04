@@ -9,11 +9,32 @@ using Presenters.Reclamos.IViews;
 using Presenters.Reclamos.Presenters;
 using Application.Core;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 
 namespace Modules.Reclamos.UserControls
 {
     public partial class WUCAdminComentariosRespuestaReclamo : ViewUserControl<AdminComentariosRespuestaReclamoPresenter, IAdminComentariosRespuestaReclamoView>, IAdminComentariosRespuestaReclamoView, IReclamoWebUserControl
     {
+        #region Members
+
+        public string FromPage
+        {
+            get
+            {
+                return Request.QueryString["from"];
+            }
+        }
+
+        public string IdFrom
+        {
+            get
+            {
+                return Request.QueryString["idfrom"];
+            }
+        }
+
+        #endregion
+
         #region Page Events
 
         #region Load
@@ -55,7 +76,9 @@ namespace Modules.Reclamos.UserControls
 
             IdSelectedComentario = btn.CommandArgument;
 
-            Presenter.LoadComentarioReclamo();
+            Response.Redirect(string.Format("../Admin/FrmAdminComentarioRespuestaReclamo.aspx?ModuleId={0}&IdComentario={1}&from=reclamo&IdReclamo={2}&fromaux={3}&idfromaux={4}", IdModule, IdSelectedComentario, IdReclamo, FromPage, IdFrom));
+
+            //Presenter.LoadComentarioReclamo();
         }
 
         protected void BtnAddArchivoAdjunto_Click(object sender, EventArgs e)
@@ -117,6 +140,9 @@ namespace Modules.Reclamos.UserControls
             {
                 var item = (TBL_ModuloReclamos_ComentariosRespuesta)(e.Item.DataItem);
                 // Bindind data
+                var imgDetalle = e.Item.FindControl("imgVerExpand") as HtmlImage;
+
+                bool hasChild = false;
 
                 var hddIdComentario = e.Item.FindControl("hddIdComentario") as HiddenField;
                 if (hddIdComentario != null) hddIdComentario.Value = string.Format("{0}", item.IdComentario);
@@ -132,6 +158,46 @@ namespace Modules.Reclamos.UserControls
 
                 var imgSelectComentario = e.Item.FindControl("imgSelectComentario") as ImageButton;
                 if (imgSelectComentario != null) imgSelectComentario.CommandArgument = string.Format("{0}", item.IdComentario);
+
+                if (item.ComentariosAsociados != null && item.ComentariosAsociados.Any())
+                {
+                    var rptChild = e.Item.FindControl("rptChildComentarios") as Repeater;
+                    if (rptChild != null)
+                    {
+                        rptChild.DataSource = item.ComentariosAsociados;
+                        rptChild.DataBind();
+                    }
+
+                    hasChild = true;
+                }
+
+                // Adicionando comportamiento de colapse para hijos
+                var trParent = e.Item.FindControl("rowParent") as HtmlTableRow;
+                if (trParent != null)
+                {
+                    var trChild = e.Item.FindControl("rowChild") as HtmlTableRow;
+                    trChild.Visible = hasChild;
+                    var divDetalle = e.Item.FindControl("divDetalle") as HtmlGenericControl;
+
+                    trParent.Attributes.Add("Onclick", "JavaScript:ShowHiddeObjects('" + divDetalle.ClientID + "','" + imgDetalle.ClientID + "','../../../../Resources/Images/Collapse.gif','../../../../Resources/Images/Expand.gif');");
+                } 
+            }
+        }
+
+        protected void RptComentariosAsociadosList_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+            {
+                var item = (TBL_ModuloReclamos_ComentariosRespuesta)(e.Item.DataItem);
+                // Bindind data
+                var lblDescripcion = e.Item.FindControl("lblDescripcion") as Label;
+                if (lblDescripcion != null) lblDescripcion.Text = string.Format("{0}", item.Comentario);
+
+                var lblFechaComentario = e.Item.FindControl("lblFechaComentario") as Label;
+                if (lblFechaComentario != null) lblFechaComentario.Text = string.Format("{0:dd/MM/yyyy hh:mm:ss tt}", item.CreateOn);
+
+                var lblAutor = e.Item.FindControl("lblAutor") as Label;
+                if (lblAutor != null) lblAutor.Text = string.Format("{0}", item.TBL_Admin_Usuarios.Nombres);
             }
         }
 
@@ -248,6 +314,8 @@ namespace Modules.Reclamos.UserControls
         #endregion
 
         #region Properties
+
+        public event Action RiseFatherPostback;
 
         public TBL_Admin_Usuarios UserSession
         {

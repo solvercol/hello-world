@@ -161,6 +161,20 @@ namespace Application.MainModule.Reclamos.Services
         }
 
         #endregion
+
+        public TBL_ModuloReclamos_AnexosComentarioRespuesta GetById(decimal id)
+        {
+            Specification<TBL_ModuloReclamos_AnexosComentarioRespuesta> spec = new DirectSpecification<TBL_ModuloReclamos_AnexosComentarioRespuesta>(u => u.IdAnexoComentarioRespuesta == id);
+
+            return _TBLModuloReclamosAnexosComentarioRespuestaRepository.GetEntityBySpec(spec);
+        }
+
+        public List<TBL_ModuloReclamos_AnexosComentarioRespuesta> GetByComentarioId(decimal idComentario)
+        {
+            Specification<TBL_ModuloReclamos_AnexosComentarioRespuesta> spec = new DirectSpecification<TBL_ModuloReclamos_AnexosComentarioRespuesta>(u => u.IdComentarioRespuesta == idComentario);
+
+            return _TBLModuloReclamosAnexosComentarioRespuestaRepository.GetBySpec(spec).ToList();
+        }
     }
 }
     

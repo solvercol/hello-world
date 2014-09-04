@@ -188,8 +188,7 @@ namespace Presenters.Reclamos.Presenters
                     model.IdActividadReclamo = Convert.ToInt32(View.IdActividadReclamo);
                     model.Descripcion = View.Descripcion;
                     model.Fecha = View.FechaActividad;
-                    model.IdUsuarioAsignacion = Convert.ToInt32(View.IdUsuarioAsignacion);
-                    model.ObservacionesCierre = View.Observaciones;
+                    model.IdUsuarioAsignacion = Convert.ToInt32(View.IdUsuarioAsignacion);                    
                     model.ModifiedBy = View.UserSession.IdUser;
                     model.ModifiedOn = DateTime.Now;
 
@@ -217,8 +216,7 @@ namespace Presenters.Reclamos.Presenters
                     View.IdActividadReclamo = model.IdActividadReclamo.ToString();
                     View.Descripcion = model.Descripcion;
                     View.FechaActividad = model.Fecha;
-                    View.IdUsuarioAsignacion = model.IdUsuarioAsignacion.ToString();
-                    View.Observaciones = model.ObservacionesCierre;
+                    View.IdUsuarioAsignacion = model.IdUsuarioAsignacion.ToString();                    
                     View.UsuariosCopia = new List<DTO_ValueKey>();
                     if (model.TBL_Admin_Usuarios3.Any())
                     {
@@ -282,9 +280,8 @@ namespace Presenters.Reclamos.Presenters
             model.IdActividadReclamo = Convert.ToInt32(View.IdActividadReclamo);
             model.Descripcion = View.Descripcion;
             model.Fecha = View.FechaActividad;
-            model.IdUsuarioAsignacion = Convert.ToInt32(View.IdUsuarioAsignacion);
-            model.ObservacionesCierre = View.Observaciones;
-            model.Estado = "Registrada";
+            model.IdUsuarioAsignacion = Convert.ToInt32(View.IdUsuarioAsignacion);            
+            model.Estado = "Programada";
             model.IsActive = true;
             model.CreateBy = View.UserSession.IdUser;
             model.CreateOn = DateTime.Now;

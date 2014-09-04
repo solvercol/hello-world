@@ -10,7 +10,7 @@
 namespace Modules.Reclamos.Admin {
     
     
-    public partial class FrmAdminAlternativaReclamo {
+    public partial class FrmAdminComentarioRespuestaReclamo {
         
         /// <summary>
         /// upGeneral control.
@@ -157,94 +157,31 @@ namespace Modules.Reclamos.Admin {
         protected global::System.Web.UI.WebControls.Button btnSave;
         
         /// <summary>
-        /// btnSaveRealizada control.
+        /// lblAsunto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSaveRealizada;
+        protected global::System.Web.UI.WebControls.Label lblAsunto;
         
         /// <summary>
-        /// lblEstado control.
+        /// lblMensaje control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEstado;
+        protected global::System.Web.UI.WebControls.Label lblMensaje;
         
         /// <summary>
-        /// ddlEstado control.
+        /// lblDestinatario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlEstado;
-        
-        /// <summary>
-        /// lblCausas control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCausas;
-        
-        /// <summary>
-        /// txtCausas control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCausas;
-        
-        /// <summary>
-        /// lblFactores control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFactores;
-        
-        /// <summary>
-        /// txtFactores control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFactores;
-        
-        /// <summary>
-        /// lblAlternativas control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAlternativas;
-        
-        /// <summary>
-        /// txtAlternativa control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAlternativa;
-        
-        /// <summary>
-        /// lblResponsable control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblResponsable;
+        protected global::System.Web.UI.WebControls.Label lblDestinatario;
         
         /// <summary>
         /// lblFecha control.
@@ -256,22 +193,58 @@ namespace Modules.Reclamos.Admin {
         protected global::System.Web.UI.WebControls.Label lblFecha;
         
         /// <summary>
-        /// lblSeguimiento control.
+        /// tr1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSeguimiento;
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow tr1;
         
         /// <summary>
-        /// txtSeguimiento control.
+        /// rptComentariosAsociados control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSeguimiento;
+        protected global::System.Web.UI.WebControls.Repeater rptComentariosAsociados;
+        
+        /// <summary>
+        /// trComentarios control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow trComentarios;
+        
+        /// <summary>
+        /// txtComentario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtComentario;
+        
+        /// <summary>
+        /// trDestinatarios control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow trDestinatarios;
+        
+        /// <summary>
+        /// wddDestinatarios control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Infragistics.Web.UI.ListControls.WebDropDown wddDestinatarios;
         
         /// <summary>
         /// fupAnexoArchivo control.

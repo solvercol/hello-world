@@ -252,6 +252,18 @@ namespace Modules.Reclamos.Views
             }
         }
 
+        public bool CanRegister
+        {
+            get
+            {
+                return btnNuevo.Visible;
+            }
+            set
+            {
+                btnNuevo.Visible = value;
+            }
+        }
+
         #endregion
 
         #endregion

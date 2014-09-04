@@ -7,7 +7,7 @@
             BorderWidth="0px">
             <StaticSelectedStyle ForeColor="#E4E4E4" BackColor="#CBCBCB" BorderStyle="None" Font-Bold="false" />
             <StaticMenuItemStyle ForeColor="#585858"  BorderStyle="None" Font-Size="12px" Font-Bold="true" 
-                ItemSpacing="5px" HorizontalPadding="10px" Width="60" VerticalPadding="1px" CssClass="TextMenuStatic"
+                ItemSpacing="5px" Width="60" VerticalPadding="1px" CssClass="TextMenuStatic"
                 Height="19px" />
             <DynamicHoverStyle BackColor="#C2C2C2" ForeColor="#585858" BorderStyle="None" />
             <DynamicMenuStyle BorderColor="#CBCBCB" BorderStyle="Solid" BorderWidth="0px" />
@@ -18,9 +18,4 @@
                 CssClass="TextMenuDynamic" />
             <StaticHoverStyle ForeColor="White" BackColor="#CBCBCB" BorderStyle="None" Font-Bold="True" />
         </asp:Menu>
-  </asp:Panel>   
-    
-
-
-    
-
+  </asp:Panel>

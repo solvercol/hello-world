@@ -23,6 +23,8 @@ namespace Modules.Reclamos.UserControls
 
         #endregion
 
+        public event Action RiseFatherPostback;
+
         public string IdReclamo
         {
             get { return Request.QueryString.Get("IdReclamo"); }

@@ -39,60 +39,62 @@
                         <asp:PlaceHolder ID="phInfoReclamo"  runat="server"></asp:PlaceHolder>                
 
                     <td valign="top">
-                        
-                        <table width="100%" >
-                            <tr>
-                                <td class="SeccionesH1" colspan="2">
-                                    <asp:Label ID="lblTitleReclamo" runat="server" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="SeccionesH2" colspan="2">
-                                    <asp:Label ID="lblTitleReclamoFrom" runat="server" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="SeccionesH3" style="width:120px;">
-                                    Unidad:
-                                </td>
-                                <td class="SeccionesH4">
-                                    <asp:Label ID="lblUnidad" runat="server" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="SeccionesH3">
-                                    Area:
-                                </td>
-                                <td class="SeccionesH4">
-                                    <asp:Label ID="lblArea" runat="server" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="SeccionesH3">
-                                    Fecha Reclamo:
-                                </td>
-                                <td class="SeccionesH4">
-                                    <asp:Label ID="lblFechaReclamo" runat="server" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="SeccionesH3">
-                                    Asesor:
-                                </td>
-                                <td class="SeccionesH4">
-                                    <asp:Label ID="lblAsesor" runat="server"  />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="SeccionesH3">
-                                    Costo Reclamo:
-                                </td>
-                                <td class="SeccionesH4">
-                                    <asp:Label ID="lblTotalCostoReclamo" runat="server" ForeColor="Red" />
-                                </td>
-                            </tr>
-                        </table>
-
+                        <asp:UpdatePanel ID="upInfoReclamo" runat="server">
+                            <ContentTemplate>
+                                <table width="100%" >
+                                    <tr>
+                                        <td class="SeccionesH1" colspan="2">
+                                            <asp:Label ID="lblTitleReclamo" runat="server" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="SeccionesH2" colspan="2">
+                                            <asp:Label ID="lblTitleReclamoFrom" runat="server" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="SeccionesH3" style="width:120px;">
+                                            Unidad:
+                                        </td>
+                                        <td class="SeccionesH4">
+                                            <asp:Label ID="lblUnidad" runat="server" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="SeccionesH3">
+                                            Area:
+                                        </td>
+                                        <td class="SeccionesH4">
+                                            <asp:Label ID="lblArea" runat="server" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="SeccionesH3">
+                                            Fecha Reclamo:
+                                        </td>
+                                        <td class="SeccionesH4">
+                                            <asp:Label ID="lblFechaReclamo" runat="server" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="SeccionesH3">
+                                            Asesor:
+                                        </td>
+                                        <td class="SeccionesH4">
+                                            <asp:Label ID="lblAsesor" runat="server"  />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="SeccionesH3">
+                                            Costo Reclamo:
+                                        </td>
+                                        <td class="SeccionesH4">
+                                            <asp:Label ID="lblTotalCostoReclamo" runat="server" ForeColor="Red" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
                     </td>   
                     
                     <td align="right" style="width:25%" valign="top">
