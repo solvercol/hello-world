@@ -9087,8 +9087,8 @@
         </AssociationConnector>
         <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentosAnexos_Carpetas" Width="1.5" PointX="5.125" PointY="113.125" Height="3.7109993489583246" />
         <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentosAnexos_Categorias" Width="1.5" PointX="1.375" PointY="119.75" Height="2.7494921874999818" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentosAnexos_Contenido" Width="1.5" PointX="1.125" PointY="109.875" Height="3.5186979166666674" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentosAnexos_Documento" Width="1.5" PointX="8.875" PointY="108.875" Height="3.5186979166666674" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentosAnexos_Contenido" Width="1.5" PointX="12.5" PointY="119.75" Height="3.5186979166666674" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentosAnexos_Documento" Width="1.5" PointX="8" PointY="120" Height="3.5186979166666674" />
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentosAnexos_Carpetas_TBL_ModuloDocumentosAnexos_Carpetas" >
           <ConnectorPoint PointX="5.6569230769230767" PointY="117.02830078125" />
           <ConnectorPoint PointX="5.6569230769230767" PointY="117.27830078124998" />
@@ -9101,19 +9101,13 @@
           <ConnectorPoint PointX="5.125" PointY="115.24224934895833" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentosAnexos_Documento_TBL_ModuloDocumentosAnexos_Carpetas" >
-          <ConnectorPoint PointX="5.875" PointY="113.125" />
-          <ConnectorPoint PointX="5.875" PointY="110.19450921875" />
-          <ConnectorPoint PointX="6.1979191666666669" PointY="110.19450921875" />
-          <ConnectorPoint PointX="6.3645858333333329" PointY="110.19450921875" />
-          <ConnectorPoint PointX="8.875" PointY="110.19450921875" />
+          <ConnectorPoint PointX="5.3597090384615385" PointY="117.02830078125" />
+          <ConnectorPoint PointX="5.3597090384615385" PointY="121.75934895833333" />
+          <ConnectorPoint PointX="8" PointY="121.75934895833333" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentosAnexos_Contenido_TBL_ModuloDocumentosAnexos_Documento" >
-          <ConnectorPoint PointX="8.875" PointY="111.5765234375" />
-          <ConnectorPoint PointX="6.3645858333333329" PointY="111.5765234375" />
-          <ConnectorPoint PointX="6.1979191666666669" PointY="111.5765234375" />
-          <ConnectorPoint PointX="5.958333333333333" PointY="111.5765234375" />
-          <ConnectorPoint PointX="5.791666666666667" PointY="111.5765234375" />
-          <ConnectorPoint PointX="2.625" PointY="111.5765234375" />
+          <ConnectorPoint PointX="9.5" PointY="121.63434895833333" />
+          <ConnectorPoint PointX="12.5" PointY="121.63434895833333" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.TBL_ModuloDocumentosAnexos_CarpetasXrol" >
           <ConnectorPoint PointX="11.53125" PointY="62.451396484374996" />
@@ -9121,8 +9115,8 @@
           <ConnectorPoint PointX="6.625" PointY="115.07665039062499" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.TBL_ModuloReclamos_DocumentosAnexos" >
-          <ConnectorPoint PointX="6.2812525" PointY="113.125" />
-          <ConnectorPoint PointX="6.2812525" PointY="85.674663085937482" />
+          <ConnectorPoint PointX="6.179689375" PointY="113.125" />
+          <ConnectorPoint PointX="6.179689375" PointY="85.674663085937482" />
           <ConnectorPoint PointX="11.447916666666666" PointY="85.674663085937482" />
           <ConnectorPoint PointX="11.614583333333334" PointY="85.674663085937482" />
           <ConnectorPoint PointX="15.979164166666665" PointY="85.674663085937482" />
