@@ -193,6 +193,36 @@ namespace Domain.MainModules.Entities
         private string _observacionesCancelacion;
     
         [DataMember]
+        public Nullable<System.DateTime> FechaCierre
+        {
+            get { return _fechaCierre; }
+            set
+            {
+                if (_fechaCierre != value)
+                {
+                    _fechaCierre = value;
+                    OnPropertyChanged("FechaCierre");
+                }
+            }
+        }
+        private Nullable<System.DateTime> _fechaCierre;
+    
+        [DataMember]
+        public string LogCierre
+        {
+            get { return _logCierre; }
+            set
+            {
+                if (_logCierre != value)
+                {
+                    _logCierre = value;
+                    OnPropertyChanged("LogCierre");
+                }
+            }
+        }
+        private string _logCierre;
+    
+        [DataMember]
         public bool IsActive
         {
             get { return _isActive; }

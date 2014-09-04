@@ -57,9 +57,10 @@ namespace Presenters.Reclamos.Presenters
                     View.FechaActividad = model.Fecha;
                     View.UsuarioAsignacion = model.TBL_Admin_Usuarios2.Nombres;
                     View.Estado = model.Estado;
+                    View.LogCierre = string.Format("{0}", model.LogCierre);
                     if ((model.Estado != "Registrada" && model.Estado != "Programada"))
                     {
-                        View.Observaciones = string.IsNullOrEmpty(model.ObservacionesCierre) ? model.ObservacionesCancelacion : model.ObservacionesCierre;
+                        View.Observaciones = model.Estado == "Cancelada" ? model.ObservacionesCancelacion : model.ObservacionesCierre;
                         View.ShoeObservaciones(true);
                     }
                     else
@@ -174,6 +175,8 @@ namespace Presenters.Reclamos.Presenters
                     model.ObservacionesCierre = View.ObservacionesCierre;
                     model.ModifiedBy = View.UserSession.IdUser;
                     model.ModifiedOn = DateTime.Now;
+                    model.FechaCierre = DateTime.Now;
+                    model.LogCierre = string.Format("La actividad ha sido realizada por {0}, en {1:dd/MM/yyyy}", View.UserSession.Nombres, DateTime.Now);
 
                     _actividadesService.Modify(model);
 
@@ -200,6 +203,8 @@ namespace Presenters.Reclamos.Presenters
                     model.ObservacionesCancelacion = View.ObservacionesCancelacion;
                     model.ModifiedBy = View.UserSession.IdUser;
                     model.ModifiedOn = DateTime.Now;
+                    model.FechaCierre = DateTime.Now;
+                    model.LogCierre = string.Format("La actividad ha sido cancelada por {0}, en {1:dd/MM/yyyy}", View.UserSession.Nombres, DateTime.Now);
 
                     _actividadesService.Modify(model);
 
@@ -283,11 +288,9 @@ namespace Presenters.Reclamos.Presenters
             try
             {
                 var anexos = _anexosService.GetByIdActividad(Convert.ToDecimal(View.IdActividad));
-
+                var archivosAdjuntos = new List<DTO_ValueKey>();
                 if (anexos.Any())
                 {
-
-                    var archivosAdjuntos = new List<DTO_ValueKey>();
                     foreach (var anexo in anexos)
                     {
                         var archivo = new DTO_ValueKey();
@@ -297,9 +300,8 @@ namespace Presenters.Reclamos.Presenters
 
                         archivosAdjuntos.Add(archivo);
                     }
-
-                    View.LoadArchivosAdjuntos(archivosAdjuntos);
                 }
+                View.LoadArchivosAdjuntos(archivosAdjuntos);
             }
             catch (Exception ex)
             {

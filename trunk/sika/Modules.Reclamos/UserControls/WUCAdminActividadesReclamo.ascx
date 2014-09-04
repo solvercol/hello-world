@@ -33,10 +33,13 @@
                             <th style="width:14%; text-align:left;">
                                 Fecha
                             </th>
-                            <th style="width:25%;text-align:left;">
+                            <th style="width:10%;text-align:left; color:#a31717">
+                                Estado
+                            </th>
+                            <th style="width:20%;text-align:left;">
                                 Asignado
                             </th>
-                            <th style="width:25%;text-align:left;">
+                            <th style="width:20%;text-align:left;">
                                 Autor
                             </th>
                         </tr>
@@ -68,6 +71,9 @@
                             <td style="text-align:left;">
                                 <asp:Label ID="lblFechaActividad" runat="server" />
                             </td>
+                            <td style="text-align:left; color:#a31717">
+                                <asp:Label ID="lblEstado" runat="server" />
+                            </td>   
                             <td style="text-align:left">
                                 <asp:Label ID="lblAsignado" runat="server" />
                             </td>

@@ -182,6 +182,9 @@ namespace Modules.Reclamos.UserControls
                 var lblAutor = e.Item.FindControl("lblAutor") as Label;
                 if (lblAutor != null) lblAutor.Text = string.Format("{0}", item.TBL_Admin_Usuarios.Nombres);
 
+                var lblEstado = e.Item.FindControl("lblEstado") as Label;
+                if (lblEstado != null) lblEstado.Text = string.Format("{0}", item.Estado);
+
                 var imgSelectActividad = e.Item.FindControl("imgSelectActividad") as ImageButton;
                 if (imgSelectActividad != null) imgSelectActividad.CommandArgument = string.Format("{0}", item.IdActividad);
 

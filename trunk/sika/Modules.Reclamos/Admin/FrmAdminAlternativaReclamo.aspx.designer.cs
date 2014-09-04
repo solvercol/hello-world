@@ -292,6 +292,15 @@ namespace Modules.Reclamos.Admin {
         protected global::System.Web.UI.WebControls.Button btnAddArchivoAdjunto;
         
         /// <summary>
+        /// trAnexos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow trAnexos;
+        
+        /// <summary>
         /// pnlArchivosAdjuntos control.
         /// </summary>
         /// <remarks>
@@ -308,5 +317,23 @@ namespace Modules.Reclamos.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptArchivosAdjuntos;
+        
+        /// <summary>
+        /// trLogCierre control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow trLogCierre;
+        
+        /// <summary>
+        /// lblLogCierre control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLogCierre;
     }
 }

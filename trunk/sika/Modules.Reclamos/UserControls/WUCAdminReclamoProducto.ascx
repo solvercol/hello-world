@@ -334,7 +334,7 @@
                                                                         runat="server"
                                                                         ForeColor="Red"
                                                                         ControlToValidate="txtNombreContacto"
-                                                                        ValidationGroup="vgGeneral"                                                                 
+                                                                        ValidationGroup="vgGeneral"
                                                                         ErrorMessage="El nombre del contacto es obligatorio-Datos Cliente Obra" >*</asp:RequiredFieldValidator> 
                                         </td>
                                     </tr>

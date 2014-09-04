@@ -48,11 +48,11 @@ namespace Modules.DocumentLibrary.UserControls
                 controlPath = "WucNewFile.ascx";
             }
             if (string.IsNullOrEmpty(controlPath)) return;
-            phloadControl.Controls.Clear();
+            phloadControlLoadFile.Controls.Clear();
             var uc = LoadControl(controlPath);
             uc.ID = controlPath.Split('.')[0];
             ConfigurarUserControl(uc);
-            phloadControl.Controls.Add(uc);
+            phloadControlLoadFile.Controls.Add(uc);
         }
 
         private void ConfigurarUserControl(Control oControl)

@@ -64,6 +64,7 @@ namespace Presenters.Reclamos.Presenters
                     View.FechaAlternativa = model.FechaAlternativa;
                     View.Seguimiento = model.Seguimiento;
                     View.Estado = model.Estado;
+                    View.LogCierre = string.Format("{0}", model.LogCierre);
 
                     View.EnableEdit(false);
                     View.CanRegister = View.UserSession.IdUser == model.IdResponsable && model.Estado == "Asignada";
@@ -139,7 +140,6 @@ namespace Presenters.Reclamos.Presenters
                     model.Factores = View.Factores;
                     model.Alternativa = View.Alternativa;
                     model.Seguimiento = View.Seguimiento;
-                    //model.Estado = View.Estado;
                     model.ModifiedBy = View.UserSession.IdUser;
                     model.ModifiedOn = DateTime.Now;
 
@@ -165,8 +165,14 @@ namespace Presenters.Reclamos.Presenters
                 if (model != null)
                 {
                     model.Estado = "Realizada";
+                    model.Causas = View.Causas;
+                    model.Factores = View.Factores;
+                    model.Alternativa = View.Alternativa;
+                    model.Seguimiento = View.Seguimiento;
                     model.ModifiedBy = View.UserSession.IdUser;
                     model.ModifiedOn = DateTime.Now;
+                    model.FechaCierre = DateTime.Now;
+                    model.LogCierre = string.Format("La alternativa ha sido realizada por {0}, en {1:dd/MM/yyyy}", View.UserSession.Nombres, DateTime.Now);
 
                     _alternativaReclamoService.Modify(model);
 
@@ -178,7 +184,6 @@ namespace Presenters.Reclamos.Presenters
                 CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
             }
         }
-
 
         public void AddArchivoAdjunto()
         {
@@ -251,11 +256,9 @@ namespace Presenters.Reclamos.Presenters
             try
             {
                 var anexos = _anexosService.GetByIdAlternativa(Convert.ToDecimal(View.IdAlternativa));
-
+                var archivosAdjuntos = new List<DTO_ValueKey>();
                 if (anexos.Any())
                 {
-
-                    var archivosAdjuntos = new List<DTO_ValueKey>();
                     foreach (var anexo in anexos)
                     {
                         var archivo = new DTO_ValueKey();
@@ -265,9 +268,8 @@ namespace Presenters.Reclamos.Presenters
 
                         archivosAdjuntos.Add(archivo);
                     }
-
-                    View.LoadArchivosAdjuntos(archivosAdjuntos);
                 }
+                View.LoadArchivosAdjuntos(archivosAdjuntos);
             }
             catch (Exception ex)
             {

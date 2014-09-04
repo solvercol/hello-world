@@ -85,6 +85,7 @@ from	TBL_ModuloReclamos_Actividades actividad with(nolock)
 		left join TBL_ModuloReclamos_CategoriasReclamo categorias with(nolock)
 			on reclamo.IdCategoriaReclamo = categorias.IdCategoriaReclamo
 where	actividad.IdUsuarioAsignacion = @IdResponsable
+		and actividad.Estado not in ('Realizada','Cancelada')
 
 update	@TblReport
 set		DescripcionReclamo = DescripcionProducto
