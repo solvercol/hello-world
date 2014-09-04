@@ -67,7 +67,10 @@ namespace Modules.Reclamos.UserControls
         protected void BtnSaveCostos_Click(object sender, EventArgs e)
         {
             EditCostos(false);
-            Presenter.UpdateCostosReclamo();            
+            Presenter.UpdateCostosReclamo();
+
+            if (RiseFatherPostback != null)
+                RiseFatherPostback();
         }
 
         protected void BtnAddCosto_Click(object sender, EventArgs e)
@@ -186,7 +189,7 @@ namespace Modules.Reclamos.UserControls
                 }
 
                 _totalCostosProductoReclamo += item.CostoProducto;
-                _totalCostosTransporte += item.Kilos; // Falta los Fletes
+                _totalCostosTransporte += item.Kilos * TarifaFetes; // Falta los Fletes
                 _totalCostosDisposicion += item.CostoDisponible;
             }
         }
@@ -409,6 +412,8 @@ namespace Modules.Reclamos.UserControls
         #endregion
 
         #region Properties
+
+        public event Action RiseFatherPostback;
 
         public event EventHandler Filterevent;
 
@@ -700,8 +705,22 @@ namespace Modules.Reclamos.UserControls
             get { return pgrListado.PageSize; }
         }
 
+        public decimal TarifaFetes
+        {
+            get
+            {
+                if (ViewState["AdminCostos_TarifaFetes"] == null)
+                    ViewState["AdminCostos_TarifaFetes"] = 0;
+                return Convert.ToDecimal(ViewState["AdminCostos_TarifaFetes"]);
+            }
+            set
+            {
+                ViewState["AdminCostos_TarifaFetes"] = value;
+            }
+        }
+
         #endregion
 
-        #endregion        
+        #endregion           
     }
 }

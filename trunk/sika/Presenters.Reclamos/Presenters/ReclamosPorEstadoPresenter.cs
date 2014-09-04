@@ -6,6 +6,7 @@ using Application.MainModule.SqlServices.IServices;
 using Domain.MainModule.Reclamos.Enum;
 using Infrastructure.CrossCutting.NetFramework.Enums;
 using Presenters.Reclamos.IViews;
+using Applications.MainModule.Admin.IServices;
 
 namespace Presenters.Reclamos.Presenters
 {
@@ -13,12 +14,14 @@ namespace Presenters.Reclamos.Presenters
     {
         readonly ISfTBL_ModuloReclamos_CategoriasReclamoManagementServices _categoriasReclamoService;
         readonly IReclamosAdoService _recladoAdoService;
+        readonly ISfTBL_Admin_OptionListManagementServices _optionListService;
 
         public ReclamosPorEstadoPresenter(ISfTBL_ModuloReclamos_CategoriasReclamoManagementServices categoriasReclamoService
-                                            ,IReclamosAdoService recladoAdoService)
+                                            ,IReclamosAdoService recladoAdoService, ISfTBL_Admin_OptionListManagementServices optionListService)
         {
             _categoriasReclamoService = categoriasReclamoService;
             _recladoAdoService = recladoAdoService;
+            _optionListService = optionListService;
         }
 
         public override void SubscribeViewToEvents()
@@ -40,6 +43,26 @@ namespace Presenters.Reclamos.Presenters
         {
             View.FechaFilterFrom = DateTime.Now.AddMonths(-1);
             View.FechaFilterTo = DateTime.Now.AddMonths(1);
+            CheckRegiterReclamo();
+        }
+
+        void CheckRegiterReclamo()
+        {
+            try
+            {
+                var idRolRegistro = _optionListService.ObtenerOpcionBykeyModuleId("IdRolRegistroReclamo", Convert.ToInt32(View.IdModule));
+
+                if (idRolRegistro != null)
+                {
+                    var idRol = Convert.ToInt32(idRolRegistro.Value);
+
+                    View.CanRegister = View.UserSession.IsInRoleId(idRol);
+                }
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
         }
 
         public void LoadReport()

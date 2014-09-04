@@ -54,6 +54,20 @@ namespace Presenters.Reclamos.Presenters
             {
                 var items = _comentariosRespuestaService.GetByIdReclamo(Convert.ToDecimal(View.IdReclamo));
 
+                if (items != null && items.Any())
+                {
+                    var totalItems = items;
+                    items = items.Where(x => x.IdComentarioRelacionado == null).ToList();
+
+                    foreach (var itm in items)
+                    {
+                        var children = totalItems.Where(x => x.IdComentarioRelacionado == itm.IdComentario);
+
+                        if (children != null && children.Any())
+                            itm.ComentariosAsociados = children.ToList();
+                    }
+                }
+
                 View.LoadComentariosReclamo(items);
             }
             catch (Exception ex)

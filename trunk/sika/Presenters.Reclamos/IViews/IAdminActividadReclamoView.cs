@@ -17,6 +17,9 @@ namespace Presenters.Reclamos.IViews
         string Observaciones { get; set; }
         void LoadUsuariosCopia(List<DTO_ValueKey> items);
 
+        string ObservacionesCierre { get; set; }
+        string ObservacionesCancelacion { get; set; }
+
         // Seccion Info Reclamo
         string IdReclamo { get; set; }
         string TipoReclamo { get; set; }
@@ -25,10 +28,8 @@ namespace Presenters.Reclamos.IViews
         string TitleReclamo { get; set; }
         string TitleReclamoFrom { get; set; }
         string Unidad { get; set; }
-        string Area { get; set; }
         string FechaReclamo { get; set; }
         string Asesor { get; set; }
-        string TotalCostoReclamo { get; set; }
 
         // Methods
         void EnableEdit(bool enabled);
@@ -38,5 +39,9 @@ namespace Presenters.Reclamos.IViews
         string NombreArchivoAdjunto { get; }
         void LoadArchivosAdjuntos(List<DTO_ValueKey> items);
         void DescargarArchivo(DTO_ValueKey archivo);
+
+        // Register
+        bool CanRegister { get; set; }
+        void ShoeObservaciones(bool visible);
     }
 }

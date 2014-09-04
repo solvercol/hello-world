@@ -341,7 +341,7 @@
 
 <!-- Controles de Despliegue de datos de Reporte -->
 <asp:Panel ID="pReporte" runat="server" style="padding-bottom: 30px;" width="99%" Height="500px" ScrollBars="Auto">                
-    <rsweb:ReportViewer ID="rptReclamos" runat="server" Width="100%" Height="100%" HyperlinkTarget="_blank"
+    <rsweb:ReportViewer ID="rptReclamos" runat="server" Width="100%" Height="100%"
                         ShowBackButton="false" ShowCredentialPrompts="false" ShowPrintButton="false" ShowRefreshButton="false"
                         ShowZoomControl="false">
     </rsweb:ReportViewer>

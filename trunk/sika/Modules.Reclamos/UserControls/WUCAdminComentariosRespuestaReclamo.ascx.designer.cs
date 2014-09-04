@@ -22,6 +22,15 @@ namespace Modules.Reclamos.UserControls {
         protected global::System.Web.UI.WebControls.Button btnNuevoComentarioRespuesta;
         
         /// <summary>
+        /// upContainer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upContainer;
+        
+        /// <summary>
         /// rptComentariosList control.
         /// </summary>
         /// <remarks>

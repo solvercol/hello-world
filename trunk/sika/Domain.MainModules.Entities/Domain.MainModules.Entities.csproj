@@ -55,6 +55,7 @@
     <Compile Include="Partial\TBL_Admin_TypeByModules.cs" />
     <Compile Include="Partial\TBL_Admin_Usuarios.cs" />
     <Compile Include="Partial\TBL_ModuloReclamos_CategoriasReclamo.cs" />
+    <Compile Include="Partial\TBL_ModuloReclamos_ComentariosRespuesta.cs" />
     <Compile Include="Partial\TBL_ModuloReclamos_CostosProducto.cs" />
     <Compile Include="Partial\TBL_ModuloReclamos_Reclamo.cs" />
     <Compile Include="Partial\TBL_ModuloWorkFlow_CamposValidacion.cs" />

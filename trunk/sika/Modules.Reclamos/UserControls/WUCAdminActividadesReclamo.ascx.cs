@@ -14,6 +14,26 @@ namespace Modules.Reclamos.UserControls
 {
     public partial class WUCAdminActividadesReclamo : ViewUserControl<AdminActividadesReclamoPresenter, IAdminActividadesReclamoView>, IAdminActividadesReclamoView, IReclamoWebUserControl
     {
+        #region Members
+
+        public string FromPage
+        {
+            get
+            {
+                return Request.QueryString["from"];
+            }
+        }
+
+        public string IdFrom
+        {
+            get
+            {
+                return Request.QueryString["idfrom"];
+            }
+        }
+
+        #endregion
+
         #region Page Events
 
         #region Load
@@ -82,7 +102,9 @@ namespace Modules.Reclamos.UserControls
 
             IdSelectedActividad = btn.CommandArgument;
 
-            Presenter.LoadActividadReclamo();
+            Response.Redirect(string.Format("../Admin/FrmAdminActividadReclamo.aspx?ModuleId={0}&IdActividad={1}&from=reclamo&IdReclamo={2}&fromaux={3}&idfromaux={4}", IdModule, IdSelectedActividad, IdReclamo, FromPage, IdFrom));
+
+            //Presenter.LoadActividadReclamo();
         }
 
         protected void BtnAddArchivoAdjunto_Click(object sender, EventArgs e)
@@ -210,7 +232,6 @@ namespace Modules.Reclamos.UserControls
             IdUsuarioAsignacion = UserSession.IdUser.ToString();
             Descripcion = string.Empty;
             FechaActividad = DateTime.Now;
-            Observaciones = string.Empty;
             UsuariosCopia = new List<DTO_ValueKey>();
             LoadUsuariosCopia(UsuariosCopia);
             ArchivosAdjuntos = new List<DTO_ValueKey>();
@@ -315,7 +336,6 @@ namespace Modules.Reclamos.UserControls
             wddUsuarioCopia.Visible = enable;
             txtDescripcion.Visible = enable;
             txtFechaActividad.Visible = enable;
-            txtObservaciones.Visible = enable;
             lstUsuariosCopia.Enabled = enable;
             btnGuardar.Visible = enable;
             btnAddCopia.Visible = enable;
@@ -325,7 +345,6 @@ namespace Modules.Reclamos.UserControls
             lblUsuarioAsignacion.Visible = !enable;            
             lblDescripcion.Visible = !enable;
             lblFechaActividad.Visible = !enable;
-            lblObservaciones.Visible = !enable;
 
             fupAnexoArchivo.Visible = enable;
             btnAddArchivoAdjunto.Visible = enable;
@@ -339,7 +358,9 @@ namespace Modules.Reclamos.UserControls
 
         #endregion
 
-        #region Methods        
+        #region Properties
+
+        public event Action RiseFatherPostback;
 
         public TBL_Admin_Usuarios UserSession
         {
@@ -442,20 +463,7 @@ namespace Modules.Reclamos.UserControls
             {
                 lstUsuariosCopia.SelectedValue = value;
             }
-        }
-
-        public string Observaciones
-        {
-            get
-            {
-                return txtObservaciones.Text;
-            }
-            set
-            {
-                txtObservaciones.Text = value;
-                lblObservaciones.Text = value;
-            }
-        }
+        }        
 
         public string IdSelectedActividad
         {

@@ -8,22 +8,26 @@ using Domain.MainModule.Reclamos.DTO;
 using Domain.MainModules.Entities;
 using Infrastructure.CrossCutting.NetFramework.Enums;
 using Presenters.Reclamos.IViews;
+using Applications.MainModule.Admin.IServices;
 
 namespace Presenters.Reclamos.Presenters
 {
-    public class AdminActividadReclamoPresentador : Presenter<IAdminActividadReclamoView>
+    public class AdminComentarioRespuestaReclamoPresenter : Presenter<IAdminComentarioRespuestaReclamoView>
     {
         readonly ISfTBL_ModuloReclamos_ReclamoManagementServices _reclamoService;
-        readonly ISfTBL_ModuloReclamos_ActividadesManagementServices _actividadesService;
-        readonly ISfTBL_ModuloReclamos_AnexosActividadManagementServices _anexosService;
+        readonly ISfTBL_ModuloReclamos_ComentariosRespuestaManagementServices _comentariosService;
+        readonly ISfTBL_ModuloReclamos_AnexosComentarioRespuestaManagementServices _anexosService;
+        readonly ISfTBL_Admin_UsuariosManagementServices _usuariosService;
 
-        public AdminActividadReclamoPresentador(ISfTBL_ModuloReclamos_ReclamoManagementServices reclamoService,
-                                                ISfTBL_ModuloReclamos_ActividadesManagementServices actividadesService,
-                                                ISfTBL_ModuloReclamos_AnexosActividadManagementServices anexosService)
+        public AdminComentarioRespuestaReclamoPresenter(ISfTBL_ModuloReclamos_ReclamoManagementServices reclamoService,
+                                                ISfTBL_ModuloReclamos_ComentariosRespuestaManagementServices comentariosService,
+                                                ISfTBL_ModuloReclamos_AnexosComentarioRespuestaManagementServices anexosService,
+                                                ISfTBL_Admin_UsuariosManagementServices usuariosService)
         {
             _reclamoService = reclamoService;
-            _actividadesService = actividadesService;
+            _comentariosService = comentariosService;
             _anexosService = anexosService;
+            _usuariosService = usuariosService;
         }
 
         public override void SubscribeViewToEvents()
@@ -39,47 +43,61 @@ namespace Presenters.Reclamos.Presenters
 
         public void LoadInitData()
         {
-            LoadActividadReclamo();
+            LoadUsuarioAsignacion();
+            LoadComentarioRespuestaReclamo();
         }
 
-        public void LoadActividadReclamo()
+        void LoadUsuarioAsignacion()
         {
-            if (string.IsNullOrEmpty(View.IdActividad)) return;
+            try
+            {
+                var items = _usuariosService.FindBySpec(true);
+                View.LoadDestinatarios(items);
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
+        }
+
+        public void LoadComentarioRespuestaReclamo()
+        {
+            if (string.IsNullOrEmpty(View.IdComentario)) return;
 
             try
             {
-                var model = _actividadesService.GetById(Convert.ToDecimal(View.IdActividad));
+                var model = _comentariosService.GetById(Convert.ToDecimal(View.IdComentario));
 
                 if (model != null)
                 {
-                    View.Descripcion = model.Descripcion;
-                    View.Actividad = model.TBL_ModuloReclamos_ActividadesReclamo.Nombre;
-                    View.FechaActividad = model.Fecha;
-                    View.UsuarioAsignacion = model.TBL_Admin_Usuarios2.Nombres;
-                    View.Estado = model.Estado;
-                    if ((model.Estado != "Registrada" && model.Estado != "Programada"))
-                    {
-                        View.Observaciones = string.IsNullOrEmpty(model.ObservacionesCierre) ? model.ObservacionesCancelacion : model.ObservacionesCierre;
-                        View.ShoeObservaciones(true);
-                    }
-                    else
-                        View.ShoeObservaciones(false);
-                    
-                    var usuariosCopia = new List<DTO_ValueKey>();
-                    if (model.TBL_Admin_Usuarios3.Any())
-                    {
-                        foreach (var itm in model.TBL_Admin_Usuarios3)
-                        {
-                            var usuarioCopia = new DTO_ValueKey() { Id = itm.IdUser.ToString(), Value = itm.Nombres };
-                            usuariosCopia.Add(usuarioCopia);
-                        }
-                    }
-                    View.LoadUsuariosCopia(usuariosCopia);
+                    View.Asunto = model.Asunto;
+                    View.Mensaje = model.Comentario;
+                    View.Destinatario = model.TBL_Admin_Usuarios2.Nombres;
+                    View.FechaComentario = model.CreateOn;
+                    View.IdUsuarioDestino = model.CreateBy.ToString();
+
                     View.EnableEdit(false);
-                    View.CanRegister = View.UserSession.IdUser == model.IdUsuarioAsignacion && (model.Estado == "Registrada" || model.Estado == "Programada");
+                    LoadComentarioRelacionados();
                     LoadArhchivosAdjuntos();
                     LoadReclamo(model.IdReclamo);
                 }
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
+        }
+
+        void LoadComentarioRelacionados()
+        {
+            if (string.IsNullOrEmpty(View.IdComentario)) return;
+
+            try
+            {
+                var items = _comentariosService.GetByIdComentarioRelacionado(Convert.ToDecimal(View.IdComentario));
+
+                View.LoadComentariosRelacionados(items);
+
             }
             catch (Exception ex)
             {
@@ -134,77 +152,17 @@ namespace Presenters.Reclamos.Presenters
             }
         }
 
-        public void UpdateActividadReclamo()
+        public void AddComentarioRelacionado()
         {
-            if (string.IsNullOrEmpty(View.IdActividad)) return;
+            if (string.IsNullOrEmpty(View.IdComentario)) return;
 
             try
             {
-                var model = _actividadesService.GetById(Convert.ToDecimal(View.IdActividad));
+                var model = GetModel();
 
-                if (model != null)
-                {
-                    model.Descripcion = View.Descripcion;
-                    model.ObservacionesCierre = View.Observaciones;                    
-                    model.ModifiedBy = View.UserSession.IdUser;
-                    model.ModifiedOn = DateTime.Now;
+                _comentariosService.Add(model);
 
-                    _actividadesService.Modify(model);
-
-                    LoadActividadReclamo();
-                }
-            }
-            catch (Exception ex)
-            {
-                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
-            }
-        }
-
-        public void MarcarRealizadaActividadReclamo()
-        {
-            if (string.IsNullOrEmpty(View.IdActividad)) return;
-
-            try
-            {
-                var model = _actividadesService.GetById(Convert.ToDecimal(View.IdActividad));
-
-                if (model != null)
-                {
-                    model.Estado = "Realizada";
-                    model.ObservacionesCierre = View.ObservacionesCierre;
-                    model.ModifiedBy = View.UserSession.IdUser;
-                    model.ModifiedOn = DateTime.Now;
-
-                    _actividadesService.Modify(model);
-
-                    LoadActividadReclamo();
-                }
-            }
-            catch (Exception ex)
-            {
-                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
-            }
-        }
-
-        public void CancelarActividadReclamo()
-        {
-            if (string.IsNullOrEmpty(View.IdActividad)) return;
-
-            try
-            {
-                var model = _actividadesService.GetById(Convert.ToDecimal(View.IdActividad));
-
-                if (model != null)
-                {
-                    model.Estado = "Cancelada";
-                    model.ObservacionesCancelacion = View.ObservacionesCancelacion;
-                    model.ModifiedBy = View.UserSession.IdUser;
-                    model.ModifiedOn = DateTime.Now;
-
-                    _actividadesService.Modify(model);
-
-                    LoadActividadReclamo();
-                }
+                LoadComentarioRespuestaReclamo();
             }
             catch (Exception ex)
             {
@@ -216,8 +174,8 @@ namespace Presenters.Reclamos.Presenters
         {
             try
             {
-                var archivo = new TBL_ModuloReclamos_AnexosActividad();
-                archivo.IdActividad = Convert.ToDecimal(View.IdActividad);
+                var archivo = new TBL_ModuloReclamos_AnexosComentarioRespuesta();
+                archivo.IdComentarioRespuesta = Convert.ToDecimal(View.IdComentario);
                 archivo.NombreArchivo = View.NombreArchivoAdjunto;
                 archivo.Archivo = View.ArchivoAdjunto;
                 archivo.CreateBy = View.UserSession.IdUser;
@@ -264,7 +222,7 @@ namespace Presenters.Reclamos.Presenters
                 {
                     var archivo = new DTO_ValueKey();
                     archivo.ComplexValue = model.Archivo;
-                    archivo.Id = string.Format("{0}", model.IdAnexoActividad);
+                    archivo.Id = string.Format("{0}", model.IdAnexoComentarioRespuesta);
                     archivo.Value = model.NombreArchivo;
 
                     View.DescargarArchivo(archivo);
@@ -278,11 +236,11 @@ namespace Presenters.Reclamos.Presenters
 
         public void LoadArhchivosAdjuntos()
         {
-            if (string.IsNullOrEmpty(View.IdActividad)) return;
+            if (string.IsNullOrEmpty(View.IdComentario)) return;
 
             try
             {
-                var anexos = _anexosService.GetByIdActividad(Convert.ToDecimal(View.IdActividad));
+                var anexos = _anexosService.GetByComentarioId(Convert.ToDecimal(View.IdComentario));
 
                 if (anexos.Any())
                 {
@@ -291,7 +249,7 @@ namespace Presenters.Reclamos.Presenters
                     foreach (var anexo in anexos)
                     {
                         var archivo = new DTO_ValueKey();
-                        archivo.Id = string.Format("{0}", anexo.IdAnexoActividad);
+                        archivo.Id = string.Format("{0}", anexo.IdAnexoComentarioRespuesta);
                         archivo.Value = anexo.NombreArchivo;
                         archivo.ComplexValue = anexo.Archivo;
 
@@ -305,6 +263,24 @@ namespace Presenters.Reclamos.Presenters
             {
                 CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
             }
+        }
+
+        TBL_ModuloReclamos_ComentariosRespuesta GetModel()
+        {
+            var model = new TBL_ModuloReclamos_ComentariosRespuesta();
+
+            model.IdReclamo = Convert.ToInt32(View.IdReclamo);
+            model.Asunto = View.Asunto;
+            model.Comentario = View.NuevoComentario;
+            model.IdComentarioRelacionado = Convert.ToDecimal(View.IdComentario);
+            model.IdUsuarioDestino = Convert.ToInt32(View.IdUsuarioDestino);
+            model.IsActive = true;
+            model.CreateBy = View.UserSession.IdUser;
+            model.CreateOn = DateTime.Now;
+            model.ModifiedBy = View.UserSession.IdUser;
+            model.ModifiedOn = DateTime.Now;
+
+            return model;
         }
     }
 }

@@ -11,7 +11,7 @@ using Presenters.Reclamos.Presenters;
 
 namespace Modules.Reclamos.Admin
 {
-    public partial class FrmAdminActividadReclamo : ViewPage<AdminActividadReclamoPresentador, IAdminActividadReclamoView>, IAdminActividadReclamoView
+    public partial class FrmAdminComentarioRespuestaReclamo : ViewPage<AdminComentarioRespuestaReclamoPresenter, IAdminComentarioRespuestaReclamoView>, IAdminComentarioRespuestaReclamoView
     {
         #region Members
 
@@ -19,11 +19,11 @@ namespace Modules.Reclamos.Admin
         {
             get
             {
-                return ViewState["AdminActividad_CanEdit"] == null ? false : Convert.ToBoolean(ViewState["AdminActividad_CanEdit"].ToString());
+                return ViewState["AdminComentarioRespuesta_CanEdit"] == null ? false : Convert.ToBoolean(ViewState["AdminComentarioRespuesta_CanEdit"].ToString());
             }
             set
             {
-                ViewState["AdminActividad_CanEdit"] = value;
+                ViewState["AdminComentarioRespuesta_CanEdit"] = value;
             }
         }
 
@@ -75,7 +75,7 @@ namespace Modules.Reclamos.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ImprimirTituloVentana(string.Format("Actividad - Reclamo de {0} No. {1}", TipoReclamo, NumeroReclamo));
+            ImprimirTituloVentana(string.Format("Comentarios y Respuestas - Reclamo de {0} No. {1}", TipoReclamo, NumeroReclamo));
 
             ImgSearch.Visible = string.IsNullOrEmpty(FromPageAux);
         }
@@ -91,41 +91,29 @@ namespace Modules.Reclamos.Admin
 
         protected void BtnRegresarClick(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(FromPage))
-            {
-                Response.Redirect(string.Format("../Views/FrmMisActividadesPendientes.aspx?ModuleId={0}", ModuleId));
-            }
-            else
-            {
-                switch (FromPage)
-                {
-                    case "reclamo":
-                        Response.Redirect(string.Format("FrmReclamo.aspx?ModuleId={0}&IdReclamo={1}&from={2}", ModuleId, IdReclamoQS, FromPageAux));
-                        break;
-                }
-            }
+            Response.Redirect(string.Format("FrmReclamo.aspx?ModuleId={0}&IdReclamo={1}&from={2}", ModuleId, IdReclamoQS, FromPageAux));
         }
 
         protected void BtnViewReclamo_Click(object sender, EventArgs e)
         {
-            Response.Redirect(string.Format("FrmReclamo.aspx?ModuleId={0}&IdReclamo={1}&from=admactividad&idfrom={2}", ModuleId, IdReclamo, IdActividad));
+            Response.Redirect(string.Format("FrmReclamo.aspx?ModuleId={0}&IdReclamo={1}&from=admactividad&idfrom={2}", ModuleId, IdReclamo, IdComentario));
         }
 
-        protected void BtnEditActividadClick(object sender, EventArgs e)
+        protected void BtnEditComentarioClick(object sender, EventArgs e)
         {
             EnableEdit(true);
             Presenter.LoadArhchivosAdjuntos();
         }
 
-        protected void BtnCancelActividadClick(object sender, EventArgs e)
+        protected void BtnCancelComentarioClick(object sender, EventArgs e)
         {
             EnableEdit(false);
             Presenter.LoadArhchivosAdjuntos();
         }
 
-        protected void BtnSaveActividadClick(object sender, EventArgs e)
+        protected void BtnSaveComentarioClick(object sender, EventArgs e)
         {
-            Presenter.UpdateActividadReclamo();
+            Presenter.AddComentarioRelacionado();
         }
 
         protected void BtnAddArchivoAdjunto_Click(object sender, EventArgs e)
@@ -150,51 +138,33 @@ namespace Modules.Reclamos.Admin
         protected void BtnDownloadArchivoAdjunto_Click(object sender, EventArgs e)
         {
             var btn = (LinkButton)sender;
-            
+
             var IdArchivo = Convert.ToDecimal(btn.CommandArgument);
 
             Presenter.DownloadArchivoAdjunto(IdArchivo);
-        }
-
-        protected void BtnSaveRealizadaClick(object sender, EventArgs e)
-        {
-            trObservacionesCierre.Visible = true;
-            trObservacionesCancelacion.Visible = false;
-            btnSaveRealizarActividad.Visible = true;
-            btnSaveCancelarActividad.Visible = false;
-            ObservacionesCierre = string.Empty;
-            mpeCierreActividad.Show();
-        }
-
-        protected void BtnCancelarActividadClick(object sender, EventArgs e)
-        {
-            trObservacionesCierre.Visible = false;
-            trObservacionesCancelacion.Visible = true;
-            btnSaveRealizarActividad.Visible = false;
-            btnSaveCancelarActividad.Visible = true;
-            ObservacionesCancelacion = string.Empty;
-            mpeCierreActividad.Show();
-        }
-
-        protected void BtnCancelCierreClick(object sender, EventArgs e)
-        {
-            mpeCierreActividad.Hide();
-        }
-
-        protected void BtnSaveRealizarActividad_Click(object sender, EventArgs e)
-        {
-            Presenter.MarcarRealizadaActividadReclamo();
-        }
-
-        protected void BtnSaveCancelarActividad_Click(object sender, EventArgs e)
-        {
-            Presenter.CancelarActividadReclamo();
         }
 
         #endregion
 
         #region Repeaters
 
+        protected void RptComentariosAsociados_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+            {
+                var item = (TBL_ModuloReclamos_ComentariosRespuesta)(e.Item.DataItem);
+                // Bindind data
+
+                var lblFechaComentario = e.Item.FindControl("lblFechaComentario") as Label;
+                if (lblFechaComentario != null) lblFechaComentario.Text = string.Format("{0:dd/MM/yyyy hh:mm:ss tt}", item.CreateOn);
+
+                var lblCreadoPor = e.Item.FindControl("lblCreadoPor") as Label;
+                if (lblCreadoPor != null) lblCreadoPor.Text = string.Format("{0}", item.TBL_Admin_Usuarios.Nombres);
+
+                var lblComentario = e.Item.FindControl("lblComentario") as Label;
+                if (lblComentario != null) lblComentario.Text = string.Format("{0}", item.Comentario);
+            }
+        }
         protected void RptArchivosAdjuntos_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
@@ -240,30 +210,29 @@ namespace Modules.Reclamos.Admin
         {
             CanEdit = enabled;
 
-            txtObservaciones.Visible = enabled;
-            //ddlEstado.Visible = enabled;
+            trComentarios.Visible = enabled;
+            trDestinatarios.Visible = enabled;
+            txtComentario.Text = string.Empty;
 
             fupAnexoArchivo.Visible = enabled;
             btnAddArchivoAdjunto.Visible = enabled;
 
-            lblObservaciones.Visible = !enabled;
-            //lblEstado.Visible = !enabled;
-
             btnCancel.Visible = enabled;
             btnSave.Visible = enabled;
-            btnSaveRealizada.Visible = enabled;
-            btnCancelActividad.Visible = enabled;
             btnEdit.Visible = !enabled;
         }
 
-        public void LoadUsuariosCopia(List<DTO_ValueKey> items)
+        public void LoadDestinatarios(List<TBL_Admin_Usuarios> items)
         {
-            lstUsuariosCopia.DataSource = items;
-            lstUsuariosCopia.DataValueField = "Id";
-            lstUsuariosCopia.DataTextField = "Value";
-            lstUsuariosCopia.DataBind();
+            if (items.Any())
+            {
+                items = items.OrderBy(x => x.Nombres).ToList();
+            }
 
-            trUsuariosCopia.Visible = items.Any();
+            wddDestinatarios.DataSource = items;
+            wddDestinatarios.TextField = "Nombres";
+            wddDestinatarios.ValueField = "IdUser";
+            wddDestinatarios.DataBind();
         }
 
         public void LoadArchivosAdjuntos(List<DTO_ValueKey> items)
@@ -272,15 +241,17 @@ namespace Modules.Reclamos.Admin
             rptArchivosAdjuntos.DataBind();
         }
 
+        public void LoadComentariosRelacionados(List<TBL_ModuloReclamos_ComentariosRespuesta> items)
+        {
+            rptComentariosAsociados.DataSource = items;
+            rptComentariosAsociados.DataBind();
+        }
+
         public void DescargarArchivo(DTO_ValueKey archivo)
         {
             DownloadDocument((byte[])archivo.ComplexValue, archivo.Value, "application/octet-stream");
         }
 
-        public void ShoeObservaciones(bool visible)
-        {
-            trObservaciones.Visible = visible;
-        }
 
         #endregion
 
@@ -296,11 +267,11 @@ namespace Modules.Reclamos.Admin
             get { return ModuleId; }
         }
 
-        public string IdActividad
+        public string IdComentario
         {
             get
             {
-                return Request.QueryString["IdActividad"];
+                return Request.QueryString["IdComentario"];
             }
         }
 
@@ -308,11 +279,11 @@ namespace Modules.Reclamos.Admin
         {
             get
             {
-                return ViewState["AdminActividad_IdReclamo"] == null ? string.Empty : ViewState["AdminActividad_IdReclamo"].ToString();
+                return ViewState["AdminComentarioRespuesta_IdReclamo"] == null ? string.Empty : ViewState["AdminComentarioRespuesta_IdReclamo"].ToString();
             }
             set
             {
-                ViewState["AdminActividad_IdReclamo"] = value;
+                ViewState["AdminComentarioRespuesta_IdReclamo"] = value;
             }
         }
 
@@ -387,7 +358,7 @@ namespace Modules.Reclamos.Admin
                 lblUnidad.Text = value;
             }
         }
-        
+
         public string FechaReclamo
         {
             get
@@ -411,20 +382,8 @@ namespace Modules.Reclamos.Admin
                 lblAsesor.Text = value;
             }
         }
-        
-        public string UsuarioAsignacion
-        {
-            get
-            {
-                return lblAsignado.Text;
-            }
-            set
-            {
-                lblAsignado.Text = value;
-            }
-        }
 
-        public DateTime FechaActividad
+        public DateTime FechaComentario
         {
             get
             {
@@ -436,55 +395,6 @@ namespace Modules.Reclamos.Admin
             }
         }
 
-        public string Estado
-        {
-            get
-            {
-                return ddlEstado.SelectedValue;
-            }
-            set
-            {
-                ddlEstado.SelectedValue = value;
-                lblEstado.Text = value;
-            }
-        }
-
-        public string Descripcion
-        {
-            get
-            {
-                return lblDescripcion.Text;
-            }
-            set
-            {
-                lblDescripcion.Text = value;                
-            }
-        }
-
-        public string Observaciones
-        {
-            get
-            {
-                return txtObservaciones.Text;
-            }
-            set
-            {
-                lblObservaciones.Text = value;
-                txtObservaciones.Text = value;
-            }
-        }
-
-        public string Actividad
-        {
-            get
-            {
-                return lblActividad.Text;
-            }
-            set
-            {
-                lblActividad.Text = value;
-            }
-        }
 
         public byte[] ArchivoAdjunto
         {
@@ -496,32 +406,68 @@ namespace Modules.Reclamos.Admin
             get { return fupAnexoArchivo.FileName; }
         }
 
-        public bool CanRegister
+        public string Asunto
         {
             get
             {
-                return btnEdit.Visible;
+                return lblAsunto.Text;
             }
             set
             {
-                btnEdit.Visible = value;
+                lblAsunto.Text = value;
             }
         }
 
-        public string ObservacionesCierre
+        public string Mensaje
         {
-            get { return txtObservacionesCierre.Text; }
-            set { txtObservacionesCierre.Text = value; }
+            get
+            {
+                return lblMensaje.Text;
+            }
+            set
+            {
+                lblMensaje.Text = value;
+            }
         }
 
-        public string ObservacionesCancelacion
+        public string Destinatario
         {
-            get { return txtObservacionesCancelacion.Text; }
-            set { txtObservacionesCancelacion.Text = value; }
+            get
+            {
+                return lblDestinatario.Text;
+            }
+            set
+            {
+                lblDestinatario.Text = value;
+            }
+        }
+
+        public string NuevoComentario
+        {
+            get
+            {
+                return txtComentario.Text;
+            }
+            set
+            {
+                txtComentario.Text = value;
+            }
+        }
+
+        public string IdUsuarioDestino
+        {
+            get
+            {
+                return wddDestinatarios.SelectedValue;
+            }
+            set
+            {
+                wddDestinatarios.SelectedValue = value;
+            }
         }
 
         #endregion
 
-        #endregion    
+        #endregion
     }
 }

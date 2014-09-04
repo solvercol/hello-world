@@ -64,6 +64,7 @@ namespace Modules.Reclamos.Views
         #endregion
 
         #region Methods
+
         #endregion
 
         #region View Members
@@ -249,6 +250,18 @@ namespace Modules.Reclamos.Views
             set
             {
                 wdpFiltroDateTo.Text = value.ToString("yyyy-MM");
+            }
+        }
+
+        public bool CanRegister
+        {
+            get
+            {
+                return btnNuevo.Visible;
+            }
+            set
+            {
+                btnNuevo.Visible = value;
             }
         }
 

@@ -15,8 +15,7 @@ namespace Presenters.Reclamos.IViews
         DateTime FechaActividad { get; set; }
         string IdUsuarioAsignacion { get; set; }
         string IdUsuarioCopia { get; set; }
-        string IdUsuarioCopiaSelected { get; set; }
-        string Observaciones { get; set; }
+        string IdUsuarioCopiaSelected { get; set; }        
 
         string IdSelectedActividad { get; set; }
         bool IsNewActividad { get; set; }

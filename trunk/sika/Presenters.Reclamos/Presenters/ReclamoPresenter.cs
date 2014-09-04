@@ -55,7 +55,7 @@ namespace Presenters.Reclamos.Presenters
             }
         }
 
-        void LoadReclamo()
+        public void LoadReclamo()
         {
             try
             {

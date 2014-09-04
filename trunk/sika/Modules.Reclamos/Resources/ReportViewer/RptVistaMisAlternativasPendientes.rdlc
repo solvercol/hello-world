@@ -20,6 +20,10 @@
           <DataField>IdReclamo</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
+        <Field Name="TipoReclamo">
+          <DataField>TipoReclamo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="NumeroReclamo">
           <DataField>NumeroReclamo</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -31,6 +35,18 @@
         <Field Name="FechaAlternativa">
           <DataField>FechaAlternativa</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="DescripcionProducto">
+          <DataField>DescripcionProducto</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DescripcionServicio">
+          <DataField>DescripcionServicio</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DescripcionReclamo">
+          <DataField>DescripcionReclamo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Estado">
           <DataField>Estado</DataField>
@@ -131,7 +147,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Alternativa</Value>
+                              <Value>Info Reclamo</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -241,7 +257,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Seguimiento</Value>
+                              <Value>Alternativa</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -331,14 +347,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Alternativa">
+                    <Textbox Name="DescripcionReclamo">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Alternativa.Value</Value>
+                              <Value>=Fields!DescripcionReclamo.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -349,7 +365,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Alternativa</rd:DefaultName>
+                      <rd:DefaultName>DescripcionReclamo</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -422,7 +438,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -474,14 +489,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Seguimiento">
+                    <Textbox Name="Alternativa1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Seguimiento.Value</Value>
+                              <Value>=Fields!Alternativa.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -492,7 +507,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Seguimiento</rd:DefaultName>
+                      <rd:DefaultName>Alternativa1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>

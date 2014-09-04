@@ -272,8 +272,10 @@
     <Content Include="Resources\Images\Rutas.png" />
     <Content Include="Resources\Images\select.png" />
     <Content Include="Resources\Images\titlebar_bg.png" />
+    <Content Include="Resources\Scripts\jquery-1.7.2.min.js" />
     <Content Include="Resources\Scripts\jquery-1.8.2.min.js" />
     <Content Include="Resources\Scripts\jquery.contextMenu.js" />
+    <Content Include="Resources\Scripts\mktree.js" />
     <Content Include="Resources\Scripts\Site.js" />
     <Content Include="Resources\Styles\jQueryThemes\base\ig.ui.coloreditor.css" />
     <Content Include="Resources\Styles\jQueryThemes\base\ig.ui.editors.css" />
