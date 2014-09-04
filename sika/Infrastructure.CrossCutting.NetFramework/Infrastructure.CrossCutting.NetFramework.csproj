@@ -75,6 +75,8 @@
     <Compile Include="Services\Files\StreamUtil.cs" />
     <Compile Include="Services\Files\TransactionalFileService.cs" />
     <Compile Include="Services\InstallerDb\DatabaseInstaller.cs" />
+    <Compile Include="Services\RunAssemblies\ISystemActionsManagementServices.cs" />
+    <Compile Include="Services\RunAssemblies\SystemActionsManagementServices.cs" />
     <Compile Include="Structures\InputParameter.cs" />
     <Compile Include="Util\DatabaseUtil.cs" />
     <Compile Include="Util\DateDiff.cs" />

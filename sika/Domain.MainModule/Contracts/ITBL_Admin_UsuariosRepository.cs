@@ -44,6 +44,13 @@ namespace Domain.MainModule.Contracts
         /// <param name="idDocumento"></param>
         /// <returns></returns>
         TBL_Admin_Usuarios RetornarUsuarioAutordocumento(int idDocumento);
+
+        /// <summary>
+        /// Retorna el usuario responsable del reclamo
+        /// </summary>
+        /// <param name="idReclamo"></param>
+        /// <returns></returns>
+        TBL_Admin_Usuarios RetornarUsuarioResponsabledocumento(int idReclamo);
     }
 }
     

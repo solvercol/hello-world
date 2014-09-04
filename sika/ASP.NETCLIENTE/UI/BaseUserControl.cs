@@ -139,6 +139,7 @@ namespace ASP.NETCLIENTE.UI
 
         public string IdResponsable { get; set; }
 
+        public string FolderId { get; set; }
         #endregion
     }
 }

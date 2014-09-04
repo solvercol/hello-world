@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
-using Domain.MainModule.WorkFlow.Enums;
+using Infrastructure.CrossCutting.IDtoService;
 
 namespace Applications.MainModule.WorkFlow.DTO
 {
     [Serializable]
-    public class RenderTypeControlButtonDto
+    public class RenderTypeControlButtonDto : IDocumentDto
     {
         public string TextControl { get; set; }
 
@@ -19,18 +19,32 @@ namespace Applications.MainModule.WorkFlow.DTO
 
         public string IdDocument { get; set; }
 
+        public string NextResponsibe { get; set; }
+
+        public string EmailNextResponsibe { get; set; }
+
+        public string IdNextResponsibe { get; set; }
+
         public string CurrentResponsibe { get; set; }
 
         public string EmailCurrentResponsibe { get; set; }
 
         public string IdCurrentResponsibe { get; set; }
 
+        public string OrdenCompra { get; set; }
+
+        public string NumeroPedido { get; set; }
+
+        public string Cliente { get; set; }
+
+
+
+
         /// <summary>
         /// Propiedad que permite identificar si el WF se ejecutó de forma apropiada o presento algun error tanto en la validación como en la ejecución
         /// de alguno de sus métodos.
         /// </summary>
-        public ProcessStatus ProcessStatus { get; set; }
-
+        public String Processestaus { get; set; }
         /// <summary>
         /// Listado que permite obtener los mensajes asociados a los errores como producto de la ejecición del WF
         /// </summary>
@@ -44,7 +58,8 @@ namespace Applications.MainModule.WorkFlow.DTO
         /// <summary>
         /// Diccionario que permite enviar al servicios lo capturado por la ventana "InputParameters" etiquetado con el Key y su valor respectivo
         /// </summary>
-        public Dictionary<string, string> Parameters = new Dictionary<string, string>();
+        /// 
+        public Dictionary<string, string> Parameters { get; set; }
     }
 
 }

@@ -78,10 +78,6 @@
       <Project>{A339985E-A4A5-4DC1-9632-1A622603F028}</Project>
       <Name>Application.MainModule.SqlServices</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Applications.MainModule.SystemActions\Applications.MainModule.SystemActions.csproj">
-      <Project>{6AAF4F84-A922-4439-9AF3-ED86655EB74B}</Project>
-      <Name>Applications.MainModule.SystemActions</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Domain.Core.Entities\Domain.Core.Entities.csproj">
       <Project>{A1708898-8F15-4D62-99E0-293334E740C2}</Project>
       <Name>Domain.Core.Entities</Name>
@@ -121,6 +117,10 @@
     <ProjectReference Include="..\Infrastructure.CrossCutting.NetFramework\Infrastructure.CrossCutting.NetFramework.csproj">
       <Project>{21EBA478-507F-45AF-B1CC-619578E8FA8B}</Project>
       <Name>Infrastructure.CrossCutting.NetFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure.CrossCutting\Infrastructure.CrossCutting.csproj">
+      <Project>{1063AE74-49D5-4D8A-B6A3-2C38349F55BF}</Project>
+      <Name>Infrastructure.CrossCutting</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

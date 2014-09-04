@@ -132,6 +132,18 @@
     <Compile Include="TBL_Admin_Usuarios.cs">
       <DependentUpon>MainModuleContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="TBL_ModuloDocumentosAnexos_Carpetas.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_ModuloDocumentosAnexos_Categorias.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_ModuloDocumentosAnexos_Contenido.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_ModuloDocumentosAnexos_Documento.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="TBL_ModuloDocumentos_Categorias.cs">
       <DependentUpon>MainModuleContext.tt</DependentUpon>
     </Compile>

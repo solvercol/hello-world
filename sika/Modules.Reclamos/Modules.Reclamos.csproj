@@ -475,6 +475,10 @@
       <Project>{5DD8CB67-048D-44FE-8444-DC6D260E87AB}</Project>
       <Name>Infrastructure.CrossCutting.IoC</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Infrastructure.CrossCutting\Infrastructure.CrossCutting.csproj">
+      <Project>{1063AE74-49D5-4D8A-B6A3-2C38349F55BF}</Project>
+      <Name>Infrastructure.CrossCutting</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Presenters.Reclamos\Presenters.Reclamos.csproj">
       <Project>{CFDE8E79-697F-48CB-A158-CF7A41DDC742}</Project>
       <Name>Presenters.Reclamos</Name>

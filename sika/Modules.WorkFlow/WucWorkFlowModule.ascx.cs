@@ -116,9 +116,9 @@ namespace Modules.WorkFlow
                 //todo: pendiente por implementar logica cuando el objeto es null
                 if (doc == null) return;
 
-                switch (doc.ProcessStatus)
+                switch (doc.Processestaus)
                 {
-                    case ProcessStatus.Ok:
+                    case "Ok":
                         CargarPedido();
                         InvokeActualizarEvent(new ViewResulteventArgs("UpdatePanel"));
                         break;

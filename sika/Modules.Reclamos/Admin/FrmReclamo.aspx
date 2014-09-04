@@ -156,6 +156,9 @@
                         <asp:PlaceHolder ID="phlContent"  runat="server"></asp:PlaceHolder>
                 </div>  
             </ContentTemplate>
+                <Triggers>
+                    <asp:PostBackTrigger ControlID="mnuSecciones" />
+                </Triggers>
         </asp:UpdatePanel>
     </div>  
     

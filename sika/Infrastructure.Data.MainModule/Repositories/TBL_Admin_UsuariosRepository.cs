@@ -103,5 +103,21 @@ namespace Infrastructure.Data.MainModule.Repositories
             
         }
 
+        /// <summary>
+        /// Usuario responsable del reclamo
+        /// </summary>
+        /// <param name="idReclamo"></param>
+        /// <returns></returns>
+        public TBL_Admin_Usuarios RetornarUsuarioResponsabledocumento(int idReclamo)
+        {
+            var oUser = (
+                            from rec in _currentUnitOfWork.TBL_ModuloReclamos_Reclamo
+                            join usu in _currentUnitOfWork.TBL_Admin_Usuarios on rec.IdResponsableActual equals usu.IdUser
+                            where rec.IdReclamo == idReclamo
+                            select usu).SingleOrDefault();
+
+            return oUser;
+        }
+
     }
 }
