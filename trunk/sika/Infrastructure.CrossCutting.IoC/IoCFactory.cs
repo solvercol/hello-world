@@ -20,6 +20,7 @@ using Infrastructure.CrossCutting.Logging;
 using Infrastructure.CrossCutting.NetFramework.Logging;
 using Infrastructure.CrossCutting.NetFramework.Services.Email;
 using Infrastructure.CrossCutting.NetFramework.Services.Files;
+using Infrastructure.CrossCutting.NetFramework.Services.RunAssemblies;
 using Infrastructure.Data.MainModule.Repositories;
 using Infrastructure.Data.MainModule.UnitOfWork;
 using Microsoft.Practices.Unity;
@@ -139,7 +140,7 @@ namespace Infrastructure.CrossCutting.IoC
             container.RegisterType<IEmailService, DefaultEmailService>(new TransientLifetimeManager());
             container.RegisterType<IEmailTemplateEngine, SimpleEmailTemplateEngine>(new TransientLifetimeManager());
             container.RegisterType<IEmailSender, SmtpNet2EmailSender>(new TransientLifetimeManager());
-            
+            container.RegisterType<ISystemActionsManagementServices, SystemActionsManagementServices>(new TransientLifetimeManager());
             #endregion
 
             #region Servicios Capa de Dominio

@@ -10,7 +10,7 @@ namespace Domain.MainModule.WorkFlow.Contracts.DTO
 
         public string IdNextStatus { get; set; }
 
-        public string CurrenteResponsible { get; set; }
+        public string RoleNextResponsible { get; set; }
 
         public string IdRuta { get; set; }
 

@@ -169,6 +169,10 @@
       <Project>{21EBA478-507F-45AF-B1CC-619578E8FA8B}</Project>
       <Name>Infrastructure.CrossCutting.NetFramework</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Infrastructure.CrossCutting\Infrastructure.CrossCutting.csproj">
+      <Project>{1063AE74-49D5-4D8A-B6A3-2C38349F55BF}</Project>
+      <Name>Infrastructure.CrossCutting</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Modules.Loader\Modules.Loader.csproj">
       <Project>{6E37DB76-152E-4528-B192-6ED3F012D2A3}</Project>
       <Name>Modules.Loader</Name>

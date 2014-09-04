@@ -195,20 +195,30 @@ namespace Modules.Reclamos.Admin
             }
             if (string.IsNullOrEmpty(controlPath)) return;
 
-            idUc = controlPath.Split('.')[0];
-            controlPath = string.Format("{0}{1}", ROOTUC, controlPath);
+           
+            
+            if(!controlPath.Contains('/'))
+            {
+                idUc = controlPath.Split('.')[0];
+                controlPath = string.Format("{0}{1}", ROOTUC, controlPath);
+            }
+            else
+            {
+                idUc = "uc";
+            }
 
             phlContent.Controls.Clear();
             var uc = LoadControl(controlPath);
             uc.ID = idUc;
             phlContent.Controls.Add(uc);
+            if (controlPath.Contains("WucDocumentLibrary"))
+                RegistrarControlScriptManager(uc);
 
             if (uc is IReclamoWebUserControl)
             {
                 var ucReclamo = ((IReclamoWebUserControl)uc);
                 ucReclamo.LoadControlData();
                 ucReclamo.RiseFatherPostback += RefreshReclamoInfo;
-                
             }                
         }
 

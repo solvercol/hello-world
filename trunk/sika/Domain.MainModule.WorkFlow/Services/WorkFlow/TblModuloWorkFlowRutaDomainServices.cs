@@ -8,6 +8,7 @@ using Domain.Core;
 using Domain.MainModule.WorkFlow.Contracts.DTO;
 using Domain.MainModules.Entities;
 using ExpressionEvaluation;
+using Infrastructure.CrossCutting.IDtoService;
 using Infrastructure.CrossCutting.NetFramework.Extensions;
 
 namespace Domain.MainModule.WorkFlow.Services.WorkFlow
@@ -46,12 +47,12 @@ namespace Domain.MainModule.WorkFlow.Services.WorkFlow
             return strRolResponsable;
         }
 
-        public WorkFlowDto CargarWorkFlow(IEnumerable<TBL_ModuloWorkFlow_Rutas> listadoRutas, DataTable dtDocument, string idDocument)
+        public WorkFlowDto CargarWorkFlow(IEnumerable<TBL_ModuloWorkFlow_Rutas> listadoRutas, DataTable dtDocument, IDocumentDto oDocument)
         {
 
 
             return (from tblModuloWorkFlowRutase in listadoRutas
-                    let strExpressions = NewExpression(tblModuloWorkFlowRutase, dtDocument, idDocument)
+                    let strExpressions = NewExpression(tblModuloWorkFlowRutase, dtDocument, oDocument)
                     where !string.IsNullOrEmpty(strExpressions)
                     let result = EvaluateExpression(strExpressions)
                     where result
@@ -60,7 +61,7 @@ namespace Domain.MainModule.WorkFlow.Services.WorkFlow
                                    NextStatus = tblModuloWorkFlowRutase.TBL_Admin_EstadosProceso1.Descripcion,
                                    IdNextStatus = tblModuloWorkFlowRutase.SiguienteEstado.ToString(),
                                    TextControl = tblModuloWorkFlowRutase.BotonAccionesRutas,
-                                   CurrenteResponsible = tblModuloWorkFlowRutase.RolResponsableActual,
+                                   RoleNextResponsible = tblModuloWorkFlowRutase.RolResponsableActual,
                                    IdRuta = tblModuloWorkFlowRutase.IdRuta.ToString(),
                                    CurrentStatus = tblModuloWorkFlowRutase.TBL_Admin_EstadosProceso.Descripcion
 
@@ -91,7 +92,7 @@ namespace Domain.MainModule.WorkFlow.Services.WorkFlow
             return string.Empty;
         }
 
-        private string NewExpression(TBL_ModuloWorkFlow_Rutas ruta, DataTable dt, string idDocument)
+        private string NewExpression(TBL_ModuloWorkFlow_Rutas ruta, DataTable dt, IDocumentDto oDocument)
         {
             var strNewExpresion = ruta.FormulaValidacion;
 
@@ -108,7 +109,7 @@ namespace Domain.MainModule.WorkFlow.Services.WorkFlow
                     {
                         _systemActionsServices.AssemblyQualifiedName = sistemAction.NombreEnsamblado;
                         _systemActionsServices.MethodName = sistemAction.NombreMetodo;
-                        _systemActionsServices.Params = new object[] { idDocument };
+                        _systemActionsServices.Params = new object[] { oDocument };
                         var result = _systemActionsServices.Execute();
                         if(result != null)
                         {
