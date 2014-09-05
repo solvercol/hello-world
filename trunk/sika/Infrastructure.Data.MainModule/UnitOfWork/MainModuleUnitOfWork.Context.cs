@@ -352,6 +352,30 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
         }
         private ObjectSet<TBL_ModuloDocumentos_LogCambios> _tBL_ModuloDocumentos_LogCambios;
     
+        public IObjectSet<TBL_ModuloDocumentosAnexos_Carpetas> TBL_ModuloDocumentosAnexos_Carpetas
+        {
+            get { return _tBL_ModuloDocumentosAnexos_Carpetas  ?? (_tBL_ModuloDocumentosAnexos_Carpetas = CreateObjectSet<TBL_ModuloDocumentosAnexos_Carpetas>("TBL_ModuloDocumentosAnexos_Carpetas")); }
+        }
+        private ObjectSet<TBL_ModuloDocumentosAnexos_Carpetas> _tBL_ModuloDocumentosAnexos_Carpetas;
+    
+        public IObjectSet<TBL_ModuloDocumentosAnexos_Categorias> TBL_ModuloDocumentosAnexos_Categorias
+        {
+            get { return _tBL_ModuloDocumentosAnexos_Categorias  ?? (_tBL_ModuloDocumentosAnexos_Categorias = CreateObjectSet<TBL_ModuloDocumentosAnexos_Categorias>("TBL_ModuloDocumentosAnexos_Categorias")); }
+        }
+        private ObjectSet<TBL_ModuloDocumentosAnexos_Categorias> _tBL_ModuloDocumentosAnexos_Categorias;
+    
+        public IObjectSet<TBL_ModuloDocumentosAnexos_Contenido> TBL_ModuloDocumentosAnexos_Contenido
+        {
+            get { return _tBL_ModuloDocumentosAnexos_Contenido  ?? (_tBL_ModuloDocumentosAnexos_Contenido = CreateObjectSet<TBL_ModuloDocumentosAnexos_Contenido>("TBL_ModuloDocumentosAnexos_Contenido")); }
+        }
+        private ObjectSet<TBL_ModuloDocumentosAnexos_Contenido> _tBL_ModuloDocumentosAnexos_Contenido;
+    
+        public IObjectSet<TBL_ModuloDocumentosAnexos_Documento> TBL_ModuloDocumentosAnexos_Documento
+        {
+            get { return _tBL_ModuloDocumentosAnexos_Documento  ?? (_tBL_ModuloDocumentosAnexos_Documento = CreateObjectSet<TBL_ModuloDocumentosAnexos_Documento>("TBL_ModuloDocumentosAnexos_Documento")); }
+        }
+        private ObjectSet<TBL_ModuloDocumentosAnexos_Documento> _tBL_ModuloDocumentosAnexos_Documento;
+    
         public IObjectSet<TBL_ModuloPlanAccion_BancoActividades> TBL_ModuloPlanAccion_BancoActividades
         {
             get { return _tBL_ModuloPlanAccion_BancoActividades  ?? (_tBL_ModuloPlanAccion_BancoActividades = CreateObjectSet<TBL_ModuloPlanAccion_BancoActividades>("TBL_ModuloPlanAccion_BancoActividades")); }

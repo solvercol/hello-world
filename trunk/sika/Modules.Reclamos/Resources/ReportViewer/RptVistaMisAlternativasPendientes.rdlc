@@ -111,7 +111,7 @@
                             <TextRun>
                               <Value># Reclamo</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>DimGray</Color>
@@ -136,6 +136,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -149,7 +150,7 @@
                             <TextRun>
                               <Value>Info Reclamo</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>DimGray</Color>
@@ -172,6 +173,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -185,7 +187,7 @@
                             <TextRun>
                               <Value>Fecha</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>DimGray</Color>
@@ -210,6 +212,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -223,7 +226,7 @@
                             <TextRun>
                               <Value>Estado</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>DimGray</Color>
@@ -246,6 +249,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -259,7 +263,7 @@
                             <TextRun>
                               <Value>Alternativa</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>DimGray</Color>
@@ -300,7 +304,7 @@
                             <TextRun>
                               <Value>=Fields!NumeroReclamo.Value</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>DarkBlue</Color>
@@ -343,6 +347,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -356,7 +361,7 @@
                             <TextRun>
                               <Value>=Fields!DescripcionReclamo.Value</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -389,6 +394,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -402,7 +408,7 @@
                             <TextRun>
                               <Value>=Fields!FechaAlternativa.Value</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Format>dd/MM/yyyy</Format>
@@ -438,6 +444,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -451,7 +458,7 @@
                             <TextRun>
                               <Value>=Fields!Estado.Value</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>DarkRed</Color>
@@ -485,6 +492,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -498,7 +506,7 @@
                             <TextRun>
                               <Value>=Fields!Alternativa.Value</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>

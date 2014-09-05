@@ -273,22 +273,8 @@
                         <table width="100%" class="tblSecciones">
                             <!-- INICIO Descripcion del problema -->
                             <tr>
-                                <td colspan="7">   
-                                    <table width="100%">
-                                        <tr>
-                                            <td style="width:95%">
-                                                <asp:TextBox ID="txtDescripcionProblema" runat="server" TextMode="MultiLine" Width="97%" Rows="4" MaxLength="1024" />
-                                            </td>
-                                            <td style="width:5%">
-                                                <asp:RequiredFieldValidator ID="reqTxtDescripcionProblema"
-                                                                            runat="server"
-                                                                            ForeColor="Red"
-                                                                            ControlToValidate="txtDescripcionProblema"
-                                                                            ValidationGroup="vgGeneral"                                                                 
-                                                                            ErrorMessage="La descripción del problema es obligatoria" >*</asp:RequiredFieldValidator>   
-                                            </td>
-                                        </tr>
-                                    </table>                                
+                                <td colspan="7">
+                                    <asp:TextBox ID="txtDescripcionProblema" runat="server" TextMode="MultiLine" Width="97%" Rows="4" MaxLength="1024" />
                                 </td>            
                             </tr>
                             <tr>            

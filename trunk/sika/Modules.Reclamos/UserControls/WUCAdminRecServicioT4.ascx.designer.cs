@@ -184,15 +184,6 @@ namespace Modules.Reclamos.UserControls {
         protected global::System.Web.UI.WebControls.TextBox txtNombreContacto;
         
         /// <summary>
-        /// reqNombreContacto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqNombreContacto;
-        
-        /// <summary>
         /// txtEmailContacto control.
         /// </summary>
         /// <remarks>
@@ -200,24 +191,6 @@ namespace Modules.Reclamos.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEmailContacto;
-        
-        /// <summary>
-        /// reqEmailContacto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqEmailContacto;
-        
-        /// <summary>
-        /// reqExpTxtEmailContacto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator reqExpTxtEmailContacto;
         
         /// <summary>
         /// txtNombreObra control.
@@ -256,15 +229,6 @@ namespace Modules.Reclamos.UserControls {
         protected global::System.Web.UI.WebControls.TextBox txtEmailPropietario;
         
         /// <summary>
-        /// reqExpTxtEmailPropietario control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator reqExpTxtEmailPropietario;
-        
-        /// <summary>
         /// txtEmailQuienAplica control.
         /// </summary>
         /// <remarks>
@@ -272,15 +236,6 @@ namespace Modules.Reclamos.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEmailQuienAplica;
-        
-        /// <summary>
-        /// reqExpTxtEmailQuienAplica control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator reqExpTxtEmailQuienAplica;
         
         /// <summary>
         /// PaneDescripcionProblema control.
@@ -299,15 +254,6 @@ namespace Modules.Reclamos.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDescripcionProblema;
-        
-        /// <summary>
-        /// reqTxtDescripcionProblema control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqTxtDescripcionProblema;
         
         /// <summary>
         /// lblMensajeDescripcionProblema control.

@@ -77,6 +77,20 @@ namespace Modules.Reclamos.UserControls
 
         protected void BtnGuardar_Click(object sender, EventArgs e)
         {
+            var messages = new List<string>();
+            
+            if (string.IsNullOrEmpty(UnidadZona))
+                messages.Add("La unidad y zona del cliente son necesarios - Seccion: Datos Cliente.");
+
+            if (string.IsNullOrEmpty(DescripcionProblema))
+                messages.Add("La descripción del problema es requerida para la creación de un reclamo.");
+
+            if (messages.Any())
+            {
+                AddErrorMessages(messages);
+                return;
+            }
+
             if (string.IsNullOrEmpty(IdReclamo))
                 Presenter.SaveReclamo();
             else
@@ -88,6 +102,23 @@ namespace Modules.Reclamos.UserControls
         #endregion
 
         #region Methods
+
+        void AddErrorMessages(List<string> messages)
+        {
+            if (messages.Any())
+            {
+                foreach (var msg in messages)
+                {
+                    var custVal = new CustomValidator();
+                    custVal.IsValid = false;
+                    custVal.ErrorMessage = msg;
+                    custVal.EnableClientScript = false;
+                    custVal.Display = ValidatorDisplay.None;
+                    custVal.ValidationGroup = "vgGeneral";
+                    this.Page.Form.Controls.Add(custVal);
+                }
+            }
+        }
 
         void WucPostBackEvent()
         {

@@ -111,6 +111,18 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
         IObjectSet<TBL_ModuloDocumentos_LogCambios> TBL_ModuloDocumentos_LogCambios{get;}
         
     
+        IObjectSet<TBL_ModuloDocumentosAnexos_Carpetas> TBL_ModuloDocumentosAnexos_Carpetas{get;}
+        
+    
+        IObjectSet<TBL_ModuloDocumentosAnexos_Categorias> TBL_ModuloDocumentosAnexos_Categorias{get;}
+        
+    
+        IObjectSet<TBL_ModuloDocumentosAnexos_Contenido> TBL_ModuloDocumentosAnexos_Contenido{get;}
+        
+    
+        IObjectSet<TBL_ModuloDocumentosAnexos_Documento> TBL_ModuloDocumentosAnexos_Documento{get;}
+        
+    
         IObjectSet<TBL_ModuloPlanAccion_BancoActividades> TBL_ModuloPlanAccion_BancoActividades{get;}
         
     

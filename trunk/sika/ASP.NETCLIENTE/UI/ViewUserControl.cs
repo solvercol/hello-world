@@ -11,6 +11,7 @@ using Application.Core;
 using Domain.MainModules.Entities;
 using Infrastructure.CrossCutting.IoC;
 using System.Web.UI.WebControls;
+using System.Text.RegularExpressions;
 
 namespace ASP.NETCLIENTE.UI
 {
@@ -234,7 +235,12 @@ namespace ASP.NETCLIENTE.UI
             return String.Format("?ModuleId={0}", ModuleId);
         }
 
-
+        public bool IsValidEmail(string email)
+        {
+            Regex regex = new Regex(@"^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$");
+            Match match = regex.Match(email);
+            return match.Success;
+        }
     }
 
     public static class VerificacionRegisterScript
