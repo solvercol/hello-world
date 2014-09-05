@@ -134,7 +134,7 @@
                             <TextRun>
                               <Value>Producto</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>DimGray</Color>
@@ -170,7 +170,7 @@
                             <TextRun>
                               <Value># Reclamo</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>DimGray</Color>
@@ -208,7 +208,7 @@
                             <TextRun>
                               <Value>Fecha Reclamo</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>DimGray</Color>
@@ -246,7 +246,7 @@
                             <TextRun>
                               <Value>Cliente</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>DimGray</Color>
@@ -282,7 +282,7 @@
                             <TextRun>
                               <Value>Unidad Zona</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>DimGray</Color>
@@ -318,7 +318,7 @@
                             <TextRun>
                               <Value>Estado</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>DimGray</Color>
@@ -354,7 +354,7 @@
                             <TextRun>
                               <Value>Asesor</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>DimGray</Color>
@@ -390,7 +390,7 @@
                             <TextRun>
                               <Value>Responsable Actual</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>DimGray</Color>
@@ -426,7 +426,7 @@
                             <TextRun>
                               <Value>Total </Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>DimGray</Color>
@@ -464,7 +464,7 @@
                             <TextRun>
                               <Value>Total Costos</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>DimGray</Color>
@@ -507,7 +507,7 @@
                             <TextRun>
                               <Value>=Fields!TargetMarket.Value</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>DarkBlue</Color>
@@ -557,7 +557,7 @@
                             <TextRun>
                               <Value>=Count(Fields!IdReclamo.Value)</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Format>#,0;(#,0);'-'</Format>
@@ -597,7 +597,7 @@
                             <TextRun>
                               <Value>=Sum(Fields!TotalCostos.Value)</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Format>#,0.00;(#,0.00);'-'</Format>
@@ -647,7 +647,7 @@
                             <TextRun>
                               <Value>=Fields!CampoAplicacion.Value</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>DarkBlue</Color>
@@ -698,7 +698,7 @@
                             <TextRun>
                               <Value>=Count(Fields!IdReclamo.Value)</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Format>#,0;(#,0);'-'</Format>
@@ -738,7 +738,7 @@
                             <TextRun>
                               <Value>=Sum(Fields!TotalCostos.Value)</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Format>#,0.00;(#,0.00);'-'</Format>
@@ -788,7 +788,7 @@
                             <TextRun>
                               <Value>=Fields!SubCampoAplicacion.Value</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>DarkBlue</Color>
@@ -839,7 +839,7 @@
                             <TextRun>
                               <Value>=Count(Fields!IdReclamo.Value)</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Format>#,0;(#,0);'-'</Format>
@@ -879,7 +879,7 @@
                             <TextRun>
                               <Value>=Sum(Fields!TotalCostos.Value)</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Format>#,0.00;(#,0.00);'-'</Format>
@@ -929,7 +929,7 @@
                             <TextRun>
                               <Value>=Fields!Producto.Value</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>DarkBlue</Color>
@@ -960,7 +960,6 @@
                       </Style>
                     </Textbox>
                     <ColSpan>8</ColSpan>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell />
@@ -981,7 +980,7 @@
                             <TextRun>
                               <Value>=Count(Fields!IdReclamo.Value)</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Format>#,0;(#,0);'-'</Format>
@@ -1021,7 +1020,7 @@
                             <TextRun>
                               <Value>=Sum(Fields!TotalCostos.Value)</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Format>#,0.00;(#,0.00);'-'</Format>
@@ -1071,7 +1070,7 @@
                             <TextRun>
                               <Value>=Fields!IdReclamo.Value</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
@@ -1114,7 +1113,7 @@
                             <TextRun>
                               <Value>=Fields!NumeroReclamo.Value</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>DarkBlue</Color>
@@ -1161,7 +1160,7 @@
                             <TextRun>
                               <Value>=Fields!FechaReclamo.Value</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Format>dd/MM/yyyy</Format>
@@ -1201,7 +1200,7 @@
                             <TextRun>
                               <Value>=Fields!Cliente.Value</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -1238,7 +1237,7 @@
                             <TextRun>
                               <Value>=Fields!UnidadZona.Value</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -1275,7 +1274,7 @@
                             <TextRun>
                               <Value>=Fields!Estado.Value</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -1312,7 +1311,7 @@
                             <TextRun>
                               <Value>=Fields!Asesor.Value</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -1349,7 +1348,7 @@
                             <TextRun>
                               <Value>=Fields!ResponsableActual.Value</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -1386,7 +1385,7 @@
                             <TextRun>
                               <Value />
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -1425,7 +1424,7 @@
                             <TextRun>
                               <Value>=Sum(Fields!TotalCostos.Value)</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Format>#,0.00;(#,0.00);'-'</Format>
@@ -1475,7 +1474,7 @@
                             <TextRun>
                               <Value />
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>DimGray</Color>
@@ -1511,7 +1510,7 @@
                             <TextRun>
                               <Value />
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>DimGray</Color>
@@ -1549,7 +1548,7 @@
                             <TextRun>
                               <Value />
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>DimGray</Color>
@@ -1587,7 +1586,7 @@
                             <TextRun>
                               <Value />
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>DimGray</Color>
@@ -1623,7 +1622,7 @@
                             <TextRun>
                               <Value />
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>DimGray</Color>
@@ -1659,7 +1658,7 @@
                             <TextRun>
                               <Value />
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>DimGray</Color>
@@ -1695,7 +1694,7 @@
                             <TextRun>
                               <Value />
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>DimGray</Color>
@@ -1731,7 +1730,7 @@
                             <TextRun>
                               <Value />
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>DimGray</Color>
@@ -1767,7 +1766,7 @@
                             <TextRun>
                               <Value>=Count(Fields!IdReclamo.Value)</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Format>#,0;(#,0);'-'</Format>
@@ -1806,7 +1805,7 @@
                             <TextRun>
                               <Value>=Sum(Fields!TotalCostos.Value)</Value>
                               <Style>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Format>#,0.00;(#,0.00);'-'</Format>
@@ -1953,7 +1952,7 @@
         </TablixRowHierarchy>
         <DataSetName>DS_Report</DataSetName>
         <Height>4.19999cm</Height>
-        <Width>24.25cm</Width>
+        <Width>24.25001cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1964,7 +1963,7 @@
     <Height>1.65354in</Height>
     <Style />
   </Body>
-  <Width>9.54724in</Width>
+  <Width>9.54725in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>

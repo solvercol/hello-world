@@ -259,6 +259,7 @@
     <Content Include="Resources\Images\exe.gif" />
     <Content Include="Resources\Images\Expand.gif" />
     <Content Include="Resources\Images\expand.png" />
+    <Content Include="Resources\Images\favico.png" />
     <Content Include="Resources\Images\Field.png" />
     <Content Include="Resources\Images\file.gif" />
     <Content Include="Resources\Images\Folder.png" />
@@ -761,6 +762,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Log\Tracking.log" />
+    <None Include="Resources\Styles\fonts\klavikalight-plain-webfont-basic.eot" />
+    <None Include="Resources\Styles\fonts\klavikalight-plain-webfont-basic.woff" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
@@ -786,6 +789,8 @@
     <PostBuildEvent>xcopy /s /y "$(TargetDir)*.dll" "$(SolutionDir)"Web\bin\
 xcopy /s /y "$(ProjectDir)Resources\images\*.gif" "$(SolutionDir)Web\Resources\images\"
 xcopy /s /y "$(ProjectDir)Resources\images\*.jpg" "$(SolutionDir)Web\Resources\images\"
+xcopy /s /y "$(ProjectDir)Resources\Styles\fonts\*.eot" "$(SolutionDir)Web\Resources\Styles\fonts\"
+xcopy /s /y "$(ProjectDir)Resources\Styles\fonts\*.woff" "$(SolutionDir)Web\Resources\Styles\fonts\"
 xcopy /s /y "$(ProjectDir)Resources\images\*.png" "$(SolutionDir)Web\Resources\images\"
 xcopy /s /y "$(ProjectDir)Resources\images\*.ico" "$(SolutionDir)Web\Resources\images\"
 xcopy /s /y "$(ProjectDir)Resources\images\*.bmp" "$(SolutionDir)Web\Resources\images\"

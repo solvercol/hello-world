@@ -6,6 +6,36 @@
     margin: 0;
     position: relative;
     background-color:#2f323b;
+    
+}
+
+@font-face
+{
+    font-family:'klavika_lightplain_basic';
+    src:url('fonts/klavikalight-plain-webfont-basic.eot');
+    src:url('fonts/klavikalight-plain-webfont-basic.eot?#iefix') format('embedded-opentype'), url('fonts/klavikalight-plain-webfont-basic.woff') format('woff');
+    font-weight:normal;
+    font-style:normal
+}
+@font-face
+{
+    font-family:'klavika_mediumplain_basic';
+    src:url('fonts/klavikamedium-plain-webfont-basic.eot');
+    src:url('fonts/klavikamedium-plain-webfont-basic.eot?#iefix') format('embedded-opentype'), url('fonts/klavikamedium-plain-webfont-basic.woff') format('woff');
+    font-weight:normal;font-style:normal
+}
+@font-face
+{
+    font-family:'klavika_regularplain_basic';
+    src:url('fonts/klavikaregular-plain-webfont-basic.eot');
+    src:url('fonts/klavikaregular-plain-webfont-basic.eot?#iefix') format('embedded-opentype'), url('fonts/klavikaregular-plain-webfont-basic.woff') format('woff');
+    font-weight:normal;
+    font-style:normal
+}
+
+.FontFamilyMain
+{
+    font-family: 'klavika_lightplain_basic', Calibri;    
 }
 
 form
@@ -135,7 +165,7 @@ input, select, textarea, .igte_Edit
 {
     border: 1px solid #F4F4F3;
     color: #333;
-    font-family: Calibri;
+    font-family: 'klavika_lightplain_basic', Calibri;
     font-size: 8pt;
     margin-left: 1px;
     margin-right: 1px;
@@ -150,7 +180,7 @@ input, select, textarea, .igte_Edit
 p, div
 {
     color: #333;
-    font-family: Calibri;
+    font-family: 'klavika_lightplain_basic', Calibri;
     font-size: small;
 }
 
@@ -161,7 +191,7 @@ h1
     border-bottom-style: solid;
     border-bottom-width: 4px;
     color: #366;
-    font-family: Calibri;
+    font-family: 'klavika_lightplain_basic', Calibri;
     font-size: large;
     font-weight: 700;
     padding-bottom: 4px;
@@ -292,18 +322,43 @@ a
 {
     color:White;
     font-weight:bold;
-    font-family:Calibri;
+    font-family:'klavika_lightplain_basic', Calibri;
 }
 
 .wrap-header
 {
-   background-image:url(../Images/Cabezote.jpg);
+   background-color: #f8ae00;
    background-position:center top;
    background-repeat:no-repeat;
    width:980px;
-   height:71px;
+   height:60px;
    background-position:0 0;
-   padding-bottom:1px;
+   padding-bottom:1px;   
+   
+}
+
+.PageAppTitle
+{
+    font-size:25pt;
+    font-weight:bold;
+    color: #ffffff;
+    text-align:left;
+    padding-left: 20px;    
+    vertical-align:middle;    
+    padding-top: 20px;
+}
+
+.logo
+{
+    background-image: url('../Images/LOGO.png');
+    background-repeat: no-repeat;
+    width: 270px;
+    height: 45px;
+    position: relative;
+    float:right;
+    vertical-align: middle;
+    padding-right: 30px;
+    margin-top: 5px;
 }
 
 #adminwrapper
@@ -389,7 +444,7 @@ a
     height:20px;
     color:#060000;
     text-align:center;
-    font-family:Calibri;
+    font-family:'klavika_lightplain_basic', Calibri;
     margin:auto;
     vertical-align:middle;
 }
@@ -401,7 +456,7 @@ a
     height:20px;
     color:#060000;
     text-align:center;
-    font-family:Calibri;
+    font-family:'klavika_lightplain_basic', Calibri;
     margin:auto;
     vertical-align:middle;
 }
@@ -476,7 +531,7 @@ a
 {
     display: block;
     float: left;
-    font-family: Calibri;
+    font-family: 'klavika_lightplain_basic', Calibri;
     font-size: small;
     padding-left: 32px;
     position: relative;
@@ -498,7 +553,7 @@ a
     color: #666;
     display: block;
     float: left;
-    font-family: Calibri
+    font-family: 'klavika_lightplain_basic', Calibri;
     font-size: small;
     font-weight: 700;
     height: 26px;
@@ -513,7 +568,7 @@ a
     color: red;
     display: block;
     float: left;
-    font-family: Calibri;
+    font-family: 'klavika_lightplain_basic', Calibri;
     font-size: small;
     height: 30px;
     padding-left: 32px;
@@ -528,7 +583,7 @@ a
     -webkit-border-radius: 8px;
     border: 1px solid #999;
     color: #666;
-    font-family: Calibri;
+    font-family: 'klavika_lightplain_basic', Calibri;
     font-size: small;
     height: 20px;
     line-height: 24px;
@@ -654,7 +709,7 @@ input[type*="submit"][name*="Delete"]:hover, input[type*="submit"][name*="Rebuil
     border: 1px solid #F2F2F2;
     color: #545A68;
     background-color: #F2F2F2;
-	font-family:Calibri;
+	font-family:'klavika_lightplain_basic', Calibri;
 	font-size: 12px;
 	font-weight: bold;
     padding: 5px;
@@ -680,7 +735,7 @@ input[type*="submit"][name*="Delete"]:hover, input[type*="submit"][name*="Rebuil
     border: 1px solid #CECECE;
     color: #545A68;
     background-color: #CECECE;
-	font-family: Calibri;
+	font-family: 'klavika_lightplain_basic', Calibri;
 	font-size: 12px;
 	font-weight: bold;
     padding: 5px;
@@ -723,16 +778,16 @@ table.tblPreView th
 {
 color:#9A9A9A;
 padding: 4px 8px;
-font-size:0.82em;
-font-family: Calibri;
+font-size:0.95em;
+font-family: 'klavika_lightplain_basic', Calibri;
 font-weight: normal;
 text-align:right;
 }
 
 table.tblPreView .line {
 color:#000;
-font-size:0.82em;
-font-family: Calibri;
+font-size:0.9em;
+font-family: 'klavika_lightplain_basic', Calibri;
 font-weight: normal;
 border-bottom:1px solid #F4F4F3; 
 }
@@ -740,8 +795,8 @@ border-bottom:1px solid #F4F4F3;
 table.tblPreView .ContentDiv {
 color:#526C8C;
 padding: 4px 8px;
-font-size:0.82em;
-font-family: Calibri;
+font-size:0.9em;
+font-family: 'klavika_lightplain_basic', Calibri;
 font-weight: normal;
 text-align:right;
 }
@@ -750,7 +805,7 @@ table.tblPreView .ContentPanelResumen {
 color:#526C8C;
 padding: 4px 8px;
 font-size:0.88em;
-font-family: Calibri;
+font-family: 'klavika_lightplain_basic', Calibri;
 font-weight: normal;
 text-align:right;
 border:1px solid #808080; 
@@ -761,7 +816,7 @@ background-color:#F6F7F8;
 color:#526C8C;
 padding: 4px 8px;
 font-size:0.88em;
-font-family: Calibri;
+font-family: 'klavika_lightplain_basic', Calibri;
 font-weight: normal;
 text-align:right;
 border:1px solid #808080; 
@@ -785,7 +840,7 @@ font-size: 0.88em;
 /*line-height: 18px;*/
 vertical-align:middle;    
 text-decoration: none;
-font-family:Calibri;
+font-family:'klavika_lightplain_basic', Calibri;
 font-weight: normal;
 }
 
@@ -794,7 +849,7 @@ font-size: 0.94em;
 line-height: 18px;
 vertical-align:middle;    
 text-decoration: none;
-font-family:Calibri;
+font-family:'klavika_lightplain_basic', Calibri;
 font-weight: bold;
 padding-left:2px;
 color:#38379C;
@@ -815,8 +870,8 @@ border-bottom:1px solid #6362B1;
 
 table.tblPreView .Noline {
 color:#9A9A9A;
-font-size:0.82em;
-font-family: Calibri;
+font-size:0.9em;
+font-family: 'klavika_lightplain_basic', Calibri;
 font-weight: normal;
 }
 
@@ -838,8 +893,8 @@ table.tblSecciones th {
 /*color:#526C8C;*/
 color:#808080;
 padding: 4px 10px;
-font-size:0.82em;
-font-family: Calibri;
+font-size:0.95em;
+font-family: 'klavika_lightplain_basic', Calibri;
 font-weight: normal;
 text-align:right;
 width:16%;
@@ -847,8 +902,8 @@ width:16%;
 
 table.tblSecciones .Line {
 color:#000;
-font-size:0.82em;
-font-family: Calibri;
+font-size:0.9em;
+font-family: 'klavika_lightplain_basic', Calibri;
 font-weight: normal;
 border-bottom:1px solid #F4F4F3; 
 
@@ -865,7 +920,7 @@ table.tblSecciones td {
 line-height: 15px;
 vertical-align:middle;    
 text-decoration: none;
-font-family:Calibri;
+font-family:'klavika_lightplain_basic', Calibri;
 /*font-weight: normal;*/
 
 }
@@ -888,9 +943,9 @@ border-top:solid 1px #CCC;
 border-bottom:solid 1px #CCC;
 border-right:solid 1px #CCC;
 color:#38379C;
-font-size:0.75em;
+font-size:0.95em;
 font-weight:bold;
-font-family: Calibri;
+font-family: 'klavika_lightplain_basic', Calibri;
 text-align:center;
 }
 
@@ -899,10 +954,10 @@ table.tbl td {
 border-bottom:1px solid #C0C0C0;
 border-top:solid 1px #C0C0C0;
 border-right:solid 1px #C0C0C0;
-font-size: 0.75em;
+font-size: 0.9em;
 line-height: 10px;  
 text-decoration: none;
-font-family: Calibri;
+font-family: 'klavika_lightplain_basic', Calibri;
 font-weight: normal;
 
 }
@@ -920,9 +975,9 @@ border-bottom:2px solid #FBFF00;
 table.tblBuscador .Etiquetas {
 color:#38379C;
 padding:4px 10px;
-font-size:0.82em;
+font-size:0.9em;
 font-weight:bold;
-font-family: Calibri;
+font-family: 'klavika_lightplain_basic', Calibri;
 text-align:left;
 border-bottom:1px solid #F4F4F3;
 }
@@ -953,7 +1008,7 @@ table.tblBuscador .Separador15
     color:#808080;
     border-bottom: 2px solid #808080;
     font-weight:bold;
-    font-family:Calibri;
+    font-family:'klavika_lightplain_basic', Calibri;
 }
 
 .SectionMainTitle
@@ -961,7 +1016,7 @@ table.tblBuscador .Separador15
     border: 1px solid #CECECE;
     color: #545A68;
     background-color: #CECECE;
-	font-family: Calibri;
+	font-family: 'klavika_lightplain_basic', Calibri;
 	font-size: 12px;
 	font-weight: bolder;
     padding: 5px;
@@ -977,7 +1032,7 @@ background-color: #DEF1F4;
 border:solid 1px #77D5F7;
 width:190px;
 font-size:9pt;
-font-family:Calibri;
+font-family:'klavika_lightplain_basic', Calibri;
 }
 
 .cal_Theme1 .ajax__calendar_header  {
@@ -996,7 +1051,7 @@ padding-top: 3px;
 background-color: #ffffff;
 border: solid 1px #77D5F7;
 font-size:9pt;
-font-family:Calibri;
+font-family:'klavika_lightplain_basic', Calibri;
 }
 
 .cal_Theme1 .ajax__calendar_dayname {
@@ -1056,7 +1111,7 @@ color: #bbbbbb;
 	float:left;
 	padding-left:5px;
 	padding-top:5px;
-	font-family:Arial, Helvetica, sans-serif;
+	font-family:'klavika_lightplain_basic', Calibri;
 	font-weight:bold;
 	font-size:12px;
 	color:#FFFFFF;
@@ -1130,7 +1185,7 @@ padding:1px;
 .validator {
 color:#C00;
 font-style:italic;
-font-size:7pt;
+font-size:0.85em;
 }
 
 
@@ -1154,11 +1209,11 @@ font-size:7pt;
     border-top:solid 1px #C0C0C0;
     border-right:solid 1px #FFFFFF;
     padding:2px;
-    font-size:0.75em;
+    font-size:0.9em;
     line-height: 18px;
     vertical-align:middle;    
     text-decoration: none;
-    font-family: Arial, Sans-Serif,Segoe UI, Verdana;
+    font-family: 'klavika_lightplain_basic', Calibri;
     font-weight: normal;
     
 }
@@ -1170,11 +1225,11 @@ font-size:7pt;
     border-top:solid 1px #C0C0C0;
     border-right:solid 1px #FFFFFF;
     padding:2px;
-    font-size: 0.75em;
+    font-size: 0.9em;
     line-height: 18px;
     vertical-align:middle;    
     text-decoration: none;
-    font-family: Arial, Sans-Serif,Segoe UI, Verdana;
+    font-family: 'klavika_lightplain_basic', Calibri;
     font-weight: normal;
 }
 
@@ -1182,7 +1237,7 @@ font-size:7pt;
 {
 	background: #DFE8AF;
 	border:1px dotted #A3BAE9;
-	font-family:tahoma,arial,verdana,sans-serif;
+	font-family:'klavika_lightplain_basic', Calibri;
 }
 
 .HeaderGridStyle
@@ -1194,7 +1249,7 @@ font-size:7pt;
 
 .LinkGrid
 {
-    font-family:Arial;
+    font-family:'klavika_lightplain_basic', Calibri;
     color:#4A4A4C;
     font-weight:bold;
     cursor:pointer;   
@@ -1252,7 +1307,7 @@ text-transform:uppercase;
 .treeNode
 {
     color:Black;
-    font:14px Arial, Sans-Serif;
+    font:14px 'klavika_lightplain_basic', Calibri;
 }
 .rootNode
 {
@@ -1272,7 +1327,7 @@ text-transform:uppercase;
 .HeaderdetailView
 {
     font-size:10pt;
-    font-family:Arial, Sans-Serif,Segoe UI, Verdana;
+    font-family:'klavika_lightplain_basic', Calibri;
     background-color:#DBDBDC;
     color:Black;
     font-weight:bold;
@@ -1285,11 +1340,11 @@ text-transform:uppercase;
     border-top:solid 1px #FFFFFF;
     border-right:1px solid #FFFFFF;
     padding:2px;
-    font-size: 0.75em;
+    font-size: 0.9em;
     line-height: 18px;
     vertical-align:middle;    
     text-decoration: none;
-    font-family: Calibri;
+    font-family: 'klavika_lightplain_basic', Calibri;
     font-weight: normal;
     
 }
@@ -1298,7 +1353,7 @@ text-transform:uppercase;
 {
     border: 0px solid #F4F4F3;
     color: #333;
-    font-family: Calibri;
+    font-family: 'klavika_lightplain_basic', Calibri;
     font-size: 8pt;
     margin-left: 1px;
     margin-right: 1px;
@@ -1335,8 +1390,8 @@ text-transform:uppercase;
 .TituloSeccion
 {
     color: #808080;
-	font-family: Calibri;
-	font-size: 12px;
+	font-family: 'klavika_lightplain_basic', Calibri;
+	font-size: 10pt;
 	font-weight: bold;
     padding: 5px;
     margin-top: 5px;
@@ -1346,8 +1401,8 @@ text-transform:uppercase;
 .SeccionesH1
 {
     color: #002060;
-	font-family: Calibri;
-	font-size: 12pt;
+	font-family: 'klavika_lightplain_basic', Calibri;
+	font-size: 10pt;
 	font-weight: bold;
     margin-top: 5px;
     cursor: pointer;
@@ -1357,7 +1412,7 @@ text-transform:uppercase;
 .SeccionesH2
 {
     color: #808080;
-	font-family: Calibri;
+	font-family: 'klavika_lightplain_basic', Calibri;
 	font-size: 10pt;
 	font-weight: bold;
     margin-top: 5px;
@@ -1368,7 +1423,7 @@ text-transform:uppercase;
 .SeccionesH3
 {
     color: #808080;
-    font-family: Calibri;
+    font-family: 'klavika_lightplain_basic', Calibri;
     font-size: 9pt;
     margin-top: 2px;
     cursor: pointer;
@@ -1377,7 +1432,7 @@ text-transform:uppercase;
 .SeccionesH4
 {
     color: #808080;
-	font-family: Calibri;
+	font-family: 'klavika_lightplain_basic', Calibri;
 	font-size: 9pt;
     margin-top: 2px;
     cursor: pointer;    

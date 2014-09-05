@@ -269,21 +269,7 @@
                             <td class="Separador"></td>
 
                             <td class="Line" >
-                                <table width="100%">
-                                    <tr>
-                                        <td style="width:95%">
-                                            <asp:TextBox ID="txtNombreContacto" Width="100%" runat="server"  MaxLength="512" />
-                                        </td>
-                                        <td style="width:5%">
-                                            <asp:RequiredFieldValidator ID="reqNombreContacto"
-                                                                        runat="server"
-                                                                        ForeColor="Red"
-                                                                        ControlToValidate="txtNombreContacto"
-                                                                        ValidationGroup="vgGeneral"                                                                 
-                                                                        ErrorMessage="El nombre del contacto es obligatorio-Datos Cliente Obra" >*</asp:RequiredFieldValidator> 
-                                        </td>
-                                    </tr>
-                                </table>
+                                <asp:TextBox ID="txtNombreContacto" Width="100%" runat="server"  MaxLength="512" />
                             </td>
 
                             <td class="Separador"></td>
@@ -295,28 +281,7 @@
                             <td class="Separador"></td>
 
                             <td class="Line" >
-                                <table width="100%">
-                                    <tr>
-                                        <td style="width:95%">
-                                            <asp:TextBox ID="txtEmailContacto" Width="100%" runat="server"  MaxLength="512" />
-                                        </td>
-                                        <td style="width:5%">
-                                            <asp:RequiredFieldValidator ID="reqEmailContacto"
-                                                                        runat="server"
-                                                                        ForeColor="Red"
-                                                                        ControlToValidate="txtEmailContacto"
-                                                                        ValidationGroup="vgGeneral"                                                                 
-                                                                        ErrorMessage="El email de contacto es obligatorio-Datos Cliente Obra" >*</asp:RequiredFieldValidator>   
-                                            <asp:RegularExpressionValidator ID="reqExpTxtEmailContacto"
-                                                                            runat="server"
-                                                                            ForeColor="Red"
-                                                                            ControlToValidate="txtEmailContacto"
-                                                                            ValidationExpression="^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"
-                                                                            ValidationGroup="vgGeneral"                                                                            
-                                                                            ErrorMessage="El mail ingresado no se encuentra con una estructura correcta">*</asp:RegularExpressionValidator>
-                                        </td>
-                                    </tr>
-                                </table>
+                                <asp:TextBox ID="txtEmailContacto" Width="100%" runat="server"  MaxLength="512" />
                             </td>
 
                         </tr> 
@@ -375,21 +340,7 @@
                             <td class="Separador"></td>
 
                             <td class="Line" >
-                                <table width="100%">
-                                    <tr>
-                                        <td style="width:95%">
-                                            <asp:TextBox ID="txtEmailPropietario" Width="100%" runat="server" MaxLength="512" />
-                                        </td>
-                                        <td style="width:5%">
-                                            <asp:RegularExpressionValidator ID="reqExpTxtEmailPropietario"
-                                                                            runat="server"
-                                                                            ForeColor="Red"
-                                                                            ControlToValidate="txtEmailPropietario"                                                                            
-                                                                            ValidationExpression="^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"
-                                                                            ErrorMessage="El mail ingresado no se encuentra con una estructura correcta">*</asp:RegularExpressionValidator>
-                                        </td>
-                                    </tr>
-                                </table>  
+                                <asp:TextBox ID="txtEmailPropietario" Width="100%" runat="server" MaxLength="512" />
                             </td>
 
                             <td class="Separador"></td>
@@ -401,21 +352,7 @@
                             <td class="Separador"></td>
 
                             <td class="Line" >
-                                <table width="100%">
-                                    <tr>
-                                        <td style="width:95%">
-                                            <asp:TextBox ID="txtEmailQuienAplica" Width="100%" runat="server" MaxLength="512" />
-                                        </td>
-                                        <td style="width:5%">
-                                            <asp:RegularExpressionValidator ID="reqExpTxtEmailQuienAplica"
-                                                                            runat="server"
-                                                                            ForeColor="Red"
-                                                                            ControlToValidate="txtEmailQuienAplica"                                                                            
-                                                                            ValidationExpression="^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"
-                                                                            ErrorMessage="El mail ingresado no se encuentra con una estructura correcta">*</asp:RegularExpressionValidator>
-                                        </td>
-                                    </tr>
-                                </table>
+                                <asp:TextBox ID="txtEmailQuienAplica" Width="100%" runat="server" MaxLength="512" />
                             </td>
 
                         </tr>                       
@@ -432,22 +369,8 @@
                         <table width="100%" class="tblSecciones">
                             <!-- INICIO Descripcion del problema -->
                             <tr>
-                                <td colspan="7">   
-                                    <table width="100%">
-                                        <tr>
-                                            <td style="width:95%">
-                                                <asp:TextBox ID="txtDescripcionProblema" runat="server" TextMode="MultiLine" Width="97%" Rows="4" MaxLength="1024" />
-                                            </td>
-                                            <td style="width:5%">
-                                                <asp:RequiredFieldValidator ID="reqTxtDescripcionProblema"
-                                                                            runat="server"
-                                                                            ForeColor="Red"
-                                                                            ControlToValidate="txtDescripcionProblema"
-                                                                            ValidationGroup="vgGeneral"                                                                 
-                                                                            ErrorMessage="La descripción del problema es obligatoria" >*</asp:RequiredFieldValidator>   
-                                            </td>
-                                        </tr>
-                                    </table>                                
+                                <td colspan="7">
+                                    <asp:TextBox ID="txtDescripcionProblema" runat="server" TextMode="MultiLine" Width="97%" Rows="4" MaxLength="1024" />
                                 </td>            
                             </tr>
                             <tr>            

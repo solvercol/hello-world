@@ -4,7 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>.: SIKA :.</title>
+    <title>.: Sika :.</title>
+    <link rel="shortcut icon" href="~/Resources/images/favico.png" type="image/x-icon"/>
     <link rel="stylesheet" type="text/css" href="Resources/Styles/Site.css"/>
 </head>
 <body style=" background-color:#2F323B;">

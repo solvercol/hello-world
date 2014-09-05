@@ -88,26 +88,40 @@ namespace Modules.Reclamos.UserControls
         protected void BtnGuardar_Click(object sender, EventArgs e)
         {
             var messages = new List<string>();           
-
             
             if (SelectedProduct.CodigoProducto == null)
-                messages.Add("Es necesario seleccionar un producto para la creación del reclamo");
+                messages.Add("Es necesario seleccionar un producto para la creación del reclamo.");
             
             if (SelectedCliente.CodigoCliente == null)
-                messages.Add("Es necesario seleccionar un cliente para la creación del reclamo");
+                messages.Add("Es necesario seleccionar un cliente para la creación del reclamo.");            
+
+            if (string.IsNullOrEmpty(UnidadZona))
+                messages.Add("La unidad y zona del cliente son necesarios - Seccion: Datos Cliente.");
+
+            if (string.IsNullOrEmpty(NombreContacto))
+                messages.Add("El nombre del contacto es obligatorio - Seccion: Datos Cliente.");
+
+            if (string.IsNullOrEmpty(EmailContacto))
+                messages.Add("El nombre del contacto es obligatorio - Seccion: Datos Cliente.");
+
+            if (!IsValidEmail(EmailContacto))
+                messages.Add("El mail de contacto ingresado no se encuentra con una estructura correcta - Seccion: Datos Cliente.");
+
+            if (!string.IsNullOrEmpty(EmailQuienAplica) && !IsValidEmail(EmailQuienAplica))
+                messages.Add("El mail de quien aplica ingresado no se encuentra con una estructura correcta - Seccion: Datos Cliente.");
+
+            if (!string.IsNullOrEmpty(EmailPropietario) && !IsValidEmail(EmailPropietario))
+                messages.Add("El mail de quien aplica ingresado no se encuentra con una estructura correcta - Seccion: Datos Cliente.");
+
+            if (string.IsNullOrEmpty(NumeroLote))
+                messages.Add("El numero de lote es requrerido para la creación de un reclamo - Seccion: Estado del producto.");
+
+            if (string.IsNullOrEmpty(DescripcionProblema))
+                messages.Add("La descripción del problema es requerida para la creación de un reclamo.");
 
             if (messages.Any())
             {
-                foreach (var msg in messages)
-                {
-                    var custVal = new CustomValidator();
-                    custVal.IsValid = false;
-                    custVal.ErrorMessage = msg;
-                    custVal.EnableClientScript = false;
-                    custVal.Display = ValidatorDisplay.None;
-                    custVal.ValidationGroup = "vgGeneral";
-                    this.Page.Form.Controls.Add(custVal);
-                }
+                AddErrorMessages(messages);
                 return;
             }
 
@@ -122,6 +136,23 @@ namespace Modules.Reclamos.UserControls
         #endregion
 
         #region Methods
+
+        void AddErrorMessages(List<string> messages)
+        {
+            if (messages.Any())
+            {
+                foreach (var msg in messages)
+                {
+                    var custVal = new CustomValidator();
+                    custVal.IsValid = false;
+                    custVal.ErrorMessage = msg;
+                    custVal.EnableClientScript = false;
+                    custVal.Display = ValidatorDisplay.None;
+                    custVal.ValidationGroup = "vgGeneral";
+                    this.Page.Form.Controls.Add(custVal);
+                }
+            }
+        }
 
         void WucPostBackEvent()
         {
