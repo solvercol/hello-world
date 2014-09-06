@@ -93,6 +93,8 @@ namespace Infrastructure.Data.MainModule.Reclamos.Repositories
                 var set = _currentUnitOfWork.CreateSet<TBL_ModuloReclamos_Reclamo>();
 
                 return set.Where(c => c.IdReclamo == id)
+                          .Include(x=> x.TBL_ModuloReclamos_TipoReclamo)
+                          .Include(x => x.TBL_Admin_Usuarios3)
                           .Select(c => c)
                           .SingleOrDefault();
             }

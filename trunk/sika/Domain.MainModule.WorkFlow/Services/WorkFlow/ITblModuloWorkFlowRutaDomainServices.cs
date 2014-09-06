@@ -10,8 +10,10 @@ namespace Domain.MainModule.WorkFlow.Services.WorkFlow
     {
         WorkFlowDto CargarWorkFlow(IEnumerable<TBL_ModuloWorkFlow_Rutas> listadoRutas, DataTable dtDocument, IDocumentDto oDocument);
 
-        string MapearExpresion(string strexpression, DataTable dt);
+        string MapearAndejecutaExpresion(string strexpression, DataTable dt);
 
         string GetResponsablePedidobyRuta(IEnumerable<TBL_ModuloWorkFlow_Rutas> listadoRutas, DataTable dtPedido);
+
+        string MapearExpresion(string strexpression, DataTable dt);
     }
 }

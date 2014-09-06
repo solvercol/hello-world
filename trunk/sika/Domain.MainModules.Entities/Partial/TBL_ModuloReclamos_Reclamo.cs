@@ -48,6 +48,11 @@ namespace Domain.MainModules.Entities
             get { return this.TBL_Admin_Usuarios7; }
         }
 
+        public string TipoReclamo
+        {
+            get { return TBL_ModuloReclamos_TipoReclamo.Nombre; }
+        }
+
         public object DtoProducto { get; set; }
         public object DtoCliente { get; set; }
     }
