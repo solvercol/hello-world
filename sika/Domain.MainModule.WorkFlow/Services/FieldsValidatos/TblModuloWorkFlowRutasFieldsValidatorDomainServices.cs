@@ -32,8 +32,38 @@ namespace Domain.MainModule.WorkFlow.Services.FieldsValidatos
             return !_validationErrors.Any();
         }
 
-       
 
+        public bool MappingAndValidField<TEntity>(TEntity item, string rule)
+            where TEntity : class
+        {
+
+            if (item == null)
+                return false;
+
+            if (rule == null)
+                return false;
+
+            _validationErrors.Clear();
+
+            var expression = ValidationField(item, rule);
+
+            if (string.IsNullOrEmpty(expression))
+            {
+                _validationErrors.Add(string.Format("El mapeo de los campos no arrojo el resultado esperado."));
+                return false;
+            }
+
+           return  ExpressionEvalServices.EvaluateExpression(expression);
+
+        }
+       
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="TEntity"></typeparam>
+        /// <typeparam name="TEntityRules"></typeparam>
+        /// <param name="item"></param>
+        /// <param name="rules"></param>
         void ValidationAttributeEntity<TEntity, TEntityRules>(TEntity item, TEntityRules rules) 
             where TEntity : class
             where TEntityRules : class
@@ -88,8 +118,7 @@ namespace Domain.MainModule.WorkFlow.Services.FieldsValidatos
         {
             var strNewExpresion = strFormula;
 
-             //var pattern = new Regex(@"\[(.*)\]", RegexOptions.Compiled | RegexOptions.Singleline);
-
+            
              var properties = from property in TypeDescriptor.GetProperties(item).Cast<PropertyDescriptor>()
                              select new
                              {
@@ -105,6 +134,8 @@ namespace Domain.MainModule.WorkFlow.Services.FieldsValidatos
                 var value = "";
                 if (property.Value is bool)
                     value = Convert.ToBoolean(property.Value) ? "SI" : "NO";
+                else if (property.Value is decimal)
+                    value = Convert.ToInt64(property.Value).ToString();
                 else if (property.Value == null)
                     value = string.Empty;
                 else

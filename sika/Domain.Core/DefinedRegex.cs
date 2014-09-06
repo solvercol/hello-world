@@ -16,7 +16,7 @@ namespace Domain.Core
 
         private const string CstrList = @"\[LIST\](.*)\[\/LIST\]";
 
-        private const string CstrLeftMatches = @"\[LEFT\]([a-zA-Z;\d]*)\[\/LEFT\]";
+        private const string CstrLeftMatches = @"\[LEFT\]([a-zA-Z;\-\d]*)\[\/LEFT\]";
 
         private const string CstrLeft = @"\[LEFT\](.*)\[\/LEFT\]";
 
@@ -28,13 +28,63 @@ namespace Domain.Core
 
         private const string CStrFunction = @"\[FN\](.*)\[\/FN\]";
 
+        private const string CStrClose = @"\[CLOSE\](.*)\[\/CLOSE\]";
+
+        private const string CStrRole = @"\[ROLE\](.*)\[\/ROLE\]";
+
+        private const string CStrField = @"\[FIELD\](.*)\[\/FIELD\]";
+
+        private const string CStrInputParameters = @"\[INPUTPARAMETERS\](.*)\[\/INPUTPARAMETERS\]";
+
+        private const string CStrCondition = @"\[CONDITION\](.*)\[\/CONDITION\]";
+
+        private const string CStrAutor = @"\[AUTOR\]";
+
+        private const string CStrResponsable = @"\[RESPONSABLE\]";
+
+
+        public static readonly Regex Responsable = new Regex(
+        CStrResponsable,
+       RegexOptions.Compiled | RegexOptions.IgnoreCase
+      );
+
+        public static readonly Regex Autor = new Regex(
+        CStrAutor,
+       RegexOptions.Compiled | RegexOptions.IgnoreCase
+      );
+
+        public static readonly Regex Condition = new Regex(
+        CStrCondition,
+        RegexOptions.Compiled | RegexOptions.IgnoreCase
+    );
+
+        public static readonly Regex InputParameters = new Regex(
+        CStrInputParameters,
+        RegexOptions.Compiled | RegexOptions.IgnoreCase
+    );
+
+        public static readonly Regex Rol = new Regex(
+        CStrRole,
+        RegexOptions.Compiled | RegexOptions.IgnoreCase
+    );
+
+        public static readonly Regex Field = new Regex(
+        CStrField,
+        RegexOptions.Compiled | RegexOptions.IgnoreCase
+    );
+
+        public static readonly Regex Close = new Regex(
+         CStrClose,
+         RegexOptions.Compiled | RegexOptions.IgnoreCase
+     );
+
 
         public static readonly Regex Function = new Regex(
          CStrFunction,
          RegexOptions.Compiled | RegexOptions.IgnoreCase
      );
 
-        public static readonly Regex FielsExpression = new Regex(
+        public static readonly Regex FieldsExpression = new Regex(
          CStrFields,
          RegexOptions.Compiled | RegexOptions.IgnoreCase
      );

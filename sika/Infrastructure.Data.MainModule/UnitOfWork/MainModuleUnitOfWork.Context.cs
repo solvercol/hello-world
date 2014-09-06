@@ -208,53 +208,17 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
         }
         private ObjectSet<TBL_Admin_DiasAnticipados> _tBL_Admin_DiasAnticipados;
     
-        public IObjectSet<TBL_Admin_EstadosProceso> TBL_Admin_EstadosProceso
-        {
-            get { return _tBL_Admin_EstadosProceso  ?? (_tBL_Admin_EstadosProceso = CreateObjectSet<TBL_Admin_EstadosProceso>("TBL_Admin_EstadosProceso")); }
-        }
-        private ObjectSet<TBL_Admin_EstadosProceso> _tBL_Admin_EstadosProceso;
-    
-        public IObjectSet<TBL_Admin_ModuleRepository> TBL_Admin_ModuleRepository
-        {
-            get { return _tBL_Admin_ModuleRepository  ?? (_tBL_Admin_ModuleRepository = CreateObjectSet<TBL_Admin_ModuleRepository>("TBL_Admin_ModuleRepository")); }
-        }
-        private ObjectSet<TBL_Admin_ModuleRepository> _tBL_Admin_ModuleRepository;
-    
-        public IObjectSet<TBL_Admin_ModuleService> TBL_Admin_ModuleService
-        {
-            get { return _tBL_Admin_ModuleService  ?? (_tBL_Admin_ModuleService = CreateObjectSet<TBL_Admin_ModuleService>("TBL_Admin_ModuleService")); }
-        }
-        private ObjectSet<TBL_Admin_ModuleService> _tBL_Admin_ModuleService;
-    
-        public IObjectSet<TBL_Admin_ModuleType> TBL_Admin_ModuleType
-        {
-            get { return _tBL_Admin_ModuleType  ?? (_tBL_Admin_ModuleType = CreateObjectSet<TBL_Admin_ModuleType>("TBL_Admin_ModuleType")); }
-        }
-        private ObjectSet<TBL_Admin_ModuleType> _tBL_Admin_ModuleType;
-    
         public IObjectSet<TBL_Admin_ModuleVersion> TBL_Admin_ModuleVersion
         {
             get { return _tBL_Admin_ModuleVersion  ?? (_tBL_Admin_ModuleVersion = CreateObjectSet<TBL_Admin_ModuleVersion>("TBL_Admin_ModuleVersion")); }
         }
         private ObjectSet<TBL_Admin_ModuleVersion> _tBL_Admin_ModuleVersion;
     
-        public IObjectSet<TBL_Admin_Modulos> TBL_Admin_Modulos
-        {
-            get { return _tBL_Admin_Modulos  ?? (_tBL_Admin_Modulos = CreateObjectSet<TBL_Admin_Modulos>("TBL_Admin_Modulos")); }
-        }
-        private ObjectSet<TBL_Admin_Modulos> _tBL_Admin_Modulos;
-    
         public IObjectSet<TBL_Admin_Monedas> TBL_Admin_Monedas
         {
             get { return _tBL_Admin_Monedas  ?? (_tBL_Admin_Monedas = CreateObjectSet<TBL_Admin_Monedas>("TBL_Admin_Monedas")); }
         }
         private ObjectSet<TBL_Admin_Monedas> _tBL_Admin_Monedas;
-    
-        public IObjectSet<TBL_Admin_OpcionesMenu> TBL_Admin_OpcionesMenu
-        {
-            get { return _tBL_Admin_OpcionesMenu  ?? (_tBL_Admin_OpcionesMenu = CreateObjectSet<TBL_Admin_OpcionesMenu>("TBL_Admin_OpcionesMenu")); }
-        }
-        private ObjectSet<TBL_Admin_OpcionesMenu> _tBL_Admin_OpcionesMenu;
     
         public IObjectSet<TBL_Admin_OptionList> TBL_Admin_OptionList
         {
@@ -279,6 +243,60 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
             get { return _tBL_Admin_Plantillas  ?? (_tBL_Admin_Plantillas = CreateObjectSet<TBL_Admin_Plantillas>("TBL_Admin_Plantillas")); }
         }
         private ObjectSet<TBL_Admin_Plantillas> _tBL_Admin_Plantillas;
+    
+        public IObjectSet<TBL_ModuloPlanAccion_BancoActividades> TBL_ModuloPlanAccion_BancoActividades
+        {
+            get { return _tBL_ModuloPlanAccion_BancoActividades  ?? (_tBL_ModuloPlanAccion_BancoActividades = CreateObjectSet<TBL_ModuloPlanAccion_BancoActividades>("TBL_ModuloPlanAccion_BancoActividades")); }
+        }
+        private ObjectSet<TBL_ModuloPlanAccion_BancoActividades> _tBL_ModuloPlanAccion_BancoActividades;
+    
+        public IObjectSet<TBL_ModuloPlanAccion_Categorias> TBL_ModuloPlanAccion_Categorias
+        {
+            get { return _tBL_ModuloPlanAccion_Categorias  ?? (_tBL_ModuloPlanAccion_Categorias = CreateObjectSet<TBL_ModuloPlanAccion_Categorias>("TBL_ModuloPlanAccion_Categorias")); }
+        }
+        private ObjectSet<TBL_ModuloPlanAccion_Categorias> _tBL_ModuloPlanAccion_Categorias;
+    
+        public IObjectSet<TBL_ModuloPlanAccion_ConfiguracionActividades> TBL_ModuloPlanAccion_ConfiguracionActividades
+        {
+            get { return _tBL_ModuloPlanAccion_ConfiguracionActividades  ?? (_tBL_ModuloPlanAccion_ConfiguracionActividades = CreateObjectSet<TBL_ModuloPlanAccion_ConfiguracionActividades>("TBL_ModuloPlanAccion_ConfiguracionActividades")); }
+        }
+        private ObjectSet<TBL_ModuloPlanAccion_ConfiguracionActividades> _tBL_ModuloPlanAccion_ConfiguracionActividades;
+    
+        public IObjectSet<TBL_Admin_EstadosProceso> TBL_Admin_EstadosProceso
+        {
+            get { return _tBL_Admin_EstadosProceso  ?? (_tBL_Admin_EstadosProceso = CreateObjectSet<TBL_Admin_EstadosProceso>("TBL_Admin_EstadosProceso")); }
+        }
+        private ObjectSet<TBL_Admin_EstadosProceso> _tBL_Admin_EstadosProceso;
+    
+        public IObjectSet<TBL_Admin_ModuleRepository> TBL_Admin_ModuleRepository
+        {
+            get { return _tBL_Admin_ModuleRepository  ?? (_tBL_Admin_ModuleRepository = CreateObjectSet<TBL_Admin_ModuleRepository>("TBL_Admin_ModuleRepository")); }
+        }
+        private ObjectSet<TBL_Admin_ModuleRepository> _tBL_Admin_ModuleRepository;
+    
+        public IObjectSet<TBL_Admin_ModuleService> TBL_Admin_ModuleService
+        {
+            get { return _tBL_Admin_ModuleService  ?? (_tBL_Admin_ModuleService = CreateObjectSet<TBL_Admin_ModuleService>("TBL_Admin_ModuleService")); }
+        }
+        private ObjectSet<TBL_Admin_ModuleService> _tBL_Admin_ModuleService;
+    
+        public IObjectSet<TBL_Admin_ModuleType> TBL_Admin_ModuleType
+        {
+            get { return _tBL_Admin_ModuleType  ?? (_tBL_Admin_ModuleType = CreateObjectSet<TBL_Admin_ModuleType>("TBL_Admin_ModuleType")); }
+        }
+        private ObjectSet<TBL_Admin_ModuleType> _tBL_Admin_ModuleType;
+    
+        public IObjectSet<TBL_Admin_Modulos> TBL_Admin_Modulos
+        {
+            get { return _tBL_Admin_Modulos  ?? (_tBL_Admin_Modulos = CreateObjectSet<TBL_Admin_Modulos>("TBL_Admin_Modulos")); }
+        }
+        private ObjectSet<TBL_Admin_Modulos> _tBL_Admin_Modulos;
+    
+        public IObjectSet<TBL_Admin_OpcionesMenu> TBL_Admin_OpcionesMenu
+        {
+            get { return _tBL_Admin_OpcionesMenu  ?? (_tBL_Admin_OpcionesMenu = CreateObjectSet<TBL_Admin_OpcionesMenu>("TBL_Admin_OpcionesMenu")); }
+        }
+        private ObjectSet<TBL_Admin_OpcionesMenu> _tBL_Admin_OpcionesMenu;
     
         public IObjectSet<TBL_Admin_Roles> TBL_Admin_Roles
         {
@@ -352,6 +370,8 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
         }
         private ObjectSet<TBL_ModuloDocumentos_LogCambios> _tBL_ModuloDocumentos_LogCambios;
     
+<<<<<<< .mine
+=======
         public IObjectSet<TBL_ModuloDocumentosAnexos_Carpetas> TBL_ModuloDocumentosAnexos_Carpetas
         {
             get { return _tBL_ModuloDocumentosAnexos_Carpetas  ?? (_tBL_ModuloDocumentosAnexos_Carpetas = CreateObjectSet<TBL_ModuloDocumentosAnexos_Carpetas>("TBL_ModuloDocumentosAnexos_Carpetas")); }
@@ -394,6 +414,7 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
         }
         private ObjectSet<TBL_ModuloPlanAccion_ConfiguracionActividades> _tBL_ModuloPlanAccion_ConfiguracionActividades;
     
+>>>>>>> .r122
         public IObjectSet<TBL_ModuloReclamos_Actividades> TBL_ModuloReclamos_Actividades
         {
             get { return _tBL_ModuloReclamos_Actividades  ?? (_tBL_ModuloReclamos_Actividades = CreateObjectSet<TBL_ModuloReclamos_Actividades>("TBL_ModuloReclamos_Actividades")); }
@@ -531,6 +552,30 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
             get { return _tBL_ModuloWorkFlow_ValidacionesSalida  ?? (_tBL_ModuloWorkFlow_ValidacionesSalida = CreateObjectSet<TBL_ModuloWorkFlow_ValidacionesSalida>("TBL_ModuloWorkFlow_ValidacionesSalida")); }
         }
         private ObjectSet<TBL_ModuloWorkFlow_ValidacionesSalida> _tBL_ModuloWorkFlow_ValidacionesSalida;
+    
+        public IObjectSet<TBL_ModuloDocumentosAnexos_Carpetas> TBL_ModuloDocumentosAnexos_Carpetas
+        {
+            get { return _tBL_ModuloDocumentosAnexos_Carpetas  ?? (_tBL_ModuloDocumentosAnexos_Carpetas = CreateObjectSet<TBL_ModuloDocumentosAnexos_Carpetas>("TBL_ModuloDocumentosAnexos_Carpetas")); }
+        }
+        private ObjectSet<TBL_ModuloDocumentosAnexos_Carpetas> _tBL_ModuloDocumentosAnexos_Carpetas;
+    
+        public IObjectSet<TBL_ModuloDocumentosAnexos_Categorias> TBL_ModuloDocumentosAnexos_Categorias
+        {
+            get { return _tBL_ModuloDocumentosAnexos_Categorias  ?? (_tBL_ModuloDocumentosAnexos_Categorias = CreateObjectSet<TBL_ModuloDocumentosAnexos_Categorias>("TBL_ModuloDocumentosAnexos_Categorias")); }
+        }
+        private ObjectSet<TBL_ModuloDocumentosAnexos_Categorias> _tBL_ModuloDocumentosAnexos_Categorias;
+    
+        public IObjectSet<TBL_ModuloDocumentosAnexos_Contenido> TBL_ModuloDocumentosAnexos_Contenido
+        {
+            get { return _tBL_ModuloDocumentosAnexos_Contenido  ?? (_tBL_ModuloDocumentosAnexos_Contenido = CreateObjectSet<TBL_ModuloDocumentosAnexos_Contenido>("TBL_ModuloDocumentosAnexos_Contenido")); }
+        }
+        private ObjectSet<TBL_ModuloDocumentosAnexos_Contenido> _tBL_ModuloDocumentosAnexos_Contenido;
+    
+        public IObjectSet<TBL_ModuloDocumentosAnexos_Documento> TBL_ModuloDocumentosAnexos_Documento
+        {
+            get { return _tBL_ModuloDocumentosAnexos_Documento  ?? (_tBL_ModuloDocumentosAnexos_Documento = CreateObjectSet<TBL_ModuloDocumentosAnexos_Documento>("TBL_ModuloDocumentosAnexos_Documento")); }
+        }
+        private ObjectSet<TBL_ModuloDocumentosAnexos_Documento> _tBL_ModuloDocumentosAnexos_Documento;
 
         #endregion
     }

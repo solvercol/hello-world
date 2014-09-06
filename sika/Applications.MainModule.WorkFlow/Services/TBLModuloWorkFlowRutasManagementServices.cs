@@ -177,10 +177,10 @@ namespace Applications.MainModule.WorkFlow.Services
          public List<TBL_ModuloWorkFlow_Rutas> FindPaged(int pageIndex, int pageCount)
          {
             if (pageIndex < 0)
-                throw new ArgumentException(Resources.Messages.exception_InvalidPageIndex, "pageIndex");
+                throw new ArgumentException(Messages.exception_InvalidPageIndex, "pageIndex");
 
             if (pageCount <= 0)
-                throw new ArgumentException(Resources.Messages.exception_InvalidPageCount, "pageCount");
+                throw new ArgumentException(Messages.exception_InvalidPageCount, "pageCount");
 
 
             Specification<TBL_ModuloWorkFlow_Rutas> onlyEnabledSpec = new DirectSpecification<TBL_ModuloWorkFlow_Rutas>(u => u.IsActive);
@@ -332,14 +332,24 @@ namespace Applications.MainModule.WorkFlow.Services
                 if (currentRule.TBL_ModuloWorkFlow_ValidacionesSalida.Where(x => x.Ejecutar == true).Count() > 0)
                 {
 
-                    var inputParameters = currentRule.TBL_ModuloWorkFlow_ValidacionesSalida.Where(
-                            x => x.NombreMetodo.Contains("[InputParameters]"));
+                    //var inputParameters = currentRule.TBL_ModuloWorkFlow_ValidacionesSalida.Where(
+                    //        x => x.NombreMetodo.Contains("[InputParameters]"));
 
-                    if (inputParameters.Count() > 0)
+                     var inputParameters = currentRule
+                         .TBL_ModuloWorkFlow_ValidacionesSalida
+                         .Where( x => DefinedRegexEvaluation.InputParameters.Match(x.NombreMetodo).Success);
+
+                    if (inputParameters.Count() > 0 )
                     {
                         //Los parametros de entrada rompen el flujo de la aplicación para lanzar ventanas de captura y proceguir con el flujo 
                         //desde otro formulario.
-                        ProcesarParametrosEntrada(oDocument, currentRule.TBL_ModuloWorkFlow_ValidacionesSalida);
+                        ProcesarParametrosEntrada(oDocument, currentRule.TBL_ModuloWorkFlow_ValidacionesSalida, oDoc);
+                        if(oDocument.MessagesError.Count > 0)
+                        {
+                            oDocument.Processestaus = ProcessStatus.ValidationErrorSystemActions.ToString();
+                            return oDocument;
+                        }
+                        
                         oDocument.Processestaus = ProcessStatus.InputParameters.ToString();
                         return oDocument;
                     }
@@ -355,7 +365,7 @@ namespace Applications.MainModule.WorkFlow.Services
 
                 
 
-                var txSettings = new TransactionOptions()
+                var txSettings = new TransactionOptions
                 {
                     Timeout = TransactionManager.DefaultTimeout,
                     IsolationLevel = IsolationLevel.Serializable
@@ -417,27 +427,40 @@ namespace Applications.MainModule.WorkFlow.Services
 
             if (string.IsNullOrEmpty(role)) return null;
 
-            var roleResponsable = role;
-
-            var m = DefinedRegexEvaluation.Function.Match(role.Trim());
+            var m = DefinedRegexEvaluation.Function.Match(role.Trim()); // todo: expresion a  evaluar: [FN]("x" == "10" &&  "t" == "23") ?  [RESPONSABLE] : [AUTOR] [/FN]
             if (m.Success)
             {
-                roleResponsable = _workFlowDomainServices.MapearExpresion(role, dt);
+                var roleResponsable = _workFlowDomainServices.MapearAndejecutaExpresion(role, dt);
+                m = DefinedRegexEvaluation.Autor.Match(roleResponsable);
+                if (m.Success)
+                {
+                    var user = _usuariosRepository.RetornarUsuarioAutordocumento(idDocument);
+                    if (user != null)
+                    {
+                        return user;
+                    }
+                }
             }
 
-            if (roleResponsable.Contains("Autor"))
+            m = DefinedRegexEvaluation.Rol.Match(role.Trim());
+            if(m.Success)
             {
-                var user = _usuariosRepository.RetornarUsuarioAutordocumento(idDocument);
-                if (user != null)
+                var userrole = _usuariosRepository.RetornarUsuarioReponsableAprobacion(m.Groups[1].Value);
+                return userrole;
+            }
+
+            m = DefinedRegexEvaluation.Field.Match(role.Trim());
+            if(m.Success)
+            {
+                var value = _workFlowDomainServices.MapearExpresion(m.Groups[1].Value, dt);
+                if(!string.IsNullOrEmpty(value))
                 {
+                    var user = _usuariosRepository.GetUsuarioById(Convert.ToInt32(value));
                     return user;
                 }
             }
 
-            var userrole = _usuariosRepository.RetornarUsuarioReponsableAprobacion(roleResponsable);
-
-            return userrole;
-
+            return null;
         }
 
         /// <summary>
@@ -542,18 +565,47 @@ namespace Applications.MainModule.WorkFlow.Services
         /// </summary>
         /// <param name="oDocument"></param>
         /// <param name="ovalidaciones"></param>
-        private static void ProcesarParametrosEntrada(RenderTypeControlButtonDto oDocument, IEnumerable<TBL_ModuloWorkFlow_ValidacionesSalida> ovalidaciones)
+        /// <param name="oReclamo"></param>
+        private  void ProcesarParametrosEntrada(
+            RenderTypeControlButtonDto oDocument, 
+            IEnumerable<TBL_ModuloWorkFlow_ValidacionesSalida> ovalidaciones, 
+            TBL_ModuloReclamos_Reclamo oReclamo)
         {
-            var subjectRegex = new Regex(@"\[InputParameters\](.*)\[\/InputParameters\]", RegexOptions.Compiled | RegexOptions.Singleline);
+           
             var inputList = new List<string>();
-            foreach (var input in
-                ovalidaciones.Select(val => subjectRegex.Match(val.NombreMetodo).Groups[1].Value).Where(input => !string.IsNullOrEmpty(input)))
+            foreach (var salida in ovalidaciones)
             {
 
-                inputList.Add(input);
-
-                oDocument.OutputParameters = inputList;
+                var m = DefinedRegexEvaluation.Condition.Match(salida.NombreMetodo);
+                if(m.Success)
+                {
+                    var condicion = m.Groups[1].Value;
+                    if(string.IsNullOrEmpty(condicion))
+                    {
+                        oDocument.MessagesError = new List<string>{string.Format("Error de lectura de la condición de validación para la ruta {0}",salida.IdRuta)};
+                        continue;
+                    }
+                    var result = _workFlowDomainFieldsValidatorServices.MappingAndValidField(oReclamo, condicion);
+                    if(result)
+                    {
+                        m = DefinedRegexEvaluation.InputParameters.Match(salida.NombreMetodo);
+                        if (m.Success)
+                        {
+                            inputList.Add(m.Groups[1].Value);
+                        }
+                    }
+                }
+                else
+                {
+                    m = DefinedRegexEvaluation.InputParameters.Match(salida.NombreMetodo);
+                    if (m.Success)
+                    {
+                        inputList.Add(m.Groups[1].Value);
+                    }
+                }
             }
+
+            oDocument.OutputParameters = inputList;
         }
 
        

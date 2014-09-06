@@ -74,7 +74,7 @@ namespace Domain.MainModule.WorkFlow.Services.WorkFlow
         /// <param name="strexpression"></param>
         /// <param name="dt"></param>
         /// <returns></returns>
-        public string MapearExpresion(string strexpression, DataTable dt)
+        public string MapearAndejecutaExpresion(string strexpression, DataTable dt)
         {
             var m = DefinedRegexEvaluation.Function.Match(strexpression);
             if (m.Success)
@@ -92,6 +92,24 @@ namespace Domain.MainModule.WorkFlow.Services.WorkFlow
             return string.Empty;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="strexpression"></param>
+        /// <param name="dt"></param>
+        /// <returns></returns>
+        public string MapearExpresion(string strexpression, DataTable dt)
+        {
+           return  NewExpression(strexpression, dt);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ruta"></param>
+        /// <param name="dt"></param>
+        /// <param name="oDocument"></param>
+        /// <returns></returns>
         private string NewExpression(TBL_ModuloWorkFlow_Rutas ruta, DataTable dt, IDocumentDto oDocument)
         {
             var strNewExpresion = ruta.FormulaValidacion;
@@ -120,7 +138,7 @@ namespace Domain.MainModule.WorkFlow.Services.WorkFlow
                 }
             }
 
-            m = DefinedRegexEvaluation.FielsExpression.Match(strNewExpresion);
+            m = DefinedRegexEvaluation.FieldsExpression.Match(strNewExpresion);
             if (m.Success)
             {
                 var spName = m.Groups[1].Value.Trim();
@@ -142,7 +160,7 @@ namespace Domain.MainModule.WorkFlow.Services.WorkFlow
                                                                 (current, t) => current + string.Format("{0} ", t));
 
                             var evaluacion = EvaluateExpression(strExpresion);
-                            strNewExpresion = DefinedRegexEvaluation.FielsExpression.Replace(strNewExpresion,
+                            strNewExpresion = DefinedRegexEvaluation.FieldsExpression.Replace(strNewExpresion,
                                                                                              evaluacion
                                                                                                  ? "TRUE"
                                                                                                  : "FALSE");
@@ -150,7 +168,7 @@ namespace Domain.MainModule.WorkFlow.Services.WorkFlow
                     }
                     else
                     {
-                        strNewExpresion = DefinedRegexEvaluation.FielsExpression.Replace(strNewExpresion,"FALSE");
+                        strNewExpresion = DefinedRegexEvaluation.FieldsExpression.Replace(strNewExpresion,"FALSE");
                     }
                 }
             }
