@@ -166,15 +166,6 @@ namespace Modules.Reclamos.Admin {
         protected global::System.Web.UI.UpdatePanel upSecciones;
         
         /// <summary>
-        /// upMenu control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upMenu;
-        
-        /// <summary>
         /// mnuSecciones control.
         /// </summary>
         /// <remarks>
@@ -184,13 +175,13 @@ namespace Modules.Reclamos.Admin {
         protected global::System.Web.UI.WebControls.Menu mnuSecciones;
         
         /// <summary>
-        /// UpdatePanel1 control.
+        /// upContenidoReclamos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        protected global::System.Web.UI.UpdatePanel upContenidoReclamos;
         
         /// <summary>
         /// phlContent control.

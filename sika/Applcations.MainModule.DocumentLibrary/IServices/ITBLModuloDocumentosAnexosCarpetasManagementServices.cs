@@ -20,6 +20,8 @@ namespace Applcations.MainModule.DocumentLibrary.IServices
         List<TBL_ModuloDocumentosAnexos_Carpetas> GetFoldersByIdReclamo(string idReclamo);
 
         bool SaveFolder(string idParent, string idcategory, string nombre, string idReclamo, string idUser);
+
+        bool DeleteFolderAndFiles(int idFolder);
     }
 }
     

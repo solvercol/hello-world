@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using Applcations.MainModule.DocumentLibrary.IServices;
 using Application.Core;
@@ -11,11 +12,15 @@ namespace Presenters.DocumentLibrary.Presenters
     {
         private readonly ISfTBL_ModuloDocumentosAnexos_CarpetasManagementServices _foldersservices;
         private readonly ISfTBL_ModuloDocumentosAnexos_ContenidoManagementServices _contenidoServices;
+        private readonly ISfTBL_ModuloDocumentosAnexos_DocumentoManagementServices _documentServices;
 
-        public DocumentLibraryPresenter(ISfTBL_ModuloDocumentosAnexos_CarpetasManagementServices foldersservices,
-            ISfTBL_ModuloDocumentosAnexos_ContenidoManagementServices contenidoServices)
+        public DocumentLibraryPresenter(
+            ISfTBL_ModuloDocumentosAnexos_CarpetasManagementServices foldersservices,
+            ISfTBL_ModuloDocumentosAnexos_ContenidoManagementServices contenidoServices, 
+            ISfTBL_ModuloDocumentosAnexos_DocumentoManagementServices documentServices)
         {
             _foldersservices = foldersservices;
+            _documentServices = documentServices;
             _contenidoServices = contenidoServices;
         }
 
@@ -27,11 +32,19 @@ namespace Presenters.DocumentLibrary.Presenters
             View.GetFoldersEvent += ViewGetFoldersEvent;
             View.DownloadEvent += ViewDownloadEvent;
             View.DeleteEvent += ViewDeleteEvent;
+            View.DeleteFolderEvent += ViewDeleteFolderEvent;
+        }
+
+        void ViewDeleteFolderEvent(object sender, EventArgs e)
+        {
+            DeleteFolderAndFiles();
         }
 
         void ViewDeleteEvent(object sender, EventArgs e)
         {
-            Delete();
+            if(sender==null)return;
+            var parameters = (Dictionary<string, string>) sender;
+            Delete(parameters);
         }
 
         void ViewDownloadEvent(object sender, EventArgs e)
@@ -97,6 +110,13 @@ namespace Presenters.DocumentLibrary.Presenters
 
         }
 
+        private void DeleteFolderAndFiles()
+        {
+            if (string.IsNullOrEmpty(View.IdFolder)) return;
+            _foldersservices.DeleteFolderAndFiles(Convert.ToInt32(View.IdFolder));
+            GetFoldersByIdContrato();
+            ListadoDocumentosPorCarpeta(0);
+        }
 
         private void DownloadFile(int idDocument)
         {
@@ -106,15 +126,11 @@ namespace Presenters.DocumentLibrary.Presenters
         }
 
 
-        private void Delete()
+        private void Delete(Dictionary<string, string> parameters)
         {
             try
             {
-                if (View.DocumentsSelected.Count == 0) return;
-                foreach (var item in View.DocumentsSelected)
-                {
-                    _contenidoServices.BulkDeleteFromId(Convert.ToInt32(item));
-                }
+                _documentServices.DeleteDocumentAndContent(parameters);
                 ListadoDocumentosPorCarpeta(0);
             }
             catch (Exception ex)

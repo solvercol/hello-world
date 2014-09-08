@@ -133,16 +133,14 @@
                 <table width="100%" class="FondoGrisSeccionesMenu" cellpadding="0" cellspacing="0"> 
                     <tr>
                         <td>        
-                            <asp:UpdatePanel ID="upMenu" runat="server">
-                            <ContentTemplate>  
+                           
                                 <asp:Menu ID="mnuSecciones" runat="server" Orientation="Horizontal" BackColor="#F5F5F5" Width="100%" OnMenuItemClick="MnuItemClick" > 
                                 <StaticSelectedStyle ForeColor="#FFFFFF" BackColor="#808080" BorderStyle="None" Font-Bold="True" CssClass="center"  />
                                 <StaticMenuItemStyle ForeColor="#7D7D7C"  BorderStyle="solid" BorderWidth="0" Font-Size="10px" Font-Bold="true" CssClass="center" 
                                     ItemSpacing="4px" HorizontalPadding="1px" Width="120" VerticalPadding="0px" BackColor="#F5F5F5"
                                     Height="15px" />
                                 </asp:Menu>               
-                            </ContentTemplate>
-                        </asp:UpdatePanel>
+                           
                         </td>
                     </tr>
                 </table>    
@@ -150,15 +148,15 @@
     </asp:UpdatePanel>    
 
     <div style=" margin-top:2px;">    
-        <asp:UpdatePanel ID="UpdatePanel1" runat="server" ChildrenAsTriggers="true">
+        <asp:UpdatePanel ID="upContenidoReclamos" runat="server" ChildrenAsTriggers="true">
             <ContentTemplate>  
                 <div style="width:100%;">
                         <asp:PlaceHolder ID="phlContent"  runat="server"></asp:PlaceHolder>
                 </div>  
             </ContentTemplate>
-                <Triggers>
+              <%--  <Triggers>
                     <asp:PostBackTrigger ControlID="mnuSecciones" />
-                </Triggers>
+                </Triggers>--%>
         </asp:UpdatePanel>
     </div>  
     

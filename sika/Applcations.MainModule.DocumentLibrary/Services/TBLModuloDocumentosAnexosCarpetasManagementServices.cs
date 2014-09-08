@@ -9,6 +9,8 @@
 #pragma warning disable 1591 // this is for supress no xml comments in public members warnings 
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using Applcations.MainModule.DocumentLibrary.IServices;
 using Applcations.MainModule.DocumentLibrary.Resources;
@@ -18,6 +20,8 @@ using Domain.MainModule.Reclamos.Contracts;
 using Domain.MainModules.Entities;
 using Domain.Core.Specification;
 using System.Transactions;
+using Infraestructure.Data.Core;
+using IsolationLevel = System.Transactions.IsolationLevel;
 
 namespace Applcations.MainModule.DocumentLibrary.Services
 {
@@ -26,18 +30,20 @@ namespace Applcations.MainModule.DocumentLibrary.Services
 
          #region Fields
          readonly ITBL_ModuloDocumentosAnexos_CarpetasRepository _tblModuloDocumentosAnexosCarpetasRepository;
-        private readonly ITBL_ModuloReclamos_ReclamoRepository _reclamoRepository;
+         private readonly ITBL_ModuloReclamos_ReclamoRepository _reclamoRepository;
+         private readonly ISqlHelper _sqlservice;
          #endregion
 
          #region Constructor
          /// <summary>
          /// Constructor de la Calse 
          /// </summary>
-         public SfTBL_ModuloDocumentosAnexos_CarpetasManagementServices( ITBL_ModuloDocumentosAnexos_CarpetasRepository tblModuloDocumentosAnexosCarpetasRepository, ITBL_ModuloReclamos_ReclamoRepository reclamoRepository)
+         public SfTBL_ModuloDocumentosAnexos_CarpetasManagementServices( ITBL_ModuloDocumentosAnexos_CarpetasRepository tblModuloDocumentosAnexosCarpetasRepository, ITBL_ModuloReclamos_ReclamoRepository reclamoRepository, ISqlHelper sqlservice)
          {
             if (tblModuloDocumentosAnexosCarpetasRepository == null)
                 throw new ArgumentNullException("tblModuloDocumentosAnexosCarpetasRepository");
             _tblModuloDocumentosAnexosCarpetasRepository = tblModuloDocumentosAnexosCarpetasRepository;
+             _sqlservice = sqlservice;
              _reclamoRepository = reclamoRepository;
          }
          #endregion
@@ -192,6 +198,12 @@ namespace Applcations.MainModule.DocumentLibrary.Services
          private TBL_ModuloReclamos_Reclamo LoadReclamo(string idReclamo)
          {
              return _reclamoRepository.GetReclamoById(Convert.ToInt32(idReclamo));
+         }
+
+         public bool DeleteFolderAndFiles(int idFolder)
+         {
+             _sqlservice.ExecuteNonquery("EliminarCarpeta", CommandType.StoredProcedure, new SqlParameter("@IdFolder",idFolder));
+             return true;
          }
 
          #endregion
