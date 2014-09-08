@@ -8,7 +8,7 @@
 
  <%@ Register src="UserControls/WucLoadFile.ascx" tagname="WucLoadFile" tagprefix="uc1" %>
 
- <table width="100%" style=" background-color:#F1F5FB;"  cellspacing="0" cellpadding="0">         
+<table width="100%" style=" background-color:#F1F5FB;"  cellspacing="0" cellpadding="0">         
         <tr>
             <td style="width:10%; padding-left:25px;" align="left" >                
                    

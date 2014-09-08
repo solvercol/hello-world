@@ -1,17 +1,45 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WucNewFolder.ascx.cs" Inherits="Modules.DocumentLibrary.UserControls.WucNewFolder" %>
 
  <script type="text/javascript">
-     var divError = 'DivModal';
+     var divError = 'DivModalNf';
      function MostrarDivError() {
          var adiv = $get(divError);
          adiv.style.visibility = 'visible';
      }
     </script>
 
- <div id="DivModal">
-                     <div id="VentanaMensaje">
-                               <div id="Msg">
-                                    <img id="Img1"  src="~/Resources/images/Barloading.gif" runat="server" alt="" />
+   <style type="text/css">
+        #DivModalNf
+        {
+            position: absolute; 
+            left: 0px; top: 0px; width: 100%; height: 100%;
+            background-image: url(../Images/fondosemitrans.gif);
+            visibility:hidden;
+            z-index: 99;    
+        }
+
+        #VentanaMensajeNf
+        {
+	        position: absolute; 
+	        top: 140px; 
+	        width: 92%; 
+            padding: 15px; 
+            border: #000000 1px solid;
+            background-color: white; 
+            text-align: justify;
+        }
+
+        #MsgNf
+        {
+            text-align:center;
+        }
+    
+    </style>
+
+ <div id="DivModalNf">
+                     <div id="VentanaMensajeNf">
+                               <div id="MsgNf">
+                                    <img id="Img1Nf"  src="~/Resources/images/Barloading.gif" runat="server" alt="" />
                                </div>
                             </div>
 </div>

@@ -23,7 +23,7 @@ namespace Modules.DocumentLibrary.UserControls
         {
             LastLoadedControlMessages = wucLoad;
             LoadUserControlVentanaMensajes();
-            mpeLoad.Show();
+            mpeLoadFileDl.Show();
         }
 
         private string LastLoadedControlMessages

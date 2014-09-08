@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using ASP.NETCLIENTE.UI;
@@ -21,6 +19,7 @@ namespace Modules.DocumentLibrary
         public event EventHandler FilterEvent;
         public event EventHandler DownloadEvent;
         public event EventHandler DeleteEvent;
+        public event EventHandler DeleteFolderEvent;
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -53,8 +52,8 @@ namespace Modules.DocumentLibrary
             var doc = e.Item.DataItem as TBL_ModuloDocumentosAnexos_Contenido;
             if (doc == null) return;
 
-            ViewState[e.Item.UniqueID] = doc.IdContenido.ToString();
-            ViewState[e.Item.UniqueID] = doc.IdContenido.ToString();
+            ViewState[e.Item.UniqueID] = doc.IdDocumento.ToString();
+            
             var imgDownload = e.Item.FindControl("imgDownload") as ImageButton;
             if (imgDownload != null)
             {
@@ -102,8 +101,9 @@ namespace Modules.DocumentLibrary
 
         protected void BtnDeleteClick(object sender, ImageClickEventArgs e)
         {
+            if (DocumentsSelected.Count == 0)return;
             if (DeleteEvent != null)
-                DeleteEvent(null, EventArgs.Empty);
+                DeleteEvent(DocumentsSelected, EventArgs.Empty);
         }
 
         protected void ImgSerachClick(object sender, ImageClickEventArgs e)
@@ -217,6 +217,8 @@ namespace Modules.DocumentLibrary
                     break;
 
                 case "DeleteFolder":
+                    if (DeleteFolderEvent != null)
+                        DeleteFolderEvent(null, EventArgs.Empty);
                     break;
 
                 case "NewFolder":
@@ -233,21 +235,28 @@ namespace Modules.DocumentLibrary
             var strScript = " var lastNode = null; " +
                             " function MenuItem_Click(menu, eventArgs) { " +
                             " switch (eventArgs.getItem().get_key()) { " +
-                            " case 'Delete': " +
+                            " case 'DeleteFolder': " +
+                            "   if (lastNode != null  ) { " +
+                            "     if(lastNode.get_key() == '') {" +
+                            "       eventArgs.set_cancel(true); " +
+                            "      }"+
+                            "      else {"+
+                            "       var r = confirm('¿Confirma que desea continuar?');" +
+                            "       if(!r) {"+
+                            "         eventArgs.set_cancel(true); " +
+                            "       }"+
+                            "     }"+
+                            "   } " +
+                            "   break; " +
+
+                            " case 'NewFolder': " +
                             "   if (lastNode != null  ) { " +
                             "     if(lastNode.get_key() == '')" +
                             "       eventArgs.set_cancel(true); " +
                             "   } " +
                             "   break; " +
 
-                            " case 'New': " +
-                            "   if (lastNode != null  ) { " +
-                            "     if(lastNode.get_key() == '')" +
-                            "       eventArgs.set_cancel(true); " +
-                            "   } " +
-                            "   break; " +
-
-                            " case 'load': " +
+                            " case 'loadFile': " +
                             "   if (lastNode != null  ) { " +
                             "     if(lastNode.get_key() == '')" +
                             "       eventArgs.set_cancel(true); " +
@@ -279,23 +288,25 @@ namespace Modules.DocumentLibrary
                 Page.ClientScript.RegisterStartupScript(GetType(), "customControlScript", strScript, true);
         }
 
-
-        public ArrayList DocumentsSelected
+        private Dictionary<string, string> DocumentsSelected
         {
             get { return GetDocumentSelect(); }
         }
 
-        private ArrayList GetDocumentSelect()
+        private Dictionary<string,string > GetDocumentSelect()
         {
-            var selectList = new ArrayList();
+            var selectList = new Dictionary<string, string>();
 
-            foreach (RepeaterItem item in from RepeaterItem item in rptDocuments.Items
-                                          let chkSelect = item.FindControl("chkSelect") as CheckBox
-                                          where chkSelect != null
-                                          where chkSelect.Checked
-                                          select item)
+            foreach (RepeaterItem item in rptDocuments.Items)
             {
-                selectList.Add(ViewState[item.UniqueID].ToString());
+                var chkSelect = item.FindControl("chkSelect") as CheckBox;
+                if(chkSelect == null)continue;
+                if(chkSelect.Checked)
+                {
+                    var idContenido = chkSelect.Attributes["idDoc"];
+                    var idDocumento = ViewState[item.UniqueID].ToString();
+                    selectList.Add(idDocumento,idContenido);
+                }
             }
 
             return selectList;

@@ -2,17 +2,45 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 
    <script type="text/javascript">
-       var divError = 'DivModal';
+       var divError = 'DivModalDl';
        function MostrarDivError() {
            var adiv = $get(divError);
            adiv.style.visibility = 'visible';
        }
     </script>
 
-      <div id="DivModal">
-                     <div id="VentanaMensaje">
-                               <div id="Msg">
-                                    <img id="Img1"  src="~/Resources/images/Barloading.gif" runat="server" alt="" />
+    <style type="text/css">
+        #DivModalDl
+        {
+            position: absolute; 
+            left: 0px; top: 0px; width: 100%; height: 100%;
+            background-image: url(../Images/fondosemitrans.gif);
+            visibility:hidden;
+            z-index: 99;    
+        }
+
+        #VentanaMensajeDl
+        {
+	        position: absolute; 
+	        top: 140px; 
+	        width: 92%; 
+            padding: 15px; 
+            border: #000000 1px solid;
+            background-color: white; 
+            text-align: justify;
+        }
+
+        #MsgDl
+        {
+            text-align:center;
+        }
+    
+    </style>
+
+      <div id="DivModalDl">
+                     <div id="VentanaMensajeDl">
+                               <div id="MsgDl">
+                                    <img id="ImgDlBarLoading"  src="~/Resources/images/Barloading.gif" runat="server" alt="" />
                                </div>
                             </div>
      </div>

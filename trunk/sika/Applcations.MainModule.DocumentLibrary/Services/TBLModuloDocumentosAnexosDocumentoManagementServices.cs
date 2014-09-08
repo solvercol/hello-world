@@ -23,17 +23,19 @@ namespace Applcations.MainModule.DocumentLibrary.Services
 
          #region Fields
          readonly ITBL_ModuloDocumentosAnexos_DocumentoRepository _tblModuloDocumentosAnexosDocumentoRepository;
+        private readonly ITBL_ModuloDocumentosAnexos_ContenidoRepository _contentRepository;
          #endregion
 
          #region Constructor
          /// <summary>
          /// Constructor de la Calse 
          /// </summary>
-         public SfTBL_ModuloDocumentosAnexos_DocumentoManagementServices( ITBL_ModuloDocumentosAnexos_DocumentoRepository tblModuloDocumentosAnexosDocumentoRepository)
+         public SfTBL_ModuloDocumentosAnexos_DocumentoManagementServices( ITBL_ModuloDocumentosAnexos_DocumentoRepository tblModuloDocumentosAnexosDocumentoRepository, ITBL_ModuloDocumentosAnexos_ContenidoRepository contentRepository)
          {
             if (tblModuloDocumentosAnexosDocumentoRepository == null)
                 throw new ArgumentNullException("tblModuloDocumentosAnexosDocumentoRepository");
             _tblModuloDocumentosAnexosDocumentoRepository = tblModuloDocumentosAnexosDocumentoRepository;
+             _contentRepository = contentRepository;
          }
          #endregion
 
@@ -186,6 +188,54 @@ namespace Applcations.MainModule.DocumentLibrary.Services
              };
              return oContent;
          }
+
+         public bool BulkDeleteFromId(int id)
+         {
+             var specification = new DirectSpecification<TBL_ModuloDocumentosAnexos_Documento>(u => u.IdDocumento == id);
+             var res = _tblModuloDocumentosAnexosDocumentoRepository.BulkDeletebySpec(specification);
+             return res > 0;
+         }
+
+
+        public void DeleteDocumentAndContent( Dictionary<string,string > parameters)
+        {
+            var txSettings = new TransactionOptions()
+            {
+                Timeout = TransactionManager.DefaultTimeout,
+                IsolationLevel = IsolationLevel.Serializable
+            };
+
+            using (var scope = new TransactionScope(TransactionScopeOption.Required, txSettings))
+            {
+                var unitOfWork = _tblModuloDocumentosAnexosDocumentoRepository.UnitOfWork;
+
+                foreach (var parameter in parameters)
+                {
+
+                    var result = DeleteContent(Convert.ToInt32(parameter.Value));
+                    if(result)
+                        BulkDeleteFromId(Convert.ToInt32(parameter.Key));
+                }
+
+                unitOfWork.Commit();
+
+                scope.Complete();
+            }
+        }
+
+        /// <summary>
+        /// Elimina el contenido asociado al documento
+        /// </summary>
+        /// <param name="idcontent"></param>
+        /// <returns></returns>
+        private bool DeleteContent(int idcontent)
+        {
+           
+            var specification = new DirectSpecification<TBL_ModuloDocumentosAnexos_Contenido>(u => u.IdContenido == idcontent);
+            var res = _contentRepository.BulkDeletebySpec(specification);
+            return res > 0;
+        }
+
          #endregion
 
          #region IDisposable Members

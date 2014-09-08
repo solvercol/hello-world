@@ -14,6 +14,7 @@ namespace Presenters.DocumentLibrary.IViews
         event EventHandler FilterEvent;
         event EventHandler DownloadEvent;
         event EventHandler DeleteEvent;
+        event EventHandler DeleteFolderEvent;
 
         string IdReclamo { get; }
 
@@ -31,6 +32,5 @@ namespace Presenters.DocumentLibrary.IViews
 
         void DownloadFile(byte[] adjunto, string nombre);
 
-        ArrayList DocumentsSelected { get; }
     }
 }

@@ -3224,7 +3224,6 @@
           <EntitySet Name="TBL_Admin_Departamentos" EntityType="SolutionFramework.MainModel.TBL_Admin_Departamentos" />
           <EntitySet Name="TBL_Admin_DescripcionesTipoProducto" EntityType="SolutionFramework.MainModel.TBL_Admin_DescripcionesTipoProducto" />
           <EntitySet Name="TBL_Admin_DiasAnticipados" EntityType="SolutionFramework.MainModel.TBL_Admin_DiasAnticipados" />
-          <EntitySet Name="TBL_Admin_EstadosProceso" EntityType="SolutionFramework.MainModel.TBL_Admin_EstadosProceso" />
           <EntitySet Name="TBL_Admin_ModuleRepository" EntityType="SolutionFramework.MainModel.TBL_Admin_ModuleRepository" />
           <EntitySet Name="TBL_Admin_ModuleService" EntityType="SolutionFramework.MainModel.TBL_Admin_ModuleService" />
           <EntitySet Name="TBL_Admin_ModuleType" EntityType="SolutionFramework.MainModel.TBL_Admin_ModuleType" />
@@ -3238,46 +3237,10 @@
           <EntitySet Name="TBL_Admin_Plantillas" EntityType="SolutionFramework.MainModel.TBL_Admin_Plantillas" />
           <EntitySet Name="TBL_Admin_Roles" EntityType="SolutionFramework.MainModel.TBL_Admin_Roles" />
           <EntitySet Name="TBL_Admin_Secciones" EntityType="SolutionFramework.MainModel.TBL_Admin_Secciones" />
-          <EntitySet Name="TBL_Admin_SistemaNotificaciones" EntityType="SolutionFramework.MainModel.TBL_Admin_SistemaNotificaciones" />
           <EntitySet Name="TBL_Admin_TypeByModules" EntityType="SolutionFramework.MainModel.TBL_Admin_TypeByModules" />
-          <EntitySet Name="TBL_Admin_Usuarios" EntityType="SolutionFramework.MainModel.TBL_Admin_Usuarios" />
-          <EntitySet Name="TBL_ModuloDocumentos_Categorias" EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_Categorias" />
-          <EntitySet Name="TBL_ModuloDocumentos_Documento" EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_Documento" />
-          <EntitySet Name="TBL_ModuloDocumentos_DocumentoAdjunto" EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_DocumentoAdjunto" />
-          <EntitySet Name="TBL_ModuloDocumentos_DocumentoAdjuntoHistorial" EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_DocumentoAdjuntoHistorial" />
-          <EntitySet Name="TBL_ModuloDocumentos_Estados" EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_Estados" />
-          <EntitySet Name="TBL_ModuloDocumentos_HistorialDocumento" EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_HistorialDocumento" />
-          <EntitySet Name="TBL_ModuloDocumentos_LogCambios" EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_LogCambios" />
-          <EntitySet Name="TBL_ModuloDocumentosAnexos_Carpetas" EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentosAnexos_Carpetas" />
-          <EntitySet Name="TBL_ModuloDocumentosAnexos_Categorias" EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentosAnexos_Categorias" />
-          <EntitySet Name="TBL_ModuloDocumentosAnexos_Contenido" EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentosAnexos_Contenido" />
-          <EntitySet Name="TBL_ModuloDocumentosAnexos_Documento" EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentosAnexos_Documento" />
           <EntitySet Name="TBL_ModuloPlanAccion_BancoActividades" EntityType="SolutionFramework.MainModel.TBL_ModuloPlanAccion_BancoActividades" />
           <EntitySet Name="TBL_ModuloPlanAccion_Categorias" EntityType="SolutionFramework.MainModel.TBL_ModuloPlanAccion_Categorias" />
           <EntitySet Name="TBL_ModuloPlanAccion_ConfiguracionActividades" EntityType="SolutionFramework.MainModel.TBL_ModuloPlanAccion_ConfiguracionActividades" />
-          <EntitySet Name="TBL_ModuloReclamos_Actividades" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Actividades" />
-          <EntitySet Name="TBL_ModuloReclamos_ActividadesReclamo" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_ActividadesReclamo" />
-          <EntitySet Name="TBL_ModuloReclamos_Alternativas" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Alternativas" />
-          <EntitySet Name="TBL_ModuloReclamos_AnexosActividad" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_AnexosActividad" />
-          <EntitySet Name="TBL_ModuloReclamos_AnexosAlternativa" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_AnexosAlternativa" />
-          <EntitySet Name="TBL_ModuloReclamos_AnexosComentarioRespuesta" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_AnexosComentarioRespuesta" />
-          <EntitySet Name="TBL_ModuloReclamos_AnexosSolucion" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_AnexosSolucion" />
-          <EntitySet Name="TBL_ModuloReclamos_Asesores" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Asesores" />
-          <EntitySet Name="TBL_ModuloReclamos_CategoriaProducto" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_CategoriaProducto" />
-          <EntitySet Name="TBL_ModuloReclamos_CategoriasReclamo" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_CategoriasReclamo" />
-          <EntitySet Name="TBL_ModuloReclamos_ComentariosRespuesta" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_ComentariosRespuesta" />
-          <EntitySet Name="TBL_ModuloReclamos_CostosProducto" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_CostosProducto" />
-          <EntitySet Name="TBL_ModuloReclamos_LogReclamos" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_LogReclamos" />
-          <EntitySet Name="TBL_ModuloReclamos_Reclamo" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Reclamo" />
-          <EntitySet Name="TBL_ModuloReclamos_Soluciones" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Soluciones" />
-          <EntitySet Name="TBL_ModuloReclamos_TipoReclamo" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_TipoReclamo" />
-          <EntitySet Name="TBL_ModuloReclamos_Tracking" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Tracking" />
-          <EntitySet Name="TBL_ModuloReclamos_Unidad" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Unidad" />
-          <EntitySet Name="TBL_ModuloReclamos_UnidadesZonas" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_UnidadesZonas" />
-          <EntitySet Name="TBL_ModuloReclamos_Zona" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Zona" />
-          <EntitySet Name="TBL_ModuloWorkFlow_CamposValidacion" EntityType="SolutionFramework.MainModel.TBL_ModuloWorkFlow_CamposValidacion" />
-          <EntitySet Name="TBL_ModuloWorkFlow_Rutas" EntityType="SolutionFramework.MainModel.TBL_ModuloWorkFlow_Rutas" />
-          <EntitySet Name="TBL_ModuloWorkFlow_ValidacionesSalida" EntityType="SolutionFramework.MainModel.TBL_ModuloWorkFlow_ValidacionesSalida" />
           <AssociationSet Name="FK_TBL_Admin_Ciudades_TBL_Admin_Departamentos" Association="SolutionFramework.MainModel.FK_TBL_Admin_Ciudades_TBL_Admin_Departamentos">
             <End Role="TBL_Admin_Departamentos" EntitySet="TBL_Admin_Departamentos" />
             <End Role="TBL_Admin_Ciudades" EntitySet="TBL_Admin_Ciudades" />
@@ -3285,22 +3248,6 @@
           <AssociationSet Name="FK_TBL_Admin_Departamentos_TBL_Admin_Paises" Association="SolutionFramework.MainModel.FK_TBL_Admin_Departamentos_TBL_Admin_Paises">
             <End Role="TBL_Admin_Paises" EntitySet="TBL_Admin_Paises" />
             <End Role="TBL_Admin_Departamentos" EntitySet="TBL_Admin_Departamentos" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TBL_Maestra_Propuestas_RutasPorestado_TBL_Maestra_Propuestas_EstadosPropuesta" Association="SolutionFramework.MainModel.FK_TBL_Maestra_Propuestas_RutasPorestado_TBL_Maestra_Propuestas_EstadosPropuesta">
-            <End Role="TBL_Admin_EstadosProceso" EntitySet="TBL_Admin_EstadosProceso" />
-            <End Role="TBL_ModuloWorkFlow_Rutas" EntitySet="TBL_ModuloWorkFlow_Rutas" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TBL_ModuloReclamos_Reclamo_TBL_Admin_EstadosProceso" Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Reclamo_TBL_Admin_EstadosProceso">
-            <End Role="TBL_Admin_EstadosProceso" EntitySet="TBL_Admin_EstadosProceso" />
-            <End Role="TBL_ModuloReclamos_Reclamo" EntitySet="TBL_ModuloReclamos_Reclamo" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TBL_ModuloWorkFlow_CamposValidacion_TBL_Admin_EstadosProceso" Association="SolutionFramework.MainModel.FK_TBL_ModuloWorkFlow_CamposValidacion_TBL_Admin_EstadosProceso">
-            <End Role="TBL_Admin_EstadosProceso" EntitySet="TBL_Admin_EstadosProceso" />
-            <End Role="TBL_ModuloWorkFlow_CamposValidacion" EntitySet="TBL_ModuloWorkFlow_CamposValidacion" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TBL_ModuloWorkFlow_Rutas_TBL_Admin_EstadosProceso" Association="SolutionFramework.MainModel.FK_TBL_ModuloWorkFlow_Rutas_TBL_Admin_EstadosProceso">
-            <End Role="TBL_Admin_EstadosProceso" EntitySet="TBL_Admin_EstadosProceso" />
-            <End Role="TBL_ModuloWorkFlow_Rutas" EntitySet="TBL_ModuloWorkFlow_Rutas" />
           </AssociationSet>
           <AssociationSet Name="FK_TBL_Admin_ModuleRepository_TBL_Admin_ModuleType" Association="SolutionFramework.MainModel.FK_TBL_Admin_ModuleRepository_TBL_Admin_ModuleType">
             <End Role="TBL_Admin_ModuleType" EntitySet="TBL_Admin_ModuleType" />
@@ -3341,6 +3288,71 @@
           <AssociationSet Name="FK_TBL_Maestra_Plantillas_TBL_Maestra_Paises" Association="SolutionFramework.MainModel.FK_TBL_Maestra_Plantillas_TBL_Maestra_Paises">
             <End Role="TBL_Admin_Paises" EntitySet="TBL_Admin_Paises" />
             <End Role="TBL_Admin_Plantillas" EntitySet="TBL_Admin_Plantillas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_BancoActividades" Association="SolutionFramework.MainModel.FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_BancoActividades">
+            <End Role="TBL_ModuloPlanAccion_BancoActividades" EntitySet="TBL_ModuloPlanAccion_BancoActividades" />
+            <End Role="TBL_ModuloPlanAccion_ConfiguracionActividades" EntitySet="TBL_ModuloPlanAccion_ConfiguracionActividades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_Categorias" Association="SolutionFramework.MainModel.FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_Categorias">
+            <End Role="TBL_ModuloPlanAccion_Categorias" EntitySet="TBL_ModuloPlanAccion_Categorias" />
+            <End Role="TBL_ModuloPlanAccion_ConfiguracionActividades" EntitySet="TBL_ModuloPlanAccion_ConfiguracionActividades" />
+          </AssociationSet>
+          <AssociationSet Name="TBL_Admin_RolesPorOpcionMenu" Association="SolutionFramework.MainModel.TBL_Admin_RolesPorOpcionMenu">
+            <End Role="TBL_Admin_OpcionesMenu" EntitySet="TBL_Admin_OpcionesMenu" />
+            <End Role="TBL_Admin_Roles" EntitySet="TBL_Admin_Roles" />
+          </AssociationSet>
+          <EntitySet Name="TBL_Admin_EstadosProceso" EntityType="SolutionFramework.MainModel.TBL_Admin_EstadosProceso" />
+          <EntitySet Name="TBL_Admin_SistemaNotificaciones" EntityType="SolutionFramework.MainModel.TBL_Admin_SistemaNotificaciones" />
+          <EntitySet Name="TBL_Admin_Usuarios" EntityType="SolutionFramework.MainModel.TBL_Admin_Usuarios" />
+          <EntitySet Name="TBL_ModuloDocumentos_Categorias" EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_Categorias" />
+          <EntitySet Name="TBL_ModuloDocumentos_Documento" EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_Documento" />
+          <EntitySet Name="TBL_ModuloDocumentos_DocumentoAdjunto" EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_DocumentoAdjunto" />
+          <EntitySet Name="TBL_ModuloDocumentos_DocumentoAdjuntoHistorial" EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_DocumentoAdjuntoHistorial" />
+          <EntitySet Name="TBL_ModuloDocumentos_Estados" EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_Estados" />
+          <EntitySet Name="TBL_ModuloDocumentos_HistorialDocumento" EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_HistorialDocumento" />
+          <EntitySet Name="TBL_ModuloDocumentos_LogCambios" EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_LogCambios" />
+          <EntitySet Name="TBL_ModuloDocumentosAnexos_Carpetas" EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentosAnexos_Carpetas" />
+          <EntitySet Name="TBL_ModuloDocumentosAnexos_Categorias" EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentosAnexos_Categorias" />
+          <EntitySet Name="TBL_ModuloDocumentosAnexos_Contenido" EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentosAnexos_Contenido" />
+          <EntitySet Name="TBL_ModuloDocumentosAnexos_Documento" EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentosAnexos_Documento" />
+          <EntitySet Name="TBL_ModuloReclamos_Actividades" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Actividades" />
+          <EntitySet Name="TBL_ModuloReclamos_ActividadesReclamo" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_ActividadesReclamo" />
+          <EntitySet Name="TBL_ModuloReclamos_Alternativas" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Alternativas" />
+          <EntitySet Name="TBL_ModuloReclamos_AnexosActividad" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_AnexosActividad" />
+          <EntitySet Name="TBL_ModuloReclamos_AnexosAlternativa" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_AnexosAlternativa" />
+          <EntitySet Name="TBL_ModuloReclamos_AnexosComentarioRespuesta" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_AnexosComentarioRespuesta" />
+          <EntitySet Name="TBL_ModuloReclamos_AnexosSolucion" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_AnexosSolucion" />
+          <EntitySet Name="TBL_ModuloReclamos_Asesores" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Asesores" />
+          <EntitySet Name="TBL_ModuloReclamos_CategoriaProducto" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_CategoriaProducto" />
+          <EntitySet Name="TBL_ModuloReclamos_CategoriasReclamo" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_CategoriasReclamo" />
+          <EntitySet Name="TBL_ModuloReclamos_ComentariosRespuesta" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_ComentariosRespuesta" />
+          <EntitySet Name="TBL_ModuloReclamos_CostosProducto" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_CostosProducto" />
+          <EntitySet Name="TBL_ModuloReclamos_LogReclamos" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_LogReclamos" />
+          <EntitySet Name="TBL_ModuloReclamos_Reclamo" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Reclamo" />
+          <EntitySet Name="TBL_ModuloReclamos_Soluciones" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Soluciones" />
+          <EntitySet Name="TBL_ModuloReclamos_TipoReclamo" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_TipoReclamo" />
+          <EntitySet Name="TBL_ModuloReclamos_Tracking" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Tracking" />
+          <EntitySet Name="TBL_ModuloReclamos_Unidad" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Unidad" />
+          <EntitySet Name="TBL_ModuloReclamos_UnidadesZonas" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_UnidadesZonas" />
+          <EntitySet Name="TBL_ModuloReclamos_Zona" EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Zona" />
+          <EntitySet Name="TBL_ModuloWorkFlow_CamposValidacion" EntityType="SolutionFramework.MainModel.TBL_ModuloWorkFlow_CamposValidacion" />
+          <EntitySet Name="TBL_ModuloWorkFlow_Rutas" EntityType="SolutionFramework.MainModel.TBL_ModuloWorkFlow_Rutas" />
+          <EntitySet Name="TBL_ModuloWorkFlow_ValidacionesSalida" EntityType="SolutionFramework.MainModel.TBL_ModuloWorkFlow_ValidacionesSalida" />
+          <AssociationSet Name="FK_TBL_Maestra_Propuestas_RutasPorestado_TBL_Maestra_Propuestas_EstadosPropuesta" Association="SolutionFramework.MainModel.FK_TBL_Maestra_Propuestas_RutasPorestado_TBL_Maestra_Propuestas_EstadosPropuesta">
+            <End Role="TBL_Admin_EstadosProceso" EntitySet="TBL_Admin_EstadosProceso" />
+            <End Role="TBL_ModuloWorkFlow_Rutas" EntitySet="TBL_ModuloWorkFlow_Rutas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_ModuloReclamos_Reclamo_TBL_Admin_EstadosProceso" Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Reclamo_TBL_Admin_EstadosProceso">
+            <End Role="TBL_Admin_EstadosProceso" EntitySet="TBL_Admin_EstadosProceso" />
+            <End Role="TBL_ModuloReclamos_Reclamo" EntitySet="TBL_ModuloReclamos_Reclamo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_ModuloWorkFlow_CamposValidacion_TBL_Admin_EstadosProceso" Association="SolutionFramework.MainModel.FK_TBL_ModuloWorkFlow_CamposValidacion_TBL_Admin_EstadosProceso">
+            <End Role="TBL_Admin_EstadosProceso" EntitySet="TBL_Admin_EstadosProceso" />
+            <End Role="TBL_ModuloWorkFlow_CamposValidacion" EntitySet="TBL_ModuloWorkFlow_CamposValidacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_ModuloWorkFlow_Rutas_TBL_Admin_EstadosProceso" Association="SolutionFramework.MainModel.FK_TBL_ModuloWorkFlow_Rutas_TBL_Admin_EstadosProceso">
+            <End Role="TBL_Admin_EstadosProceso" EntitySet="TBL_Admin_EstadosProceso" />
+            <End Role="TBL_ModuloWorkFlow_Rutas" EntitySet="TBL_ModuloWorkFlow_Rutas" />
           </AssociationSet>
           <AssociationSet Name="FK_TBL_Admin_SistemaNotificaciones_TBL_Admin_Usuarios" Association="SolutionFramework.MainModel.FK_TBL_Admin_SistemaNotificaciones_TBL_Admin_Usuarios">
             <End Role="TBL_Admin_Usuarios" EntitySet="TBL_Admin_Usuarios" />
@@ -3618,14 +3630,6 @@
             <End Role="TBL_ModuloDocumentosAnexos_Documento" EntitySet="TBL_ModuloDocumentosAnexos_Documento" />
             <End Role="TBL_ModuloDocumentosAnexos_Contenido" EntitySet="TBL_ModuloDocumentosAnexos_Contenido" />
           </AssociationSet>
-          <AssociationSet Name="FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_BancoActividades" Association="SolutionFramework.MainModel.FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_BancoActividades">
-            <End Role="TBL_ModuloPlanAccion_BancoActividades" EntitySet="TBL_ModuloPlanAccion_BancoActividades" />
-            <End Role="TBL_ModuloPlanAccion_ConfiguracionActividades" EntitySet="TBL_ModuloPlanAccion_ConfiguracionActividades" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_Categorias" Association="SolutionFramework.MainModel.FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_Categorias">
-            <End Role="TBL_ModuloPlanAccion_Categorias" EntitySet="TBL_ModuloPlanAccion_Categorias" />
-            <End Role="TBL_ModuloPlanAccion_ConfiguracionActividades" EntitySet="TBL_ModuloPlanAccion_ConfiguracionActividades" />
-          </AssociationSet>
           <AssociationSet Name="FK_TBL_ModuloReclamos_Actividades_TBL_ModuloReclamos_ActividadesReclamo" Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Actividades_TBL_ModuloReclamos_ActividadesReclamo">
             <End Role="TBL_ModuloReclamos_ActividadesReclamo" EntitySet="TBL_ModuloReclamos_ActividadesReclamo" />
             <End Role="TBL_ModuloReclamos_Actividades" EntitySet="TBL_ModuloReclamos_Actividades" />
@@ -3722,10 +3726,6 @@
             <End Role="TBL_Admin_Roles" EntitySet="TBL_Admin_Roles" />
             <End Role="TBL_Admin_Usuarios" EntitySet="TBL_Admin_Usuarios" />
           </AssociationSet>
-          <AssociationSet Name="TBL_Admin_RolesPorOpcionMenu" Association="SolutionFramework.MainModel.TBL_Admin_RolesPorOpcionMenu">
-            <End Role="TBL_Admin_OpcionesMenu" EntitySet="TBL_Admin_OpcionesMenu" />
-            <End Role="TBL_Admin_Roles" EntitySet="TBL_Admin_Roles" />
-          </AssociationSet>
           <AssociationSet Name="TBL_Admin_UsuariosByRol" Association="SolutionFramework.MainModel.TBL_Admin_UsuariosByRol">
             <End Role="TBL_Admin_Roles" EntitySet="TBL_Admin_Roles" />
             <End Role="TBL_Admin_Usuarios" EntitySet="TBL_Admin_Usuarios" />
@@ -3758,7 +3758,7 @@
             <End Role="TBL_Admin_Usuarios" EntitySet="TBL_Admin_Usuarios" />
             <End Role="TBL_ModuloReclamos_Actividades" EntitySet="TBL_ModuloReclamos_Actividades" />
           </AssociationSet>
-        </EntityContainer>
+          </EntityContainer>
         <EntityType Name="TBL_Admin_Ciudades">
           <Key>
             <PropertyRef Name="IdCiudad" />
@@ -3831,30 +3831,6 @@
           <Property Type="DateTime" Name="CreateOn" />
           <Property Type="String" Name="ModifiedBy" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Type="DateTime" Name="ModifiedOn" />
-        </EntityType>
-        <EntityType Name="TBL_Admin_EstadosProceso">
-          <Key>
-            <PropertyRef Name="IdEstado" />
-          </Key>
-          <Property Type="Int32" Name="IdEstado" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="Estado" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Descripcion" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="Boolean" Name="IsActive" Nullable="false" />
-          <Property Type="Boolean" Name="PermiteEdicionCampos" />
-          <Property Type="Boolean" Name="PermiteComentar" />
-          <Property Type="Boolean" Name="PermiteProgActividades" />
-          <Property Type="Boolean" Name="PermiteAdjuntarAnexos" />
-          <Property Type="String" Name="RolAdjuntardocumentos" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="ValidarCategorias" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Type="Int32" Name="TipoModulo" />
-          <Property Type="String" Name="CreateBy" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="CreateOn" />
-          <Property Type="String" Name="ModifiedBy" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="ModifiedOn" />
-          <NavigationProperty Name="TBL_ModuloWorkFlow_Rutas" Relationship="SolutionFramework.MainModel.FK_TBL_Maestra_Propuestas_RutasPorestado_TBL_Maestra_Propuestas_EstadosPropuesta" FromRole="TBL_Admin_EstadosProceso" ToRole="TBL_ModuloWorkFlow_Rutas" />
-          <NavigationProperty Name="TBL_ModuloReclamos_Reclamo" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Reclamo_TBL_Admin_EstadosProceso" FromRole="TBL_Admin_EstadosProceso" ToRole="TBL_ModuloReclamos_Reclamo" />
-          <NavigationProperty Name="TBL_ModuloWorkFlow_CamposValidacion" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloWorkFlow_CamposValidacion_TBL_Admin_EstadosProceso" FromRole="TBL_Admin_EstadosProceso" ToRole="TBL_ModuloWorkFlow_CamposValidacion" />
-          <NavigationProperty Name="TBL_ModuloWorkFlow_Rutas1" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloWorkFlow_Rutas_TBL_Admin_EstadosProceso" FromRole="TBL_Admin_EstadosProceso" ToRole="TBL_ModuloWorkFlow_Rutas" />
         </EntityType>
         <EntityType Name="TBL_Admin_ModuleRepository">
           <Key>
@@ -4041,11 +4017,11 @@
           <Property Type="DateTime" Name="CreateOn" />
           <Property Type="String" Name="ModifiedBy" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Type="DateTime" Name="ModifiedOn" />
-          <NavigationProperty Name="TBL_Admin_Usuarios" Relationship="SolutionFramework.MainModel.TBL_Admin_ResponsablesAprobacion" FromRole="TBL_Admin_Roles" ToRole="TBL_Admin_Usuarios" />
           <NavigationProperty Name="TBL_Admin_OpcionesMenu" Relationship="SolutionFramework.MainModel.TBL_Admin_RolesPorOpcionMenu" FromRole="TBL_Admin_Roles" ToRole="TBL_Admin_OpcionesMenu" />
+          <NavigationProperty Name="TBL_Admin_Usuarios" Relationship="SolutionFramework.MainModel.TBL_Admin_ResponsablesAprobacion" FromRole="TBL_Admin_Roles" ToRole="TBL_Admin_Usuarios" />
           <NavigationProperty Name="TBL_Admin_Usuarios1" Relationship="SolutionFramework.MainModel.TBL_Admin_UsuariosByRol" FromRole="TBL_Admin_Roles" ToRole="TBL_Admin_Usuarios" />
           <NavigationProperty Name="TBL_ModuloDocumentosAnexos_Carpetas" Relationship="SolutionFramework.MainModel.TBL_ModuloDocumentosAnexos_CarpetasXrol" FromRole="TBL_Admin_Roles" ToRole="TBL_ModuloDocumentosAnexos_Carpetas" />
-        </EntityType>
+          </EntityType>
         <EntityType Name="TBL_Admin_Secciones">
           <Key>
             <PropertyRef Name="IdSeccion" />
@@ -4066,25 +4042,6 @@
           <Property Type="DateTime" Name="ModifiedOn" />
           <NavigationProperty Name="TBL_Admin_Modulos" Relationship="SolutionFramework.MainModel.FK_TBL_Admin_Secciones_TBL_Admin_Modulos" FromRole="TBL_Admin_Secciones" ToRole="TBL_Admin_Modulos" />
         </EntityType>
-        <EntityType Name="TBL_Admin_SistemaNotificaciones">
-          <Key>
-            <PropertyRef Name="IdNotificacion" />
-          </Key>
-          <Property Type="Int32" Name="IdNotificacion" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="IdUser" Nullable="false" />
-          <Property Type="String" Name="Modulo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Subject" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Url" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="Fecha" Nullable="false" />
-          <Property Type="Boolean" Name="Visitado" Nullable="false" />
-          <Property Type="Boolean" Name="IsActive" />
-          <Property Type="String" Name="CreateBy" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="CreateOn" />
-          <Property Type="String" Name="ModifiedBy" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="ModifiedOn" />
-          <Property Type="Binary" Name="Contenido" MaxLength="Max" FixedLength="false" />
-          <NavigationProperty Name="TBL_Admin_Usuarios" Relationship="SolutionFramework.MainModel.FK_TBL_Admin_SistemaNotificaciones_TBL_Admin_Usuarios" FromRole="TBL_Admin_SistemaNotificaciones" ToRole="TBL_Admin_Usuarios" />
-        </EntityType>
         <EntityType Name="TBL_Admin_TypeByModules">
           <Key>
             <PropertyRef Name="OID" />
@@ -4103,6 +4060,279 @@
           <Property Type="DateTime" Name="ModifiedOn" />
           <NavigationProperty Name="TBL_Admin_ModuleType" Relationship="SolutionFramework.MainModel.FK_TBL_Maestra_Secciones_TBL_Maestra_ModuleType" FromRole="TBL_Admin_TypeByModules" ToRole="TBL_Admin_ModuleType" />
           <NavigationProperty Name="TBL_Admin_Modulos" Relationship="SolutionFramework.MainModel.FK_TBL_Maestra_Secciones_TBL_Maestra_Modulos" FromRole="TBL_Admin_TypeByModules" ToRole="TBL_Admin_Modulos" />
+        </EntityType>
+        <EntityType Name="TBL_ModuloPlanAccion_BancoActividades">
+          <Key>
+            <PropertyRef Name="IdActividad" />
+          </Key>
+          <Property Type="Int32" Name="IdActividad" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Codigo" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Descripcion" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="TienePregunta" Nullable="false" />
+          <Property Type="String" Name="Pregunta" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="TieneAnexo" Nullable="false" />
+          <Property Type="String" Name="TipoRespuesta" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ValoresRespuesta" MaxLength="350" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="ComentariosObligatorios" />
+          <Property Type="String" Name="RespuestaObligatoria" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="String" Name="CreateBy" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreateOn" />
+          <Property Type="String" Name="ModifiedBy" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="ModifiedOn" />
+          <NavigationProperty Name="TBL_ModuloPlanAccion_ConfiguracionActividades" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_BancoActividades" FromRole="TBL_ModuloPlanAccion_BancoActividades" ToRole="TBL_ModuloPlanAccion_ConfiguracionActividades" />
+        </EntityType>
+        <EntityType Name="TBL_ModuloPlanAccion_Categorias">
+          <Key>
+            <PropertyRef Name="IdCategoria" />
+          </Key>
+          <Property Type="Int32" Name="IdCategoria" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Secuencia" Nullable="false" />
+          <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="NumeroMinimoAct" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="String" Name="CreateBy" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreateOn" />
+          <Property Type="String" Name="ModifiedBy" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="ModifiedOn" />
+          <NavigationProperty Name="TBL_ModuloPlanAccion_ConfiguracionActividades" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_Categorias" FromRole="TBL_ModuloPlanAccion_Categorias" ToRole="TBL_ModuloPlanAccion_ConfiguracionActividades" />
+        </EntityType>
+        <EntityType Name="TBL_ModuloPlanAccion_ConfiguracionActividades">
+          <Key>
+            <PropertyRef Name="IdConfiguracion" />
+          </Key>
+          <Property Type="Int32" Name="IdConfiguracion" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="IdCategoria" Nullable="false" />
+          <Property Type="Int32" Name="IdActividad" Nullable="false" />
+          <Property Type="Boolean" Name="Oblogatorio" Nullable="false" />
+          <Property Type="Int32" Name="Secuencia" Nullable="false" />
+          <Property Type="Boolean" Name="EsFinal" Nullable="false" />
+          <Property Type="Boolean" Name="Exclusivo" />
+          <Property Type="String" Name="RolExclusivo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="NumeroDiasHabiles" />
+          <Property Type="Boolean" Name="PreProgramar" Nullable="false" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="String" Name="CreateBy" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreateOn" />
+          <Property Type="String" Name="ModifiedBy" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="ModifiedOn" />
+          <NavigationProperty Name="TBL_ModuloPlanAccion_BancoActividades" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_BancoActividades" FromRole="TBL_ModuloPlanAccion_ConfiguracionActividades" ToRole="TBL_ModuloPlanAccion_BancoActividades" />
+          <NavigationProperty Name="TBL_ModuloPlanAccion_Categorias" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_Categorias" FromRole="TBL_ModuloPlanAccion_ConfiguracionActividades" ToRole="TBL_ModuloPlanAccion_Categorias" />
+        </EntityType>
+        <Association Name="FK_TBL_Admin_Ciudades_TBL_Admin_Departamentos">
+          <End Type="SolutionFramework.MainModel.TBL_Admin_Departamentos" Role="TBL_Admin_Departamentos" Multiplicity="1" />
+          <End Type="SolutionFramework.MainModel.TBL_Admin_Ciudades" Role="TBL_Admin_Ciudades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_Admin_Departamentos">
+              <PropertyRef Name="IdDepartamento" />
+            </Principal>
+            <Dependent Role="TBL_Admin_Ciudades">
+              <PropertyRef Name="IdDepartamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_Admin_Departamentos_TBL_Admin_Paises">
+          <End Type="SolutionFramework.MainModel.TBL_Admin_Paises" Role="TBL_Admin_Paises" Multiplicity="1" />
+          <End Type="SolutionFramework.MainModel.TBL_Admin_Departamentos" Role="TBL_Admin_Departamentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_Admin_Paises">
+              <PropertyRef Name="IdPais" />
+            </Principal>
+            <Dependent Role="TBL_Admin_Departamentos">
+              <PropertyRef Name="IdPais" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_Admin_ModuleRepository_TBL_Admin_ModuleType">
+          <End Type="SolutionFramework.MainModel.TBL_Admin_ModuleType" Role="TBL_Admin_ModuleType" Multiplicity="1" />
+          <End Type="SolutionFramework.MainModel.TBL_Admin_ModuleRepository" Role="TBL_Admin_ModuleRepository" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_Admin_ModuleType">
+              <PropertyRef Name="IdModuleType" />
+            </Principal>
+            <Dependent Role="TBL_Admin_ModuleRepository">
+              <PropertyRef Name="IdModuleType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_Maestra_ModuleService_TBL_Maestra_ModuleType">
+          <End Type="SolutionFramework.MainModel.TBL_Admin_ModuleType" Role="TBL_Admin_ModuleType" Multiplicity="1" />
+          <End Type="SolutionFramework.MainModel.TBL_Admin_ModuleService" Role="TBL_Admin_ModuleService" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_Admin_ModuleType">
+              <PropertyRef Name="IdModuleType" />
+            </Principal>
+            <Dependent Role="TBL_Admin_ModuleService">
+              <PropertyRef Name="IdModuleType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_Maestra_Secciones_TBL_Maestra_ModuleType">
+          <End Type="SolutionFramework.MainModel.TBL_Admin_ModuleType" Role="TBL_Admin_ModuleType" Multiplicity="1" />
+          <End Type="SolutionFramework.MainModel.TBL_Admin_TypeByModules" Role="TBL_Admin_TypeByModules" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_Admin_ModuleType">
+              <PropertyRef Name="IdModuleType" />
+            </Principal>
+            <Dependent Role="TBL_Admin_TypeByModules">
+              <PropertyRef Name="IdModuleType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_Admin_Secciones_TBL_Admin_Modulos">
+          <End Type="SolutionFramework.MainModel.TBL_Admin_Modulos" Role="TBL_Admin_Modulos" Multiplicity="1" />
+          <End Type="SolutionFramework.MainModel.TBL_Admin_Secciones" Role="TBL_Admin_Secciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_Admin_Modulos">
+              <PropertyRef Name="IdModulo" />
+            </Principal>
+            <Dependent Role="TBL_Admin_Secciones">
+              <PropertyRef Name="IdModule" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_Maestra_OpcionesMenu_TBL_Maestra_Modulos">
+          <End Type="SolutionFramework.MainModel.TBL_Admin_Modulos" Role="TBL_Admin_Modulos" Multiplicity="0..1" />
+          <End Type="SolutionFramework.MainModel.TBL_Admin_OpcionesMenu" Role="TBL_Admin_OpcionesMenu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_Admin_Modulos">
+              <PropertyRef Name="IdModulo" />
+            </Principal>
+            <Dependent Role="TBL_Admin_OpcionesMenu">
+              <PropertyRef Name="AplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_Maestra_Secciones_TBL_Maestra_Modulos">
+          <End Type="SolutionFramework.MainModel.TBL_Admin_Modulos" Role="TBL_Admin_Modulos" Multiplicity="0..1" />
+          <End Type="SolutionFramework.MainModel.TBL_Admin_TypeByModules" Role="TBL_Admin_TypeByModules" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_Admin_Modulos">
+              <PropertyRef Name="IdModulo" />
+            </Principal>
+            <Dependent Role="TBL_Admin_TypeByModules">
+              <PropertyRef Name="IdModulo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_Maestra_Admin_PaisMoneda_TBL_Maestra_Admin_Monedas">
+          <End Type="SolutionFramework.MainModel.TBL_Admin_Monedas" Role="TBL_Admin_Monedas" Multiplicity="1" />
+          <End Type="SolutionFramework.MainModel.TBL_Admin_PaisMoneda" Role="TBL_Admin_PaisMoneda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_Admin_Monedas">
+              <PropertyRef Name="IdMoneda" />
+            </Principal>
+            <Dependent Role="TBL_Admin_PaisMoneda">
+              <PropertyRef Name="IdMoneda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_Maestra_OpcionesMenu_TBL_Maestra_OpcionesMenu">
+          <End Type="SolutionFramework.MainModel.TBL_Admin_OpcionesMenu" Role="TBL_Admin_OpcionesMenu" Multiplicity="0..1" />
+          <End Type="SolutionFramework.MainModel.TBL_Admin_OpcionesMenu" Role="TBL_Admin_OpcionesMenu1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_Admin_OpcionesMenu">
+              <PropertyRef Name="IdOpcionMenu" />
+            </Principal>
+            <Dependent Role="TBL_Admin_OpcionesMenu1">
+              <PropertyRef Name="IdopcionPadre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_Maestra_Admin_PaisMoneda_TBL_Maestra_Paises">
+          <End Type="SolutionFramework.MainModel.TBL_Admin_Paises" Role="TBL_Admin_Paises" Multiplicity="1" />
+          <End Type="SolutionFramework.MainModel.TBL_Admin_PaisMoneda" Role="TBL_Admin_PaisMoneda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_Admin_Paises">
+              <PropertyRef Name="IdPais" />
+            </Principal>
+            <Dependent Role="TBL_Admin_PaisMoneda">
+              <PropertyRef Name="IdPais" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_Maestra_Plantillas_TBL_Maestra_Paises">
+          <End Type="SolutionFramework.MainModel.TBL_Admin_Paises" Role="TBL_Admin_Paises" Multiplicity="1" />
+          <End Type="SolutionFramework.MainModel.TBL_Admin_Plantillas" Role="TBL_Admin_Plantillas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_Admin_Paises">
+              <PropertyRef Name="IdPais" />
+            </Principal>
+            <Dependent Role="TBL_Admin_Plantillas">
+              <PropertyRef Name="IdPais" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_BancoActividades">
+          <End Type="SolutionFramework.MainModel.TBL_ModuloPlanAccion_BancoActividades" Role="TBL_ModuloPlanAccion_BancoActividades" Multiplicity="1" />
+          <End Type="SolutionFramework.MainModel.TBL_ModuloPlanAccion_ConfiguracionActividades" Role="TBL_ModuloPlanAccion_ConfiguracionActividades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_ModuloPlanAccion_BancoActividades">
+              <PropertyRef Name="IdActividad" />
+            </Principal>
+            <Dependent Role="TBL_ModuloPlanAccion_ConfiguracionActividades">
+              <PropertyRef Name="IdActividad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_Categorias">
+          <End Type="SolutionFramework.MainModel.TBL_ModuloPlanAccion_Categorias" Role="TBL_ModuloPlanAccion_Categorias" Multiplicity="1" />
+          <End Type="SolutionFramework.MainModel.TBL_ModuloPlanAccion_ConfiguracionActividades" Role="TBL_ModuloPlanAccion_ConfiguracionActividades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_ModuloPlanAccion_Categorias">
+              <PropertyRef Name="IdCategoria" />
+            </Principal>
+            <Dependent Role="TBL_ModuloPlanAccion_ConfiguracionActividades">
+              <PropertyRef Name="IdCategoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TBL_Admin_RolesPorOpcionMenu">
+          <End Type="SolutionFramework.MainModel.TBL_Admin_OpcionesMenu" Role="TBL_Admin_OpcionesMenu" Multiplicity="*" />
+          <End Type="SolutionFramework.MainModel.TBL_Admin_Roles" Role="TBL_Admin_Roles" Multiplicity="*" />
+        </Association>
+        <EntityType Name="TBL_Admin_EstadosProceso">
+          <Key>
+            <PropertyRef Name="IdEstado" />
+          </Key>
+          <Property Type="Int32" Name="IdEstado" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Estado" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Descripcion" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="Boolean" Name="PermiteEdicionCampos" />
+          <Property Type="Boolean" Name="PermiteComentar" />
+          <Property Type="Boolean" Name="PermiteProgActividades" />
+          <Property Type="Boolean" Name="PermiteAdjuntarAnexos" />
+          <Property Type="String" Name="RolAdjuntardocumentos" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ValidarCategorias" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="TipoModulo" />
+          <Property Type="String" Name="CreateBy" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreateOn" />
+          <Property Type="String" Name="ModifiedBy" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="ModifiedOn" />
+          <NavigationProperty Name="TBL_ModuloWorkFlow_Rutas" Relationship="SolutionFramework.MainModel.FK_TBL_Maestra_Propuestas_RutasPorestado_TBL_Maestra_Propuestas_EstadosPropuesta" FromRole="TBL_Admin_EstadosProceso" ToRole="TBL_ModuloWorkFlow_Rutas" />
+          <NavigationProperty Name="TBL_ModuloReclamos_Reclamo" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Reclamo_TBL_Admin_EstadosProceso" FromRole="TBL_Admin_EstadosProceso" ToRole="TBL_ModuloReclamos_Reclamo" />
+          <NavigationProperty Name="TBL_ModuloWorkFlow_CamposValidacion" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloWorkFlow_CamposValidacion_TBL_Admin_EstadosProceso" FromRole="TBL_Admin_EstadosProceso" ToRole="TBL_ModuloWorkFlow_CamposValidacion" />
+          <NavigationProperty Name="TBL_ModuloWorkFlow_Rutas1" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloWorkFlow_Rutas_TBL_Admin_EstadosProceso" FromRole="TBL_Admin_EstadosProceso" ToRole="TBL_ModuloWorkFlow_Rutas" />
+        </EntityType>
+        <EntityType Name="TBL_Admin_SistemaNotificaciones">
+          <Key>
+            <PropertyRef Name="IdNotificacion" />
+          </Key>
+          <Property Type="Int32" Name="IdNotificacion" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="IdUser" Nullable="false" />
+          <Property Type="String" Name="Modulo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Subject" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Url" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Fecha" Nullable="false" />
+          <Property Type="Boolean" Name="Visitado" Nullable="false" />
+          <Property Type="Boolean" Name="IsActive" />
+          <Property Type="String" Name="CreateBy" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreateOn" />
+          <Property Type="String" Name="ModifiedBy" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="ModifiedOn" />
+          <Property Type="Binary" Name="Contenido" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="TBL_Admin_Usuarios" Relationship="SolutionFramework.MainModel.FK_TBL_Admin_SistemaNotificaciones_TBL_Admin_Usuarios" FromRole="TBL_Admin_SistemaNotificaciones" ToRole="TBL_Admin_Usuarios" />
         </EntityType>
         <EntityType Name="TBL_Admin_Usuarios">
           <Key>
@@ -4396,64 +4626,6 @@
           <Property Type="DateTime" Name="ModifiedOn" />
           <NavigationProperty Name="TBL_ModuloDocumentosAnexos_Carpetas" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentosAnexos_Documento_TBL_ModuloDocumentosAnexos_Carpetas" FromRole="TBL_ModuloDocumentosAnexos_Documento" ToRole="TBL_ModuloDocumentosAnexos_Carpetas" />
           <NavigationProperty Name="TBL_ModuloDocumentosAnexos_Contenido" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentosAnexos_Contenido_TBL_ModuloDocumentosAnexos_Documento" FromRole="TBL_ModuloDocumentosAnexos_Documento" ToRole="TBL_ModuloDocumentosAnexos_Contenido" />
-        </EntityType>
-        <EntityType Name="TBL_ModuloPlanAccion_BancoActividades">
-          <Key>
-            <PropertyRef Name="IdActividad" />
-          </Key>
-          <Property Type="Int32" Name="IdActividad" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="Codigo" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Descripcion" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Type="Boolean" Name="TienePregunta" Nullable="false" />
-          <Property Type="String" Name="Pregunta" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Type="Boolean" Name="TieneAnexo" Nullable="false" />
-          <Property Type="String" Name="TipoRespuesta" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="ValoresRespuesta" MaxLength="350" FixedLength="false" Unicode="false" />
-          <Property Type="Boolean" Name="ComentariosObligatorios" />
-          <Property Type="String" Name="RespuestaObligatoria" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Type="Boolean" Name="IsActive" Nullable="false" />
-          <Property Type="String" Name="CreateBy" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="CreateOn" />
-          <Property Type="String" Name="ModifiedBy" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="ModifiedOn" />
-          <NavigationProperty Name="TBL_ModuloPlanAccion_ConfiguracionActividades" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_BancoActividades" FromRole="TBL_ModuloPlanAccion_BancoActividades" ToRole="TBL_ModuloPlanAccion_ConfiguracionActividades" />
-        </EntityType>
-        <EntityType Name="TBL_ModuloPlanAccion_Categorias">
-          <Key>
-            <PropertyRef Name="IdCategoria" />
-          </Key>
-          <Property Type="Int32" Name="IdCategoria" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="Secuencia" Nullable="false" />
-          <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
-          <Property Type="Int32" Name="NumeroMinimoAct" />
-          <Property Type="Boolean" Name="IsActive" Nullable="false" />
-          <Property Type="String" Name="CreateBy" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="CreateOn" />
-          <Property Type="String" Name="ModifiedBy" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="ModifiedOn" />
-          <NavigationProperty Name="TBL_ModuloPlanAccion_ConfiguracionActividades" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_Categorias" FromRole="TBL_ModuloPlanAccion_Categorias" ToRole="TBL_ModuloPlanAccion_ConfiguracionActividades" />
-        </EntityType>
-        <EntityType Name="TBL_ModuloPlanAccion_ConfiguracionActividades">
-          <Key>
-            <PropertyRef Name="IdConfiguracion" />
-          </Key>
-          <Property Type="Int32" Name="IdConfiguracion" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="IdCategoria" Nullable="false" />
-          <Property Type="Int32" Name="IdActividad" Nullable="false" />
-          <Property Type="Boolean" Name="Oblogatorio" Nullable="false" />
-          <Property Type="Int32" Name="Secuencia" Nullable="false" />
-          <Property Type="Boolean" Name="EsFinal" Nullable="false" />
-          <Property Type="Boolean" Name="Exclusivo" />
-          <Property Type="String" Name="RolExclusivo" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="Int32" Name="NumeroDiasHabiles" />
-          <Property Type="Boolean" Name="PreProgramar" Nullable="false" />
-          <Property Type="Boolean" Name="IsActive" Nullable="false" />
-          <Property Type="String" Name="CreateBy" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="CreateOn" />
-          <Property Type="String" Name="ModifiedBy" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="ModifiedOn" />
-          <NavigationProperty Name="TBL_ModuloPlanAccion_BancoActividades" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_BancoActividades" FromRole="TBL_ModuloPlanAccion_ConfiguracionActividades" ToRole="TBL_ModuloPlanAccion_BancoActividades" />
-          <NavigationProperty Name="TBL_ModuloPlanAccion_Categorias" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_Categorias" FromRole="TBL_ModuloPlanAccion_ConfiguracionActividades" ToRole="TBL_ModuloPlanAccion_Categorias" />
         </EntityType>
         <EntityType Name="TBL_ModuloReclamos_Actividades">
           <Key>
@@ -4977,30 +5149,6 @@
           <Property Type="Boolean" Name="Ejecutar" />
           <NavigationProperty Name="TBL_ModuloWorkFlow_Rutas" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloWorkFlow_ValidacionesSalida_TBL_ModuloWorkFlow_Rutas" FromRole="TBL_ModuloWorkFlow_ValidacionesSalida" ToRole="TBL_ModuloWorkFlow_Rutas" />
         </EntityType>
-        <Association Name="FK_TBL_Admin_Ciudades_TBL_Admin_Departamentos">
-          <End Type="SolutionFramework.MainModel.TBL_Admin_Departamentos" Role="TBL_Admin_Departamentos" Multiplicity="1" />
-          <End Type="SolutionFramework.MainModel.TBL_Admin_Ciudades" Role="TBL_Admin_Ciudades" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_Admin_Departamentos">
-              <PropertyRef Name="IdDepartamento" />
-            </Principal>
-            <Dependent Role="TBL_Admin_Ciudades">
-              <PropertyRef Name="IdDepartamento" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TBL_Admin_Departamentos_TBL_Admin_Paises">
-          <End Type="SolutionFramework.MainModel.TBL_Admin_Paises" Role="TBL_Admin_Paises" Multiplicity="1" />
-          <End Type="SolutionFramework.MainModel.TBL_Admin_Departamentos" Role="TBL_Admin_Departamentos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_Admin_Paises">
-              <PropertyRef Name="IdPais" />
-            </Principal>
-            <Dependent Role="TBL_Admin_Departamentos">
-              <PropertyRef Name="IdPais" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_TBL_Maestra_Propuestas_RutasPorestado_TBL_Maestra_Propuestas_EstadosPropuesta">
           <End Type="SolutionFramework.MainModel.TBL_Admin_EstadosProceso" Role="TBL_Admin_EstadosProceso" Multiplicity="1" />
           <End Type="SolutionFramework.MainModel.TBL_ModuloWorkFlow_Rutas" Role="TBL_ModuloWorkFlow_Rutas" Multiplicity="*" />
@@ -5046,126 +5194,6 @@
             </Principal>
             <Dependent Role="TBL_ModuloWorkFlow_Rutas">
               <PropertyRef Name="SiguienteEstado" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TBL_Admin_ModuleRepository_TBL_Admin_ModuleType">
-          <End Type="SolutionFramework.MainModel.TBL_Admin_ModuleType" Role="TBL_Admin_ModuleType" Multiplicity="1" />
-          <End Type="SolutionFramework.MainModel.TBL_Admin_ModuleRepository" Role="TBL_Admin_ModuleRepository" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_Admin_ModuleType">
-              <PropertyRef Name="IdModuleType" />
-            </Principal>
-            <Dependent Role="TBL_Admin_ModuleRepository">
-              <PropertyRef Name="IdModuleType" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TBL_Maestra_ModuleService_TBL_Maestra_ModuleType">
-          <End Type="SolutionFramework.MainModel.TBL_Admin_ModuleType" Role="TBL_Admin_ModuleType" Multiplicity="1" />
-          <End Type="SolutionFramework.MainModel.TBL_Admin_ModuleService" Role="TBL_Admin_ModuleService" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_Admin_ModuleType">
-              <PropertyRef Name="IdModuleType" />
-            </Principal>
-            <Dependent Role="TBL_Admin_ModuleService">
-              <PropertyRef Name="IdModuleType" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TBL_Maestra_Secciones_TBL_Maestra_ModuleType">
-          <End Type="SolutionFramework.MainModel.TBL_Admin_ModuleType" Role="TBL_Admin_ModuleType" Multiplicity="1" />
-          <End Type="SolutionFramework.MainModel.TBL_Admin_TypeByModules" Role="TBL_Admin_TypeByModules" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_Admin_ModuleType">
-              <PropertyRef Name="IdModuleType" />
-            </Principal>
-            <Dependent Role="TBL_Admin_TypeByModules">
-              <PropertyRef Name="IdModuleType" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TBL_Admin_Secciones_TBL_Admin_Modulos">
-          <End Type="SolutionFramework.MainModel.TBL_Admin_Modulos" Role="TBL_Admin_Modulos" Multiplicity="1" />
-          <End Type="SolutionFramework.MainModel.TBL_Admin_Secciones" Role="TBL_Admin_Secciones" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_Admin_Modulos">
-              <PropertyRef Name="IdModulo" />
-            </Principal>
-            <Dependent Role="TBL_Admin_Secciones">
-              <PropertyRef Name="IdModule" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TBL_Maestra_OpcionesMenu_TBL_Maestra_Modulos">
-          <End Type="SolutionFramework.MainModel.TBL_Admin_Modulos" Role="TBL_Admin_Modulos" Multiplicity="0..1" />
-          <End Type="SolutionFramework.MainModel.TBL_Admin_OpcionesMenu" Role="TBL_Admin_OpcionesMenu" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_Admin_Modulos">
-              <PropertyRef Name="IdModulo" />
-            </Principal>
-            <Dependent Role="TBL_Admin_OpcionesMenu">
-              <PropertyRef Name="AplicationId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TBL_Maestra_Secciones_TBL_Maestra_Modulos">
-          <End Type="SolutionFramework.MainModel.TBL_Admin_Modulos" Role="TBL_Admin_Modulos" Multiplicity="0..1" />
-          <End Type="SolutionFramework.MainModel.TBL_Admin_TypeByModules" Role="TBL_Admin_TypeByModules" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_Admin_Modulos">
-              <PropertyRef Name="IdModulo" />
-            </Principal>
-            <Dependent Role="TBL_Admin_TypeByModules">
-              <PropertyRef Name="IdModulo" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TBL_Maestra_Admin_PaisMoneda_TBL_Maestra_Admin_Monedas">
-          <End Type="SolutionFramework.MainModel.TBL_Admin_Monedas" Role="TBL_Admin_Monedas" Multiplicity="1" />
-          <End Type="SolutionFramework.MainModel.TBL_Admin_PaisMoneda" Role="TBL_Admin_PaisMoneda" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_Admin_Monedas">
-              <PropertyRef Name="IdMoneda" />
-            </Principal>
-            <Dependent Role="TBL_Admin_PaisMoneda">
-              <PropertyRef Name="IdMoneda" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TBL_Maestra_OpcionesMenu_TBL_Maestra_OpcionesMenu">
-          <End Type="SolutionFramework.MainModel.TBL_Admin_OpcionesMenu" Role="TBL_Admin_OpcionesMenu" Multiplicity="0..1" />
-          <End Type="SolutionFramework.MainModel.TBL_Admin_OpcionesMenu" Role="TBL_Admin_OpcionesMenu1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_Admin_OpcionesMenu">
-              <PropertyRef Name="IdOpcionMenu" />
-            </Principal>
-            <Dependent Role="TBL_Admin_OpcionesMenu1">
-              <PropertyRef Name="IdopcionPadre" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TBL_Maestra_Admin_PaisMoneda_TBL_Maestra_Paises">
-          <End Type="SolutionFramework.MainModel.TBL_Admin_Paises" Role="TBL_Admin_Paises" Multiplicity="1" />
-          <End Type="SolutionFramework.MainModel.TBL_Admin_PaisMoneda" Role="TBL_Admin_PaisMoneda" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_Admin_Paises">
-              <PropertyRef Name="IdPais" />
-            </Principal>
-            <Dependent Role="TBL_Admin_PaisMoneda">
-              <PropertyRef Name="IdPais" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TBL_Maestra_Plantillas_TBL_Maestra_Paises">
-          <End Type="SolutionFramework.MainModel.TBL_Admin_Paises" Role="TBL_Admin_Paises" Multiplicity="1" />
-          <End Type="SolutionFramework.MainModel.TBL_Admin_Plantillas" Role="TBL_Admin_Plantillas" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_Admin_Paises">
-              <PropertyRef Name="IdPais" />
-            </Principal>
-            <Dependent Role="TBL_Admin_Plantillas">
-              <PropertyRef Name="IdPais" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -5997,30 +6025,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_BancoActividades">
-          <End Type="SolutionFramework.MainModel.TBL_ModuloPlanAccion_BancoActividades" Role="TBL_ModuloPlanAccion_BancoActividades" Multiplicity="1" />
-          <End Type="SolutionFramework.MainModel.TBL_ModuloPlanAccion_ConfiguracionActividades" Role="TBL_ModuloPlanAccion_ConfiguracionActividades" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_ModuloPlanAccion_BancoActividades">
-              <PropertyRef Name="IdActividad" />
-            </Principal>
-            <Dependent Role="TBL_ModuloPlanAccion_ConfiguracionActividades">
-              <PropertyRef Name="IdActividad" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_Categorias">
-          <End Type="SolutionFramework.MainModel.TBL_ModuloPlanAccion_Categorias" Role="TBL_ModuloPlanAccion_Categorias" Multiplicity="1" />
-          <End Type="SolutionFramework.MainModel.TBL_ModuloPlanAccion_ConfiguracionActividades" Role="TBL_ModuloPlanAccion_ConfiguracionActividades" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_ModuloPlanAccion_Categorias">
-              <PropertyRef Name="IdCategoria" />
-            </Principal>
-            <Dependent Role="TBL_ModuloPlanAccion_ConfiguracionActividades">
-              <PropertyRef Name="IdCategoria" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_TBL_ModuloReclamos_Actividades_TBL_ModuloReclamos_ActividadesReclamo">
           <End Type="SolutionFramework.MainModel.TBL_ModuloReclamos_ActividadesReclamo" Role="TBL_ModuloReclamos_ActividadesReclamo" Multiplicity="1" />
           <End Type="SolutionFramework.MainModel.TBL_ModuloReclamos_Actividades" Role="TBL_ModuloReclamos_Actividades" Multiplicity="*" />
@@ -6301,10 +6305,6 @@
           <End Type="SolutionFramework.MainModel.TBL_Admin_Roles" Role="TBL_Admin_Roles" Multiplicity="*" />
           <End Type="SolutionFramework.MainModel.TBL_Admin_Usuarios" Role="TBL_Admin_Usuarios" Multiplicity="*" />
         </Association>
-        <Association Name="TBL_Admin_RolesPorOpcionMenu">
-          <End Type="SolutionFramework.MainModel.TBL_Admin_OpcionesMenu" Role="TBL_Admin_OpcionesMenu" Multiplicity="*" />
-          <End Type="SolutionFramework.MainModel.TBL_Admin_Roles" Role="TBL_Admin_Roles" Multiplicity="*" />
-        </Association>
         <Association Name="TBL_Admin_UsuariosByRol">
           <End Type="SolutionFramework.MainModel.TBL_Admin_Roles" Role="TBL_Admin_Roles" Multiplicity="*" />
           <End Type="SolutionFramework.MainModel.TBL_Admin_Usuarios" Role="TBL_Admin_Usuarios" Multiplicity="*" />
@@ -6415,27 +6415,6 @@
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TBL_Admin_EstadosProceso">
-            <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_Admin_EstadosProceso">
-              <MappingFragment StoreEntitySet="TBL_Admin_EstadosProceso">
-                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
-                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
-                <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
-                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
-                <ScalarProperty Name="TipoModulo" ColumnName="TipoModulo" />
-                <ScalarProperty Name="ValidarCategorias" ColumnName="ValidarCategorias" />
-                <ScalarProperty Name="RolAdjuntardocumentos" ColumnName="RolAdjuntardocumentos" />
-                <ScalarProperty Name="PermiteAdjuntarAnexos" ColumnName="PermiteAdjuntarAnexos" />
-                <ScalarProperty Name="PermiteProgActividades" ColumnName="PermiteProgActividades" />
-                <ScalarProperty Name="PermiteComentar" ColumnName="PermiteComentar" />
-                <ScalarProperty Name="PermiteEdicionCampos" ColumnName="PermiteEdicionCampos" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-                <ScalarProperty Name="Estado" ColumnName="Estado" />
-                <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -6637,6 +6616,110 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="TBL_Admin_TypeByModules">
+            <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_Admin_TypeByModules">
+              <MappingFragment StoreEntitySet="TBL_Admin_TypeByModules">
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Placeholder" ColumnName="Placeholder" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="MostrarTitulo" ColumnName="MostrarTitulo" />
+                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+                <ScalarProperty Name="IdModuleType" ColumnName="IdModuleType" />
+                <ScalarProperty Name="IdModulo" ColumnName="IdModulo" />
+                <ScalarProperty Name="OID" ColumnName="OID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_ModuloPlanAccion_BancoActividades">
+            <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_ModuloPlanAccion_BancoActividades">
+              <MappingFragment StoreEntitySet="TBL_ModuloPlanAccion_BancoActividades">
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="RespuestaObligatoria" ColumnName="RespuestaObligatoria" />
+                <ScalarProperty Name="ComentariosObligatorios" ColumnName="ComentariosObligatorios" />
+                <ScalarProperty Name="ValoresRespuesta" ColumnName="ValoresRespuesta" />
+                <ScalarProperty Name="TipoRespuesta" ColumnName="TipoRespuesta" />
+                <ScalarProperty Name="TieneAnexo" ColumnName="TieneAnexo" />
+                <ScalarProperty Name="Pregunta" ColumnName="Pregunta" />
+                <ScalarProperty Name="TienePregunta" ColumnName="TienePregunta" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="IdActividad" ColumnName="IdActividad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_ModuloPlanAccion_Categorias">
+            <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_ModuloPlanAccion_Categorias">
+              <MappingFragment StoreEntitySet="TBL_ModuloPlanAccion_Categorias">
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="NumeroMinimoAct" ColumnName="NumeroMinimoAct" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Secuencia" ColumnName="Secuencia" />
+                <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_ModuloPlanAccion_ConfiguracionActividades">
+            <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_ModuloPlanAccion_ConfiguracionActividades">
+              <MappingFragment StoreEntitySet="TBL_ModuloPlanAccion_ConfiguracionActividades">
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="PreProgramar" ColumnName="PreProgramar" />
+                <ScalarProperty Name="NumeroDiasHabiles" ColumnName="NumeroDiasHabiles" />
+                <ScalarProperty Name="RolExclusivo" ColumnName="RolExclusivo" />
+                <ScalarProperty Name="Exclusivo" ColumnName="Exclusivo" />
+                <ScalarProperty Name="EsFinal" ColumnName="EsFinal" />
+                <ScalarProperty Name="Secuencia" ColumnName="Secuencia" />
+                <ScalarProperty Name="Oblogatorio" ColumnName="Oblogatorio" />
+                <ScalarProperty Name="IdActividad" ColumnName="IdActividad" />
+                <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+                <ScalarProperty Name="IdConfiguracion" ColumnName="IdConfiguracion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="TBL_Admin_RolesPorOpcionMenu" TypeName="SolutionFramework.MainModel.TBL_Admin_RolesPorOpcionMenu" StoreEntitySet="TBL_Admin_RolesPorOpcionMenu">
+            <EndProperty Name="TBL_Admin_Roles">
+              <ScalarProperty Name="IdRol" ColumnName="IdRol" />
+            </EndProperty>
+            <EndProperty Name="TBL_Admin_OpcionesMenu">
+              <ScalarProperty Name="IdOpcionMenu" ColumnName="IdopcionMenu" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="TBL_Admin_EstadosProceso">
+            <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_Admin_EstadosProceso">
+              <MappingFragment StoreEntitySet="TBL_Admin_EstadosProceso">
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="TipoModulo" ColumnName="TipoModulo" />
+                <ScalarProperty Name="ValidarCategorias" ColumnName="ValidarCategorias" />
+                <ScalarProperty Name="RolAdjuntardocumentos" ColumnName="RolAdjuntardocumentos" />
+                <ScalarProperty Name="PermiteAdjuntarAnexos" ColumnName="PermiteAdjuntarAnexos" />
+                <ScalarProperty Name="PermiteProgActividades" ColumnName="PermiteProgActividades" />
+                <ScalarProperty Name="PermiteComentar" ColumnName="PermiteComentar" />
+                <ScalarProperty Name="PermiteEdicionCampos" ColumnName="PermiteEdicionCampos" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="TBL_Admin_SistemaNotificaciones">
             <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_Admin_SistemaNotificaciones">
               <MappingFragment StoreEntitySet="TBL_Admin_SistemaNotificaciones">
@@ -6653,24 +6736,6 @@
                 <ScalarProperty Name="Modulo" ColumnName="Modulo" />
                 <ScalarProperty Name="IdUser" ColumnName="IdUser" />
                 <ScalarProperty Name="IdNotificacion" ColumnName="IdNotificacion" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TBL_Admin_TypeByModules">
-            <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_Admin_TypeByModules">
-              <MappingFragment StoreEntitySet="TBL_Admin_TypeByModules">
-                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
-                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
-                <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
-                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Placeholder" ColumnName="Placeholder" />
-                <ScalarProperty Name="position" ColumnName="position" />
-                <ScalarProperty Name="MostrarTitulo" ColumnName="MostrarTitulo" />
-                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
-                <ScalarProperty Name="IdModuleType" ColumnName="IdModuleType" />
-                <ScalarProperty Name="IdModulo" ColumnName="IdModulo" />
-                <ScalarProperty Name="OID" ColumnName="OID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -6875,63 +6940,6 @@
                 <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="IdDocumento" ColumnName="IdDocumento" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TBL_ModuloPlanAccion_BancoActividades">
-            <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_ModuloPlanAccion_BancoActividades">
-              <MappingFragment StoreEntitySet="TBL_ModuloPlanAccion_BancoActividades">
-                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
-                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
-                <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
-                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="RespuestaObligatoria" ColumnName="RespuestaObligatoria" />
-                <ScalarProperty Name="ComentariosObligatorios" ColumnName="ComentariosObligatorios" />
-                <ScalarProperty Name="ValoresRespuesta" ColumnName="ValoresRespuesta" />
-                <ScalarProperty Name="TipoRespuesta" ColumnName="TipoRespuesta" />
-                <ScalarProperty Name="TieneAnexo" ColumnName="TieneAnexo" />
-                <ScalarProperty Name="Pregunta" ColumnName="Pregunta" />
-                <ScalarProperty Name="TienePregunta" ColumnName="TienePregunta" />
-                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
-                <ScalarProperty Name="IdActividad" ColumnName="IdActividad" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TBL_ModuloPlanAccion_Categorias">
-            <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_ModuloPlanAccion_Categorias">
-              <MappingFragment StoreEntitySet="TBL_ModuloPlanAccion_Categorias">
-                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
-                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
-                <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
-                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="NumeroMinimoAct" ColumnName="NumeroMinimoAct" />
-                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-                <ScalarProperty Name="Secuencia" ColumnName="Secuencia" />
-                <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TBL_ModuloPlanAccion_ConfiguracionActividades">
-            <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_ModuloPlanAccion_ConfiguracionActividades">
-              <MappingFragment StoreEntitySet="TBL_ModuloPlanAccion_ConfiguracionActividades">
-                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
-                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
-                <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
-                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="PreProgramar" ColumnName="PreProgramar" />
-                <ScalarProperty Name="NumeroDiasHabiles" ColumnName="NumeroDiasHabiles" />
-                <ScalarProperty Name="RolExclusivo" ColumnName="RolExclusivo" />
-                <ScalarProperty Name="Exclusivo" ColumnName="Exclusivo" />
-                <ScalarProperty Name="EsFinal" ColumnName="EsFinal" />
-                <ScalarProperty Name="Secuencia" ColumnName="Secuencia" />
-                <ScalarProperty Name="Oblogatorio" ColumnName="Oblogatorio" />
-                <ScalarProperty Name="IdActividad" ColumnName="IdActividad" />
-                <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
-                <ScalarProperty Name="IdConfiguracion" ColumnName="IdConfiguracion" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -7385,14 +7393,6 @@
               <ScalarProperty Name="IdRol" ColumnName="IdRol" />
             </EndProperty>
           </AssociationSetMapping>
-          <AssociationSetMapping Name="TBL_Admin_RolesPorOpcionMenu" TypeName="SolutionFramework.MainModel.TBL_Admin_RolesPorOpcionMenu" StoreEntitySet="TBL_Admin_RolesPorOpcionMenu">
-            <EndProperty Name="TBL_Admin_Roles">
-              <ScalarProperty Name="IdRol" ColumnName="IdRol" />
-            </EndProperty>
-            <EndProperty Name="TBL_Admin_OpcionesMenu">
-              <ScalarProperty Name="IdOpcionMenu" ColumnName="IdopcionMenu" />
-            </EndProperty>
-          </AssociationSetMapping>
           <AssociationSetMapping Name="TBL_Admin_UsuariosByRol" TypeName="SolutionFramework.MainModel.TBL_Admin_UsuariosByRol" StoreEntitySet="TBL_Admin_UsuariosByRol">
             <EndProperty Name="TBL_Admin_Usuarios">
               <ScalarProperty Name="IdUser" ColumnName="IdUser" />
@@ -7457,7 +7457,7 @@
               <ScalarProperty Name="IdUser" ColumnName="IdUsuario" />
             </EndProperty>
           </AssociationSetMapping>
-        </EntityContainerMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>
@@ -7484,7 +7484,6 @@
         <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_Departamentos" Width="1.5" PointX="3" PointY="2.625" Height="3.1340950520833246" />
         <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_DescripcionesTipoProducto" Width="1.5" PointX="10.75" PointY="6.75" Height="2.5571907552083246" />
         <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_DiasAnticipados" Width="1.5" PointX="9.75" PointY="10.75" Height="2.5571907552083246" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_EstadosProceso" Width="1.5" PointX="17" PointY="60.375" Height="4.6725065104166674" />
         <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_ModuleRepository" Width="1.5" PointX="3" PointY="45.25" Height="2.557190755208353" />
         <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_ModuleService" Width="1.5" PointX="3" PointY="66.5" Height="2.557190755208353" />
         <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_ModuleType" Width="1.5" PointX="0.75" PointY="56.125" Height="3.9033007812499818" />
@@ -7498,46 +7497,10 @@
         <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_Plantillas" Width="1.5" PointX="3" PointY="9.25" Height="3.134095052083353" />
         <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_Roles" Width="1.5" PointX="5.25" PointY="49.125" Height="3.3263964843749818" />
         <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_Secciones" Width="1.5" PointX="3" PointY="61.25" Height="3.9033007812499889" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_SistemaNotificaciones" Width="1.5" PointX="9.75" PointY="41.125" Height="3.710999348958353" />
         <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_TypeByModules" Width="1.5" PointX="3" PointY="54.25" Height="3.7109993489583246" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_Usuarios" Width="1.5" PointX="7.5" PointY="43.25" Height="15.056783854166667" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_Categorias" Width="1.5" PointX="7.5" PointY="38" Height="3.7109993489583246" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_Documento" Width="1.5" PointX="9.75" PointY="47.625" Height="6.4032194010416674" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_DocumentoAdjunto" Width="1.5" PointX="12" PointY="39.375" Height="2.9417936197916674" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_DocumentoAdjuntoHistorial" Width="1.5" PointX="20.25" PointY="45.375" Height="2.941793619791639" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_Estados" Width="1.5" PointX="7.5" PointY="59.5" Height="3.1340950520833388" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_HistorialDocumento" Width="1.5" PointX="18" PointY="47.625" Height="6.4032194010416106" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_LogCambios" Width="1.5" PointX="23.25" PointY="49.375" Height="2.7494921874999818" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentosAnexos_Carpetas" Width="1.5" PointX="12.5" PointY="54.875" Height="3.9033007812499818" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentosAnexos_Categorias" Width="1.5" PointX="10.25" PointY="59.375" Height="2.7494921874999818" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentosAnexos_Contenido" Width="1.5" PointX="17" PointY="55" Height="3.5186979166666106" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentosAnexos_Documento" Width="1.5" PointX="14.75" PointY="55" Height="3.5186979166666674" />
         <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloPlanAccion_BancoActividades" Width="1.5" PointX="7.75" PointY="1.125" Height="4.0956022135416106" />
         <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloPlanAccion_Categorias" Width="1.5" PointX="7.75" PointY="10.75" Height="2.9417936197916106" />
         <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloPlanAccion_ConfiguracionActividades" Width="1.5" PointX="10" PointY="1" Height="4.287903645833353" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Actividades" Width="1.5" PointX="12.75" PointY="48.125" Height="5.441712239583353" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_ActividadesReclamo" Width="1.5" PointX="12" PointY="64.625" Height="3.5186979166666106" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Alternativas" Width="1.5" PointX="15.75" PointY="48.25" Height="5.0571093749999818" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_AnexosActividad" Width="1.5" PointX="15" PointY="44.125" Height="3.3263964843749818" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_AnexosAlternativa" Width="1.5" PointX="21" PointY="49.125" Height="3.3263964843749818" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_AnexosComentarioRespuesta" Width="1.5" PointX="9.75" PointY="55.125" Height="3.3263964843749818" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_AnexosSolucion" Width="1.5" PointX="12.75" PointY="43.125" Height="3.3263964843749818" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Asesores" Width="1.5" PointX="12" PointY="69.25" Height="2.1725878906249818" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_CategoriaProducto" Width="1.5" PointX="9.75" PointY="77.125" Height="3.134095052083353" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_CategoriasReclamo" Width="1.5" PointX="15" PointY="66.125" Height="4.4802050781249818" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_ComentariosRespuesta" Width="1.5" PointX="21.5" PointY="57.5" Height="4.6725065104166674" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_CostosProducto" Width="1.5" PointX="24.5" PointY="57.375" Height="4.864807942708353" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_LogReclamos" Width="1.5" PointX="21.5" PointY="74.125" Height="2.3648893229166106" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Reclamo" Width="1.5" PointX="19.25" PointY="56.375" Height="20.056621093749982" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Soluciones" Width="1.5" PointX="21.5" PointY="63" Height="3.710999348958353" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_TipoReclamo" Width="1.5" PointX="9.75" PointY="86.25" Height="3.3263964843749818" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Tracking" Width="1.5" PointX="21.5" PointY="81.75" Height="3.5186979166666106" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Unidad" Width="1.5" PointX="9.75" PointY="90.25" Height="3.134095052083353" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_UnidadesZonas" Width="1.5" PointX="12" PointY="72.375" Height="3.9033007812499818" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Zona" Width="1.5" PointX="9.75" PointY="94.125" Height="3.134095052083353" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloWorkFlow_CamposValidacion" Width="1.5" PointX="19.25" PointY="40.25" Height="3.710999348958353" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloWorkFlow_Rutas" Width="1.5" PointX="19.25" PointY="86.625" Height="4.4802050781249818" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloWorkFlow_ValidacionesSalida" Width="1.5" PointX="21.5" PointY="87.25" Height="3.3263964843749818" />
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_Admin_Ciudades_TBL_Admin_Departamentos" >
           <ConnectorPoint PointX="4.5" PointY="4.2208968098958337" />
           <ConnectorPoint PointX="5.25" PointY="4.2208968098958337" />
@@ -7545,27 +7508,6 @@
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_Admin_Departamentos_TBL_Admin_Paises" >
           <ConnectorPoint PointX="2.25" PointY="5.1295475260416623" />
           <ConnectorPoint PointX="3" PointY="5.1295475260416623" />
-        </AssociationConnector>
-        <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_Maestra_Propuestas_RutasPorestado_TBL_Maestra_Propuestas_EstadosPropuesta" >
-          <ConnectorPoint PointX="17.75" PointY="65.047506510416667" />
-          <ConnectorPoint PointX="17.75" PointY="88.865102539062491" />
-          <ConnectorPoint PointX="19.25" PointY="88.865102539062491" />
-        </AssociationConnector>
-        <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Reclamo_TBL_Admin_EstadosProceso" >
-          <ConnectorPoint PointX="18.5" PointY="62.711253255208334" />
-          <ConnectorPoint PointX="19.25" PointY="62.711253255208334" />
-        </AssociationConnector>
-        <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloWorkFlow_CamposValidacion_TBL_Admin_EstadosProceso" >
-          <ConnectorPoint PointX="18.5" PointY="61.511874627604115" />
-          <ConnectorPoint PointX="19" PointY="61.511874627604115" />
-          <ConnectorPoint PointX="19" PointY="56.125" />
-          <ConnectorPoint PointX="19.875" PointY="56.125" />
-          <ConnectorPoint PointX="19.875" PointY="43.960999348958353" />
-        </AssociationConnector>
-        <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloWorkFlow_Rutas_TBL_Admin_EstadosProceso" >
-          <ConnectorPoint PointX="18.1562525" PointY="65.047506510416667" />
-          <ConnectorPoint PointX="18.1562525" PointY="87.7137987695312" />
-          <ConnectorPoint PointX="19.25" PointY="87.7137987695312" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_Admin_ModuleRepository_TBL_Admin_ModuleType" >
           <ConnectorPoint PointX="2.2500000000000013" PointY="56.125" />
@@ -7624,6 +7566,81 @@
           <ConnectorPoint PointX="1.5" PointY="10.817047526041677" />
           <ConnectorPoint PointX="3" PointY="10.817047526041677" />
         </AssociationConnector>
+        <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_BancoActividades" >
+          <ConnectorPoint PointX="9.25" PointY="3.1728011067708053" />
+          <ConnectorPoint PointX="10" PointY="3.1728011067708053" />
+        </AssociationConnector>
+        <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_Categorias" >
+          <ConnectorPoint PointX="9.25" PointY="12.220896809895805" />
+          <ConnectorPoint PointX="9.5" PointY="12.220896809895805" />
+          <ConnectorPoint PointX="9.5" PointY="10.5" />
+          <ConnectorPoint PointX="10.5" PointY="10.5" />
+          <ConnectorPoint PointX="10.5" PointY="5.662903645833353" />
+          <ConnectorPoint PointX="10.75" PointY="5.662903645833353" />
+          <ConnectorPoint PointX="10.75" PointY="5.287903645833353" />
+        </AssociationConnector>
+        <AssociationConnector Association="SolutionFramework.MainModel.TBL_Admin_RolesPorOpcionMenu" >
+          <ConnectorPoint PointX="4.5" PointY="50.7881982421875" />
+          <ConnectorPoint PointX="5.25" PointY="50.7881982421875" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_EstadosProceso" Width="1.5" PointX="17" PointY="60.375" Height="4.6725065104166674" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_SistemaNotificaciones" Width="1.5" PointX="9.75" PointY="41.125" Height="3.710999348958353" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_Usuarios" Width="1.5" PointX="7.5" PointY="43.25" Height="15.056783854166667" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_Categorias" Width="1.5" PointX="7.5" PointY="38" Height="3.7109993489583246" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_Documento" Width="1.5" PointX="9.75" PointY="47.625" Height="6.4032194010416674" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_DocumentoAdjunto" Width="1.5" PointX="12" PointY="39.375" Height="2.9417936197916674" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_DocumentoAdjuntoHistorial" Width="1.5" PointX="20.25" PointY="45.375" Height="2.9417936197916674" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_Estados" Width="1.5" PointX="7.5" PointY="59.5" Height="3.1340950520833246" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_HistorialDocumento" Width="1.5" PointX="18" PointY="47.625" Height="6.4032194010416674" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentos_LogCambios" Width="1.5" PointX="23.25" PointY="49.375" Height="2.7494921874999818" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentosAnexos_Carpetas" Width="1.5" PointX="12.5" PointY="54.875" Height="3.9033007812499818" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentosAnexos_Categorias" Width="1.5" PointX="10.25" PointY="59.375" Height="2.7494921874999818" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentosAnexos_Contenido" Width="1.5" PointX="17" PointY="55" Height="3.5186979166666674" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloDocumentosAnexos_Documento" Width="1.5" PointX="14.75" PointY="55" Height="3.5186979166666674" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Actividades" Width="1.5" PointX="12.75" PointY="48.125" Height="5.441712239583353" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_ActividadesReclamo" Width="1.5" PointX="12" PointY="64.625" Height="3.5186979166666674" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Alternativas" Width="1.5" PointX="15.75" PointY="48.25" Height="5.0571093749999818" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_AnexosActividad" Width="1.5" PointX="15" PointY="44.125" Height="3.3263964843749818" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_AnexosAlternativa" Width="1.5" PointX="21" PointY="49.125" Height="3.3263964843749818" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_AnexosComentarioRespuesta" Width="1.5" PointX="9.75" PointY="55.125" Height="3.3263964843749818" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_AnexosSolucion" Width="1.5" PointX="12.75" PointY="43.125" Height="3.3263964843749818" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Asesores" Width="1.5" PointX="12" PointY="69.25" Height="2.1725878906249818" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_CategoriaProducto" Width="1.5" PointX="9.75" PointY="77.125" Height="3.1340950520833246" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_CategoriasReclamo" Width="1.5" PointX="15" PointY="66.125" Height="4.4802050781249818" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_ComentariosRespuesta" Width="1.5" PointX="21.5" PointY="57.5" Height="4.6725065104166674" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_CostosProducto" Width="1.5" PointX="24.5" PointY="57.375" Height="4.8648079427083388" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_LogReclamos" Width="1.5" PointX="21.5" PointY="74.125" Height="2.3648893229166106" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Reclamo" Width="1.5" PointX="19.25" PointY="56.375" Height="20.056621093749982" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Soluciones" Width="1.5" PointX="21.5" PointY="63" Height="3.710999348958353" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_TipoReclamo" Width="1.5" PointX="9.75" PointY="86.25" Height="3.3263964843749818" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Tracking" Width="1.5" PointX="21.5" PointY="81.75" Height="3.5186979166666106" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Unidad" Width="1.5" PointX="9.75" PointY="90.25" Height="3.134095052083353" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_UnidadesZonas" Width="1.5" PointX="12" PointY="72.375" Height="3.9033007812499818" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Zona" Width="1.5" PointX="9.75" PointY="94.125" Height="3.134095052083353" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloWorkFlow_CamposValidacion" Width="1.5" PointX="19.25" PointY="40.125" Height="3.710999348958353" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloWorkFlow_Rutas" Width="1.5" PointX="19.25" PointY="86.625" Height="4.4802050781249818" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloWorkFlow_ValidacionesSalida" Width="1.5" PointX="21.5" PointY="87.25" Height="3.3263964843749818" />
+        <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_Maestra_Propuestas_RutasPorestado_TBL_Maestra_Propuestas_EstadosPropuesta" >
+          <ConnectorPoint PointX="17.75" PointY="65.047506510416667" />
+          <ConnectorPoint PointX="17.75" PointY="88.865102539062491" />
+          <ConnectorPoint PointX="19.25" PointY="88.865102539062491" />
+        </AssociationConnector>
+        <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Reclamo_TBL_Admin_EstadosProceso" >
+          <ConnectorPoint PointX="18.5" PointY="62.711253255208334" />
+          <ConnectorPoint PointX="19.25" PointY="62.711253255208334" />
+        </AssociationConnector>
+        <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloWorkFlow_CamposValidacion_TBL_Admin_EstadosProceso" >
+          <ConnectorPoint PointX="18.5" PointY="61.511874627604172" />
+          <ConnectorPoint PointX="19" PointY="61.511874627604172" />
+          <ConnectorPoint PointX="19" PointY="56.125" />
+          <ConnectorPoint PointX="19.875" PointY="56.125" />
+          <ConnectorPoint PointX="19.875" PointY="43.835999348958353" />
+        </AssociationConnector>
+        <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloWorkFlow_Rutas_TBL_Admin_EstadosProceso" >
+          <ConnectorPoint PointX="18.1562525" PointY="65.047506510416667" />
+          <ConnectorPoint PointX="18.1562525" PointY="87.7137987695312" />
+          <ConnectorPoint PointX="19.25" PointY="87.7137987695312" />
+        </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_Admin_SistemaNotificaciones_TBL_Admin_Usuarios" >
           <ConnectorPoint PointX="9" PointY="44.042999674479177" />
           <ConnectorPoint PointX="9.2916666666666661" PointY="44.042999674479177" />
@@ -7653,79 +7670,85 @@
           <ConnectorPoint PointX="9.75" PointY="52.489914550781251" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_Admin_Usuarios" >
-          <ConnectorPoint PointX="9" PointY="54.420360200520804" />
-          <ConnectorPoint PointX="9.3541666666666661" PointY="54.420360200520804" />
-          <ConnectorPoint PointX="9.5208333333333339" PointY="54.420360200520804" />
-          <ConnectorPoint PointX="11.994789166666665" PointY="54.420360200520804" />
-          <ConnectorPoint PointX="12.302083333333334" PointY="54.420360200520804" />
-          <ConnectorPoint PointX="14.010415416666666" PointY="54.420360200520804" />
-          <ConnectorPoint PointX="14.302084583333334" PointY="54.420360200520804" />
-          <ConnectorPoint PointX="16.729169166666669" PointY="54.420360200520804" />
-          <ConnectorPoint PointX="16.927088333333334" PointY="54.420360200520804" />
-          <ConnectorPoint PointX="17.524525867187474" PointY="54.420360200520804" />
-          <ConnectorPoint PointX="17.691192533854139" PointY="54.420360200520804" />
-          <ConnectorPoint PointX="18.557289166666667" PointY="54.420360200520804" />
-          <ConnectorPoint PointX="18.723955833333331" PointY="54.420360200520804" />
-          <ConnectorPoint PointX="18.78125" PointY="54.420360200520804" />
-          <ConnectorPoint PointX="18.78125" PointY="54.028219401041611" />
+          <ConnectorPoint PointX="9" PointY="54.420360200520832" />
+          <ConnectorPoint PointX="9.3541666666666661" PointY="54.420360200520832" />
+          <ConnectorPoint PointX="9.5208333333333339" PointY="54.420360200520832" />
+          <ConnectorPoint PointX="11.994789166666665" PointY="54.420360200520832" />
+          <ConnectorPoint PointX="12.302083333333334" PointY="54.420360200520832" />
+          <ConnectorPoint PointX="14.010415416666666" PointY="54.420360200520832" />
+          <ConnectorPoint PointX="14.302084583333334" PointY="54.420360200520832" />
+          <ConnectorPoint PointX="14.416666666666666" PointY="54.420360200520832" />
+          <ConnectorPoint PointX="14.583333333333334" PointY="54.420360200520832" />
+          <ConnectorPoint PointX="16.729169166666669" PointY="54.420360200520832" />
+          <ConnectorPoint PointX="16.927088333333334" PointY="54.420360200520832" />
+          <ConnectorPoint PointX="17.524525867187503" PointY="54.420360200520832" />
+          <ConnectorPoint PointX="17.691192533854167" PointY="54.420360200520832" />
+          <ConnectorPoint PointX="18.557289166666667" PointY="54.420360200520832" />
+          <ConnectorPoint PointX="18.723955833333331" PointY="54.420360200520832" />
+          <ConnectorPoint PointX="18.78125" PointY="54.420360200520832" />
+          <ConnectorPoint PointX="18.78125" PointY="54.028219401041667" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_Admin_Usuarios1" >
-          <ConnectorPoint PointX="9" PointY="54.647682600260339" />
-          <ConnectorPoint PointX="9.2916666666666661" PointY="54.647682600260339" />
-          <ConnectorPoint PointX="9.5208333333333339" PointY="54.647682600260339" />
-          <ConnectorPoint PointX="11.994789166666665" PointY="54.647682600260339" />
-          <ConnectorPoint PointX="12.302083333333334" PointY="54.647682600260339" />
-          <ConnectorPoint PointX="14.010415416666666" PointY="54.647682600260339" />
-          <ConnectorPoint PointX="14.302084583333334" PointY="54.647682600260339" />
-          <ConnectorPoint PointX="16.760421666666669" PointY="54.647682600260339" />
-          <ConnectorPoint PointX="16.927088333333334" PointY="54.647682600260339" />
-          <ConnectorPoint PointX="19.09375" PointY="54.647682600260339" />
-          <ConnectorPoint PointX="19.09375" PointY="54.028219401041611" />
+          <ConnectorPoint PointX="9" PointY="54.647682600260353" />
+          <ConnectorPoint PointX="9.2916666666666661" PointY="54.647682600260353" />
+          <ConnectorPoint PointX="9.5208333333333339" PointY="54.647682600260353" />
+          <ConnectorPoint PointX="11.994789166666665" PointY="54.647682600260353" />
+          <ConnectorPoint PointX="12.302083333333334" PointY="54.647682600260353" />
+          <ConnectorPoint PointX="14.010415416666666" PointY="54.647682600260353" />
+          <ConnectorPoint PointX="14.302084583333334" PointY="54.647682600260353" />
+          <ConnectorPoint PointX="14.416666666666666" PointY="54.647682600260353" />
+          <ConnectorPoint PointX="14.583333333333334" PointY="54.647682600260353" />
+          <ConnectorPoint PointX="16.760421666666669" PointY="54.647682600260353" />
+          <ConnectorPoint PointX="16.927088333333334" PointY="54.647682600260353" />
+          <ConnectorPoint PointX="19.09375" PointY="54.647682600260353" />
+          <ConnectorPoint PointX="19.09375" PointY="54.028219401041667" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_Admin_Usuarios2" >
-          <ConnectorPoint PointX="9" PointY="54.534021400390571" />
-          <ConnectorPoint PointX="9.3541666666666661" PointY="54.534021400390571" />
-          <ConnectorPoint PointX="9.5208333333333339" PointY="54.534021400390571" />
-          <ConnectorPoint PointX="11.994789166666665" PointY="54.534021400390571" />
-          <ConnectorPoint PointX="12.302083333333334" PointY="54.534021400390571" />
-          <ConnectorPoint PointX="14.010415416666666" PointY="54.534021400390571" />
-          <ConnectorPoint PointX="14.302084583333334" PointY="54.534021400390571" />
-          <ConnectorPoint PointX="16.760421666666669" PointY="54.534021400390571" />
-          <ConnectorPoint PointX="16.927088333333334" PointY="54.534021400390571" />
-          <ConnectorPoint PointX="18.6406225" PointY="54.534021400390571" />
-          <ConnectorPoint PointX="18.6406225" PointY="54.028219401041611" />
+          <ConnectorPoint PointX="9" PointY="54.534021400390593" />
+          <ConnectorPoint PointX="9.3541666666666661" PointY="54.534021400390593" />
+          <ConnectorPoint PointX="9.5208333333333339" PointY="54.534021400390593" />
+          <ConnectorPoint PointX="11.994789166666665" PointY="54.534021400390593" />
+          <ConnectorPoint PointX="12.302083333333334" PointY="54.534021400390593" />
+          <ConnectorPoint PointX="14.010415416666666" PointY="54.534021400390593" />
+          <ConnectorPoint PointX="14.302084583333334" PointY="54.534021400390593" />
+          <ConnectorPoint PointX="14.416666666666666" PointY="54.534021400390593" />
+          <ConnectorPoint PointX="14.583333333333334" PointY="54.534021400390593" />
+          <ConnectorPoint PointX="16.760421666666669" PointY="54.534021400390593" />
+          <ConnectorPoint PointX="16.927088333333334" PointY="54.534021400390593" />
+          <ConnectorPoint PointX="18.6406225" PointY="54.534021400390593" />
+          <ConnectorPoint PointX="18.6406225" PointY="54.028219401041667" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Actividades_TBL_Admin_Usuarios_CreateBy" >
-          <ConnectorPoint PointX="9" PointY="54.2242873007813" />
-          <ConnectorPoint PointX="9.1666666666666661" PointY="54.2242873007813" />
-          <ConnectorPoint PointX="9.3333333333333339" PointY="54.2242873007813" />
-          <ConnectorPoint PointX="9.3541666666666661" PointY="54.2242873007813" />
-          <ConnectorPoint PointX="9.5208333333333339" PointY="54.2242873007813" />
-          <ConnectorPoint PointX="11.994789166666665" PointY="54.2242873007813" />
-          <ConnectorPoint PointX="12.302083333333334" PointY="54.2242873007813" />
-          <ConnectorPoint PointX="14.15625" PointY="54.2242873007813" />
+          <ConnectorPoint PointX="9" PointY="54.224287300781313" />
+          <ConnectorPoint PointX="9.1666666666666661" PointY="54.224287300781313" />
+          <ConnectorPoint PointX="9.3333333333333339" PointY="54.224287300781313" />
+          <ConnectorPoint PointX="9.3541666666666661" PointY="54.224287300781313" />
+          <ConnectorPoint PointX="9.5208333333333339" PointY="54.224287300781313" />
+          <ConnectorPoint PointX="11.994789166666665" PointY="54.224287300781313" />
+          <ConnectorPoint PointX="12.302083333333334" PointY="54.224287300781313" />
+          <ConnectorPoint PointX="14.15625" PointY="54.224287300781313" />
           <ConnectorPoint PointX="14.15625" PointY="53.566712239583353" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Actividades_TBL_Admin_Usuarios_ModifiedBy" >
-          <ConnectorPoint PointX="9" PointY="54.761343800130106" />
-          <ConnectorPoint PointX="9.2916666666666661" PointY="54.761343800130106" />
-          <ConnectorPoint PointX="9.5208333333333339" PointY="54.761343800130106" />
-          <ConnectorPoint PointX="11.994789166666665" PointY="54.761343800130106" />
-          <ConnectorPoint PointX="12.302083333333334" PointY="54.761343800130106" />
-          <ConnectorPoint PointX="14.1249975" PointY="54.761343800130106" />
+          <ConnectorPoint PointX="9" PointY="54.761343800130113" />
+          <ConnectorPoint PointX="9.2916666666666661" PointY="54.761343800130113" />
+          <ConnectorPoint PointX="9.5208333333333339" PointY="54.761343800130113" />
+          <ConnectorPoint PointX="11.994789166666665" PointY="54.761343800130113" />
+          <ConnectorPoint PointX="12.302083333333334" PointY="54.761343800130113" />
+          <ConnectorPoint PointX="14.1249975" PointY="54.761343800130113" />
           <ConnectorPoint PointX="14.1249975" PointY="53.566712239583353" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Actividades_TBL_Admin_Usuarios_UsuarioAsignacion" >
-          <ConnectorPoint PointX="9" PointY="54.126250850911546" />
-          <ConnectorPoint PointX="9.1666666666666661" PointY="54.126250850911546" />
-          <ConnectorPoint PointX="9.3333333333333339" PointY="54.126250850911546" />
-          <ConnectorPoint PointX="9.3541666666666661" PointY="54.126250850911546" />
-          <ConnectorPoint PointX="9.5833333333333339" PointY="54.126250850911546" />
-          <ConnectorPoint PointX="11.994789166666665" PointY="54.126250850911546" />
-          <ConnectorPoint PointX="12.302083333333334" PointY="54.126250850911546" />
-          <ConnectorPoint PointX="14.010415416666666" PointY="54.126250850911546" />
-          <ConnectorPoint PointX="14.177082083333334" PointY="54.126250850911546" />
-          <ConnectorPoint PointX="14.1875025" PointY="54.126250850911546" />
+          <ConnectorPoint PointX="9" PointY="54.126250850911553" />
+          <ConnectorPoint PointX="9.1666666666666661" PointY="54.126250850911553" />
+          <ConnectorPoint PointX="9.3333333333333339" PointY="54.126250850911553" />
+          <ConnectorPoint PointX="9.3541666666666661" PointY="54.126250850911553" />
+          <ConnectorPoint PointX="9.5833333333333339" PointY="54.126250850911553" />
+          <ConnectorPoint PointX="11.994789166666665" PointY="54.126250850911553" />
+          <ConnectorPoint PointX="12.302083333333334" PointY="54.126250850911553" />
+          <ConnectorPoint PointX="14.010415416666666" PointY="54.126250850911553" />
+          <ConnectorPoint PointX="14.177082083333334" PointY="54.126250850911553" />
+          <ConnectorPoint PointX="14.1875025" PointY="54.126250850911553" />
           <ConnectorPoint PointX="14.1875025" PointY="53.566712239583353" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_ActividadesReclamo_TBL_Admin_Usuarios_CreateBy" >
@@ -7747,38 +7770,44 @@
           <ConnectorPoint PointX="12.0781225" PointY="64.625" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Alternativas_TBL_Admin_Usuarios_CreateBy" >
-          <ConnectorPoint PointX="9" PointY="54.322323750651051" />
-          <ConnectorPoint PointX="9.3541666666666661" PointY="54.322323750651051" />
-          <ConnectorPoint PointX="9.5208333333333339" PointY="54.322323750651051" />
-          <ConnectorPoint PointX="11.994789166666665" PointY="54.322323750651051" />
-          <ConnectorPoint PointX="12.302083333333334" PointY="54.322323750651051" />
-          <ConnectorPoint PointX="14.010415416666666" PointY="54.322323750651051" />
-          <ConnectorPoint PointX="14.302084583333334" PointY="54.322323750651051" />
-          <ConnectorPoint PointX="16.354164166666667" PointY="54.322323750651051" />
-          <ConnectorPoint PointX="16.520830833333331" PointY="54.322323750651051" />
-          <ConnectorPoint PointX="16.625" PointY="54.322323750651051" />
+          <ConnectorPoint PointX="9" PointY="54.322323750651073" />
+          <ConnectorPoint PointX="9.3541666666666661" PointY="54.322323750651073" />
+          <ConnectorPoint PointX="9.5208333333333339" PointY="54.322323750651073" />
+          <ConnectorPoint PointX="11.994789166666665" PointY="54.322323750651073" />
+          <ConnectorPoint PointX="12.302083333333334" PointY="54.322323750651073" />
+          <ConnectorPoint PointX="14.010415416666666" PointY="54.322323750651073" />
+          <ConnectorPoint PointX="14.302084583333334" PointY="54.322323750651073" />
+          <ConnectorPoint PointX="14.416666666666666" PointY="54.322323750651073" />
+          <ConnectorPoint PointX="14.583333333333334" PointY="54.322323750651073" />
+          <ConnectorPoint PointX="16.354164166666667" PointY="54.322323750651073" />
+          <ConnectorPoint PointX="16.520830833333331" PointY="54.322323750651073" />
+          <ConnectorPoint PointX="16.625" PointY="54.322323750651073" />
           <ConnectorPoint PointX="16.625" PointY="53.307109374999982" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Alternativas_TBL_Admin_Usuarios_ModifiedBy" >
-          <ConnectorPoint PointX="9" PointY="54.445938300455751" />
-          <ConnectorPoint PointX="9.3541666666666661" PointY="54.445938300455751" />
-          <ConnectorPoint PointX="9.5208333333333339" PointY="54.445938300455751" />
-          <ConnectorPoint PointX="11.994789166666665" PointY="54.445938300455751" />
-          <ConnectorPoint PointX="12.302083333333334" PointY="54.445938300455751" />
-          <ConnectorPoint PointX="14.010415416666666" PointY="54.445938300455751" />
-          <ConnectorPoint PointX="14.302084583333334" PointY="54.445938300455751" />
-          <ConnectorPoint PointX="16.4374975" PointY="54.445938300455751" />
+          <ConnectorPoint PointX="9" PointY="54.445938300455779" />
+          <ConnectorPoint PointX="9.3541666666666661" PointY="54.445938300455779" />
+          <ConnectorPoint PointX="9.5208333333333339" PointY="54.445938300455779" />
+          <ConnectorPoint PointX="11.994789166666665" PointY="54.445938300455779" />
+          <ConnectorPoint PointX="12.302083333333334" PointY="54.445938300455779" />
+          <ConnectorPoint PointX="14.010415416666666" PointY="54.445938300455779" />
+          <ConnectorPoint PointX="14.302084583333334" PointY="54.445938300455779" />
+          <ConnectorPoint PointX="14.416666666666666" PointY="54.445938300455779" />
+          <ConnectorPoint PointX="14.583333333333334" PointY="54.445938300455779" />
+          <ConnectorPoint PointX="16.4374975" PointY="54.445938300455779" />
           <ConnectorPoint PointX="16.4374975" PointY="53.307109374999982" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Alternativas_TBL_Admin_Usuarios_Responsable" >
-          <ConnectorPoint PointX="9" PointY="54.559599500325518" />
-          <ConnectorPoint PointX="9.3541666666666661" PointY="54.559599500325518" />
-          <ConnectorPoint PointX="9.5208333333333339" PointY="54.559599500325518" />
-          <ConnectorPoint PointX="11.994789166666665" PointY="54.559599500325518" />
-          <ConnectorPoint PointX="12.302083333333334" PointY="54.559599500325518" />
-          <ConnectorPoint PointX="14.010415416666666" PointY="54.559599500325518" />
-          <ConnectorPoint PointX="14.302084583333334" PointY="54.559599500325518" />
-          <ConnectorPoint PointX="16.8125025" PointY="54.559599500325518" />
+          <ConnectorPoint PointX="9" PointY="54.559599500325533" />
+          <ConnectorPoint PointX="9.3541666666666661" PointY="54.559599500325533" />
+          <ConnectorPoint PointX="9.5208333333333339" PointY="54.559599500325533" />
+          <ConnectorPoint PointX="11.994789166666665" PointY="54.559599500325533" />
+          <ConnectorPoint PointX="12.302083333333334" PointY="54.559599500325533" />
+          <ConnectorPoint PointX="14.010415416666666" PointY="54.559599500325533" />
+          <ConnectorPoint PointX="14.302084583333334" PointY="54.559599500325533" />
+          <ConnectorPoint PointX="14.416666666666666" PointY="54.559599500325533" />
+          <ConnectorPoint PointX="14.583333333333334" PointY="54.559599500325533" />
+          <ConnectorPoint PointX="16.8125025" PointY="54.559599500325533" />
           <ConnectorPoint PointX="16.8125025" PointY="53.307109374999982" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_AnexosActividad_TBL_Admin_Usuarios_CreateBy" >
@@ -7789,6 +7818,8 @@
           <ConnectorPoint PointX="9.7395833333333339" PointY="46.713547363281236" />
           <ConnectorPoint PointX="12.369791666666666" PointY="46.713547363281236" />
           <ConnectorPoint PointX="12.536458333333334" PointY="46.713547363281236" />
+          <ConnectorPoint PointX="13.416666666666666" PointY="46.713547363281236" />
+          <ConnectorPoint PointX="13.583333333333334" PointY="46.713547363281236" />
           <ConnectorPoint PointX="15" PointY="46.713547363281236" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_AnexosActividad_TBL_Admin_Usuarios_ModifiedBy" >
@@ -7799,25 +7830,29 @@
           <ConnectorPoint PointX="9.7395833333333339" PointY="46.551221923828109" />
           <ConnectorPoint PointX="12.369791666666666" PointY="46.551221923828109" />
           <ConnectorPoint PointX="12.536458333333334" PointY="46.551221923828109" />
+          <ConnectorPoint PointX="13.416666666666666" PointY="46.551221923828109" />
+          <ConnectorPoint PointX="13.583333333333334" PointY="46.551221923828109" />
           <ConnectorPoint PointX="15" PointY="46.551221923828109" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_AnexosAlternativa_TBL_Admin_Usuarios_CreateBy" >
-          <ConnectorPoint PointX="9" PointY="54.673260700195286" />
-          <ConnectorPoint PointX="9.2916666666666661" PointY="54.673260700195286" />
-          <ConnectorPoint PointX="9.5208333333333339" PointY="54.673260700195286" />
-          <ConnectorPoint PointX="11.994789166666665" PointY="54.673260700195286" />
-          <ConnectorPoint PointX="12.302083333333334" PointY="54.673260700195286" />
-          <ConnectorPoint PointX="14.010415416666666" PointY="54.673260700195286" />
-          <ConnectorPoint PointX="14.302084583333334" PointY="54.673260700195286" />
-          <ConnectorPoint PointX="16.760421666666669" PointY="54.673260700195286" />
-          <ConnectorPoint PointX="16.927088333333334" PointY="54.673260700195286" />
-          <ConnectorPoint PointX="19.791666666666668" PointY="54.673260700195286" />
-          <ConnectorPoint PointX="19.958333333333332" PointY="54.673260700195286" />
-          <ConnectorPoint PointX="20.791666666666668" PointY="54.673260700195286" />
-          <ConnectorPoint PointX="20.958333333333332" PointY="54.673260700195286" />
-          <ConnectorPoint PointX="20.994789166666667" PointY="54.673260700195286" />
-          <ConnectorPoint PointX="21.161455833333331" PointY="54.673260700195286" />
-          <ConnectorPoint PointX="21.21875" PointY="54.673260700195286" />
+          <ConnectorPoint PointX="9" PointY="54.6732607001953" />
+          <ConnectorPoint PointX="9.2916666666666661" PointY="54.6732607001953" />
+          <ConnectorPoint PointX="9.5208333333333339" PointY="54.6732607001953" />
+          <ConnectorPoint PointX="11.994789166666665" PointY="54.6732607001953" />
+          <ConnectorPoint PointX="12.302083333333334" PointY="54.6732607001953" />
+          <ConnectorPoint PointX="14.010415416666666" PointY="54.6732607001953" />
+          <ConnectorPoint PointX="14.302084583333334" PointY="54.6732607001953" />
+          <ConnectorPoint PointX="14.416666666666666" PointY="54.6732607001953" />
+          <ConnectorPoint PointX="14.583333333333334" PointY="54.6732607001953" />
+          <ConnectorPoint PointX="16.760421666666669" PointY="54.6732607001953" />
+          <ConnectorPoint PointX="16.927088333333334" PointY="54.6732607001953" />
+          <ConnectorPoint PointX="19.791666666666668" PointY="54.6732607001953" />
+          <ConnectorPoint PointX="19.958333333333332" PointY="54.6732607001953" />
+          <ConnectorPoint PointX="20.791666666666668" PointY="54.6732607001953" />
+          <ConnectorPoint PointX="20.958333333333332" PointY="54.6732607001953" />
+          <ConnectorPoint PointX="20.994789166666667" PointY="54.6732607001953" />
+          <ConnectorPoint PointX="21.161455833333331" PointY="54.6732607001953" />
+          <ConnectorPoint PointX="21.21875" PointY="54.6732607001953" />
           <ConnectorPoint PointX="21.21875" PointY="52.451396484374982" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_AnexosAlternativa_TBL_Admin_Usuarios_ModifiedBy" >
@@ -7828,6 +7863,8 @@
           <ConnectorPoint PointX="12.302083333333334" PointY="54.786921900065053" />
           <ConnectorPoint PointX="14.010415416666666" PointY="54.786921900065053" />
           <ConnectorPoint PointX="14.302084583333334" PointY="54.786921900065053" />
+          <ConnectorPoint PointX="14.416666666666666" PointY="54.786921900065053" />
+          <ConnectorPoint PointX="14.583333333333334" PointY="54.786921900065053" />
           <ConnectorPoint PointX="16.760421666666669" PointY="54.786921900065053" />
           <ConnectorPoint PointX="16.927088333333334" PointY="54.786921900065053" />
           <ConnectorPoint PointX="19.791666666666668" PointY="54.786921900065053" />
@@ -7876,8 +7913,8 @@
           <ConnectorPoint PointX="9.3160744349011217" PointY="58.673627519837012" />
           <ConnectorPoint PointX="9.4964255650988783" PointY="58.853978650034776" />
           <ConnectorPoint PointX="9.59375" PointY="58.9513030849359" />
-          <ConnectorPoint PointX="9.59375" PointY="78.692047526041677" />
-          <ConnectorPoint PointX="9.75" PointY="78.692047526041677" />
+          <ConnectorPoint PointX="9.59375" PointY="78.692047526041662" />
+          <ConnectorPoint PointX="9.75" PointY="78.692047526041662" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_CategoriaProducto_TBL_Admin_Usuarios_ModifiedBy" >
           <ConnectorPoint PointX="8.9550000000000018" PointY="58.306783854166667" />
@@ -7886,8 +7923,8 @@
           <ConnectorPoint PointX="9.3160744349011217" PointY="58.667858289067787" />
           <ConnectorPoint PointX="9.4964255650988783" PointY="58.848209419265551" />
           <ConnectorPoint PointX="9.65625" PointY="59.008033854166669" />
-          <ConnectorPoint PointX="9.65625" PointY="78.692047526041677" />
-          <ConnectorPoint PointX="9.75" PointY="78.692047526041677" />
+          <ConnectorPoint PointX="9.65625" PointY="78.692047526041662" />
+          <ConnectorPoint PointX="9.75" PointY="78.692047526041662" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_CategoriasReclamo_TBL_Admin_Usuarios" >
           <ConnectorPoint PointX="8.206632615384617" PointY="58.306783854166667" />
@@ -7895,23 +7932,23 @@
           <ConnectorPoint PointX="9.0416666666666661" PointY="59.25" />
           <ConnectorPoint PointX="9.2083333333333339" PointY="59.25" />
           <ConnectorPoint PointX="9.25" PointY="59.25" />
-          <ConnectorPoint PointX="9.25" PointY="68.6968489583333" />
-          <ConnectorPoint PointX="9.3229166666666661" PointY="68.6968489583333" />
-          <ConnectorPoint PointX="10.302083333333334" PointY="68.6968489583333" />
-          <ConnectorPoint PointX="11.541666666666666" PointY="68.6968489583333" />
-          <ConnectorPoint PointX="11.708333333333334" PointY="68.6968489583333" />
-          <ConnectorPoint PointX="15" PointY="68.6968489583333" />
+          <ConnectorPoint PointX="9.25" PointY="68.696848958333334" />
+          <ConnectorPoint PointX="9.3229166666666661" PointY="68.696848958333334" />
+          <ConnectorPoint PointX="10.302083333333334" PointY="68.696848958333334" />
+          <ConnectorPoint PointX="11.541666666666666" PointY="68.696848958333334" />
+          <ConnectorPoint PointX="11.708333333333334" PointY="68.696848958333334" />
+          <ConnectorPoint PointX="15" PointY="68.696848958333334" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_CategoriasReclamo_TBL_Admin_Usuarios1" >
           <ConnectorPoint PointX="8.5912009230769257" PointY="58.306783854166667" />
           <ConnectorPoint PointX="8.5912009230769257" PointY="59" />
           <ConnectorPoint PointX="9.125" PointY="59" />
-          <ConnectorPoint PointX="9.125" PointY="68.420270937499907" />
-          <ConnectorPoint PointX="9.1666666666666661" PointY="68.420270937499907" />
-          <ConnectorPoint PointX="10.302083333333334" PointY="68.420270937499907" />
-          <ConnectorPoint PointX="11.541666666666666" PointY="68.420270937499907" />
-          <ConnectorPoint PointX="11.708333333333334" PointY="68.420270937499907" />
-          <ConnectorPoint PointX="15" PointY="68.420270937499907" />
+          <ConnectorPoint PointX="9.125" PointY="68.42027093749995" />
+          <ConnectorPoint PointX="9.1666666666666661" PointY="68.42027093749995" />
+          <ConnectorPoint PointX="10.302083333333334" PointY="68.42027093749995" />
+          <ConnectorPoint PointX="11.541666666666666" PointY="68.42027093749995" />
+          <ConnectorPoint PointX="11.708333333333334" PointY="68.42027093749995" />
+          <ConnectorPoint PointX="15" PointY="68.42027093749995" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_CategoriasReclamo_TBL_Admin_Usuarios2" >
           <ConnectorPoint PointX="7.8220643076923082" PointY="58.306783854166667" />
@@ -7919,32 +7956,34 @@
           <ConnectorPoint PointX="9.0416666666666661" PointY="59.375" />
           <ConnectorPoint PointX="9.2708333333333339" PointY="59.375" />
           <ConnectorPoint PointX="9.3125" PointY="59.375" />
-          <ConnectorPoint PointX="9.3125" PointY="68.9734269791667" />
-          <ConnectorPoint PointX="9.3229166666666661" PointY="68.9734269791667" />
-          <ConnectorPoint PointX="10.302083333333334" PointY="68.9734269791667" />
-          <ConnectorPoint PointX="11.541666666666666" PointY="68.9734269791667" />
-          <ConnectorPoint PointX="11.708333333333334" PointY="68.9734269791667" />
-          <ConnectorPoint PointX="15" PointY="68.9734269791667" />
+          <ConnectorPoint PointX="9.3125" PointY="68.973426979166717" />
+          <ConnectorPoint PointX="9.3229166666666661" PointY="68.973426979166717" />
+          <ConnectorPoint PointX="10.302083333333334" PointY="68.973426979166717" />
+          <ConnectorPoint PointX="11.541666666666666" PointY="68.973426979166717" />
+          <ConnectorPoint PointX="11.708333333333334" PointY="68.973426979166717" />
+          <ConnectorPoint PointX="15" PointY="68.973426979166717" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_ComentariosRespuesta_TBL_Admin_Usuarios_CreateBy" >
-          <ConnectorPoint PointX="9" PointY="54.717302250162696" />
-          <ConnectorPoint PointX="9.2916666666666661" PointY="54.717302250162696" />
-          <ConnectorPoint PointX="9.5208333333333339" PointY="54.717302250162696" />
-          <ConnectorPoint PointX="11.994789166666665" PointY="54.717302250162696" />
-          <ConnectorPoint PointX="12.302083333333334" PointY="54.717302250162696" />
-          <ConnectorPoint PointX="14.010415416666666" PointY="54.717302250162696" />
-          <ConnectorPoint PointX="14.302084583333334" PointY="54.717302250162696" />
-          <ConnectorPoint PointX="16.760421666666669" PointY="54.717302250162696" />
-          <ConnectorPoint PointX="16.927088333333334" PointY="54.717302250162696" />
-          <ConnectorPoint PointX="19.791666666666668" PointY="54.717302250162696" />
-          <ConnectorPoint PointX="19.958333333333332" PointY="54.717302250162696" />
-          <ConnectorPoint PointX="20.791666666666668" PointY="54.717302250162696" />
-          <ConnectorPoint PointX="20.958333333333332" PointY="54.717302250162696" />
-          <ConnectorPoint PointX="21.229166666666668" PointY="54.717302250162696" />
-          <ConnectorPoint PointX="21.458333333333332" PointY="54.717302250162696" />
-          <ConnectorPoint PointX="22.526036666666666" PointY="54.717302250162696" />
-          <ConnectorPoint PointX="22.692703333333331" PointY="54.717302250162696" />
-          <ConnectorPoint PointX="22.78125" PointY="54.717302250162696" />
+          <ConnectorPoint PointX="9" PointY="54.7173022501627" />
+          <ConnectorPoint PointX="9.2916666666666661" PointY="54.7173022501627" />
+          <ConnectorPoint PointX="9.5208333333333339" PointY="54.7173022501627" />
+          <ConnectorPoint PointX="11.994789166666665" PointY="54.7173022501627" />
+          <ConnectorPoint PointX="12.302083333333334" PointY="54.7173022501627" />
+          <ConnectorPoint PointX="14.010415416666666" PointY="54.7173022501627" />
+          <ConnectorPoint PointX="14.302084583333334" PointY="54.7173022501627" />
+          <ConnectorPoint PointX="14.416666666666666" PointY="54.7173022501627" />
+          <ConnectorPoint PointX="14.583333333333334" PointY="54.7173022501627" />
+          <ConnectorPoint PointX="16.760421666666669" PointY="54.7173022501627" />
+          <ConnectorPoint PointX="16.927088333333334" PointY="54.7173022501627" />
+          <ConnectorPoint PointX="19.791666666666668" PointY="54.7173022501627" />
+          <ConnectorPoint PointX="19.958333333333332" PointY="54.7173022501627" />
+          <ConnectorPoint PointX="20.791666666666668" PointY="54.7173022501627" />
+          <ConnectorPoint PointX="20.958333333333332" PointY="54.7173022501627" />
+          <ConnectorPoint PointX="21.291666666666668" PointY="54.7173022501627" />
+          <ConnectorPoint PointX="21.458333333333332" PointY="54.7173022501627" />
+          <ConnectorPoint PointX="22.526036666666666" PointY="54.7173022501627" />
+          <ConnectorPoint PointX="22.692703333333331" PointY="54.7173022501627" />
+          <ConnectorPoint PointX="22.78125" PointY="54.7173022501627" />
           <ConnectorPoint PointX="22.78125" PointY="57.5" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_ComentariosRespuesta_TBL_Admin_Usuarios_ModifiedBy" >
@@ -7955,84 +7994,92 @@
           <ConnectorPoint PointX="12.302083333333334" PointY="54.739323025146405" />
           <ConnectorPoint PointX="14.010415416666666" PointY="54.739323025146405" />
           <ConnectorPoint PointX="14.302084583333334" PointY="54.739323025146405" />
+          <ConnectorPoint PointX="14.416666666666666" PointY="54.739323025146405" />
+          <ConnectorPoint PointX="14.583333333333334" PointY="54.739323025146405" />
           <ConnectorPoint PointX="16.760421666666669" PointY="54.739323025146405" />
           <ConnectorPoint PointX="16.927088333333334" PointY="54.739323025146405" />
           <ConnectorPoint PointX="19.791666666666668" PointY="54.739323025146405" />
           <ConnectorPoint PointX="19.958333333333332" PointY="54.739323025146405" />
           <ConnectorPoint PointX="20.791666666666668" PointY="54.739323025146405" />
           <ConnectorPoint PointX="20.958333333333332" PointY="54.739323025146405" />
-          <ConnectorPoint PointX="21.229166666666668" PointY="54.739323025146405" />
+          <ConnectorPoint PointX="21.291666666666668" PointY="54.739323025146405" />
           <ConnectorPoint PointX="21.458333333333332" PointY="54.739323025146405" />
           <ConnectorPoint PointX="22.6406225" PointY="54.739323025146405" />
           <ConnectorPoint PointX="22.6406225" PointY="57.5" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_ComentariosRespuesta_TBL_Admin_Usuarios_UsuarioDestino" >
-          <ConnectorPoint PointX="9" PointY="54.695281475178987" />
-          <ConnectorPoint PointX="9.2916666666666661" PointY="54.695281475178987" />
-          <ConnectorPoint PointX="9.5208333333333339" PointY="54.695281475178987" />
-          <ConnectorPoint PointX="11.994789166666665" PointY="54.695281475178987" />
-          <ConnectorPoint PointX="12.302083333333334" PointY="54.695281475178987" />
-          <ConnectorPoint PointX="14.010415416666666" PointY="54.695281475178987" />
-          <ConnectorPoint PointX="14.302084583333334" PointY="54.695281475178987" />
-          <ConnectorPoint PointX="16.760421666666669" PointY="54.695281475178987" />
-          <ConnectorPoint PointX="16.927088333333334" PointY="54.695281475178987" />
-          <ConnectorPoint PointX="19.791666666666668" PointY="54.695281475178987" />
-          <ConnectorPoint PointX="19.958333333333332" PointY="54.695281475178987" />
-          <ConnectorPoint PointX="20.791666666666668" PointY="54.695281475178987" />
-          <ConnectorPoint PointX="20.958333333333332" PointY="54.695281475178987" />
-          <ConnectorPoint PointX="20.994789166666667" PointY="54.695281475178987" />
-          <ConnectorPoint PointX="21.161455833333331" PointY="54.695281475178987" />
-          <ConnectorPoint PointX="21.229166666666668" PointY="54.695281475178987" />
-          <ConnectorPoint PointX="21.458333333333332" PointY="54.695281475178987" />
-          <ConnectorPoint PointX="22.526036666666666" PointY="54.695281475178987" />
-          <ConnectorPoint PointX="22.692703333333331" PointY="54.695281475178987" />
-          <ConnectorPoint PointX="22.9218775" PointY="54.695281475178987" />
+          <ConnectorPoint PointX="9" PointY="54.695281475179" />
+          <ConnectorPoint PointX="9.2916666666666661" PointY="54.695281475179" />
+          <ConnectorPoint PointX="9.5208333333333339" PointY="54.695281475179" />
+          <ConnectorPoint PointX="11.994789166666665" PointY="54.695281475179" />
+          <ConnectorPoint PointX="12.302083333333334" PointY="54.695281475179" />
+          <ConnectorPoint PointX="14.010415416666666" PointY="54.695281475179" />
+          <ConnectorPoint PointX="14.302084583333334" PointY="54.695281475179" />
+          <ConnectorPoint PointX="14.416666666666666" PointY="54.695281475179" />
+          <ConnectorPoint PointX="14.583333333333334" PointY="54.695281475179" />
+          <ConnectorPoint PointX="16.760421666666669" PointY="54.695281475179" />
+          <ConnectorPoint PointX="16.927088333333334" PointY="54.695281475179" />
+          <ConnectorPoint PointX="19.791666666666668" PointY="54.695281475179" />
+          <ConnectorPoint PointX="19.958333333333332" PointY="54.695281475179" />
+          <ConnectorPoint PointX="20.791666666666668" PointY="54.695281475179" />
+          <ConnectorPoint PointX="20.958333333333332" PointY="54.695281475179" />
+          <ConnectorPoint PointX="20.994789166666667" PointY="54.695281475179" />
+          <ConnectorPoint PointX="21.161455833333331" PointY="54.695281475179" />
+          <ConnectorPoint PointX="21.291666666666668" PointY="54.695281475179" />
+          <ConnectorPoint PointX="21.458333333333332" PointY="54.695281475179" />
+          <ConnectorPoint PointX="22.526036666666666" PointY="54.695281475179" />
+          <ConnectorPoint PointX="22.692703333333331" PointY="54.695281475179" />
+          <ConnectorPoint PointX="22.9218775" PointY="54.695281475179" />
           <ConnectorPoint PointX="22.9218775" PointY="57.5" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_CostosProducto_TBL_Admin_Usuarios_CreateBy" >
-          <ConnectorPoint PointX="9" PointY="54.603641050292929" />
-          <ConnectorPoint PointX="9.2916666666666661" PointY="54.603641050292929" />
-          <ConnectorPoint PointX="9.5208333333333339" PointY="54.603641050292929" />
-          <ConnectorPoint PointX="11.994789166666665" PointY="54.603641050292929" />
-          <ConnectorPoint PointX="12.302083333333334" PointY="54.603641050292929" />
-          <ConnectorPoint PointX="14.010415416666666" PointY="54.603641050292929" />
-          <ConnectorPoint PointX="14.302084583333334" PointY="54.603641050292929" />
-          <ConnectorPoint PointX="16.760421666666669" PointY="54.603641050292929" />
-          <ConnectorPoint PointX="16.927088333333334" PointY="54.603641050292929" />
-          <ConnectorPoint PointX="19.791666666666668" PointY="54.603641050292929" />
-          <ConnectorPoint PointX="19.958333333333332" PointY="54.603641050292929" />
-          <ConnectorPoint PointX="20.791666666666668" PointY="54.603641050292929" />
-          <ConnectorPoint PointX="20.958333333333332" PointY="54.603641050292929" />
-          <ConnectorPoint PointX="20.994789166666667" PointY="54.603641050292929" />
-          <ConnectorPoint PointX="21.161455833333331" PointY="54.603641050292929" />
-          <ConnectorPoint PointX="21.229166666666668" PointY="54.603641050292929" />
-          <ConnectorPoint PointX="21.458333333333332" PointY="54.603641050292929" />
-          <ConnectorPoint PointX="22.526036666666666" PointY="54.603641050292929" />
-          <ConnectorPoint PointX="22.692703333333331" PointY="54.603641050292929" />
-          <ConnectorPoint PointX="25.40625" PointY="54.603641050292929" />
+          <ConnectorPoint PointX="9" PointY="54.603641050292943" />
+          <ConnectorPoint PointX="9.2916666666666661" PointY="54.603641050292943" />
+          <ConnectorPoint PointX="9.5208333333333339" PointY="54.603641050292943" />
+          <ConnectorPoint PointX="11.994789166666665" PointY="54.603641050292943" />
+          <ConnectorPoint PointX="12.302083333333334" PointY="54.603641050292943" />
+          <ConnectorPoint PointX="14.010415416666666" PointY="54.603641050292943" />
+          <ConnectorPoint PointX="14.302084583333334" PointY="54.603641050292943" />
+          <ConnectorPoint PointX="14.416666666666666" PointY="54.603641050292943" />
+          <ConnectorPoint PointX="14.583333333333334" PointY="54.603641050292943" />
+          <ConnectorPoint PointX="16.760421666666669" PointY="54.603641050292943" />
+          <ConnectorPoint PointX="16.927088333333334" PointY="54.603641050292943" />
+          <ConnectorPoint PointX="19.791666666666668" PointY="54.603641050292943" />
+          <ConnectorPoint PointX="19.958333333333332" PointY="54.603641050292943" />
+          <ConnectorPoint PointX="20.791666666666668" PointY="54.603641050292943" />
+          <ConnectorPoint PointX="20.958333333333332" PointY="54.603641050292943" />
+          <ConnectorPoint PointX="20.994789166666667" PointY="54.603641050292943" />
+          <ConnectorPoint PointX="21.161455833333331" PointY="54.603641050292943" />
+          <ConnectorPoint PointX="21.291666666666668" PointY="54.603641050292943" />
+          <ConnectorPoint PointX="21.458333333333332" PointY="54.603641050292943" />
+          <ConnectorPoint PointX="22.526036666666666" PointY="54.603641050292943" />
+          <ConnectorPoint PointX="22.692703333333331" PointY="54.603641050292943" />
+          <ConnectorPoint PointX="25.40625" PointY="54.603641050292943" />
           <ConnectorPoint PointX="25.40625" PointY="57.375" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_CostosProducto_TBL_Admin_Usuarios_ModifiedBy" >
-          <ConnectorPoint PointX="9" PointY="54.625661825276637" />
-          <ConnectorPoint PointX="9.2916666666666661" PointY="54.625661825276637" />
-          <ConnectorPoint PointX="9.5208333333333339" PointY="54.625661825276637" />
-          <ConnectorPoint PointX="11.994789166666665" PointY="54.625661825276637" />
-          <ConnectorPoint PointX="12.302083333333334" PointY="54.625661825276637" />
-          <ConnectorPoint PointX="14.010415416666666" PointY="54.625661825276637" />
-          <ConnectorPoint PointX="14.302084583333334" PointY="54.625661825276637" />
-          <ConnectorPoint PointX="16.760421666666669" PointY="54.625661825276637" />
-          <ConnectorPoint PointX="16.927088333333334" PointY="54.625661825276637" />
-          <ConnectorPoint PointX="19.791666666666668" PointY="54.625661825276637" />
-          <ConnectorPoint PointX="19.958333333333332" PointY="54.625661825276637" />
-          <ConnectorPoint PointX="20.791666666666668" PointY="54.625661825276637" />
-          <ConnectorPoint PointX="20.958333333333332" PointY="54.625661825276637" />
-          <ConnectorPoint PointX="20.994789166666667" PointY="54.625661825276637" />
-          <ConnectorPoint PointX="21.161455833333331" PointY="54.625661825276637" />
-          <ConnectorPoint PointX="21.229166666666668" PointY="54.625661825276637" />
-          <ConnectorPoint PointX="21.458333333333332" PointY="54.625661825276637" />
-          <ConnectorPoint PointX="22.526036666666666" PointY="54.625661825276637" />
-          <ConnectorPoint PointX="22.692703333333331" PointY="54.625661825276637" />
-          <ConnectorPoint PointX="25.0781225" PointY="54.625661825276637" />
+          <ConnectorPoint PointX="9" PointY="54.625661825276651" />
+          <ConnectorPoint PointX="9.2916666666666661" PointY="54.625661825276651" />
+          <ConnectorPoint PointX="9.5208333333333339" PointY="54.625661825276651" />
+          <ConnectorPoint PointX="11.994789166666665" PointY="54.625661825276651" />
+          <ConnectorPoint PointX="12.302083333333334" PointY="54.625661825276651" />
+          <ConnectorPoint PointX="14.010415416666666" PointY="54.625661825276651" />
+          <ConnectorPoint PointX="14.302084583333334" PointY="54.625661825276651" />
+          <ConnectorPoint PointX="14.416666666666666" PointY="54.625661825276651" />
+          <ConnectorPoint PointX="14.583333333333334" PointY="54.625661825276651" />
+          <ConnectorPoint PointX="16.760421666666669" PointY="54.625661825276651" />
+          <ConnectorPoint PointX="16.927088333333334" PointY="54.625661825276651" />
+          <ConnectorPoint PointX="19.791666666666668" PointY="54.625661825276651" />
+          <ConnectorPoint PointX="19.958333333333332" PointY="54.625661825276651" />
+          <ConnectorPoint PointX="20.791666666666668" PointY="54.625661825276651" />
+          <ConnectorPoint PointX="20.958333333333332" PointY="54.625661825276651" />
+          <ConnectorPoint PointX="20.994789166666667" PointY="54.625661825276651" />
+          <ConnectorPoint PointX="21.161455833333331" PointY="54.625661825276651" />
+          <ConnectorPoint PointX="21.291666666666668" PointY="54.625661825276651" />
+          <ConnectorPoint PointX="21.458333333333332" PointY="54.625661825276651" />
+          <ConnectorPoint PointX="22.526036666666666" PointY="54.625661825276651" />
+          <ConnectorPoint PointX="22.692703333333331" PointY="54.625661825276651" />
+          <ConnectorPoint PointX="25.0781225" PointY="54.625661825276651" />
           <ConnectorPoint PointX="25.0781225" PointY="57.375" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Reclamo_TBL_Admin_Usuarios" >
@@ -8220,26 +8267,28 @@
           <ConnectorPoint PointX="9.2916666666666661" PointY="48.24745323567705" />
           <ConnectorPoint PointX="9.4583333333333339" PointY="48.24745323567705" />
           <ConnectorPoint PointX="9.5" PointY="48.24745323567705" />
-          <ConnectorPoint PointX="9.5" PointY="54.278219401041611" />
-          <ConnectorPoint PointX="11.994789166666665" PointY="54.278219401041611" />
-          <ConnectorPoint PointX="12.302083333333334" PointY="54.278219401041611" />
-          <ConnectorPoint PointX="14.010415416666666" PointY="54.278219401041611" />
-          <ConnectorPoint PointX="14.302084583333334" PointY="54.278219401041611" />
-          <ConnectorPoint PointX="16.354164166666667" PointY="54.278219401041611" />
-          <ConnectorPoint PointX="16.520830833333331" PointY="54.278219401041611" />
-          <ConnectorPoint PointX="16.729169166666669" PointY="54.278219401041611" />
-          <ConnectorPoint PointX="16.927088333333334" PointY="54.278219401041611" />
-          <ConnectorPoint PointX="17.666666666666668" PointY="54.278219401041611" />
-          <ConnectorPoint PointX="17.833333333333332" PointY="54.278219401041611" />
-          <ConnectorPoint PointX="18.557289166666667" PointY="54.278219401041611" />
-          <ConnectorPoint PointX="18.864583333333332" PointY="54.278219401041611" />
-          <ConnectorPoint PointX="19.010416666666668" PointY="54.278219401041611" />
-          <ConnectorPoint PointX="19.177083333333332" PointY="54.278219401041611" />
-          <ConnectorPoint PointX="19.791666666666668" PointY="54.278219401041611" />
-          <ConnectorPoint PointX="19.958333333333332" PointY="54.278219401041611" />
-          <ConnectorPoint PointX="20.994789166666667" PointY="54.278219401041611" />
-          <ConnectorPoint PointX="21.302083333333332" PointY="54.278219401041611" />
-          <ConnectorPoint PointX="21.375" PointY="54.278219401041611" />
+          <ConnectorPoint PointX="9.5" PointY="54.278219401041667" />
+          <ConnectorPoint PointX="11.994789166666665" PointY="54.278219401041667" />
+          <ConnectorPoint PointX="12.302083333333334" PointY="54.278219401041667" />
+          <ConnectorPoint PointX="14.010415416666666" PointY="54.278219401041667" />
+          <ConnectorPoint PointX="14.302084583333334" PointY="54.278219401041667" />
+          <ConnectorPoint PointX="14.416666666666666" PointY="54.278219401041667" />
+          <ConnectorPoint PointX="14.583333333333334" PointY="54.278219401041667" />
+          <ConnectorPoint PointX="16.354164166666667" PointY="54.278219401041667" />
+          <ConnectorPoint PointX="16.520830833333331" PointY="54.278219401041667" />
+          <ConnectorPoint PointX="16.729169166666669" PointY="54.278219401041667" />
+          <ConnectorPoint PointX="16.927088333333334" PointY="54.278219401041667" />
+          <ConnectorPoint PointX="17.666666666666668" PointY="54.278219401041667" />
+          <ConnectorPoint PointX="17.833333333333332" PointY="54.278219401041667" />
+          <ConnectorPoint PointX="18.557289166666667" PointY="54.278219401041667" />
+          <ConnectorPoint PointX="18.864583333333332" PointY="54.278219401041667" />
+          <ConnectorPoint PointX="19.010416666666668" PointY="54.278219401041667" />
+          <ConnectorPoint PointX="19.177083333333332" PointY="54.278219401041667" />
+          <ConnectorPoint PointX="19.791666666666668" PointY="54.278219401041667" />
+          <ConnectorPoint PointX="19.958333333333332" PointY="54.278219401041667" />
+          <ConnectorPoint PointX="20.994789166666667" PointY="54.278219401041667" />
+          <ConnectorPoint PointX="21.302083333333332" PointY="54.278219401041667" />
+          <ConnectorPoint PointX="21.375" PointY="54.278219401041667" />
           <ConnectorPoint PointX="21.375" PointY="62.625" />
           <ConnectorPoint PointX="22.25" PointY="62.625" />
           <ConnectorPoint PointX="22.25" PointY="63" />
@@ -8247,25 +8296,29 @@
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Soluciones_TBL_Admin_Usuarios_ModifiedBy" >
           <ConnectorPoint PointX="9" PointY="51.658262125651042" />
           <ConnectorPoint PointX="9.25" PointY="51.658262125651042" />
-          <ConnectorPoint PointX="9.25" PointY="54.371969401041611" />
-          <ConnectorPoint PointX="9.3541666666666661" PointY="54.371969401041611" />
-          <ConnectorPoint PointX="9.5208333333333339" PointY="54.371969401041611" />
-          <ConnectorPoint PointX="11.994789166666665" PointY="54.371969401041611" />
-          <ConnectorPoint PointX="12.302083333333334" PointY="54.371969401041611" />
-          <ConnectorPoint PointX="14.010415416666666" PointY="54.371969401041611" />
-          <ConnectorPoint PointX="14.302084583333334" PointY="54.371969401041611" />
-          <ConnectorPoint PointX="16.729169166666669" PointY="54.371969401041611" />
-          <ConnectorPoint PointX="16.927088333333334" PointY="54.371969401041611" />
-          <ConnectorPoint PointX="17.572916666666668" PointY="54.371969401041611" />
-          <ConnectorPoint PointX="17.739583333333332" PointY="54.371969401041611" />
-          <ConnectorPoint PointX="18.557289166666667" PointY="54.371969401041611" />
-          <ConnectorPoint PointX="18.723955833333331" PointY="54.371969401041611" />
-          <ConnectorPoint PointX="19.010416666666668" PointY="54.371969401041611" />
-          <ConnectorPoint PointX="19.177083333333332" PointY="54.371969401041611" />
-          <ConnectorPoint PointX="19.791666666666668" PointY="54.371969401041611" />
-          <ConnectorPoint PointX="19.958333333333332" PointY="54.371969401041611" />
-          <ConnectorPoint PointX="20.875" PointY="54.371969401041611" />
+          <ConnectorPoint PointX="9.25" PointY="54.371969401041667" />
+          <ConnectorPoint PointX="9.3541666666666661" PointY="54.371969401041667" />
+          <ConnectorPoint PointX="9.5208333333333339" PointY="54.371969401041667" />
+          <ConnectorPoint PointX="11.994789166666665" PointY="54.371969401041667" />
+          <ConnectorPoint PointX="12.302083333333334" PointY="54.371969401041667" />
+          <ConnectorPoint PointX="14.010415416666666" PointY="54.371969401041667" />
+          <ConnectorPoint PointX="14.302084583333334" PointY="54.371969401041667" />
+          <ConnectorPoint PointX="14.416666666666666" PointY="54.371969401041667" />
+          <ConnectorPoint PointX="14.583333333333334" PointY="54.371969401041667" />
+          <ConnectorPoint PointX="16.729169166666669" PointY="54.371969401041667" />
+          <ConnectorPoint PointX="16.927088333333334" PointY="54.371969401041667" />
+          <ConnectorPoint PointX="17.572916666666668" PointY="54.371969401041667" />
+          <ConnectorPoint PointX="17.739583333333332" PointY="54.371969401041667" />
+          <ConnectorPoint PointX="18.557289166666667" PointY="54.371969401041667" />
+          <ConnectorPoint PointX="18.723955833333331" PointY="54.371969401041667" />
+          <ConnectorPoint PointX="19.010416666666668" PointY="54.371969401041667" />
+          <ConnectorPoint PointX="19.177083333333332" PointY="54.371969401041667" />
+          <ConnectorPoint PointX="19.791666666666668" PointY="54.371969401041667" />
+          <ConnectorPoint PointX="19.958333333333332" PointY="54.371969401041667" />
+          <ConnectorPoint PointX="20.875" PointY="54.371969401041667" />
           <ConnectorPoint PointX="20.875" PointY="62.625" />
+          <ConnectorPoint PointX="20.916666666666668" PointY="62.625" />
+          <ConnectorPoint PointX="21.083333333333332" PointY="62.625" />
           <ConnectorPoint PointX="21.843747999999998" PointY="62.625" />
           <ConnectorPoint PointX="21.843747999999998" PointY="63" />
         </AssociationConnector>
@@ -8416,18 +8469,20 @@
           <ConnectorPoint PointX="12.453125" PointY="42.316793619791667" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Documento" >
-          <ConnectorPoint PointX="11.25" PointY="53.828715820312482" />
-          <ConnectorPoint PointX="11.994789166666665" PointY="53.828715820312482" />
-          <ConnectorPoint PointX="12.302083333333334" PointY="53.828715820312482" />
-          <ConnectorPoint PointX="14.010415416666666" PointY="53.828715820312482" />
-          <ConnectorPoint PointX="14.302084583333334" PointY="53.828715820312482" />
-          <ConnectorPoint PointX="16.354164166666667" PointY="53.828715820312482" />
-          <ConnectorPoint PointX="16.520830833333331" PointY="53.828715820312482" />
-          <ConnectorPoint PointX="16.541666666666668" PointY="53.828715820312482" />
-          <ConnectorPoint PointX="16.708333333333332" PointY="53.828715820312482" />
-          <ConnectorPoint PointX="16.729169166666669" PointY="53.828715820312482" />
-          <ConnectorPoint PointX="16.927088333333334" PointY="53.828715820312482" />
-          <ConnectorPoint PointX="18" PointY="53.828715820312482" />
+          <ConnectorPoint PointX="11.25" PointY="53.82871582031251" />
+          <ConnectorPoint PointX="11.994789166666665" PointY="53.82871582031251" />
+          <ConnectorPoint PointX="12.302083333333334" PointY="53.82871582031251" />
+          <ConnectorPoint PointX="14.010415416666666" PointY="53.82871582031251" />
+          <ConnectorPoint PointX="14.302084583333334" PointY="53.82871582031251" />
+          <ConnectorPoint PointX="14.416666666666666" PointY="53.82871582031251" />
+          <ConnectorPoint PointX="14.583333333333334" PointY="53.82871582031251" />
+          <ConnectorPoint PointX="16.354164166666667" PointY="53.82871582031251" />
+          <ConnectorPoint PointX="16.520830833333331" PointY="53.82871582031251" />
+          <ConnectorPoint PointX="16.541666666666668" PointY="53.82871582031251" />
+          <ConnectorPoint PointX="16.708333333333332" PointY="53.82871582031251" />
+          <ConnectorPoint PointX="16.729169166666669" PointY="53.82871582031251" />
+          <ConnectorPoint PointX="16.927088333333334" PointY="53.82871582031251" />
+          <ConnectorPoint PointX="18" PointY="53.82871582031251" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_LogCambios_TBL_ModuloDocumentos_Documento" >
           <ConnectorPoint PointX="10.5" PointY="54.028219401041667" />
@@ -8436,14 +8491,16 @@
           <ConnectorPoint PointX="12.302083333333334" PointY="54.184469401041667" />
           <ConnectorPoint PointX="14.010415416666666" PointY="54.184469401041667" />
           <ConnectorPoint PointX="14.302084583333334" PointY="54.184469401041667" />
+          <ConnectorPoint PointX="14.416666666666666" PointY="54.184469401041667" />
+          <ConnectorPoint PointX="14.583333333333334" PointY="54.184469401041667" />
           <ConnectorPoint PointX="16.354164166666667" PointY="54.184469401041667" />
           <ConnectorPoint PointX="16.520830833333331" PointY="54.184469401041667" />
           <ConnectorPoint PointX="16.541666666666668" PointY="54.184469401041667" />
           <ConnectorPoint PointX="16.708333333333332" PointY="54.184469401041667" />
           <ConnectorPoint PointX="16.729169166666669" PointY="54.184469401041667" />
           <ConnectorPoint PointX="16.927088333333334" PointY="54.184469401041667" />
-          <ConnectorPoint PointX="17.760416666666611" PointY="54.184469401041667" />
-          <ConnectorPoint PointX="17.927083333333275" PointY="54.184469401041667" />
+          <ConnectorPoint PointX="17.760416666666668" PointY="54.184469401041667" />
+          <ConnectorPoint PointX="17.927083333333332" PointY="54.184469401041667" />
           <ConnectorPoint PointX="18.557289166666667" PointY="54.184469401041667" />
           <ConnectorPoint PointX="18.864583333333332" PointY="54.184469401041667" />
           <ConnectorPoint PointX="19.010416666666668" PointY="54.184469401041667" />
@@ -8451,41 +8508,43 @@
           <ConnectorPoint PointX="19.791666666666668" PointY="54.184469401041667" />
           <ConnectorPoint PointX="19.958333333333332" PointY="54.184469401041667" />
           <ConnectorPoint PointX="20.994789166666667" PointY="54.184469401041667" />
-          <ConnectorPoint PointX="21.395833333333332" PointY="54.184469401041667" />
+          <ConnectorPoint PointX="21.302083333333332" PointY="54.184469401041667" />
           <ConnectorPoint PointX="22.875" PointY="54.184469401041667" />
           <ConnectorPoint PointX="22.875" PointY="50.749746093749991" />
           <ConnectorPoint PointX="23.25" PointY="50.749746093749991" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_DocumentoAdjuntoHistorial_TBL_ModuloDocumentos_HistorialDocumento" >
-          <ConnectorPoint PointX="19.5" PointY="47.97089680989582" />
-          <ConnectorPoint PointX="19.791666666666668" PointY="47.97089680989582" />
-          <ConnectorPoint PointX="20.208333333333332" PointY="47.97089680989582" />
-          <ConnectorPoint PointX="20.25" PointY="47.97089680989582" />
+          <ConnectorPoint PointX="19.5" PointY="47.970896809895834" />
+          <ConnectorPoint PointX="19.791666666666668" PointY="47.970896809895834" />
+          <ConnectorPoint PointX="20.083333333333332" PointY="47.970896809895834" />
+          <ConnectorPoint PointX="20.25" PointY="47.970896809895834" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Estados" >
           <ConnectorPoint PointX="9" PointY="59.525383615384619" />
           <ConnectorPoint PointX="9.0660744349011217" PointY="59.459309180483494" />
           <ConnectorPoint PointX="9.2464255650988783" PointY="59.278958050285731" />
           <ConnectorPoint PointX="9.375" PointY="59.150383615384612" />
-          <ConnectorPoint PointX="9.375" PointY="54.496969401041611" />
-          <ConnectorPoint PointX="11.994789166666665" PointY="54.496969401041611" />
-          <ConnectorPoint PointX="12.302083333333334" PointY="54.496969401041611" />
-          <ConnectorPoint PointX="14.010415416666666" PointY="54.496969401041611" />
-          <ConnectorPoint PointX="14.302084583333334" PointY="54.496969401041611" />
-          <ConnectorPoint PointX="16.760421666666669" PointY="54.496969401041611" />
-          <ConnectorPoint PointX="16.927088333333334" PointY="54.496969401041611" />
-          <ConnectorPoint PointX="17.53125" PointY="54.496969401041611" />
-          <ConnectorPoint PointX="18" PointY="54.028219401041611" />
+          <ConnectorPoint PointX="9.375" PointY="54.496969401041667" />
+          <ConnectorPoint PointX="11.994789166666665" PointY="54.496969401041667" />
+          <ConnectorPoint PointX="12.302083333333334" PointY="54.496969401041667" />
+          <ConnectorPoint PointX="14.010415416666666" PointY="54.496969401041667" />
+          <ConnectorPoint PointX="14.302084583333334" PointY="54.496969401041667" />
+          <ConnectorPoint PointX="14.416666666666666" PointY="54.496969401041667" />
+          <ConnectorPoint PointX="14.583333333333334" PointY="54.496969401041667" />
+          <ConnectorPoint PointX="16.760421666666669" PointY="54.496969401041667" />
+          <ConnectorPoint PointX="16.927088333333334" PointY="54.496969401041667" />
+          <ConnectorPoint PointX="17.53125" PointY="54.496969401041667" />
+          <ConnectorPoint PointX="18" PointY="54.028219401041667" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_LogCambios_TBL_ModuloDocumentos_HistorialDocumento" >
-          <ConnectorPoint PointX="19.5" PointY="53.271057942708296" />
-          <ConnectorPoint PointX="19.791666666666668" PointY="53.271057942708296" />
-          <ConnectorPoint PointX="19.958333333333332" PointY="53.271057942708296" />
-          <ConnectorPoint PointX="20.994789166666667" PointY="53.271057942708296" />
-          <ConnectorPoint PointX="21.395833333333332" PointY="53.271057942708296" />
-          <ConnectorPoint PointX="22.791666666666668" PointY="53.271057942708296" />
-          <ConnectorPoint PointX="22.958333333333332" PointY="53.271057942708296" />
-          <ConnectorPoint PointX="24" PointY="53.271057942708296" />
+          <ConnectorPoint PointX="19.5" PointY="53.271057942708325" />
+          <ConnectorPoint PointX="19.791666666666668" PointY="53.271057942708325" />
+          <ConnectorPoint PointX="19.958333333333332" PointY="53.271057942708325" />
+          <ConnectorPoint PointX="20.994789166666667" PointY="53.271057942708325" />
+          <ConnectorPoint PointX="21.302083333333332" PointY="53.271057942708325" />
+          <ConnectorPoint PointX="22.791666666666668" PointY="53.271057942708325" />
+          <ConnectorPoint PointX="22.958333333333332" PointY="53.271057942708325" />
+          <ConnectorPoint PointX="24" PointY="53.271057942708325" />
           <ConnectorPoint PointX="24" PointY="52.124492187499982" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentosAnexos_Carpetas_TBL_ModuloDocumentosAnexos_Carpetas" >
@@ -8505,30 +8564,19 @@
           <ConnectorPoint PointX="14" PointY="56.759348958333334" />
           <ConnectorPoint PointX="14.010415416666666" PointY="56.759348958333334" />
           <ConnectorPoint PointX="14.302084583333334" PointY="56.759348958333334" />
+          <ConnectorPoint PointX="14.416666666666666" PointY="56.759348958333334" />
+          <ConnectorPoint PointX="14.583333333333334" PointY="56.759348958333334" />
           <ConnectorPoint PointX="14.75" PointY="56.759348958333334" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloDocumentosAnexos_Contenido_TBL_ModuloDocumentosAnexos_Documento" >
-          <ConnectorPoint PointX="16.25" PointY="56.759348958333305" />
-          <ConnectorPoint PointX="16.760421666666669" PointY="56.759348958333305" />
-          <ConnectorPoint PointX="16.927088333333334" PointY="56.759348958333305" />
-          <ConnectorPoint PointX="17" PointY="56.759348958333305" />
-        </AssociationConnector>
-        <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_BancoActividades" >
-          <ConnectorPoint PointX="9.25" PointY="3.1728011067708053" />
-          <ConnectorPoint PointX="10" PointY="3.1728011067708053" />
-        </AssociationConnector>
-        <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloPlanAccion_ConfiguracionActividades_TBL_ModuloPlanAccion_Categorias" >
-          <ConnectorPoint PointX="9.25" PointY="12.220896809895805" />
-          <ConnectorPoint PointX="9.5" PointY="12.220896809895805" />
-          <ConnectorPoint PointX="9.5" PointY="10.5" />
-          <ConnectorPoint PointX="10.5" PointY="10.5" />
-          <ConnectorPoint PointX="10.5" PointY="5.662903645833353" />
-          <ConnectorPoint PointX="10.75" PointY="5.662903645833353" />
-          <ConnectorPoint PointX="10.75" PointY="5.287903645833353" />
+          <ConnectorPoint PointX="16.25" PointY="56.759348958333334" />
+          <ConnectorPoint PointX="16.760421666666669" PointY="56.759348958333334" />
+          <ConnectorPoint PointX="16.927088333333334" PointY="56.759348958333334" />
+          <ConnectorPoint PointX="17" PointY="56.759348958333334" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Actividades_TBL_ModuloReclamos_ActividadesReclamo" >
-          <ConnectorPoint PointX="13.5" PointY="66.3843489583333" />
-          <ConnectorPoint PointX="14.09374875" PointY="66.3843489583333" />
+          <ConnectorPoint PointX="13.5" PointY="66.384348958333334" />
+          <ConnectorPoint PointX="14.09374875" PointY="66.384348958333334" />
           <ConnectorPoint PointX="14.09374875" PointY="53.566712239583353" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Actividades_TBL_ModuloReclamos_Reclamo" >
@@ -8548,8 +8596,8 @@
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_ActividadesReclamo_TBL_ModuloReclamos_TipoReclamo" >
           <ConnectorPoint PointX="11.225769230769233" PointY="86.25" />
           <ConnectorPoint PointX="11.625" PointY="85.850769230769231" />
-          <ConnectorPoint PointX="11.625" PointY="66.3843489583333" />
-          <ConnectorPoint PointX="12" PointY="66.3843489583333" />
+          <ConnectorPoint PointX="11.625" PointY="66.384348958333334" />
+          <ConnectorPoint PointX="12" PointY="66.384348958333334" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Alternativas_TBL_ModuloReclamos_Reclamo" >
           <ConnectorPoint PointX="19.25" PointY="73.489564432091385" />
@@ -8575,21 +8623,21 @@
           <ConnectorPoint PointX="19.958333333333332" PointY="47.375" />
           <ConnectorPoint PointX="20" PointY="47.375" />
           <ConnectorPoint PointX="20" PointY="50.788198242187491" />
-          <ConnectorPoint PointX="20.041666666666668" PointY="50.788198242187491" />
-          <ConnectorPoint PointX="20.208333333333332" PointY="50.788198242187491" />
           <ConnectorPoint PointX="21" PointY="50.788198242187491" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_AnexosComentarioRespuesta_TBL_ModuloReclamos_ComentariosRespuesta" >
           <ConnectorPoint PointX="22.03905925" PointY="57.5" />
           <ConnectorPoint PointX="22.03905925" PointY="54.84375" />
           <ConnectorPoint PointX="21.458333333333332" PointY="54.84375" />
-          <ConnectorPoint PointX="21.229166666666668" PointY="54.84375" />
+          <ConnectorPoint PointX="21.291666666666668" PointY="54.84375" />
           <ConnectorPoint PointX="20.958333333333332" PointY="54.84375" />
           <ConnectorPoint PointX="20.791666666666668" PointY="54.84375" />
           <ConnectorPoint PointX="19.958333333333332" PointY="54.84375" />
           <ConnectorPoint PointX="19.791666666666668" PointY="54.84375" />
           <ConnectorPoint PointX="16.927088333333334" PointY="54.84375" />
           <ConnectorPoint PointX="16.760421666666669" PointY="54.84375" />
+          <ConnectorPoint PointX="14.583333333333334" PointY="54.84375" />
+          <ConnectorPoint PointX="14.416666666666666" PointY="54.84375" />
           <ConnectorPoint PointX="14.302084583333334" PointY="54.84375" />
           <ConnectorPoint PointX="14.010415416666666" PointY="54.84375" />
           <ConnectorPoint PointX="12.302083333333334" PointY="54.84375" />
@@ -8599,27 +8647,25 @@
           <ConnectorPoint PointX="11.25" PointY="56.788198242187491" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_AnexosSolucion_TBL_ModuloReclamos_Soluciones" >
-          <ConnectorPoint PointX="22.656252000000002" PointY="63" />
-          <ConnectorPoint PointX="22.656252000000002" PointY="62.422506510416667" />
-          <ConnectorPoint PointX="21.3125" PointY="62.422506510416667" />
-          <ConnectorPoint PointX="21.3125" PointY="52.701396484374982" />
-          <ConnectorPoint PointX="21.302083333333332" PointY="52.701396484374982" />
-          <ConnectorPoint PointX="20.994789166666667" PointY="52.701396484374982" />
-          <ConnectorPoint PointX="20.125" PointY="52.701396484374982" />
-          <ConnectorPoint PointX="20.125" PointY="44.788198242187491" />
-          <ConnectorPoint PointX="19.958333333333332" PointY="44.788198242187491" />
-          <ConnectorPoint PointX="19.791666666666668" PointY="44.788198242187491" />
-          <ConnectorPoint PointX="19.005210833333333" PointY="44.788198242187491" />
-          <ConnectorPoint PointX="18.838544166666669" PointY="44.788198242187491" />
-          <ConnectorPoint PointX="18.677083333333332" PointY="44.788198242187491" />
-          <ConnectorPoint PointX="18.510416666666668" PointY="44.788198242187491" />
-          <ConnectorPoint PointX="18.348955833333331" PointY="44.788198242187491" />
-          <ConnectorPoint PointX="18.182289166666667" PointY="44.788198242187491" />
-          <ConnectorPoint PointX="16.75" PointY="44.788198242187491" />
-          <ConnectorPoint PointX="16.75" PointY="43.875" />
-          <ConnectorPoint PointX="14.625" PointY="43.875" />
-          <ConnectorPoint PointX="14.625" PointY="44.788198242187491" />
-          <ConnectorPoint PointX="14.25" PointY="44.788198242187491" />
+          <ConnectorPoint PointX="21.5" PointY="64.855499674479177" />
+          <ConnectorPoint PointX="21" PointY="64.855499674479177" />
+          <ConnectorPoint PointX="21" PointY="55.875" />
+          <ConnectorPoint PointX="20.958333333333332" PointY="55.875" />
+          <ConnectorPoint PointX="20.791666666666668" PointY="55.875" />
+          <ConnectorPoint PointX="19.958333333333332" PointY="55.875" />
+          <ConnectorPoint PointX="19.791666666666668" PointY="55.875" />
+          <ConnectorPoint PointX="18.75" PointY="55.875" />
+          <ConnectorPoint PointX="18.75" PointY="59.028300781249982" />
+          <ConnectorPoint PointX="16.927088333333334" PointY="59.028300781249982" />
+          <ConnectorPoint PointX="16.760421666666669" PointY="59.028300781249982" />
+          <ConnectorPoint PointX="14.5" PointY="59.028300781249982" />
+          <ConnectorPoint PointX="14.5" PointY="53.691712239583353" />
+          <ConnectorPoint PointX="14.302084583333334" PointY="53.691712239583353" />
+          <ConnectorPoint PointX="14.010415416666666" PointY="53.691712239583353" />
+          <ConnectorPoint PointX="12.625" PointY="53.691712239583353" />
+          <ConnectorPoint PointX="12.625" PointY="47.076396484374982" />
+          <ConnectorPoint PointX="13.5" PointY="47.076396484374982" />
+          <ConnectorPoint PointX="13.5" PointY="46.451396484374982" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Asesores_TBL_ModuloReclamos_Unidad" >
           <ConnectorPoint PointX="11.25" PointY="90.3123066923077" />
@@ -8638,14 +8684,14 @@
           <ConnectorPoint PointX="12" PointY="70.910692917968731" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_CategoriasReclamo_TBL_ModuloReclamos_TipoReclamo" >
-          <ConnectorPoint PointX="11.25" PointY="87.944450742187541" />
-          <ConnectorPoint PointX="11.604166666666666" PointY="87.944450742187541" />
-          <ConnectorPoint PointX="11.895833333333334" PointY="87.944450742187541" />
-          <ConnectorPoint PointX="12.260414166666665" PointY="87.944450742187541" />
-          <ConnectorPoint PointX="12.427080833333333" PointY="87.944450742187541" />
-          <ConnectorPoint PointX="12.666666666666666" PointY="87.944450742187541" />
-          <ConnectorPoint PointX="12.833333333333334" PointY="87.944450742187541" />
-          <ConnectorPoint PointX="15.75" PointY="87.944450742187541" />
+          <ConnectorPoint PointX="11.25" PointY="87.944450742187485" />
+          <ConnectorPoint PointX="11.604166666666666" PointY="87.944450742187485" />
+          <ConnectorPoint PointX="11.895833333333334" PointY="87.944450742187485" />
+          <ConnectorPoint PointX="12.260414166666665" PointY="87.944450742187485" />
+          <ConnectorPoint PointX="12.427080833333333" PointY="87.944450742187485" />
+          <ConnectorPoint PointX="12.666666666666666" PointY="87.944450742187485" />
+          <ConnectorPoint PointX="12.833333333333334" PointY="87.944450742187485" />
+          <ConnectorPoint PointX="15.75" PointY="87.944450742187485" />
           <ConnectorPoint PointX="15.75" PointY="70.605205078124982" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Reclamo_TBL_ModuloReclamos_CategoriasReclamo" >
@@ -8660,23 +8706,23 @@
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_ComentariosRespuesta_TBL_ModuloReclamos_ComentariosRespuesta_Relacionado" >
           <ConnectorPoint PointX="22.031923076923075" PointY="62.172506510416667" />
-          <ConnectorPoint PointX="22.031923076923075" PointY="62.297506510416667" />
-          <ConnectorPoint PointX="22.478461538461538" PointY="62.297506510416667" />
+          <ConnectorPoint PointX="22.031923076923075" PointY="62.422506510416667" />
+          <ConnectorPoint PointX="22.478461538461538" PointY="62.422506510416667" />
           <ConnectorPoint PointX="22.478461538461538" PointY="62.172506510416667" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_ComentariosRespuesta_TBL_ModuloReclamos_Reclamo" >
           <ConnectorPoint PointX="20.75" PointY="59.836253255208334" />
           <ConnectorPoint PointX="20.791666666666668" PointY="59.836253255208334" />
-          <ConnectorPoint PointX="20.958333333333332" PointY="59.836253255208334" />
-          <ConnectorPoint PointX="21.229166666666668" PointY="59.836253255208334" />
+          <ConnectorPoint PointX="21.083333333333332" PointY="59.836253255208334" />
+          <ConnectorPoint PointX="21.291666666666668" PointY="59.836253255208334" />
           <ConnectorPoint PointX="21.458333333333332" PointY="59.836253255208334" />
           <ConnectorPoint PointX="21.5" PointY="59.836253255208334" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_CostosProducto_TBL_ModuloReclamos_Reclamo" >
           <ConnectorPoint PointX="20.75" PointY="57.40625" />
           <ConnectorPoint PointX="20.791666666666668" PointY="57.40625" />
-          <ConnectorPoint PointX="20.958333333333332" PointY="57.40625" />
-          <ConnectorPoint PointX="21.229166666666668" PointY="57.40625" />
+          <ConnectorPoint PointX="21.083333333333332" PointY="57.40625" />
+          <ConnectorPoint PointX="21.291666666666668" PointY="57.40625" />
           <ConnectorPoint PointX="21.458333333333332" PointY="57.40625" />
           <ConnectorPoint PointX="21.955725916666669" PointY="57.40625" />
           <ConnectorPoint PointX="22.122392583333333" PointY="57.40625" />
@@ -8713,8 +8759,10 @@
           <ConnectorPoint PointX="20.058943807692309" PointY="76.431621093749982" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Soluciones_TBL_ModuloReclamos_Reclamo" >
-          <ConnectorPoint PointX="20.75" PointY="64.855499674479177" />
-          <ConnectorPoint PointX="21.5" PointY="64.855499674479177" />
+          <ConnectorPoint PointX="20.75" PointY="63.865249837239588" />
+          <ConnectorPoint PointX="20.916666666666668" PointY="63.865249837239588" />
+          <ConnectorPoint PointX="21.083333333333332" PointY="63.865249837239588" />
+          <ConnectorPoint PointX="21.5" PointY="63.865249837239588" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Tracking_TBL_ModuloReclamos_Reclamo" >
           <ConnectorPoint PointX="19.652691807692307" PointY="76.431621093749982" />
@@ -8724,17 +8772,17 @@
           <ConnectorPoint PointX="21.5" PointY="83.5093489583333" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_UnidadesZonas_TBL_ModuloReclamos_Unidad" >
-          <ConnectorPoint PointX="11.25" PointY="91.87945337219557" />
-          <ConnectorPoint PointX="11.604166666666666" PointY="91.87945337219557" />
-          <ConnectorPoint PointX="11.770833333333334" PointY="91.87945337219557" />
-          <ConnectorPoint PointX="12.260414166666665" PointY="91.87945337219557" />
-          <ConnectorPoint PointX="12.427080833333333" PointY="91.87945337219557" />
-          <ConnectorPoint PointX="12.75" PointY="91.87945337219557" />
+          <ConnectorPoint PointX="11.25" PointY="91.879453372195513" />
+          <ConnectorPoint PointX="11.604166666666666" PointY="91.879453372195513" />
+          <ConnectorPoint PointX="11.770833333333334" PointY="91.879453372195513" />
+          <ConnectorPoint PointX="12.260414166666665" PointY="91.879453372195513" />
+          <ConnectorPoint PointX="12.427080833333333" PointY="91.879453372195513" />
+          <ConnectorPoint PointX="12.75" PointY="91.879453372195513" />
           <ConnectorPoint PointX="12.75" PointY="76.278300781249982" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_UnidadesZonas_TBL_ModuloReclamos_Zona" >
-          <ConnectorPoint PointX="11.25" PointY="95.75445337219557" />
-          <ConnectorPoint PointX="12.3437475" PointY="95.75445337219557" />
+          <ConnectorPoint PointX="11.25" PointY="95.754453372195513" />
+          <ConnectorPoint PointX="12.3437475" PointY="95.754453372195513" />
           <ConnectorPoint PointX="12.3437475" PointY="76.278300781249982" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloWorkFlow_ValidacionesSalida_TBL_ModuloWorkFlow_Rutas" >
@@ -8742,19 +8790,15 @@
           <ConnectorPoint PointX="21.5" PointY="88.913198242187491" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.TBL_Admin_ResponsablesAprobacion" >
-          <ConnectorPoint PointX="6.75" PointY="50.788198242187491" />
-          <ConnectorPoint PointX="7.5" PointY="50.788198242187491" />
-        </AssociationConnector>
-        <AssociationConnector Association="SolutionFramework.MainModel.TBL_Admin_RolesPorOpcionMenu" >
-          <ConnectorPoint PointX="4.5" PointY="50.788198242187491" />
-          <ConnectorPoint PointX="5.25" PointY="50.788198242187491" />
+          <ConnectorPoint PointX="6.75" PointY="50.7881982421875" />
+          <ConnectorPoint PointX="7.5" PointY="50.7881982421875" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.TBL_Admin_UsuariosByRol" >
           <ConnectorPoint PointX="6.75" PointY="49.894099121093745" />
           <ConnectorPoint PointX="7.5" PointY="49.894099121093745" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.TBL_ModuloDocumentosAnexos_CarpetasXrol" >
-          <ConnectorPoint PointX="6" PointY="52.451396484374982" />
+          <ConnectorPoint PointX="6" PointY="52.451396484374996" />
           <ConnectorPoint PointX="6" PointY="58.646098632812482" />
           <ConnectorPoint PointX="7.7387309743589752" PointY="58.646098632812482" />
           <ConnectorPoint PointX="7.9053976410256412" PointY="58.646098632812482" />
@@ -8786,8 +8830,12 @@
           <ConnectorPoint PointX="14" PointY="58.679749348958325" />
           <ConnectorPoint PointX="14.010415416666666" PointY="58.679749348958325" />
           <ConnectorPoint PointX="14.302084583333334" PointY="58.679749348958325" />
+          <ConnectorPoint PointX="14.416666666666666" PointY="58.679749348958325" />
+          <ConnectorPoint PointX="14.583333333333334" PointY="58.679749348958325" />
           <ConnectorPoint PointX="16.760421666666669" PointY="58.679749348958325" />
           <ConnectorPoint PointX="16.927088333333334" PointY="58.679749348958325" />
+          <ConnectorPoint PointX="18.666666666666668" PointY="58.679749348958325" />
+          <ConnectorPoint PointX="18.833333333333332" PointY="58.679749348958325" />
           <ConnectorPoint PointX="18.916666666666668" PointY="58.679749348958325" />
           <ConnectorPoint PointX="19.083333333333332" PointY="58.679749348958325" />
           <ConnectorPoint PointX="19.25" PointY="58.679749348958325" />
@@ -8795,10 +8843,10 @@
         <AssociationConnector Association="SolutionFramework.MainModel.TBL_ModuloReclamos_IngenierosResponsablesByCategoriaProducto" >
           <ConnectorPoint PointX="9" PointY="58.304475161858974" />
           <ConnectorPoint PointX="9.40625" PointY="58.710725161858974" />
-          <ConnectorPoint PointX="9.40625" PointY="78.692047526041677" />
-          <ConnectorPoint PointX="9.5416666666666661" PointY="78.692047526041677" />
-          <ConnectorPoint PointX="9.7083333333333339" PointY="78.692047526041677" />
-          <ConnectorPoint PointX="9.75" PointY="78.692047526041677" />
+          <ConnectorPoint PointX="9.40625" PointY="78.692047526041662" />
+          <ConnectorPoint PointX="9.5416666666666661" PointY="78.692047526041662" />
+          <ConnectorPoint PointX="9.7083333333333339" PointY="78.692047526041662" />
+          <ConnectorPoint PointX="9.75" PointY="78.692047526041662" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.TBL_ModuloReclamos_ReclamoJefeAsesor" >
           <ConnectorPoint PointX="9" PointY="58.283705931089749" />
@@ -8824,43 +8872,45 @@
           <ConnectorPoint PointX="19.300768230769233" PointY="76.431621093749982" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.TBL_ModuloReclamos_UsuarioCopiaComentariosRespuesta" >
-          <ConnectorPoint PointX="9" PointY="54.155360125976607" />
-          <ConnectorPoint PointX="9.1666666666666661" PointY="54.155360125976607" />
-          <ConnectorPoint PointX="9.3333333333333339" PointY="54.155360125976607" />
-          <ConnectorPoint PointX="9.3541666666666661" PointY="54.155360125976607" />
-          <ConnectorPoint PointX="9.5833333333333339" PointY="54.155360125976607" />
-          <ConnectorPoint PointX="11.994789166666665" PointY="54.155360125976607" />
-          <ConnectorPoint PointX="12.302083333333334" PointY="54.155360125976607" />
-          <ConnectorPoint PointX="14.010415416666666" PointY="54.155360125976607" />
-          <ConnectorPoint PointX="14.302084583333334" PointY="54.155360125976607" />
-          <ConnectorPoint PointX="16.354164166666667" PointY="54.155360125976607" />
-          <ConnectorPoint PointX="16.520830833333331" PointY="54.155360125976607" />
-          <ConnectorPoint PointX="16.541666666666668" PointY="54.155360125976607" />
-          <ConnectorPoint PointX="16.708333333333332" PointY="54.155360125976607" />
-          <ConnectorPoint PointX="16.729169166666669" PointY="54.155360125976607" />
-          <ConnectorPoint PointX="16.927088333333334" PointY="54.155360125976607" />
-          <ConnectorPoint PointX="17.789525941731672" PointY="54.155360125976607" />
-          <ConnectorPoint PointX="17.956192608398336" PointY="54.155360125976607" />
-          <ConnectorPoint PointX="18.557289166666667" PointY="54.155360125976607" />
-          <ConnectorPoint PointX="18.864583333333332" PointY="54.155360125976607" />
-          <ConnectorPoint PointX="19.010416666666668" PointY="54.155360125976607" />
-          <ConnectorPoint PointX="19.177083333333332" PointY="54.155360125976607" />
-          <ConnectorPoint PointX="19.791666666666668" PointY="54.155360125976607" />
-          <ConnectorPoint PointX="19.958333333333332" PointY="54.155360125976607" />
-          <ConnectorPoint PointX="20.994789166666667" PointY="54.155360125976607" />
-          <ConnectorPoint PointX="21.395833333333332" PointY="54.155360125976607" />
-          <ConnectorPoint PointX="22.60937" PointY="54.155360125976607" />
+          <ConnectorPoint PointX="9" PointY="54.155360125976614" />
+          <ConnectorPoint PointX="9.1666666666666661" PointY="54.155360125976614" />
+          <ConnectorPoint PointX="9.3333333333333339" PointY="54.155360125976614" />
+          <ConnectorPoint PointX="9.3541666666666661" PointY="54.155360125976614" />
+          <ConnectorPoint PointX="9.5833333333333339" PointY="54.155360125976614" />
+          <ConnectorPoint PointX="11.994789166666665" PointY="54.155360125976614" />
+          <ConnectorPoint PointX="12.302083333333334" PointY="54.155360125976614" />
+          <ConnectorPoint PointX="14.010415416666666" PointY="54.155360125976614" />
+          <ConnectorPoint PointX="14.302084583333334" PointY="54.155360125976614" />
+          <ConnectorPoint PointX="14.416666666666666" PointY="54.155360125976614" />
+          <ConnectorPoint PointX="14.583333333333334" PointY="54.155360125976614" />
+          <ConnectorPoint PointX="16.354164166666667" PointY="54.155360125976614" />
+          <ConnectorPoint PointX="16.520830833333331" PointY="54.155360125976614" />
+          <ConnectorPoint PointX="16.541666666666668" PointY="54.155360125976614" />
+          <ConnectorPoint PointX="16.708333333333332" PointY="54.155360125976614" />
+          <ConnectorPoint PointX="16.729169166666669" PointY="54.155360125976614" />
+          <ConnectorPoint PointX="16.927088333333334" PointY="54.155360125976614" />
+          <ConnectorPoint PointX="17.789525941731721" PointY="54.155360125976614" />
+          <ConnectorPoint PointX="17.956192608398386" PointY="54.155360125976614" />
+          <ConnectorPoint PointX="18.557289166666667" PointY="54.155360125976614" />
+          <ConnectorPoint PointX="18.864583333333332" PointY="54.155360125976614" />
+          <ConnectorPoint PointX="19.010416666666668" PointY="54.155360125976614" />
+          <ConnectorPoint PointX="19.177083333333332" PointY="54.155360125976614" />
+          <ConnectorPoint PointX="19.791666666666668" PointY="54.155360125976614" />
+          <ConnectorPoint PointX="19.958333333333332" PointY="54.155360125976614" />
+          <ConnectorPoint PointX="20.994789166666667" PointY="54.155360125976614" />
+          <ConnectorPoint PointX="21.302083333333332" PointY="54.155360125976614" />
+          <ConnectorPoint PointX="22.60937" PointY="54.155360125976614" />
           <ConnectorPoint PointX="22.60937" PointY="57.5" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.TBL_ModuloReclamos_UsuariosCopiaActividades" >
-          <ConnectorPoint PointX="9" PointY="54.251253350911455" />
-          <ConnectorPoint PointX="9.1666666666666661" PointY="54.251253350911455" />
-          <ConnectorPoint PointX="9.3333333333333339" PointY="54.251253350911455" />
-          <ConnectorPoint PointX="9.3541666666666661" PointY="54.251253350911455" />
-          <ConnectorPoint PointX="9.5208333333333339" PointY="54.251253350911455" />
-          <ConnectorPoint PointX="11.994789166666665" PointY="54.251253350911455" />
-          <ConnectorPoint PointX="12.302083333333334" PointY="54.251253350911455" />
-          <ConnectorPoint PointX="14.14062375" PointY="54.251253350911455" />
+          <ConnectorPoint PointX="9" PointY="54.25125335091149" />
+          <ConnectorPoint PointX="9.1666666666666661" PointY="54.25125335091149" />
+          <ConnectorPoint PointX="9.3333333333333339" PointY="54.25125335091149" />
+          <ConnectorPoint PointX="9.3541666666666661" PointY="54.25125335091149" />
+          <ConnectorPoint PointX="9.5208333333333339" PointY="54.25125335091149" />
+          <ConnectorPoint PointX="11.994789166666665" PointY="54.25125335091149" />
+          <ConnectorPoint PointX="12.302083333333334" PointY="54.25125335091149" />
+          <ConnectorPoint PointX="14.14062375" PointY="54.25125335091149" />
           <ConnectorPoint PointX="14.14062375" PointY="53.566712239583353" />
         </AssociationConnector>
       </Diagram>

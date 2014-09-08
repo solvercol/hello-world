@@ -13,13 +13,13 @@ namespace Modules.DocumentLibrary.UserControls {
     public partial class WucNewFolder {
         
         /// <summary>
-        /// Img1 control.
+        /// Img1Nf control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage Img1;
+        protected global::System.Web.UI.HtmlControls.HtmlImage Img1Nf;
         
         /// <summary>
         /// Image1 control.

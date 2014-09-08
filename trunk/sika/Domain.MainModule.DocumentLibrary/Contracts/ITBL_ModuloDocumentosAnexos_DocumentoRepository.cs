@@ -16,7 +16,7 @@ namespace Domain.MainModule.DocumentLibrary.Contracts
 {
     public interface ITBL_ModuloDocumentosAnexos_DocumentoRepository : IRepository<TBL_ModuloDocumentosAnexos_Documento>
     {
-        
+        TBL_ModuloDocumentosAnexos_Documento GetDocumentAndContentById(int id);
     }
 }
     

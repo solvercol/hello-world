@@ -3,19 +3,18 @@
 
 
 
-<asp:UpdatePanel ID="upInputWindows" runat="server">
+<asp:UpdatePanel ID="upLoadFileDocumentLibrary" runat="server">
         <ContentTemplate>
             
 
-        <asp:Panel ID="pnlFechaEntrega"  runat="server" CssClass="popup_Container" Width="400" Height="200" style="display:none;">  
-            
+        <asp:Panel ID="pnlLoadFileDocLibrary"  runat="server" CssClass="popup_Container" Width="400" Height="200" style="display:none;">             
               
 
             <div class="popup_Titlebar" id="PopupHeader">
                 <div class="TitlebarLeft">
                   <asp:Literal ID="litTitulo" runat="server"></asp:Literal>
                 </div>
-                <div class="TitlebarRight" id="divCloseMensajes">
+                <div class="TitlebarRight" id="divCloseMensajesDl">
                 </div>
             </div>
 
@@ -24,15 +23,15 @@
             </div>
         </asp:Panel>
     
-        <asp:Button ID="btnTargetControl" runat="server" style="display:none; "/>    
+        <asp:Button ID="btnTargetControlDl" runat="server" style="display:none; "/>    
 
         <ajaxToolkit:ModalPopupExtender 
-        ID="mpeLoad" 
+        ID="mpeLoadFileDl" 
         runat="server" 
-        TargetControlID="btnTargetControl" 
-        PopupControlID="pnlFechaEntrega" 
+        TargetControlID="btnTargetControlDl" 
+        PopupControlID="pnlLoadFileDocLibrary" 
         BackgroundCssClass="ModalPopupBG" 
-        cancelcontrolid="divCloseMensajes"> 
+        cancelcontrolid="divCloseMensajesDl"> 
         </ajaxToolkit:ModalPopupExtender>   
 
         </ContentTemplate>

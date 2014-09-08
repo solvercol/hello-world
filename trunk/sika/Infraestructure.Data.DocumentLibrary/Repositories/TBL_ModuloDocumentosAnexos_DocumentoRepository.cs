@@ -9,8 +9,10 @@
 
 #pragma warning disable 1591 // this is for supress no xml comments in public members warnings 
 
+using System.Linq;
 using Domain.MainModule.DocumentLibrary.Contracts;
 using Infraestructure.Data.Core;
+using Infraestructure.Data.Core.Extensions;
 using Infrastructure.CrossCutting.Logging;
 using Domain.MainModules.Entities;
 using Infrastructure.Data.MainModule.UnitOfWork;
@@ -19,9 +21,27 @@ namespace Infraestructure.Data.DocumentLibrary.Repositories
 {
     public class TBL_ModuloDocumentosAnexos_DocumentoRepository : GenericRepository<TBL_ModuloDocumentosAnexos_Documento>, ITBL_ModuloDocumentosAnexos_DocumentoRepository 
     {
+        IMainModuleUnitOfWork _currentUnitOfWork;
+
         public TBL_ModuloDocumentosAnexos_DocumentoRepository(IMainModuleUnitOfWork unitOfWork, ITraceManager traceManager) : base(unitOfWork, traceManager)
         {
+            _currentUnitOfWork = unitOfWork;
         }
+
+        public TBL_ModuloDocumentosAnexos_Documento GetDocumentAndContentById(int id)
+        {
+            if (id > 0)
+            {
+                var set = _currentUnitOfWork.CreateSet<TBL_ModuloDocumentosAnexos_Documento>();
+
+                return set.Where(c => c.IdDocumento == id)
+                          .Include(x=> x.TBL_ModuloDocumentosAnexos_Contenido)
+                          .Select(c => c)
+                          .SingleOrDefault();
+            }
+            return null;
+        }   
+
     }
 }
     

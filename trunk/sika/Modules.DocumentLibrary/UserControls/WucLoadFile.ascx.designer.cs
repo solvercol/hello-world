@@ -13,22 +13,22 @@ namespace Modules.DocumentLibrary.UserControls {
     public partial class WucLoadFile {
         
         /// <summary>
-        /// upInputWindows control.
+        /// upLoadFileDocumentLibrary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upInputWindows;
+        protected global::System.Web.UI.UpdatePanel upLoadFileDocumentLibrary;
         
         /// <summary>
-        /// pnlFechaEntrega control.
+        /// pnlLoadFileDocLibrary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlFechaEntrega;
+        protected global::System.Web.UI.WebControls.Panel pnlLoadFileDocLibrary;
         
         /// <summary>
         /// litTitulo control.
@@ -49,21 +49,21 @@ namespace Modules.DocumentLibrary.UserControls {
         protected global::System.Web.UI.WebControls.PlaceHolder phloadControlLoadFile;
         
         /// <summary>
-        /// btnTargetControl control.
+        /// btnTargetControlDl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnTargetControl;
+        protected global::System.Web.UI.WebControls.Button btnTargetControlDl;
         
         /// <summary>
-        /// mpeLoad control.
+        /// mpeLoadFileDl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ModalPopupExtender mpeLoad;
+        protected global::AjaxControlToolkit.ModalPopupExtender mpeLoadFileDl;
     }
 }
