@@ -86,21 +86,6 @@ namespace Domain.MainModules.Entities
         private string _departamento;
     
         [DataMember]
-        public string Referencia
-        {
-            get { return _referencia; }
-            set
-            {
-                if (_referencia != value)
-                {
-                    _referencia = value;
-                    OnPropertyChanged("Referencia");
-                }
-            }
-        }
-        private string _referencia;
-    
-        [DataMember]
         public string Observaciones
         {
             get { return _observaciones; }

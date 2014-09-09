@@ -83,28 +83,34 @@ namespace Modules.Reclamos.UserControls
             var messages = new List<string>();
 
             if (SelectedCliente.CodigoCliente == null)
-                messages.Add("Es necesario seleccionar un cliente para la creación del reclamo");
+                messages.Add("Es necesario seleccionar un cliente.");
+
+            if (messages.Any())
+            {
+                AddErrorMessages(messages);
+                return;
+            }
 
             if (string.IsNullOrEmpty(UnidadZona))
-                messages.Add("La unidad y zona del cliente son necesarios - Sección: Datos Cliente.");
+                messages.Add("La unidad y zona del cliente son necesarios.");
 
             if (string.IsNullOrEmpty(NombreContacto))
-                messages.Add("El nombre del contacto es obligatorio - Sección: Datos Cliente.");
+                messages.Add("El nombre del contacto es obligatorio.");
 
             if (string.IsNullOrEmpty(EmailContacto))
-                messages.Add("El nombre del contacto es obligatorio - Sección: Datos Cliente.");
+                messages.Add("El mails del contacto es obligatorio.");
 
-            if (!IsValidEmail(EmailContacto))
-                messages.Add("El mail de contacto ingresado no se encuentra con una estructura correcta - Sección: Datos Cliente.");
+            if (!string.IsNullOrEmpty(EmailContacto) && !IsValidEmail(EmailContacto))
+                messages.Add("El mail de contacto ingresado no se encuentra con una estructura correcta.");
 
             if (!string.IsNullOrEmpty(EmailPropietario) && !IsValidEmail(EmailPropietario))
-                messages.Add("El mail del propietario ingresado no se encuentra con una estructura correcta - Sección: Datos Cliente.");
+                messages.Add("El mail del propietario ingresado no se encuentra con una estructura correcta.");
 
             if (!string.IsNullOrEmpty(EmailQuienAplica) && !IsValidEmail(EmailQuienAplica))
-                messages.Add("El mail de quien aplica ingresado no se encuentra con una estructura correcta - Sección: Datos Cliente.");
+                messages.Add("El mail de quien aplica ingresado no se encuentra con una estructura correcta.");
 
             if (string.IsNullOrEmpty(DescripcionProblema))
-                messages.Add("La descripción del problema es requerida para la creación de un reclamo.");            
+                messages.Add("La descripción del problema es requerida.");            
 
             if (messages.Any())
             {
@@ -272,18 +278,6 @@ namespace Modules.Reclamos.UserControls
             }
         }
 
-        public int NoRecordatorios
-        {
-            get
-            {
-                return txtNoRecordatorios.ValueInt;
-            }
-            set
-            {
-                txtNoRecordatorios.ValueInt = value;
-            }
-        }
-
         public string TipoContacto
         {
             get
@@ -293,18 +287,6 @@ namespace Modules.Reclamos.UserControls
             set
             {
                 rblTipoContacto.SelectedValue = value;
-            }
-        }
-
-        public bool RespuestaInmediata
-        {
-            get
-            {
-                return Convert.ToBoolean(rblRespuestaInmediata.SelectedValue);
-            }
-            set
-            {
-                rblRespuestaInmediata.SelectedValue = value.ToString();
             }
         }
 
@@ -529,6 +511,21 @@ namespace Modules.Reclamos.UserControls
         public string IdReclamo
         {
             get { return Request.QueryString.Get("IdReclamo"); }
+        }
+
+        public int IdResponsableCategoriaReclamo
+        {
+            get
+            {
+                if (ViewState["AdminServicio_IdResponsableCategoriaReclamo"] != null)
+                    ViewState["AdminServicio_IdResponsableCategoriaReclamo"] = 0;
+
+                return Convert.ToInt32(ViewState["AdminServicio_IdResponsableCategoriaReclamo"]);
+            }
+            set
+            {
+                ViewState["AdminServicio_IdResponsableCategoriaReclamo"] = value;
+            }
         }
 
         #endregion

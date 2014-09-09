@@ -100,18 +100,6 @@ namespace Modules.Reclamos.UserControls
             }
         }
 
-        public int NoRecordatorios
-        {
-            get
-            {
-                return 0;
-            }
-            set
-            {
-                lblNoRecordatorios.Text = string.Format("{0}", value);
-            }
-        }
-
         public string UnidadZona
         {
             get

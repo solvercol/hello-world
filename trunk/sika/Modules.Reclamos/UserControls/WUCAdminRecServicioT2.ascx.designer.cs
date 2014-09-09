@@ -130,24 +130,6 @@ namespace Modules.Reclamos.UserControls {
         protected global::Infragistics.Web.UI.ListControls.WebDropDown wddReclamoAtentidoPor;
         
         /// <summary>
-        /// txtNoRecordatorios control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Infragistics.Web.UI.EditorControls.WebNumericEditor txtNoRecordatorios;
-        
-        /// <summary>
-        /// rblRespuestaInmediata control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rblRespuestaInmediata;
-        
-        /// <summary>
         /// rblTipoContacto control.
         /// </summary>
         /// <remarks>
@@ -256,13 +238,13 @@ namespace Modules.Reclamos.UserControls {
         protected global::AjaxControlToolkit.CalendarExtender cexTxtFechaRealEntrega;
         
         /// <summary>
-        /// txtDiasIncumplimiento control.
+        /// lblDiasIncumplimiento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Infragistics.Web.UI.EditorControls.WebNumericEditor txtDiasIncumplimiento;
+        protected global::System.Web.UI.WebControls.Label lblDiasIncumplimiento;
         
         /// <summary>
         /// PaneDescripcionProblema control.

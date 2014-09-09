@@ -49,15 +49,6 @@ namespace Modules.Reclamos.UserControls {
         protected global::System.Web.UI.WebControls.Label lblAtendidoPor;
         
         /// <summary>
-        /// lblNoRecordatorios control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNoRecordatorios;
-        
-        /// <summary>
         /// lblUnidadZona control.
         /// </summary>
         /// <remarks>

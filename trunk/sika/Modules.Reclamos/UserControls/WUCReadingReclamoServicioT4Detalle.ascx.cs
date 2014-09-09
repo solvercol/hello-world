@@ -112,18 +112,6 @@ namespace Modules.Reclamos.UserControls
             }
         }
 
-        public int NoRecordatorios
-        {
-            get
-            {
-                return 0;
-            }
-            set
-            {
-                lblNoRecordatorios.Text = string.Format("{0}", value);
-            }
-        }
-
         public string TipoContacto
         {
             get
@@ -133,18 +121,6 @@ namespace Modules.Reclamos.UserControls
             set
             {
                 lblTipoContacto.Text = value;
-            }
-        }
-
-        public bool RespuestaInmediata
-        {
-            get
-            {
-                return true;
-            }
-            set
-            {
-                lblRespuestaInmediata.Text = value ? "SI" : "NO";
             }
         }
 

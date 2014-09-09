@@ -15,12 +15,12 @@ namespace Presenters.Reclamos.IViews
         int IdTipoReclamo { get; set; }
         string IdCategoriaReclamo { get; set; }
         string CategoriaReclamo { get; set; }
+        int IdResponsableCategoriaReclamo { get; set; }
         string Area { get; set; }
         string Planta { get; set; }
         string IdAtendidoPor { get; set; }
         string QuienReclama { get; set; }
-        string NombreQuienReclama { get; }
-        int NoRecordatorios { get; set; }
+        string NombreQuienReclama { get; }        
         string UnidadZona { get; set; }
         string ProcedimientoInternoAfectado { get; set; }
         string AreaIncumpleProcedimiento { get; set; }

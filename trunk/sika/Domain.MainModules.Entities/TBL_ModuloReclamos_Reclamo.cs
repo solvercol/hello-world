@@ -345,21 +345,6 @@ namespace Domain.MainModules.Entities
         private Nullable<System.DateTime> _fechaVenta;
     
         [DataMember]
-        public int NumeroDeVeces
-        {
-            get { return _numeroDeVeces; }
-            set
-            {
-                if (_numeroDeVeces != value)
-                {
-                    _numeroDeVeces = value;
-                    OnPropertyChanged("NumeroDeVeces");
-                }
-            }
-        }
-        private int _numeroDeVeces;
-    
-        [DataMember]
         public Nullable<int> IdAtendidoPor
         {
             get { return _idAtendidoPor; }
@@ -396,21 +381,6 @@ namespace Domain.MainModules.Entities
             }
         }
         private string _tipoContrato;
-    
-        [DataMember]
-        public bool RespuestaInmediata
-        {
-            get { return _respuestaInmediata; }
-            set
-            {
-                if (_respuestaInmediata != value)
-                {
-                    _respuestaInmediata = value;
-                    OnPropertyChanged("RespuestaInmediata");
-                }
-            }
-        }
-        private bool _respuestaInmediata;
     
         [DataMember]
         public string CodigoCliente
@@ -608,19 +578,34 @@ namespace Domain.MainModules.Entities
         private string _aspectoProducto;
     
         [DataMember]
-        public string UsoDescripcion
+        public string DescripcionAspectoEnvase
         {
-            get { return _usoDescripcion; }
+            get { return _descripcionAspectoEnvase; }
             set
             {
-                if (_usoDescripcion != value)
+                if (_descripcionAspectoEnvase != value)
                 {
-                    _usoDescripcion = value;
-                    OnPropertyChanged("UsoDescripcion");
+                    _descripcionAspectoEnvase = value;
+                    OnPropertyChanged("DescripcionAspectoEnvase");
                 }
             }
         }
-        private string _usoDescripcion;
+        private string _descripcionAspectoEnvase;
+    
+        [DataMember]
+        public string DescripcionAspectoProducto
+        {
+            get { return _descripcionAspectoProducto; }
+            set
+            {
+                if (_descripcionAspectoProducto != value)
+                {
+                    _descripcionAspectoProducto = value;
+                    OnPropertyChanged("DescripcionAspectoProducto");
+                }
+            }
+        }
+        private string _descripcionAspectoProducto;
     
         [DataMember]
         public string Lote

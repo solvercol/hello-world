@@ -30,7 +30,7 @@
                             <th style="width:30%;text-align:left;">
                                 Alternativa
                             </th>
-                            <th style="width:14%; text-align:left;">
+                            <th style="width:15%; text-align:left;">
                                 Fecha
                             </th>
                             <th style="width:20%;text-align:left;">
@@ -65,19 +65,19 @@
                                             ImageUrl="~/Resources/Images/RemoveGrid.png"
                                             OnClick="BtnRemoveAlternativa_Click" />
                             </td>--%>
-                            <td style="text-align:left">
+                            <td style="text-align:left;vertical-align:top">
                                 <asp:Label ID="lblAlternativa" runat="server" />
                             </td>
-                            <td style="text-align:left;">
+                            <td style="text-align:left;vertical-align:top">
                                 <asp:Label ID="lblFechaAlternativa" runat="server" />
                             </td>
-                            <td style="text-align:left">
+                            <td style="text-align:left;vertical-align:top">
                                 <asp:Label ID="lblResponable" runat="server" />
                             </td>
-                            <td style="text-align:left; color:#a31717">
+                            <td style="text-align:left; color:#a31717;vertical-align:top">
                                 <asp:Label ID="lblEstado" runat="server" />
                             </td>   
-                            <td style="text-align:left">
+                            <td style="text-align:left;vertical-align:top">
                                 <asp:Label ID="lblSeguimiento" runat="server" />
                             </td>                    
                         </tr>

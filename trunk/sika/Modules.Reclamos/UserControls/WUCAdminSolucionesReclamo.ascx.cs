@@ -124,8 +124,8 @@ namespace Modules.Reclamos.UserControls
                 var lblFechaSolucion = e.Item.FindControl("lblFechaSolucion") as Label;
                 if (lblFechaSolucion != null) lblFechaSolucion.Text = string.Format("{0:dd/MM/yyyy hh:mm:ss tt}", item.CreateOn);
 
-                var lblReferenciaSolucion = e.Item.FindControl("lblReferenciaSolucion") as Label;
-                if (lblReferenciaSolucion != null) lblReferenciaSolucion.Text = string.Format("{0}", item.Referencia);
+                var lblDescripcionSolucion = e.Item.FindControl("lblDescripcionSolucion") as Label;
+                if (lblDescripcionSolucion != null) lblDescripcionSolucion.Text = string.Format("{0}", item.Observaciones);
 
                 var lblDepartamentoSolucion = e.Item.FindControl("lblDepartamentoSolucion") as Label;
                 if (lblDepartamentoSolucion != null) lblDepartamentoSolucion.Text = string.Format("{0}", item.Departamento);
@@ -180,7 +180,6 @@ namespace Modules.Reclamos.UserControls
         void InitAdminSolucion()
         {
             wddDepartamento.SelectedItemIndex = 0;
-            Referencia = string.Empty;
             Observaciones = string.Empty;
             ArchivosAdjuntos = new List<DTO_ValueKey>();
             LoadArchivosAdjuntos(ArchivosAdjuntos);
@@ -268,18 +267,6 @@ namespace Modules.Reclamos.UserControls
             set
             {
                 wddDepartamento.SelectedValue = value;
-            }
-        }
-
-        public string Referencia
-        {
-            get
-            {
-                return txtReferencia.Text;
-            }
-            set
-            {
-                txtReferencia.Text = value;
             }
         }
 

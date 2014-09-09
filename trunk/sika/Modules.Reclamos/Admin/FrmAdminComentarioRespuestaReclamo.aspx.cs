@@ -239,6 +239,8 @@ namespace Modules.Reclamos.Admin
         {
             rptArchivosAdjuntos.DataSource = items;
             rptArchivosAdjuntos.DataBind();
+
+            trAnexos.Visible = items.Any();
         }
 
         public void LoadComentariosRelacionados(List<TBL_ModuloReclamos_ComentariosRespuesta> items)

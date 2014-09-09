@@ -13,7 +13,6 @@ namespace Presenters.Reclamos.IViews
         string Planta { get; set; }
         string AtendidoPor { get; set; }
         string QuienReclama { get; set; }
-        int NoRecordatorios { get; set; }
         string UnidadZona { get; set; }
         string ProcedimientoInternoAfectado { get; set; }
         string AreaIncumpleProcedimiento { get; set; }

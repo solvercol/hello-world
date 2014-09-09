@@ -100,19 +100,7 @@ namespace Modules.Reclamos.UserControls
             {
                 lblFechaVenta.Text = string.Format("{0:dd/MM/yyyy}", value);
             }
-        }
-
-        public int NoRecordatorios
-        {
-            get
-            {
-                return 0;
-            }
-            set
-            {
-                lblNoRecordatorios.Text = string.Format("{0}", value);
-            }
-        }
+        }        
 
         public string TipoContacto
         {
@@ -123,18 +111,6 @@ namespace Modules.Reclamos.UserControls
             set
             {
                 lblTipoContacto.Text = value;
-            }
-        }
-
-        public bool RespuestaInmediata
-        {
-            get
-            {
-                return true;
-            }
-            set
-            {
-                lblRespuestaInmediata.Text = value ? "SI" : "NO";
             }
         }
 
@@ -282,15 +258,27 @@ namespace Modules.Reclamos.UserControls
             }
         }
 
-        public string DescripcionProducto
+        public string DescripcionAspectoEnvase
         {
             get
             {
-                return lblDescripcionProducto.Text;
+                return lblDescripcionAspectoEnvase.Text;
             }
             set
             {
-                lblDescripcionProducto.Text = value;
+                lblDescripcionAspectoEnvase.Text = value;
+            }
+        }
+
+        public string DescripcionAspectoProducto
+        {
+            get
+            {
+                return lblDescripcionAspectoProducto.Text;
+            }
+            set
+            {
+                lblDescripcionAspectoProducto.Text = value;
             }
         }
 

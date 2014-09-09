@@ -18,10 +18,8 @@ namespace Presenters.Reclamos.IViews
         int CantidadVendidaUnidad { get; set; }
         int CantidadReclamadaUnidad { get; set; }
         bool Aplicado { get; set; }
-        DateTime FechaVenta { get; set; }
-        int NoRecordatorios { get; set; }
-        string TipoContacto { get; set; }
-        bool RespuestaInmediata { get; set; }
+        DateTime FechaVenta { get; set; }        
+        string TipoContacto { get; set; }        
         string Planta { get; set; }
         Dto_Producto SelectedProduct { get; }
         void SetSelectedProduct(Dto_Producto producto);
@@ -41,7 +39,8 @@ namespace Presenters.Reclamos.IViews
         // Informacion de Producto
         string AspectoExteriorEnvase { get; set; }
         string AspectoProducto { get; set; }
-        string DescripcionProducto { get; set; }
+        string DescripcionAspectoEnvase { get; set; }
+        string DescripcionAspectoProducto { get; set; }
         string NumeroLote { get; set; }
         bool MuestraDisponible { get; set; }
 

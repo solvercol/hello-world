@@ -15,9 +15,7 @@ namespace Presenters.Reclamos.IViews
         string AtendidoPor { get; set; }
         string PedidoRemisionFactura { get; set; }
         int DiarioInventario { get; set; }
-        int NoRecordatorios { get; set; }
         string TipoContacto { get; set; }
-        bool RespuestaInmediata { get; set; }
 
         // Informacion de Cliente
         string NombreCliente { get; set; }

@@ -61,8 +61,7 @@ namespace Presenters.Reclamos.Presenters
         void InitViewValues()
         {            
             View.IdAtendidoPor = View.UserSession.IdUser.ToString();
-            View.QuienReclama = View.UserSession.IdUser.ToString();
-            View.NoRecordatorios = 0;            
+            View.QuienReclama = View.UserSession.IdUser.ToString();                        
         }
 
         void LoadCategoria()
@@ -76,6 +75,7 @@ namespace Presenters.Reclamos.Presenters
                     View.CategoriaReclamo = categoria.Nombre;
                     View.IdCategoriaReclamo = categoria.IdCategoriaReclamo.ToString();
                     View.Area = categoria.Area;
+                    View.IdResponsableCategoriaReclamo = categoria.IdResponsable;
                 }
             }
             catch (Exception ex)
@@ -280,7 +280,6 @@ namespace Presenters.Reclamos.Presenters
                 model.IdCategoriaReclamo = Convert.ToInt32(View.IdCategoriaReclamo);
                 model.Area = View.Area;
                 model.Planta = View.Planta;
-                model.NumeroDeVeces = View.NoRecordatorios;
                 model.IdAtendidoPor = Convert.ToInt32(View.IdAtendidoPor);
                 model.UnidadZona = View.UnidadZona;
                 model.NombreReclama = View.QuienReclama;
@@ -323,7 +322,6 @@ namespace Presenters.Reclamos.Presenters
                 View.IdCategoriaReclamo = model.IdCategoriaReclamo.ToString();
                 View.Area = model.Area;
                 View.Planta = model.Planta;
-                View.NoRecordatorios = model.NumeroDeVeces;
                 View.IdAtendidoPor = model.IdAtendidoPor.ToString();
                 View.UnidadZona = model.UnidadZona;
                 View.QuienReclama = model.NombreReclama;
@@ -349,7 +347,6 @@ namespace Presenters.Reclamos.Presenters
             model.IdCategoriaReclamo = Convert.ToInt32(View.IdCategoriaReclamo);
             model.Area = View.Area;
             model.Planta = View.Planta;
-            model.NumeroDeVeces = View.NoRecordatorios;
             model.IdAtendidoPor = Convert.ToInt32(View.IdAtendidoPor);
             model.UnidadZona = View.UnidadZona;
             model.NombreReclama = View.NombreQuienReclama;
@@ -357,6 +354,7 @@ namespace Presenters.Reclamos.Presenters
             model.ProcedimientoInternoAfectado = View.ProcedimientoInternoAfectado;
             model.DescripcionProblema = View.DescripcionProblema;
             model.IdResponsableActual = View.UserSession.IdUser;
+            model.IdIngenieroResponsable = View.IdResponsableCategoriaReclamo;
             model.IdEstado = 1; // Registrado
             model.IsActive = true;
             model.IdAsesoradoPor = View.UserSession.IdUser;

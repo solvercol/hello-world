@@ -83,24 +83,28 @@ namespace Modules.Reclamos.UserControls
             var messages = new List<string>();
 
             if (SelectedCliente.CodigoCliente == null)
-                messages.Add("Es necesario seleccionar un cliente para la creación del reclamo");
+                messages.Add("Es necesario seleccionar un cliente.");
+
+            if (messages.Any())
+            {
+                AddErrorMessages(messages);
+                return;
+            }
 
             if (string.IsNullOrEmpty(UnidadZona))
-                messages.Add("La unidad y zona del cliente son necesarios - Seccion: Datos Cliente.");
+                messages.Add("La unidad y zona del cliente son necesarios.");
 
             if (string.IsNullOrEmpty(NombreContacto))
-                messages.Add("El nombre del contacto es obligatorio - Seccion: Datos Cliente.");
+                messages.Add("El nombre del contacto es obligatorio.");
 
             if (string.IsNullOrEmpty(EmailContacto))
-                messages.Add("El nombre del contacto es obligatorio - Seccion: Datos Cliente.");
+                messages.Add("El mail del contacto es obligatorio.");
 
-            if (!IsValidEmail(EmailContacto))
-                messages.Add("El mail de contacto ingresado no se encuentra con una estructura correcta - Seccion: Datos Cliente.");
+            if (!string.IsNullOrEmpty(EmailContacto) && !IsValidEmail(EmailContacto))
+                messages.Add("El mail de contacto ingresado no se encuentra con una estructura correcta.");
 
             if (string.IsNullOrEmpty(DescripcionProblema))
-                messages.Add("La descripción del problema es requerida para la creación de un reclamo.");
-
-
+                messages.Add("La descripción del problema es requerida.");
 
             if (messages.Any())
             {
@@ -112,6 +116,23 @@ namespace Modules.Reclamos.UserControls
                 Presenter.SaveReclamo();
             else
                 Presenter.UpdateReclamo();
+        }
+
+        #endregion
+
+        #region TextBoxes
+
+        protected void TxtFechaPedido_ValueChanged(object sender, EventArgs e)
+        {
+            if (FechaCompromiso != null && FechaRealEntrega != null)
+            {
+                if (FechaRealEntrega.Value > FechaCompromiso.Value)
+                    DiasIncumplimiento = (int)(FechaRealEntrega.Value - FechaCompromiso.Value).TotalDays;
+                else
+                    DiasIncumplimiento = 0;
+            }
+
+            Secciones.SelectedIndex = 1;
         }
 
         #endregion
@@ -254,18 +275,6 @@ namespace Modules.Reclamos.UserControls
             }
         }
 
-        public int NoRecordatorios
-        {
-            get
-            {
-                return txtNoRecordatorios.ValueInt;
-            }
-            set
-            {
-                txtNoRecordatorios.ValueInt = value;
-            }
-        }
-
         public string TipoContacto
         {
             get
@@ -275,18 +284,6 @@ namespace Modules.Reclamos.UserControls
             set
             {
                 rblTipoContacto.SelectedValue = value;
-            }
-        }
-
-        public bool RespuestaInmediata
-        {
-            get
-            {
-                return Convert.ToBoolean(rblRespuestaInmediata.SelectedValue);
-            }
-            set
-            {
-                rblRespuestaInmediata.SelectedValue = value.ToString();
             }
         }
 
@@ -460,48 +457,72 @@ namespace Modules.Reclamos.UserControls
             }
         }
 
-        public DateTime FechaPedido
+        public DateTime? FechaPedido
         {
             get
             {
+                var oReturn = new DateTime();
+
                 if (string.IsNullOrEmpty(txtFechaPedido.Text))
-                    return DateTime.Now;
+                    return null;
+                
+                if (!DateTime.TryParse(txtFechaPedido.Text, out oReturn))
+                    return null;
 
                 return Convert.ToDateTime(txtFechaPedido.Text);
             }
             set
             {
-                txtFechaPedido.Text = value.ToString("dd/MM/yyyy");
+                if (value.HasValue && !value.Value.Equals(DateTime.MinValue))
+                    txtFechaPedido.Text = value.GetValueOrDefault().ToString("dd/MM/yyyy");
+                else
+                    txtFechaPedido.Text = string.Empty;
             }
         }
 
-        public DateTime FechaCompromiso
+        public DateTime? FechaCompromiso
         {
             get
             {
+                var oReturn = new DateTime();
+
                 if (string.IsNullOrEmpty(txtFechaCompromiso.Text))
-                    return DateTime.Now;
+                    return null;
+
+                if (!DateTime.TryParse(txtFechaCompromiso.Text, out oReturn))
+                    return null;
 
                 return Convert.ToDateTime(txtFechaCompromiso.Text);
             }
             set
             {
-                txtFechaCompromiso.Text = value.ToString("dd/MM/yyyy");
+                if (value.HasValue && !value.Value.Equals(DateTime.MinValue))
+                    txtFechaCompromiso.Text = value.GetValueOrDefault().ToString("dd/MM/yyyy");
+                else
+                    txtFechaCompromiso.Text = string.Empty;                
             }
         }
 
-        public DateTime FechaRealEntrega
+        public DateTime? FechaRealEntrega
         {
             get
             {
+                var oReturn = new DateTime();
+
                 if (string.IsNullOrEmpty(txtFechaRealEntrega.Text))
-                    return DateTime.Now;
+                    return null;
+
+                if (!DateTime.TryParse(txtFechaRealEntrega.Text, out oReturn))
+                    return null;
 
                 return Convert.ToDateTime(txtFechaRealEntrega.Text);
             }
             set
             {
-                txtFechaRealEntrega.Text = value.ToString("dd/MM/yyyy");
+                if (value.HasValue && !value.Value.Equals(DateTime.MinValue))
+                    txtFechaRealEntrega.Text = value.GetValueOrDefault().ToString("dd/MM/yyyy");
+                else
+                    txtFechaRealEntrega.Text = string.Empty;                
             }
         }
 
@@ -509,17 +530,35 @@ namespace Modules.Reclamos.UserControls
         {
             get
             {
-                return txtDiasIncumplimiento.ValueInt;
+                if (string.IsNullOrEmpty(lblDiasIncumplimiento.Text))
+                    return 0;
+
+                return Convert.ToInt32(lblDiasIncumplimiento.Text);
             }
             set
             {
-                txtDiasIncumplimiento.ValueInt = value;
+                lblDiasIncumplimiento.Text = string.Format("{0}", value);
             }
         }
 
         public string IdReclamo
         {
             get { return Request.QueryString.Get("IdReclamo"); }
+        }
+
+        public int IdResponsableCategoriaReclamo
+        {
+            get
+            {
+                if (ViewState["AdminServicio_IdResponsableCategoriaReclamo"] != null)
+                    ViewState["AdminServicio_IdResponsableCategoriaReclamo"] = 0;
+
+                return Convert.ToInt32(ViewState["AdminServicio_IdResponsableCategoriaReclamo"]);
+            }
+            set
+            {
+                ViewState["AdminServicio_IdResponsableCategoriaReclamo"] = value;
+            }
         }
 
         #endregion

@@ -90,14 +90,12 @@
 
         <td class="Separador"></td>
 
-        <th style="text-align:left">
-            No. Recordatorios :
+        <th style="text-align:left">            
         </th>
 
         <td class="Separador"></td>
 
-        <td class="Line" >
-            <asp:Label ID="lblNoRecordatorios" runat="server" />
+        <td >
         </td>
     </tr>
     <tr>
@@ -121,28 +119,6 @@
 
         <td class="Line" >
             <asp:Label ID="lblTipoContacto" runat="server" />
-        </td>
-
-    </tr>
-    <tr>
-        <th style="text-align:left">
-            Respuesta Inmediata :
-        </th>
-
-        <td class="Separador"></td>
-
-        <td class="Line" >
-            <asp:Label ID="lblRespuestaInmediata" runat="server" />
-        </td>
-
-        <td class="Separador"></td>
-
-        <th style="text-align:left">                
-        </th>
-
-        <td class="Separador"></td>
-
-        <td >
         </td>
 
     </tr>
@@ -310,23 +286,25 @@
     </tr>
     <tr>
         <th style="text-align:left">
-            Descripción :
+            Descripción Aspecto Envase:
         </th>
 
         <td class="Separador"></td>
 
         <td class="Line">
-            <asp:Label ID="lblDescripcionProducto" runat="server" />
+            <asp:Label ID="lblDescripcionAspectoEnvase" runat="server" />
         </td>
 
         <td class="Separador"></td>
 
-        <th style="text-align:left">                
+        <th style="text-align:left">   
+            Descripción Aspecto Producto:             
         </th>
 
         <td class="Separador"></td>
 
-        <td >
+        <td class="Line">
+            <asp:Label ID="lblDescripcionAspectoProducto" runat="server" />
         </td>
 
     </tr>

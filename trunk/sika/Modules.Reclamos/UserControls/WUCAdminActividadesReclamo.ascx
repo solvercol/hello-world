@@ -27,19 +27,19 @@
                             </th>
                             <%--<th style="width:3%;">                        
                             </th>--%>
-                            <th style="width:33%;text-align:left;">
+                            <th style="width:33%;text-align:left;vertical-align:top">
                                 Descripción
                             </th>
-                            <th style="width:14%; text-align:left;">
+                            <th style="width:15%; text-align:left;;vertical-align:top">
                                 Fecha
                             </th>
-                            <th style="width:10%;text-align:left; color:#a31717">
+                            <th style="width:9%;text-align:left; color:#a31717;vertical-align:top">
                                 Estado
                             </th>
-                            <th style="width:20%;text-align:left;">
+                            <th style="width:20%;text-align:left;vertical-align:top">
                                 Asignado
                             </th>
-                            <th style="width:20%;text-align:left;">
+                            <th style="width:20%;text-align:left;vertical-align:top">
                                 Autor
                             </th>
                         </tr>
