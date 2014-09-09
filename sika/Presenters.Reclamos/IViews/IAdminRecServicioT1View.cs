@@ -12,17 +12,16 @@ namespace Presenters.Reclamos.IViews
         string ConsecutivoReclamo { get; set; }
 
         // Informacion Generral
-        int IdTipoReclamo { get; set; }
+        int IdTipoReclamo { get; set; }        
         string IdCategoriaReclamo { get; set; }
         string CategoriaReclamo { get; set; }
         string Area { get; set; }
+        int IdResponsableCategoriaReclamo { get; set; }
         string IdAsesor { get; set; }
         string IdAtendidoPor { get; set; }
         string PedidoRemisionFactura { get; set; }
-        int DiarioInventario { get; set; }
-        int NoRecordatorios { get; set; }
+        int DiarioInventario { get; set; }        
         string TipoContacto { get; set; }
-        bool RespuestaInmediata { get; set; }        
 
         // Informacion de Cliente
         string NombreContacto { get; set; }

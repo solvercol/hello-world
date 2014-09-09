@@ -50,10 +50,8 @@ namespace Presenters.Reclamos.Presenters
                     View.Area = model.Area;
                     View.Planta = model.Planta;
                     View.Asesor = model.AsesoradoPor.Nombres;
-                    View.NoRecordatorios = model.NumeroDeVeces;
                     View.AtendidoPor = model.AtentidoPor.Nombres;
                     View.TipoContacto = model.TipoContrato;
-                    View.RespuestaInmediata = model.RespuestaInmediata;
                     View.NombreCliente = cliente.NombreCliente;
                     View.UnidadZona = model.UnidadZona;
                     View.NombreContacto = model.Contacto;

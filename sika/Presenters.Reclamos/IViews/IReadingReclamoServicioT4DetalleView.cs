@@ -13,9 +13,7 @@ namespace Presenters.Reclamos.IViews
         string Planta { get; set; }
         string Asesor { get; set; }
         string AtendidoPor { get; set; }
-        int NoRecordatorios { get; set; }
         string TipoContacto { get; set; }
-        bool RespuestaInmediata { get; set; }
 
         // Informacion de Cliente
         string NombreCliente { get; set; }

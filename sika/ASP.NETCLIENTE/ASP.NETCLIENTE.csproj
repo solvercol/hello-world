@@ -295,6 +295,7 @@
     <Content Include="Resources\Images\Rutas.png" />
     <Content Include="Resources\Images\search.png" />
     <Content Include="Resources\Images\select.png" />
+    <Content Include="Resources\Images\sign_in.jpg" />
     <Content Include="Resources\Images\SubirArchivoTitulo.gif" />
     <Content Include="Resources\Images\titlebar_bg.png" />
     <Content Include="Resources\Images\txt.gif" />

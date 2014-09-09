@@ -66,13 +66,12 @@
         <td class="Separador"></td>
 
         <th style="text-align:left">
-            No. Recordatorios :
+            
         </th>
 
         <td class="Separador"></td>
 
-        <td class="Line" >
-            <asp:Label ID="lblNoRecordatorios" runat="server" />
+        <td >
         </td>
 
     </tr>

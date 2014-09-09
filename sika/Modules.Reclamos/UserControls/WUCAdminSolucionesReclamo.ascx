@@ -28,11 +28,11 @@
                             </th>
                             <%--<th style="width:3%;">                        
                             </th>--%>
-                            <th style="width:14%;text-align:left;">
+                            <th style="width:15%;text-align:left;">
                                 Fecha
                             </th>
                             <th style="width:33%; text-align:left;">
-                                Referencia
+                                Descripción Solución
                             </th>
                             <th style="width:30%;text-align:left;">
                                 Departamento
@@ -63,16 +63,16 @@
                                             ImageUrl="~/Resources/Images/RemoveGrid.png" 
                                             OnClick="BtnRemoveSolucion_Click"  />
                             </td>  --%>                  
-                            <td style="text-align:left;">
+                            <td style="text-align:left;vertical-align:top;">
                                 <asp:Label ID="lblFechaSolucion" runat="server" />
                             </td>
-                            <td style="text-align:left">
-                                <asp:Label ID="lblReferenciaSolucion" runat="server" />
+                            <td style="text-align:left;vertical-align:top;">
+                                <asp:Label ID="lblDescripcionSolucion" runat="server" />
                             </td>
-                            <td style="text-align:left">
+                            <td style="text-align:left;vertical-align:top;">
                                 <asp:Label ID="lblDepartamentoSolucion" runat="server" />
                             </td>
-                            <td style="text-align:left">
+                            <td style="text-align:left;vertical-align:top;">
                                 <asp:Label ID="lblCreateBy" runat="server" />
                             </td>                    
                         </tr>
@@ -127,20 +127,7 @@
                     </tr>
                     <tr>
                         <th style="text-align:left">
-                            Referencia :
-                        </th>
-
-                        <td class="Separador"></td>
-                
-                        <td class="Line">
-                            <asp:TextBox ID="txtReferencia" runat="server" Width="90%" />
-                        </td>
-
-                        <td class="Separador"></td>
-                    </tr>
-                    <tr>
-                        <th style="text-align:left">
-                            Observaciones :
+                            Descripción Solucion :
                         </th>
 
                         <td class="Separador"></td>

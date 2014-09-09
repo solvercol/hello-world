@@ -49,11 +49,9 @@ namespace Presenters.Reclamos.Presenters
                     View.Area = model.Area;
                     View.Asesor = model.AsesoradoPor.Nombres;
                     View.PedidoRemisionFactura = model.NumPFR;
-                    View.NoRecordatorios = model.NumeroDeVeces;
                     View.DiarioInventario = Convert.ToInt32(model.NumDiarioInventario);
                     View.AtendidoPor = model.AtentidoPor.Nombres;
                     View.TipoContacto = model.TipoContrato;
-                    View.RespuestaInmediata = model.RespuestaInmediata;
                     View.NombreCliente = cliente.NombreCliente;
                     View.UnidadZona = model.UnidadZona;
                     View.NombreContacto = model.Contacto;

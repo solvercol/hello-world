@@ -85,10 +85,13 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>0.69487in</Width>
+              <Width>0.86967in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.95833in</Width>
+              <Width>0.80945in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.08333in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.34375in</Width>
@@ -97,19 +100,54 @@
               <Width>2.4657in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.87195in</Width>
+              <Width>0.80945in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.92403in</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.28862in</Width>
+              <Width>1.16362in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
               <Height>0.23622in</Height>
               <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox12">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Fecha</Value>
+                              <Style>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>DimGray</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox11</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox7">
@@ -258,44 +296,6 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox11">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Fecha</Value>
-                              <Style>
-                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
-                                <Color>DimGray</Color>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox11</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <BackgroundColor>LightGrey</BackgroundColor>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
                     <Textbox Name="Textbox13">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -373,6 +373,55 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
+                    <Textbox Name="Fecha2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Fecha.Value</Value>
+                              <Style>
+                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>dd/MM/yyyy</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Fecha</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <TopBorder>
+                          <Style>None</Style>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>WhiteSmoke</Color>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Style>None</Style>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Style>None</Style>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
                     <Textbox Name="NumeroReclamo">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -414,7 +463,7 @@
                           <Color>WhiteSmoke</Color>
                         </BottomBorder>
                         <LeftBorder>
-                          <Color>WhiteSmoke</Color>
+                          <Style>None</Style>
                         </LeftBorder>
                         <RightBorder>
                           <Style>None</Style>
@@ -567,55 +616,6 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Fecha">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!Fecha.Value</Value>
-                              <Style>
-                                <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
-                                <FontSize>8pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
-                                <Format>dd/MM/yyyy</Format>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Fecha</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <TopBorder>
-                          <Style>None</Style>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>WhiteSmoke</Color>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Style>None</Style>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Style>None</Style>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
                     <Textbox Name="Estado">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -697,7 +697,7 @@
                           <Style>None</Style>
                         </LeftBorder>
                         <RightBorder>
-                          <Color>WhiteSmoke</Color>
+                          <Style>None</Style>
                         </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -705,6 +705,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -733,8 +734,14 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DS_Report</DataSetName>
+        <SortExpressions>
+          <SortExpression>
+            <Value>=Fields!Fecha.Value</Value>
+            <Direction>Descending</Direction>
+          </SortExpression>
+        </SortExpressions>
         <Height>1.2cm</Height>
-        <Width>24.25001cm</Width>
+        <Width>24.24422cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -745,7 +752,7 @@
     <Height>0.47244in</Height>
     <Style />
   </Body>
-  <Width>9.54725in</Width>
+  <Width>9.54497in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>

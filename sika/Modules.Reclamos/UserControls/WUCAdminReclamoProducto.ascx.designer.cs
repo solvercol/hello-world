@@ -139,15 +139,6 @@ namespace Modules.Reclamos.UserControls {
         protected global::AjaxControlToolkit.CalendarExtender cexTxtfechaVenta;
         
         /// <summary>
-        /// txtNoRecordatorios control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Infragistics.Web.UI.EditorControls.WebNumericEditor txtNoRecordatorios;
-        
-        /// <summary>
         /// wddReclamoAtentidoPor control.
         /// </summary>
         /// <remarks>
@@ -164,15 +155,6 @@ namespace Modules.Reclamos.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList rblTipoContacto;
-        
-        /// <summary>
-        /// rblRespuestaInmediata control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rblRespuestaInmediata;
         
         /// <summary>
         /// PaneDatosClienteObra control.
@@ -292,13 +274,22 @@ namespace Modules.Reclamos.UserControls {
         protected global::System.Web.UI.WebControls.RadioButtonList rblAspectoProducto;
         
         /// <summary>
-        /// txtDescripcionProducto control.
+        /// txtDescripcionAspectoEnvase control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescripcionProducto;
+        protected global::System.Web.UI.WebControls.TextBox txtDescripcionAspectoEnvase;
+        
+        /// <summary>
+        /// txtDescripcionAspectoProducto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDescripcionAspectoProducto;
         
         /// <summary>
         /// txtNumeroLote control.

@@ -48,7 +48,6 @@ namespace Presenters.Reclamos.Presenters
                     View.CategoriaReclamo = model.TBL_ModuloReclamos_CategoriasReclamo.Nombre;
                     View.Area = model.Area;
                     View.Planta = model.Planta;
-                    View.NoRecordatorios = model.NumeroDeVeces;
                     View.AtendidoPor = model.AtentidoPor.Nombres;
                     View.UnidadZona = model.UnidadZona;
                     View.QuienReclama = model.NombreReclama;

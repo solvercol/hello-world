@@ -67,15 +67,6 @@ namespace Modules.Reclamos.UserControls {
         protected global::System.Web.UI.WebControls.Label lblFechaVenta;
         
         /// <summary>
-        /// lblNoRecordatorios control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNoRecordatorios;
-        
-        /// <summary>
         /// lblAtendidoPor control.
         /// </summary>
         /// <remarks>
@@ -92,15 +83,6 @@ namespace Modules.Reclamos.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTipoContacto;
-        
-        /// <summary>
-        /// lblRespuestaInmediata control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRespuestaInmediata;
         
         /// <summary>
         /// lblNombreCliente control.
@@ -202,13 +184,22 @@ namespace Modules.Reclamos.UserControls {
         protected global::System.Web.UI.WebControls.Label lblAspectoProducto;
         
         /// <summary>
-        /// lblDescripcionProducto control.
+        /// lblDescripcionAspectoEnvase control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescripcionProducto;
+        protected global::System.Web.UI.WebControls.Label lblDescripcionAspectoEnvase;
+        
+        /// <summary>
+        /// lblDescripcionAspectoProducto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDescripcionAspectoProducto;
         
         /// <summary>
         /// lblNumeroLote control.

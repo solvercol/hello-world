@@ -24,14 +24,6 @@
 </head>
 <body >
     <form id="Form1" runat="server" enctype="multipart/form-data">
-            <%--<ajaxToolkit:ToolkitScriptManager 
-            runat="Server" 
-            EnableScriptGlobalization="true" 
-            EnableScriptLocalization="true" 
-            CombineScripts="true"
-            ID="smGeneral">
-            </ajaxToolkit:ToolkitScriptManager>--%>
-
              <asp:ScriptManager 
             ID="smGeneral" 
             runat="server"  
@@ -89,13 +81,13 @@
                 <div id="PlaceHolderFooter" class="container">
                     <asp:ContentPlaceHolder ID="Footer" runat="server" />
                 </div>
-            </div>
-           
-          <div id="adminwrapperFooter" class="container">
-
-         </div>      
-             
-        
+                
+            </div>   
+            <div class="container980">
+                <div class="FooterDiv">
+                    © 2014 - Todos los derechos reservados - Diseñado por Solver de Colombia Ltda.
+                </div>   
+            </div>     
     </form>
 </body>
 </html>

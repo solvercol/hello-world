@@ -90,34 +90,49 @@ namespace Modules.Reclamos.UserControls
             var messages = new List<string>();           
             
             if (SelectedProduct.CodigoProducto == null)
-                messages.Add("Es necesario seleccionar un producto para la creación del reclamo.");
+                messages.Add("Es necesario seleccionar un producto.");
             
             if (SelectedCliente.CodigoCliente == null)
-                messages.Add("Es necesario seleccionar un cliente para la creación del reclamo.");            
+                messages.Add("Es necesario seleccionar un cliente.");
+
+            if (messages.Any())
+            {
+                AddErrorMessages(messages);
+                return;
+            }
 
             if (string.IsNullOrEmpty(UnidadZona))
-                messages.Add("La unidad y zona del cliente son necesarios - Seccion: Datos Cliente.");
+                messages.Add("La unidad y zona del cliente son necesarios.");
 
             if (string.IsNullOrEmpty(NombreContacto))
-                messages.Add("El nombre del contacto es obligatorio - Seccion: Datos Cliente.");
+                messages.Add("El nombre del contacto es obligatorio.");
 
             if (string.IsNullOrEmpty(EmailContacto))
-                messages.Add("El nombre del contacto es obligatorio - Seccion: Datos Cliente.");
+                messages.Add("El email del contacto es obligatorio.");
 
-            if (!IsValidEmail(EmailContacto))
-                messages.Add("El mail de contacto ingresado no se encuentra con una estructura correcta - Seccion: Datos Cliente.");
+            if (!string.IsNullOrEmpty(EmailContacto) && !IsValidEmail(EmailContacto))
+                messages.Add("El mail de contacto ingresado no se encuentra con una estructura correcta.");
 
             if (!string.IsNullOrEmpty(EmailQuienAplica) && !IsValidEmail(EmailQuienAplica))
-                messages.Add("El mail de quien aplica ingresado no se encuentra con una estructura correcta - Seccion: Datos Cliente.");
+                messages.Add("El mail de quien aplica ingresado no se encuentra con una estructura correcta.");
 
             if (!string.IsNullOrEmpty(EmailPropietario) && !IsValidEmail(EmailPropietario))
-                messages.Add("El mail de quien aplica ingresado no se encuentra con una estructura correcta - Seccion: Datos Cliente.");
+                messages.Add("El mail de quien aplica ingresado no se encuentra con una estructura correcta.");
 
             if (string.IsNullOrEmpty(NumeroLote))
-                messages.Add("El numero de lote es requrerido para la creación de un reclamo - Seccion: Estado del producto.");
+                messages.Add("El numero de lote es requrerido para la creación de un reclamo.");
+
+            if (string.IsNullOrEmpty(Diagnostico))
+                messages.Add("El diagnostico previo del problema es requerido.");
 
             if (string.IsNullOrEmpty(DescripcionProblema))
-                messages.Add("La descripción del problema es requerida para la creación de un reclamo.");
+                messages.Add("La descripción del problema es requerida.");
+
+            if (AspectoExteriorEnvase == "Malo" && string.IsNullOrEmpty(DescripcionAspectoEnvase))
+                messages.Add("Es necesario ingresar una descripción del aspecto exterior del envase.");
+
+            if (AspectoProducto == "Anormal" && string.IsNullOrEmpty(DescripcionAspectoProducto))
+                messages.Add("Es necesario ingresar una descripción del aspecto del producto.");
 
             if (messages.Any())
             {
@@ -318,18 +333,6 @@ namespace Modules.Reclamos.UserControls
             }
         }
 
-        public int NoRecordatorios
-        {
-            get
-            {
-                return txtNoRecordatorios.ValueInt;
-            }
-            set
-            {
-                txtNoRecordatorios.ValueInt = value;
-            }
-        }
-
         public string TipoContacto
         {
             get
@@ -341,19 +344,7 @@ namespace Modules.Reclamos.UserControls
                 rblTipoContacto.SelectedValue = value;
             }
         }
-
-        public bool RespuestaInmediata
-        {
-            get
-            {
-                return Convert.ToBoolean(rblRespuestaInmediata.SelectedValue);
-            }
-            set
-            {
-                rblRespuestaInmediata.SelectedValue = value.ToString();
-            }
-        }
-
+        
         public string Planta
         {
             get
@@ -486,15 +477,27 @@ namespace Modules.Reclamos.UserControls
             }
         }
 
-        public string DescripcionProducto
+        public string DescripcionAspectoEnvase
         {
             get
             {
-                return txtDescripcionProducto.Text;
+                return txtDescripcionAspectoEnvase.Text;
             }
             set
             {
-                txtDescripcionProducto.Text = value;
+                txtDescripcionAspectoEnvase.Text = value;
+            }
+        }
+
+        public string DescripcionAspectoProducto
+        {
+            get
+            {
+                return txtDescripcionAspectoProducto.Text;
+            }
+            set
+            {
+                txtDescripcionAspectoProducto.Text = value;
             }
         }
 

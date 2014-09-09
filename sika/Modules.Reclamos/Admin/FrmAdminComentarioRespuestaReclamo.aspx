@@ -162,10 +162,10 @@
                                     <asp:repeater id="rptComentariosAsociados" runat="server" OnItemDataBound="RptComentariosAsociados_ItemDataBound"  >                                                                 
                                         <ItemTemplate>
                                             <tr class="Line">
-                                                <td style="width:13%; vertical-align:top">
+                                                <td style="width:17%; vertical-align:top">
                                                     <asp:Label ID="lblFechaComentario" runat="server" />
                                                 </td>
-                                                <td style="width:10%; vertical-align:top">
+                                                <td style="width:12%; vertical-align:top">
                                                     <asp:Label ID="lblCreadoPor" runat="server" />
                                                 </td>
                                                 <td>
@@ -232,7 +232,7 @@
 
                             <td class="Separador"></td>
                         </tr>
-                        <tr>
+                        <tr id="trAnexos" runat="server">
                             <td></td>
                             <td class="Separador"></td>
 

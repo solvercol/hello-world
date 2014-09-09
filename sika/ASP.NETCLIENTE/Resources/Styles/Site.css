@@ -474,27 +474,26 @@ a
 #bgIzquierda
 {
     display: inline-block;
-    background-image:url(../Images/LogoPropac.jpg);
+    background-image:url(../Images/sign_in.jpg);
     background-repeat:no-repeat;
     float:left;
-    width:285px;
+    width:100px;
     background-color:transparent;
     margin:auto;
-    height:256px;
+    height:210px;
     background-position:center;
+    padding-left:10px;
 }
 
 #bgDerecha
 {
-    background-image:url(../Images/Bienvenida.jpg);
-    background-repeat:no-repeat;
     float:right;
-    width:260px;
+    width:250px;
     background-color:transparent;
     margin-right:35px;
-    height:256px;
     background-position:right;
     position:relative;
+    margin-top:60px;
 }
 
 #loginarea
@@ -504,8 +503,7 @@ a
     background-color: #fff;
     border: 0px solid #999;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 200px;
     /*margin-top: 192px;*/
     width: 358px;
     
@@ -521,7 +519,7 @@ a
 #login
 {
     background-repeat: no-repeat;
-    height: 256px;
+    height: 210px;
     padding-top: 8px;
     text-align: left;
     width: 358px;
@@ -539,13 +537,13 @@ a
 
 #login #cuyahoga
 {
-    background-image: url(../Images/logo_signin.jpg);
+    background-image: url(../Images/logo.png);
     background-repeat:no-repeat;
     border-style: none;
-    height: 70px;
+    height: 45px;
     margin-left: 52px;
     margin-top: 4px;
-    width: 249px;
+    width: 280px;
 }
 
 #login label
@@ -955,7 +953,7 @@ border-bottom:1px solid #C0C0C0;
 border-top:solid 1px #C0C0C0;
 border-right:solid 1px #C0C0C0;
 font-size: 0.9em;
-line-height: 10px;  
+line-height: 13px;  
 text-decoration: none;
 font-family: 'klavika_lightplain_basic', Calibri;
 font-weight: normal;
@@ -1438,4 +1436,33 @@ text-transform:uppercase;
     cursor: pointer;    
     color:#000000;
     border-bottom:1px solid #F4F4F3; 
+}
+
+.FooterDiv
+{
+    background-color: #9b9d9e;
+    font-family: 'klavika_lightplain_basic', Calibri;
+    font-size: 8pt;
+    cursor: pointer;    
+    color:#ffffff;
+    height:25px;
+}
+
+.TitleLoginMensaje
+{
+    font-family: 'klavika_lightplain_basic', Calibri;
+    font-size: 20pt;
+    font-weight:bold;
+    margin-top: 2px;    
+    color:#000000;
+}
+
+.LoginMensaje
+{
+    font-family: 'klavika_lightplain_basic', Calibri;
+    font-size: 10pt;
+    font-weight:bold;
+    margin-top: 2px;    
+    color:#000000;
+    text-align:justify;
 }

@@ -61,7 +61,6 @@ namespace Presenters.Reclamos.Presenters
             View.IdAsesor = View.UserSession.IdUser.ToString();
             View.IdAtendidoPor = View.UserSession.IdUser.ToString();
             View.DiarioInventario = 0;
-            View.NoRecordatorios = 0;
         }
 
         void LoadCategoria()
@@ -75,6 +74,7 @@ namespace Presenters.Reclamos.Presenters
                     View.CategoriaReclamo = categoria.Nombre;
                     View.IdCategoriaReclamo = categoria.IdCategoriaReclamo.ToString();
                     View.Area = categoria.Area;
+                    View.IdResponsableCategoriaReclamo = categoria.IdResponsable;
                 }
             }
             catch (Exception ex)
@@ -219,11 +219,9 @@ namespace Presenters.Reclamos.Presenters
                 model.Area = View.Area;
                 model.IdAsesoradoPor = Convert.ToInt32(View.IdAsesor);
                 model.NumPFR = View.PedidoRemisionFactura;
-                model.NumeroDeVeces = View.NoRecordatorios;
                 model.NumDiarioInventario = View.DiarioInventario.ToString();
                 model.IdAtendidoPor = Convert.ToInt32(View.IdAtendidoPor);
                 model.TipoContrato = View.TipoContacto;
-                model.RespuestaInmediata = View.RespuestaInmediata;
                 model.CodigoCliente = View.SelectedCliente.CodigoCliente;
                 model.UnidadZona = View.UnidadZona;
                 model.Contacto = View.NombreContacto;
@@ -266,11 +264,9 @@ namespace Presenters.Reclamos.Presenters
                 View.Area = model.Area;
                 View.IdAsesor = model.IdAsesoradoPor.ToString();
                 View.PedidoRemisionFactura = model.NumPFR;
-                View.NoRecordatorios = model.NumeroDeVeces;
                 View.DiarioInventario = Convert.ToInt32(model.NumDiarioInventario);
                 View.IdAtendidoPor = model.IdAtendidoPor.ToString();
                 View.TipoContacto = model.TipoContrato;
-                View.RespuestaInmediata = model.RespuestaInmediata;
                 View.SelectedCliente.CodigoCliente = model.CodigoCliente;
                 View.UnidadZona = model.UnidadZona;
                 View.NombreContacto = model.Contacto;
@@ -299,17 +295,16 @@ namespace Presenters.Reclamos.Presenters
             model.Area = View.Area;
             model.IdAsesoradoPor = Convert.ToInt32(View.IdAsesor);
             model.NumPFR = View.PedidoRemisionFactura;
-            model.NumeroDeVeces = View.NoRecordatorios;
             model.NumDiarioInventario = View.DiarioInventario.ToString();
             model.IdAtendidoPor = Convert.ToInt32(View.IdAtendidoPor);
             model.TipoContrato = View.TipoContacto;
-            model.RespuestaInmediata = View.RespuestaInmediata;
             model.CodigoCliente = View.SelectedCliente.CodigoCliente;
             model.UnidadZona = View.UnidadZona;
             model.Contacto = View.NombreContacto;
             model.EmailContacto = View.EmailContacto;
             model.DescripcionProblema = View.DescripcionProblema;
             model.IdResponsableActual = View.UserSession.IdUser;
+            model.IdIngenieroResponsable = View.IdResponsableCategoriaReclamo;
             model.IdEstado = 1; // Registrado
             model.IsActive = true;
             model.CreateBy = View.UserSession.IdUser;

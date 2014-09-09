@@ -39,6 +39,9 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
         IObjectSet<TBL_Admin_DiasAnticipados> TBL_Admin_DiasAnticipados{get;}
         
     
+        IObjectSet<TBL_Admin_EstadosProceso> TBL_Admin_EstadosProceso{get;}
+        
+    
         IObjectSet<TBL_Admin_ModuleRepository> TBL_Admin_ModuleRepository{get;}
         
     
@@ -78,22 +81,10 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
         IObjectSet<TBL_Admin_Secciones> TBL_Admin_Secciones{get;}
         
     
-        IObjectSet<TBL_Admin_TypeByModules> TBL_Admin_TypeByModules{get;}
-        
-    
-        IObjectSet<TBL_ModuloPlanAccion_BancoActividades> TBL_ModuloPlanAccion_BancoActividades{get;}
-        
-    
-        IObjectSet<TBL_ModuloPlanAccion_Categorias> TBL_ModuloPlanAccion_Categorias{get;}
-        
-    
-        IObjectSet<TBL_ModuloPlanAccion_ConfiguracionActividades> TBL_ModuloPlanAccion_ConfiguracionActividades{get;}
-        
-    
-        IObjectSet<TBL_Admin_EstadosProceso> TBL_Admin_EstadosProceso{get;}
-        
-    
         IObjectSet<TBL_Admin_SistemaNotificaciones> TBL_Admin_SistemaNotificaciones{get;}
+        
+    
+        IObjectSet<TBL_Admin_TypeByModules> TBL_Admin_TypeByModules{get;}
         
     
         IObjectSet<TBL_Admin_Usuarios> TBL_Admin_Usuarios{get;}
@@ -130,6 +121,15 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
         
     
         IObjectSet<TBL_ModuloDocumentosAnexos_Documento> TBL_ModuloDocumentosAnexos_Documento{get;}
+        
+    
+        IObjectSet<TBL_ModuloPlanAccion_BancoActividades> TBL_ModuloPlanAccion_BancoActividades{get;}
+        
+    
+        IObjectSet<TBL_ModuloPlanAccion_Categorias> TBL_ModuloPlanAccion_Categorias{get;}
+        
+    
+        IObjectSet<TBL_ModuloPlanAccion_ConfiguracionActividades> TBL_ModuloPlanAccion_ConfiguracionActividades{get;}
         
     
         IObjectSet<TBL_ModuloReclamos_Actividades> TBL_ModuloReclamos_Actividades{get;}

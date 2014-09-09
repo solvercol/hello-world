@@ -16,11 +16,19 @@
             </div>
             <div style=" background-color:White;">
                 <div id="bgIzquierda"></div>
-                <div id="bgDerecha"></div>
+                <div id="bgDerecha">
+                    <div class="TitleLoginMensaje">
+                        Bienvenido!
+                    </div>
+                    <div class="LoginMensaje">
+                        Este es el sistema de Gestión de Reclamos y Calidad en el que
+                        podrá registrar los reclamos y documentos de calidad y saber al instante su estado.
+                    </div>
+                </div>
 	            <div id="loginarea">
 	                <div id="login">
 	                    <div id="cuyahoga"></div>
-		                <h3 class="hidden">Site Administration login</h3>
+                        <br />
                         <asp:Label ID="lblUsername" runat="server" AssociatedControlID="txtUsername" Text="Username"></asp:Label>
 		                <asp:TextBox id="txtUsername" runat="server" MaxLength="18"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredtxtUsername" ControlToValidate="txtUsername" runat="server" ErrorMessage="*"></asp:RequiredFieldValidator>
@@ -35,8 +43,8 @@
 	                </div>
 	            </div>
             </div>
-           <div  class="container980">
-                © 2014 - Todos los derechos reservados
+           <div  class="FooterDiv">
+                © 2014 - Diseñado por Solver de Colombia Ltda. para Sika Colombia S.A.
            </div>
         </div>
 	</form>

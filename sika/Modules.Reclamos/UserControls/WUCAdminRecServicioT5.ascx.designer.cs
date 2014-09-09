@@ -103,15 +103,6 @@ namespace Modules.Reclamos.UserControls {
         protected global::Infragistics.Web.UI.ListControls.WebDropDown wddReclamoAtentidoPor;
         
         /// <summary>
-        /// txtNoRecordatorios control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Infragistics.Web.UI.EditorControls.WebNumericEditor txtNoRecordatorios;
-        
-        /// <summary>
         /// lblUnidadZona control.
         /// </summary>
         /// <remarks>

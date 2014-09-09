@@ -15,15 +15,14 @@ namespace Presenters.Reclamos.IViews
         int IdTipoReclamo { get; set; }
         string IdCategoriaReclamo { get; set; }
         string CategoriaReclamo { get; set; }
+        int IdResponsableCategoriaReclamo { get; set; }
         string Area { get; set; }
         string Planta { get; set; }
         string IdAsesor { get; set; }
         string IdAtendidoPor { get; set; }
         string PedidoRemisionFactura { get; set; }
         int DiarioInventario { get; set; }
-        int NoRecordatorios { get; set; }
         string TipoContacto { get; set; }
-        bool RespuestaInmediata { get; set; }
 
         // Informacion de Cliente
         string NombreContacto { get; set; }
@@ -31,9 +30,9 @@ namespace Presenters.Reclamos.IViews
         string EmailContacto { get; set; }
         Dto_Cliente SelectedCliente { get; }
         void SetSelectedClient(Dto_Cliente cliente);
-        DateTime FechaPedido { get; set; }
-        DateTime FechaCompromiso { get; set; }
-        DateTime FechaRealEntrega { get; set; }
+        DateTime? FechaPedido { get; set; }
+        DateTime? FechaCompromiso { get; set; }
+        DateTime? FechaRealEntrega { get; set; }
         int DiasIncumplimiento { get; set; }
 
         // Descripcion de Problema

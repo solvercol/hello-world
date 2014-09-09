@@ -115,27 +115,27 @@
                         </tr>
                         <tr>
                             <th style="text-align:left; vertical-align:top">
-                                Cantidad Vendida Und :
+                                Cant. Vendida Und :
                             </th>
 
                             <td class="Separador"></td>
 
                             <td class="Line" >
                                 <ig:WebNumericEditor    Id="txtCantidadVendidaUnidad" runat="server" 
-                                                        Nullable="false" MinValue="0" Width="100%" />
+                                                        Nullable="false" MinValue="1" Width="100%" />
                             </td>
 
                             <td class="Separador"></td>
 
                             <th style="text-align:left; vertical-align:top">
-                                Cantidad Reclamada Und :
+                                Cant. Reclamada Und :
                             </th>
 
                             <td class="Separador"></td>
 
                             <td class="Line" >
                                 <ig:WebNumericEditor    Id="txtCantidadReclamadaUnidad" runat="server"
-                                                        Nullable="false" MinValue="0" Width="100%" />
+                                                        Nullable="false" MinValue="1" Width="100%" />
                             </td>
 
                         </tr>
@@ -187,14 +187,12 @@
                             <td class="Separador"></td>
 
                             <th style="text-align:left; vertical-align:top">
-                                No. Recordatorios :
+                                
                             </th>
 
                             <td class="Separador"></td>
 
-                            <td class="Line" >
-                                <ig:WebNumericEditor    Id="txtNoRecordatorios" runat="server"
-                                                        Nullable="false" MinValue="0" Width="50" />
+                            <td >
                             </td>
 
                         </tr>
@@ -232,31 +230,6 @@
                                     <asp:ListItem Selected="True" Value="Escrito" Text="Escrito" />
                                     <asp:ListItem Value="Telefonico" Text="Teléfonoico" />
                                 </asp:RadioButtonList>
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <th style="text-align:left; vertical-align:top">
-                                Respuesta Inmediata :
-                            </th>
-
-                            <td class="Separador"></td>
-
-                            <td class="Line" >
-                                <asp:RadioButtonList ID="rblRespuestaInmediata" runat="server" RepeatColumns="2" RepeatDirection="Horizontal" RepeatLayout="Table">
-                                    <asp:ListItem Value="true" Text="Si" />
-                                    <asp:ListItem Value="false" Text="No" Selected="True" />
-                                </asp:RadioButtonList>
-                            </td>
-
-                            <td class="Separador"></td>
-
-                            <th style="text-align:left">                
-                            </th>
-
-                            <td class="Separador"></td>
-
-                            <td >
                             </td>
 
                         </tr>
@@ -455,23 +428,25 @@
                         </tr>
                         <tr>
                             <th style="text-align:left; vertical-align:top">
-                                Descripción :
+                                Descripción Aspecto Envase:
                             </th>
 
                             <td class="Separador"></td>
 
                             <td class="Line">
-                                <asp:TextBox ID="txtDescripcionProducto" Width="100%" runat="server" MaxLength="512" />
+                                <asp:TextBox ID="txtDescripcionAspectoEnvase" Width="100%" runat="server" MaxLength="512" />
                             </td>
 
                             <td class="Separador"></td>
 
-                            <th style="text-align:left">                
+                            <th style="text-align:left">  
+                                Descripción Aspecto Producto:              
                             </th>
 
                             <td class="Separador"></td>
 
-                            <td >
+                            <td class="Line">
+                                <asp:TextBox ID="txtDescripcionAspectoProducto" Width="100%" runat="server" MaxLength="512" />
                             </td>
 
                         </tr>

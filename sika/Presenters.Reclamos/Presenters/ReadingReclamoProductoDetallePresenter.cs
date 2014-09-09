@@ -52,10 +52,8 @@ namespace Presenters.Reclamos.Presenters
                     View.CantidadReclamadaUnidad = model.CantidadReclamada.GetValueOrDefault();
                     View.Aplicado = model.Aplicado.GetValueOrDefault();
                     View.FechaVenta = model.FechaVenta.GetValueOrDefault();
-                    View.NoRecordatorios = model.NumeroDeVeces;
                     View.AtendidoPor = model.AtentidoPor.Nombres;
                     View.TipoContacto = model.TipoContrato;
-                    View.RespuestaInmediata = model.RespuestaInmediata;
                     View.NombreCliente = cliente.NombreCliente;
                     View.UnidadZona = model.UnidadZona;
                     View.NombreContacto = model.Contacto;
@@ -67,7 +65,8 @@ namespace Presenters.Reclamos.Presenters
                     View.EmailQuienAplica = model.EmailQuienAplica;
                     View.AspectoExteriorEnvase = model.AspectoEnvase;
                     View.AspectoProducto = model.AspectoProducto;
-                    View.DescripcionProducto = model.UsoDescripcion;
+                    View.DescripcionAspectoEnvase = model.DescripcionAspectoEnvase;
+                    View.DescripcionAspectoProducto = model.DescripcionAspectoProducto;
                     View.NumeroLote = model.Lote;
                     View.MuestraDisponible = model.MuestraDisponible.GetValueOrDefault();
                     View.DescripcionProblema = model.DescripcionProblema;

@@ -170,34 +170,16 @@
 
                             <td class="Separador"></td>
 
-                            <th style="text-align:left; vertical-align:top">
-                                No. Recordatorios :
+                            <th style="text-align:left; vertical-align:top">                                
                             </th>
 
                             <td class="Separador"></td>
 
-                            <td class="Line" >
-                                <ig:WebNumericEditor    Id="txtNoRecordatorios" runat="server"
-                                                        Nullable="false" MinValue="0" Width="50" />
+                            <td >
                             </td>
 
                         </tr>
                         <tr>
-                            <th style="text-align:left; vertical-align:top">
-                                Respuesta Inmediata :
-                            </th>
-
-                            <td class="Separador"></td>
-
-                            <td class="Line" >
-                                <asp:RadioButtonList ID="rblRespuestaInmediata" runat="server" RepeatColumns="2" RepeatDirection="Horizontal" RepeatLayout="Table">
-                                    <asp:ListItem Value="true" Text="Si" />
-                                    <asp:ListItem Value="false" Text="No" Selected="True" />
-                                </asp:RadioButtonList>
-                            </td>
-
-                            <td class="Separador"></td>
-
                             <th style="text-align:left; vertical-align:top">
                                 Tipo de Contacto :                
                             </th>
@@ -209,6 +191,17 @@
                                     <asp:ListItem Selected="True" Value="Escrito" Text="Escrito" />
                                     <asp:ListItem Value="Telefonico" Text="Teléfonoico" />
                                 </asp:RadioButtonList>
+                            </td>
+
+                            <td class="Separador"></td>
+
+                            <th style="text-align:left; vertical-align:top">
+                                
+                            </th>
+
+                            <td class="Separador"></td>
+
+                            <td >
                             </td>
 
                         </tr>
@@ -309,7 +302,7 @@
                             <td class="Separador"></td>
 
                             <td class="Line" >
-                                <asp:TextBox ID="txtFechaCompromiso" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtFechaCompromiso" runat="server" OnTextChanged="TxtFechaPedido_ValueChanged" AutoPostBack="true" />
                                 <ajaxToolkit:CalendarExtender 
                                     ID="cexTxtFechaCompromiso" 
                                     runat="server"  
@@ -329,7 +322,7 @@
                             <td class="Separador"></td>
 
                             <td class="Line" >
-                                <asp:TextBox ID="txtFechaRealEntrega" runat="server" ></asp:TextBox>
+                                <asp:TextBox ID="txtFechaRealEntrega" runat="server" OnTextChanged="TxtFechaPedido_ValueChanged" AutoPostBack="true" />
                                 <ajaxToolkit:CalendarExtender 
                                     ID="cexTxtFechaRealEntrega" 
                                     runat="server"  
@@ -347,10 +340,9 @@
                             </th>
 
                             <td class="Separador"></td>
-
+                            
                             <td class="Line" >
-                                <ig:WebNumericEditor    Id="txtDiasIncumplimiento" runat="server"
-                                                        Nullable="false" MinValue="0" Width="100%" />
+                                <asp:Label ID="lblDiasIncumplimiento" runat="server" />
                             </td>
 
                         </tr>  

@@ -80,10 +80,10 @@ namespace Modules.Reclamos.UserControls
             var messages = new List<string>();
             
             if (string.IsNullOrEmpty(UnidadZona))
-                messages.Add("La unidad y zona del cliente son necesarios - Seccion: Datos Cliente.");
+                messages.Add("La unidad y zona del cliente son necesarios.");
 
             if (string.IsNullOrEmpty(DescripcionProblema))
-                messages.Add("La descripción del problema es requerida para la creación de un reclamo.");
+                messages.Add("La descripción del problema es requerida.");
 
             if (messages.Any())
             {
@@ -230,18 +230,6 @@ namespace Modules.Reclamos.UserControls
             set
             {
                 wddReclamoAtentidoPor.SelectedValue = value;
-            }
-        }
-
-        public int NoRecordatorios
-        {
-            get
-            {
-                return txtNoRecordatorios.ValueInt;
-            }
-            set
-            {
-                txtNoRecordatorios.ValueInt = value;
             }
         }
 
@@ -409,6 +397,21 @@ namespace Modules.Reclamos.UserControls
         public string IdReclamo
         {
             get { return Request.QueryString.Get("IdReclamo"); }
+        }
+
+        public int IdResponsableCategoriaReclamo
+        {
+            get
+            {
+                if (ViewState["AdminServicio_IdResponsableCategoriaReclamo"] != null)
+                    ViewState["AdminServicio_IdResponsableCategoriaReclamo"] = 0;
+
+                return Convert.ToInt32(ViewState["AdminServicio_IdResponsableCategoriaReclamo"]);
+            }
+            set
+            {
+                ViewState["AdminServicio_IdResponsableCategoriaReclamo"] = value;
+            }
         }
 
         #endregion

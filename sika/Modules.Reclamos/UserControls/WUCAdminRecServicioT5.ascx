@@ -131,15 +131,12 @@
 
                             <td class="Separador"></td>
 
-                            <th style="text-align:left; vertical-align:top">
-                                No. Recordatorios :
+                            <th style="text-align:left; vertical-align:top">                                
                             </th>
 
                             <td class="Separador"></td>
 
-                            <td class="Line" >
-                                <ig:WebNumericEditor    Id="txtNoRecordatorios" runat="server"
-                                                        Nullable="false" MinValue="0" Width="50" />
+                            <td >
                             </td>
 
                         </tr>

@@ -9,7 +9,6 @@ namespace Presenters.Reclamos.IViews
         // Admin Solucion
         string IdReclamo { get; }
         string Departamento { get; set; }
-        string Referencia { get; set; }
         string Observaciones { get; set; }
 
         string IdSelectedSolucion { get; set; }

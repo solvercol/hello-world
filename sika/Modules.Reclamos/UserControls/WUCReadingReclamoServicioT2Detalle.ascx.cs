@@ -124,18 +124,6 @@ namespace Modules.Reclamos.UserControls
             }
         }
 
-        public int NoRecordatorios
-        {
-            get
-            {
-                return 0;
-            }
-            set
-            {
-                lblNoRecordatorios.Text = string.Format("{0}", value);
-            }
-        }
-
         public string TipoContacto
         {
             get
@@ -145,18 +133,6 @@ namespace Modules.Reclamos.UserControls
             set
             {
                 lblTipoContacto.Text = value;
-            }
-        }
-
-        public bool RespuestaInmediata
-        {
-            get
-            {
-                return true;
-            }
-            set
-            {
-                lblRespuestaInmediata.Text = value ? "SI" : "NO";
             }
         }
 
@@ -216,7 +192,10 @@ namespace Modules.Reclamos.UserControls
             }
             set
             {
-                lblFechaPedido.Text = string.Format("{0:dd/MM/yyyy}", value);
+                if (!value.Equals(DateTime.MinValue))
+                    lblFechaPedido.Text = value.ToString("dd/MM/yyyy");
+                else
+                    lblFechaPedido.Text = string.Empty;
             }
         }
 
@@ -228,7 +207,10 @@ namespace Modules.Reclamos.UserControls
             }
             set
             {
-                lblFechaCompromiso.Text = string.Format("{0:dd/MM/yyyy}", value);
+                if (!value.Equals(DateTime.MinValue))
+                    lblFechaCompromiso.Text = value.ToString("dd/MM/yyyy");
+                else
+                    lblFechaCompromiso.Text = string.Empty;                
             }
         }
 
@@ -240,7 +222,10 @@ namespace Modules.Reclamos.UserControls
             }
             set
             {
-                lblFechaRealEntrega.Text = string.Format("{0:dd/MM/yyyy}", value);
+                if (!value.Equals(DateTime.MinValue))
+                    lblFechaRealEntrega.Text = value.ToString("dd/MM/yyyy");
+                else
+                    lblFechaRealEntrega.Text = string.Empty;                
             }
         }
 

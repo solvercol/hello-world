@@ -30,7 +30,7 @@
                                 <th style="width:61%;text-align:left;">
                                     Descripción
                                 </th>
-                                <th style="width:14%; text-align:left;">
+                                <th style="width:15%; text-align:left;">
                                     Fecha
                                 </th>
                                 <th style="width:20%;text-align:left;">
@@ -51,13 +51,13 @@
                                                 ImageUrl="~/Resources/Images/select.png"
                                                 OnClick="BtnSelectComentario_Click" />
                                 </td>  
-                                <td style="text-align:left">
+                                <td style="text-align:left;vertical-align:top">
                                     <asp:Label ID="lblDescripcion" runat="server" />
                                 </td>                  
-                                <td style="text-align:left;">
+                                <td style="text-align:left;vertical-align:top">
                                     <asp:Label ID="lblFechaComentario" runat="server" />
                                 </td>
-                                <td style="text-align:left">
+                                <td style="text-align:left;vertical-align:top">
                                     <asp:Label ID="lblAutor" runat="server" />
                                 </td>                    
                             </tr>
@@ -70,13 +70,13 @@
                                                     <tr >
                                                         <td style="width:5%">
                                                         </td>
-                                                        <td style="text-align:left;width:61%">
+                                                        <td style="text-align:left;width:61%;vertical-align:top">
                                                             <asp:Label ID="lblDescripcion" runat="server" />
                                                         </td>                  
-                                                        <td style="text-align:left;width:14%">
+                                                        <td style="text-align:left;width:15%;vertical-align:top">
                                                             <asp:Label ID="lblFechaComentario" runat="server" />
                                                         </td>
-                                                        <td style="text-align:left;width:20%">
+                                                        <td style="text-align:left;width:20%;vertical-align:top">
                                                             <asp:Label ID="lblAutor" runat="server" />
                                                         </td> 
                                                     </tr>

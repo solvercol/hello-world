@@ -241,11 +241,9 @@ namespace Presenters.Reclamos.Presenters
             try
             {
                 var anexos = _anexosService.GetByComentarioId(Convert.ToDecimal(View.IdComentario));
-
+                var archivosAdjuntos = new List<DTO_ValueKey>();
                 if (anexos.Any())
                 {
-
-                    var archivosAdjuntos = new List<DTO_ValueKey>();
                     foreach (var anexo in anexos)
                     {
                         var archivo = new DTO_ValueKey();
@@ -255,9 +253,8 @@ namespace Presenters.Reclamos.Presenters
 
                         archivosAdjuntos.Add(archivo);
                     }
-
-                    View.LoadArchivosAdjuntos(archivosAdjuntos);
                 }
+                View.LoadArchivosAdjuntos(archivosAdjuntos);
             }
             catch (Exception ex)
             {
