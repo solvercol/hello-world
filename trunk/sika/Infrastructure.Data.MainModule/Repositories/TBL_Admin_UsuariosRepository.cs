@@ -66,7 +66,7 @@ namespace Infrastructure.Data.MainModule.Repositories
                 return (from user
                             in actualContext.TBL_Admin_Usuarios
                         where
-                            user.TBL_Admin_Roles1.Any(x => x.NombreRol == role)
+                            user.TBL_Admin_Roles.Any(x => x.NombreRol == role)
                         select
                             user).SingleOrDefault();
             }
