@@ -220,6 +220,24 @@ namespace Modules.Reclamos.UserControls {
         protected global::System.Web.UI.WebControls.Label lblMuestraDisponible;
         
         /// <summary>
+        /// lblNumeroLote2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNumeroLote2;
+        
+        /// <summary>
+        /// lblNumeroLote3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNumeroLote3;
+        
+        /// <summary>
         /// txtDescripcionProblema control.
         /// </summary>
         /// <remarks>

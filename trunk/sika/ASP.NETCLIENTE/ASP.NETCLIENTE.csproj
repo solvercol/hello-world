@@ -251,6 +251,8 @@
     <Content Include="Resources\Images\chm.gif" />
     <Content Include="Resources\Images\Close.png" />
     <Content Include="Resources\Images\Collapse.gif" />
+    <Content Include="Resources\Images\comentarios.png" />
+    <Content Include="Resources\Images\complete.png" />
     <Content Include="Resources\Images\Copiar.png" />
     <Content Include="Resources\Images\CrearCarpetaTitulo.gif" />
     <Content Include="Resources\Images\cs.gif" />
@@ -291,14 +293,17 @@
     <Content Include="Resources\Images\Proposalfolder.png" />
     <Content Include="Resources\Images\RecyceeBin.png" />
     <Content Include="Resources\Images\RemoveGrid.png" />
+    <Content Include="Resources\Images\respuesta-comentario.png" />
     <Content Include="Resources\Images\RootNode.png" />
     <Content Include="Resources\Images\Rutas.png" />
+    <Content Include="Resources\Images\scheduled.png" />
     <Content Include="Resources\Images\search.png" />
     <Content Include="Resources\Images\select.png" />
     <Content Include="Resources\Images\sign_in.jpg" />
     <Content Include="Resources\Images\SubirArchivoTitulo.gif" />
     <Content Include="Resources\Images\titlebar_bg.png" />
     <Content Include="Resources\Images\txt.gif" />
+    <Content Include="Resources\Images\uncomplete.png" />
     <Content Include="Resources\Images\upload.png" />
     <Content Include="Resources\Images\wav.gif" />
     <Content Include="Resources\Images\web.png" />

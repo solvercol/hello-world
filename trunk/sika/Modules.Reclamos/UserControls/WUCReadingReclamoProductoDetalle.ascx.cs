@@ -294,6 +294,30 @@ namespace Modules.Reclamos.UserControls
             }
         }
 
+        public string NumeroLote2
+        {
+            get
+            {
+                return lblNumeroLote2.Text;
+            }
+            set
+            {
+                lblNumeroLote2.Text = value;
+            }
+        }
+
+        public string NumeroLote3
+        {
+            get
+            {
+                return lblNumeroLote3.Text;
+            }
+            set
+            {
+                lblNumeroLote3.Text = value;
+            }
+        }
+
         public bool MuestraDisponible
         {
             get

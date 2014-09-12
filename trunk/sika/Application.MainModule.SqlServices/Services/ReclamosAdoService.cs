@@ -340,6 +340,54 @@ namespace Application.MainModule.SqlServices.Services
             }
         }
 
+        public DataTable GetVistaMisAlternativas(string serverHost, string moduleId, int idUser, DateTime from, DateTime end, string noReclamo, string cliente, string producto, string servicio)
+        {
+            try
+            {
+                string strSql = "Vistas_MisAlternativas";
+                var result = _sql.ExecuteDataTable(strSql, CommandType.StoredProcedure
+                                       , new SqlParameter("@ServerHostPath", serverHost)
+                                       , new SqlParameter("@ModuleId", moduleId)
+                                       , new SqlParameter("@UsuarioCreacion", idUser)
+                                       , new SqlParameter("@dateFrom", from)
+                                       , new SqlParameter("@dateEnd", end)
+                                       , new SqlParameter("@NoReclamo", noReclamo)
+                                       , new SqlParameter("@Cliente", cliente)
+                                       , new SqlParameter("@Producto", producto)
+                                       , new SqlParameter("@Servicio", servicio));
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new SqlExecutionException("Vistas_MisAlternativas", ex);
+            }
+        }
+
+        public DataTable GetVistaMisActividades(string serverHost, string moduleId, int idUser, DateTime from, DateTime end, string noReclamo, string cliente, string producto, string servicio)
+        {
+            try
+            {
+                string strSql = "Vistas_MisActividades";
+                var result = _sql.ExecuteDataTable(strSql, CommandType.StoredProcedure
+                                       , new SqlParameter("@ServerHostPath", serverHost)
+                                       , new SqlParameter("@ModuleId", moduleId)
+                                       , new SqlParameter("@UsuarioCreacion", idUser)
+                                       , new SqlParameter("@dateFrom", from)
+                                       , new SqlParameter("@dateEnd", end)
+                                       , new SqlParameter("@NoReclamo", noReclamo)
+                                       , new SqlParameter("@Cliente", cliente)
+                                       , new SqlParameter("@Producto", producto)
+                                       , new SqlParameter("@Servicio", servicio));
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new SqlExecutionException("Vistas_MisActividades", ex);
+            }
+        }
+
         #endregion
     }
 }

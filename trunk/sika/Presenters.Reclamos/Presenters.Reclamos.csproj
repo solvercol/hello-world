@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IViews\IMisActividadesView.cs" />
     <Compile Include="IViews\IAdminActividadReclamoView.cs" />
     <Compile Include="IViews\IAdminAlternativaReclamoView.cs" />
     <Compile Include="IViews\IAdminComentarioRespuestaReclamoView.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="IViews\ILogReclamoView.cs" />
     <Compile Include="IViews\IMisActividadesPendientesView.cs" />
     <Compile Include="IViews\IMisAlternativasPendientesView.cs" />
+    <Compile Include="IViews\IMisAlternativasView.cs" />
     <Compile Include="IViews\IMisPendientesView.cs" />
     <Compile Include="IViews\IMisReclamosPorEstadoView.cs" />
     <Compile Include="IViews\IMisReclamosPorFechaView.cs" />
@@ -95,12 +97,14 @@
     <Compile Include="Presenters\AdminRecServicioT4Presenter.cs" />
     <Compile Include="Presenters\AdminRecServicioT5Presenter.cs" />
     <Compile Include="Presenters\AdminSolucionesReclamoPresenter.cs" />
+    <Compile Include="Presenters\MisActividadesPresenter.cs" />
     <Compile Include="Presenters\FilterClientPresenter.cs" />
     <Compile Include="Presenters\FilterProductPresenter.cs" />
     <Compile Include="Presenters\ListaGeneralReclamosPresenter.cs" />
     <Compile Include="Presenters\LogReclamoViewPresenter.cs" />
     <Compile Include="Presenters\MisActividadesPendientesPresenter.cs" />
     <Compile Include="Presenters\MisAlternativasPendientesPresenter.cs" />
+    <Compile Include="Presenters\MisAlternativasPresenter.cs" />
     <Compile Include="Presenters\MisPendientesPresenter.cs" />
     <Compile Include="Presenters\MisReclamosPorEstadoPresenter.cs" />
     <Compile Include="Presenters\MisReclamosPorFechaPresenter.cs" />

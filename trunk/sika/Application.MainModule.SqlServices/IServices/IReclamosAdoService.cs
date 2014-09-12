@@ -50,6 +50,14 @@ namespace Application.MainModule.SqlServices.IServices
 
         DataTable GetVistaMisActividadesPendientes(string serverHost, string moduleId, int idResponsable);
 
+        DataTable GetVistaMisAlternativas(string serverHost, string moduleId, int idUser,
+                                            DateTime from, DateTime end, string noReclamo,
+                                            string cliente, string producto, string servicio);
+
+        DataTable GetVistaMisActividades(string serverHost, string moduleId, int idUser,
+                                            DateTime from, DateTime end, string noReclamo,
+                                            string cliente, string producto, string servicio);
+
         #endregion
     }
 }

@@ -148,5 +148,11 @@
     <NotInBuild Include="Scripts\Modules\Reclamos\Vistas\10_Vistas_MisActividadesPendientes.sql">
       <SubType>NotInBuild</SubType>
     </NotInBuild>
+    <NotInBuild Include="Scripts\Modules\Reclamos\Vistas\11_Vistas_MisAlternativas.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Scripts\Modules\Reclamos\Vistas\12_Vistas_MisActividades.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
   </ItemGroup>
 </Project>

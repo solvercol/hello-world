@@ -1449,6 +1449,8 @@
           <Property Name="DescripcionAspectoEnvase" Type="varchar" MaxLength="512" />
           <Property Name="DescripcionAspectoProducto" Type="varchar" MaxLength="512" />
           <Property Name="Lote" Type="varchar" MaxLength="50" />
+          <Property Name="Lote2" Type="varchar" MaxLength="50" />
+          <Property Name="Lote3" Type="varchar" MaxLength="50" />
           <Property Name="MuestraDisponible" Type="bit" />
           <Property Name="IdCategoriaReclamo" Type="int" />
           <Property Name="Area" Type="varchar" MaxLength="512" />
@@ -4744,6 +4746,8 @@
           <Property Type="String" Name="DescripcionAspectoEnvase" MaxLength="512" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="DescripcionAspectoProducto" MaxLength="512" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Lote" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Lote2" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Lote3" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="Boolean" Name="MuestraDisponible" />
           <Property Type="Int32" Name="IdCategoriaReclamo" />
           <Property Type="String" Name="Area" MaxLength="512" FixedLength="false" Unicode="false" />
@@ -7187,6 +7191,8 @@
                 <ScalarProperty Name="Area" ColumnName="Area" />
                 <ScalarProperty Name="IdCategoriaReclamo" ColumnName="IdCategoriaReclamo" />
                 <ScalarProperty Name="MuestraDisponible" ColumnName="MuestraDisponible" />
+                <ScalarProperty Name="Lote3" ColumnName="Lote3" />
+                <ScalarProperty Name="Lote2" ColumnName="Lote2" />
                 <ScalarProperty Name="Lote" ColumnName="Lote" />
                 <ScalarProperty Name="DescripcionAspectoProducto" ColumnName="DescripcionAspectoProducto" />
                 <ScalarProperty Name="DescripcionAspectoEnvase" ColumnName="DescripcionAspectoEnvase" />
@@ -7519,10 +7525,10 @@
         <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Asesores" Width="1.5" PointX="12" PointY="69.125" Height="2.1725878906249818" />
         <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_CategoriaProducto" Width="1.5" PointX="9.75" PointY="77" Height="3.134095052083353" />
         <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_CategoriasReclamo" Width="1.5" PointX="15" PointY="66" Height="4.4802050781249818" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_ComentariosRespuesta" Width="1.5" PointX="21.5" PointY="57.375" Height="4.6725065104166674" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_CostosProducto" Width="1.5" PointX="24.5" PointY="57.25" Height="4.864807942708353" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_ComentariosRespuesta" Width="1.5" PointX="21.5" PointY="57.5" Height="4.6725065104166674" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_CostosProducto" Width="1.5" PointX="24.5" PointY="57.375" Height="4.864807942708353" />
         <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_LogReclamos" Width="1.5" PointX="21.5" PointY="74" Height="2.3648893229166106" />
-        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Reclamo" Width="1.5" PointX="19.25" PointY="56.375" Height="19.864319661458353" />
+        <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Reclamo" Width="1.5" PointX="19.25" PointY="56.125" Height="20.248922526041611" />
         <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Soluciones" Width="1.5" PointX="21.5" PointY="63" Height="3.5186979166666106" />
         <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_TipoReclamo" Width="1.5" PointX="9.75" PointY="86.125" Height="3.3263964843749818" />
         <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_ModuloReclamos_Tracking" Width="1.5" PointX="21.5" PointY="81.375" Height="3.5186979166666106" />
@@ -7552,8 +7558,8 @@
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloWorkFlow_CamposValidacion_TBL_Admin_EstadosProceso" >
           <ConnectorPoint PointX="18.5" PointY="61.386874627604115" />
           <ConnectorPoint PointX="19" PointY="61.386874627604115" />
-          <ConnectorPoint PointX="19" PointY="56.125" />
-          <ConnectorPoint PointX="19.875" PointY="56.125" />
+          <ConnectorPoint PointX="19" PointY="55.875" />
+          <ConnectorPoint PointX="19.875" PointY="55.875" />
           <ConnectorPoint PointX="19.875" PointY="43.835999348958353" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloWorkFlow_Rutas_TBL_Admin_EstadosProceso" >
@@ -7955,7 +7961,7 @@
           <ConnectorPoint PointX="22.526036666666666" PointY="54.592302250162696" />
           <ConnectorPoint PointX="22.692703333333331" PointY="54.592302250162696" />
           <ConnectorPoint PointX="22.78125" PointY="54.592302250162696" />
-          <ConnectorPoint PointX="22.78125" PointY="57.375" />
+          <ConnectorPoint PointX="22.78125" PointY="57.5" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_ComentariosRespuesta_TBL_Admin_Usuarios_ModifiedBy" >
           <ConnectorPoint PointX="9" PointY="54.614323025146405" />
@@ -7974,7 +7980,7 @@
           <ConnectorPoint PointX="21.229166666666668" PointY="54.614323025146405" />
           <ConnectorPoint PointX="21.458333333333332" PointY="54.614323025146405" />
           <ConnectorPoint PointX="22.6406225" PointY="54.614323025146405" />
-          <ConnectorPoint PointX="22.6406225" PointY="57.375" />
+          <ConnectorPoint PointX="22.6406225" PointY="57.5" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_ComentariosRespuesta_TBL_Admin_Usuarios_UsuarioDestino" >
           <ConnectorPoint PointX="9" PointY="54.570281475178987" />
@@ -7997,7 +8003,7 @@
           <ConnectorPoint PointX="22.526036666666666" PointY="54.570281475178987" />
           <ConnectorPoint PointX="22.692703333333331" PointY="54.570281475178987" />
           <ConnectorPoint PointX="22.9218775" PointY="54.570281475178987" />
-          <ConnectorPoint PointX="22.9218775" PointY="57.375" />
+          <ConnectorPoint PointX="22.9218775" PointY="57.5" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_CostosProducto_TBL_Admin_Usuarios_CreateBy" >
           <ConnectorPoint PointX="9" PointY="54.478641050292929" />
@@ -8020,7 +8026,7 @@
           <ConnectorPoint PointX="22.526036666666666" PointY="54.478641050292929" />
           <ConnectorPoint PointX="22.692703333333331" PointY="54.478641050292929" />
           <ConnectorPoint PointX="25.40625" PointY="54.478641050292929" />
-          <ConnectorPoint PointX="25.40625" PointY="57.25" />
+          <ConnectorPoint PointX="25.40625" PointY="57.375" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_CostosProducto_TBL_Admin_Usuarios_ModifiedBy" >
           <ConnectorPoint PointX="9" PointY="54.500661825276637" />
@@ -8043,28 +8049,28 @@
           <ConnectorPoint PointX="22.526036666666666" PointY="54.500661825276637" />
           <ConnectorPoint PointX="22.692703333333331" PointY="54.500661825276637" />
           <ConnectorPoint PointX="25.0781225" PointY="54.500661825276637" />
-          <ConnectorPoint PointX="25.0781225" PointY="57.25" />
+          <ConnectorPoint PointX="25.0781225" PointY="57.375" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Reclamo_TBL_Admin_Usuarios" >
           <ConnectorPoint PointX="9" PointY="58.1275520849359" />
           <ConnectorPoint PointX="9.3338046091207936" PointY="58.485664516874721" />
           <ConnectorPoint PointX="9.4786953908792064" PointY="58.641106319663749" />
           <ConnectorPoint PointX="9.9375" PointY="59.133321315705132" />
-          <ConnectorPoint PointX="9.9375" PointY="76.241272786458353" />
-          <ConnectorPoint PointX="11.541666666666666" PointY="76.241272786458353" />
-          <ConnectorPoint PointX="11.895833333333334" PointY="76.241272786458353" />
-          <ConnectorPoint PointX="12.260414166666665" PointY="76.241272786458353" />
-          <ConnectorPoint PointX="12.427080833333333" PointY="76.241272786458353" />
-          <ConnectorPoint PointX="12.666666666666666" PointY="76.241272786458353" />
-          <ConnectorPoint PointX="12.833333333333334" PointY="76.241272786458353" />
-          <ConnectorPoint PointX="15.666666666666666" PointY="76.241272786458353" />
-          <ConnectorPoint PointX="15.833333333333334" PointY="76.241272786458353" />
-          <ConnectorPoint PointX="17.666666666666668" PointY="76.241272786458353" />
-          <ConnectorPoint PointX="17.833333333333332" PointY="76.241272786458353" />
-          <ConnectorPoint PointX="18.072919166666669" PointY="76.241272786458353" />
-          <ConnectorPoint PointX="18.239585833333333" PointY="76.241272786458353" />
-          <ConnectorPoint PointX="19.188046874999998" PointY="76.241272786458353" />
-          <ConnectorPoint PointX="19.25" PointY="76.179319661458351" />
+          <ConnectorPoint PointX="9.9375" PointY="76.375875651041611" />
+          <ConnectorPoint PointX="11.541666666666666" PointY="76.375875651041611" />
+          <ConnectorPoint PointX="11.895833333333334" PointY="76.375875651041611" />
+          <ConnectorPoint PointX="12.260414166666665" PointY="76.375875651041611" />
+          <ConnectorPoint PointX="12.427080833333333" PointY="76.375875651041611" />
+          <ConnectorPoint PointX="12.666666666666666" PointY="76.375875651041611" />
+          <ConnectorPoint PointX="12.833333333333334" PointY="76.375875651041611" />
+          <ConnectorPoint PointX="15.666666666666666" PointY="76.375875651041611" />
+          <ConnectorPoint PointX="15.833333333333334" PointY="76.375875651041611" />
+          <ConnectorPoint PointX="17.666666666666668" PointY="76.375875651041611" />
+          <ConnectorPoint PointX="17.833333333333332" PointY="76.375875651041611" />
+          <ConnectorPoint PointX="18.072919166666669" PointY="76.375875651041611" />
+          <ConnectorPoint PointX="18.239585833333333" PointY="76.375875651041611" />
+          <ConnectorPoint PointX="19.188046874999998" PointY="76.375875651041611" />
+          <ConnectorPoint PointX="19.25" PointY="76.313922526041608" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Reclamo_TBL_Admin_Usuarios_AsesoradoPor" >
           <ConnectorPoint PointX="9" PointY="58.133321315705132" />
@@ -8073,21 +8079,21 @@
           <ConnectorPoint PointX="9.3316994349011217" PointY="58.46502075060625" />
           <ConnectorPoint PointX="9.4808005650988783" PointY="58.614121880804014" />
           <ConnectorPoint PointX="10" PointY="59.133321315705132" />
-          <ConnectorPoint PointX="10" PointY="76.243225911458353" />
-          <ConnectorPoint PointX="11.541666666666666" PointY="76.243225911458353" />
-          <ConnectorPoint PointX="11.895833333333334" PointY="76.243225911458353" />
-          <ConnectorPoint PointX="12.260414166666665" PointY="76.243225911458353" />
-          <ConnectorPoint PointX="12.427080833333333" PointY="76.243225911458353" />
-          <ConnectorPoint PointX="12.666666666666666" PointY="76.243225911458353" />
-          <ConnectorPoint PointX="12.833333333333334" PointY="76.243225911458353" />
-          <ConnectorPoint PointX="15.666666666666666" PointY="76.243225911458353" />
-          <ConnectorPoint PointX="15.833333333333334" PointY="76.243225911458353" />
-          <ConnectorPoint PointX="17.666666666666668" PointY="76.243225911458353" />
-          <ConnectorPoint PointX="17.833333333333332" PointY="76.243225911458353" />
-          <ConnectorPoint PointX="18.072919166666669" PointY="76.243225911458353" />
-          <ConnectorPoint PointX="18.239585833333333" PointY="76.243225911458353" />
-          <ConnectorPoint PointX="19.199939903846158" PointY="76.243225911458353" />
-          <ConnectorPoint PointX="19.25" PointY="76.193165815304511" />
+          <ConnectorPoint PointX="10" PointY="76.375875651041611" />
+          <ConnectorPoint PointX="11.541666666666666" PointY="76.375875651041611" />
+          <ConnectorPoint PointX="11.895833333333334" PointY="76.375875651041611" />
+          <ConnectorPoint PointX="12.260414166666665" PointY="76.375875651041611" />
+          <ConnectorPoint PointX="12.427080833333333" PointY="76.375875651041611" />
+          <ConnectorPoint PointX="12.666666666666666" PointY="76.375875651041611" />
+          <ConnectorPoint PointX="12.833333333333334" PointY="76.375875651041611" />
+          <ConnectorPoint PointX="15.666666666666666" PointY="76.375875651041611" />
+          <ConnectorPoint PointX="15.833333333333334" PointY="76.375875651041611" />
+          <ConnectorPoint PointX="17.666666666666668" PointY="76.375875651041611" />
+          <ConnectorPoint PointX="17.833333333333332" PointY="76.375875651041611" />
+          <ConnectorPoint PointX="18.072919166666669" PointY="76.375875651041611" />
+          <ConnectorPoint PointX="18.239585833333333" PointY="76.375875651041611" />
+          <ConnectorPoint PointX="19.201893028846158" PointY="76.375875651041611" />
+          <ConnectorPoint PointX="19.25" PointY="76.327768679887768" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Reclamo_TBL_Admin_Usuarios_AtendidoPor" >
           <ConnectorPoint PointX="9" PointY="58.139090546474364" />
@@ -8096,132 +8102,132 @@
           <ConnectorPoint PointX="9.3316994349011217" PointY="58.470789981375482" />
           <ConnectorPoint PointX="9.4808005650988783" PointY="58.619891111573246" />
           <ConnectorPoint PointX="9.96875" PointY="59.107840546474364" />
-          <ConnectorPoint PointX="9.96875" PointY="76.247132161458353" />
-          <ConnectorPoint PointX="11.541666666666666" PointY="76.247132161458353" />
-          <ConnectorPoint PointX="11.895833333333334" PointY="76.247132161458353" />
-          <ConnectorPoint PointX="12.260414166666665" PointY="76.247132161458353" />
-          <ConnectorPoint PointX="12.427080833333333" PointY="76.247132161458353" />
-          <ConnectorPoint PointX="12.666666666666666" PointY="76.247132161458353" />
-          <ConnectorPoint PointX="12.833333333333334" PointY="76.247132161458353" />
-          <ConnectorPoint PointX="15.666666666666666" PointY="76.247132161458353" />
-          <ConnectorPoint PointX="15.833333333333334" PointY="76.247132161458353" />
-          <ConnectorPoint PointX="17.666666666666668" PointY="76.247132161458353" />
-          <ConnectorPoint PointX="17.833333333333332" PointY="76.247132161458353" />
-          <ConnectorPoint PointX="18.072919166666669" PointY="76.247132161458353" />
-          <ConnectorPoint PointX="18.239585833333333" PointY="76.247132161458353" />
-          <ConnectorPoint PointX="19.209879807692303" PointY="76.247132161458353" />
-          <ConnectorPoint PointX="19.25" PointY="76.207011969150656" />
+          <ConnectorPoint PointX="9.96875" PointY="76.377828776041611" />
+          <ConnectorPoint PointX="11.541666666666666" PointY="76.377828776041611" />
+          <ConnectorPoint PointX="11.895833333333334" PointY="76.377828776041611" />
+          <ConnectorPoint PointX="12.260414166666665" PointY="76.377828776041611" />
+          <ConnectorPoint PointX="12.427080833333333" PointY="76.377828776041611" />
+          <ConnectorPoint PointX="12.666666666666666" PointY="76.377828776041611" />
+          <ConnectorPoint PointX="12.833333333333334" PointY="76.377828776041611" />
+          <ConnectorPoint PointX="15.666666666666666" PointY="76.377828776041611" />
+          <ConnectorPoint PointX="15.833333333333334" PointY="76.377828776041611" />
+          <ConnectorPoint PointX="17.666666666666668" PointY="76.377828776041611" />
+          <ConnectorPoint PointX="17.833333333333332" PointY="76.377828776041611" />
+          <ConnectorPoint PointX="18.072919166666669" PointY="76.377828776041611" />
+          <ConnectorPoint PointX="18.239585833333333" PointY="76.377828776041611" />
+          <ConnectorPoint PointX="19.213786057692303" PointY="76.377828776041611" />
+          <ConnectorPoint PointX="19.25" PointY="76.341614833733914" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Reclamo_TBL_Admin_Usuarios_CreateBy" >
           <ConnectorPoint PointX="9" PointY="58.144859777243596" />
           <ConnectorPoint PointX="9.09375" PointY="58.238609777243596" />
-          <ConnectorPoint PointX="9.09375" PointY="76.254944661458353" />
-          <ConnectorPoint PointX="9.1041666666666661" PointY="76.254944661458353" />
-          <ConnectorPoint PointX="9.3333333333333339" PointY="76.254944661458353" />
-          <ConnectorPoint PointX="9.3854166666666661" PointY="76.254944661458353" />
-          <ConnectorPoint PointX="9.8020833333333339" PointY="76.254944661458353" />
-          <ConnectorPoint PointX="11.541666666666666" PointY="76.254944661458353" />
-          <ConnectorPoint PointX="11.895833333333334" PointY="76.254944661458353" />
-          <ConnectorPoint PointX="12.260414166666665" PointY="76.254944661458353" />
-          <ConnectorPoint PointX="12.427080833333333" PointY="76.254944661458353" />
-          <ConnectorPoint PointX="12.666666666666666" PointY="76.254944661458353" />
-          <ConnectorPoint PointX="12.833333333333334" PointY="76.254944661458353" />
-          <ConnectorPoint PointX="15.666666666666666" PointY="76.254944661458353" />
-          <ConnectorPoint PointX="15.833333333333334" PointY="76.254944661458353" />
-          <ConnectorPoint PointX="17.666666666666668" PointY="76.254944661458353" />
-          <ConnectorPoint PointX="17.833333333333332" PointY="76.254944661458353" />
-          <ConnectorPoint PointX="18.072919166666669" PointY="76.254944661458353" />
-          <ConnectorPoint PointX="18.239585833333333" PointY="76.254944661458353" />
-          <ConnectorPoint PointX="19.215913461538463" PointY="76.254944661458353" />
-          <ConnectorPoint PointX="19.25" PointY="76.220858122996816" />
+          <ConnectorPoint PointX="9.09375" PointY="76.381735026041611" />
+          <ConnectorPoint PointX="9.1666666666666661" PointY="76.381735026041611" />
+          <ConnectorPoint PointX="9.3333333333333339" PointY="76.381735026041611" />
+          <ConnectorPoint PointX="9.3854166666666661" PointY="76.381735026041611" />
+          <ConnectorPoint PointX="9.8020833333333339" PointY="76.381735026041611" />
+          <ConnectorPoint PointX="11.541666666666666" PointY="76.381735026041611" />
+          <ConnectorPoint PointX="11.895833333333334" PointY="76.381735026041611" />
+          <ConnectorPoint PointX="12.260414166666665" PointY="76.381735026041611" />
+          <ConnectorPoint PointX="12.427080833333333" PointY="76.381735026041611" />
+          <ConnectorPoint PointX="12.666666666666666" PointY="76.381735026041611" />
+          <ConnectorPoint PointX="12.833333333333334" PointY="76.381735026041611" />
+          <ConnectorPoint PointX="15.666666666666666" PointY="76.381735026041611" />
+          <ConnectorPoint PointX="15.833333333333334" PointY="76.381735026041611" />
+          <ConnectorPoint PointX="17.666666666666668" PointY="76.381735026041611" />
+          <ConnectorPoint PointX="17.833333333333332" PointY="76.381735026041611" />
+          <ConnectorPoint PointX="18.072919166666669" PointY="76.381735026041611" />
+          <ConnectorPoint PointX="18.239585833333333" PointY="76.381735026041611" />
+          <ConnectorPoint PointX="19.223725961538463" PointY="76.381735026041611" />
+          <ConnectorPoint PointX="19.25" PointY="76.355460987580074" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Reclamo_TBL_Admin_Usuarios_IngenieroResponsable" >
           <ConnectorPoint PointX="9" PointY="58.150629008012821" />
           <ConnectorPoint PointX="9.0625" PointY="58.213129008012821" />
-          <ConnectorPoint PointX="9.0625" PointY="76.270569661458353" />
-          <ConnectorPoint PointX="9.1041666666666661" PointY="76.270569661458353" />
-          <ConnectorPoint PointX="9.3333333333333339" PointY="76.270569661458353" />
-          <ConnectorPoint PointX="9.3854166666666661" PointY="76.270569661458353" />
-          <ConnectorPoint PointX="9.8020833333333339" PointY="76.270569661458353" />
-          <ConnectorPoint PointX="11.541666666666666" PointY="76.270569661458353" />
-          <ConnectorPoint PointX="11.895833333333334" PointY="76.270569661458353" />
-          <ConnectorPoint PointX="12.260414166666665" PointY="76.270569661458353" />
-          <ConnectorPoint PointX="12.427080833333333" PointY="76.270569661458353" />
-          <ConnectorPoint PointX="12.666666666666666" PointY="76.270569661458353" />
-          <ConnectorPoint PointX="12.833333333333334" PointY="76.270569661458353" />
-          <ConnectorPoint PointX="15.666666666666666" PointY="76.270569661458353" />
-          <ConnectorPoint PointX="15.833333333333334" PointY="76.270569661458353" />
-          <ConnectorPoint PointX="17.666666666666668" PointY="76.270569661458353" />
-          <ConnectorPoint PointX="17.833333333333332" PointY="76.270569661458353" />
-          <ConnectorPoint PointX="18.072919166666669" PointY="76.270569661458353" />
-          <ConnectorPoint PointX="18.239585833333333" PointY="76.270569661458353" />
-          <ConnectorPoint PointX="19.214134615384609" PointY="76.270569661458353" />
-          <ConnectorPoint PointX="19.25" PointY="76.234704276842962" />
+          <ConnectorPoint PointX="9.0625" PointY="76.389547526041611" />
+          <ConnectorPoint PointX="9.1666666666666661" PointY="76.389547526041611" />
+          <ConnectorPoint PointX="9.3333333333333339" PointY="76.389547526041611" />
+          <ConnectorPoint PointX="9.3854166666666661" PointY="76.389547526041611" />
+          <ConnectorPoint PointX="9.8020833333333339" PointY="76.389547526041611" />
+          <ConnectorPoint PointX="11.541666666666666" PointY="76.389547526041611" />
+          <ConnectorPoint PointX="11.895833333333334" PointY="76.389547526041611" />
+          <ConnectorPoint PointX="12.260414166666665" PointY="76.389547526041611" />
+          <ConnectorPoint PointX="12.427080833333333" PointY="76.389547526041611" />
+          <ConnectorPoint PointX="12.666666666666666" PointY="76.389547526041611" />
+          <ConnectorPoint PointX="12.833333333333334" PointY="76.389547526041611" />
+          <ConnectorPoint PointX="15.666666666666666" PointY="76.389547526041611" />
+          <ConnectorPoint PointX="15.833333333333334" PointY="76.389547526041611" />
+          <ConnectorPoint PointX="17.666666666666668" PointY="76.389547526041611" />
+          <ConnectorPoint PointX="17.833333333333332" PointY="76.389547526041611" />
+          <ConnectorPoint PointX="18.072919166666669" PointY="76.389547526041611" />
+          <ConnectorPoint PointX="18.239585833333333" PointY="76.389547526041611" />
+          <ConnectorPoint PointX="19.229759615384609" PointY="76.389547526041611" />
+          <ConnectorPoint PointX="19.25" PointY="76.369307141426219" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Reclamo_TBL_Admin_Usuarios_ModifiedBy" >
           <ConnectorPoint PointX="9" PointY="58.156398238782053" />
           <ConnectorPoint PointX="9.3125" PointY="58.468898238782053" />
-          <ConnectorPoint PointX="9.3125" PointY="76.301819661458353" />
-          <ConnectorPoint PointX="9.3854166666666661" PointY="76.301819661458353" />
-          <ConnectorPoint PointX="9.8020833333333339" PointY="76.301819661458353" />
-          <ConnectorPoint PointX="11.541666666666666" PointY="76.301819661458353" />
-          <ConnectorPoint PointX="11.895833333333334" PointY="76.301819661458353" />
-          <ConnectorPoint PointX="12.260414166666665" PointY="76.301819661458353" />
-          <ConnectorPoint PointX="12.427080833333333" PointY="76.301819661458353" />
-          <ConnectorPoint PointX="12.666666666666666" PointY="76.301819661458353" />
-          <ConnectorPoint PointX="12.833333333333334" PointY="76.301819661458353" />
-          <ConnectorPoint PointX="15.666666666666666" PointY="76.301819661458353" />
-          <ConnectorPoint PointX="15.833333333333334" PointY="76.301819661458353" />
-          <ConnectorPoint PointX="17.666666666666668" PointY="76.301819661458353" />
-          <ConnectorPoint PointX="17.833333333333332" PointY="76.301819661458353" />
-          <ConnectorPoint PointX="18.072919166666669" PointY="76.301819661458353" />
-          <ConnectorPoint PointX="18.239585833333333" PointY="76.301819661458353" />
-          <ConnectorPoint PointX="19.196729769230771" PointY="76.301819661458353" />
-          <ConnectorPoint PointX="19.259229769230767" PointY="76.239319661458353" />
+          <ConnectorPoint PointX="9.3125" PointY="76.405172526041611" />
+          <ConnectorPoint PointX="9.3854166666666661" PointY="76.405172526041611" />
+          <ConnectorPoint PointX="9.8020833333333339" PointY="76.405172526041611" />
+          <ConnectorPoint PointX="11.541666666666666" PointY="76.405172526041611" />
+          <ConnectorPoint PointX="11.895833333333334" PointY="76.405172526041611" />
+          <ConnectorPoint PointX="12.260414166666665" PointY="76.405172526041611" />
+          <ConnectorPoint PointX="12.427080833333333" PointY="76.405172526041611" />
+          <ConnectorPoint PointX="12.666666666666666" PointY="76.405172526041611" />
+          <ConnectorPoint PointX="12.833333333333334" PointY="76.405172526041611" />
+          <ConnectorPoint PointX="15.666666666666666" PointY="76.405172526041611" />
+          <ConnectorPoint PointX="15.833333333333334" PointY="76.405172526041611" />
+          <ConnectorPoint PointX="17.666666666666668" PointY="76.405172526041611" />
+          <ConnectorPoint PointX="17.833333333333332" PointY="76.405172526041611" />
+          <ConnectorPoint PointX="18.072919166666669" PointY="76.405172526041611" />
+          <ConnectorPoint PointX="18.239585833333333" PointY="76.405172526041611" />
+          <ConnectorPoint PointX="19.227979769230771" PointY="76.405172526041611" />
+          <ConnectorPoint PointX="19.259229769230767" PointY="76.373922526041611" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Reclamo_TBL_Admin_Usuarios_Solicitante" >
           <ConnectorPoint PointX="9" PointY="58.162167469551285" />
           <ConnectorPoint PointX="9.1875" PointY="58.349667469551285" />
-          <ConnectorPoint PointX="9.1875" PointY="76.364319661458353" />
-          <ConnectorPoint PointX="9.3854166666666661" PointY="76.364319661458353" />
-          <ConnectorPoint PointX="9.8020833333333339" PointY="76.364319661458353" />
-          <ConnectorPoint PointX="11.541666666666666" PointY="76.364319661458353" />
-          <ConnectorPoint PointX="11.895833333333334" PointY="76.364319661458353" />
-          <ConnectorPoint PointX="12.260414166666665" PointY="76.364319661458353" />
-          <ConnectorPoint PointX="12.427080833333333" PointY="76.364319661458353" />
-          <ConnectorPoint PointX="12.666666666666666" PointY="76.364319661458353" />
-          <ConnectorPoint PointX="12.833333333333334" PointY="76.364319661458353" />
-          <ConnectorPoint PointX="15.666666666666666" PointY="76.364319661458353" />
-          <ConnectorPoint PointX="15.833333333333334" PointY="76.364319661458353" />
-          <ConnectorPoint PointX="17.666666666666668" PointY="76.364319661458353" />
-          <ConnectorPoint PointX="17.833333333333332" PointY="76.364319661458353" />
-          <ConnectorPoint PointX="18.072919166666669" PointY="76.364319661458353" />
-          <ConnectorPoint PointX="18.239585833333333" PointY="76.364319661458353" />
-          <ConnectorPoint PointX="19.148075923076917" PointY="76.364319661458353" />
-          <ConnectorPoint PointX="19.27307592307692" PointY="76.239319661458353" />
+          <ConnectorPoint PointX="9.1875" PointY="76.436422526041611" />
+          <ConnectorPoint PointX="9.3854166666666661" PointY="76.436422526041611" />
+          <ConnectorPoint PointX="9.8020833333333339" PointY="76.436422526041611" />
+          <ConnectorPoint PointX="11.541666666666666" PointY="76.436422526041611" />
+          <ConnectorPoint PointX="11.895833333333334" PointY="76.436422526041611" />
+          <ConnectorPoint PointX="12.260414166666665" PointY="76.436422526041611" />
+          <ConnectorPoint PointX="12.427080833333333" PointY="76.436422526041611" />
+          <ConnectorPoint PointX="12.666666666666666" PointY="76.436422526041611" />
+          <ConnectorPoint PointX="12.833333333333334" PointY="76.436422526041611" />
+          <ConnectorPoint PointX="15.666666666666666" PointY="76.436422526041611" />
+          <ConnectorPoint PointX="15.833333333333334" PointY="76.436422526041611" />
+          <ConnectorPoint PointX="17.666666666666668" PointY="76.436422526041611" />
+          <ConnectorPoint PointX="17.833333333333332" PointY="76.436422526041611" />
+          <ConnectorPoint PointX="18.072919166666669" PointY="76.436422526041611" />
+          <ConnectorPoint PointX="18.239585833333333" PointY="76.436422526041611" />
+          <ConnectorPoint PointX="19.210575923076917" PointY="76.436422526041611" />
+          <ConnectorPoint PointX="19.27307592307692" PointY="76.373922526041611" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Reclamo_TBL_Admin_Usuarios_UsuarioCierre" >
           <ConnectorPoint PointX="9" PointY="58.167936700320517" />
           <ConnectorPoint PointX="9.125" PointY="58.292936700320517" />
-          <ConnectorPoint PointX="9.125" PointY="76.489319661458353" />
-          <ConnectorPoint PointX="9.1666666666666661" PointY="76.489319661458353" />
-          <ConnectorPoint PointX="9.3333333333333339" PointY="76.489319661458353" />
-          <ConnectorPoint PointX="9.3854166666666661" PointY="76.489319661458353" />
-          <ConnectorPoint PointX="9.8020833333333339" PointY="76.489319661458353" />
-          <ConnectorPoint PointX="11.541666666666666" PointY="76.489319661458353" />
-          <ConnectorPoint PointX="11.895833333333334" PointY="76.489319661458353" />
-          <ConnectorPoint PointX="12.260414166666665" PointY="76.489319661458353" />
-          <ConnectorPoint PointX="12.427080833333333" PointY="76.489319661458353" />
-          <ConnectorPoint PointX="12.666666666666666" PointY="76.489319661458353" />
-          <ConnectorPoint PointX="12.833333333333334" PointY="76.489319661458353" />
-          <ConnectorPoint PointX="15.666666666666666" PointY="76.489319661458353" />
-          <ConnectorPoint PointX="15.833333333333334" PointY="76.489319661458353" />
-          <ConnectorPoint PointX="17.666666666666668" PointY="76.489319661458353" />
-          <ConnectorPoint PointX="17.833333333333332" PointY="76.489319661458353" />
-          <ConnectorPoint PointX="18.072919166666669" PointY="76.489319661458353" />
-          <ConnectorPoint PointX="18.239585833333333" PointY="76.489319661458353" />
-          <ConnectorPoint PointX="19.036922076923076" PointY="76.489319661458353" />
-          <ConnectorPoint PointX="19.286922076923073" PointY="76.239319661458353" />
+          <ConnectorPoint PointX="9.125" PointY="76.498922526041611" />
+          <ConnectorPoint PointX="9.1666666666666661" PointY="76.498922526041611" />
+          <ConnectorPoint PointX="9.3333333333333339" PointY="76.498922526041611" />
+          <ConnectorPoint PointX="9.3854166666666661" PointY="76.498922526041611" />
+          <ConnectorPoint PointX="9.8020833333333339" PointY="76.498922526041611" />
+          <ConnectorPoint PointX="11.541666666666666" PointY="76.498922526041611" />
+          <ConnectorPoint PointX="11.895833333333334" PointY="76.498922526041611" />
+          <ConnectorPoint PointX="12.260414166666665" PointY="76.498922526041611" />
+          <ConnectorPoint PointX="12.427080833333333" PointY="76.498922526041611" />
+          <ConnectorPoint PointX="12.666666666666666" PointY="76.498922526041611" />
+          <ConnectorPoint PointX="12.833333333333334" PointY="76.498922526041611" />
+          <ConnectorPoint PointX="15.666666666666666" PointY="76.498922526041611" />
+          <ConnectorPoint PointX="15.833333333333334" PointY="76.498922526041611" />
+          <ConnectorPoint PointX="17.666666666666668" PointY="76.498922526041611" />
+          <ConnectorPoint PointX="17.833333333333332" PointY="76.498922526041611" />
+          <ConnectorPoint PointX="18.072919166666669" PointY="76.498922526041611" />
+          <ConnectorPoint PointX="18.239585833333333" PointY="76.498922526041611" />
+          <ConnectorPoint PointX="19.161922076923076" PointY="76.498922526041611" />
+          <ConnectorPoint PointX="19.286922076923073" PointY="76.373922526041611" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Soluciones_TBL_Admin_Usuarios_CreateBy" >
           <ConnectorPoint PointX="9" PointY="48.12245323567705" />
@@ -8560,12 +8566,12 @@
           <ConnectorPoint PointX="12" PointY="66.2593489583333" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Alternativas_TBL_ModuloReclamos_Reclamo" >
-          <ConnectorPoint PointX="19.25" PointY="73.33091371594557" />
-          <ConnectorPoint PointX="18.239585833333333" PointY="73.33091371594557" />
-          <ConnectorPoint PointX="18.072919166666669" PointY="73.33091371594557" />
-          <ConnectorPoint PointX="17.833333333333332" PointY="73.33091371594557" />
-          <ConnectorPoint PointX="17.666666666666668" PointY="73.33091371594557" />
-          <ConnectorPoint PointX="16.843755" PointY="73.33091371594557" />
+          <ConnectorPoint PointX="19.25" PointY="73.3982151482372" />
+          <ConnectorPoint PointX="18.239585833333333" PointY="73.3982151482372" />
+          <ConnectorPoint PointX="18.072919166666669" PointY="73.3982151482372" />
+          <ConnectorPoint PointX="17.833333333333332" PointY="73.3982151482372" />
+          <ConnectorPoint PointX="17.666666666666668" PointY="73.3982151482372" />
+          <ConnectorPoint PointX="16.843755" PointY="73.3982151482372" />
           <ConnectorPoint PointX="16.843755" PointY="53.182109374999982" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_AnexosAlternativa_TBL_ModuloReclamos_Alternativas" >
@@ -8588,7 +8594,7 @@
           <ConnectorPoint PointX="21" PointY="50.663198242187491" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_AnexosComentarioRespuesta_TBL_ModuloReclamos_ComentariosRespuesta" >
-          <ConnectorPoint PointX="22.03905925" PointY="57.375" />
+          <ConnectorPoint PointX="22.03905925" PointY="57.5" />
           <ConnectorPoint PointX="22.03905925" PointY="54.71875" />
           <ConnectorPoint PointX="21.458333333333332" PointY="54.71875" />
           <ConnectorPoint PointX="21.229166666666668" PointY="54.71875" />
@@ -8608,12 +8614,8 @@
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_AnexosSolucion_TBL_ModuloReclamos_Soluciones" >
           <ConnectorPoint PointX="22.656252000000002" PointY="63" />
-          <ConnectorPoint PointX="22.656252000000002" PointY="62.297506510416667" />
-          <ConnectorPoint PointX="22.56179487179487" PointY="62.297506510416667" />
-          <ConnectorPoint PointX="22.395128205128206" PointY="62.297506510416667" />
-          <ConnectorPoint PointX="22.115256410256407" PointY="62.297506510416667" />
-          <ConnectorPoint PointX="21.948589743589743" PointY="62.297506510416667" />
-          <ConnectorPoint PointX="21.3125" PointY="62.297506510416667" />
+          <ConnectorPoint PointX="22.656252000000002" PointY="62.422506510416667" />
+          <ConnectorPoint PointX="21.3125" PointY="62.422506510416667" />
           <ConnectorPoint PointX="21.3125" PointY="52.576396484374982" />
           <ConnectorPoint PointX="21.302083333333332" PointY="52.576396484374982" />
           <ConnectorPoint PointX="20.994789166666667" PointY="52.576396484374982" />
@@ -8671,40 +8673,40 @@
           <ConnectorPoint PointX="19.25" PointY="68.240102539062491" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_ComentariosRespuesta_TBL_ModuloReclamos_ComentariosRespuesta_Relacionado" >
-          <ConnectorPoint PointX="22.031923076923075" PointY="62.047506510416667" />
-          <ConnectorPoint PointX="22.031923076923075" PointY="62.422506510416667" />
-          <ConnectorPoint PointX="22.478461538461538" PointY="62.422506510416667" />
-          <ConnectorPoint PointX="22.478461538461538" PointY="62.047506510416667" />
+          <ConnectorPoint PointX="22.031923076923075" PointY="62.172506510416667" />
+          <ConnectorPoint PointX="22.031923076923075" PointY="62.297506510416667" />
+          <ConnectorPoint PointX="22.478461538461538" PointY="62.297506510416667" />
+          <ConnectorPoint PointX="22.478461538461538" PointY="62.172506510416667" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_ComentariosRespuesta_TBL_ModuloReclamos_Reclamo" >
-          <ConnectorPoint PointX="20.75" PointY="59.711253255208334" />
-          <ConnectorPoint PointX="20.791666666666668" PointY="59.711253255208334" />
-          <ConnectorPoint PointX="20.958333333333332" PointY="59.711253255208334" />
-          <ConnectorPoint PointX="21.229166666666668" PointY="59.711253255208334" />
-          <ConnectorPoint PointX="21.458333333333332" PointY="59.711253255208334" />
-          <ConnectorPoint PointX="21.5" PointY="59.711253255208334" />
+          <ConnectorPoint PointX="20.75" PointY="59.836253255208334" />
+          <ConnectorPoint PointX="20.791666666666668" PointY="59.836253255208334" />
+          <ConnectorPoint PointX="20.958333333333332" PointY="59.836253255208334" />
+          <ConnectorPoint PointX="21.229166666666668" PointY="59.836253255208334" />
+          <ConnectorPoint PointX="21.458333333333332" PointY="59.836253255208334" />
+          <ConnectorPoint PointX="21.5" PointY="59.836253255208334" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_CostosProducto_TBL_ModuloReclamos_Reclamo" >
-          <ConnectorPoint PointX="20.75" PointY="57.28125" />
-          <ConnectorPoint PointX="20.791666666666668" PointY="57.28125" />
-          <ConnectorPoint PointX="20.958333333333332" PointY="57.28125" />
-          <ConnectorPoint PointX="21.229166666666668" PointY="57.28125" />
-          <ConnectorPoint PointX="21.458333333333332" PointY="57.28125" />
-          <ConnectorPoint PointX="21.955725916666669" PointY="57.28125" />
-          <ConnectorPoint PointX="22.122392583333333" PointY="57.28125" />
-          <ConnectorPoint PointX="22.526036666666666" PointY="57.28125" />
-          <ConnectorPoint PointX="23.005210833333333" PointY="57.28125" />
-          <ConnectorPoint PointX="24.5" PointY="57.28125" />
+          <ConnectorPoint PointX="20.75" PointY="57.40625" />
+          <ConnectorPoint PointX="20.791666666666668" PointY="57.40625" />
+          <ConnectorPoint PointX="20.958333333333332" PointY="57.40625" />
+          <ConnectorPoint PointX="21.229166666666668" PointY="57.40625" />
+          <ConnectorPoint PointX="21.458333333333332" PointY="57.40625" />
+          <ConnectorPoint PointX="21.955725916666669" PointY="57.40625" />
+          <ConnectorPoint PointX="22.122392583333333" PointY="57.40625" />
+          <ConnectorPoint PointX="22.526036666666666" PointY="57.40625" />
+          <ConnectorPoint PointX="23.005210833333333" PointY="57.40625" />
+          <ConnectorPoint PointX="24.5" PointY="57.40625" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_LogReclamos_TBL_ModuloReclamos_Reclamo" >
-          <ConnectorPoint PointX="20.75" PointY="75.119659830729177" />
-          <ConnectorPoint PointX="21.5" PointY="75.119659830729177" />
+          <ConnectorPoint PointX="20.75" PointY="75.1824446614583" />
+          <ConnectorPoint PointX="21.5" PointY="75.1824446614583" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Reclamo_TBL_ModuloReclamos_Reclamo" >
-          <ConnectorPoint PointX="20" PointY="76.239319661458353" />
-          <ConnectorPoint PointX="20" PointY="76.489319661458353" />
-          <ConnectorPoint PointX="20.332307692307694" PointY="76.489319661458353" />
-          <ConnectorPoint PointX="20.332307692307694" PointY="76.239319661458353" />
+          <ConnectorPoint PointX="20" PointY="76.373922526041611" />
+          <ConnectorPoint PointX="20" PointY="76.623922526041611" />
+          <ConnectorPoint PointX="20.332307692307694" PointY="76.623922526041611" />
+          <ConnectorPoint PointX="20.332307692307694" PointY="76.373922526041611" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Reclamo_TBL_ModuloReclamos_TipoReclamo" >
           <ConnectorPoint PointX="11.25" PointY="86.150383615384612" />
@@ -8722,14 +8724,14 @@
           <ConnectorPoint PointX="18.072919166666669" PointY="85.75" />
           <ConnectorPoint PointX="18.239585833333333" PointY="85.75" />
           <ConnectorPoint PointX="20.058943807692309" PointY="85.75" />
-          <ConnectorPoint PointX="20.058943807692309" PointY="76.239319661458353" />
+          <ConnectorPoint PointX="20.058943807692309" PointY="76.373922526041611" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Soluciones_TBL_ModuloReclamos_Reclamo" >
           <ConnectorPoint PointX="20.75" PointY="64.7593489583333" />
           <ConnectorPoint PointX="21.5" PointY="64.7593489583333" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Tracking_TBL_ModuloReclamos_Reclamo" >
-          <ConnectorPoint PointX="19.652691807692307" PointY="76.239319661458353" />
+          <ConnectorPoint PointX="19.652691807692307" PointY="76.373922526041611" />
           <ConnectorPoint PointX="19.652691807692307" PointY="83.1343489583333" />
           <ConnectorPoint PointX="19.975610474358977" PointY="83.1343489583333" />
           <ConnectorPoint PointX="20.142277141025641" PointY="83.1343489583333" />
@@ -8815,23 +8817,23 @@
         <AssociationConnector Association="SolutionFramework.MainModel.TBL_ModuloReclamos_ReclamoJefeAsesor" >
           <ConnectorPoint PointX="9" PointY="58.173705931089749" />
           <ConnectorPoint PointX="9.25" PointY="58.423705931089749" />
-          <ConnectorPoint PointX="9.25" PointY="76.614319661458353" />
-          <ConnectorPoint PointX="9.3854166666666661" PointY="76.614319661458353" />
-          <ConnectorPoint PointX="9.8020833333333339" PointY="76.614319661458353" />
-          <ConnectorPoint PointX="11.541666666666666" PointY="76.614319661458353" />
-          <ConnectorPoint PointX="11.895833333333334" PointY="76.614319661458353" />
-          <ConnectorPoint PointX="12.260414166666665" PointY="76.614319661458353" />
-          <ConnectorPoint PointX="12.427080833333333" PointY="76.614319661458353" />
-          <ConnectorPoint PointX="12.666666666666666" PointY="76.614319661458353" />
-          <ConnectorPoint PointX="12.833333333333334" PointY="76.614319661458353" />
-          <ConnectorPoint PointX="15.666666666666666" PointY="76.614319661458353" />
-          <ConnectorPoint PointX="15.833333333333334" PointY="76.614319661458353" />
-          <ConnectorPoint PointX="17.666666666666668" PointY="76.614319661458353" />
-          <ConnectorPoint PointX="17.833333333333332" PointY="76.614319661458353" />
-          <ConnectorPoint PointX="18.072919166666669" PointY="76.614319661458353" />
-          <ConnectorPoint PointX="18.239585833333333" PointY="76.614319661458353" />
-          <ConnectorPoint PointX="18.925768230769236" PointY="76.614319661458353" />
-          <ConnectorPoint PointX="19.300768230769233" PointY="76.239319661458353" />
+          <ConnectorPoint PointX="9.25" PointY="76.748922526041611" />
+          <ConnectorPoint PointX="9.3854166666666661" PointY="76.748922526041611" />
+          <ConnectorPoint PointX="9.8020833333333339" PointY="76.748922526041611" />
+          <ConnectorPoint PointX="11.541666666666666" PointY="76.748922526041611" />
+          <ConnectorPoint PointX="11.895833333333334" PointY="76.748922526041611" />
+          <ConnectorPoint PointX="12.260414166666665" PointY="76.748922526041611" />
+          <ConnectorPoint PointX="12.427080833333333" PointY="76.748922526041611" />
+          <ConnectorPoint PointX="12.666666666666666" PointY="76.748922526041611" />
+          <ConnectorPoint PointX="12.833333333333334" PointY="76.748922526041611" />
+          <ConnectorPoint PointX="15.666666666666666" PointY="76.748922526041611" />
+          <ConnectorPoint PointX="15.833333333333334" PointY="76.748922526041611" />
+          <ConnectorPoint PointX="17.666666666666668" PointY="76.748922526041611" />
+          <ConnectorPoint PointX="17.833333333333332" PointY="76.748922526041611" />
+          <ConnectorPoint PointX="18.072919166666669" PointY="76.748922526041611" />
+          <ConnectorPoint PointX="18.239585833333333" PointY="76.748922526041611" />
+          <ConnectorPoint PointX="18.925768230769236" PointY="76.748922526041611" />
+          <ConnectorPoint PointX="19.300768230769233" PointY="76.373922526041611" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.TBL_ModuloReclamos_UsuarioCopiaComentariosRespuesta" >
           <ConnectorPoint PointX="9" PointY="54.030360125976578" />
@@ -8858,7 +8860,7 @@
           <ConnectorPoint PointX="20.994789166666667" PointY="54.030360125976578" />
           <ConnectorPoint PointX="21.395833333333332" PointY="54.030360125976578" />
           <ConnectorPoint PointX="22.60937" PointY="54.030360125976578" />
-          <ConnectorPoint PointX="22.60937" PointY="57.375" />
+          <ConnectorPoint PointX="22.60937" PointY="57.5" />
         </AssociationConnector>
         <AssociationConnector Association="SolutionFramework.MainModel.TBL_ModuloReclamos_UsuariosCopiaActividades" >
           <ConnectorPoint PointX="9" PointY="54.126253350911455" />

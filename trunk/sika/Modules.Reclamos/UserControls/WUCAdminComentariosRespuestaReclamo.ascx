@@ -40,50 +40,53 @@
                         </HeaderTemplate>   
                         <ItemTemplate>
                             <tr runat="server" id="rowParent" >
-                                <td style="text-align:center; ">
-                                    <asp:HiddenField ID="hddIdComentario" runat="server" />
-                                    <img alt="Ver Comentarios y Respuestas" id="imgVerExpand" runat="server" src="~/Resources/Images/Expand.gif" />
+                                <td style="text-align:center;border-right:none;border-top:none;">
+                                    <asp:HiddenField ID="hddIdComentario" runat="server" />                                    
                                     <asp:ImageButton 
                                                 ID="imgSelectComentario" 
                                                 runat="server"
                                                 CausesValidation="false"
                                                 BorderStyle="None"
-                                                ImageUrl="~/Resources/Images/select.png"
-                                                OnClick="BtnSelectComentario_Click" />
+                                                ImageUrl="~/Resources/Images/comentarios.png"
+                                                OnClick="BtnSelectComentario_Click" ToolTip="Click para ver mas información del comentario." />
                                 </td>  
-                                <td style="text-align:left;vertical-align:top">
+                                <td style="text-align:left;vertical-align:top;border-right:none;border-top:none;">
                                     <asp:Label ID="lblDescripcion" runat="server" />
                                 </td>                  
-                                <td style="text-align:left;vertical-align:top">
+                                <td style="text-align:left;vertical-align:top;border-right:none;border-top:none;">
                                     <asp:Label ID="lblFechaComentario" runat="server" />
                                 </td>
-                                <td style="text-align:left;vertical-align:top">
+                                <td style="text-align:left;vertical-align:top;border-top:none;">
                                     <asp:Label ID="lblAutor" runat="server" />
                                 </td>                    
                             </tr>
                             <tr runat="server" class="child" id="rowChild" >
-                                <td colspan="4">
-                                    <div id="divDetalle"  runat="server" style="float: left; margin-top: 0px; display:none; width:100%; padding-bottom:15px;">
-                                        <table width="100%">
-                                            <asp:repeater id="rptChildComentarios" runat="server" OnItemDataBound="RptComentariosAsociadosList_ItemDataBound" >
-                                                <itemtemplate>
-                                                    <tr >
-                                                        <td style="width:5%">
-                                                        </td>
-                                                        <td style="text-align:left;width:61%;vertical-align:top">
-                                                            <asp:Label ID="lblDescripcion" runat="server" />
-                                                        </td>                  
-                                                        <td style="text-align:left;width:15%;vertical-align:top">
-                                                            <asp:Label ID="lblFechaComentario" runat="server" />
-                                                        </td>
-                                                        <td style="text-align:left;width:20%;vertical-align:top">
-                                                            <asp:Label ID="lblAutor" runat="server" />
-                                                        </td> 
-                                                    </tr>
-                                                </itemtemplate>
-                                            </asp:repeater>
-                                        </table>
-                                    </div>
+                                <td colspan="4" style="border-top:none;">
+                                    <table width="100%" style="border:none">
+                                        <asp:repeater id="rptChildComentarios" runat="server" OnItemDataBound="RptComentariosAsociadosList_ItemDataBound" >
+                                            <itemtemplate>
+                                                <tr >
+                                                    <td style="width:5%;text-align:right;border:none;">
+                                                        <asp:ImageButton 
+                                                                ID="imgSelectComentarioRespuesta" 
+                                                                runat="server"
+                                                                CausesValidation="false"
+                                                                BorderStyle="None"
+                                                                ImageUrl="~/Resources/Images/respuesta-comentario.png"/>
+                                                    </td>
+                                                    <td style="text-align:left;width:61%;vertical-align:top;border:none;">
+                                                        <asp:Label ID="lblDescripcion" runat="server" />
+                                                    </td>                  
+                                                    <td style="text-align:left;width:15%;vertical-align:top;border:none;">
+                                                        <asp:Label ID="lblFechaComentario" runat="server" />
+                                                    </td>
+                                                    <td style="text-align:left;width:20%;vertical-align:top;border:none;">
+                                                        <asp:Label ID="lblAutor" runat="server" />
+                                                    </td> 
+                                                </tr>
+                                            </itemtemplate>
+                                        </asp:repeater>
+                                    </table>
                                 </td>                
                             </tr>
                             </ItemTemplate>

@@ -68,6 +68,8 @@ namespace Presenters.Reclamos.Presenters
                     View.DescripcionAspectoEnvase = model.DescripcionAspectoEnvase;
                     View.DescripcionAspectoProducto = model.DescripcionAspectoProducto;
                     View.NumeroLote = model.Lote;
+                    View.NumeroLote2 = model.Lote2;
+                    View.NumeroLote3 = model.Lote3;
                     View.MuestraDisponible = model.MuestraDisponible.GetValueOrDefault();
                     View.DescripcionProblema = model.DescripcionProblema;
                     View.Diagnostico = model.DiagnosticoPrevio;
