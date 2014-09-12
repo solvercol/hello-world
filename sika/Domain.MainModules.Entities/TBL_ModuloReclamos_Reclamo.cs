@@ -24,6 +24,7 @@ namespace Domain.MainModules.Entities
     [KnownType(typeof(TBL_Admin_Usuarios))]
     [KnownType(typeof(TBL_ModuloReclamos_Actividades))]
     [KnownType(typeof(TBL_ModuloReclamos_Alternativas))]
+    [KnownType(typeof(TBL_ModuloReclamos_CategoriaProducto))]
     [KnownType(typeof(TBL_ModuloReclamos_CategoriasReclamo))]
     [KnownType(typeof(TBL_ModuloReclamos_ComentariosRespuesta))]
     [KnownType(typeof(TBL_ModuloReclamos_CostosProducto))]
@@ -1307,6 +1308,74 @@ namespace Domain.MainModules.Entities
             }
         }
         private Nullable<int> _idEstado;
+    
+        [DataMember]
+        public Nullable<bool> IndicadorAPC
+        {
+            get { return _indicadorAPC; }
+            set
+            {
+                if (_indicadorAPC != value)
+                {
+                    _indicadorAPC = value;
+                    OnPropertyChanged("IndicadorAPC");
+                }
+            }
+        }
+        private Nullable<bool> _indicadorAPC;
+    
+        [DataMember]
+        public Nullable<bool> IndicadorSol
+        {
+            get { return _indicadorSol; }
+            set
+            {
+                if (_indicadorSol != value)
+                {
+                    _indicadorSol = value;
+                    OnPropertyChanged("IndicadorSol");
+                }
+            }
+        }
+        private Nullable<bool> _indicadorSol;
+    
+        [DataMember]
+        public Nullable<bool> IndicadorAlt
+        {
+            get { return _indicadorAlt; }
+            set
+            {
+                if (_indicadorAlt != value)
+                {
+                    _indicadorAlt = value;
+                    OnPropertyChanged("IndicadorAlt");
+                }
+            }
+        }
+        private Nullable<bool> _indicadorAlt;
+    
+        [DataMember]
+        public Nullable<int> IdCategoria
+        {
+            get { return _idCategoria; }
+            set
+            {
+                if (_idCategoria != value)
+                {
+                    ChangeTracker.RecordOriginalValue("IdCategoria", _idCategoria);
+                    if (!IsDeserializing)
+                    {
+                        if (TBL_ModuloReclamos_CategoriaProducto != null && TBL_ModuloReclamos_CategoriaProducto.IdCategoria != value)
+                        {
+                            TBL_ModuloReclamos_CategoriaProducto = null;
+                        }
+                    }
+                    _idCategoria = value;
+                    OnPropertyChanged("IdCategoria");
+                }
+            }
+        }
+        private Nullable<int> _idCategoria;
 
         #endregion
         #region Navigation Properties
@@ -1533,6 +1602,23 @@ namespace Domain.MainModules.Entities
             }
         }
         private TrackableCollection<TBL_ModuloReclamos_Alternativas> _tBL_ModuloReclamos_Alternativas;
+    
+        [DataMember]
+        public TBL_ModuloReclamos_CategoriaProducto TBL_ModuloReclamos_CategoriaProducto
+        {
+            get { return _tBL_ModuloReclamos_CategoriaProducto; }
+            set
+            {
+                if (!ReferenceEquals(_tBL_ModuloReclamos_CategoriaProducto, value))
+                {
+                    var previousValue = _tBL_ModuloReclamos_CategoriaProducto;
+                    _tBL_ModuloReclamos_CategoriaProducto = value;
+                    FixupTBL_ModuloReclamos_CategoriaProducto(previousValue);
+                    OnNavigationPropertyChanged("TBL_ModuloReclamos_CategoriaProducto");
+                }
+            }
+        }
+        private TBL_ModuloReclamos_CategoriaProducto _tBL_ModuloReclamos_CategoriaProducto;
     
         [DataMember]
         public TBL_ModuloReclamos_CategoriasReclamo TBL_ModuloReclamos_CategoriasReclamo
@@ -1954,6 +2040,7 @@ namespace Domain.MainModules.Entities
             TBL_Admin_Usuarios7 = null;
             TBL_ModuloReclamos_Actividades.Clear();
             TBL_ModuloReclamos_Alternativas.Clear();
+            TBL_ModuloReclamos_CategoriaProducto = null;
             TBL_ModuloReclamos_CategoriasReclamo = null;
             TBL_ModuloReclamos_ComentariosRespuesta.Clear();
             TBL_ModuloReclamos_CostosProducto.Clear();
@@ -2347,6 +2434,50 @@ namespace Domain.MainModules.Entities
                 if (TBL_Admin_Usuarios7 != null && !TBL_Admin_Usuarios7.ChangeTracker.ChangeTrackingEnabled)
                 {
                     TBL_Admin_Usuarios7.StartTracking();
+                }
+            }
+        }
+    
+        private void FixupTBL_ModuloReclamos_CategoriaProducto(TBL_ModuloReclamos_CategoriaProducto previousValue, bool skipKeys = false)
+        {
+            if (IsDeserializing)
+            {
+                return;
+            }
+    
+            if (previousValue != null && previousValue.TBL_ModuloReclamos_Reclamo.Contains(this))
+            {
+                previousValue.TBL_ModuloReclamos_Reclamo.Remove(this);
+            }
+    
+            if (TBL_ModuloReclamos_CategoriaProducto != null)
+            {
+                if (!TBL_ModuloReclamos_CategoriaProducto.TBL_ModuloReclamos_Reclamo.Contains(this))
+                {
+                    TBL_ModuloReclamos_CategoriaProducto.TBL_ModuloReclamos_Reclamo.Add(this);
+                }
+    
+                IdCategoria = TBL_ModuloReclamos_CategoriaProducto.IdCategoria;
+            }
+            else if (!skipKeys)
+            {
+                IdCategoria = null;
+            }
+    
+            if (ChangeTracker.ChangeTrackingEnabled)
+            {
+                if (ChangeTracker.OriginalValues.ContainsKey("TBL_ModuloReclamos_CategoriaProducto")
+                    && (ChangeTracker.OriginalValues["TBL_ModuloReclamos_CategoriaProducto"] == TBL_ModuloReclamos_CategoriaProducto))
+                {
+                    ChangeTracker.OriginalValues.Remove("TBL_ModuloReclamos_CategoriaProducto");
+                }
+                else
+                {
+                    ChangeTracker.RecordOriginalValue("TBL_ModuloReclamos_CategoriaProducto", previousValue);
+                }
+                if (TBL_ModuloReclamos_CategoriaProducto != null && !TBL_ModuloReclamos_CategoriaProducto.ChangeTracker.ChangeTrackingEnabled)
+                {
+                    TBL_ModuloReclamos_CategoriaProducto.StartTracking();
                 }
             }
         }
