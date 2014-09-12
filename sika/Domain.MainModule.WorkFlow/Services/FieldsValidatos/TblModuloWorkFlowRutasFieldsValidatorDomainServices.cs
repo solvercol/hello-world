@@ -128,8 +128,13 @@ namespace Domain.MainModule.WorkFlow.Services.FieldsValidatos
 
             foreach (var property in properties)
             {
-                var patternField = string.Format(@"{0}", property.NameProperty);
-                if (!strFormula.ContainsField(patternField, StringComparison.OrdinalIgnoreCase)) continue;
+                var patternField = string.Format(@"\b{0}", property.NameProperty);
+
+                var reg = Regex.Match(strFormula, patternField);
+
+                if(!reg.Success)continue;
+             
+                //if (!strFormula.con(patternField, StringComparison.Ordinal)) continue;
 
                 var value = "";
                 if (property.Value is bool)
