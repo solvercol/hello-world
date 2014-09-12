@@ -120,6 +120,8 @@
     <Content Include="UserControls\WUCReadingReclamoServicioT4Detalle.ascx" />
     <Content Include="UserControls\WUCReadingReclamoServicioT5Detalle.ascx" />
     <Content Include="UserControls\WucRenderMessagesError.ascx" />
+    <Content Include="Views\FrmActividadesPorPersona.aspx" />
+    <Content Include="Views\FrmAlternativasPorPersona.aspx" />
     <Content Include="Views\FrmMisActividades.aspx" />
     <Content Include="Views\FrmMisActividadesPendientes.aspx" />
     <Content Include="Views\FrmMisAlternativas.aspx" />
@@ -127,8 +129,13 @@
     <Content Include="Views\FrmMisPendientes.aspx" />
     <Content Include="Views\FrmMisReclamosPorEstado.aspx" />
     <Content Include="Views\FrmMisReclamosPorFecha.aspx" />
+    <Content Include="Views\FrmReclamosPorAutor.aspx" />
+    <Content Include="Views\FrmReclamosPorCliente.aspx" />
     <Content Include="Views\FrmReclamosPorEstado.aspx" />
+    <Content Include="Views\FrmReclamosPorFecha.aspx" />
     <Content Include="Views\FrmReclamosPorNumero.aspx" />
+    <Content Include="Views\FrmReclamosPorProducto.aspx" />
+    <Content Include="Views\FrmReclamosPorResponsable.aspx" />
     <Content Include="Views\FrmReclamosPorTargetMarket.aspx" />
     <Content Include="Views\FrmReclamosPorTipo.aspx" />
     <Content Include="Web.config" />
@@ -373,6 +380,20 @@
     <Compile Include="UserControls\WucRenderMessagesError.ascx.designer.cs">
       <DependentUpon>WucRenderMessagesError.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Views\FrmActividadesPorPersona.aspx.cs">
+      <DependentUpon>FrmActividadesPorPersona.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FrmActividadesPorPersona.aspx.designer.cs">
+      <DependentUpon>FrmActividadesPorPersona.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmAlternativasPorPersona.aspx.cs">
+      <DependentUpon>FrmAlternativasPorPersona.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FrmAlternativasPorPersona.aspx.designer.cs">
+      <DependentUpon>FrmAlternativasPorPersona.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\FrmMisActividades.aspx.cs">
       <DependentUpon>FrmMisActividades.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -422,6 +443,20 @@
     <Compile Include="Views\FrmMisReclamosPorFecha.aspx.designer.cs">
       <DependentUpon>FrmMisReclamosPorFecha.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\FrmReclamosPorAutor.aspx.cs">
+      <DependentUpon>FrmReclamosPorAutor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FrmReclamosPorAutor.aspx.designer.cs">
+      <DependentUpon>FrmReclamosPorAutor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmReclamosPorCliente.aspx.cs">
+      <DependentUpon>FrmReclamosPorCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FrmReclamosPorCliente.aspx.designer.cs">
+      <DependentUpon>FrmReclamosPorCliente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\FrmReclamosPorEstado.aspx.cs">
       <DependentUpon>FrmReclamosPorEstado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -429,12 +464,33 @@
     <Compile Include="Views\FrmReclamosPorEstado.aspx.designer.cs">
       <DependentUpon>FrmReclamosPorEstado.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\FrmReclamosPorFecha.aspx.cs">
+      <DependentUpon>FrmReclamosPorFecha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FrmReclamosPorFecha.aspx.designer.cs">
+      <DependentUpon>FrmReclamosPorFecha.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\FrmReclamosPorNumero.aspx.cs">
       <DependentUpon>FrmReclamosPorNumero.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\FrmReclamosPorNumero.aspx.designer.cs">
       <DependentUpon>FrmReclamosPorNumero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmReclamosPorProducto.aspx.cs">
+      <DependentUpon>FrmReclamosPorProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FrmReclamosPorProducto.aspx.designer.cs">
+      <DependentUpon>FrmReclamosPorProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmReclamosPorResponsable.aspx.cs">
+      <DependentUpon>FrmReclamosPorResponsable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FrmReclamosPorResponsable.aspx.designer.cs">
+      <DependentUpon>FrmReclamosPorResponsable.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\FrmReclamosPorTargetMarket.aspx.cs">
       <DependentUpon>FrmReclamosPorTargetMarket.aspx</DependentUpon>
@@ -506,10 +562,13 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Resources\ReportViewer\RptVistaActividadesPorPersona.rdlc" />
+    <EmbeddedResource Include="Resources\ReportViewer\RptVistaAlternativasPorPersona.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\RptVistaMisActividades.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\RptVistaMisActividadesPendientes.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\RptVistaMisAlternativas.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\RptVistaMisAlternativasPendientes.rdlc" />
+    <EmbeddedResource Include="Resources\ReportViewer\RptVistaReclamosPorAutor.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\RptVistaReclamosPorEstado.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\RptVistaMisReclamosPorEstado.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\RptVistaMisReclamosPorFecha.rdlc" />
