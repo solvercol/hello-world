@@ -1355,14 +1355,14 @@ namespace Domain.MainModules.Entities
         private Nullable<bool> _indicadorAlt;
     
         [DataMember]
-        public Nullable<int> IdCategoria
+        public Nullable<int> IdCategoriaProducto
         {
-            get { return _idCategoria; }
+            get { return _idCategoriaProducto; }
             set
             {
-                if (_idCategoria != value)
+                if (_idCategoriaProducto != value)
                 {
-                    ChangeTracker.RecordOriginalValue("IdCategoria", _idCategoria);
+                    ChangeTracker.RecordOriginalValue("IdCategoriaProducto", _idCategoriaProducto);
                     if (!IsDeserializing)
                     {
                         if (TBL_ModuloReclamos_CategoriaProducto != null && TBL_ModuloReclamos_CategoriaProducto.IdCategoria != value)
@@ -1370,12 +1370,12 @@ namespace Domain.MainModules.Entities
                             TBL_ModuloReclamos_CategoriaProducto = null;
                         }
                     }
-                    _idCategoria = value;
-                    OnPropertyChanged("IdCategoria");
+                    _idCategoriaProducto = value;
+                    OnPropertyChanged("IdCategoriaProducto");
                 }
             }
         }
-        private Nullable<int> _idCategoria;
+        private Nullable<int> _idCategoriaProducto;
 
         #endregion
         #region Navigation Properties
@@ -2457,11 +2457,11 @@ namespace Domain.MainModules.Entities
                     TBL_ModuloReclamos_CategoriaProducto.TBL_ModuloReclamos_Reclamo.Add(this);
                 }
     
-                IdCategoria = TBL_ModuloReclamos_CategoriaProducto.IdCategoria;
+                IdCategoriaProducto = TBL_ModuloReclamos_CategoriaProducto.IdCategoria;
             }
             else if (!skipKeys)
             {
-                IdCategoria = null;
+                IdCategoriaProducto = null;
             }
     
             if (ChangeTracker.ChangeTrackingEnabled)
