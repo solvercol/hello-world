@@ -332,8 +332,6 @@ namespace Applications.MainModule.WorkFlow.Services
                 if (currentRule.TBL_ModuloWorkFlow_ValidacionesSalida.Where(x => x.Ejecutar == true).Count() > 0)
                 {
 
-                    //var inputParameters = currentRule.TBL_ModuloWorkFlow_ValidacionesSalida.Where(
-                    //        x => x.NombreMetodo.Contains("[InputParameters]"));
 
                      var inputParameters = currentRule
                          .TBL_ModuloWorkFlow_ValidacionesSalida
@@ -344,12 +342,16 @@ namespace Applications.MainModule.WorkFlow.Services
                         //Los parametros de entrada rompen el flujo de la aplicación para lanzar ventanas de captura y proceguir con el flujo 
                         //desde otro formulario.
                         ProcesarParametrosEntrada(oDocument, currentRule.TBL_ModuloWorkFlow_ValidacionesSalida, oDoc);
-                        if(oDocument.MessagesError.Count > 0)
+
+                        if(oDocument.MessagesError != null)
                         {
-                            oDocument.Processestaus = ProcessStatus.ValidationErrorSystemActions.ToString();
-                            return oDocument;
+                            if (oDocument.MessagesError.Count > 0)
+                            {
+                                oDocument.Processestaus = ProcessStatus.ValidationErrorSystemActions.ToString();
+                                return oDocument;
+                            }
                         }
-                        
+
                         oDocument.Processestaus = ProcessStatus.InputParameters.ToString();
                         return oDocument;
                     }
@@ -576,7 +578,7 @@ namespace Applications.MainModule.WorkFlow.Services
             foreach (var salida in ovalidaciones)
             {
 
-                var m = DefinedRegexEvaluation.Condition.Match(salida.NombreMetodo);
+                var m = DefinedRegexEvaluation.Condition.Match(salida.NombreEnsamblado);
                 if(m.Success)
                 {
                     var condicion = m.Groups[1].Value;
