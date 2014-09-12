@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IViews\IActividadesPorPersonaView.cs" />
+    <Compile Include="IViews\IAlternativasPorPersonaView.cs" />
     <Compile Include="IViews\IMisActividadesView.cs" />
     <Compile Include="IViews\IAdminActividadReclamoView.cs" />
     <Compile Include="IViews\IAdminAlternativaReclamoView.cs" />
@@ -76,11 +78,17 @@
     <Compile Include="IViews\IReadingReclamoServicioT4DetalleView.cs" />
     <Compile Include="IViews\IReadingReclamoServicioT5DetalleView.cs" />
     <Compile Include="IViews\IReadingReclamoServicioView.cs" />
+    <Compile Include="IViews\IReclamosPorAutorView.cs" />
+    <Compile Include="IViews\IReclamosPorClienteView.cs" />
     <Compile Include="IViews\IReclamosPorEstadoView.cs" />
+    <Compile Include="IViews\IReclamosPorFechaView.cs" />
     <Compile Include="IViews\IReclamosPorNumeroView.cs" />
+    <Compile Include="IViews\IReclamosPorProductoView.cs" />
+    <Compile Include="IViews\IReclamosPorResponsableView.cs" />
     <Compile Include="IViews\IReclamosPorTargetMarketView.cs" />
     <Compile Include="IViews\IReclamosPorTipoView.cs" />
     <Compile Include="IViews\IReclamoView.cs" />
+    <Compile Include="Presenters\ActividadesPorPersonaPresenter.cs" />
     <Compile Include="Presenters\AddReclamoPresenter.cs" />
     <Compile Include="Presenters\AdminActividadesReclamoPresenter.cs" />
     <Compile Include="Presenters\AdminActividadReclamoPresentador.cs" />
@@ -97,6 +105,7 @@
     <Compile Include="Presenters\AdminRecServicioT4Presenter.cs" />
     <Compile Include="Presenters\AdminRecServicioT5Presenter.cs" />
     <Compile Include="Presenters\AdminSolucionesReclamoPresenter.cs" />
+    <Compile Include="Presenters\AlternativasPorPersonaPresenter.cs" />
     <Compile Include="Presenters\MisActividadesPresenter.cs" />
     <Compile Include="Presenters\FilterClientPresenter.cs" />
     <Compile Include="Presenters\FilterProductPresenter.cs" />
@@ -118,8 +127,13 @@
     <Compile Include="Presenters\ReadingReclamoServicioT4DetallePresenter.cs" />
     <Compile Include="Presenters\ReadingReclamoServicioT5DetallePresenter.cs" />
     <Compile Include="Presenters\ReclamoPresenter.cs" />
+    <Compile Include="Presenters\ReclamosPorAutorPresenter.cs" />
+    <Compile Include="Presenters\ReclamosPorClientePresenter.cs" />
     <Compile Include="Presenters\ReclamosPorEstadoPresenter.cs" />
+    <Compile Include="Presenters\ReclamosPorFechaPresenter.cs" />
     <Compile Include="Presenters\ReclamosPorNumeroPresenter.cs" />
+    <Compile Include="Presenters\ReclamosPorProductoPresenter.cs" />
+    <Compile Include="Presenters\ReclamosPorResponsablePresenter.cs" />
     <Compile Include="Presenters\ReclamosPorTargetMarketPresenter.cs" />
     <Compile Include="Presenters\ReclamosPorTipoPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -58,6 +58,18 @@ namespace Application.MainModule.SqlServices.IServices
                                             DateTime from, DateTime end, string noReclamo,
                                             string cliente, string producto, string servicio);
 
+        DataTable GetVistaGestionActividades(string serverHost, string moduleId, int idUser,
+                                            DateTime from, DateTime end, string noReclamo,
+                                            string cliente, string producto, string servicio, string fromView);
+
+        DataTable GetVistaGestionAlternativas(string serverHost, string moduleId, int idUser,
+                                              DateTime from, DateTime end, string noReclamo,
+                                              string cliente, string producto, string servicio, string fromView);
+
+        DataTable GetVistaGestionReclamos(string serverHost, string moduleId, int idUser,
+                                              DateTime from, DateTime end, string noReclamo,
+                                              string cliente, string producto, string servicio, string fromView);
+
         #endregion
     }
 }
