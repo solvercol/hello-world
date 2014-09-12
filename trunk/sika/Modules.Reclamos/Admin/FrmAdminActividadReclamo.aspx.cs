@@ -105,6 +105,9 @@ namespace Modules.Reclamos.Admin
                     case "misact":
                         Response.Redirect(string.Format("../Views/FrmMisActividades.aspx?ModuleId={0}", ModuleId));
                         break;
+                    case "actpersona":
+                        Response.Redirect(string.Format("../Views/FrmActividadesPorPersona.aspx?ModuleId={0}", ModuleId));
+                        break;
                 }
             }
         }

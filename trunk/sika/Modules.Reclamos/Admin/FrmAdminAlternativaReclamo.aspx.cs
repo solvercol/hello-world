@@ -108,6 +108,9 @@ namespace Modules.Reclamos.Admin
                     case "misalt":
                         Response.Redirect(string.Format("../Views/FrmMisAlternativas.aspx?ModuleId={0}", ModuleId));
                         break;
+                    case "altpersona":
+                        Response.Redirect(string.Format("../Views/FrmAlternativasPorPersona.aspx?ModuleId={0}", ModuleId));
+                        break;
                 }
             }
         }
