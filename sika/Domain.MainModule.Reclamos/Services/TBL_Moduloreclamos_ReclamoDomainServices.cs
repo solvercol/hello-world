@@ -43,6 +43,7 @@ namespace Domain.MainModule.Reclamos.Services
 
             oLog.IdReclamo = idReclamo;
             oLog.IsActive = true;
+            oLog.IdLog = Guid.NewGuid();
             return oLog;
         }
 
