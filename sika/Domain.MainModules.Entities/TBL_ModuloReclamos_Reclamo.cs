@@ -623,6 +623,36 @@ namespace Domain.MainModules.Entities
         private string _lote;
     
         [DataMember]
+        public string Lote2
+        {
+            get { return _lote2; }
+            set
+            {
+                if (_lote2 != value)
+                {
+                    _lote2 = value;
+                    OnPropertyChanged("Lote2");
+                }
+            }
+        }
+        private string _lote2;
+    
+        [DataMember]
+        public string Lote3
+        {
+            get { return _lote3; }
+            set
+            {
+                if (_lote3 != value)
+                {
+                    _lote3 = value;
+                    OnPropertyChanged("Lote3");
+                }
+            }
+        }
+        private string _lote3;
+    
+        [DataMember]
         public Nullable<bool> MuestraDisponible
         {
             get { return _muestraDisponible; }

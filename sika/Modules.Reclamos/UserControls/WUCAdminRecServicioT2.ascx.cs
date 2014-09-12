@@ -550,14 +550,14 @@ namespace Modules.Reclamos.UserControls
         {
             get
             {
-                if (ViewState["AdminServicio_IdResponsableCategoriaReclamo"] != null)
-                    ViewState["AdminServicio_IdResponsableCategoriaReclamo"] = 0;
+                if (ViewState["AdminServicio2_IdResponsableCategoriaReclamo"] == null)
+                    ViewState["AdminServicio2_IdResponsableCategoriaReclamo"] = 0;
 
-                return Convert.ToInt32(ViewState["AdminServicio_IdResponsableCategoriaReclamo"]);
+                return Convert.ToInt32(ViewState["AdminServicio2_IdResponsableCategoriaReclamo"]);
             }
             set
             {
-                ViewState["AdminServicio_IdResponsableCategoriaReclamo"] = value;
+                ViewState["AdminServicio2_IdResponsableCategoriaReclamo"] = value;
             }
         }
 

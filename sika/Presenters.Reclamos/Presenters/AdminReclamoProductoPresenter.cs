@@ -243,6 +243,8 @@ namespace Presenters.Reclamos.Presenters
                 model.DescripcionAspectoEnvase = View.DescripcionAspectoEnvase;
                 model.DescripcionAspectoProducto = View.DescripcionAspectoProducto;
                 model.Lote = View.NumeroLote;
+                model.Lote2 = View.NumeroLote2;
+                model.Lote3 = View.NumeroLote3;
                 model.MuestraDisponible = View.MuestraDisponible;
                 model.DescripcionProblema = View.DescripcionProblema;
                 model.DiagnosticoPrevio = View.Diagnostico;
@@ -305,6 +307,8 @@ namespace Presenters.Reclamos.Presenters
                 View.DescripcionAspectoEnvase = model.DescripcionAspectoEnvase;
                 View.DescripcionAspectoProducto = model.DescripcionAspectoProducto;
                 View.NumeroLote = model.Lote;
+                View.NumeroLote2 = model.Lote2;
+                View.NumeroLote3 = model.Lote3;
                 View.MuestraDisponible = model.MuestraDisponible.GetValueOrDefault();
                 View.DescripcionProblema = model.DescripcionProblema;
                 View.Diagnostico = model.DiagnosticoPrevio;
@@ -356,6 +360,8 @@ namespace Presenters.Reclamos.Presenters
             model.DescripcionAspectoEnvase = View.DescripcionAspectoEnvase;
             model.DescripcionAspectoProducto = View.DescripcionAspectoProducto;
             model.Lote = View.NumeroLote;
+            model.Lote2 = View.NumeroLote2;
+            model.Lote3 = View.NumeroLote3;
             model.MuestraDisponible = View.MuestraDisponible;
             model.DescripcionProblema = View.DescripcionProblema;
             model.DiagnosticoPrevio = View.Diagnostico;

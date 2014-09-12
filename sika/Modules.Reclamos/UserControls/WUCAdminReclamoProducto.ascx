@@ -459,6 +459,8 @@
 
                             <td class="Line" >
                                 <asp:TextBox ID="txtNumeroLote" Width="100%" runat="server" MaxLength="50" />
+                                <asp:TextBox ID="txtNumeroLote2" Width="100%" runat="server" MaxLength="50" />
+                                <asp:TextBox ID="txtNumeroLote3" Width="100%" runat="server" MaxLength="50" />
                             </td>
 
                             <td class="Separador"></td>

@@ -32,6 +32,8 @@ namespace Presenters.Reclamos.IViews
         string DescripcionAspectoEnvase { get; set; }
         string DescripcionAspectoProducto { get; set; }
         string NumeroLote { get; set; }
+        string NumeroLote2 { get; set; }
+        string NumeroLote3 { get; set; }
         bool MuestraDisponible { get; set; }
 
         // Descripcion de Problema

@@ -332,6 +332,51 @@
         </td>
     </tr>
     <tr>
+        <th style="text-align:left">
+            
+        </th>
+
+        <td class="Separador"></td>
+
+        <td class="Line" >
+           <asp:Label ID="lblNumeroLote2" runat="server" />
+        </td>
+
+        <td class="Separador"></td>
+
+        <th style="text-align:left">
+            
+        </th>
+
+        <td class="Separador"></td>
+
+        <td >
+        </td>
+    </tr>
+    <tr>
+        <th style="text-align:left">
+            
+        </th>
+
+        <td class="Separador"></td>
+
+        <td class="Line" >
+           <asp:Label ID="lblNumeroLote3" runat="server" />
+        </td>
+
+        <td class="Separador"></td>
+
+        <th style="text-align:left">
+            
+        </th>
+
+        <td class="Separador"></td>
+
+        <td >
+            
+        </td>
+    </tr>
+    <tr>
         <td colspan="7" class="TituloSeccion">
             Descripción del Problema
         </td>

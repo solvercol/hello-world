@@ -139,8 +139,7 @@ namespace Modules.Reclamos.UserControls
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
             {
                 var item = (TBL_ModuloReclamos_ComentariosRespuesta)(e.Item.DataItem);
-                // Bindind data
-                var imgDetalle = e.Item.FindControl("imgVerExpand") as HtmlImage;
+                // Bindind data                
 
                 bool hasChild = false;
 
@@ -170,16 +169,13 @@ namespace Modules.Reclamos.UserControls
 
                     hasChild = true;
                 }
-                imgDetalle.Visible = hasChild;
+
                 // Adicionando comportamiento de colapse para hijos
                 var trParent = e.Item.FindControl("rowParent") as HtmlTableRow;
                 if (trParent != null)
                 {
                     var trChild = e.Item.FindControl("rowChild") as HtmlTableRow;
                     trChild.Visible = hasChild;
-                    var divDetalle = e.Item.FindControl("divDetalle") as HtmlGenericControl;
-
-                    trParent.Attributes.Add("Onclick", "JavaScript:ShowHiddeObjects('" + divDetalle.ClientID + "','" + imgDetalle.ClientID + "','../../../../Resources/Images/Collapse.gif','../../../../Resources/Images/Expand.gif');");
                 } 
             }
         }

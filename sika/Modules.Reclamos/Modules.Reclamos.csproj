@@ -120,7 +120,9 @@
     <Content Include="UserControls\WUCReadingReclamoServicioT4Detalle.ascx" />
     <Content Include="UserControls\WUCReadingReclamoServicioT5Detalle.ascx" />
     <Content Include="UserControls\WucRenderMessagesError.ascx" />
+    <Content Include="Views\FrmMisActividades.aspx" />
     <Content Include="Views\FrmMisActividadesPendientes.aspx" />
+    <Content Include="Views\FrmMisAlternativas.aspx" />
     <Content Include="Views\FrmMisAlternativasPendientes.aspx" />
     <Content Include="Views\FrmMisPendientes.aspx" />
     <Content Include="Views\FrmMisReclamosPorEstado.aspx" />
@@ -371,12 +373,26 @@
     <Compile Include="UserControls\WucRenderMessagesError.ascx.designer.cs">
       <DependentUpon>WucRenderMessagesError.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Views\FrmMisActividades.aspx.cs">
+      <DependentUpon>FrmMisActividades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FrmMisActividades.aspx.designer.cs">
+      <DependentUpon>FrmMisActividades.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\FrmMisActividadesPendientes.aspx.cs">
       <DependentUpon>FrmMisActividadesPendientes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\FrmMisActividadesPendientes.aspx.designer.cs">
       <DependentUpon>FrmMisActividadesPendientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmMisAlternativas.aspx.cs">
+      <DependentUpon>FrmMisAlternativas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FrmMisAlternativas.aspx.designer.cs">
+      <DependentUpon>FrmMisAlternativas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\FrmMisAlternativasPendientes.aspx.cs">
       <DependentUpon>FrmMisAlternativasPendientes.aspx</DependentUpon>
@@ -490,7 +506,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Resources\ReportViewer\RptVistaMisActividades.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\RptVistaMisActividadesPendientes.rdlc" />
+    <EmbeddedResource Include="Resources\ReportViewer\RptVistaMisAlternativas.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\RptVistaMisAlternativasPendientes.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\RptVistaReclamosPorEstado.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\RptVistaMisReclamosPorEstado.rdlc" />

@@ -119,8 +119,8 @@ namespace Modules.Reclamos.UserControls
             if (!string.IsNullOrEmpty(EmailPropietario) && !IsValidEmail(EmailPropietario))
                 messages.Add("El mail de quien aplica ingresado no se encuentra con una estructura correcta.");
 
-            if (string.IsNullOrEmpty(NumeroLote))
-                messages.Add("El numero de lote es requrerido para la creación de un reclamo.");
+            if (string.IsNullOrEmpty(NumeroLote) && string.IsNullOrEmpty(NumeroLote2) && string.IsNullOrEmpty(NumeroLote3))
+                messages.Add("Es necesario ingresar por lo menos un numero de lote.");
 
             if (string.IsNullOrEmpty(Diagnostico))
                 messages.Add("El diagnostico previo del problema es requerido.");
@@ -510,6 +510,30 @@ namespace Modules.Reclamos.UserControls
             set
             {
                 txtNumeroLote.Text = value;
+            }
+        }
+
+        public string NumeroLote2
+        {
+            get
+            {
+                return txtNumeroLote2.Text;
+            }
+            set
+            {
+                txtNumeroLote2.Text = value;
+            }
+        }
+
+        public string NumeroLote3
+        {
+            get
+            {
+                return txtNumeroLote3.Text;
+            }
+            set
+            {
+                txtNumeroLote3.Text = value;
             }
         }
 
