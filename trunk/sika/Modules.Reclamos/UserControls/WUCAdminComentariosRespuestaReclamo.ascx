@@ -113,7 +113,7 @@
 
             <div style="padding:3px; text-align:right;">
                 <asp:Button ID="btnRegresar" runat="server" Text="Regresar"  />
-                <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="BtnSaveComentario_Click"  />
+                <asp:Button ID="btnGuardar" runat="server" Text="Enviar" OnClick="BtnSaveComentario_Click"  />
             </div>
 
             <div class="popup_Body">                                                    
