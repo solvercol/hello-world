@@ -1498,7 +1498,7 @@
           <Property Name="IndicadorAPC" Type="bit" />
           <Property Name="IndicadorSol" Type="bit" />
           <Property Name="IndicadorAlt" Type="bit" />
-          <Property Name="IdCategoria" Type="int" />
+          <Property Name="IdCategoriaProducto" Type="int" />
         </EntityType>
         <EntityType Name="TBL_ModuloReclamos_ReclamoJefeAsesor">
           <Key>
@@ -2906,7 +2906,7 @@
               <PropertyRef Name="IdCategoria" />
             </Principal>
             <Dependent Role="TBL_ModuloReclamos_Reclamo">
-              <PropertyRef Name="IdCategoria" />
+              <PropertyRef Name="IdCategoriaProducto" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -4816,7 +4816,7 @@
           <Property Type="Boolean" Name="IndicadorAPC" />
           <Property Type="Boolean" Name="IndicadorSol" />
           <Property Type="Boolean" Name="IndicadorAlt" />
-          <Property Type="Int32" Name="IdCategoria" />
+          <Property Type="Int32" Name="IdCategoriaProducto" />
           <NavigationProperty Name="TBL_Admin_EstadosProceso" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Reclamo_TBL_Admin_EstadosProceso" FromRole="TBL_ModuloReclamos_Reclamo" ToRole="TBL_Admin_EstadosProceso" />
           <NavigationProperty Name="TBL_Admin_Usuarios" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Reclamo_TBL_Admin_Usuarios" FromRole="TBL_ModuloReclamos_Reclamo" ToRole="TBL_Admin_Usuarios" />
           <NavigationProperty Name="TBL_Admin_Usuarios1" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Reclamo_TBL_Admin_Usuarios_AsesoradoPor" FromRole="TBL_ModuloReclamos_Reclamo" ToRole="TBL_Admin_Usuarios" />
@@ -6179,7 +6179,7 @@
               <PropertyRef Name="IdCategoria" />
             </Principal>
             <Dependent Role="TBL_ModuloReclamos_Reclamo">
-              <PropertyRef Name="IdCategoria" />
+              <PropertyRef Name="IdCategoriaProducto" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -7193,7 +7193,7 @@
           <EntitySetMapping Name="TBL_ModuloReclamos_Reclamo">
             <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_ModuloReclamos_Reclamo">
               <MappingFragment StoreEntitySet="TBL_ModuloReclamos_Reclamo">
-                <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+                <ScalarProperty Name="IdCategoriaProducto" ColumnName="IdCategoriaProducto" />
                 <ScalarProperty Name="IndicadorAlt" ColumnName="IndicadorAlt" />
                 <ScalarProperty Name="IndicadorSol" ColumnName="IndicadorSol" />
                 <ScalarProperty Name="IndicadorAPC" ColumnName="IndicadorAPC" />
