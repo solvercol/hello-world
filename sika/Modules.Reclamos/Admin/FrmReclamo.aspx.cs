@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web.UI;
 using System.Web.UI.WebControls;
 using Application.Core;
 using Applications.MainModule.WorkFlow.DTO;
 using ASP.NETCLIENTE.UI;
 using Domain.MainModules.Entities;
+using Infrastructure.CrossCutting.NetFramework.Structures;
 using Modules.Reclamos.UserControls;
 using Presenters.Reclamos.IViews;
 using Presenters.Reclamos.Presenters;
@@ -47,6 +49,34 @@ namespace Modules.Reclamos.Admin
             }
         }
 
+        public string IdCategoria
+        {
+            get { return ViewState["IdCategoria"] == null ? string.Empty : ViewState["IdCategoria"].ToString(); }
+            set { ViewState["IdCategoria"] = value; }
+        }
+
+        public string InputWindow
+        {
+            get
+            {
+                return ViewState["InputWindow"] as string;
+            }
+            set
+            {
+                ViewState["InputWindow"] = value;
+            }
+        }
+
+        public bool VerCrearAccion
+        {
+            set { btnActualizarIndicadores.Visible = value; }
+        }
+
+        public bool VerBotonEdicion
+        {
+            set { btnEdit.Visible = value; }
+        }
+
         #endregion
 
         #region Page Events
@@ -57,6 +87,7 @@ namespace Modules.Reclamos.Admin
         {
             ImprimirTituloVentana(string.Format("Reclamo de {0} No. {1}", TipoReclamo, NumeroReclamo));
             LoadUserControl();
+            LoadUserControlVentanaMensajes(null);
         }
 
         protected override void OnInit(EventArgs e)
@@ -80,31 +111,37 @@ namespace Modules.Reclamos.Admin
             else
             {
                 var oDocument = (RenderTypeControlButtonDto)e.MessageView;
-                if (oDocument.MessagesError != null)
+                
+                if (oDocument.MessagesError.Count > 0)
                 {
-                    if (oDocument.MessagesError.Count > 0)
-                    {
-                        LastLoadedControlMessages = string.Format("{0}WucRenderMessagesError.ascx", ROOTUC);
-                        LoadUserControlVentanaMensajes(oDocument.MessagesError);
-                        pnlVentanaEmergente.Width = 550;
-                        pnlVentanaEmergente.Height = 200;
-                        litTitulo.Text = @"Resultado del proceso de validación.";
-                        mpeVentanaEmergente.Show();
-                    }
+                    LastLoadedControlMessages = string.Format("{0}WucRenderMessagesError.ascx", ROOTUC);
+                    LoadUserControlVentanaMensajes(oDocument.MessagesError);
+                    pnlVentanaEmergente.Width = 550;
+                    pnlVentanaEmergente.Height = 200;
+                    litTitulo.Text = @"Resultado del proceso de validación.";
+                    mpeVentanaEmergente.Show();
                 }
                 else if (oDocument.OutputParameters.Count > 0)
                 {
-                    //todo: se ´puede invocar un WUC para  recibir parámetros y ejecutar en un segundo paso el WF
+                    var ventana = oDocument.OutputParameters[0];
+                    InputWindow = ventana;
 
-                    //var ventana = oDocument.OutputParameters[0];
-                    //switch (ventana)
-                    //{
-                    //    case "FechaEntrega":
-                    //        litTitulo.Text = @"Ingrese la Fecha de Entrega.";
-                    //        LoadUserControlVentanaMensajes(null);
-                    //        mpeVentanaEmergente.Show();
-                    //        break;
-                    //}
+                    switch (ventana)
+                    {
+                        case "IngenieroResponsable":
+                            litTitulo.Text = @"Seleccione el Ingeniero Responsable.";
+                            LastLoadedControlMessages = "../UserControls/WucIngresarIngenieroResponsable.ascx";
+                            LoadUserControlVentanaMensajes(null);
+                            mpeVentanaEmergente.Show();
+                            break;
+
+                        case "CategorizacionReclamo":
+                             litTitulo.Text = @"Caregorización del reclamo.";
+                             LastLoadedControlMessages = "../UserControls/WucCategorizarReclamo.ascx";
+                             LoadUserControlVentanaMensajes(null);
+                             mpeVentanaEmergente.Show();
+                             break;
+                    }
                 }
             }
             
@@ -166,6 +203,58 @@ namespace Modules.Reclamos.Admin
             }
         }
 
+        protected void BtnEnviarInputCick(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(InputWindow))return;
+
+
+            switch (InputWindow)
+            {
+                case "IngenieroResponsable":
+                    {
+                        var ucIr = this.GetUserControl<WucIngresarIngenieroResponsable>("UcRender", "phlVentanaMensajes");
+                        if (ucIr == null) return;
+                        if ( string.IsNullOrEmpty(ucIr.IngenieroSeleccionado)) return;
+
+                        var parameters = new InputParameter
+                                             {
+                                                 Inputs = new Dictionary<string, string>
+                                                              {
+                                                                  {"IdIngeniero", ucIr.IngenieroSeleccionado}
+                                                              }
+                                             };
+
+                        EjecutarWorkFlow(parameters, InputWindow);
+                
+                    }
+                    break;
+
+                case "CategorizacionReclamo":
+                    {
+                        var uc = this.GetUserControl<WucCategorizarReclamo>("UcRender", "phlVentanaMensajes");
+                        if (uc == null) return;
+                        if (string.IsNullOrEmpty(uc.AreaSeleccionada) || string.IsNullOrEmpty(uc.CategoriaSeleccionada)) return;
+
+                        var parameters = new InputParameter
+                        {
+                            Inputs = new Dictionary<string, string>
+                                                              {
+                                                                  {"Idcategoria", uc.CategoriaSeleccionada},
+                                                                  {"Area", uc.AreaSeleccionada}
+                                                              }
+                        };
+
+                        EjecutarWorkFlow(parameters, InputWindow);
+                    }
+
+                    break;
+            }
+        }
+
+        protected void BtnCreacionAccionesClick(object sender, EventArgs e)
+        {
+           Presenter.CrearAcciones();
+        }
         #endregion
 
         #region Menu
@@ -235,6 +324,7 @@ namespace Modules.Reclamos.Admin
             phlVentanaMensajes.Controls.Clear();
             var uc = LoadControl(controlPath);
             uc.ID = "UcRender";
+            ConfigurarUserControl(uc);
             phlVentanaMensajes.Controls.Add(uc);
 
             if (items != null)
@@ -249,6 +339,14 @@ namespace Modules.Reclamos.Admin
                 }
             }
         }
+
+        private void ConfigurarUserControl(Control oControl)
+        {
+            var uc = (BaseUserControl)oControl;
+            if (uc == null) return;
+            uc.IdDocument = IdCategoria;
+        }
+
         #endregion
 
         #region View Members
@@ -482,5 +580,7 @@ namespace Modules.Reclamos.Admin
         #endregion
 
         #endregion
+
+       
     }
 }

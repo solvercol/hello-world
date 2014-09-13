@@ -37,7 +37,13 @@ namespace Applications.MainModule.WorkFlow.DTO
 
         public string Cliente { get; set; }
 
+        public string FormulaNextresponsible { get; set; }
 
+        private  List<string> _errores = new List<string>();
+
+        private List<string> _output = new List<string>();
+
+        private Dictionary<string, string> _params = new Dictionary<string, string>();
 
 
         /// <summary>
@@ -48,18 +54,22 @@ namespace Applications.MainModule.WorkFlow.DTO
         /// <summary>
         /// Listado que permite obtener los mensajes asociados a los errores como producto de la ejecición del WF
         /// </summary>
-        public List<string> MessagesError { get; set; }
+        public List<string> MessagesError
+        {
+            get { return _errores; } 
+            set { _errores = value; }
+        }
 
         /// <summary>
         /// Lista que permite enviar a la lista los nombres de las Ventanas que permiten capturar parámetros para que pueda seguir la ejecución del WF
         /// </summary>
-        public List<string> OutputParameters { get; set; }
+        public List<string> OutputParameters { get { return _output; } set { _output = value; } }
 
         /// <summary>
         /// Diccionario que permite enviar al servicios lo capturado por la ventana "InputParameters" etiquetado con el Key y su valor respectivo
         /// </summary>
         /// 
-        public Dictionary<string, string> Parameters { get; set; }
+        public Dictionary<string, string> Parameters { get { return _params; } set { _params = value; } }
     }
 
 }

@@ -43,6 +43,7 @@ namespace Infrastructure.Data.MainModule.Reclamos.Repositories
                                     .Include(x => x.TBL_Admin_Usuarios5)    // Modified By
                                     .Include(x => x.TBL_Admin_Usuarios6)    // Solicitante// Usuario Cierre
                                     .Include(x => x.TBL_Admin_Usuarios7)    // Usuario Cierre
+                                    .Include(x => x.TBL_Admin_EstadosProceso)
                                     .Include(x => x.TBL_ModuloReclamos_CategoriasReclamo)
                                     .Include(x => x.TBL_ModuloReclamos_CategoriasReclamo.TBL_Admin_Usuarios)
                                     .Include(x => x.TBL_ModuloReclamos_TipoReclamo)                                    

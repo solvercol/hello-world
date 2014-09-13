@@ -9,5 +9,6 @@ namespace Domain.MainModule.Reclamos.Contracts
     {
         TBL_ModuloReclamos_Actividades GetCompleteEntityBySpec(ISpecification<TBL_ModuloReclamos_Actividades> specification);
         List<TBL_ModuloReclamos_Actividades> GetCompleteListBySpec(ISpecification<TBL_ModuloReclamos_Actividades> specification);
+        bool VerificarActividadesPorEstadoPorreclamo(string estado, decimal idReclamo);
     }
 }

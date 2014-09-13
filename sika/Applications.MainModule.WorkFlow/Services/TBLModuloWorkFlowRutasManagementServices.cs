@@ -29,7 +29,9 @@ using Domain.MainModule.WorkFlow.Services.WorkFlow;
 using Domain.MainModules.Entities;
 using Domain.Core.Specification;
 using Infraestructure.CrossCutting.Security.IServices;
+using Infrastructure.CrossCutting;
 using Infrastructure.CrossCutting.IDtoService;
+using Infrastructure.CrossCutting.Logging;
 using Infrastructure.CrossCutting.NetFramework.Enums;
 using Infrastructure.CrossCutting.NetFramework.Services.RunAssemblies;
 using IsolationLevel = System.Transactions.IsolationLevel;
@@ -54,6 +56,7 @@ namespace Applications.MainModule.WorkFlow.Services
         private readonly ITBL_ModuloReclamos_TrackingRepository _trackRepository;
         private readonly ITBL_ModuloReclamos_LogReclamosRepository _logDocumentosRepository;
         private readonly ISystemActionsManagementServices _systemActionsServices;
+        readonly ITraceManager _traceManager;
         #endregion
 
          #region Constructor
@@ -74,11 +77,12 @@ namespace Applications.MainModule.WorkFlow.Services
              ITBL_Moduloreclamos_ReclamoDomainServices reclamosDomainServices, 
              ITBL_ModuloReclamos_TrackingRepository trackRepository,
              ISystemActionsManagementServices systemActionsServices, 
-             ITBL_ModuloReclamos_LogReclamosRepository logDocumentosRepository)
+             ITBL_ModuloReclamos_LogReclamosRepository logDocumentosRepository, ITraceManager traceManager)
          {
             if (tblModuloWorkFlowRutasRepository == null)
                 throw new ArgumentNullException("tblModuloWorkFlowRutasRepository");
             _tblModuloWorkFlowRutasRepository = tblModuloWorkFlowRutasRepository;
+             _traceManager = traceManager;
              _logDocumentosRepository = logDocumentosRepository;
              _systemActionsServices = systemActionsServices;
              _trackRepository = trackRepository;
@@ -202,7 +206,7 @@ namespace Applications.MainModule.WorkFlow.Services
          }
 
 
-         public List<TBL_ModuloWorkFlow_Rutas> GetRutasByEstadoByModule(int idEstadoDocumento, ModulosAplicacion module)
+         public IEnumerable<TBL_ModuloWorkFlow_Rutas> GetRutasByEstadoByModule(int idEstadoDocumento, ModulosAplicacion module)
          {
              var strModule = module.ToString();
              var specification =
@@ -222,8 +226,218 @@ namespace Applications.MainModule.WorkFlow.Services
             return _sqlReclamosServices.GetReclamoWorkFlowById(id);
         }
          #endregion
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="oDocument"></param>
+        /// <returns></returns>
+        public RenderTypeControlButtonDto ActualizarIngenieroResponsable(RenderTypeControlButtonDto oDocument)
+        {
+            try
+            {
 
-       
+                if (string.IsNullOrEmpty(oDocument.IdDocument))
+                {
+                    oDocument.MessagesError = new List<string> { "Error de lectura del identificador del reclamo" };
+                    return oDocument;
+                }
+
+                if (oDocument.Parameters.Count == 0)
+                {
+                    oDocument.MessagesError = new List<string> { "No se han especificado los parametros de entrada (Ingeniero Seleccionado)" };
+                    return oDocument;
+                }
+
+
+                string strIdIngeniero;
+
+                oDocument.Parameters.TryGetValue("IdIngeniero", out strIdIngeniero);
+
+
+                var oReclamo = _tblDocumentosRepository.GetReclamoById(Convert.ToInt32(oDocument.IdDocument));
+
+                if (oReclamo == null)
+                {
+                    oDocument.MessagesError = new List<string> { "Error al recuperar el reclamo desde la Base de Datos" };
+                    return oDocument;
+                }
+
+                var txSettings = new TransactionOptions
+                {
+                    Timeout = TransactionManager.DefaultTimeout,
+                    IsolationLevel = IsolationLevel.Serializable
+                };
+
+                //TODO: se actualiza el ingeniero responsable que es  el siguiente responsable del documento.
+                using (var scope = new TransactionScope(TransactionScopeOption.Required, txSettings))
+                {
+
+                    var unitOfWork = _tblDocumentosRepository.UnitOfWork;
+
+                    oReclamo.IdIngenieroResponsable = Convert.ToInt32(strIdIngeniero);
+
+                    oReclamo.ModifiedOn = DateTime.Now;
+
+                    oReclamo.ModifiedBy = _autenticationService.GetUserFromSession.IdUser;
+
+                    oReclamo.IdEstado = Convert.ToInt32(oDocument.IdNextStatus);
+
+                    _tblDocumentosRepository.Modify(oReclamo);
+                    
+                    unitOfWork.CommitAndRefreshChanges();
+
+                    scope.Complete();
+                }
+
+                using (var scope = new TransactionScope(TransactionScopeOption.Required, txSettings))
+                {
+
+                    var unitOfWork = _tblDocumentosRepository.UnitOfWork;
+
+                    var dtReclamo = GetDocumentWorkFlowById(oDocument.IdDocument);
+
+                    var nextResponsable = RetornarSiguienteUsuarioResponsable(oDocument.FormulaNextresponsible,
+                                                                              Convert.ToInt32(oDocument.IdDocument),
+                                                                              dtReclamo);
+
+                    oReclamo.IdResponsableActual = nextResponsable.IdUser;
+
+                    oDocument.NextResponsibe = nextResponsable.Nombres;
+
+                    _tblDocumentosRepository.Modify(oReclamo);
+
+                    //Crea un nuevo registro en el tracking del reclamo
+                    GenerarEntradatracking(oDocument);
+
+                    //Crea un nuevo registro en el log del reclamo.
+                    GenerarEntradalog(oDocument);
+
+                    GenerarNotificacionSistema(oDocument);
+
+                    unitOfWork.CommitAndRefreshChanges();
+
+                    scope.Complete();
+                }
+
+                try
+                {
+                    SendMail(oDocument);
+                }
+                catch (Exception ex)
+                {
+                    _traceManager.LogInfo(string.Format("Error al enviar el Correo electronico. Error: {0}", ex.Message), LogType.Notify);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("ActualizarIngenieroResponsable", ex);
+            }
+
+            oDocument.Processestaus = "Ok";
+            return oDocument;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="oDocument"></param>
+        /// <returns></returns>
+        public RenderTypeControlButtonDto CategorizarReclamo(RenderTypeControlButtonDto oDocument)
+        {
+            try
+            {
+
+                if (string.IsNullOrEmpty(oDocument.IdDocument))
+                {
+                    oDocument.MessagesError = new List<string> { "Error de lectura del identificador del reclamo" };
+                    return oDocument;
+                }
+
+                if (oDocument.Parameters.Count == 0)
+                {
+                    oDocument.MessagesError = new List<string> { "No se han especificado los parametros de entrada (Ingeniero Seleccionado)" };
+                    return oDocument;
+                }
+
+
+                string strIdcategoria;
+                oDocument.Parameters.TryGetValue("Idcategoria", out strIdcategoria);
+
+                string strArea;
+                oDocument.Parameters.TryGetValue("Area", out strArea);
+
+                var oReclamo = _tblDocumentosRepository.GetReclamoById(Convert.ToInt32(oDocument.IdDocument));
+
+                if (oReclamo == null)
+                {
+                    oDocument.MessagesError = new List<string> { "Error al recuperar el reclamo desde la Base de Datos" };
+                    return oDocument;
+                }
+
+                var txSettings = new TransactionOptions
+                {
+                    Timeout = TransactionManager.DefaultTimeout,
+                    IsolationLevel = IsolationLevel.Serializable
+                };
+
+                using (var scope = new TransactionScope(TransactionScopeOption.Required, txSettings))
+                {
+
+                    var unitOfWork = _tblDocumentosRepository.UnitOfWork;
+
+                    oReclamo.Area =strArea;
+
+                    if (!string.IsNullOrEmpty(strIdcategoria))
+                        oReclamo.IdCategoriaReclamo = Convert.ToInt32(strIdcategoria);
+
+                    oReclamo.ModifiedOn = DateTime.Now;
+
+                    oReclamo.ModifiedBy = _autenticationService.GetUserFromSession.IdUser;
+
+                    if (!string.IsNullOrEmpty(oDocument.IdNextStatus))
+                        oReclamo.IdEstado = Convert.ToInt32(oDocument.IdNextStatus);
+
+                    if (!string.IsNullOrEmpty(oDocument.IdNextResponsibe))
+                        oReclamo.IdResponsableActual = Convert.ToInt32(oDocument.IdNextResponsibe);
+                    else
+                        oReclamo.IdResponsableActual = null;
+
+                    _tblDocumentosRepository.Modify(oReclamo);
+
+                    //Crea un nuevo registro en el tracking del reclamo
+                    GenerarEntradatracking(oDocument);
+
+                    //Crea un nuevo registro en el log del reclamo.
+                    GenerarEntradalog(oDocument);
+
+                    GenerarNotificacionSistema(oDocument);
+
+                    unitOfWork.CommitAndRefreshChanges();
+
+                    scope.Complete();
+                }
+
+
+                try
+                {
+                    SendMail(oDocument);
+                }
+                catch (Exception ex)
+                {
+                    _traceManager.LogInfo(string.Format("Error al enviar el Correo electronico. Error: {0}", ex.Message), LogType.Notify);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("ActualizarIngenieroResponsable", ex);
+            }
+
+            oDocument.Processestaus = "Ok";
+            return oDocument;
+        }
+
         /// <summary>
         /// Carga los parametros iniciales aplicando las reglas de validaciónn definidas en las rutas.
         /// </summary>
@@ -272,7 +486,8 @@ namespace Applications.MainModule.WorkFlow.Services
                                       IdNextResponsibe = nextResponsable == null ? string.Empty : nextResponsable.IdUser.ToString(),
                                       EmailNextResponsibe = nextResponsable == null ? string.Empty : nextResponsable.Email,
                                       OrdenCompra = odoc.OrdenCompra,
-                                      Cliente = odoc.Cliente
+                                      Cliente = odoc.Cliente,
+                                      FormulaNextresponsible = oWorkflow.RoleNextResponsible
                 };
 
                 return oRender;
@@ -329,11 +544,10 @@ namespace Applications.MainModule.WorkFlow.Services
                     }
                 }
 
-                if (currentRule.TBL_ModuloWorkFlow_ValidacionesSalida.Where(x => x.Ejecutar == true).Count() > 0)
+                //todo: Ejecutan Logica implementada en clases que son inyectadas en tiempo de ejecución.
+                if (currentRule.TBL_ModuloWorkFlow_ValidacionesSalida.Where(x => x.Ejecutar == false).Count() > 0)
                 {
-
-
-                     var inputParameters = currentRule
+                    var inputParameters = currentRule
                          .TBL_ModuloWorkFlow_ValidacionesSalida
                          .Where( x => DefinedRegexEvaluation.InputParameters.Match(x.NombreMetodo).Success);
 
@@ -351,20 +565,21 @@ namespace Applications.MainModule.WorkFlow.Services
                                 return oDocument;
                             }
                         }
-
-                        oDocument.Processestaus = ProcessStatus.InputParameters.ToString();
-                        return oDocument;
-                    }
-
-                    var listerror = EjecutarAccionSistema(currentRule.TBL_ModuloWorkFlow_ValidacionesSalida.Where(x => x.Ejecutar == true).ToList(), oDocument);
-                    if (listerror.Count > 0)
-                    {
-                        oDocument.MessagesError = listerror;
-                        oDocument.Processestaus = ProcessStatus.ValidationErrorSystemActions.ToString();
-                        return oDocument;
+                        if(oDocument.OutputParameters.Count > 0)
+                        {
+                            oDocument.Processestaus = ProcessStatus.InputParameters.ToString();
+                            return oDocument;
+                        }
                     }
                 }
 
+                var listerror = EjecutarAccionSistema(currentRule.TBL_ModuloWorkFlow_ValidacionesSalida.Where(x => x.Ejecutar == true).ToList(), oDocument);
+                if (listerror.Count > 0)
+                {
+                    oDocument.MessagesError = listerror;
+                    oDocument.Processestaus = ProcessStatus.ValidationErrorSystemActions.ToString();
+                    return oDocument;
+                }
                 
 
                 var txSettings = new TransactionOptions
@@ -623,7 +838,7 @@ namespace Applications.MainModule.WorkFlow.Services
             var oTrack = _reclamosDomainServices.GenerarObjetoTrack(_trackRepository.NewEntity(), oDocument.TextControl,
                                                              oDocument.CurrentStatus,
                                                              Convert.ToInt32(oDocument.IdDocument), oDocument.NextStatus,
-                                                             oDocument.CurrentResponsibe, userSession);
+                                                             oDocument.NextResponsibe, userSession);
             _trackRepository.Add(oTrack);
         }
 

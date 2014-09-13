@@ -165,7 +165,7 @@ namespace Presenters.Reclamos.Presenters
                     reclamo.CostoAsistenciaTecnica = View.CostosAsistenciaTecnica;
                     reclamo.CostoAsistenciaTecnicaRegional = View.CostosAsistenciaRegional;
                     reclamo.CostoViajes = View.CostoViajePersonas;
-                    reclamo.CostoArriendosEyH = View.CostoEquiposHerramientas;
+                    reclamo.CostoArriendosEyH = View.CostoEquiposHerramientas; 
                     reclamo.CostoTotal = View.TotalCostosReclamo;
                     reclamo.ModifiedBy = View.UserSession.IdUser;
                     reclamo.ModifiedOn = DateTime.Now;

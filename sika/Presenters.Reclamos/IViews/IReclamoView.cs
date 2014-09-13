@@ -23,6 +23,9 @@ namespace Presenters.Reclamos.IViews
         string FechaReclamo { get; set; }
         string Asesor { get; set; }
         string TotalCostoReclamo { get; set; }
+        string IdCategoria { get; set; }
+        bool VerCrearAccion { set; }
+        bool VerBotonEdicion { set; }
 
         // Load
         void LoadSecciones(IEnumerable<TBL_Admin_Secciones> secciones);

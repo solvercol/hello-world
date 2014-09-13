@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
+using ASP.NETCLIENTE.UI;
 
 namespace Modules.Reclamos.UserControls
 {
-    public partial class WucRenderMessagesError : System.Web.UI.UserControl
+    public partial class WucRenderMessagesError : BaseUserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {

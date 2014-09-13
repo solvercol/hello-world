@@ -3,6 +3,7 @@ using System.Reflection;
 using Application.Core;
 using Application.MainModule.Reclamos.IServices;
 using Applications.MainModule.Admin.IServices;
+using Domain.MainModules.Entities;
 using Infrastructure.CrossCutting.NetFramework.Enums;
 using Presenters.Reclamos.IViews;
 using Domain.MainModule.Reclamos.DTO;
@@ -14,23 +15,30 @@ namespace Presenters.Reclamos.Presenters
         readonly ISfTBL_ModuloReclamos_ReclamoManagementServices _reclamoService;
         readonly ISfTBL_Admin_SeccionesManagementServices _seccionesServices;
         readonly ISfTBL_Admin_OptionListManagementServices _optionListService;
-
+        private ISfTBL_ModuloReclamos_LogReclamosManagementServices _logServices;
 
         public ReclamoPresenter(ISfTBL_ModuloReclamos_ReclamoManagementServices reclamoService,
                                 ISfTBL_Admin_SeccionesManagementServices seccionesServices,
-                                ISfTBL_Admin_OptionListManagementServices optionListService)
+                                ISfTBL_Admin_OptionListManagementServices optionListService,
+                                ISfTBL_ModuloReclamos_LogReclamosManagementServices logServices)
         {
             _reclamoService = reclamoService;
+            _logServices = logServices;
             _seccionesServices = seccionesServices;
             _optionListService = optionListService;
         }
 
         public override void SubscribeViewToEvents()
         {
-            View.Load += View_Load;
+            View.Load += ViewLoad;
         }
 
-        void View_Load(object sender, EventArgs e)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void ViewLoad(object sender, EventArgs e)
         {
             if (View.IsPostBack) return;
             LoadOptionListValue();
@@ -38,6 +46,9 @@ namespace Presenters.Reclamos.Presenters
             CargarSecciones();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         void LoadOptionListValue()
         {
             try
@@ -55,6 +66,9 @@ namespace Presenters.Reclamos.Presenters
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public void LoadReclamo()
         {
             try
@@ -86,6 +100,8 @@ namespace Presenters.Reclamos.Presenters
                         View.FechaReclamo = string.Format("{0:dd/MM/yyyy}", reclamo.CreateOn);
                         View.Asesor = reclamo.AsesoradoPor.Nombres;
                         View.TotalCostoReclamo = string.Format("{0:0,0.0} {1}", reclamo.CostoTotal, View.MonedaLocal);
+                        if (reclamo.IdCategoriaProducto.HasValue)
+                            View.IdCategoria = reclamo.IdCategoriaProducto.ToString();
                     }
                     else
                     {
@@ -105,6 +121,9 @@ namespace Presenters.Reclamos.Presenters
                             View.Asesor = reclamo.AsesoradoPor.Nombres;
                         View.TotalCostoReclamo = string.Format("{0:0,0.0} {1}", reclamo.CostoTotal, View.MonedaLocal);
                     }
+
+                    ValidarBotonCambiarPrecio(reclamo);
+                    ValidarBotonEditar(reclamo);
                 }
             }
             catch (Exception ex)
@@ -113,6 +132,9 @@ namespace Presenters.Reclamos.Presenters
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void CargarSecciones()
         {
             try
@@ -125,5 +147,78 @@ namespace Presenters.Reclamos.Presenters
                 CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="oReclamo"></param>
+        private void ValidarBotonCambiarPrecio(TBL_ModuloReclamos_Reclamo oReclamo)
+        {
+            if(oReclamo == null)return;
+            if (oReclamo.TBL_Admin_EstadosProceso == null)return;
+
+            if (oReclamo.TBL_Admin_EstadosProceso.Descripcion == "En Proceso" && !oReclamo.IndicadorAlt.GetValueOrDefault() && !oReclamo.IndicadorAPC.GetValueOrDefault() && !oReclamo.IndicadorSol.GetValueOrDefault())   
+            {
+                View.VerCrearAccion = View.UserSession.IdUser == oReclamo.IdResponsableActual;
+            }
+            else
+            {
+                View.VerCrearAccion = false;
+            }
+        }
+
+        private void ValidarBotonEditar(TBL_ModuloReclamos_Reclamo oReclamo)
+        {
+            if (oReclamo == null) return;
+            if (oReclamo.TBL_Admin_EstadosProceso == null) return;
+
+            if (oReclamo.TBL_Admin_EstadosProceso.PermiteEdicionCampos.GetValueOrDefault())
+            {
+                View.VerBotonEdicion = View.UserSession.IdUser == oReclamo.IdResponsableActual;
+            }
+            else
+            {
+                View.VerBotonEdicion = false;
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void CrearAcciones()
+        {
+            if( string.IsNullOrEmpty( View.IdReclamo) ) return;
+
+            try
+            {
+                var oReclamo = _reclamoService.GetReclamoById(Convert.ToInt32(View.IdReclamo));
+
+                if(oReclamo == null)return;
+
+                oReclamo.IndicadorAlt = true;
+                oReclamo.IndicadorAPC = true;
+                oReclamo.IndicadorSol = true;
+
+
+                _reclamoService.Modify(oReclamo);
+
+                 var texto = string.Format("El usuario {0} Creo creó el plan de acción.", View.UserSession.Nombres);
+
+                _logServices.Add(new TBL_ModuloReclamos_LogReclamos
+                                     {
+                                         IdLog = Guid.NewGuid(),
+                                         CreateBy = View.UserSession.IdUser,
+                                         CreateOn = DateTime.Now,
+                                         IdReclamo = Convert.ToDecimal(View.IdReclamo),
+                                         IsActive = true,
+                                         Descripcion = texto
+                                     });
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
+        }
+
     }
 }

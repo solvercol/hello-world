@@ -144,6 +144,9 @@ namespace Application.MainModule.Reclamos.Services
             return _TBLModuloReclamosReclamoRepository.GetPagedElements(pageIndex, pageCount, u => u.CreateOn, onlyEnabledSpec, true).ToList();
          }
 
+
+       
+
          #endregion
 
          #region IDisposable Members

@@ -15,8 +15,11 @@ namespace Infrastructure.Data.MainModule.Reclamos.Repositories
 {
     public class TBL_ModuloReclamos_ActividadesRepository : GenericRepository<TBL_ModuloReclamos_Actividades>, ITBL_ModuloReclamos_ActividadesRepository 
     {
+        readonly IMainModuleUnitOfWork _currentUnitOfWork;
+
         public TBL_ModuloReclamos_ActividadesRepository(IMainModuleUnitOfWork unitOfWork, ITraceManager traceManager) : base(unitOfWork, traceManager)
         {
+            _currentUnitOfWork = unitOfWork;
         }
 
         public TBL_ModuloReclamos_Actividades GetCompleteEntityBySpec(ISpecification<TBL_ModuloReclamos_Actividades> specification)
@@ -73,6 +76,21 @@ namespace Infrastructure.Data.MainModule.Reclamos.Repositories
                 Messages.exception_InvalidStoreContext,
                 GetType().Name));
         }
+
+        public bool VerificarActividadesPorEstadoPorreclamo(string estado, decimal idReclamo)
+        {
+
+            var set = _currentUnitOfWork.CreateSet<TBL_ModuloReclamos_Actividades>();
+
+            var list = set.Where(c => c.Estado == estado && c.IdReclamo == idReclamo)
+                          .Select(c => c)
+                          .ToList();
+
+            return list.Count > 0;
+
+        }
+
+      
     }
 }
     

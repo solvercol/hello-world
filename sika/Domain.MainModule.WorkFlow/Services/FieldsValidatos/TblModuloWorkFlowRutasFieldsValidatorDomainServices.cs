@@ -88,7 +88,7 @@ namespace Domain.MainModule.WorkFlow.Services.FieldsValidatos
                                 result = ExpressionEvalServices.EvaluateExpression(expression);
                                 if(!result)
                                 {
-                                    _validationErrors.Add(string.Format("Campo:[{0}] - Mensaje:[{1}]",camposValidacion.CampoValidar, camposValidacion.MensajeValidacion));
+                                    _validationErrors.Add(string.Format("{0}",camposValidacion.MensajeValidacion));
                                     continue;
                                 }
                             }
@@ -99,7 +99,7 @@ namespace Domain.MainModule.WorkFlow.Services.FieldsValidatos
                             var result = ExpressionEvalServices.EvaluateExpression(expression);
                             if (!result)
                             {
-                                _validationErrors.Add(string.Format("Campo:[{0}] - Mensaje:[{1}]",camposValidacion.CampoValidar, camposValidacion.MensajeValidacion));
+                                _validationErrors.Add(string.Format("{0}", camposValidacion.MensajeValidacion));
                                 continue;
                             }
                         }

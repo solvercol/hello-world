@@ -34,9 +34,9 @@
         <td>
             <table width="100%" cellpadding="0" cellspacing="0">
                 <tr>
-
                     <td valign="top">
-                        <asp:PlaceHolder ID="phInfoReclamo"  runat="server"></asp:PlaceHolder>                
+                        <asp:PlaceHolder ID="phInfoReclamo"  runat="server"></asp:PlaceHolder>   
+                    </td>             
 
                     <td valign="top">
                         <asp:UpdatePanel ID="upInfoReclamo" runat="server">
@@ -97,12 +97,13 @@
                         </asp:UpdatePanel>
                     </td>   
                     
-                    <td align="right" style="width:25%" valign="top">
+                    <td align="right" style="width:35%" valign="top">
                         <asp:UpdatePanel ID="upMenuBar" runat="server">
                             <ContentTemplate>
                                  <div style="padding:3px; text-align:right;">
                                     <asp:Button ID="btnRegresar" runat="server" Text="Regresar" OnClick="BtnRegresarClick" />
-                                    <asp:Button ID="btnEdit" runat="server" Text="Editar" OnClick="BtnEditReclamoClick" />
+                                    <asp:Button ID="btnActualizarIndicadores" runat="server" Text="Creacion Acciones" OnClick="BtnCreacionAccionesClick" Visible="false" />
+                                    <asp:Button ID="btnEdit" runat="server" Text="Editar" OnClick="BtnEditReclamoClick" Visible="false" />
                                     <asp:PlaceHolder ID="plhWf" runat="server"></asp:PlaceHolder>
                                 </div>
                             </ContentTemplate>
@@ -182,10 +183,13 @@
                 <asp:PlaceHolder ID="phlVentanaMensajes" runat="server"></asp:PlaceHolder>                
                 <table width="100%" cellpadding="0" cellpadding="0">
                     <tr>
-                        <td style=" width:30%">
+                        <td style=" width:45%">
                         </td>
                         <td class="Separador15"></td>
-                        <td>                            
+                        <td>  
+                        
+                            <asp:Button ID="btnAceptarInput" runat="server" Text="Aceptar" OnClick="BtnEnviarInputCick" ValidationGroup="grpInput" />
+                                                     
                         </td>
                     </tr>
                 </table>

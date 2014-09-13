@@ -120,6 +120,8 @@ namespace Application.MainModule.SqlServices.Services
             return oreclamo.ResumenReclamosPanelWorkFlow(idReclamo);
         }
 
+       
+
         #region Vistas Y Reportes
 
         public DataTable GetVistaGeneralReclamos(DateTime from, DateTime end, string serverHost, string moduleId)
@@ -460,6 +462,27 @@ namespace Application.MainModule.SqlServices.Services
             catch (Exception ex)
             {
                 throw new SqlExecutionException("Vistas_GestionReclamo", ex);
+            }
+        }
+
+
+        public DataTable ListadoIngenierosResponsablesPorcategoría(string  idCategoria)
+        {
+            try
+            {
+                var strSQl = " SELECT "+
+                             " Usu.IdUser "+
+                             ",Usu.Nombres "+
+                             " FROM "+
+                             " TBL_Admin_Usuarios Usu  "+
+                             " INNER JOIN TBL_ModuloReclamos_IngenierosResponsablesByCategoriaProducto Ing On Usu.IdUser = Ing.IdIngeniero "+
+                             " WHERE Ing.IdCategoria = @IdCategoria";
+
+                return _sql.ExecuteDataTable(strSQl, CommandType.Text, new SqlParameter("@IdCategoria", idCategoria));
+            }
+              catch (Exception ex)
+            {
+                throw new SqlExecutionException("ListadoIngenierosResponsablesPorcategoría", ex);
             }
         }
 
