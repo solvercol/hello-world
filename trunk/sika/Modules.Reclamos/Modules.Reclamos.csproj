@@ -107,8 +107,10 @@
     <Content Include="UserControls\WUCAdminRecServicioT5.ascx" />
     <Content Include="UserControls\WUCAdminSolucionesReclamo.ascx" />
     <Content Include="UserControls\WUCAdminCostosReclamo.ascx" />
+    <Content Include="UserControls\WucCategorizarReclamo.ascx" />
     <Content Include="UserControls\WUCFilterClient.ascx" />
     <Content Include="UserControls\WUCFilterProduct.ascx" />
+    <Content Include="UserControls\WucIngresarIngenieroResponsable.ascx" />
     <Content Include="UserControls\WUCLogReclamoView.ascx" />
     <Content Include="UserControls\WucPanelEstado.ascx" />
     <Content Include="UserControls\WUCReadingReclamoProducto.ascx" />
@@ -289,6 +291,13 @@
     <Compile Include="UserControls\WUCAdminCostosReclamo.ascx.designer.cs">
       <DependentUpon>WUCAdminCostosReclamo.ascx</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\WucCategorizarReclamo.ascx.cs">
+      <DependentUpon>WucCategorizarReclamo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WucCategorizarReclamo.ascx.designer.cs">
+      <DependentUpon>WucCategorizarReclamo.ascx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\WUCFilterClient.ascx.cs">
       <DependentUpon>WUCFilterClient.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -302,6 +311,13 @@
     </Compile>
     <Compile Include="UserControls\WUCFilterProduct.ascx.designer.cs">
       <DependentUpon>WUCFilterProduct.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WucIngresarIngenieroResponsable.ascx.cs">
+      <DependentUpon>WucIngresarIngenieroResponsable.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WucIngresarIngenieroResponsable.ascx.designer.cs">
+      <DependentUpon>WucIngresarIngenieroResponsable.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\WUCLogReclamoView.ascx.cs">
       <DependentUpon>WUCLogReclamoView.ascx</DependentUpon>
@@ -519,6 +535,14 @@
       <Project>{C9837181-2A13-4F70-8132-570940C442C0}</Project>
       <Name>Application.MainModule.Reclamos</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Application.MainModule.SqlServices\Application.MainModule.SqlServices.csproj">
+      <Project>{A339985E-A4A5-4DC1-9632-1A622603F028}</Project>
+      <Name>Application.MainModule.SqlServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Applications.MainModule.Admin\Applications.MainModule.Admin.csproj">
+      <Project>{FD7F4861-2115-473B-B704-8F0DC443D11C}</Project>
+      <Name>Applications.MainModule.Admin</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Applications.MainModule.WorkFlow\Applications.MainModule.WorkFlow.csproj">
       <Project>{21D32B31-8E0D-40D6-874F-02AB7F54D0F2}</Project>
       <Name>Applications.MainModule.WorkFlow</Name>
@@ -546,6 +570,10 @@
     <ProjectReference Include="..\Infrastructure.CrossCutting.IoC\Infrastructure.CrossCutting.IoC.csproj">
       <Project>{5DD8CB67-048D-44FE-8444-DC6D260E87AB}</Project>
       <Name>Infrastructure.CrossCutting.IoC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure.CrossCutting.NetFramework\Infrastructure.CrossCutting.NetFramework.csproj">
+      <Project>{21EBA478-507F-45AF-B1CC-619578E8FA8B}</Project>
+      <Name>Infrastructure.CrossCutting.NetFramework</Name>
     </ProjectReference>
     <ProjectReference Include="..\Infrastructure.CrossCutting\Infrastructure.CrossCutting.csproj">
       <Project>{1063AE74-49D5-4D8A-B6A3-2C38349F55BF}</Project>

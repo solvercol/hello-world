@@ -9,7 +9,9 @@
 #pragma warning disable 1591 // this is for supress no xml comments in public members warnings 
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using Application.MainModule.SqlServices.IServices;
 using Applications.MainModule.Admin.IServices;
 using Domain.MainModules.Entities;
 using Domain.Core.Specification;
@@ -33,6 +35,7 @@ namespace Applications.MainModule.Admin.Services
             if (tblAdminUsuariosRepository == null)
                 throw new ArgumentNullException("tblAdminUsuariosRepository");
             _tblAdminUsuariosRepository = tblAdminUsuariosRepository;
+
          }
          #endregion
 
@@ -100,10 +103,7 @@ namespace Applications.MainModule.Admin.Services
             return _tblAdminUsuariosRepository.RetornarUsuarioConRoles(specification);
           
          }
-
-       
-
-
+        
           /// <summary>
           /// Obtiene el listado de entidades activas.
           /// </summary>
@@ -136,6 +136,8 @@ namespace Applications.MainModule.Admin.Services
 
             return _tblAdminUsuariosRepository.GetPagedElements(pageIndex, pageCount, u => u.IdUser, onlyEnabledSpec, true).ToList();
          }
+
+        
 
          #endregion
 

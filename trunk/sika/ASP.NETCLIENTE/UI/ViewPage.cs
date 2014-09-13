@@ -135,7 +135,8 @@ namespace ASP.NETCLIENTE.UI
         /// Para hacer uso de esta funcionalidad se debe invocar este metodo desde el formulario principal.
         /// </summary>
         /// <param name="input"></param>
-        protected void EjecutarWorkFlow(InputParameter input)
+        /// <param name="accion"></param>
+        protected void EjecutarWorkFlow(InputParameter input, string accion)
         {
             try
             {
@@ -152,13 +153,14 @@ namespace ASP.NETCLIENTE.UI
                     if (uc != null)
                     {
                         var mb = (BaseUserControl)uc;
-                        mb.InvokeResponseeventHandler(new ViewResulteventArgs(input));
+                        mb.InvokeResponseeventHandler(new ViewResulteventArgs(input) { Sender = accion });
                     }
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                LogError("EjecutarWorkFlow", AuthenticatedUser.Nombres, new Uri(GetUrl, UriKind.RelativeOrAbsolute), ex);
+                ShowError("Ocurrió un error al ejecutar el proceso!!");
             }
         }
 

@@ -21,6 +21,8 @@ namespace Application.MainModule.SqlServices.IServices
 
         DataTable ResumenReclamosPanelWorkFlow(string idReclamo);
 
+        DataTable ListadoIngenierosResponsablesPorcategoría(string idCategoria);
+
         #region Vistas Y Reportes
 
         DataTable GetVistaGeneralReclamos(DateTime from, DateTime end, string serverHost, string moduleId);

@@ -121,6 +121,15 @@ namespace Modules.Reclamos.Admin {
         protected global::System.Web.UI.WebControls.Button btnRegresar;
         
         /// <summary>
+        /// btnActualizarIndicadores control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnActualizarIndicadores;
+        
+        /// <summary>
         /// btnEdit control.
         /// </summary>
         /// <remarks>
@@ -236,6 +245,15 @@ namespace Modules.Reclamos.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder phlVentanaMensajes;
+        
+        /// <summary>
+        /// btnAceptarInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAceptarInput;
         
         /// <summary>
         /// btnTargetControl control.

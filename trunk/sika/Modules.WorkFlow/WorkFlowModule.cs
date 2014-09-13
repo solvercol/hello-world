@@ -51,7 +51,15 @@ namespace Modules.WorkFlow
            return  _rutasServices.CargarWorkFlow(idDocumento);
         }
 
-      
+        public RenderTypeControlButtonDto ActualizarIngenieroResponsable(RenderTypeControlButtonDto oDocument)
+        {
+            return _rutasServices.ActualizarIngenieroResponsable(oDocument);
+        }
+
+        public RenderTypeControlButtonDto CategorizarReclamo(RenderTypeControlButtonDto oDocument)
+        {
+            return _rutasServices.CategorizarReclamo(oDocument);
+        }
 
         #endregion
 

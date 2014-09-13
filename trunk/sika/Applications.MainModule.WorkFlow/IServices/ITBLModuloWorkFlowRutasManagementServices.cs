@@ -38,7 +38,7 @@ namespace Applications.MainModule.WorkFlow.IServices
         /// <param name="idEstadoDocumento"></param>
         /// <param name="module"></param>
         /// <returns></returns>
-        List<TBL_ModuloWorkFlow_Rutas> GetRutasByEstadoByModule(int idEstadoDocumento, ModulosAplicacion module);
+        IEnumerable<TBL_ModuloWorkFlow_Rutas> GetRutasByEstadoByModule(int idEstadoDocumento, ModulosAplicacion module);
 
         /// <summary>
         /// Carga los parámetros del WorkFlow dependiendo del estado del documento y del tipo de modulo a evaluar.
@@ -52,7 +52,19 @@ namespace Applications.MainModule.WorkFlow.IServices
         /// <param name="oDocument"></param>
         RenderTypeControlButtonDto EjecutarWorkFlow(RenderTypeControlButtonDto oDocument);
 
-      
+        /// <summary>
+        /// Actualiza el Ingeniero responsable
+        /// </summary>
+        /// <param name="oDocument"></param>
+        /// <returns></returns>
+        RenderTypeControlButtonDto ActualizarIngenieroResponsable(RenderTypeControlButtonDto oDocument);
+
+        /// <summary>
+        /// Actualiza el reclamo en los campos idCategoria y Area
+        /// </summary>
+        /// <param name="oDocument"></param>
+        /// <returns></returns>
+        RenderTypeControlButtonDto CategorizarReclamo(RenderTypeControlButtonDto oDocument);
     }
 }
     

@@ -27,7 +27,7 @@ namespace Modules.WorkFlow
 
                 if (ViewState["control"] == null)
                 {
-                    CargarPedido();
+                    CargarReclamo();
                 }
                 else
                 {
@@ -44,25 +44,36 @@ namespace Modules.WorkFlow
 
             var input = (InputParameter)e.MessageView;
 
-            if (input.Key == "Refresh")
+            if (e.Sender.ToString() == "Refresh")
             {
-                CargarPedido();
+                CargarReclamo();
                 return;
             }
 
-            //var oDocument = (RenderTypeControlButtonDto)ViewState["control"];
+            var oDocument = (RenderTypeControlButtonDto)ViewState["control"];
 
-            //oDocument.Parameters = input.Inputs;
+            oDocument.Parameters = input.Inputs;
 
-            //_module.ActualizarFechaEntrega(oDocument);
+            switch (e.Sender.ToString())
+            {
+                case "IngenieroResponsable":
+                    _module.ActualizarIngenieroResponsable(oDocument);
+                    InvokeActualizarEvent(new ViewResulteventArgs("UpdatePanel"));
+                    break;
 
-            //CargarPedido();
+                case "CategorizacionReclamo":
+                    var res = _module.CategorizarReclamo(oDocument);
+                    InvokeActualizarEvent(res.Processestaus == "Ok"
+                                              ? new ViewResulteventArgs("UpdatePanel")
+                                              : new ViewResulteventArgs(res));
+                    break;
+            }
 
-            //InvokeActualizarEvent(new ViewResulteventArgs("UpdatePanel"));
+            CargarReclamo();
         }
 
 
-        private void CargarPedido()
+        private void CargarReclamo()
         {
             try
             {
@@ -119,7 +130,7 @@ namespace Modules.WorkFlow
                 switch (doc.Processestaus)
                 {
                     case "Ok":
-                        CargarPedido();
+                        CargarReclamo();
                         InvokeActualizarEvent(new ViewResulteventArgs("UpdatePanel"));
                         break;
 
@@ -129,9 +140,9 @@ namespace Modules.WorkFlow
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                LogError(MethodBase.GetCurrentMethod().Name, ex);
             }
         }
 
