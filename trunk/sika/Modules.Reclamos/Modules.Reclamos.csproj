@@ -590,6 +590,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Resources\ReportViewer\RptVistaReclamosPorResponsable.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\RptVistaActividadesPorPersona.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\RptVistaAlternativasPorPersona.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\RptVistaMisActividades.rdlc" />
@@ -597,12 +598,15 @@
     <EmbeddedResource Include="Resources\ReportViewer\RptVistaMisAlternativas.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\RptVistaMisAlternativasPendientes.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\RptVistaReclamosPorAutor.rdlc" />
+    <EmbeddedResource Include="Resources\ReportViewer\RptVistaReclamosPorCliente.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\RptVistaReclamosPorEstado.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\RptVistaMisReclamosPorEstado.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\RptVistaMisReclamosPorFecha.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\RptVistaReclamosMisPendientes.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\RptVistaGeneralReclamos.rdlc" />
+    <EmbeddedResource Include="Resources\ReportViewer\RptVistaReclamosPorFecha.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\RptVistaReclamosPorNumero.rdlc" />
+    <EmbeddedResource Include="Resources\ReportViewer\RptVistaReclamosPorProducto.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\RptVistaReclamosPorTargetMarket.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\RptVistaReclamosPorTipo.rdlc" />
   </ItemGroup>

@@ -155,7 +155,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Autor</Value>
+                              <Value>Responsable</Value>
                               <Style>
                                 <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -415,14 +415,14 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Autor">
+                    <Textbox Name="ResponsableActual">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Autor.Value</Value>
+                              <Value>=Fields!ResponsableActual.Value</Value>
                               <Style>
                                 <FontFamily>'klavika_lightplain_basic', Calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -434,7 +434,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Autor</rd:DefaultName>
+                      <rd:DefaultName>ResponsableActual</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1521,12 +1521,12 @@
             <TablixMember>
               <Group Name="Autor">
                 <GroupExpressions>
-                  <GroupExpression>=Fields!Autor.Value</GroupExpression>
+                  <GroupExpression>=Fields!ResponsableActual.Value</GroupExpression>
                 </GroupExpressions>
               </Group>
               <SortExpressions>
                 <SortExpression>
-                  <Value>=Fields!Autor.Value</Value>
+                  <Value>=Fields!ResponsableActual.Value</Value>
                 </SortExpression>
               </SortExpressions>
               <TablixMembers>
@@ -1589,7 +1589,7 @@
                   </TablixMembers>
                   <Visibility>
                     <Hidden>true</Hidden>
-                    <ToggleItem>Autor</ToggleItem>
+                    <ToggleItem>ResponsableActual</ToggleItem>
                   </Visibility>
                 </TablixMember>
               </TablixMembers>
