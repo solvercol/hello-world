@@ -180,6 +180,21 @@ namespace Modules.Reclamos.Admin
                 case "rectargetmarket":
                     Response.Redirect(string.Format("../Views/FrmReclamosPorTargetMarket.aspx?ModuleId={0}", ModuleId));
                     break;
+                case "rectautor":
+                    Response.Redirect(string.Format("../Views/FrmReclamosPorAutor.aspx?ModuleId={0}", ModuleId));
+                    break;
+                case "reccliente":
+                    Response.Redirect(string.Format("../Views/FrmReclamosPorCliente.aspx?ModuleId={0}", ModuleId));
+                    break;
+                case "recfecha":
+                    Response.Redirect(string.Format("../Views/FrmReclamosPorFecha.aspx?ModuleId={0}", ModuleId));
+                    break;
+                case "recproducto":
+                    Response.Redirect(string.Format("../Views/FrmReclamosPorProducto.aspx?ModuleId={0}", ModuleId));
+                    break;
+                case "recresponsable":
+                    Response.Redirect(string.Format("../Views/FrmReclamosPorResponsable.aspx?ModuleId={0}", ModuleId));
+                    break;
                 case "admactividad":
                     Response.Redirect(string.Format("FrmAdminActividadReclamo.aspx?ModuleId={0}&IdActividad={1}", ModuleId, IdFrom));
                     break;

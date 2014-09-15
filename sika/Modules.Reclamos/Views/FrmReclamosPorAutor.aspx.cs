@@ -102,7 +102,7 @@ namespace Modules.Reclamos.Views
             rptReclamos.Reset();
             rptReclamos.LocalReport.DataSources.Clear();
             rptReclamos.ProcessingMode = ProcessingMode.Local;
-            rptReclamos.LocalReport.ReportPath = Server.MapPath(@"~/Pages/Modules/Reclamos/Resources/ReportViewer/RptVistaReclamosPorEstado.rdlc");
+            rptReclamos.LocalReport.ReportPath = Server.MapPath(@"~/Pages/Modules/Reclamos/Resources/ReportViewer/RptVistaReclamosPorAutor.rdlc");
             rptReclamos.LocalReport.EnableHyperlinks = true;
             rptReclamos.LocalReport.DataSources.Add(new ReportDataSource("DS_Report", dt));
             rptReclamos.DataBind();
