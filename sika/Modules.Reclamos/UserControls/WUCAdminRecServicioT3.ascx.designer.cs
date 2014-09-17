@@ -118,7 +118,7 @@ namespace Modules.Reclamos.UserControls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Infragistics.Web.UI.EditorControls.WebNumericEditor txtDiarioInventario;
+        protected global::System.Web.UI.WebControls.TextBox txtDiarioInventario;
         
         /// <summary>
         /// wddReclamoAtentidoPor control.

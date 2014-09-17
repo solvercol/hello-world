@@ -14,6 +14,7 @@
         <td >
             <div style="padding:3px; text-align:right;">
                 <asp:Button ID="btnNuevoComentarioRespuesta" runat="server" Text="Registrar Comentario" OnClick="BtnAddComentario_Click" />
+                <asp:Button ID="btnNuevoRespuestaCliente" runat="server" Text="Enviar Respuesta Cliente" OnClick="BtnAddRespuestaCliente_Click" />
             </div>
         </td>
     </tr>
@@ -27,13 +28,16 @@
                             <tr>
                                 <th style="width:5%;">                        
                                 </th>
-                                <th style="width:61%;text-align:left;">
-                                    Descripción
+                                <th style="width:30%;text-align:left;">
+                                    Asunto
+                                </th>
+                                <th style="width:36%;text-align:left;">
+                                    Mensaje
                                 </th>
                                 <th style="width:15%; text-align:left;">
                                     Fecha
                                 </th>
-                                <th style="width:20%;text-align:left;">
+                                <th style="width:15%;text-align:left;">
                                     Autor
                                 </th>
                             </tr>
@@ -51,8 +55,11 @@
                                                 OnClick="BtnSelectComentario_Click" ToolTip="Click para ver mas información del comentario." />
                                 </td>  
                                 <td style="text-align:left;vertical-align:top;border-right:none;border-top:none;">
-                                    <asp:Label ID="lblDescripcion" runat="server" />
-                                </td>                  
+                                    <asp:Label ID="lblAsunto" runat="server" />
+                                </td>
+                                <td style="text-align:left;vertical-align:top;border-right:none;border-top:none;">
+                                    <asp:Label ID="lblMensaje" runat="server" />
+                                </td>
                                 <td style="text-align:left;vertical-align:top;border-right:none;border-top:none;">
                                     <asp:Label ID="lblFechaComentario" runat="server" />
                                 </td>
@@ -61,7 +68,7 @@
                                 </td>                    
                             </tr>
                             <tr runat="server" class="child" id="rowChild" >
-                                <td colspan="4" style="border-top:none;">
+                                <td colspan="5" style="border-top:none;">
                                     <table width="100%" style="border:none">
                                         <asp:repeater id="rptChildComentarios" runat="server" OnItemDataBound="RptComentariosAsociadosList_ItemDataBound" >
                                             <itemtemplate>
@@ -74,13 +81,16 @@
                                                                 BorderStyle="None"
                                                                 ImageUrl="~/Resources/Images/respuesta-comentario.png"/>
                                                     </td>
-                                                    <td style="text-align:left;width:61%;vertical-align:top;border:none;">
-                                                        <asp:Label ID="lblDescripcion" runat="server" />
+                                                    <td style="text-align:left;width:30%;vertical-align:top;border:none;">
+                                                        <asp:Label ID="lblAsunto" runat="server" />
+                                                    </td>
+                                                    <td style="text-align:left;width:36%;vertical-align:top;border:none;">
+                                                        <asp:Label ID="lblMensjae" runat="server" />
                                                     </td>                  
                                                     <td style="text-align:left;width:15%;vertical-align:top;border:none;">
                                                         <asp:Label ID="lblFechaComentario" runat="server" />
                                                     </td>
-                                                    <td style="text-align:left;width:20%;vertical-align:top;border:none;">
+                                                    <td style="text-align:left;width:15%;vertical-align:top;border:none;">
                                                         <asp:Label ID="lblAutor" runat="server" />
                                                     </td> 
                                                 </tr>
@@ -101,7 +111,7 @@
 
 <asp:UpdatePanel ID="upModal" runat="server">
     <ContentTemplate> 
-        <asp:Panel ID="pnlAdminComentarioRespuesta"  runat="server" CssClass="popup_Container" Width="500" Height="300" style="display:none;">  
+        <asp:Panel ID="pnlAdminComentarioRespuesta"  runat="server" CssClass="popup_Container" Width="500" Height="470" style="display:none;">  
 
             <div class="popup_Titlebar" id="PopupHeader">
                 <div class="TitlebarLeft">
@@ -114,7 +124,10 @@
             <div style="padding:3px; text-align:right;">
                 <asp:Button ID="btnRegresar" runat="server" Text="Regresar"  />
                 <asp:Button ID="btnGuardar" runat="server" Text="Enviar" OnClick="BtnSaveComentario_Click"  />
+                <asp:Button ID="btnGuardarCliente" runat="server" Text="Enviar" OnClick="BtnSaveComentarioCliente_Click"  />
             </div>
+
+            <asp:ValidationSummary ID="vsComentarios" runat="server" DisplayMode="BulletList" ShowMessageBox="false" CssClass="validator" ShowSummary="true" ValidationGroup="vsComentarios"/>
 
             <div class="popup_Body">                                                    
                 <table width="100%" class="tblSecciones">
@@ -146,7 +159,7 @@
 
                         <td class="Separador"></td>
                     </tr>
-                    <tr>
+                    <tr id="trInfoDestinatario" runat="server" >
                         <th style="text-align:left; vertical-align:top">
                             Destinatario :
                         </th>
@@ -166,6 +179,100 @@
                                             Width="98%">
                             </ig:WebDropDown>
                             <asp:Label ID="lblDestinatarios" runat="server"/>
+                        </td>
+
+                        <td class="Separador"></td>
+                    </tr>
+                    <tr id="trInfoContacto" runat="server" >
+                        <th style="text-align:left; vertical-align:top">
+                            Mail Contacto :
+                        </th>
+
+                        <td class="Separador"></td>
+
+                        <td class="Line">
+                            <asp:TextBox ID="txtMailContacto" runat="server" MaxLength="512" Width="90%" />
+                        </td>
+
+                        <td class="Separador"></td>
+                    </tr>
+                    <tr>
+                        <th style="text-align:left; vertical-align:top;">                    
+                             <div id="divPanelShowUsuariosCopia">                        
+                                <div style="float: left; vertical-align:middle;">
+                                    <asp:Label 
+                                    ID="lblUsuariosCopiaTitle" 
+                                    runat="server" 
+                                    ForeColor="#526C8C" 
+                                    Font-Names="Tahoma, Verdana, Arial"
+                                    Font-Size="0.82em">Copiar a :</asp:Label>
+                                </div>
+                                <div style="float: left; vertical-align: middle;" id="PnlFiltroHeader">
+                                    <asp:ImageButton 
+                                    ID="ShowHideUsuariosCopia" 
+                                    BorderStyle="None"
+                                    BorderWidth="0"
+                                    CausesValidation="false"
+                                    runat="server" 
+                                    AlternateText="Ver Copiar" />
+                                </div>
+                            </div>
+                        </th>
+
+                        <td class="Separador"></td>
+
+                        <td class="Line">
+
+                            <div>
+                                <asp:Panel id="PanelUsuariosCopia" runat="server" >
+                      
+                                    <table class="tblSecciones" width="100%">
+                                        <tr>
+                                            <td>
+                                                <ig:WebDropDown ID="wddUsuarioCopia" 
+                                                                runat="server" 
+                                                                EnableMultipleSelection="false"
+                                                                MultipleSelectionType="Checkbox" 
+                                                                DisplayMode="DropDown"
+                                                                EnableClosingDropDownOnSelect="false"
+                                                                StyleSetName="Claymation"
+                                                                DropDownContainerWidth="300px"
+                                                                DropDownContainerHeight="220px"
+                                                                Width="98%">
+                                                </ig:WebDropDown>
+                                            </td>
+                                            <td>
+                                                <asp:Button ID="btnAddCopia" runat="server" Text="Agregar" OnClick="BtnAddUsuarioCopia_Click"  />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <asp:ListBox ID="lstUsuariosCopia" runat="server" SelectionMode="Single" Width="98%" Height="80px" />
+                                            </td>
+                                            <td>
+                                                <asp:Button ID="btnRemoveCopia" runat="server" Text="Eliminar" OnClick="BtnRemoveUsuarioCopia_Click"  />
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                </asp:Panel>
+
+                                <ajaxToolkit:CollapsiblePanelExtender 
+                                                ID="cpeCopiarUsuarios" 
+                                                runat="server" 
+                                                TargetControlID="PanelUsuariosCopia"
+                                                ExpandControlID="divPanelShowUsuariosCopia" 
+                                                CollapseControlID="divPanelShowUsuariosCopia" 
+                                                TextLabelID="lblUsuariosCopiaTitle"
+                                                ImageControlID="ShowHideUsuariosCopia" 
+                                                ExpandedText="Ocultar Copiar" 
+                                                CollapsedText="Ver Copiar"
+                                                ExpandedImage="~/Resources/images/Collapse.gif" 
+                                                CollapsedImage="~/Resources/images/Expand.gif"
+                                                SuppressPostBack="true" Collapsed="true">
+                                                </ajaxToolkit:CollapsiblePanelExtender> 
+                            </div>
+
                         </td>
 
                         <td class="Separador"></td>

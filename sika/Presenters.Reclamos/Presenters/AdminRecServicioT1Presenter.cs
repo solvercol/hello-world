@@ -59,8 +59,7 @@ namespace Presenters.Reclamos.Presenters
         void InitViewValues()
         {
             View.IdAsesor = View.UserSession.IdUser.ToString();
-            View.IdAtendidoPor = View.UserSession.IdUser.ToString();
-            View.DiarioInventario = 0;
+            View.IdAtendidoPor = View.UserSession.IdUser.ToString();            
         }
 
         void LoadCategoria()
@@ -219,9 +218,9 @@ namespace Presenters.Reclamos.Presenters
                 model.Area = View.Area;
                 model.IdAsesoradoPor = Convert.ToInt32(View.IdAsesor);
                 model.NumPFR = View.PedidoRemisionFactura;
-                model.NumDiarioInventario = View.DiarioInventario.ToString();
+                model.NumDiarioInventario = View.DiarioInventario;
                 model.IdAtendidoPor = Convert.ToInt32(View.IdAtendidoPor);
-                model.TipoContrato = View.TipoContacto;
+                model.TipoContacto = View.TipoContacto;
                 model.CodigoCliente = View.SelectedCliente.CodigoCliente;
                 model.UnidadZona = View.UnidadZona;
                 model.Contacto = View.NombreContacto;
@@ -264,9 +263,9 @@ namespace Presenters.Reclamos.Presenters
                 View.Area = model.Area;
                 View.IdAsesor = model.IdAsesoradoPor.ToString();
                 View.PedidoRemisionFactura = model.NumPFR;
-                View.DiarioInventario = Convert.ToInt32(model.NumDiarioInventario);
+                View.DiarioInventario = model.NumDiarioInventario;
                 View.IdAtendidoPor = model.IdAtendidoPor.ToString();
-                View.TipoContacto = model.TipoContrato;
+                View.TipoContacto = model.TipoContacto;
                 View.SelectedCliente.CodigoCliente = model.CodigoCliente;
                 View.UnidadZona = model.UnidadZona;
                 View.NombreContacto = model.Contacto;
@@ -295,9 +294,9 @@ namespace Presenters.Reclamos.Presenters
             model.Area = View.Area;
             model.IdAsesoradoPor = Convert.ToInt32(View.IdAsesor);
             model.NumPFR = View.PedidoRemisionFactura;
-            model.NumDiarioInventario = View.DiarioInventario.ToString();
+            model.NumDiarioInventario = View.DiarioInventario;
             model.IdAtendidoPor = Convert.ToInt32(View.IdAtendidoPor);
-            model.TipoContrato = View.TipoContacto;
+            model.TipoContacto = View.TipoContacto;
             model.CodigoCliente = View.SelectedCliente.CodigoCliente;
             model.UnidadZona = View.UnidadZona;
             model.Contacto = View.NombreContacto;

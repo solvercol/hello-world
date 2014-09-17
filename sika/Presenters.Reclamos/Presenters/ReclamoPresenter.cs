@@ -96,9 +96,10 @@ namespace Presenters.Reclamos.Presenters
                         View.TitleReclamoFrom = dtoCliente.NombreCliente;
                         View.Unidad = reclamo.UnidadZona;
                         if (reclamo.TBL_ModuloReclamos_CategoriasReclamo != null)
-                            View.Area = string.Format("{0} / {1}", reclamo.TBL_ModuloReclamos_CategoriasReclamo.Area, reclamo.TBL_ModuloReclamos_CategoriasReclamo.TBL_Admin_Usuarios.Nombres);
+                            View.Categoria = string.Format("{0} / {1}", reclamo.TBL_ModuloReclamos_CategoriasReclamo.Nombre, reclamo.TBL_ModuloReclamos_CategoriasReclamo.TBL_Admin_Usuarios.Nombres);
                         View.FechaReclamo = string.Format("{0:dd/MM/yyyy}", reclamo.CreateOn);
-                        View.Asesor = reclamo.AsesoradoPor.Nombres;
+                        if (reclamo.IngenieroResponsable != null)
+                            View.Responsable = reclamo.IngenieroResponsable.Nombres;
                         View.TotalCostoReclamo = string.Format("{0:0,0.0} {1}", reclamo.CostoTotal, View.MonedaLocal);
                         if (reclamo.IdCategoriaProducto.HasValue)
                             View.IdCategoria = reclamo.IdCategoriaProducto.ToString();
@@ -115,10 +116,10 @@ namespace Presenters.Reclamos.Presenters
                             View.TitleReclamoFrom = string.Format("{0} / {1}", reclamo.NombreReclama, reclamo.ProcedimientoInternoAfectado);
                         }
                         View.Unidad = reclamo.UnidadZona;
-                        View.Area = string.Format("{0} / {1}", reclamo.TBL_ModuloReclamos_CategoriasReclamo.Area, reclamo.TBL_ModuloReclamos_CategoriasReclamo.TBL_Admin_Usuarios.Nombres);
+                        View.Categoria = string.Format("{0} / {1}", reclamo.TBL_ModuloReclamos_CategoriasReclamo.Nombre, reclamo.TBL_ModuloReclamos_CategoriasReclamo.TBL_Admin_Usuarios.Nombres);
                         View.FechaReclamo = string.Format("{0:dd/MM/yyyy}", reclamo.CreateOn);
-                        if (reclamo.AsesoradoPor != null)
-                            View.Asesor = reclamo.AsesoradoPor.Nombres;
+                        if (reclamo.IngenieroResponsable != null)
+                            View.Responsable = reclamo.IngenieroResponsable.Nombres;
                         View.TotalCostoReclamo = string.Format("{0:0,0.0} {1}", reclamo.CostoTotal, View.MonedaLocal);
                     }
 
@@ -157,7 +158,7 @@ namespace Presenters.Reclamos.Presenters
             if(oReclamo == null)return;
             if (oReclamo.TBL_Admin_EstadosProceso == null)return;
 
-            if (oReclamo.TBL_Admin_EstadosProceso.Descripcion == "En Proceso" && !oReclamo.IndicadorAlt.GetValueOrDefault() && !oReclamo.IndicadorAPC.GetValueOrDefault() && !oReclamo.IndicadorSol.GetValueOrDefault())   
+            if (oReclamo.TBL_Admin_EstadosProceso.Descripcion == "En Proceso" && !oReclamo.IndicadorAlt && !oReclamo.IndicadorAPC && !oReclamo.IndicadorSol)   
             {
                 View.VerCrearAccion = View.UserSession.IdUser == oReclamo.IdResponsableActual;
             }

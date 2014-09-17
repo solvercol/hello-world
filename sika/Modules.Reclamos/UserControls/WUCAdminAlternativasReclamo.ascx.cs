@@ -54,6 +54,27 @@ namespace Modules.Reclamos.UserControls
 
         protected void BtnSaveAlternativa_Click(object sender, EventArgs e)
         {
+            var messages = new List<string>();
+
+            if (string.IsNullOrEmpty(Causas))
+                messages.Add("Es necesario ingresar una causa.");
+
+            if (string.IsNullOrEmpty(Factores))
+                messages.Add("Es necesario ingresar el campo factores.");
+
+            if (string.IsNullOrEmpty(Alternativa))
+                messages.Add("Es necesario ingresar una alternativa de solución.");
+
+            if (string.IsNullOrEmpty(Seguimiento))
+                messages.Add("Es necesario ingresar el campo seguimiento.");
+
+            if (messages.Any())
+            {
+                AddErrorMessages(messages);
+                ShowAdminAlternativaWindow(true);
+                return;
+            }
+
             if (IsNewAlternativa)
                 Presenter.AddAlternativaReclamo();
             else
@@ -202,6 +223,23 @@ namespace Modules.Reclamos.UserControls
         #endregion
 
         #region Methods
+
+        void AddErrorMessages(List<string> messages)
+        {
+            if (messages.Any())
+            {
+                foreach (var msg in messages)
+                {
+                    var custVal = new CustomValidator();
+                    custVal.IsValid = false;
+                    custVal.ErrorMessage = msg;
+                    custVal.EnableClientScript = false;
+                    custVal.Display = ValidatorDisplay.None;
+                    custVal.ValidationGroup = "vsAlternativas";
+                    this.Page.Form.Controls.Add(custVal);
+                }
+            }
+        }
 
         void InitAdminAlternativa()
         {
@@ -439,8 +477,20 @@ namespace Modules.Reclamos.UserControls
             }
         }
 
+        public bool CanEditAlternativas
+        {
+            get
+            {
+                return btnNuevoAlternativa.Visible;
+            }
+            set
+            {
+                btnNuevoAlternativa.Visible = value;
+            }
+        }
+
         #endregion        
 
-        #endregion
+        #endregion        
     }
 }

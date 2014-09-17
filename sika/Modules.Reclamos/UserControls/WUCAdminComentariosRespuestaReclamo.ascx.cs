@@ -50,15 +50,70 @@ namespace Modules.Reclamos.UserControls
         protected void BtnAddComentario_Click(object sender, EventArgs e)
         {
             InitAdminComentario();
+            trInfoContacto.Visible = false;
+            btnGuardarCliente.Visible = false;
+            trInfoDestinatario.Visible = true;
+            btnGuardar.Visible = true;
+            btnGuardarCliente.Visible = false;
+            ShowAdminComentarioWindow(true);
+        }
+
+        protected void BtnAddRespuestaCliente_Click(object sender, EventArgs e)
+        {
+            InitAdminComentario();
+            trInfoDestinatario.Visible = false;
+            btnGuardar.Visible = false;
+            trInfoContacto.Visible = true;
+            btnGuardarCliente.Visible = true;
+            btnGuardar.Visible = false;
+            MailContacto = MailContactoTmp;
             ShowAdminComentarioWindow(true);
         }
 
         protected void BtnSaveComentario_Click(object sender, EventArgs e)
         {
+            var messages = new List<string>();
+
+            if (string.IsNullOrEmpty(Asunto))
+                messages.Add("Es necesario ingresar un asunto.");
+
+            if (string.IsNullOrEmpty(Comentario))
+                messages.Add("Es necesario ingresar un mensaje/observaciones.");
+
+            if (messages.Any())
+            {
+                AddErrorMessages(messages);
+                ShowAdminComentarioWindow(true);
+                return;
+            }
+
             if (IsNewComentario)
                 Presenter.AddComentarioReclamo();
             else
                 Presenter.UpdateComentarioReclamo();
+        }
+
+        protected void BtnSaveComentarioCliente_Click(object sender, EventArgs e)
+        {
+            var messages = new List<string>();
+
+            if (string.IsNullOrEmpty(Asunto))
+                messages.Add("Es necesario ingresar un asunto.");
+
+            if (string.IsNullOrEmpty(Comentario))
+                messages.Add("Es necesario ingresar un mensaje/observaciones.");
+
+            if (string.IsNullOrEmpty(MailContacto))
+                messages.Add("Es necesario ingresar un mail de contacto.");
+
+            if (messages.Any())
+            {
+                AddErrorMessages(messages);
+                ShowAdminComentarioWindow(true);
+                return;
+            }
+
+            Presenter.AddComentarioReclamoCliente();
         }
 
         protected void BtnRemoveActividad_Click(object sender, EventArgs e)
@@ -130,6 +185,33 @@ namespace Modules.Reclamos.UserControls
             ShowAdminComentarioWindow(true);
         }
 
+        protected void BtnAddUsuarioCopia_Click(object sender, EventArgs e)
+        {
+            var usuarioCopia = new DTO_ValueKey() { Id = IdUsuarioCopia, Value = wddUsuarioCopia.SelectedItem.Text };
+            if (!ExistsInCopia(usuarioCopia))
+                UsuariosCopia.Add(usuarioCopia);
+
+            LoadUsuariosCopia(UsuariosCopia);
+
+            cpeCopiarUsuarios.Collapsed = false;
+            ShowAdminComentarioWindow(true);
+        }
+
+        protected void BtnRemoveUsuarioCopia_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(IdUsuarioCopiaSelected)) return;
+
+            var usuarioCopia = UsuariosCopia.Where(x => x.Id == IdUsuarioCopiaSelected).SingleOrDefault();
+
+            if (usuarioCopia != null)
+                UsuariosCopia.Remove(usuarioCopia);
+
+            LoadUsuariosCopia(UsuariosCopia);
+
+            cpeCopiarUsuarios.Collapsed = false;
+            ShowAdminComentarioWindow(true);
+        }
+
         #endregion
 
         #region Repeaters
@@ -146,8 +228,11 @@ namespace Modules.Reclamos.UserControls
                 var hddIdComentario = e.Item.FindControl("hddIdComentario") as HiddenField;
                 if (hddIdComentario != null) hddIdComentario.Value = string.Format("{0}", item.IdComentario);
 
-                var lblDescripcion = e.Item.FindControl("lblDescripcion") as Label;
-                if (lblDescripcion != null) lblDescripcion.Text = string.Format("{0}", item.Comentario);
+                var lblAsunto = e.Item.FindControl("lblAsunto") as Label;
+                if (lblAsunto != null) lblAsunto.Text = string.Format("{0}", item.Asunto);
+
+                var lblMensaje = e.Item.FindControl("lblMensaje") as Label;
+                if (lblMensaje != null) lblMensaje.Text = string.Format("{0}", item.Comentario);
 
                 var lblFechaComentario = e.Item.FindControl("lblFechaComentario") as Label;
                 if (lblFechaComentario != null) lblFechaComentario.Text = string.Format("{0:dd/MM/yyyy hh:mm:ss tt}", item.CreateOn);
@@ -156,7 +241,14 @@ namespace Modules.Reclamos.UserControls
                 if (lblAutor != null) lblAutor.Text = string.Format("{0}", item.TBL_Admin_Usuarios.Nombres);
 
                 var imgSelectComentario = e.Item.FindControl("imgSelectComentario") as ImageButton;
-                if (imgSelectComentario != null) imgSelectComentario.CommandArgument = string.Format("{0}", item.IdComentario);
+                if (imgSelectComentario != null)
+                {
+                    imgSelectComentario.CommandArgument = string.Format("{0}", item.IdComentario);
+                    if (item.EsComentarioCliente)
+                    {
+                        imgSelectComentario.ImageUrl = "~/Resources/Images/emailcliente.png";
+                    }
+                }
 
                 if (item.ComentariosAsociados != null && item.ComentariosAsociados.Any())
                 {
@@ -186,8 +278,11 @@ namespace Modules.Reclamos.UserControls
             {
                 var item = (TBL_ModuloReclamos_ComentariosRespuesta)(e.Item.DataItem);
                 // Bindind data
-                var lblDescripcion = e.Item.FindControl("lblDescripcion") as Label;
-                if (lblDescripcion != null) lblDescripcion.Text = string.Format("{0}", item.Comentario);
+                var lblAsunto = e.Item.FindControl("lblAsunto") as Label;
+                if (lblAsunto != null) lblAsunto.Text = string.Format("{0}", item.Asunto);
+
+                var lblMensjae = e.Item.FindControl("lblMensjae") as Label;
+                if (lblMensjae != null) lblMensjae.Text = string.Format("{0}", item.Comentario);
 
                 var lblFechaComentario = e.Item.FindControl("lblFechaComentario") as Label;
                 if (lblFechaComentario != null) lblFechaComentario.Text = string.Format("{0:dd/MM/yyyy hh:mm:ss tt}", item.CreateOn);
@@ -233,15 +328,46 @@ namespace Modules.Reclamos.UserControls
 
         #region Methods
 
+        void AddErrorMessages(List<string> messages)
+        {
+            if (messages.Any())
+            {
+                foreach (var msg in messages)
+                {
+                    var custVal = new CustomValidator();
+                    custVal.IsValid = false;
+                    custVal.ErrorMessage = msg;
+                    custVal.EnableClientScript = false;
+                    custVal.Display = ValidatorDisplay.None;
+                    custVal.ValidationGroup = "vsComentarios";
+                    this.Page.Form.Controls.Add(custVal);
+                }
+            }
+        }
+
         void InitAdminComentario()
         {
             Asunto = string.Empty;
             Comentario = string.Empty;
+            MailContacto = string.Empty;
             IdUsuarioDestino = UserSession.IdUser.ToString();
             ArchivosAdjuntos = new List<DTO_ValueKey>();
+            UsuariosCopia = new List<DTO_ValueKey>();
+            LoadUsuariosCopia(UsuariosCopia);
             LoadArchivosAdjuntos(ArchivosAdjuntos);
             IsNewComentario = true;
             EnableEdit(true);
+        }
+
+        bool ExistsInCopia(DTO_ValueKey item)
+        {
+            foreach (var itm in UsuariosCopia)
+            {
+                if (itm.Id == item.Id)
+                    return true;
+            }
+
+            return false;
         }
 
         #endregion
@@ -284,6 +410,29 @@ namespace Modules.Reclamos.UserControls
             wddDestinatarios.TextField = "Nombres";
             wddDestinatarios.ValueField = "IdUser";
             wddDestinatarios.DataBind();
+        }
+
+        public void LoadUsuarioCopia(List<TBL_Admin_Usuarios> items)
+        {
+            if (items.Any())
+            {
+                items = items.OrderBy(x => x.Nombres).ToList();
+            }
+
+            wddUsuarioCopia.DataSource = items;
+            wddUsuarioCopia.TextField = "Nombres";
+            wddUsuarioCopia.ValueField = "IdUser";
+            wddUsuarioCopia.DataBind();
+
+            wddUsuarioCopia.SelectedItemIndex = 0;
+        }
+
+        public void LoadUsuariosCopia(List<DTO_ValueKey> items)
+        {
+            lstUsuariosCopia.DataSource = items;
+            lstUsuariosCopia.DataValueField = "Id";
+            lstUsuariosCopia.DataTextField = "Value";
+            lstUsuariosCopia.DataBind();
         }
 
         public void EnableEdit(bool enable)
@@ -406,6 +555,84 @@ namespace Modules.Reclamos.UserControls
             set
             {
                 Session["AdminComentario_ArchivosAdjuntos"] = value;
+            }
+        }
+
+        public List<DTO_ValueKey> UsuariosCopia
+        {
+            get
+            {
+                if (Session["AdminComentarios_UsuarioCopia"] == null)
+                    Session["AdminComentarios_UsuarioCopia"] = new List<DTO_ValueKey>();
+
+                return Session["AdminComentarios_UsuarioCopia"] as List<DTO_ValueKey>;
+            }
+            set
+            {
+                Session["AdminComentarios_UsuarioCopia"] = value;
+            }
+        }
+
+        public string IdUsuarioCopia
+        {
+            get
+            {
+                return wddUsuarioCopia.SelectedValue;
+            }
+            set
+            {
+                wddUsuarioCopia.SelectedValue = value;
+            }
+        }
+
+        public string IdUsuarioCopiaSelected
+        {
+            get
+            {
+                return lstUsuariosCopia.SelectedValue;
+            }
+            set
+            {
+                lstUsuariosCopia.SelectedValue = value;
+            }
+        }
+
+        public string MailContacto
+        {
+            get
+            {
+                return txtMailContacto.Text;
+            }
+            set
+            {
+                txtMailContacto.Text = value;
+            }
+        }
+
+        public string MailContactoTmp
+        {
+            get
+            {
+                if (ViewState["AdminComentarios_MailContactoTmp"] == null)
+                    ViewState["AdminComentarios_MailContactoTmp"] = string.Empty;
+
+                return ViewState["AdminComentarios_MailContactoTmp"].ToString(); ;
+            }
+            set
+            {
+                ViewState["AdminComentarios_MailContactoTmp"] = value;
+            }
+        }
+
+        public bool CanSendMailToCLient
+        {
+            get
+            {
+                return btnNuevoRespuestaCliente.Visible;
+            }
+            set
+            {
+                btnNuevoRespuestaCliente.Visible = value;
             }
         }
 

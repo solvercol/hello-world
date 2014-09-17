@@ -12,6 +12,7 @@ namespace Application.MainModule.SqlServices.IServices
         Dto_Asesor GetByIdAsesor(int idAsesor);
 
         void InsertUsuarioCopiaActividades(string idUsuario, string idActividad);
+        void InsertUsuarioCopiaComentario(string idUsuario, string idComentario);
 
         string EstadoReclamo(string idreclamo);
 

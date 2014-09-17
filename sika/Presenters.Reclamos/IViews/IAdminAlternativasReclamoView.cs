@@ -30,5 +30,8 @@ namespace Presenters.Reclamos.IViews
         // Archivos Adjuntos
         List<DTO_ValueKey> ArchivosAdjuntos { get; set; }
         void LoadArchivosAdjuntos(List<DTO_ValueKey> items);
+
+        // Controles Edicion
+        bool CanEditAlternativas { get; set; }
     }
 }

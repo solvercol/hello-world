@@ -193,13 +193,31 @@ namespace Modules.Reclamos.Admin {
         protected global::System.Web.UI.WebControls.Label lblFecha;
         
         /// <summary>
-        /// tr1 control.
+        /// trUsuariosCopia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableRow tr1;
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow trUsuariosCopia;
+        
+        /// <summary>
+        /// lstUsuariosCopia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox lstUsuariosCopia;
+        
+        /// <summary>
+        /// trComentariosRespuesta control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow trComentariosRespuesta;
         
         /// <summary>
         /// rptComentariosAsociados control.

@@ -272,6 +272,8 @@
         <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="BtnSaveCosto_Click"  />
     </div>
 
+    <asp:ValidationSummary ID="vsCostos" runat="server" DisplayMode="BulletList" ShowMessageBox="false" CssClass="validator" ShowSummary="true" ValidationGroup="vsCostos"/>
+
     <div class="popup_Body">                                                    
         <table width="100%" class="tblSecciones">
             <tr>

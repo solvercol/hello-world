@@ -10,6 +10,7 @@ using Presenters.Reclamos.IViews;
 using Application.MainModule.SqlServices.IServices;
 using System.Collections.Generic;
 using Presenters.Reclamos.Resources;
+using Domain.MainModule.Reclamos.Enum;
 
 namespace Presenters.Reclamos.Presenters
 {
@@ -53,10 +54,31 @@ namespace Presenters.Reclamos.Presenters
 
         public void LoadInitData()
         {
-            LoadActividadesReclamo();
-            LoadActividadesReclamoAdmin();
+            LoadReclamo();
             LoadUsuarioAsignacion();
             LoadUsuarioCopia();
+            LoadActividadesReclamoAdmin();
+            LoadActividadesReclamo();            
+        }
+
+        void LoadReclamo()
+        {
+            if (string.IsNullOrEmpty(View.IdReclamo)) return;
+
+            try
+            {
+                var reclamo = _reclamoService.GetReclamoById(Convert.ToDecimal(View.IdReclamo));
+
+                if (reclamo != null)
+                {
+                    View.CanEditActividades = ((reclamo.IdEstado == EstadosReclamo.EnProceso || reclamo.IdEstado == EstadosReclamo.RevisionPlanDeAccion) && reclamo.IdResponsableActual == View.UserSession.IdUser)
+                                         || View.UserSession.IsInRole("Administrador");
+                }
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
         }
 
         void LoadActividadesReclamo()

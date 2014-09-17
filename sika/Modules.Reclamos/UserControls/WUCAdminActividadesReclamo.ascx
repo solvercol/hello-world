@@ -28,7 +28,7 @@
                             <%--<th style="width:3%;">                        
                             </th>--%>
                             <th style="width:33%;text-align:left;vertical-align:top">
-                                Descripción
+                                Actividad
                             </th>
                             <th style="width:15%; text-align:left;;vertical-align:top">
                                 Fecha
@@ -66,7 +66,7 @@
                                             OnClick="BtnRemoveActividad_Click" />
                             </td> --%>                                       
                             <td style="text-align:left">
-                                <asp:Label ID="lblDescripcion" runat="server" />
+                                <asp:Label ID="lblActividad" runat="server" />
                             </td>
                             <td style="text-align:left;">
                                 <asp:Label ID="lblFechaActividad" runat="server" />
@@ -90,7 +90,7 @@
 
 <asp:UpdatePanel ID="upModal" runat="server">
     <ContentTemplate> 
-        <asp:Panel ID="pnlAdminActividad"  runat="server" CssClass="popup_Container" Width="500" Height="490" style="display:none;">  
+        <asp:Panel ID="pnlAdminActividad"  runat="server" CssClass="popup_Container" Width="500" Height="500" style="display:none;">  
 
             <div class="popup_Titlebar" id="PopupHeader">
                 <div class="TitlebarLeft">
@@ -104,6 +104,8 @@
                 <asp:Button ID="btnRegresar" runat="server" Text="Regresar"  />
                 <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="BtnSaveActividad_Click"  />
             </div>
+
+            <asp:ValidationSummary ID="vsActividades" runat="server" DisplayMode="BulletList" ShowMessageBox="false" CssClass="validator" ShowSummary="true" ValidationGroup="vsActividades"/>
 
             <div class="popup_Body">                                                    
                 <table width="100%" class="tblSecciones">

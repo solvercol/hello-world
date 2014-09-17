@@ -9,6 +9,7 @@ using Domain.MainModules.Entities;
 using Infrastructure.CrossCutting.NetFramework.Enums;
 using Presenters.Reclamos.IViews;
 using Presenters.Reclamos.Resources;
+using Domain.MainModule.Reclamos.Enum;
 
 namespace Presenters.Reclamos.Presenters
 {
@@ -18,16 +19,19 @@ namespace Presenters.Reclamos.Presenters
         readonly ISfTBL_Admin_UsuariosManagementServices _usuariosService;
         readonly ISfTBL_ModuloReclamos_AnexosAlternativaManagementServices _anexosService;
         readonly ISfTBL_ModuloReclamos_LogReclamosManagementServices _logReclamoService;
+        readonly ISfTBL_ModuloReclamos_ReclamoManagementServices _reclamoService;
 
         public AdminAlternativasReclamoPresenter(ISfTBL_ModuloReclamos_AlternativasManagementServices alternativaReclamoService,
                                                  ISfTBL_Admin_UsuariosManagementServices usuariosService,
                                                  ISfTBL_ModuloReclamos_AnexosAlternativaManagementServices anexosService,
-                                                ISfTBL_ModuloReclamos_LogReclamosManagementServices logReclamoService)
+                                                 ISfTBL_ModuloReclamos_LogReclamosManagementServices logReclamoService,
+                                                 ISfTBL_ModuloReclamos_ReclamoManagementServices reclamoService)
         {
             _alternativaReclamoService = alternativaReclamoService;
             _usuariosService = usuariosService;
             _anexosService = anexosService;
             _logReclamoService = logReclamoService;
+            _reclamoService = reclamoService;
         }
 
         public override void SubscribeViewToEvents()
@@ -43,8 +47,29 @@ namespace Presenters.Reclamos.Presenters
 
         public void LoadInitData()
         {
-            LoadAlternativasReclamo();
+            LoadReclamo();
             LoadResponsables();
+            LoadAlternativasReclamo();            
+        }
+
+        void LoadReclamo()
+        {
+            if (string.IsNullOrEmpty(View.IdReclamo)) return;
+
+            try
+            {
+                var reclamo = _reclamoService.GetReclamoById(Convert.ToDecimal(View.IdReclamo));
+
+                if (reclamo != null)
+                {
+                    View.CanEditAlternativas = (reclamo.IdEstado == EstadosReclamo.EnProceso && reclamo.IdResponsableActual == View.UserSession.IdUser)
+                                         || View.UserSession.IsInRole("Administrador");
+                }
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
         }
 
         void LoadAlternativasReclamo()
@@ -56,6 +81,26 @@ namespace Presenters.Reclamos.Presenters
                 var items = _alternativaReclamoService.GetByIdReclamo(Convert.ToDecimal(View.IdReclamo));
 
                 View.LoadAlternativasReclamo(items);
+
+                CheckIndicadorAlternativaReclamo(items);
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
+        }
+
+        void CheckIndicadorAlternativaReclamo(List<TBL_ModuloReclamos_Alternativas> items)
+        {
+            if (string.IsNullOrEmpty(View.IdReclamo)) return;
+
+            try
+            {
+                var reclamo = _reclamoService.GetReclamoById(Convert.ToDecimal(View.IdReclamo));
+
+                reclamo.IndicadorAlt = items.Any();
+
+                _reclamoService.Modify(reclamo);
             }
             catch (Exception ex)
             {

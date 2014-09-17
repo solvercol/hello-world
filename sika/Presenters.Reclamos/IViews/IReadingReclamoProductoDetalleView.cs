@@ -26,6 +26,13 @@ namespace Presenters.Reclamos.IViews
         string EmailQuienAplica { get; set; }
         string EmailPropietario { get; set; }
 
+        // Informacion de Producto Seleccionado
+        string NombreProducto { get; set; }
+        string PresentacionProducto { get; set; }
+        string TargetMarketProducto { get; set; }
+        string CampoAplicacionProducto { get; set; }
+        string SubCampoAplicacionProducto { get; set; }
+
         // Informacion de Producto
         string AspectoExteriorEnvase { get; set; }
         string AspectoProducto { get; set; }
@@ -41,5 +48,6 @@ namespace Presenters.Reclamos.IViews
         string Diagnostico { get; set; }
         string ConclusionesPrevias { get; set; }
         string Solucion { get; set; }
+        bool Solucionado { get; set; }
     }
 }

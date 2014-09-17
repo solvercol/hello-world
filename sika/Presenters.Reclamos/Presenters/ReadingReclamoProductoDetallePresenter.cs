@@ -53,7 +53,7 @@ namespace Presenters.Reclamos.Presenters
                     View.Aplicado = model.Aplicado.GetValueOrDefault();
                     View.FechaVenta = model.FechaVenta.GetValueOrDefault();
                     View.AtendidoPor = model.AtentidoPor.Nombres;
-                    View.TipoContacto = model.TipoContrato;
+                    View.TipoContacto = model.TipoContacto;
                     View.NombreCliente = cliente.NombreCliente;
                     View.UnidadZona = model.UnidadZona;
                     View.NombreContacto = model.Contacto;
@@ -75,6 +75,13 @@ namespace Presenters.Reclamos.Presenters
                     View.Diagnostico = model.DiagnosticoPrevio;
                     View.ConclusionesPrevias = model.ConclusionesPrevias;
                     View.Solucion = model.ObservacionesSolucion;
+                    View.Solucionado = model.ProblemaSolucionado.GetValueOrDefault();
+
+                    View.NombreProducto = producto.NombreProducto;
+                    View.PresentacionProducto = producto.Unidad;
+                    View.TargetMarketProducto = producto.GrupoCompradores;
+                    View.CampoAplicacionProducto = producto.CampoApl;
+                    View.SubCampoAplicacionProducto = producto.Categoria;
 
                 }
             }

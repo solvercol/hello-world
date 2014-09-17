@@ -62,7 +62,7 @@ namespace Modules.Reclamos.UserControls
             }
             set
             {
-                lblCantidadUnidadVendida.Text = string.Format("{0}", value);
+                lblCantidadUnidadVendida.Text = string.Format("{0:0,0.0}", value);
             }
         }
 
@@ -74,7 +74,7 @@ namespace Modules.Reclamos.UserControls
             }
             set
             {
-                lblCantidadReclamadaUnidad.Text = string.Format("{0}", value);
+                lblCantidadReclamadaUnidad.Text = string.Format("{0:0,0.0}", value);
             }
         }
 
@@ -87,6 +87,18 @@ namespace Modules.Reclamos.UserControls
             set
             {
                 lblAplicado.Text = value ? "SI" : "NO";
+            }
+        }
+
+        public bool Solucionado
+        {
+            get
+            {
+                return true;
+            }
+            set
+            {
+                lblSolucionado.Text = value ? "SI" : "NO";
             }
         }
 
@@ -386,6 +398,66 @@ namespace Modules.Reclamos.UserControls
         public string IdModule
         {
             get { return ModuleId; }
+        }
+
+        public string NombreProducto
+        {
+            get
+            {
+                return litNombreProducto.Text;
+            }
+            set
+            {
+                litNombreProducto.Text = value;
+            }
+        }
+
+        public string PresentacionProducto
+        {
+            get
+            {
+                return lblPresentacionProducto.Text;
+            }
+            set
+            {
+                lblPresentacionProducto.Text = value;
+            }
+        }
+
+        public string TargetMarketProducto
+        {
+            get
+            {
+                return lblTargetMarketProducto.Text;
+            }
+            set
+            {
+                lblTargetMarketProducto.Text = value;
+            }
+        }
+
+        public string CampoAplicacionProducto
+        {
+            get
+            {
+                return lblCampoAplicacionProducto.Text;
+            }
+            set
+            {
+                lblCampoAplicacionProducto.Text = value;
+            }
+        }
+
+        public string SubCampoAplicacionProducto
+        {
+            get
+            {
+                return lblSubCampoAplicacionProducto.Text;
+            }
+            set
+            {
+                lblSubCampoAplicacionProducto.Text = value;
+            }
         }
     }
 }

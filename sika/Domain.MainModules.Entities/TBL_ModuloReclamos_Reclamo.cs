@@ -369,19 +369,19 @@ namespace Domain.MainModules.Entities
         private Nullable<int> _idAtendidoPor;
     
         [DataMember]
-        public string TipoContrato
+        public string TipoContacto
         {
-            get { return _tipoContrato; }
+            get { return _tipoContacto; }
             set
             {
-                if (_tipoContrato != value)
+                if (_tipoContacto != value)
                 {
-                    _tipoContrato = value;
-                    OnPropertyChanged("TipoContrato");
+                    _tipoContacto = value;
+                    OnPropertyChanged("TipoContacto");
                 }
             }
         }
-        private string _tipoContrato;
+        private string _tipoContacto;
     
         [DataMember]
         public string CodigoCliente
@@ -1310,51 +1310,6 @@ namespace Domain.MainModules.Entities
         private Nullable<int> _idEstado;
     
         [DataMember]
-        public Nullable<bool> IndicadorAPC
-        {
-            get { return _indicadorAPC; }
-            set
-            {
-                if (_indicadorAPC != value)
-                {
-                    _indicadorAPC = value;
-                    OnPropertyChanged("IndicadorAPC");
-                }
-            }
-        }
-        private Nullable<bool> _indicadorAPC;
-    
-        [DataMember]
-        public Nullable<bool> IndicadorSol
-        {
-            get { return _indicadorSol; }
-            set
-            {
-                if (_indicadorSol != value)
-                {
-                    _indicadorSol = value;
-                    OnPropertyChanged("IndicadorSol");
-                }
-            }
-        }
-        private Nullable<bool> _indicadorSol;
-    
-        [DataMember]
-        public Nullable<bool> IndicadorAlt
-        {
-            get { return _indicadorAlt; }
-            set
-            {
-                if (_indicadorAlt != value)
-                {
-                    _indicadorAlt = value;
-                    OnPropertyChanged("IndicadorAlt");
-                }
-            }
-        }
-        private Nullable<bool> _indicadorAlt;
-    
-        [DataMember]
         public Nullable<int> IdCategoriaProducto
         {
             get { return _idCategoriaProducto; }
@@ -1376,6 +1331,51 @@ namespace Domain.MainModules.Entities
             }
         }
         private Nullable<int> _idCategoriaProducto;
+    
+        [DataMember]
+        public bool IndicadorAPC
+        {
+            get { return _indicadorAPC; }
+            set
+            {
+                if (_indicadorAPC != value)
+                {
+                    _indicadorAPC = value;
+                    OnPropertyChanged("IndicadorAPC");
+                }
+            }
+        }
+        private bool _indicadorAPC;
+    
+        [DataMember]
+        public bool IndicadorSol
+        {
+            get { return _indicadorSol; }
+            set
+            {
+                if (_indicadorSol != value)
+                {
+                    _indicadorSol = value;
+                    OnPropertyChanged("IndicadorSol");
+                }
+            }
+        }
+        private bool _indicadorSol;
+    
+        [DataMember]
+        public bool IndicadorAlt
+        {
+            get { return _indicadorAlt; }
+            set
+            {
+                if (_indicadorAlt != value)
+                {
+                    _indicadorAlt = value;
+                    OnPropertyChanged("IndicadorAlt");
+                }
+            }
+        }
+        private bool _indicadorAlt;
 
         #endregion
         #region Navigation Properties

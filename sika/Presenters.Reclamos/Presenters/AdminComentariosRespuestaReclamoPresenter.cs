@@ -8,6 +8,8 @@ using Domain.MainModules.Entities;
 using Infrastructure.CrossCutting.NetFramework.Enums;
 using Presenters.Reclamos.IViews;
 using System.Collections.Generic;
+using Application.MainModule.SqlServices.IServices;
+using Domain.MainModule.Reclamos.Enum;
 
 namespace Presenters.Reclamos.Presenters
 {
@@ -17,16 +19,19 @@ namespace Presenters.Reclamos.Presenters
         readonly ISfTBL_ModuloReclamos_ReclamoManagementServices _reclamoService;
         readonly ISfTBL_Admin_UsuariosManagementServices _usuariosService;
         readonly ISfTBL_ModuloReclamos_AnexosComentarioRespuestaManagementServices _anexosService;
+        readonly IReclamosAdoService _reclamoAdoService;
 
         public AdminComentariosRespuestaReclamoPresenter(ISfTBL_ModuloReclamos_ComentariosRespuestaManagementServices comentariosRespuestaService,
                                                          ISfTBL_ModuloReclamos_ReclamoManagementServices reclamoService,
                                                          ISfTBL_Admin_UsuariosManagementServices usuariosService,
-                                                         ISfTBL_ModuloReclamos_AnexosComentarioRespuestaManagementServices anexosService)
+                                                         ISfTBL_ModuloReclamos_AnexosComentarioRespuestaManagementServices anexosService,
+                                                         IReclamosAdoService reclamoAdoService)
         {
             _comentariosRespuestaService = comentariosRespuestaService;
             _reclamoService = reclamoService;
             _usuariosService = usuariosService;
             _anexosService = anexosService;
+            _reclamoAdoService = reclamoAdoService;
         }
 
         public override void SubscribeViewToEvents()
@@ -44,6 +49,8 @@ namespace Presenters.Reclamos.Presenters
         {
             LoadComentariosReclamo();
             LoadUsuarioAsignacion();
+            LoadUsuarioCopia();
+            LoadInfoReclamo();
         }
 
         void LoadComentariosReclamo()
@@ -89,6 +96,35 @@ namespace Presenters.Reclamos.Presenters
             }
         }
 
+        void LoadUsuarioCopia()
+        {
+            try
+            {
+                var items = _usuariosService.FindBySpec(true);
+                View.LoadUsuarioCopia(items);
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
+        }
+
+        void LoadInfoReclamo()
+        {
+            if (string.IsNullOrEmpty(View.IdReclamo)) return;
+            try
+            {
+                var reclamo = _reclamoService.GetReclamoById(Convert.ToDecimal(View.IdReclamo));
+
+                View.MailContactoTmp = reclamo.EmailContacto;
+                View.CanSendMailToCLient = reclamo.IdEstado == EstadosReclamo.RespuestaAlCliente;
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
+        }
+
         public void AddComentarioReclamo()
         {
             if (string.IsNullOrEmpty(View.IdReclamo)) return;
@@ -98,6 +134,70 @@ namespace Presenters.Reclamos.Presenters
                 var model = GetModel();
 
                 _comentariosRespuestaService.Add(model);
+
+                if (View.UsuariosCopia.Any())
+                {
+                    foreach (var item in View.UsuariosCopia)
+                    {
+                        _reclamoAdoService.InsertUsuarioCopiaComentario(item.Id, string.Format("{0}", model.IdComentario));
+                    }
+                }
+
+                if (View.ArchivosAdjuntos.Any())
+                {
+                    foreach (var archivo in View.ArchivosAdjuntos)
+                    {
+                        var anexo = new TBL_ModuloReclamos_AnexosComentarioRespuesta();
+                        anexo.IdComentarioRespuesta = model.IdComentario;
+                        anexo.NombreArchivo = archivo.Value;
+                        anexo.Archivo = (byte[])archivo.ComplexValue;
+                        anexo.IsActive = true;
+                        anexo.CreateBy = View.UserSession.IdUser;
+                        anexo.CreateOn = DateTime.Now;
+                        anexo.ModifiedBy = View.UserSession.IdUser;
+                        anexo.ModifiedOn = DateTime.Now;
+
+                        _anexosService.Add(anexo);
+                    }
+                }
+
+                LoadComentariosReclamo();
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
+        }
+
+        public void AddComentarioReclamoCliente()
+        {
+            if (string.IsNullOrEmpty(View.IdReclamo)) return;
+
+            try
+            {
+                var model = new TBL_ModuloReclamos_ComentariosRespuesta();
+
+                model.IdReclamo = Convert.ToInt32(View.IdReclamo);
+                model.Asunto = View.Asunto;
+                model.Comentario = View.Comentario;
+                model.IdUsuarioDestino = View.UserSession.IdUser;
+                model.EsComentarioCliente = true;
+                model.EmailDestinatarioCliente = View.MailContacto;
+                model.IsActive = true;
+                model.CreateBy = View.UserSession.IdUser;
+                model.CreateOn = DateTime.Now;
+                model.ModifiedBy = View.UserSession.IdUser;
+                model.ModifiedOn = DateTime.Now;
+
+                _comentariosRespuestaService.Add(model);
+
+                if (View.UsuariosCopia.Any())
+                {
+                    foreach (var item in View.UsuariosCopia)
+                    {
+                        _reclamoAdoService.InsertUsuarioCopiaComentario(item.Id, string.Format("{0}", model.IdComentario));
+                    }
+                }
 
                 if (View.ArchivosAdjuntos.Any())
                 {

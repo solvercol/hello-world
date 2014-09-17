@@ -122,7 +122,7 @@
 
                             <td class="Line" >
                                 <ig:WebNumericEditor    Id="txtCantidadVendidaUnidad" runat="server" 
-                                                        Nullable="false" MinValue="1" Width="100%" />
+                                                        Nullable="false" MinValue="1" Width="100%" HorizontalAlign="Left" />
                             </td>
 
                             <td class="Separador"></td>
@@ -135,7 +135,7 @@
 
                             <td class="Line" >
                                 <ig:WebNumericEditor    Id="txtCantidadReclamadaUnidad" runat="server"
-                                                        Nullable="false" MinValue="1" Width="100%" />
+                                                        Nullable="false" MinValue="1" Width="100%" HorizontalAlign="Left" />
                             </td>
 
                         </tr>
@@ -228,7 +228,7 @@
                             <td class="Line" >
                                 <asp:RadioButtonList ID="rblTipoContacto" runat="server" RepeatColumns="2" RepeatDirection="Horizontal" RepeatLayout="Table">
                                     <asp:ListItem Selected="True" Value="Escrito" Text="Escrito" />
-                                    <asp:ListItem Value="Telefonico" Text="Teléfonoico" />
+                                    <asp:ListItem Value="Telefónico" Text="Telefónico" />
                                 </asp:RadioButtonList>
                             </td>
 

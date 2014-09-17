@@ -67,13 +67,22 @@ namespace Modules.Reclamos.Admin {
         protected global::System.Web.UI.WebControls.Label lblUnidad;
         
         /// <summary>
-        /// lblArea control.
+        /// lblCategoria control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblArea;
+        protected global::System.Web.UI.WebControls.Label lblCategoria;
+        
+        /// <summary>
+        /// lblResponsable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblResponsable;
         
         /// <summary>
         /// lblFechaReclamo control.
@@ -83,15 +92,6 @@ namespace Modules.Reclamos.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblFechaReclamo;
-        
-        /// <summary>
-        /// lblAsesor control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAsesor;
         
         /// <summary>
         /// lblTotalCostoReclamo control.

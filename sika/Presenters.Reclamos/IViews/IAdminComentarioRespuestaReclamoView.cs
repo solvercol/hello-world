@@ -15,6 +15,7 @@ namespace Presenters.Reclamos.IViews
         DateTime FechaComentario { get; set; }
         string NuevoComentario { get; set; }
         string IdUsuarioDestino { get; set; }
+        void LoadUsuariosCopia(List<DTO_ValueKey> items);
 
         // Seccion Info Reclamo
         string IdReclamo { get; set; }
@@ -37,6 +38,9 @@ namespace Presenters.Reclamos.IViews
         string NombreArchivoAdjunto { get; }
         void LoadArchivosAdjuntos(List<DTO_ValueKey> items);
         void DescargarArchivo(DTO_ValueKey archivo);
+
+        // Info Respuesta Edit CLiente
+        bool CanEditRespuestaCliente { get; set; }
 
     }
 }

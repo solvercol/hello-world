@@ -62,10 +62,18 @@
                                     </tr>
                                     <tr>
                                         <td class="SeccionesH3">
-                                            Area:
+                                            Categoría:
                                         </td>
                                         <td class="SeccionesH4">
-                                            <asp:Label ID="lblArea" runat="server" />
+                                            <asp:Label ID="lblCategoria" runat="server" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="SeccionesH3">
+                                            Responsable Reclamo:
+                                        </td>
+                                        <td class="SeccionesH4">
+                                            <asp:Label ID="lblResponsable" runat="server"  />
                                         </td>
                                     </tr>
                                     <tr>
@@ -75,15 +83,7 @@
                                         <td class="SeccionesH4">
                                             <asp:Label ID="lblFechaReclamo" runat="server" />
                                         </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="SeccionesH3">
-                                            Asesor:
-                                        </td>
-                                        <td class="SeccionesH4">
-                                            <asp:Label ID="lblAsesor" runat="server"  />
-                                        </td>
-                                    </tr>
+                                    </tr>                                    
                                     <tr>
                                         <td class="SeccionesH3">
                                             Costo Reclamo:

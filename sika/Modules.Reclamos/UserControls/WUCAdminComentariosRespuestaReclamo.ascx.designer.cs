@@ -22,6 +22,15 @@ namespace Modules.Reclamos.UserControls {
         protected global::System.Web.UI.WebControls.Button btnNuevoComentarioRespuesta;
         
         /// <summary>
+        /// btnNuevoRespuestaCliente control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnNuevoRespuestaCliente;
+        
+        /// <summary>
         /// upContainer control.
         /// </summary>
         /// <remarks>
@@ -76,6 +85,24 @@ namespace Modules.Reclamos.UserControls {
         protected global::System.Web.UI.WebControls.Button btnGuardar;
         
         /// <summary>
+        /// btnGuardarCliente control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGuardarCliente;
+        
+        /// <summary>
+        /// vsComentarios control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary vsComentarios;
+        
+        /// <summary>
         /// txtAsunto control.
         /// </summary>
         /// <remarks>
@@ -112,6 +139,15 @@ namespace Modules.Reclamos.UserControls {
         protected global::System.Web.UI.WebControls.Label lblObservaciones;
         
         /// <summary>
+        /// trInfoDestinatario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow trInfoDestinatario;
+        
+        /// <summary>
         /// wddDestinatarios control.
         /// </summary>
         /// <remarks>
@@ -128,6 +164,96 @@ namespace Modules.Reclamos.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDestinatarios;
+        
+        /// <summary>
+        /// trInfoContacto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow trInfoContacto;
+        
+        /// <summary>
+        /// txtMailContacto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMailContacto;
+        
+        /// <summary>
+        /// lblUsuariosCopiaTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUsuariosCopiaTitle;
+        
+        /// <summary>
+        /// ShowHideUsuariosCopia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ShowHideUsuariosCopia;
+        
+        /// <summary>
+        /// PanelUsuariosCopia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelUsuariosCopia;
+        
+        /// <summary>
+        /// wddUsuarioCopia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Infragistics.Web.UI.ListControls.WebDropDown wddUsuarioCopia;
+        
+        /// <summary>
+        /// btnAddCopia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddCopia;
+        
+        /// <summary>
+        /// lstUsuariosCopia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox lstUsuariosCopia;
+        
+        /// <summary>
+        /// btnRemoveCopia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRemoveCopia;
+        
+        /// <summary>
+        /// cpeCopiarUsuarios control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.CollapsiblePanelExtender cpeCopiarUsuarios;
         
         /// <summary>
         /// fupAnexoArchivo control.

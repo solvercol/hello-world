@@ -8,6 +8,7 @@ using Infrastructure.CrossCutting.NetFramework.Enums;
 using Application.MainModule.Reclamos.IServices;
 using Domain.MainModules.Entities;
 using Application.MainModule.SqlServices.IServices;
+using Domain.MainModule.Reclamos.Enum;
 
 namespace Presenters.Reclamos.Presenters
 {
@@ -53,7 +54,7 @@ namespace Presenters.Reclamos.Presenters
         {
             LoadParametrosGenerales();
             LoadReclamo();
-            LoadCostosReclamo();
+            LoadCostosReclamo();            
         }
 
         void LoadParametrosGenerales()
@@ -104,7 +105,7 @@ namespace Presenters.Reclamos.Presenters
             }
         }
 
-        void LoadReclamo()
+        public void LoadReclamo()
         {
             if (string.IsNullOrEmpty(View.IdReclamo)) return;
 
@@ -138,6 +139,9 @@ namespace Presenters.Reclamos.Presenters
                             View.TarifaFetes = unidadZona.TarifaFletes;
                         }
                     }
+
+                    View.CanEditCostos = (reclamo.IdEstado == EstadosReclamo.EnProceso && reclamo.IdResponsableActual == View.UserSession.IdUser)
+                                         || View.UserSession.IsInRole("Administrador");
                 }
             }
             catch (Exception ex)
@@ -173,6 +177,7 @@ namespace Presenters.Reclamos.Presenters
                     _reclamoService.Modify(reclamo);
 
                     LoadCostosReclamo();
+                    LoadReclamo();
                 }
             }
             catch (Exception ex)

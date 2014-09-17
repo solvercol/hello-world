@@ -237,6 +237,36 @@ namespace Domain.MainModules.Entities
             }
         }
         private System.DateTime _modifiedOn;
+    
+        [DataMember]
+        public bool EsComentarioCliente
+        {
+            get { return _esComentarioCliente; }
+            set
+            {
+                if (_esComentarioCliente != value)
+                {
+                    _esComentarioCliente = value;
+                    OnPropertyChanged("EsComentarioCliente");
+                }
+            }
+        }
+        private bool _esComentarioCliente;
+    
+        [DataMember]
+        public string EmailDestinatarioCliente
+        {
+            get { return _emailDestinatarioCliente; }
+            set
+            {
+                if (_emailDestinatarioCliente != value)
+                {
+                    _emailDestinatarioCliente = value;
+                    OnPropertyChanged("EmailDestinatarioCliente");
+                }
+            }
+        }
+        private string _emailDestinatarioCliente;
 
         #endregion
         #region Navigation Properties

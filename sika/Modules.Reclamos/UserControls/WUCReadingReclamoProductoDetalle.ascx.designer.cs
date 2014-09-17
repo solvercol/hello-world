@@ -31,6 +31,51 @@ namespace Modules.Reclamos.UserControls {
         protected global::System.Web.UI.WebControls.Label lblPlanta;
         
         /// <summary>
+        /// litNombreProducto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litNombreProducto;
+        
+        /// <summary>
+        /// lblPresentacionProducto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPresentacionProducto;
+        
+        /// <summary>
+        /// lblTargetMarketProducto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTargetMarketProducto;
+        
+        /// <summary>
+        /// lblCampoAplicacionProducto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCampoAplicacionProducto;
+        
+        /// <summary>
+        /// lblSubCampoAplicacionProducto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSubCampoAplicacionProducto;
+        
+        /// <summary>
         /// lblCantidadUnidadVendida control.
         /// </summary>
         /// <remarks>
@@ -263,6 +308,15 @@ namespace Modules.Reclamos.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label txtConclusionesPrevias;
+        
+        /// <summary>
+        /// lblSolucionado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSolucionado;
         
         /// <summary>
         /// txtObservacionesSolucion control.
