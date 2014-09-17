@@ -78,7 +78,10 @@ from	TBL_ModuloReclamos_Reclamo reclamo with(nolock)
 			on reclamo.CodigoCliente = cliente.CODIGOCLIENTE
 		left join TBL_ModuloReclamos_CategoriasReclamo categorias with(nolock)
 			on reclamo.IdCategoriaReclamo = categorias.IdCategoriaReclamo
-where	reclamo.CreateOn between @dateFrom and @dateEnd
+where	year(reclamo.FechaReclamo) >= year(@dateFrom)
+		and year(reclamo.FechaReclamo) <= year(@dateEnd)
+		and month(reclamo.FechaReclamo) >= month(@dateFrom)
+		and month(reclamo.FechaReclamo) <= month(@dateEnd)
 			
 update	@TblReport
 set		DescripcionReclamo = DescripcionProducto
