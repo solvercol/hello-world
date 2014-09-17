@@ -20,7 +20,7 @@ namespace Presenters.Reclamos.IViews
         string IdAsesor { get; set; }
         string IdAtendidoPor { get; set; }
         string PedidoRemisionFactura { get; set; }
-        int DiarioInventario { get; set; }        
+        string DiarioInventario { get; set; }        
         string TipoContacto { get; set; }
 
         // Informacion de Cliente

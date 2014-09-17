@@ -235,7 +235,7 @@ namespace Modules.Reclamos.UserControls
         public void SetSelectedProduct(Dto_Producto producto)
         {
             ucFilterProduct.SelectedProduct = producto;
-            ucFilterProduct.NombreProducto = producto.NombreProducto;
+            ucFilterProduct.LoadSelectedProducto(producto);
         }
 
         public void SetSelectedClient(Dto_Cliente cliente)

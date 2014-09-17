@@ -77,7 +77,7 @@
                             <td align="right" style="width:35%" valign="top">                        
                                 <div style="padding:3px; text-align:right;">
                                     <asp:Button ID="btnRegresar" runat="server" Text="Regresar" OnClick="BtnRegresarClick"  />
-                                    <asp:Button ID="btnEdit" runat="server" Text="Editar" OnClick="BtnEditComentarioClick" OnClientClick="return ShowSplashModalLoading();" />
+                                    <asp:Button ID="btnEdit" runat="server" Text="Comentar" OnClick="BtnEditComentarioClick" OnClientClick="return ShowSplashModalLoading();" />
                                     <asp:Button ID="btnCancel" runat="server" Text="Salir" Visible="false" OnClick="BtnCancelComentarioClick" OnClientClick="return ShowSplashModalLoading();" />
                                     <asp:Button ID="btnSave" runat="server" Text="Guardar" Visible="false" OnClick="BtnSaveComentarioClick" OnClientClick="return ShowSplashModalLoading();" />
                                 </div>
@@ -150,7 +150,20 @@
 
                             <td class="Separador"></td>
                         </tr>
-                        <tr id="tr1" runat="server">
+                        <tr id="trUsuariosCopia" runat="server">
+                            <th style=" text-align:left; vertical-align:top">
+                                Usuarios Copia :
+                            </th>
+
+                            <td class="Separador"></td>
+
+                            <td class="Line" >
+                                <asp:ListBox ID="lstUsuariosCopia" runat="server" SelectionMode="Single" Width="98%" Height="80px" />
+                            </td>
+
+                            <td class="Separador"></td>
+                        </tr>
+                        <tr id="trComentariosRespuesta" runat="server">
                             <th style="text-align:left; vertical-align:top">
                                 Comentarios y Respuestas :
                             </th>

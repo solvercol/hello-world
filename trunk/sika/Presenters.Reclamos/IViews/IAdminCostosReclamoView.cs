@@ -55,5 +55,8 @@ namespace Presenters.Reclamos.IViews
 
         // Fletes Reclamo
         decimal TarifaFetes { get; set; }
+
+        // Controles Edicion
+        bool CanEditCostos { get; set; }
     }
 }

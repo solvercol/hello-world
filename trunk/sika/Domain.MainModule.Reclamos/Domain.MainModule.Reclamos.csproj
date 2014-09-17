@@ -63,6 +63,7 @@
     <Compile Include="DTO\Dto_Asesor.cs" />
     <Compile Include="DTO\Dto_Cliente.cs" />
     <Compile Include="DTO\Dto_Producto.cs" />
+    <Compile Include="Enum\EstadosReclamo.cs" />
     <Compile Include="Enum\TipoReclamo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ITBL_Moduloreclamos_ReclamoDomainServices.cs" />

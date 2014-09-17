@@ -41,7 +41,7 @@ namespace Domain.MainModules.Entities
         /// <returns></returns>
         public virtual bool IsInRole(string roleName)
         {
-            return _tBL_Admin_Roles.Any(x => x.NombreRol.Equals(roleName));
+            return _tBL_Admin_Roles1.Any(x => x.NombreRol.Equals(roleName));
         }
 
         public bool IsInRoleId(int idRol)

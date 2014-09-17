@@ -51,6 +51,7 @@ namespace Modules.Reclamos.UserControls
         {
             Presenter.LoadInitData();
             EditCostos(false);
+            Presenter.LoadReclamo();
             txtFilterProduct.Attributes.Add("onkeypress", "return clickButtonProduct(event,'" + btnFiltrar.ClientID + "')");
         }
 
@@ -87,6 +88,18 @@ namespace Modules.Reclamos.UserControls
 
         protected void BtnSaveCosto_Click(object sender, EventArgs e)
         {
+            var messages = new List<string>();
+
+            if (SelectedProduct == null || string.IsNullOrEmpty(SelectedProduct.CodigoProducto))
+                messages.Add("Es necesario seleccionar un producto.");
+
+            if (messages.Any())
+            {
+                AddErrorMessages(messages);
+                ShowAdminProductoWindow(true);
+                return;
+            }
+
             EditCostos(true);
             Presenter.AddCostosReclamo();            
         }
@@ -293,6 +306,23 @@ namespace Modules.Reclamos.UserControls
         #endregion
 
         #region Methods
+
+        void AddErrorMessages(List<string> messages)
+        {
+            if (messages.Any())
+            {
+                foreach (var msg in messages)
+                {
+                    var custVal = new CustomValidator();
+                    custVal.IsValid = false;
+                    custVal.ErrorMessage = msg;
+                    custVal.EnableClientScript = false;
+                    custVal.Display = ValidatorDisplay.None;
+                    custVal.ValidationGroup = "vsCostos";
+                    this.Page.Form.Controls.Add(custVal);
+                }
+            }
+        }
 
         void InitAdminProducto()
         {
@@ -719,8 +749,20 @@ namespace Modules.Reclamos.UserControls
             }
         }
 
+        public bool CanEditCostos
+        {
+            get
+            {
+                return btnEditar.Visible;
+            }
+            set
+            {
+                btnEditar.Visible = value;
+            }
+        }
+
         #endregion
 
-        #endregion           
+        #endregion    
     }
 }

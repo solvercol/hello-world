@@ -416,15 +416,15 @@ namespace Modules.Reclamos.UserControls
             }
         }
 
-        public int DiarioInventario
+        public string DiarioInventario
         {
             get
             {
-                return txtDiarioInventario.ValueInt;
+                return txtDiarioInventario.Text;
             }
             set
             {
-                txtDiarioInventario.ValueInt = value;
+                txtDiarioInventario.Text = value;
             }
         }
 

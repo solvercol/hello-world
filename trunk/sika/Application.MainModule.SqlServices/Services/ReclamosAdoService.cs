@@ -96,6 +96,19 @@ namespace Application.MainModule.SqlServices.Services
             }
         }
 
+        public void InsertUsuarioCopiaComentario(string idUsuario, string idComentario)
+        {
+            var sql = string.Format("insert into TBL_ModuloReclamos_UsuarioCopiaComentariosRespuesta(IdUsuario,IdComentario) values({0},{1})", idUsuario, idComentario);
+            try
+            {
+                _sql.ExecuteNonquery(sql, CommandType.Text);
+            }
+            catch (Exception ex)
+            {
+                throw new SqlExecutionException("InsertUsuarioCopiaComentario", ex);
+            }
+        }
+
         public string EstadoReclamo(string idreclamo)
         {
             var oreclamo = new Reclamos(_sql);

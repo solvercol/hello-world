@@ -8,10 +8,10 @@ using Applications.MainModule.WorkFlow.DTO;
 using ASP.NETCLIENTE.UI;
 using Domain.MainModules.Entities;
 using Infrastructure.CrossCutting.NetFramework.Structures;
+using Modules.Reclamos.UI;
 using Modules.Reclamos.UserControls;
 using Presenters.Reclamos.IViews;
 using Presenters.Reclamos.Presenters;
-using Modules.Reclamos.UI;
 
 namespace Modules.Reclamos.Admin
 {
@@ -544,15 +544,15 @@ namespace Modules.Reclamos.Admin
             }
         }
 
-        public string Area
+        public string Categoria
         {
             get
             {
-                return lblArea.Text;
+                return lblCategoria.Text;
             }
             set
             {
-                lblArea.Text = value;
+                lblCategoria.Text = value;
             }
         }
 
@@ -568,15 +568,15 @@ namespace Modules.Reclamos.Admin
             }
         }
 
-        public string Asesor
+        public string Responsable
         {
             get
             {
-                return lblAsesor.Text;
+                return lblResponsable.Text;
             }
             set
             {
-                lblAsesor.Text = value;
+                lblResponsable.Text = value;
             }
         }
 
@@ -595,7 +595,5 @@ namespace Modules.Reclamos.Admin
         #endregion
 
         #endregion
-
-       
     }
 }

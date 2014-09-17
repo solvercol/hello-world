@@ -19,9 +19,9 @@ namespace Presenters.Reclamos.IViews
         string TitleReclamo { get; set; }
         string TitleReclamoFrom { get; set; }
         string Unidad { get; set; }
-        string Area { get; set; }
+        string Categoria { get; set; }
         string FechaReclamo { get; set; }
-        string Asesor { get; set; }
+        string Responsable { get; set; }
         string TotalCostoReclamo { get; set; }
         string IdCategoria { get; set; }
         bool VerCrearAccion { set; }

@@ -15,14 +15,17 @@ AS
 --declare @CodProducto nvarchar(50)
 --set @CodProducto = 'T514148-J087'
 
-SELECT	CODIGOPRODUCTO
-		,PRODUCTO
-		,UNIDAD
-		,PESONETO
-		,PRECIOLISTA
-		,GRUPOCOMPRADORES
-		,CAMPOAPL
-		,CATEGORIA
-		,SUBCATEGORIA
-FROM	Sika_SolverNET..Productos
+SELECT	producto.CODIGOPRODUCTO
+		,producto.PRODUCTO
+		,producto.UNIDAD
+		,producto.PESONETO
+		,producto.PRECIOLISTA
+		,producto.GRUPOCOMPRADORES
+		,producto.CAMPOAPL
+		,producto.CATEGORIA
+		,producto.SUBCATEGORIA
+		,categoria.IdCategoria
+FROM	Sika_SolverNET..Productos producto with(nolock)
+		left join TBL_ModuloReclamos_CategoriaProducto categoria with(nolock)
+			on upper(producto.CATEGORIA) = upper(categoria.Nombre)
 WHERE	CODIGOPRODUCTO = @CodProducto

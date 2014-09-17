@@ -71,15 +71,32 @@ namespace Presenters.Reclamos.Presenters
                 if (model != null)
                 {
                     View.Asunto = model.Asunto;
-                    View.Mensaje = model.Comentario;
+                    View.Mensaje = model.Comentario;                    
                     View.Destinatario = model.TBL_Admin_Usuarios2.Nombres;
                     View.FechaComentario = model.CreateOn;
                     View.IdUsuarioDestino = model.CreateBy.ToString();
+
+                    var usuariosCopia = new List<DTO_ValueKey>();
+                    if (model.TBL_Admin_Usuarios3.Any())
+                    {
+                        foreach (var itm in model.TBL_Admin_Usuarios3)
+                        {
+                            var usuarioCopia = new DTO_ValueKey() { Id = itm.IdUser.ToString(), Value = itm.Nombres };
+                            usuariosCopia.Add(usuarioCopia);
+                        }
+                    }
+                    View.LoadUsuariosCopia(usuariosCopia);
 
                     View.EnableEdit(false);
                     LoadComentarioRelacionados();
                     LoadArhchivosAdjuntos();
                     LoadReclamo(model.IdReclamo);
+
+                    if (model.EsComentarioCliente)
+                    {
+                        View.Destinatario = model.EmailDestinatarioCliente;
+                        View.CanEditRespuestaCliente = false;
+                    }
                 }
             }
             catch (Exception ex)
@@ -250,6 +267,7 @@ namespace Presenters.Reclamos.Presenters
                         archivo.Id = string.Format("{0}", anexo.IdAnexoComentarioRespuesta);
                         archivo.Value = anexo.NombreArchivo;
                         archivo.ComplexValue = anexo.Archivo;
+                        archivo.CreateBy = anexo.CreateBy;
 
                         archivosAdjuntos.Add(archivo);
                     }

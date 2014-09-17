@@ -1289,8 +1289,10 @@ text-transform:uppercase;
 
 .FondoGrisSeccionesMenu
 {
+    /*
     margin-top:5px;
     background-color:#808080;
+    */
     border-bottom:2px solid #808080;
     vertical-align:middle;
 }
@@ -1446,6 +1448,7 @@ text-transform:uppercase;
     cursor: pointer;    
     color:#ffffff;
     height:25px;
+    line-height:25px;
 }
 
 .TitleLoginMensaje

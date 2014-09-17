@@ -81,6 +81,18 @@ namespace Modules.Reclamos.UserControls
 
         protected void BtnSaveActividad_Click(object sender, EventArgs e)
         {
+            var messages = new List<string>();
+
+            if (string.IsNullOrEmpty(Descripcion))
+                messages.Add("Es necesario ingresar una descripción.");
+
+            if (messages.Any())
+            {
+                AddErrorMessages(messages);
+                ShowAdminActividadWindow(true);
+                return;
+            }
+
             if (IsNewActividad)
                 Presenter.AddActividadReclamo();
             else
@@ -170,8 +182,12 @@ namespace Modules.Reclamos.UserControls
                 var hddIdActividad = e.Item.FindControl("hddIdActividad") as HiddenField;
                 if (hddIdActividad != null) hddIdActividad.Value = string.Format("{0}", item.IdActividad);
 
-                var lblDescripcion = e.Item.FindControl("lblDescripcion") as Label;
-                if (lblDescripcion != null) lblDescripcion.Text = string.Format("{0}", item.Descripcion);
+                var lblActividad = e.Item.FindControl("lblActividad") as Label;
+                if (lblActividad != null)
+                {
+                    if (item.TBL_ModuloReclamos_ActividadesReclamo != null)
+                        lblActividad.Text = string.Format("{0}", item.TBL_ModuloReclamos_ActividadesReclamo.Nombre);
+                }
 
                 var lblFechaActividad = e.Item.FindControl("lblFechaActividad") as Label;
                 if (lblFechaActividad != null) lblFechaActividad.Text = string.Format("{0:dd/MM/yyyy hh:mm:ss tt}", item.Fecha);
@@ -228,6 +244,23 @@ namespace Modules.Reclamos.UserControls
         #endregion
 
         #region Methods
+
+        void AddErrorMessages(List<string> messages)
+        {
+            if (messages.Any())
+            {
+                foreach (var msg in messages)
+                {
+                    var custVal = new CustomValidator();
+                    custVal.IsValid = false;
+                    custVal.ErrorMessage = msg;
+                    custVal.EnableClientScript = false;
+                    custVal.Display = ValidatorDisplay.None;
+                    custVal.ValidationGroup = "vsActividades";
+                    this.Page.Form.Controls.Add(custVal);
+                }
+            }
+        }
 
         void InitAdminActividad()
         {
@@ -522,6 +555,18 @@ namespace Modules.Reclamos.UserControls
             set
             {
                 Session["AdminActividades_ArchivosAdjuntos"] = value;
+            }
+        }
+
+        public bool CanEditActividades
+        {
+            get
+            {
+                return btnNuevoActividad.Visible;
+            }
+            set
+            {
+                btnNuevoActividad.Visible = value;
             }
         }
 

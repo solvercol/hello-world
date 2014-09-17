@@ -34,6 +34,18 @@ namespace Modules.Reclamos.UserControls
 
         protected void BtnSaveSolucion_Click(object sender, EventArgs e)
         {
+            var messages = new List<string>();
+
+            if (string.IsNullOrEmpty(Observaciones))
+                messages.Add("Es necesario ingresar una descripción de solución.");
+
+            if (messages.Any())
+            {
+                AddErrorMessages(messages);
+                ShowAdminSolucionWindow(true);
+                return;
+            }
+
             if (IsNewSolucion)
                 Presenter.AddSolucionReclamo();
             else
@@ -176,6 +188,23 @@ namespace Modules.Reclamos.UserControls
         #endregion
 
         #region Methods
+
+        void AddErrorMessages(List<string> messages)
+        {
+            if (messages.Any())
+            {
+                foreach (var msg in messages)
+                {
+                    var custVal = new CustomValidator();
+                    custVal.IsValid = false;
+                    custVal.ErrorMessage = msg;
+                    custVal.EnableClientScript = false;
+                    custVal.Display = ValidatorDisplay.None;
+                    custVal.ValidationGroup = "vsSoluciones";
+                    this.Page.Form.Controls.Add(custVal);
+                }
+            }
+        }
 
         void InitAdminSolucion()
         {
@@ -321,6 +350,18 @@ namespace Modules.Reclamos.UserControls
             set
             {
                 Session["AdminSolucion_ArchivosAdjuntos"] = value;
+            }
+        }
+
+        public bool CanEditSoluciones
+        {
+            get
+            {
+                return btnNuevoSolucion.Visible;
+            }
+            set
+            {
+                btnNuevoSolucion.Visible = value;
             }
         }
 

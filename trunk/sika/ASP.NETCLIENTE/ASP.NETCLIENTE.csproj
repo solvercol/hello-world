@@ -258,6 +258,8 @@
     <Content Include="Resources\Images\cs.gif" />
     <Content Include="Resources\Images\doc.gif" />
     <Content Include="Resources\Images\edit.png" />
+    <Content Include="Resources\Images\emailcliente.png" />
+    <Content Include="Resources\Images\emailcliente2.png" />
     <Content Include="Resources\Images\exe.gif" />
     <Content Include="Resources\Images\Expand.gif" />
     <Content Include="Resources\Images\expand.png" />

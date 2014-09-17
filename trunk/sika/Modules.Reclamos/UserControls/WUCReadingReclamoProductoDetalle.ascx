@@ -29,10 +29,66 @@
             <asp:Label ID="lblPlanta" runat="server" />
         </td>
 
+    </tr>
+    <tr>
+        <th style="width: 10%; text-align:left">
+            Producto :
+        </th>
+
+        <td class="Separador"></td>
+
+        <td colspan="5">
+            <table width="100%" >
+                <tr>
+                    <td style="width:95%; font-size:12pt; color:#000090;" align="left" class="Line">
+                        <asp:Literal ID="litNombreProducto" runat="server"></asp:Literal>
+                    </td>
+                    <td style="width:2%;"></td>
+                    <td valign="middle" style="width:3%;" align="center">
+                    </td>
+                </tr>    
+                <tr>
+                    <td colspan="2">
+                        <table width="100%" class="tbl">
+                            <tr>
+                                <th style="width:20%; text-align:center">
+                                    Presentación
+                                </th>
+                                <th style="width:20%; text-align:center">
+                                    Target Market
+                                </th>
+                                <th style="width:30%; text-align:center">
+                                    Campo de Aplicación
+                                </th>
+                                <th style="width:30%; text-align:center">
+                                    SubCampo de Aplicación
+                                </th>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center">
+                                    <asp:Label ID="lblPresentacionProducto" runat="server" />
+                                </td>
+                                <td style="text-align:center">
+                                    <asp:Label ID="lblTargetMarketProducto" runat="server" />
+                                </td>
+                                <td style="text-align:center">
+                                    <asp:Label ID="lblCampoAplicacionProducto" runat="server" />
+                                </td>
+                                <td style="text-align:center">
+                                    <asp:Label ID="lblSubCampoAplicacionProducto" runat="server" />
+                                </td>
+                            </tr>
+                        </table>            
+                    </td>
+                    <td valign="middle" style="width:3%;" align="center">
+                    </td>
+                </tr>               
+            </table>
+        </td>
     </tr>    
     <tr>
         <th style="text-align:left">
-            Cantidad Vendida Und :
+            Cant. Vendida Und :
         </th>
 
         <td class="Separador"></td>
@@ -44,7 +100,7 @@
         <td class="Separador"></td>
 
         <th style="text-align:left">
-            Cantidad Reclamada Und :
+            Cant. Reclamada Und :
         </th>
 
         <td class="Separador"></td>
@@ -415,6 +471,16 @@
         <td colspan="7" class="TituloSeccion">
             Solución
         </td>
+    </tr>
+    <tr>
+        <th style="text-align:left">
+            Solucionado? :
+        </th>
+        <td class="Separador"></td>
+        <td colspan="4" class="Line">
+            <asp:Label ID="lblSolucionado" runat="server"  />
+        </td>      
+        <td class="Separador"></td>      
     </tr>
     <tr>
         <th style="text-align:left">

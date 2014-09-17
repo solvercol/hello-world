@@ -90,7 +90,7 @@
 
 <asp:UpdatePanel ID="upModal" runat="server">
     <ContentTemplate> 
-        <asp:Panel ID="pnlAdminAlternativa"  runat="server" CssClass="popup_Container" Width="500" Height="430" style="display:none;">  
+        <asp:Panel ID="pnlAdminAlternativa"  runat="server" CssClass="popup_Container" Width="500" Height="580" style="display:none;">  
 
             <div class="popup_Titlebar" id="PopupHeader">
                 <div class="TitlebarLeft">
@@ -104,6 +104,8 @@
                 <asp:Button ID="btnRegresar" runat="server" Text="Regresar"  />
                 <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="BtnSaveAlternativa_Click"  />
             </div>
+
+            <asp:ValidationSummary ID="vsAlternativas" runat="server" DisplayMode="BulletList" ShowMessageBox="false" CssClass="validator" ShowSummary="true" ValidationGroup="vsAlternativas"/>
 
             <div class="popup_Body">                                                    
                 <table width="100%" class="tblSecciones">

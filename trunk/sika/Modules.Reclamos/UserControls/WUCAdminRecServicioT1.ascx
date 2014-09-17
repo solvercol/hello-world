@@ -134,8 +134,7 @@
                             <td class="Separador"></td>
 
                             <td class="Line" >
-                                <ig:WebNumericEditor    Id="txtDiarioInventario" runat="server" 
-                                                        Nullable="false" MinValue="0" Width="100%" />
+                                <asp:TextBox ID="txtDiarioInventario" runat="server" Width="90%" MaxLength="512" />
                             </td>
                         </tr>
                         <tr>
@@ -181,7 +180,7 @@
                             <td class="Line" >
                                 <asp:RadioButtonList ID="rblTipoContacto" runat="server" RepeatColumns="2" RepeatDirection="Horizontal" RepeatLayout="Table">
                                     <asp:ListItem Selected="True" Value="Escrito" Text="Escrito" />
-                                    <asp:ListItem Value="Telefonico" Text="Teléfonoico" />
+                                    <asp:ListItem Value="Telefónico" Text="Telefónico" />
                                 </asp:RadioButtonList>
                             </td>
 

@@ -189,7 +189,7 @@ namespace Modules.Reclamos.Admin
                 if (imgDeleteAnexo != null)
                 {
                     imgDeleteAnexo.CommandArgument = string.Format("{0}", item.Id);
-                    imgDeleteAnexo.Visible = CanEdit;
+                    imgDeleteAnexo.Visible = CanEdit && item.CreateBy == UserSession.IdUser;
                 }
             }
         }
@@ -235,6 +235,16 @@ namespace Modules.Reclamos.Admin
             wddDestinatarios.DataBind();
         }
 
+        public void LoadUsuariosCopia(List<DTO_ValueKey> items)
+        {
+            lstUsuariosCopia.DataSource = items;
+            lstUsuariosCopia.DataValueField = "Id";
+            lstUsuariosCopia.DataTextField = "Value";
+            lstUsuariosCopia.DataBind();
+
+            trUsuariosCopia.Visible = items.Any();
+        }
+
         public void LoadArchivosAdjuntos(List<DTO_ValueKey> items)
         {
             rptArchivosAdjuntos.DataSource = items;
@@ -247,6 +257,8 @@ namespace Modules.Reclamos.Admin
         {
             rptComentariosAsociados.DataSource = items;
             rptComentariosAsociados.DataBind();
+
+            trComentariosRespuesta.Visible = items.Any();
         }
 
         public void DescargarArchivo(DTO_ValueKey archivo)
@@ -465,6 +477,18 @@ namespace Modules.Reclamos.Admin
             set
             {
                 wddDestinatarios.SelectedValue = value;
+            }
+        }
+
+        public bool CanEditRespuestaCliente
+        {
+            get
+            {
+                return btnEdit.Visible;
+            }
+            set
+            {
+                btnEdit.Visible = value;
             }
         }
 

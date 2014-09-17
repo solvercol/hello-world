@@ -8,6 +8,7 @@ using Applications.MainModule.Admin.IServices;
 using Domain.MainModules.Entities;
 using Infrastructure.CrossCutting.NetFramework.Enums;
 using Presenters.Reclamos.IViews;
+using Domain.MainModule.Reclamos.Enum;
 
 namespace Presenters.Reclamos.Presenters
 {
@@ -42,9 +43,31 @@ namespace Presenters.Reclamos.Presenters
 
         public void LoadInitData()
         {
-            LoadSolucionesReclamo();
+            LoadReclamo();
             LoadDepartamentosSolucion();
+            LoadSolucionesReclamo();            
         }
+
+        void LoadReclamo()
+        {
+            if (string.IsNullOrEmpty(View.IdReclamo)) return;
+
+            try
+            {
+                var reclamo = _reclamoService.GetReclamoById(Convert.ToDecimal(View.IdReclamo));
+
+                if (reclamo != null)
+                {
+                    View.CanEditSoluciones = (reclamo.IdEstado == EstadosReclamo.EnProceso && reclamo.IdResponsableActual == View.UserSession.IdUser)
+                                         || View.UserSession.IsInRole("Administrador");
+                }
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
+        }
+
 
         void LoadSolucionesReclamo()
         {
@@ -55,6 +78,26 @@ namespace Presenters.Reclamos.Presenters
                 var items = _solucionesReclamo.GetByIdReclamo(Convert.ToDecimal(View.IdReclamo));
 
                 View.LoadSolucionesReclamo(items);
+
+                CheckIndicadorSolucionReclamo(items);
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
+        }
+
+        void CheckIndicadorSolucionReclamo(List<TBL_ModuloReclamos_Soluciones> items)
+        {
+            if (string.IsNullOrEmpty(View.IdReclamo)) return;
+
+            try
+            {
+                var reclamo = _reclamoService.GetReclamoById(Convert.ToDecimal(View.IdReclamo));
+
+                reclamo.IndicadorSol = items.Any();
+
+                _reclamoService.Modify(reclamo);
             }
             catch (Exception ex)
             {

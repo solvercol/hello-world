@@ -258,7 +258,7 @@ namespace Presenters.Reclamos.Presenters
                 model.Planta = View.Planta;
                 model.IdAsesoradoPor = Convert.ToInt32(View.IdAsesor);
                 model.IdAtendidoPor = Convert.ToInt32(View.IdAtendidoPor);
-                model.TipoContrato = View.TipoContacto;
+                model.TipoContacto = View.TipoContacto;
                 model.CodigoCliente = View.SelectedCliente.CodigoCliente;
                 model.UnidadZona = View.UnidadZona;
                 model.Contacto = View.NombreContacto;
@@ -307,7 +307,7 @@ namespace Presenters.Reclamos.Presenters
                 View.Planta = model.Planta;
                 View.IdAsesor = model.IdAsesoradoPor.ToString();
                 View.IdAtendidoPor = model.IdAtendidoPor.ToString();
-                View.TipoContacto = model.TipoContrato;
+                View.TipoContacto = model.TipoContacto;
                 View.SelectedCliente.CodigoCliente = model.CodigoCliente;
                 View.UnidadZona = model.UnidadZona;
                 View.NombreContacto = model.Contacto;
@@ -342,7 +342,7 @@ namespace Presenters.Reclamos.Presenters
             model.Planta = View.Planta;
             model.IdAsesoradoPor = Convert.ToInt32(View.IdAsesor);
             model.IdAtendidoPor = Convert.ToInt32(View.IdAtendidoPor);
-            model.TipoContrato = View.TipoContacto;
+            model.TipoContacto = View.TipoContacto;
             model.CodigoCliente = View.SelectedCliente.CodigoCliente;
             model.UnidadZona = View.UnidadZona;
             model.Contacto = View.NombreContacto;

@@ -21,6 +21,7 @@ namespace Domain.MainModule.Reclamos.DTO
         public string CampoApl { get; set; }
         public string Categoria { get; set; }
         public string SubCategoria { get; set; }
+        public int? IdCategoriaProducto { get; set; }
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {            

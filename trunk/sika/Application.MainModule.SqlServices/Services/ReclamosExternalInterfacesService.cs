@@ -82,6 +82,10 @@ namespace Application.MainModule.SqlServices.Services
                 producto.CampoApl = string.Format("{0}", dt.Rows[i]["CAMPOAPL"]);
                 producto.Categoria = string.Format("{0}", dt.Rows[i]["CATEGORIA"]);
                 producto.SubCategoria = string.Format("{0}", dt.Rows[i]["SUBCATEGORIA"]);
+                if (dt.Rows[i]["IdCategoria"] != null && !string.IsNullOrEmpty(dt.Rows[i]["IdCategoria"].ToString()))
+                {
+                    producto.IdCategoriaProducto = Convert.ToInt32(dt.Rows[i]["IdCategoria"]);
+                }
             }
 
             return producto;
