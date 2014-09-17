@@ -1289,8 +1289,8 @@ text-transform:uppercase;
 
 .FondoGrisSeccionesMenu
 {
+    margin-top:3px;
     /*
-    margin-top:5px;
     background-color:#808080;
     */
     border-bottom:2px solid #808080;

@@ -156,7 +156,10 @@ from	TBL_ModuloReclamos_Alternativas alternativa with(nolock)
 			on reclamo.CodigoCliente = cliente.CODIGOCLIENTE
 		left join TBL_ModuloReclamos_CategoriasReclamo categorias with(nolock)
 			on reclamo.IdCategoriaReclamo = categorias.IdCategoriaReclamo
-where	alternativa.FechaAlternativa between @dateFrom and @dateEnd
+where	year(alternativa.FechaAlternativa) >= year(@dateFrom)
+		and year(alternativa.FechaAlternativa) <= year(@dateEnd)
+		and month(alternativa.FechaAlternativa) >= month(@dateFrom)
+		and month(alternativa.FechaAlternativa) <= month(@dateEnd)
 		and reclamo.NumeroReclamo like '%' + case @NoReclamo when '' then reclamo.NumeroReclamo else @NoReclamo end + '%'
 		and (
 				isnull(cliente.CLIENTE,'') like '%' + case @Cliente when '' then isnull(cliente.CLIENTE,'') else @Cliente end + '%'
