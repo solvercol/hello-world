@@ -160,7 +160,7 @@ namespace Presenters.Reclamos.Presenters
 
                 if (reclamo != null)
                 {
-                    reclamo.CostoReposicionProducto = View.TotalCostosReclamo;
+                    reclamo.CostoReposicionProducto = View.CostoProductoReclamo;
                     reclamo.CostoTransporteMateriales = View.CostoTransporte;
                     reclamo.CostoDisposicion = View.CostoDisposicion;
                     reclamo.CostoPruebas = View.CostoPruebasCampo;
