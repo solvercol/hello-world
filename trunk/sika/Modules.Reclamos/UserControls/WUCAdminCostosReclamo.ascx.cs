@@ -51,7 +51,6 @@ namespace Modules.Reclamos.UserControls
         {
             Presenter.LoadInitData();
             EditCostos(false);
-
             txtFilterProduct.Attributes.Add("onkeypress", "return clickButtonProduct(event,'" + btnFiltrar.ClientID + "')");
         }
 
@@ -63,7 +62,6 @@ namespace Modules.Reclamos.UserControls
         {
             EditCostos(true);
             Presenter.LoadCostosReclamo();
-            //Presenter.LoadReclamo();
         }
 
         protected void BtnSaveCostos_Click(object sender, EventArgs e)

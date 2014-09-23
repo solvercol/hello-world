@@ -75,13 +75,13 @@ namespace Modules.Reclamos.UserControls
             var litPesoNeto = e.Item.FindControl("litPesoNeto") as Literal;
             if (litPesoNeto != null)
             {
-                litPesoNeto.Text = string.Format("{0:0,0.00}", item.PesoNeto);
+                litPesoNeto.Text = string.Format("{0:0,0.0}", item.PesoNeto);
             }
 
             var litPrecioLista = e.Item.FindControl("litPrecioLista") as Literal;
             if (litPrecioLista != null)
             {
-                litPrecioLista.Text = string.Format("{0:0,0.00}", item.PrecioLista);
+                litPrecioLista.Text = string.Format("{0:0,0.0}", item.PrecioLista);
             }
 
             var litTargetMarket = e.Item.FindControl("litTargetMarket") as Literal;
