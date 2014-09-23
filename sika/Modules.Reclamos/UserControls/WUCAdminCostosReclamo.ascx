@@ -19,6 +19,9 @@
     }
 </script>
 
+<asp:UpdatePanel ID="upInfoCostosReclamo" runat="server">
+<ContentTemplate>
+
 <table width="100%">
     <tr class="SectionMainTitle">
         <td >
@@ -536,3 +539,6 @@ PopupControlID="pnlImgProducto"
 BackgroundCssClass="ModalPopupBG" DropShadow="true"
 > 
 </ajaxToolkit:ModalPopupExtender>
+
+</ContentTemplate>
+</asp:UpdatePanel>
