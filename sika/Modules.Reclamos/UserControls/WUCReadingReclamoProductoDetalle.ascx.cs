@@ -62,7 +62,7 @@ namespace Modules.Reclamos.UserControls
             }
             set
             {
-                lblCantidadUnidadVendida.Text = string.Format("{0:0,0.0}", value);
+                lblCantidadUnidadVendida.Text = string.Format("{0}", value);
             }
         }
 
@@ -74,7 +74,7 @@ namespace Modules.Reclamos.UserControls
             }
             set
             {
-                lblCantidadReclamadaUnidad.Text = string.Format("{0:0,0.0}", value);
+                lblCantidadReclamadaUnidad.Text = string.Format("{0}", value);
             }
         }
 
