@@ -89,8 +89,23 @@ namespace Application.MainModule.Reclamos.Services
 
             Specification<TBL_ModuloReclamos_UnidadesZonas> specification = new DirectSpecification<TBL_ModuloReclamos_UnidadesZonas>(u => u.IdUnidad == id);
 
-            return _TBLModuloReclamosUnidadesZonasRepository.GetEntityBySpec(specification);
+            return _TBLModuloReclamosUnidadesZonasRepository.GetUnidadZonaBySpec(specification);
            
+         }
+
+         public TBL_ModuloReclamos_UnidadesZonas FindById(int IdUnidad, int IdZona, int IdGerente)
+         {
+             if (IdUnidad == 0)
+                 throw new ArgumentNullException(string.Format("Busqueda por IdUnidad : El parametro es nulo."));
+             if (IdZona == 0)
+                 throw new ArgumentNullException(string.Format("Busqueda por IdZona : El parametro es nulo."));
+             if (IdGerente == 0)
+                 throw new ArgumentNullException(string.Format("Busqueda por IdGerente : El parametro es nulo."));
+
+             Specification<TBL_ModuloReclamos_UnidadesZonas> specification = new DirectSpecification<TBL_ModuloReclamos_UnidadesZonas>(u => u.IdUnidad == IdUnidad && u.IdZona == IdZona && u.IdGerente == IdGerente);
+
+             return _TBLModuloReclamosUnidadesZonasRepository.GetUnidadZonaBySpec(specification);
+
          }
 
 		 /*
@@ -128,9 +143,57 @@ namespace Application.MainModule.Reclamos.Services
                 throw new ArgumentException(Resources.Messages.exception_InvalidPageCount, "pageCount");
 
 
-            Specification<TBL_ModuloReclamos_UnidadesZonas> onlyEnabledSpec = new DirectSpecification<TBL_ModuloReclamos_UnidadesZonas>(u => u.IsActive);
+            Specification<TBL_ModuloReclamos_UnidadesZonas> onlyEnabledSpec = new DirectSpecification<TBL_ModuloReclamos_UnidadesZonas>(u => u.IdUnidad != null);
 
             return _TBLModuloReclamosUnidadesZonasRepository.GetPagedElements(pageIndex, pageCount, u => u.CreateOn, onlyEnabledSpec, true).ToList();
+         }
+
+         public List<TBL_ModuloReclamos_UnidadesZonas> FindPaged(int pageIndex, int pageCount, string search)
+         {
+             if (pageIndex < 0)
+                 throw new ArgumentException(Resources.Messages.exception_InvalidPageIndex, "pageIndex");
+
+             if (pageCount <= 0)
+                 throw new ArgumentException(Resources.Messages.exception_InvalidPageCount, "pageCount");
+
+
+             if (!string.IsNullOrEmpty(search))
+             {
+                 Specification<TBL_ModuloReclamos_UnidadesZonas> onlyEnabledSpec = new DirectSpecification<TBL_ModuloReclamos_UnidadesZonas>
+                    (u => (u.Descripcion.Contains(search) ||
+                    u.TBL_ModuloReclamos_Unidad.Nombre.Contains(search) ||
+                    u.TBL_ModuloReclamos_Zona.Descripcion.Contains(search) ||
+                    u.TBL_Admin_Usuarios1.Nombres.Contains(search)));
+
+
+                 return _TBLModuloReclamosUnidadesZonasRepository.GetPagedElements(pageIndex, pageCount, u => u.CreateOn, onlyEnabledSpec, true).ToList();
+             }
+             else
+             {
+                 Specification<TBL_ModuloReclamos_UnidadesZonas> onlyEnabledSpec = new DirectSpecification<TBL_ModuloReclamos_UnidadesZonas>(u => u.IdUnidad != null);
+
+                 return _TBLModuloReclamosUnidadesZonasRepository.GetPagedElements(pageIndex, pageCount, u => u.CreateOn, onlyEnabledSpec, true).ToList();
+             }
+         }
+
+         public int CountByPaged(string search)
+         {
+             if (!string.IsNullOrEmpty(search))
+             {
+
+                 Specification<TBL_ModuloReclamos_UnidadesZonas> onlyEnabledSpec = new DirectSpecification<TBL_ModuloReclamos_UnidadesZonas>
+                    (u => (u.Descripcion.Contains(search) ||
+                    u.TBL_ModuloReclamos_Unidad.Nombre.Contains(search) ||
+                    u.TBL_ModuloReclamos_Zona.Descripcion.Contains(search) ||
+                    u.TBL_Admin_Usuarios1.Nombres.Contains(search)));
+                 return _TBLModuloReclamosUnidadesZonasRepository.GetBySpec(onlyEnabledSpec).Count();
+             }
+             else
+             {
+                 Specification<TBL_ModuloReclamos_UnidadesZonas> onlyEnabledSpec = new DirectSpecification<TBL_ModuloReclamos_UnidadesZonas>(u => u.IdUnidad != null);
+
+                 return _TBLModuloReclamosUnidadesZonasRepository.GetBySpec(onlyEnabledSpec).Count();
+             }
          }
 
          #endregion

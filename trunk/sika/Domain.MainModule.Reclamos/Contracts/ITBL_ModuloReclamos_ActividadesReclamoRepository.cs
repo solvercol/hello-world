@@ -17,7 +17,7 @@ namespace Domain.MainModule.Reclamos.Contracts
 {
     public interface ITBL_ModuloReclamos_ActividadesReclamoRepository : IRepository<TBL_ModuloReclamos_ActividadesReclamo>
     {
-        
+        TBL_ModuloReclamos_ActividadesReclamo GetActividadBySpec(ISpecification<TBL_ModuloReclamos_ActividadesReclamo> specification);
     }
 }
     

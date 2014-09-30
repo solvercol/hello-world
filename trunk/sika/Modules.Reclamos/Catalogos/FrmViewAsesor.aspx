@@ -1,0 +1,55 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FrmViewAsesor.aspx.cs" Inherits="Modules.Reclamos.Catalogos.FrmViewAsesor" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+<%@ Register Assembly="Infragistics4.Web.v11.1, Version=11.1.20111.2238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb"
+             Namespace="Infragistics.Web.UI.ListControls" TagPrefix="ig" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+<asp:ValidationSummary ID="vsGeneral" runat="server" DisplayMode="BulletList" ShowMessageBox="true" CssClass="validator" ShowSummary="true" ValidationGroup="vgGeneral"/>
+ <div style="padding:3px; text-align:right;">
+    <asp:button id="btnReturn" runat="server" OnClick="BtnBackClick" text="Regresar" causesvalidation="False"></asp:button>
+	<asp:button id="btnEdit" runat="server" OnClick="BtnEditClick" text="Editar" causesvalidation="False" ></asp:button>
+    
+</div>
+<table width="100%" class="tblSecciones">
+        <tr>
+          
+            <td>
+				    <table id="userdetails" width="100%">
+					    
+					    <tr>
+						    <td>&nbsp;</td>
+						    <td>&nbsp;</td>
+					    </tr>
+                         <tr>
+						    <th style="text-align:left;vertical-align:top">Asesor:</th>
+						    <td align="left">
+                            <asp:Literal runat="server" ID="txtAsesor"></asp:Literal>
+						    </td>
+					    </tr>
+                        <tr>
+						    <th style="text-align:left;vertical-align:top">Unidad:</th>
+						    <td align="left">
+						        <asp:Literal runat="server" ID="txtUnidad"></asp:Literal>
+						    </td>
+					    </tr>
+                        <tr>
+						    <th style="text-align:left;vertical-align:top">Zona:</th>
+						    <td align="left">
+                             <asp:Literal runat="server" ID="txtZona"></asp:Literal>
+						    </td>
+					    </tr>
+                        <tr>
+						<th style="text-align:left;vertical-align:top">Jefe(s) Inmediato(s):</th>
+						<td align="left">
+                                <asp:Literal runat="server" ID="txtJefe"></asp:Literal>
+						    </td>
+					    </tr>
+					    <tr>
+						    <td align="left"></td>
+						    <td align="left"></td>
+					    </tr>
+				    </table>
+            </td>
+        </tr>
+    
+    </table>
+</asp:Content>

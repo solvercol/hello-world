@@ -10,6 +10,7 @@
 
 using Domain.Core;
 using Domain.MainModules.Entities;
+using System.Collections.Generic;
 
 namespace Applications.MainModule.Admin.IServices
 {

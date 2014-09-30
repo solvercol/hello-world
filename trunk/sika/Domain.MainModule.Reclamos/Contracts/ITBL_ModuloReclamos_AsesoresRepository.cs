@@ -8,5 +8,6 @@ namespace Domain.MainModule.Reclamos.Contracts
     public interface ITBL_ModuloReclamos_AsesoresRepository : IRepository<TBL_ModuloReclamos_Asesores>
     {
         List<TBL_Admin_Usuarios> GetUsuariosBySpec(ISpecification<TBL_ModuloReclamos_Asesores> specification);
+        TBL_ModuloReclamos_Asesores GetAsesoresBySpec(ISpecification<TBL_ModuloReclamos_Asesores> specification);
     }
 }
