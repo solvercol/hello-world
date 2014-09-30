@@ -17,7 +17,7 @@ namespace Domain.MainModule.Reclamos.Contracts
 {
     public interface ITBL_ModuloReclamos_UnidadesZonasRepository : IRepository<TBL_ModuloReclamos_UnidadesZonas>
     {
-        
+        TBL_ModuloReclamos_UnidadesZonas GetUnidadZonaBySpec(ISpecification<TBL_ModuloReclamos_UnidadesZonas> specification);
     }
 }
     

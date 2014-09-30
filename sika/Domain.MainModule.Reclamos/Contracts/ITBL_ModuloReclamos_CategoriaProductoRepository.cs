@@ -17,7 +17,7 @@ namespace Domain.MainModule.Reclamos.Contracts
 {
     public interface ITBL_ModuloReclamos_CategoriaProductoRepository : IRepository<TBL_ModuloReclamos_CategoriaProducto>
     {
-        
+        TBL_ModuloReclamos_CategoriaProducto GetCategoriaBySpec(ISpecification<TBL_ModuloReclamos_CategoriaProducto> specification);
     }
 }
     

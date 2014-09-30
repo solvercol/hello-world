@@ -10,12 +10,14 @@
 
 using Domain.Core;
 using Domain.MainModules.Entities;
+using System.Collections.Generic;
 
 namespace Applications.MainModule.Admin.IServices
 {
     public interface ISfTBL_Admin_UsuariosManagementServices : IGenericServices<TBL_Admin_Usuarios>
     {
         TBL_Admin_Usuarios GetUserByCredential(string trim, string s);
+        List<TBL_Admin_Usuarios> FindBySpecWithRols(bool isActive);
     }
 }
     

@@ -98,7 +98,7 @@ namespace Application.MainModule.Reclamos.Services
 
             Specification<TBL_ModuloReclamos_CategoriasReclamo> specification = new DirectSpecification<TBL_ModuloReclamos_CategoriasReclamo>(u => u.IdCategoriaReclamo == id);
 
-            return _TBLModuloReclamosCategoriasReclamoRepository.GetEntityBySpec(specification);
+            return _TBLModuloReclamosCategoriasReclamoRepository.GetCategoriaBySpec(specification);
            
          }
 
@@ -137,9 +137,59 @@ namespace Application.MainModule.Reclamos.Services
                 throw new ArgumentException(Resources.Messages.exception_InvalidPageCount, "pageCount");
 
 
-            Specification<TBL_ModuloReclamos_CategoriasReclamo> onlyEnabledSpec = new DirectSpecification<TBL_ModuloReclamos_CategoriasReclamo>(u => u.IsActive);
+            Specification<TBL_ModuloReclamos_CategoriasReclamo> onlyEnabledSpec = new DirectSpecification<TBL_ModuloReclamos_CategoriasReclamo>(u => u.IdCategoriaReclamo != null);
 
             return _TBLModuloReclamosCategoriasReclamoRepository.GetPagedElements(pageIndex, pageCount, u => u.CreateOn, onlyEnabledSpec, true).ToList();
+         }
+
+        public List<TBL_ModuloReclamos_CategoriasReclamo> FindPaged(int pageIndex, int pageCount,string search)
+             {
+                 if (pageIndex < 0)
+                     throw new ArgumentException(Resources.Messages.exception_InvalidPageIndex, "pageIndex");
+
+                 if (pageCount <= 0)
+                     throw new ArgumentException(Resources.Messages.exception_InvalidPageCount, "pageCount");
+
+
+                 if (!string.IsNullOrEmpty(search))
+                 {
+                     Specification<TBL_ModuloReclamos_CategoriasReclamo> onlyEnabledSpec = new DirectSpecification<TBL_ModuloReclamos_CategoriasReclamo>
+                        (u => (u.Nombre.Contains(search) ||
+                        u.TBL_ModuloReclamos_TipoReclamo.Nombre.Contains(search) ||
+                        u.SubCategoria.Contains(search) ||
+                        u.Area.Contains(search) ||
+                        u.TBL_Admin_Usuarios.Nombres.Contains(search)));
+
+
+                     return _TBLModuloReclamosCategoriasReclamoRepository.GetPagedElements(pageIndex, pageCount, u => u.CreateOn, onlyEnabledSpec, true).ToList();
+                 }
+                 else
+                 {
+                     Specification<TBL_ModuloReclamos_CategoriasReclamo> onlyEnabledSpec = new DirectSpecification<TBL_ModuloReclamos_CategoriasReclamo>(u => u.IdCategoriaReclamo != null);
+
+                     return _TBLModuloReclamosCategoriasReclamoRepository.GetPagedElements(pageIndex, pageCount, u => u.CreateOn, onlyEnabledSpec, true).ToList();
+                 }
+             }
+
+        public int CountByPaged(string search)
+         {
+             if (!string.IsNullOrEmpty(search))
+             {
+
+                 Specification<TBL_ModuloReclamos_CategoriasReclamo> onlyEnabledSpec = new DirectSpecification<TBL_ModuloReclamos_CategoriasReclamo>
+                        (u => (u.Nombre.Contains(search) ||
+                        u.TBL_ModuloReclamos_TipoReclamo.Nombre.Contains(search) ||
+                        u.SubCategoria.Contains(search) ||
+                        u.Area.Contains(search) ||
+                        u.TBL_Admin_Usuarios.Nombres.Contains(search)));
+                 return _TBLModuloReclamosCategoriasReclamoRepository.GetBySpec(onlyEnabledSpec).Count();
+             }
+             else
+             {
+                 Specification<TBL_ModuloReclamos_CategoriasReclamo> onlyEnabledSpec = new DirectSpecification<TBL_ModuloReclamos_CategoriasReclamo>(u => u.IdCategoriaReclamo != null);
+
+                 return _TBLModuloReclamosCategoriasReclamoRepository.GetBySpec(onlyEnabledSpec).Count();
+             }
          }
 
          #endregion

@@ -20,6 +20,7 @@ using Infraestructure.Data.Core.Extensions;
 using Infrastructure.CrossCutting.Logging;
 using Infrastructure.Data.MainModule.Resources;
 using Infrastructure.Data.MainModule.UnitOfWork;
+using System.Collections.Generic;
 
 namespace Infrastructure.Data.MainModule.Repositories
 {
@@ -50,6 +51,30 @@ namespace Infrastructure.Data.MainModule.Repositories
                                     .Include(r => r.TBL_Admin_Roles1)
                                     .Where(specific)
                                     .SingleOrDefault();
+            }
+            throw new InvalidOperationException(string.Format(
+                CultureInfo.InvariantCulture,
+                Messages.exception_InvalidStoreContext,
+                GetType().Name));
+        }
+
+        public List<TBL_Admin_Usuarios> RetornarUsuariosConRoles(ISpecification<TBL_Admin_Usuarios> specification)
+        {
+            //validate specification
+            if (specification == null)
+                throw new ArgumentNullException("specification");
+
+            var activeContext = UnitOfWork as IMainModuleUnitOfWork;
+            if (activeContext != null)
+            {
+
+                //perform operation in this repository
+                var specific = specification.SatisfiedBy();
+                return activeContext.TBL_Admin_Usuarios
+                                    .Include(r => r.TBL_Admin_Roles)
+                                    .Include(r => r.TBL_Admin_Roles1)
+                                    .Where(specific)
+                                    .ToList();
             }
             throw new InvalidOperationException(string.Format(
                 CultureInfo.InvariantCulture,

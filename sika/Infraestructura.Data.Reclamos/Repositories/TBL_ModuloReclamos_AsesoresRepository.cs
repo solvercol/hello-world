@@ -15,8 +15,11 @@ namespace Infrastructure.Data.MainModule.Reclamos.Repositories
 {
     public class TBL_ModuloReclamos_AsesoresRepository : GenericRepository<TBL_ModuloReclamos_Asesores>, ITBL_ModuloReclamos_AsesoresRepository 
     {
+        private IMainModuleUnitOfWork _currentUnitOfWork;
+
         public TBL_ModuloReclamos_AsesoresRepository(IMainModuleUnitOfWork unitOfWork, ITraceManager traceManager) : base(unitOfWork, traceManager)
         {
+            _currentUnitOfWork = unitOfWork;
         }
 
         public List<TBL_Admin_Usuarios> GetUsuariosBySpec(ISpecification<TBL_ModuloReclamos_Asesores> specification)
@@ -58,6 +61,50 @@ namespace Infrastructure.Data.MainModule.Reclamos.Repositories
                 CultureInfo.InvariantCulture,
                 Messages.exception_InvalidStoreContext,
                 GetType().Name));
+        }
+
+        public override IEnumerable<TBL_ModuloReclamos_Asesores> GetPagedElements<TS>(int pageIndex, int pageCount, System.Linq.Expressions.Expression<System.Func<TBL_ModuloReclamos_Asesores, TS>> orderByExpression, ISpecification<TBL_ModuloReclamos_Asesores> specification, bool ascending)
+        {
+            if (pageIndex < 0)
+                throw new ArgumentException(Messages.exception_InvalidPageIndex, "pageIndex");
+
+            if (pageCount <= 0)
+                throw new ArgumentException(Messages.exception_InvalidPageCount, "pageCount");
+
+            if (orderByExpression == null)
+                throw new ArgumentNullException("orderByExpression", "OrderByExpression is null");
+
+            if (specification == null)
+                throw new ArgumentNullException("specification", "OrderByExpression is null");
+
+            return (ascending)
+                      ?
+                      _currentUnitOfWork.TBL_ModuloReclamos_Asesores
+                        .Include(x => x.TBL_Admin_Usuarios)
+                        .Include(x => x.TBL_ModuloReclamos_Unidad)
+                        .Include(x => x.TBL_ModuloReclamos_Zona)
+                        .Where(specification.SatisfiedBy())
+                        .OrderBy(orderByExpression)
+                        .Skip(pageIndex * pageCount)
+                        .Take(pageCount)
+                      :
+                     _currentUnitOfWork.TBL_ModuloReclamos_Asesores
+                            .Include(x => x.TBL_Admin_Usuarios)
+                            .Include(x => x.TBL_ModuloReclamos_Unidad)
+                            .Include(x => x.TBL_ModuloReclamos_Zona)
+                            .Where(specification.SatisfiedBy())
+                            .OrderByDescending(orderByExpression)
+                            .Skip(pageIndex * pageCount)
+                            .Take(pageCount);
+        }
+
+        public TBL_ModuloReclamos_Asesores GetAsesoresBySpec(ISpecification<TBL_ModuloReclamos_Asesores> specification)
+        {
+            return _currentUnitOfWork.TBL_ModuloReclamos_Asesores
+                        .Include(x => x.TBL_Admin_Usuarios)
+                        .Include(x => x.TBL_ModuloReclamos_Unidad)
+                        .Include(x => x.TBL_ModuloReclamos_Zona)
+                         .Where(specification.SatisfiedBy()).FirstOrDefault();
         }
     }
 }

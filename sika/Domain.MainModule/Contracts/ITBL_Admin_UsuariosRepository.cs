@@ -12,6 +12,7 @@
 using Domain.Core;
 using Domain.Core.Specification;
 using Domain.MainModules.Entities;
+using System.Collections.Generic;
 
 namespace Domain.MainModule.Contracts
 {
@@ -51,6 +52,12 @@ namespace Domain.MainModule.Contracts
         /// <param name="idReclamo"></param>
         /// <returns></returns>
         TBL_Admin_Usuarios RetornarUsuarioResponsabledocumento(int idReclamo);
+        /// <summary>
+        /// RETORNA LISTADO DE USUARIOS CON ROLES
+        /// </summary>
+        /// <param name="specification"></param>
+        /// <returns></returns>
+        List<TBL_Admin_Usuarios> RetornarUsuariosConRoles(ISpecification<TBL_Admin_Usuarios> specification);
     }
 }
     

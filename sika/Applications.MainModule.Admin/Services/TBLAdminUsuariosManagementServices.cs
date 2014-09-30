@@ -11,7 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using Application.MainModule.SqlServices.IServices;
+//using Application.MainModule.SqlServices.IServices;
 using Applications.MainModule.Admin.IServices;
 using Domain.MainModules.Entities;
 using Domain.Core.Specification;
@@ -109,8 +109,17 @@ namespace Applications.MainModule.Admin.Services
           /// </summary>
          public List<TBL_Admin_Usuarios> FindBySpec(bool isActive)
          {
+             Specification<TBL_Admin_Usuarios> specification = new DirectSpecification<TBL_Admin_Usuarios>(u => u.IsActive == isActive);
+             return _tblAdminUsuariosRepository.GetBySpec(specification).ToList();
+         }
+
+        /// <summary>
+          /// Obtiene el listado de entidades activas con roles.
+          /// </summary>
+         public List<TBL_Admin_Usuarios> FindBySpecWithRols(bool isActive)
+         {
             Specification<TBL_Admin_Usuarios> specification = new DirectSpecification<TBL_Admin_Usuarios>(u => u.IsActive == isActive);
-            return _tblAdminUsuariosRepository.GetBySpec(specification).ToList();
+            return _tblAdminUsuariosRepository.RetornarUsuariosConRoles(specification).ToList();
          }
 
         public TBL_Admin_Usuarios GetUserByCredential(string userName, string password)
