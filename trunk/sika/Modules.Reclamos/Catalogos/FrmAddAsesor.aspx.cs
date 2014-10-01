@@ -39,12 +39,16 @@ namespace Modules.Reclamos.Catalogos
         }
 
         #endregion
+
         #region events
 
         protected void BtnSaveClick(object sender, EventArgs e)
         {
             if (SaveEvent != null)
+            {
                 SaveEvent(null, EventArgs.Empty);
+                Response.Redirect(string.Format("FrmViewAsesor.aspx{0}&UserId={1}", GetBaseQueryString(), this.IdUser));
+            }
         }
 
         protected void BtnBackClick(object sender, EventArgs e)

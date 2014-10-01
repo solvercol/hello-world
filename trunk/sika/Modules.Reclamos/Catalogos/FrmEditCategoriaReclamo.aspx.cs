@@ -49,7 +49,10 @@ namespace Modules.Reclamos.Catalogos
         protected void BtnSaveClick(object sender, EventArgs e)
         {
             if (SaveEvent != null)
+            {
                 SaveEvent(null, EventArgs.Empty);
+                Response.Redirect(string.Format("FrmViewCategoriaReclamo.aspx{0}&CategoriaReclamoId={1}", GetBaseQueryString(), this.IdCategoriaReclamo));
+            }
         }
 
         protected void BtnDeleteClick(object sender, EventArgs e)

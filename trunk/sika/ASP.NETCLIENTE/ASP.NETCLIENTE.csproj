@@ -297,6 +297,7 @@
     <Content Include="Resources\Images\RemoveGrid.png" />
     <Content Include="Resources\Images\respuesta-comentario.png" />
     <Content Include="Resources\Images\RootNode.png" />
+    <Content Include="Resources\Images\round_plus.png" />
     <Content Include="Resources\Images\Rutas.png" />
     <Content Include="Resources\Images\scheduled.png" />
     <Content Include="Resources\Images\search.png" />

@@ -39,12 +39,10 @@
                 </th>
                 <td class="TituloEtiqueta" style="text-align:left">
                     <asp:TextBox ID="txtSearch" runat="server" />
-                </td>
-                <td></td>
-                <td></td>
-                <td align="left">
                     <asp:Button ID="btnFiltrar" runat="server" Text="Filter" CausesValidation="false" OnClick="BtnFilterReclamos_Click" OnClientClick="return ShowSplashModalLoading();" />
                 </td>
+                <td></td>
+                <td></td>
             </tr>
         </table>
 

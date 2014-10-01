@@ -83,6 +83,8 @@ namespace Presenters.Reclamos.Presenters
                 }
 
                 _catProducto.Add(cp);
+                View.IdCategoriaProducto = cp.IdCategoria.ToString();
+
                 InvokeMessageBox(new MessageBoxEventArgs(string.Format(Message.ProcessOk), TypeError.Ok));
             }
             catch (Exception ex)

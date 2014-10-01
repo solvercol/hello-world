@@ -46,7 +46,10 @@ namespace Modules.Reclamos.Catalogos
         protected void BtnSaveClick(object sender, EventArgs e)
         {
             if (SaveEvent != null)
+            {
                 SaveEvent(null, EventArgs.Empty);
+                Response.Redirect(string.Format("FrmViewCategoriaProducto.aspx{0}&CategoriaProductoId={1}", GetBaseQueryString(), this.IdCategoriaProducto));
+            }
         }
 
         protected void BtnBackClick(object sender, EventArgs e)
@@ -90,6 +93,11 @@ namespace Modules.Reclamos.Catalogos
             wddResponsables.TextField = "Nombres";
             wddResponsables.ValueField = "IdUser";
             wddResponsables.DataBind();
+        }
+
+        public string IdCategoriaProducto
+        {
+            get; set; 
         }
 
         public string Nombre

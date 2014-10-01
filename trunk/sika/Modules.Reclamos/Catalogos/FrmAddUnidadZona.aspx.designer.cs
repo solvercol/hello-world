@@ -76,6 +76,15 @@ namespace Modules.Reclamos.Catalogos {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvUnidad;
         
         /// <summary>
+        /// WUCAddUnidad1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Modules.Reclamos.UserControls.WUCAddUnidad WUCAddUnidad1;
+        
+        /// <summary>
         /// wddZona control.
         /// </summary>
         /// <remarks>
@@ -92,6 +101,15 @@ namespace Modules.Reclamos.Catalogos {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvZona;
+        
+        /// <summary>
+        /// WUCAddZona1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Modules.Reclamos.UserControls.WUCAddZona WUCAddZona1;
         
         /// <summary>
         /// wddGerente control.

@@ -6,7 +6,7 @@ using System.Collections;
 
 namespace Presenters.Reclamos.IViews
 {
-    public interface IAddActividadReclamosView : IView
+    public interface IAddUnidadView : IView
     {
         #region Events
 
@@ -15,15 +15,12 @@ namespace Presenters.Reclamos.IViews
         #endregion
 
         #region Members
-        string IdActividadReclamo { get; set; }
-        void GetTipoReclamos(IList<TBL_ModuloReclamos_TipoReclamo> items);
         string Nombre { get; set; }
-        string Descripcion { get; set; }
-        int IdTipoReclamo { get; set; }
         bool Activo { get; set; }
         string CreateBy { set; }
         string CreateOn { set; }
         string IdModule { get; }
+
         #endregion
     }
 }

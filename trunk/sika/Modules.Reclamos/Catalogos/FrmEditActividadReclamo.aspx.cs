@@ -48,7 +48,10 @@ namespace Modules.Reclamos.Catalogos
         protected void BtnSaveClick(object sender, EventArgs e)
         {
             if (SaveEvent != null)
+            {
                 SaveEvent(null, EventArgs.Empty);
+                Response.Redirect(string.Format("FrmViewActividadReclamo.aspx{0}&ActividadReclamoId={1}", GetBaseQueryString(), this.IdActividadReclamo));
+            }
         }
 
         protected void BtnDeleteClick(object sender, EventArgs e)

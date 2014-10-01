@@ -80,6 +80,7 @@ namespace Presenters.Reclamos.Presenters
                 cr.ModifiedBy = View.UserSession.IdUser;
                 cr.ModifiedOn = DateTime.Now;
                 _catReclamos.Add(cr);
+                View.IdCategoriaReclamo = cr.IdCategoriaReclamo.ToString();
                 InvokeMessageBox(new MessageBoxEventArgs(string.Format(Message.ProcessOk), TypeError.Ok));
             }
             catch (Exception ex)
