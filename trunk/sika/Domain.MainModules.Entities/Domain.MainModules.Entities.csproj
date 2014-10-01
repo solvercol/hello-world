@@ -132,6 +132,33 @@
     <Compile Include="TBL_Admin_Usuarios.cs">
       <DependentUpon>MainModuleContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="TBL_ModuloAPC_Actividades.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_ModuloAPC_AnexosActividades.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_ModuloAPC_AnexosComentarioRespuesta.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_ModuloAPC_AnexosSolicitud.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_ModuloAPC_Areas.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_ModuloAPC_Causas.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_ModuloAPC_ComentariosRespuesta.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_ModuloAPC_Solicitud.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_ModuloAPC_UsuarioCopiaComentariosRespuesta.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="TBL_ModuloDocumentosAnexos_Carpetas.cs">
       <DependentUpon>MainModuleContext.tt</DependentUpon>
     </Compile>

@@ -95,6 +95,25 @@
     <Content Include="Admin\FrmAdminComentarioRespuestaReclamo.aspx" />
     <Content Include="Admin\FrmListaGeneralReclamos.aspx" />
     <Content Include="Admin\FrmReclamo.aspx" />
+    <Content Include="Catalogos\FrmAddActividadReclamo.aspx" />
+    <Content Include="Catalogos\FrmAddAsesor.aspx" />
+    <Content Include="Catalogos\FrmAddCategoriaProducto.aspx" />
+    <Content Include="Catalogos\FrmAddCategoriaReclamo.aspx" />
+    <Content Include="Catalogos\FrmAddUnidadZona.aspx" />
+    <Content Include="Catalogos\FrmAdminActividadesReclamos.aspx" />
+    <Content Include="Catalogos\FrmAdminAsesores.aspx" />
+    <Content Include="Catalogos\FrmAdminCategoriasProductos.aspx" />
+    <Content Include="Catalogos\FrmAdminCategoriasReclamos.aspx" />
+    <Content Include="Catalogos\FrmAdminUnidadesZonas.aspx" />
+    <Content Include="Catalogos\FrmEditActividadReclamo.aspx" />
+    <Content Include="Catalogos\FrmEditAsesor.aspx" />
+    <Content Include="Catalogos\FrmEditCategoriaProducto.aspx" />
+    <Content Include="Catalogos\FrmEditCategoriaReclamo.aspx" />
+    <Content Include="Catalogos\FrmViewActividadReclamo.aspx" />
+    <Content Include="Catalogos\FrmViewAsesor.aspx" />
+    <Content Include="Catalogos\FrmViewCategoriaProducto.aspx" />
+    <Content Include="Catalogos\FrmViewCategoriaReclamo.aspx" />
+    <Content Include="Catalogos\FrmViewUnidadZona.aspx" />
     <Content Include="UserControls\WUCAdminActividadesReclamo.ascx" />
     <Content Include="UserControls\WUCAdminAlternativasReclamo.ascx" />
     <Content Include="UserControls\WUCAdminComentariosRespuestaReclamo.ascx" />
@@ -192,6 +211,139 @@
       <DependentUpon>FrmReclamo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ScriptManager.cs" />
+    <Compile Include="Catalogos\FrmAddActividadReclamo.aspx.cs">
+      <DependentUpon>FrmAddActividadReclamo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\FrmAddActividadReclamo.aspx.designer.cs">
+      <DependentUpon>FrmAddActividadReclamo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\FrmAddAsesor.aspx.cs">
+      <DependentUpon>FrmAddAsesor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\FrmAddAsesor.aspx.designer.cs">
+      <DependentUpon>FrmAddAsesor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\FrmAddCategoriaProducto.aspx.cs">
+      <DependentUpon>FrmAddCategoriaProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\FrmAddCategoriaProducto.aspx.designer.cs">
+      <DependentUpon>FrmAddCategoriaProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\FrmAddCategoriaReclamo.aspx.cs">
+      <DependentUpon>FrmAddCategoriaReclamo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\FrmAddCategoriaReclamo.aspx.designer.cs">
+      <DependentUpon>FrmAddCategoriaReclamo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\FrmAddUnidadZona.aspx.cs">
+      <DependentUpon>FrmAddUnidadZona.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\FrmAddUnidadZona.aspx.designer.cs">
+      <DependentUpon>FrmAddUnidadZona.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\FrmAdminActividadesReclamos.aspx.cs">
+      <DependentUpon>FrmAdminActividadesReclamos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\FrmAdminActividadesReclamos.aspx.designer.cs">
+      <DependentUpon>FrmAdminActividadesReclamos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\FrmAdminAsesores.aspx.cs">
+      <DependentUpon>FrmAdminAsesores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\FrmAdminAsesores.aspx.designer.cs">
+      <DependentUpon>FrmAdminAsesores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\FrmAdminCategoriasProductos.aspx.cs">
+      <DependentUpon>FrmAdminCategoriasProductos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\FrmAdminCategoriasProductos.aspx.designer.cs">
+      <DependentUpon>FrmAdminCategoriasProductos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\FrmAdminCategoriasReclamos.aspx.cs">
+      <DependentUpon>FrmAdminCategoriasReclamos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\FrmAdminCategoriasReclamos.aspx.designer.cs">
+      <DependentUpon>FrmAdminCategoriasReclamos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\FrmAdminUnidadesZonas.aspx.cs">
+      <DependentUpon>FrmAdminUnidadesZonas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\FrmAdminUnidadesZonas.aspx.designer.cs">
+      <DependentUpon>FrmAdminUnidadesZonas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\FrmEditActividadReclamo.aspx.cs">
+      <DependentUpon>FrmEditActividadReclamo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\FrmEditActividadReclamo.aspx.designer.cs">
+      <DependentUpon>FrmEditActividadReclamo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\FrmEditAsesor.aspx.cs">
+      <DependentUpon>FrmEditAsesor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\FrmEditAsesor.aspx.designer.cs">
+      <DependentUpon>FrmEditAsesor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\FrmEditCategoriaProducto.aspx.cs">
+      <DependentUpon>FrmEditCategoriaProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\FrmEditCategoriaProducto.aspx.designer.cs">
+      <DependentUpon>FrmEditCategoriaProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\FrmEditCategoriaReclamo.aspx.cs">
+      <DependentUpon>FrmEditCategoriaReclamo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\FrmEditCategoriaReclamo.aspx.designer.cs">
+      <DependentUpon>FrmEditCategoriaReclamo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\FrmViewActividadReclamo.aspx.cs">
+      <DependentUpon>FrmViewActividadReclamo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\FrmViewActividadReclamo.aspx.designer.cs">
+      <DependentUpon>FrmViewActividadReclamo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\FrmViewAsesor.aspx.cs">
+      <DependentUpon>FrmViewAsesor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\FrmViewAsesor.aspx.designer.cs">
+      <DependentUpon>FrmViewAsesor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\FrmViewCategoriaProducto.aspx.cs">
+      <DependentUpon>FrmViewCategoriaProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\FrmViewCategoriaProducto.aspx.designer.cs">
+      <DependentUpon>FrmViewCategoriaProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\FrmViewCategoriaReclamo.aspx.cs">
+      <DependentUpon>FrmViewCategoriaReclamo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\FrmViewCategoriaReclamo.aspx.designer.cs">
+      <DependentUpon>FrmViewCategoriaReclamo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\FrmViewUnidadZona.aspx.cs">
+      <DependentUpon>FrmViewUnidadZona.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\FrmViewUnidadZona.aspx.designer.cs">
+      <DependentUpon>FrmViewUnidadZona.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DataSets\DS_Report.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -310,6 +310,60 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
         }
         private ObjectSet<TBL_Admin_Usuarios> _tBL_Admin_Usuarios;
     
+        public IObjectSet<TBL_ModuloAPC_Actividades> TBL_ModuloAPC_Actividades
+        {
+            get { return _tBL_ModuloAPC_Actividades  ?? (_tBL_ModuloAPC_Actividades = CreateObjectSet<TBL_ModuloAPC_Actividades>("TBL_ModuloAPC_Actividades")); }
+        }
+        private ObjectSet<TBL_ModuloAPC_Actividades> _tBL_ModuloAPC_Actividades;
+    
+        public IObjectSet<TBL_ModuloAPC_AnexosActividades> TBL_ModuloAPC_AnexosActividades
+        {
+            get { return _tBL_ModuloAPC_AnexosActividades  ?? (_tBL_ModuloAPC_AnexosActividades = CreateObjectSet<TBL_ModuloAPC_AnexosActividades>("TBL_ModuloAPC_AnexosActividades")); }
+        }
+        private ObjectSet<TBL_ModuloAPC_AnexosActividades> _tBL_ModuloAPC_AnexosActividades;
+    
+        public IObjectSet<TBL_ModuloAPC_AnexosComentarioRespuesta> TBL_ModuloAPC_AnexosComentarioRespuesta
+        {
+            get { return _tBL_ModuloAPC_AnexosComentarioRespuesta  ?? (_tBL_ModuloAPC_AnexosComentarioRespuesta = CreateObjectSet<TBL_ModuloAPC_AnexosComentarioRespuesta>("TBL_ModuloAPC_AnexosComentarioRespuesta")); }
+        }
+        private ObjectSet<TBL_ModuloAPC_AnexosComentarioRespuesta> _tBL_ModuloAPC_AnexosComentarioRespuesta;
+    
+        public IObjectSet<TBL_ModuloAPC_AnexosSolicitud> TBL_ModuloAPC_AnexosSolicitud
+        {
+            get { return _tBL_ModuloAPC_AnexosSolicitud  ?? (_tBL_ModuloAPC_AnexosSolicitud = CreateObjectSet<TBL_ModuloAPC_AnexosSolicitud>("TBL_ModuloAPC_AnexosSolicitud")); }
+        }
+        private ObjectSet<TBL_ModuloAPC_AnexosSolicitud> _tBL_ModuloAPC_AnexosSolicitud;
+    
+        public IObjectSet<TBL_ModuloAPC_Areas> TBL_ModuloAPC_Areas
+        {
+            get { return _tBL_ModuloAPC_Areas  ?? (_tBL_ModuloAPC_Areas = CreateObjectSet<TBL_ModuloAPC_Areas>("TBL_ModuloAPC_Areas")); }
+        }
+        private ObjectSet<TBL_ModuloAPC_Areas> _tBL_ModuloAPC_Areas;
+    
+        public IObjectSet<TBL_ModuloAPC_Causas> TBL_ModuloAPC_Causas
+        {
+            get { return _tBL_ModuloAPC_Causas  ?? (_tBL_ModuloAPC_Causas = CreateObjectSet<TBL_ModuloAPC_Causas>("TBL_ModuloAPC_Causas")); }
+        }
+        private ObjectSet<TBL_ModuloAPC_Causas> _tBL_ModuloAPC_Causas;
+    
+        public IObjectSet<TBL_ModuloAPC_ComentariosRespuesta> TBL_ModuloAPC_ComentariosRespuesta
+        {
+            get { return _tBL_ModuloAPC_ComentariosRespuesta  ?? (_tBL_ModuloAPC_ComentariosRespuesta = CreateObjectSet<TBL_ModuloAPC_ComentariosRespuesta>("TBL_ModuloAPC_ComentariosRespuesta")); }
+        }
+        private ObjectSet<TBL_ModuloAPC_ComentariosRespuesta> _tBL_ModuloAPC_ComentariosRespuesta;
+    
+        public IObjectSet<TBL_ModuloAPC_Solicitud> TBL_ModuloAPC_Solicitud
+        {
+            get { return _tBL_ModuloAPC_Solicitud  ?? (_tBL_ModuloAPC_Solicitud = CreateObjectSet<TBL_ModuloAPC_Solicitud>("TBL_ModuloAPC_Solicitud")); }
+        }
+        private ObjectSet<TBL_ModuloAPC_Solicitud> _tBL_ModuloAPC_Solicitud;
+    
+        public IObjectSet<TBL_ModuloAPC_UsuarioCopiaComentariosRespuesta> TBL_ModuloAPC_UsuarioCopiaComentariosRespuesta
+        {
+            get { return _tBL_ModuloAPC_UsuarioCopiaComentariosRespuesta  ?? (_tBL_ModuloAPC_UsuarioCopiaComentariosRespuesta = CreateObjectSet<TBL_ModuloAPC_UsuarioCopiaComentariosRespuesta>("TBL_ModuloAPC_UsuarioCopiaComentariosRespuesta")); }
+        }
+        private ObjectSet<TBL_ModuloAPC_UsuarioCopiaComentariosRespuesta> _tBL_ModuloAPC_UsuarioCopiaComentariosRespuesta;
+    
         public IObjectSet<TBL_ModuloDocumentos_Categorias> TBL_ModuloDocumentos_Categorias
         {
             get { return _tBL_ModuloDocumentos_Categorias  ?? (_tBL_ModuloDocumentos_Categorias = CreateObjectSet<TBL_ModuloDocumentos_Categorias>("TBL_ModuloDocumentos_Categorias")); }
