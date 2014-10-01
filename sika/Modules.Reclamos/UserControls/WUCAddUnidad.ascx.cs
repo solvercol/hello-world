@@ -1,18 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.UI.WebControls;
 using ASP.NETCLIENTE.UI;
 using Domain.MainModules.Entities;
+using Modules.Reclamos.UI;
 using Presenters.Reclamos.IViews;
 using Presenters.Reclamos.Presenters;
-using System.Collections;
-using System.Linq;
+using Application.Core;
+using System.Web.UI;
 
-namespace Modules.Reclamos.Catalogos
+namespace Modules.Reclamos.UserControls
 {
-    public partial class FrmAddActividadCategoria : ViewPage<AddActividadReclamosPresenter, IAddActividadReclamosView>, IAddActividadReclamosView
+    public partial class WUCAddUnidad : ViewUserControl<AddUnidadPresenter, IAddUnidadView>, IAddUnidadView
     {
         #region Delegates
+
+        public event Action PostBackEvent;
 
         public event EventHandler SaveEvent;
 
@@ -22,19 +26,26 @@ namespace Modules.Reclamos.Catalogos
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ImprimirTituloVentana("Adicionar actividad Reclamo");
             btnSave.Visible = true;
         }
 
         protected override void OnInit(EventArgs e)
         {
             base.OnInit(e);
-            HideControlsevent += FrmEditUserControlsevent;
         }
 
         void FrmEditUserControlsevent(object sender, EventArgs e)
         {
             btnSave.Visible = false;
+        }
+
+        protected void BtnSearchProduct_Click(object sender, EventArgs e)
+        {
+            if (PostBackEvent != null)
+                PostBackEvent();
+            this.Nombre = string.Empty;
+            this.Activo = false;
+            ShowSelectZonaWindow(true);
         }
 
         #endregion
@@ -43,59 +54,36 @@ namespace Modules.Reclamos.Catalogos
 
         protected void BtnSaveClick(object sender, EventArgs e)
         {
-            if (SaveEvent != null)
+            
+            rfvNombre.Validate();
+            if (rfvNombre.IsValid)
             {
-                SaveEvent(null, EventArgs.Empty);
-                Response.Redirect(string.Format("FrmViewActividadReclamo.aspx{0}&ActividadReclamoId={1}", GetBaseQueryString(), this.IdActividadReclamo));
+                if (SaveEvent != null)
+                    SaveEvent(null, EventArgs.Empty);
+            }
+            else
+            {
+                rfvNombre.Focus();
+                mpeSearch.Show();
             }
         }
 
-
-
-        protected void BtnBackClick(object sender, EventArgs e)
+        public void ShowSelectZonaWindow(bool visible)
         {
-            Response.Redirect(string.Format("FrmAdminActividadesReclamos.aspx{0}", GetBaseQueryString()));
+            if (visible)
+                mpeSearch.Show();
+            else
+                mpeSearch.Hide();
         }
-
-
 
         #endregion
 
-
         #region Members
-
-        public void GetTipoReclamos(IList<TBL_ModuloReclamos_TipoReclamo> items)
-        {
-            if (items.Any())
-            {
-                items = items.OrderBy(x => x.Nombre).ToList();
-            }
-
-            wddReclamo.DataSource = items;
-            wddReclamo.TextField = "Nombre";
-            wddReclamo.ValueField = "IdTipoReclamo";
-            wddReclamo.DataBind();
-        }
 
         public string Nombre
         {
             get { return txtNombre.Text; }
             set { txtNombre.Text = value; }
-        }
-
-  
-
-        public string Descripcion
-        {
-            get { return txtDescripcion.Text; }
-            set { txtDescripcion.Text = value; }
-        }
-
-    
-        public int IdTipoReclamo
-        {
-            get { return int.Parse(wddReclamo.SelectedValue); }
-            set { wddReclamo.SelectedValue = value.ToString(); }
         }
 
         public bool Activo
@@ -114,12 +102,6 @@ namespace Modules.Reclamos.Catalogos
             set { lblCreateOn.Text = value; }
         }
 
-        public string IdActividadReclamo
-        {
-            get;
-            set;
-        }
-
         public TBL_Admin_Usuarios UserSession
         {
             get { return AuthenticatedUser; }
@@ -131,5 +113,6 @@ namespace Modules.Reclamos.Catalogos
         }
 
         #endregion
+
     }
 }

@@ -16,7 +16,7 @@ namespace Presenters.Reclamos.IViews
 
         #region Members
         void GetIngenieros(IList<TBL_Admin_Usuarios> items);
-
+        string IdCategoriaProducto { get; set; }
         string Nombre { get; set; }
         string Descripcion { get; set; }
         bool Activo { get; set; }

@@ -39,14 +39,14 @@
 						    <td align="left">
 						        <asp:textbox id="txtSubcategoria" runat="server" width="400px" MaxLength="512">
 						        </asp:textbox>
-						        <asp:requiredfieldvalidator id="rfvSubcategoria" 
+			<%--			        <asp:requiredfieldvalidator id="rfvSubcategoria" 
 						        runat="server" 
 						        errormessage="El campo [SubCategoria] es requerido!!." 
 						        cssclass="validator"
 								display="Dynamic" 
 								enableclientscript="true" 
 								controltovalidate="txtSubcategoria">
-								</asp:requiredfieldvalidator>
+								</asp:requiredfieldvalidator>--%>
 						    </td>
 					    </tr>
                          <tr>

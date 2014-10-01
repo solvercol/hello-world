@@ -17,7 +17,7 @@ namespace Presenters.Reclamos.IViews
         #region Members
         void GetResponsables(IList<TBL_Admin_Usuarios> items);
         void GetTipoReclamos(IList<TBL_ModuloReclamos_TipoReclamo> items);
-       // string IdCategoriaReclamo { set; }
+        string IdCategoriaReclamo { get; set; }
         string Nombre { get; set; }
         string SubCategoria { get; set; }
         string Descripcion { get; set; }

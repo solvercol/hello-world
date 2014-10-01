@@ -10,18 +10,16 @@ using Presenters.Reclamos.IViews;
 using System.Collections;
 using System.Linq;
 
+
 namespace Presenters.Reclamos.Presenters
 {
-    public class AddActividadReclamosPresenter : Presenter<IAddActividadReclamosView>
+    public class AddZonaPresenter : Presenter<IAddZonaView>
     {
-        private readonly ISfTBL_ModuloReclamos_ActividadesReclamoManagementServices _actReclamos;
+           private readonly ISfTBL_ModuloReclamos_ZonaManagementServices _zona;
 
-        private readonly ISfTBL_ModuloReclamos_TipoReclamoManagementServices _tipoReclamo;
-
-        public AddActividadReclamosPresenter(ISfTBL_ModuloReclamos_ActividadesReclamoManagementServices actReclamos, ISfTBL_ModuloReclamos_TipoReclamoManagementServices tipoReclamo)
+        public AddZonaPresenter(ISfTBL_ModuloReclamos_ZonaManagementServices zona)
         {
-            _tipoReclamo = tipoReclamo;
-            _actReclamos = actReclamos;
+            _zona = zona;
         }
 
         public override void SubscribeViewToEvents()
@@ -33,43 +31,40 @@ namespace Presenters.Reclamos.Presenters
         void ViewLoad(object sender, EventArgs e)
         {
             if (View.IsPostBack) return;
-            GetTipoReclamos();
             Load();
         }
 
         void ViewSaveEvent(object sender, EventArgs e)
         {
-            GuardarActividadReclamo();
+            GuardarZona();
         }
 
         private void Load()
         {
-            View.Nombre = string.Empty;
+            initDataZona();
+        }
+
+        private void initDataZona()
+        {
             View.Descripcion = string.Empty;
             View.Activo = false;
             View.CreateBy = View.UserSession.UserName;
             View.CreateOn = DateTime.Now.ToShortDateString();
-        }
+       }
 
-        /// <summary>
-        /// Guarda una actividad de Reclamos en Base de datos.
-        /// </summary>
-        private void GuardarActividadReclamo()
+        private void GuardarZona()
         {
-
             try
             {
-                var ac = _actReclamos.NewEntity();
-                ac.Nombre = View.Nombre;
-                ac.Descripcion = View.Descripcion;
-                ac.IdTipoReclamo = View.IdTipoReclamo;
-                ac.IsActive = View.Activo;
-                ac.CreateBy = View.UserSession.IdUser;
-                ac.CreateOn = DateTime.Now;
-                ac.ModifiedBy = View.UserSession.IdUser;
-                ac.ModifiedOn = DateTime.Now;
-                _actReclamos.Add(ac);
-                View.IdActividadReclamo = ac.IdActividad.ToString();
+                var un = _zona.NewEntity();
+
+                un.Descripcion = View.Descripcion;
+                un.IsActive = View.Activo;
+                un.CreateBy = View.UserSession.IdUser;
+                un.CreateOn = DateTime.Now;
+                un.ModifiedBy = View.UserSession.IdUser;
+                un.ModifiedOn = DateTime.Now;
+                _zona.Add(un);
                 InvokeMessageBox(new MessageBoxEventArgs(string.Format(Message.ProcessOk), TypeError.Ok));
             }
             catch (Exception ex)
@@ -77,13 +72,7 @@ namespace Presenters.Reclamos.Presenters
                 CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, System.Reflection.MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
                 InvokeMessageBox(new MessageBoxEventArgs(string.Format(Message.SaveError), TypeError.Error));
             }
-
-        }
-
-        private void GetTipoReclamos()
-        {
-            var listado = _tipoReclamo.FindBySpec(true);
-            View.GetTipoReclamos(listado);
         }
     }
+    
 }

@@ -24,6 +24,10 @@ namespace Application.MainModule.SqlServices.IServices
 
         DataTable ListadoIngenierosResponsablesPorcategoría(string idCategoria);
 
+        DataTable Search_Unidad(string strPrefijo);
+
+        DataTable Search_Zona(string strPrefijo);
+
         #region Vistas Y Reportes
 
         DataTable GetVistaGeneralReclamos(DateTime from, DateTime end, string serverHost, string moduleId);

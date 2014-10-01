@@ -133,6 +133,36 @@ namespace Application.MainModule.SqlServices.Services
             return oreclamo.ResumenReclamosPanelWorkFlow(idReclamo);
         }
 
+        public DataTable Search_Unidad(string strPrefijo)
+        {
+            var dt = new DataTable();
+
+            try
+            {
+                dt = _sql.ExecuteDataTable("Reclamos_GetUnidadesByPrefix", CommandType.StoredProcedure, new SqlParameter("@prefijo", strPrefijo));
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw new SqlExecutionException("Reclamos_GetUnidadesByPrefix", ex);
+            }
+        }
+
+        public DataTable Search_Zona(string strPrefijo)
+        {
+            var dt = new DataTable();
+
+            try
+            {
+                dt = _sql.ExecuteDataTable("Reclamos_GetZonasByPrefix", CommandType.StoredProcedure, new SqlParameter("@prefijo", strPrefijo));
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw new SqlExecutionException("Reclamos_GetZonasByPrefix", ex);
+            }
+        }
+
        
 
         #region Vistas Y Reportes
