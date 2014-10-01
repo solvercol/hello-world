@@ -90,6 +90,33 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
         IObjectSet<TBL_Admin_Usuarios> TBL_Admin_Usuarios{get;}
         
     
+        IObjectSet<TBL_ModuloAPC_Actividades> TBL_ModuloAPC_Actividades{get;}
+        
+    
+        IObjectSet<TBL_ModuloAPC_AnexosActividades> TBL_ModuloAPC_AnexosActividades{get;}
+        
+    
+        IObjectSet<TBL_ModuloAPC_AnexosComentarioRespuesta> TBL_ModuloAPC_AnexosComentarioRespuesta{get;}
+        
+    
+        IObjectSet<TBL_ModuloAPC_AnexosSolicitud> TBL_ModuloAPC_AnexosSolicitud{get;}
+        
+    
+        IObjectSet<TBL_ModuloAPC_Areas> TBL_ModuloAPC_Areas{get;}
+        
+    
+        IObjectSet<TBL_ModuloAPC_Causas> TBL_ModuloAPC_Causas{get;}
+        
+    
+        IObjectSet<TBL_ModuloAPC_ComentariosRespuesta> TBL_ModuloAPC_ComentariosRespuesta{get;}
+        
+    
+        IObjectSet<TBL_ModuloAPC_Solicitud> TBL_ModuloAPC_Solicitud{get;}
+        
+    
+        IObjectSet<TBL_ModuloAPC_UsuarioCopiaComentariosRespuesta> TBL_ModuloAPC_UsuarioCopiaComentariosRespuesta{get;}
+        
+    
         IObjectSet<TBL_ModuloDocumentos_Categorias> TBL_ModuloDocumentos_Categorias{get;}
         
     
