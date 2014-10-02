@@ -72,8 +72,6 @@ namespace Presenters.Reclamos.Presenters
                 cp.Nombre = View.Nombre;
                 cp.Descripcion = View.Descripcion;
                 cp.IsActive = View.Activo;
-                cp.CreateBy = View.UserSession.IdUser;
-                cp.CreateOn = DateTime.Now;
                 cp.ModifiedBy = View.UserSession.IdUser;
                 cp.ModifiedOn = DateTime.Now;
                 cp.TBL_Admin_Usuarios2.Clear();
