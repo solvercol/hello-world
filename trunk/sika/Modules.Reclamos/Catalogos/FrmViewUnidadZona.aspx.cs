@@ -25,7 +25,7 @@ namespace Modules.Reclamos.Catalogos
         {
 
             ImprimirTituloVentana("Detalle Unidad Zona");
-            btnEliminar.Visible = !((string.IsNullOrEmpty(IdUnidad)) && (string.IsNullOrEmpty(IdZona)) && (string.IsNullOrEmpty(IdGerente)));
+            btnEdit.Visible = !((string.IsNullOrEmpty(IdUnidad)) && (string.IsNullOrEmpty(IdZona)) && (string.IsNullOrEmpty(IdGerente)));
         }
 
         protected override void OnInit(EventArgs e)
