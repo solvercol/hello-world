@@ -129,7 +129,7 @@ namespace ASP.NETCLIENTE.UI
             get { return HttpContext.Current.Request.AppRelativeCurrentExecutionFilePath; }
         }
 
-        protected bool IsLoadUserControl
+        public bool IsLoadUserControl
         {
             get { return ViewState["IsLoadUserControl"] == null ? false : (bool)ViewState["IsLoadUserControl"]; }
             set { ViewState["IsLoadUserControl"] = value; }

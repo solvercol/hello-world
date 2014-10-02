@@ -83,5 +83,11 @@ namespace Modules.Reclamos.UserControls
         {
             get { return ModuleId; }
         }
+
+        public void CargarLog()
+        {
+            if (FilterEvent == null) return;
+            FilterEvent(null, EventArgs.Empty);
+        }
     }
 }

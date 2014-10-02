@@ -128,6 +128,12 @@ namespace Application.MainModule.Reclamos.Services
             return _tblModuloReclamosTrackingRepository.GetPagedElements(pageIndex, pageCount, u => u.IdTracking, onlyEnabledSpec, true).ToList();
          }
 
+         public List<TBL_ModuloReclamos_Tracking> ListadotrackingByIdreclamo(int idReclamo)
+         {
+             Specification<TBL_ModuloReclamos_Tracking> specification = new DirectSpecification<TBL_ModuloReclamos_Tracking>(u => u.IsActive && u.IdReclamo == idReclamo);
+             return _tblModuloReclamosTrackingRepository.GetBySpec(specification).OrderByDescending(x=> x.CreateOn).ToList();
+         }
+
          #endregion
 
          #region IDisposable Members

@@ -31,6 +31,13 @@ namespace Presenters.Reclamos.Presenters
         public override void SubscribeViewToEvents()
         {
             View.Load += ViewLoad;
+            View.FilterEvent += ViewFilterEvent;
+        }
+
+        void ViewFilterEvent(object sender, EventArgs e)
+        {
+            LoadOptionListValue();
+            LoadReclamo();
         }
 
         /// <summary>
