@@ -41,9 +41,10 @@ namespace Presenters.Reclamos.Presenters
 
         void ViewLoad(object sender, EventArgs e)
         {
+            
+            if (View.IsPostBack) return;
             GetUnidades();
             GetZonas();
-            if (View.IsPostBack) return;
             GetGerentes();
             Load();
         }

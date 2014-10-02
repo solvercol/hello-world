@@ -86,12 +86,13 @@ namespace Presenters.Reclamos.Presenters
                     var obj = _usuarios.FindById(Convert.ToInt32(item.Id));
                     asesor.TBL_Admin_Usuarios.Add(obj);
                 }
-
                 _asesores.Add(asesor);
                 InvokeMessageBox(new MessageBoxEventArgs(string.Format(Message.ProcessOk), TypeError.Ok));
+                View.InsertFlag = true;
             }
             catch (Exception ex)
             {
+                View.InsertFlag = false;
                 CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, System.Reflection.MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
                 InvokeMessageBox(new MessageBoxEventArgs(string.Format(Message.SaveError), TypeError.Error));
             }
