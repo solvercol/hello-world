@@ -89,7 +89,9 @@ namespace Presenters.Reclamos.Presenters
 
                 if (cr == null) return;
                 cr.Nombre = View.Nombre;
+                cr.SubCategoria = View.SubCategoria;
                 cr.Descripcion = View.Descripcion;
+                cr.Area = View.Area;
                 cr.IdResponsable = View.IdResponsable;
                 cr.GrupoInformacion = View.GrupoInformacion;
                 cr.IdTipoReclamo = View.IdTipoReclamo;
