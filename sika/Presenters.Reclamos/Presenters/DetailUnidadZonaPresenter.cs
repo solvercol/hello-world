@@ -26,7 +26,6 @@ namespace Presenters.Reclamos.Presenters
         public override void SubscribeViewToEvents()
         {
             View.Load += ViewLoad;
-            View.DeleteEvent += ViewDeleteEvent;
         }
 
         void ViewLoad(object sender, EventArgs e)
@@ -35,10 +34,7 @@ namespace Presenters.Reclamos.Presenters
             Load();
         }
 
-        void ViewDeleteEvent(object sender, EventArgs e)
-        {
-            EliminarUnidadZona();
-        }
+
 
         private void Load()
         {
@@ -59,25 +55,6 @@ namespace Presenters.Reclamos.Presenters
             View.ModifiedBy = uz.TBL_Admin_Usuarios2.Nombres;
             View.ModifiedOn = uz.ModifiedOn != null ? uz.ModifiedOn.ToShortDateString() : "";
 
-        }
-
-        private void EliminarUnidadZona()
-        {
-            try
-            {
-                if ((string.IsNullOrEmpty(View.IdUnidad)) && (string.IsNullOrEmpty(View.IdZona)) && (string.IsNullOrEmpty(View.IdGerente)))
-                    return;
-
-                var uz = _unidadesZona.FindById(Convert.ToInt32(View.IdUnidad), Convert.ToInt32(View.IdZona), Convert.ToInt32(View.IdGerente));
-                if (uz == null) return;
-                _unidadesZona.Remove(uz);
-                InvokeMessageBox(new MessageBoxEventArgs(string.Format(Message.ProcessOk), TypeError.Ok));
-            }
-            catch (Exception ex)
-            {
-                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, System.Reflection.MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
-                InvokeMessageBox(new MessageBoxEventArgs(string.Format(Message.DeleteError), TypeError.Error));
-            }
         }
 
     }
