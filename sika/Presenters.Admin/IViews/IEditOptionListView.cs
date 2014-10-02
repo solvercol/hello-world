@@ -4,30 +4,29 @@ using Application.Core;
 using Domain.MainModules.Entities;
 using System.Collections;
 
-
-namespace Presenters.Reclamos.IViews
+namespace Presenters.Admin.IViews
 {
-    public interface IEditCategoriaProductoView : IView
+    public interface IEditOptionListView : IView
     {
         #region Events
 
         event EventHandler SaveEvent;
+        event EventHandler DeleteEvent;
 
         #endregion
 
         #region Members
-        void GetIngenieros(IList<TBL_Admin_Usuarios> items);
-        string IdCategoriaProducto { get; }
-        string Nombre { get; set; }
-        string Descripcion { get; set; }
+        string IdOpcion { get; }
+        string IdModulo { set; }
+        string key { set; }
+        string value { get; set; }
+        string descripcion { get; set; }
         bool Activo { get; set; }
-        List<DTO_ValueKey> UsuariosCopia { get; set; }
         string CreateBy { set; }
         string CreateOn { set; }
         string ModifiedBy { set; }
         string ModifiedOn { set; }
         string IdModule { get; }
-        void LoadUsuariosCopia(List<DTO_ValueKey> items);
         #endregion
     }
 }

@@ -124,9 +124,59 @@ namespace Applications.MainModule.Admin.Services
                 throw new ArgumentException(Messages.exception_InvalidPageCount, "pageCount");
 
 
-            Specification<TBL_Admin_OptionList> onlyEnabledSpec = new DirectSpecification<TBL_Admin_OptionList>(u => u.IsActive);
+            Specification<TBL_Admin_OptionList> onlyEnabledSpec = new DirectSpecification<TBL_Admin_OptionList>(u => u.IdOpcion != null);
 
             return _tblAdminOptionListRepository.GetPagedElements(pageIndex, pageCount, u => u.IdOpcion, onlyEnabledSpec, true).ToList();
+         }
+
+         public List<TBL_Admin_OptionList> FindPaged(int pageIndex, int pageCount, string search)
+         {
+             if (pageIndex < 0)
+                 throw new ArgumentException(Resources.Messages.exception_InvalidPageIndex, "pageIndex");
+
+             if (pageCount <= 0)
+                 throw new ArgumentException(Resources.Messages.exception_InvalidPageCount, "pageCount");
+
+
+             if (!string.IsNullOrEmpty(search))
+             {
+                 Specification<TBL_Admin_OptionList> onlyEnabledSpec = new DirectSpecification<TBL_Admin_OptionList>
+                    (u => 
+                        (u.IdModule.ToString().Contains(search) ||
+                        u.Key.Contains(search) ||
+                        u.Value.Contains(search) ||
+                        u.Descripcion.Contains(search)));
+
+
+                 return _tblAdminOptionListRepository.GetPagedElements(pageIndex, pageCount, u => u.IdOpcion, onlyEnabledSpec, true).ToList();
+             }
+             else
+             {
+                 Specification<TBL_Admin_OptionList> onlyEnabledSpec = new DirectSpecification<TBL_Admin_OptionList>(u => u.IdOpcion != null);
+
+                 return _tblAdminOptionListRepository.GetPagedElements(pageIndex, pageCount, u => u.IdOpcion,onlyEnabledSpec, true).ToList();
+             }
+         }
+
+         public int CountByPaged(string search)
+         {
+             if (!string.IsNullOrEmpty(search))
+             {
+
+                 Specification<TBL_Admin_OptionList> onlyEnabledSpec = new DirectSpecification<TBL_Admin_OptionList>
+                           (u =>
+                               (u.IdModule.ToString().Contains(search) ||
+                               u.Key.Contains(search) ||
+                               u.Value.Contains(search) ||
+                               u.Descripcion.Contains(search)));
+                 return _tblAdminOptionListRepository.GetBySpec(onlyEnabledSpec).Count();
+             }
+             else
+             {
+                 Specification<TBL_Admin_OptionList> onlyEnabledSpec = new DirectSpecification<TBL_Admin_OptionList>(u => u.IdOpcion != null);
+
+                 return _tblAdminOptionListRepository.GetBySpec(onlyEnabledSpec).Count();
+             }
          }
 
          public TBL_Admin_OptionList ObtenerOpcionBykey(string key)

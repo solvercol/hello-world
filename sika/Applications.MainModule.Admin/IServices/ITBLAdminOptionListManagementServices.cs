@@ -24,6 +24,8 @@ namespace Applications.MainModule.Admin.IServices
         TBL_Admin_OptionList ObtenerOpcionBykey(string key);
 
         TBL_Admin_OptionList ObtenerOpcionBykeyModuleId(string key, int moduleId);
+        int CountByPaged(string search);
+        List<TBL_Admin_OptionList> FindPaged(int pageIndex, int pageCount, string search);
 
     }
 }
