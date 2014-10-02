@@ -46,7 +46,9 @@
     <Compile Include="IViews\IAddAsesorView.cs" />
     <Compile Include="IViews\IAddCategoriaProductoView.cs" />
     <Compile Include="IViews\IAddCategoriasReclamosView.cs" />
+    <Compile Include="IViews\IAddUnidadView.cs" />
     <Compile Include="IViews\IAddUnidadZonaView.cs" />
+    <Compile Include="IViews\IAddZonaView.cs" />
     <Compile Include="IViews\IAlternativasPorPersonaView.cs" />
     <Compile Include="IViews\IAsesoresListView.cs" />
     <Compile Include="IViews\ICategoriaProductoListView.cs" />
@@ -115,7 +117,9 @@
     <Compile Include="Presenters\AddCategoriaProductoPresenter.cs" />
     <Compile Include="Presenters\AddCategoriaReclamosPresenter.cs" />
     <Compile Include="Presenters\AddReclamoPresenter.cs" />
+    <Compile Include="Presenters\AddUnidadPresenter.cs" />
     <Compile Include="Presenters\AddUnidadZonaPresenter.cs" />
+    <Compile Include="Presenters\AddZonaPresenter.cs" />
     <Compile Include="Presenters\AdminActividadesReclamoPresenter.cs" />
     <Compile Include="Presenters\AdminActividadReclamoPresentador.cs" />
     <Compile Include="Presenters\AdminAlternativaReclamoPresenter.cs" />

@@ -114,6 +114,9 @@
     <Content Include="Catalogos\FrmViewCategoriaProducto.aspx" />
     <Content Include="Catalogos\FrmViewCategoriaReclamo.aspx" />
     <Content Include="Catalogos\FrmViewUnidadZona.aspx" />
+    <Content Include="UserControls\WSScripts.asmx" />
+    <Content Include="UserControls\WUCAddUnidad.ascx" />
+    <Content Include="UserControls\WUCAddZona.ascx" />
     <Content Include="UserControls\WUCAdminActividadesReclamo.ascx" />
     <Content Include="UserControls\WUCAdminAlternativasReclamo.ascx" />
     <Content Include="UserControls\WUCAdminComentariosRespuestaReclamo.ascx" />
@@ -359,6 +362,24 @@
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
     <Compile Include="UI\IReclamoWebUserControl.cs" />
+    <Compile Include="UserControls\WSScripts.asmx.cs">
+      <DependentUpon>WSScripts.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\WUCAddUnidad.ascx.cs">
+      <DependentUpon>WUCAddUnidad.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WUCAddUnidad.ascx.designer.cs">
+      <DependentUpon>WUCAddUnidad.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WUCAddZona.ascx.cs">
+      <DependentUpon>WUCAddZona.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WUCAddZona.ascx.designer.cs">
+      <DependentUpon>WUCAddZona.ascx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\WUCAdminActividadesReclamo.ascx.cs">
       <DependentUpon>WUCAdminActividadesReclamo.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
