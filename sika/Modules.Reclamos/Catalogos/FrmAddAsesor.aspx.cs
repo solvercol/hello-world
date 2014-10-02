@@ -44,10 +44,18 @@ namespace Modules.Reclamos.Catalogos
 
         protected void BtnSaveClick(object sender, EventArgs e)
         {
+           
             if (SaveEvent != null)
             {
                 SaveEvent(null, EventArgs.Empty);
-                Response.Redirect(string.Format("FrmViewAsesor.aspx{0}&UserId={1}", GetBaseQueryString(), this.IdUser));
+                if (this.InsertFlag)
+                {
+                    Response.Redirect(string.Format("FrmViewAsesor.aspx{0}&UserId={1}", GetBaseQueryString(), this.IdUser));
+                }
+                else
+                {
+                    ShowError("El usuario ya se encuentra registrado como asesor");
+                }
             }
         }
 
@@ -203,6 +211,7 @@ namespace Modules.Reclamos.Catalogos
         public string IdUser
         {
             get { return wddAsesor.SelectedValue; }
+            set{}
         }
 
         public string IdUnidad
@@ -213,6 +222,12 @@ namespace Modules.Reclamos.Catalogos
         public string IdZona
         {
             get { return wddZona.SelectedValue; }
+        }
+
+        public bool InsertFlag
+        {
+            get;
+            set;
         }
 
 

@@ -57,7 +57,7 @@
 <asp:ValidationSummary ID="vsGeneral" runat="server" DisplayMode="BulletList" ShowMessageBox="true" CssClass="validator" ShowSummary="true" ValidationGroup="vgGeneral"/>
  <div style="padding:3px; text-align:right;">
     <asp:button id="btnReturn" runat="server" OnClick="BtnBackClick" text="Regresar" causesvalidation="False"></asp:button>
-	<asp:button id="btnSave" runat="server" OnClick="BtnSaveClick" text="Guardar"></asp:button>
+	<asp:button id="btnSave" runat="server" OnClick="BtnSaveClick" text="Guardar" causesvalidation="False"></asp:button>
 </div>
 <table width="100%" class="tblSecciones">
         <tr>
