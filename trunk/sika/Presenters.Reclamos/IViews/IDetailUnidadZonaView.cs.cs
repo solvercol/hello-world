@@ -10,8 +10,6 @@ namespace Presenters.Reclamos.IViews
     {
         #region Events
 
-        event EventHandler DeleteEvent;
-
         #endregion
 
         #region Members
