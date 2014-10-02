@@ -19,6 +19,8 @@ namespace Modules.Reclamos.Admin
     {
         #region Members
 
+        public event EventHandler FilterEvent;
+
         public const string ROOTUC = "../UserControls/";
 
         public string FromPage
@@ -105,8 +107,12 @@ namespace Modules.Reclamos.Admin
             {
                 //todo: Bloque de código que se encargará de actuaizar el panel de resumen cuando el WF termine el paso..
                 WucPanelEstado1.ActualizarPanelResumen();
-                //if (RefreshEvent != null)
-                //    RefreshEvent(null, EventArgs.Empty);
+                ActualizarControlUsuarioActivo();
+                wucLogReclamo.CargarLog();
+                if (FilterEvent != null)
+                    FilterEvent(null, EventArgs.Empty);
+
+                ShowMessageOk("Proceso realizado satisfactoriamente.");
             }
             else
             {
@@ -145,6 +151,17 @@ namespace Modules.Reclamos.Admin
                 }
             }
             
+        }
+
+        private void ActualizarControlUsuarioActivo()
+        {
+            var uc = this.GetUserControl<WucSeguimiento>("WucSeguimiento", "phlContent");
+            if (uc != null)
+            {
+                uc.Actualizarlistado();
+                return;
+            }
+
         }
         #endregion
 
@@ -439,6 +456,8 @@ namespace Modules.Reclamos.Admin
         {
             get { return ModuleId; }
         }
+
+      
 
         public string IdReclamo
         {

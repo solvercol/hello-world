@@ -149,17 +149,17 @@ namespace Infrastructure.CrossCutting.NetFramework.Util
         {
             var appRot = GetSiteUrl();
             var idModule = HttpContext.Current.Request.QueryString["ModuleId"];
-            var idPedido = HttpContext.Current.Request.QueryString["IdPedido"];
+            var idReclamo = HttpContext.Current.Request.QueryString["IdReclamo"];
 
-            var url = string.Format("{0}/Pages/Modules/Pedidos/Catalogos/FrmPreViewPedido.aspx?ModuleId={1}&IdPedido={2}", appRot, idModule, idPedido);
+            var url = string.Format("{0}/Pages/Modules/Reclamos/Admin/FrmReclamo.aspx?ModuleId={1}&IdReclamo={2}", appRot, idModule, idReclamo);
             return "<a href=\"" + url + "\"> De click aquí para abrir el documento.\"</a>";
         }
 
         public static string GetUrlPreViewForNotificationWindow()
         {
             var idModule = HttpContext.Current.Request.QueryString["ModuleId"];
-            var idPedido = HttpContext.Current.Request.QueryString["IdPedido"];
-           return  string.Format("~/Pages/Modules/Pedidos/Catalogos/FrmPreViewPedido.aspx?ModuleId={0}&IdPedido={1}", idModule, idPedido);
+            var idReclamo = HttpContext.Current.Request.QueryString["IdReclamo"];
+            return string.Format("~/Pages/Modules/Reclamos/Admin/FrmReclamo.aspx?ModuleId={0}&IdReclamo={1}", idModule, idReclamo);
         }
 
     }

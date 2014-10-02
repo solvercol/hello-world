@@ -57,14 +57,17 @@ namespace Presenters.Admin.Presenters
 
             if (plantilla == null) return;
 
-            var memstrm = new MemoryStream(plantilla.Contenido);
-            string sb;
-            using (var memrdr = new StreamReader(memstrm))
+            if (plantilla.Contenido != null)
             {
-                sb = memrdr.ReadToEnd();
+                var memstrm = new MemoryStream(plantilla.Contenido);
+                string sb;
+                using (var memrdr = new StreamReader(memstrm))
+                {
+                    sb = memrdr.ReadToEnd();
+                }
+                DecodificarContenido(sb.TrimEnd());
             }
-
-            DecodificarContenido(sb.TrimEnd());
+            
             View.NombrePlantilla = plantilla.Nombre;
             View.Activo = plantilla.IsActive;
             View.IdPais = plantilla.IdPais.ToString();

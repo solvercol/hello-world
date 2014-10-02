@@ -94,11 +94,27 @@ namespace Infrastructure.Data.MainModule.Reclamos.Repositories
                 var set = _currentUnitOfWork.CreateSet<TBL_ModuloReclamos_Reclamo>();
 
                 return set.Where(c => c.IdReclamo == id)
-                          .Include(x=> x.TBL_ModuloReclamos_TipoReclamo)
+                          .Include(x => x.TBL_ModuloReclamos_TipoReclamo)
+                          .Include(x => x.TBL_Admin_Usuarios)     // Responsable Actual
                           .Include(x => x.TBL_Admin_Usuarios3)
                           .Select(c => c)
                           .SingleOrDefault();
             }
+            //var actualContext = UnitOfWork as IMainModuleUnitOfWork;
+            //if (actualContext != null)
+            //{
+            //    return (from rec in actualContext.TBL_ModuloReclamos_Reclamo
+            //            join o in actualContext.TBL_Admin_Usuarios
+            //            on rec.IdResponsableActual equals o.IdUser
+            //            join ir in  actualContext.TBL_Admin_Usuarios
+            //            on rec.IdIngenieroResponsable equals ir.IdUser
+            //            join tr in actualContext.TBL_ModuloReclamos_TipoReclamo
+            //            on rec.IdTipoReclamo equals tr.IdTipoReclamo
+            //            where rec.IdReclamo == id
+            //            select
+            //                rec).SingleOrDefault();
+            //}
+
             return null;
         }
     }

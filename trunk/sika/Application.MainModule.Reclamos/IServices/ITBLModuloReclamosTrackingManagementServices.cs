@@ -8,6 +8,7 @@
 
 #pragma warning disable 1591 // this is for supress no xml comments in public members warnings 
 
+using System.Collections.Generic;
 using Domain.Core;
 using Domain.MainModules.Entities;
 
@@ -15,8 +16,8 @@ namespace Application.MainModule.Reclamos.IServices
 {
     public interface ISfTBL_ModuloReclamos_TrackingManagementServices : IGenericServices<TBL_ModuloReclamos_Tracking>
     {
-     
 
+        List<TBL_ModuloReclamos_Tracking> ListadotrackingByIdreclamo(int idReclamo);
     }
 }
     

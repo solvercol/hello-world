@@ -11,7 +11,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text.RegularExpressions;
 using System.Transactions;
 using Application.MainModule.SqlServices.IServices;
 using Applications.MainModule.WorkFlow.DTO;
@@ -275,6 +274,8 @@ namespace Applications.MainModule.WorkFlow.Services
                     var unitOfWork = _tblDocumentosRepository.UnitOfWork;
 
                     oReclamo.IdIngenieroResponsable = Convert.ToInt32(strIdIngeniero);
+
+                    oReclamo.IdResponsableActual = Convert.ToInt32(strIdIngeniero);
 
                     oReclamo.ModifiedOn = DateTime.Now;
 
@@ -620,7 +621,15 @@ namespace Applications.MainModule.WorkFlow.Services
                     scope.Complete();
                 }
 
-                SendMail(oDocument);
+                try
+                {
+                    SendMail(oDocument);
+                }
+                catch (Exception ex)
+                {
+                    _traceManager.LogInfo(string.Format("Error al enviar el Correo electronico. Error: {0}", ex.Message), LogType.Notify);
+                }
+               
 
                 return oDocument;
 

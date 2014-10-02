@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Application.Core;
 using Domain.MainModules.Entities;
 
@@ -6,6 +7,9 @@ namespace Presenters.Reclamos.IViews
 {
     public interface IReclamoView : IView
     {
+
+        event EventHandler FilterEvent;
+
         // Properties
         string IdReclamo { get; }
         string TipoReclamo { get; set; }

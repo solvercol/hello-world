@@ -202,15 +202,6 @@ namespace Modules.Reclamos.Admin {
         protected global::System.Web.UI.WebControls.PlaceHolder phlContent;
         
         /// <summary>
-        /// wucLogReclamo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Modules.Reclamos.UserControls.WUCLogReclamoView wucLogReclamo;
-        
-        /// <summary>
         /// upInputWindows control.
         /// </summary>
         /// <remarks>
@@ -272,5 +263,14 @@ namespace Modules.Reclamos.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.ModalPopupExtender mpeVentanaEmergente;
+        
+        /// <summary>
+        /// wucLogReclamo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Modules.Reclamos.UserControls.WUCLogReclamoView wucLogReclamo;
     }
 }

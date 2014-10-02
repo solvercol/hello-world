@@ -138,7 +138,7 @@
                                 <asp:Menu ID="mnuSecciones" runat="server" Orientation="Horizontal" BackColor="#F5F5F5" Width="100%" OnMenuItemClick="MnuItemClick" > 
                                 <StaticSelectedStyle ForeColor="#FFFFFF" BackColor="#808080" BorderStyle="None" Font-Bold="True" CssClass="center"  />
                                 <StaticMenuItemStyle ForeColor="#7D7D7C"  BorderStyle="solid" BorderWidth="0" Font-Size="10px" Font-Bold="true" CssClass="center" 
-                                    ItemSpacing="4px" HorizontalPadding="1px" Width="120" VerticalPadding="0px" BackColor="#F5F5F5"
+                                    ItemSpacing="4px" HorizontalPadding="1px" Width="100" VerticalPadding="0px" BackColor="#F5F5F5"
                                     Height="15px" />
                                 </asp:Menu>               
                            
@@ -161,7 +161,7 @@
         </asp:UpdatePanel>
     </div>  
     
-<ucLogReclamo:WucLogReclamo ID="wucLogReclamo" runat="server" />
+
 
 
 
@@ -217,4 +217,5 @@
 
 <asp:Content ID="footerContent" runat="server" ContentPlaceHolderID="Footer">
     <!-- Aca va el Log -->
+    <ucLogReclamo:WucLogReclamo ID="wucLogReclamo" runat="server" />
 </asp:Content>
