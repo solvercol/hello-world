@@ -43,8 +43,19 @@ namespace Modules.Reclamos.Catalogos
 
         protected void BtnSaveClick(object sender, EventArgs e)
         {
-            if (SaveEvent != null)
-                SaveEvent(null, EventArgs.Empty);
+            rfvDescripcion.Validate();
+            rfvgerente.Validate();
+            rfvTarifa.Validate();
+            rfvUnidad.Validate();
+            rfvZona.Validate();
+            if (rfvDescripcion.IsValid && rfvgerente.IsValid &&rfvTarifa.IsValid&& rfvUnidad.IsValid&&rfvZona.IsValid)
+            {
+                if (SaveEvent != null)
+                {
+                    SaveEvent(null, EventArgs.Empty);
+                    Response.Redirect(string.Format("FrmViewUnidadZona.aspx{0}&UnidadId={1}&ZonaId={2}&GerenteId={3}", GetBaseQueryString(), this.IdUnidad, this.IdZona, this.IdGerente));
+                }
+            }
         }
 
 
