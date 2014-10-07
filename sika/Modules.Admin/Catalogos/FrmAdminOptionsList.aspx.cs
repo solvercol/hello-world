@@ -65,7 +65,7 @@ namespace Modules.Admin.Catalogos
         protected void RptListadoItemCommand(object source, RepeaterCommandEventArgs e)
         {
 
-            Response.Redirect(string.Format("FrmViewOptionItem.aspx{0}&OpcionId={1}", GetBaseQueryString(), e.CommandArgument));
+            Response.Redirect(string.Format("FrmViewOptionList.aspx{0}&OptionListId={1}", GetBaseQueryString(), e.CommandArgument));
         }
 
         protected void RptListadoItemDataBound(object sender, RepeaterItemEventArgs e)
