@@ -99,6 +99,7 @@
     </Compile>
     <Compile Include="Catalogos\FrmAdminOptionsList.aspx.cs">
       <DependentUpon>FrmAdminOptionsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Catalogos\FrmAdminOptionsList.aspx.designer.cs">
       <DependentUpon>FrmAdminOptionsList.aspx</DependentUpon>
@@ -119,12 +120,14 @@
     </Compile>
     <Compile Include="Catalogos\FrmEditOptionItem.aspx.cs">
       <DependentUpon>FrmEditOptionItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Catalogos\FrmEditOptionItem.aspx.designer.cs">
       <DependentUpon>FrmEditOptionItem.aspx</DependentUpon>
     </Compile>
     <Compile Include="Catalogos\FrmViewOptionList.aspx.cs">
       <DependentUpon>FrmViewOptionList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Catalogos\FrmViewOptionList.aspx.designer.cs">
       <DependentUpon>FrmViewOptionList.aspx</DependentUpon>
