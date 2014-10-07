@@ -126,7 +126,7 @@ namespace Modules.Documentos.Consulta
                     tNodeDoc = new TreeNode(documento.Titulo, documento.IdDocumento.ToString());
                     tNodeDoc.NavigateUrl =
                         string.Format(
-                            "~/pages/modules/documentos/Consulta/FrmVerDocumento.aspx?ModuleId={0}&IdDocumento={1}",
+                            "~/Pages/Modules/Documentos/Consulta/FrmVerDocumento.aspx?ModuleId={0}&IdDocumento={1}&from=docspub",
                             ModuleId, documento.IdDocumento);
                     tNodeTipoDoc.ChildNodes.Add(tNodeDoc);
 

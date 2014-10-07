@@ -238,6 +238,7 @@
     <Content Include="Pages\UserControls\wucMenuPrincipal.ascx" />
     <Content Include="Pages\UserControls\wucUserLogin.ascx" />
     <Content Include="Resources\Images\Actividades.gif" />
+    <Content Include="Resources\Images\add.png" />
     <Content Include="Resources\Images\Barloading.gif" />
     <Content Include="Resources\Images\Bienvenida.jpg" />
     <Content Include="Resources\Images\bmp.gif" />
@@ -313,6 +314,13 @@
     <Content Include="Resources\Images\xls.gif" />
     <Content Include="Resources\Images\xml.gif" />
     <Content Include="Resources\Images\zip.gif" />
+    <Content Include="Resources\modules\chosen\chosen-sprite%402x.png" />
+    <Content Include="Resources\modules\chosen\chosen-sprite.png" />
+    <Content Include="Resources\modules\chosen\chosen.css" />
+    <Content Include="Resources\modules\chosen\chosen.jquery.js" />
+    <Content Include="Resources\modules\chosen\chosen.jquery.min.js" />
+    <Content Include="Resources\modules\chosen\chosen.proto.js" />
+    <Content Include="Resources\modules\chosen\chosen.proto.min.js" />
     <Content Include="Resources\Scripts\jquery-1.7.2.min.js" />
     <Content Include="Resources\Scripts\jquery-1.8.2.min.js" />
     <Content Include="Resources\Scripts\jquery.contextMenu.js" />
@@ -798,6 +806,11 @@
     <PostBuildEvent>xcopy /s /y "$(TargetDir)*.dll" "$(SolutionDir)"Web\bin\
 xcopy /s /y "$(ProjectDir)Resources\images\*.gif" "$(SolutionDir)Web\Resources\images\"
 xcopy /s /y "$(ProjectDir)Resources\images\*.jpg" "$(SolutionDir)Web\Resources\images\"
+xcopy /s /y "$(ProjectDir)Resources\modules\chosen\*.png" "$(SolutionDir)Web\Resources\modules\chosen\"
+xcopy /s /y "$(ProjectDir)Resources\modules\chosen\*.css" "$(SolutionDir)Web\Resources\modules\chosen\"
+xcopy /s /y "$(ProjectDir)Resources\modules\chosen\*.js" "$(SolutionDir)Web\Resources\modules\chosen\"
+xcopy /s /y "$(ProjectDir)Resources\Scripts\*.js" "$(SolutionDir)Web\Resources\Scripts\"
+xcopy /s /y "$(ProjectDir)Resources\Styles\*.css" "$(SolutionDir)Web\Resources\Styles\"
 xcopy /s /y "$(ProjectDir)Resources\Styles\fonts\*.eot" "$(SolutionDir)Web\Resources\Styles\fonts\"
 xcopy /s /y "$(ProjectDir)Resources\Styles\fonts\*.woff" "$(SolutionDir)Web\Resources\Styles\fonts\"
 xcopy /s /y "$(ProjectDir)Resources\images\*.png" "$(SolutionDir)Web\Resources\images\"

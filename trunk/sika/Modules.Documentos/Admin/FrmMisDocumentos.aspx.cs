@@ -17,6 +17,11 @@ namespace Modules.Documentos.Admin
         : ViewPage<VistaMisDocumentosPresenter, IVistaMisDocumentosView>, IVistaMisDocumentosView
     {
 
+        public string QueryStringFrom
+        {
+            get { return Request.QueryString.Get("from"); }
+        }
+
         public TreeNodeCollection ColeccionNodos
         {
             get
@@ -164,8 +169,8 @@ namespace Modules.Documentos.Admin
                     if (!documento.TBL_ModuloDocumentos_Estados.Codigo.Equals("CANCELADO"))
                         tNodeDoc.NavigateUrl =
                             string.Format(
-                                "~/pages/modules/documentos/Admin/FrmEditarDocumento.aspx?ModuleId={0}&IdDocumento={1}&Form={2}",
-                                ModuleId, documento.IdDocumento, "FrmMisDocumentos.aspx");
+                                "../Consulta/FrmVerDocumento.aspx?ModuleId={0}&IdDocumento={1}&from={2}",
+                                ModuleId, documento.IdDocumento, "misdocs");
                     else
                         tNodeDoc.SelectAction = TreeNodeSelectAction.None;
 

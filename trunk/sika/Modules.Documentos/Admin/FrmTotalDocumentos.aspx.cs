@@ -181,8 +181,8 @@ namespace Modules.Documentos.Admin
                     if (!documento.TBL_ModuloDocumentos_Estados.Codigo.Equals("CANCELADO"))
                         tNodeDoc.NavigateUrl =
                             string.Format(
-                                "~/pages/modules/documentos/Admin/FrmEditarDocumento.aspx?ModuleId={0}&IdDocumento={1}&Form={2}",
-                                ModuleId, documento.IdDocumento, "FrmTotalDocumentos.aspx");
+                                "~/Pages/Modules/Documentos/Consulta/FrmVerDocumento.aspx?ModuleId={0}&IdDocumento={1}&from=admindocs",
+                                ModuleId, documento.IdDocumento);
                     else
                         tNodeDoc.SelectAction = TreeNodeSelectAction.None;
 

@@ -14,6 +14,11 @@ namespace Modules.Documentos.UserContrlos
     {
         public event EventHandler FilterEvent;
 
+        public string QueryStringFrom
+        {
+            get { return Request.QueryString.Get("from"); }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -33,8 +38,8 @@ namespace Modules.Documentos.UserContrlos
             if (log.IdHistorial != null)
                 HyprLnkVerHistDoc.NavigateUrl =
                     string.Format(
-                        "~/pages/modules/documentos/Consulta/FrmVerHistDocumento.aspx?ModuleId={0}&IdHistDocumento={1}",
-                        ModuleId, log.IdHistorial);
+                        "~/pages/modules/documentos/Consulta/FrmVerHistDocumento.aspx?ModuleId={0}&IdHistDocumento={1}&from={2}",
+                        ModuleId, log.IdHistorial, QueryStringFrom);
             else
                 HyprLnkVerHistDoc.Visible = false;
         }

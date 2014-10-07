@@ -18,6 +18,7 @@ namespace Presenters.Documentos.Presenters
         private readonly ISfTBL_ModuloDocumentos_DocumentoManagementServices documentoServices;
         private readonly ISfTBL_ModuloDocumentos_CategoriasManagementServices categoriasServices;
         private readonly ISfTBL_Admin_UsuariosManagementServices usuarioServices;
+        private readonly ISfTBL_Admin_OptionListManagementServices optionListServices;
 
         public VerDocumentoPresenter
             (
@@ -25,12 +26,14 @@ namespace Presenters.Documentos.Presenters
                 ,ISfTBL_ModuloDocumentos_CategoriasManagementServices categoriasManagementServices
                 ,ISfTBL_Admin_UsuariosManagementServices usuarioServices
                 ,ISfTBL_ModuloDocumentos_DocumentoAdjuntoManagementServices docAdjuntoServices
+                , ISfTBL_Admin_OptionListManagementServices optionListServices
             )
         {
             this.documentoServices = documentoManagementServices;
             this.categoriasServices = categoriasManagementServices;
             this.usuarioServices = usuarioServices;
             this.docAdjuntoServices = docAdjuntoServices;
+            this.optionListServices = optionListServices;
         }
 
         public override void SubscribeViewToEvents()
@@ -50,7 +53,32 @@ namespace Presenters.Documentos.Presenters
         void ViewLoad(object sender, EventArgs e)
         {
             if(View.IsPostBack)return;
+            LoadOptionListConfigValues();
             CargarObjeto();
+        }
+
+        void LoadOptionListConfigValues()
+        {
+            try
+            {
+                var op = optionListServices.ObtenerOpcionBykeyModuleId("IdRolAdministradorDocumentos", Convert.ToInt32(View.IdModule));
+                var msg = optionListServices.ObtenerOpcionBykeyModuleId("MensajeCopyright", Convert.ToInt32(View.IdModule));
+
+                if (op != null)
+                {
+                    View.IdRolAdministradorDocumentos = Convert.ToInt32(op.Value);
+                }
+
+                if (msg != null)
+                {
+                    View.MsgCopyright = msg.Value;
+                }
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+                InvokeMessageBox(new MessageBoxEventArgs(string.Format(Message.GetObjectError, "LoadOptionListConfigValues"), TypeError.Error));
+            }
         }
 
         private void CargarObjeto()
@@ -70,14 +98,22 @@ namespace Presenters.Documentos.Presenters
 
                 View.Titulo = oDocumento.Titulo;
                 View.Version = oDocumento.Version;
-
+                View.Estado = oDocumento.TBL_ModuloDocumentos_Estados.Nombre;
                 View.Observaciones = oDocumento.Observaciones;
 
                 View.Categoria = oDocumento.TBL_ModuloDocumentos_Categorias.Nombre;
                 View.SubCategoria = oDocumento.TBL_ModuloDocumentos_Categorias1.Nombre;
                 View.TipoDocumento = oDocumento.TBL_ModuloDocumentos_Categorias2.Nombre;
 
-                View.UsuarioResponsable = usuarioServices.FindById(oDocumento.IdUsuarioResponsable).Nombres;
+                View.UsuarioResponsable = oDocumento.TBL_Admin_Usuarios.Nombres;
+
+                View.CanEdit = oDocumento.IdUsuarioResponsable == View.UserSession.IdUser
+                                || oDocumento.IdUsuarioCreacion == View.UserSession.IdUser
+                                || View.UserSession.IsInRoleId(View.IdRolAdministradorDocumentos);
+
+                View.LogInfo = string.Format("Creado por: {0} en {1:dd/MM/yyyy hh:mm tt}, Modificado por: {2} en {3:dd/MM/yyyy hh:mm tt}" ,
+                                            oDocumento.TBL_Admin_Usuarios1.Nombres, oDocumento.FechaCreacion,
+                                            oDocumento.TBL_Admin_Usuarios2.Nombres, oDocumento.FechaModificacion);
 
                 View.Adjuntos(oDocumento.TBL_ModuloDocumentos_DocumentoAdjunto);
             }

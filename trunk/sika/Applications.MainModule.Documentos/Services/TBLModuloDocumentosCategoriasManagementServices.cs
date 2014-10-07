@@ -161,6 +161,12 @@ namespace Application.MainModule.Documentos.Services
         }
 
         #endregion
+
+        public List<TBL_ModuloDocumentos_Categorias> GetByNivel(int nivel)
+        {
+            Specification<TBL_ModuloDocumentos_Categorias> specification = new DirectSpecification<TBL_ModuloDocumentos_Categorias>(u => u.Nivel == nivel);
+            return _tblModuloDocumentosCategoriasRepository.GetBySpec(specification).ToList();
+        }
     }
 }
     

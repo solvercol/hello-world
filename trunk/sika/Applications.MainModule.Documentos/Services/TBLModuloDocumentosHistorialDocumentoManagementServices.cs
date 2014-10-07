@@ -105,7 +105,7 @@ namespace Application.MainModule.Documentos.Services
          {
              if (id == 0)
                  throw new ArgumentNullException(string.Format("Busqueda por Id : El parametro es nulo."));
-             Specification<TBL_ModuloDocumentos_HistorialDocumento> specification = new DirectSpecification<TBL_ModuloDocumentos_HistorialDocumento>(h => h.IdHistorial == id && h.IsActive);
+             Specification<TBL_ModuloDocumentos_HistorialDocumento> specification = new DirectSpecification<TBL_ModuloDocumentos_HistorialDocumento>(h => h.IdHistorial == id);
              return _tblModuloDocumentosHistorialDocumentoRepository.GetHistorialByIdWithAttachments(specification);
          }
 

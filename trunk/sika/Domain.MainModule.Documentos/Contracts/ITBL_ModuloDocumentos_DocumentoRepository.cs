@@ -28,6 +28,8 @@ namespace Domain.MainModule.Documentos.Contracts
 
         TBL_ModuloDocumentos_Documento GetDocumentsByIdWithCategories(
             ISpecification<TBL_ModuloDocumentos_Documento> specification);
+
+        TBL_ModuloDocumentos_Documento GetDocumentoByIdWithUsers(ISpecification<TBL_ModuloDocumentos_Documento> specification);
     }
 }
     

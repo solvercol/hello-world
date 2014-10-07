@@ -32,8 +32,8 @@ namespace ASP.NETCLIENTE
             var javaScripts = new[]
                                        {
                                            "Resources/Scripts/Site.js",
-                                           //"Resources/Scripts/jquery-1.8.2.min.js",
-                                           //"Resources/Scripts/jquery.contextMenu.js",                                           
+                                           "Resources/Scripts/jquery-1.8.2.min.js",
+                                           "Resources/modules/chosen/chosen.jquery.js",                                           
                                        };
 
             foreach (var javaScript in javaScripts)

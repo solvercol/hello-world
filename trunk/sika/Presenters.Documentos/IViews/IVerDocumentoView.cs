@@ -26,6 +26,13 @@ namespace Presenters.Documentos.IViews
         string SubCategoria { set; }
         string TipoDocumento { set; }
         string UsuarioResponsable { set; }
+        string LogInfo { set; }
+        string Estado { set; }
+        string MsgCopyright { set; }
+
+        int IdRolAdministradorDocumentos { get; set; }
+
+        bool CanEdit { get; set; }
 
         void DescargarArchivo(TBL_ModuloDocumentos_DocumentoAdjunto adjunto);
         void Adjuntos(IEnumerable<TBL_ModuloDocumentos_DocumentoAdjunto> adjuntos);

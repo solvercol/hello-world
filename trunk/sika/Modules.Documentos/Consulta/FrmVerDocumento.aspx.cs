@@ -18,9 +18,14 @@ namespace Modules.Documentos.Consulta
 
         public event EventHandler DescargarArchivoEvent;
 
+        public string QueryStringFrom
+        {
+            get { return Request.QueryString.Get("from"); }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            ImprimirTituloVentana("Calidad Total");
+            ImprimirTituloVentana(string.Format("{0}", SubCategoria));
         }
 
         protected override void OnInit(EventArgs e)
@@ -30,10 +35,27 @@ namespace Modules.Documentos.Consulta
 
         protected void BtnRegresarClick(object sender, EventArgs e)
         {
-            string url = string.IsNullOrEmpty(FormRequest)
-                                  ? string.Format("FrmDocumentosPublicados.aspx{0}", GetBaseQueryString())
-                                  : string.Format("{0}{1}", FormRequest, GetBaseQueryString());
+            string url = string.Empty;
+
+            switch (QueryStringFrom)
+            {
+                case "docspub":
+                    url = string.Format("FrmDocumentosPublicados.aspx?ModuleId={0}", IdModule);
+                    break;
+                case "admindocs":
+                    url = string.Format("../Admin/FrmTotalDocumentos.aspx?ModuleId={0}", IdModule);
+                    break;
+                default:
+                    url = string.Format("../Admin/FrmMisDocumentos.aspx?ModuleId={0}", IdModule);
+                    break;
+            }
+
             Response.Redirect(url);
+        }
+
+        protected void BtnEditar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(string.Format("../Admin/FrmEditarDocumento.aspx?ModuleId={0}&IdDocumento={1}&from={2}", IdModule, IdDocumento, QueryStringFrom));
         }
 
         protected void LnkBtnDescargar_Click(object sender, EventArgs e)
@@ -105,6 +127,10 @@ namespace Modules.Documentos.Consulta
 
         public string SubCategoria
         {
+            get
+            {
+                return txtSubCategoria.Text;
+            }
             set
             {
                 txtSubCategoria.Text = value;
@@ -112,7 +138,7 @@ namespace Modules.Documentos.Consulta
         }
 
         public string TipoDocumento
-        {
+        {          
             set
             {
                 txtTipoDocumento.Text = value;
@@ -143,12 +169,58 @@ namespace Modules.Documentos.Consulta
         {
             rptAdjuntos.DataSource = adjuntos;
             rptAdjuntos.DataBind();
+
+            trAnexos.Visible = adjuntos.Any();
         }
 
 
         public string IdModule
         {
             get { return ModuleId; }
+        }
+
+        public int IdRolAdministradorDocumentos
+        {
+            get
+            {
+                if (ViewState["VerDocumento_IdRolAdministradorDocumentos"] == null)
+                    ViewState["VerDocumento_IdRolAdministradorDocumentos"] = 0;
+
+                return Convert.ToInt32(ViewState["VerDocumento_IdRolAdministradorDocumentos"]);
+            }
+            set
+            {
+                ViewState["VerDocumento_IdRolAdministradorDocumentos"] = value;
+            }
+        }
+
+        public bool CanEdit
+        {
+            get
+            {
+                return btnEditar.Visible;
+            }
+            set
+            {
+                btnEditar.Visible = value;
+            }
+        }
+
+
+        public new string LogInfo
+        {
+            set { lblLogInfo.Text = value; }
+        }
+
+
+        public string Estado
+        {
+            set { lblEstado.Text = value; }
+        }
+
+        public string MsgCopyright
+        {
+            set { lblMsgCopyright.Text = value; }
         }
     }
 }

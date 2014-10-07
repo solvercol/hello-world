@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
@@ -11,6 +12,7 @@ using Domain.MainModules.Entities;
 using Infrastructure.CrossCutting.IoC;
 using Presenters.Documentos.IViews;
 using Presenters.Documentos.Presenters;
+using Application.Core;
 
 namespace Modules.Documentos.Admin
 {
@@ -27,6 +29,11 @@ namespace Modules.Documentos.Admin
         public event EventHandler EliminarAdjuntoEvent;
         public event EventHandler GuardarAdjuntoEvent;
 
+        public string QueryStringFrom
+        {
+            get { return Request.QueryString.Get("from"); }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             ImprimirTituloVentana((IdDocumento == 0) ? "Nuevo Documento" : "Editar Documento");
@@ -34,10 +41,9 @@ namespace Modules.Documentos.Admin
 
             btnPublicar.Visible = !(IdDocumento == 0);
             btnCancelar.Visible = !(IdDocumento == 0);
-            filaAdjuntar.Visible = !(IdDocumento == 0);
+            
             IdDocCreado = IdDocumento;
-            HacerVisibleBotonesSegunEstado();
-            ValidacionExistenIdCategorias();            
+            HacerVisibleBotonesSegunEstado();          
         }
 
         private void HacerVisibleBotonesSegunEstado()
@@ -56,13 +62,6 @@ namespace Modules.Documentos.Admin
             }
 
             
-        }
-
-        private void ValidacionExistenIdCategorias()
-        {
-            txtCategoria.Attributes.Add("onBlur", "DespuesDeDigitarCategoria('Categoria');");
-            txtSubCategoria.Attributes.Add("onBlur", "DespuesDeDigitarCategoria('SubCategoria');");
-            txtTipoDocumento.Attributes.Add("onBlur", "DespuesDeDigitarCategoria('TipoDocumento');");
         }
 
         protected override void OnInit(EventArgs e)
@@ -91,12 +90,32 @@ namespace Modules.Documentos.Admin
 
         protected void BtnRegresarClick(object sender, EventArgs e)
         {
-            string url = string.Format("{0}{1}", FormRequest, GetBaseQueryString());
+            string url = string.Empty;
+
+            if (IdDocumento == 0)
+                url = string.Format("FrmMisDocumentos.aspx?ModuleId={0}", ModuleId);
+            else
+                url = string.Format("../Consulta/FrmVerDocumento.aspx?ModuleId={0}&IdDocumento={1}&from={2}", ModuleId, IdDocumento, QueryStringFrom);
+
             Response.Redirect(url);
         }
 
         protected void BtnGuardarClick(object sender, EventArgs e)
         {
+            var messages = new List<string>();
+
+            if (string.IsNullOrEmpty(Titulo))
+                messages.Add("El campo Titulo es requerido.");
+
+            if (string.IsNullOrEmpty(Observaciones))
+                messages.Add("El campo Observaciones es requerido.");
+
+            if (messages.Any())
+            {
+                AddErrorMessages(messages);
+                return;
+            }
+
             if (GuardarEvent != null)
                 GuardarEvent(null, EventArgs.Empty);
         }
@@ -140,6 +159,62 @@ namespace Modules.Documentos.Admin
                 CancelarEvent(null, EventArgs.Empty);
         }
 
+        protected void LnkAddCategoria_Click(object sender, EventArgs e)
+        {
+            var btn = (LinkButton)sender;
+            var nivel = Convert.ToInt32(btn.CommandArgument);
+
+            switch (nivel)
+            {
+                case 1:
+                    TituloCategoriaAdmin = "Administrar Categoría";
+                    break;
+                case 2:
+                    TituloCategoriaAdmin = "Administrar SubCategoría";
+                    break;
+                case 3:
+                    TituloCategoriaAdmin = "Administrar Tipo Documento";
+                    break;
+            }
+
+
+            IdNivelCategoria = nivel;
+
+            txtCategoria.Text = string.Empty;
+
+            ShowAdminCategoria(true);
+        }
+
+        protected void BtnSaveCategoria_Click(object sender, EventArgs e)
+        {
+            Presenter.AddCategoria();
+        }
+
+        protected void RptArchivosAdjuntos_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+            {
+                var item = (DTO_ValueKey)(e.Item.DataItem);
+                // Bindind data
+
+                var hddIdArchivo = e.Item.FindControl("hddIdArchivo") as HiddenField;
+                if (hddIdArchivo != null) hddIdArchivo.Value = string.Format("{0}", item.Id);
+
+                var lnkBtnArchivo = e.Item.FindControl("lnkBtnArchivo") as LinkButton;
+                if (lnkBtnArchivo != null)
+                {
+                    lnkBtnArchivo.Text = string.Format("{0}", item.Value);
+                    lnkBtnArchivo.CommandArgument = string.Format("{0}", item.Id);
+                }
+
+                var ImgBtnEliminar = e.Item.FindControl("ImgBtnEliminar") as ImageButton;
+                if (ImgBtnEliminar != null)
+                {
+                    ImgBtnEliminar.CommandArgument = string.Format("{0}", item.Id);
+                }
+            }
+        }
+
         #endregion
 
         #region Propiedades
@@ -158,9 +233,7 @@ namespace Modules.Documentos.Admin
             }
         }
 
-
-
-        private static object IdDocCreadoSession
+        private object IdDocCreadoSession
         {
             get
             {
@@ -170,43 +243,7 @@ namespace Modules.Documentos.Admin
             {
                 HttpContext.Current.Session["IdDocCreadoSession"] = value;
             }
-        }
-
-        private static object IdCategoriaSession
-        {
-            get
-            {
-                return HttpContext.Current.Session["IdCategoria"];
-            }
-            set
-            {
-                HttpContext.Current.Session["IdCategoria"] = value;
-            }
-        }
-
-        private static object IdSubCategoriaSession
-        {
-            get
-            {
-                return HttpContext.Current.Session["IdSubCategoria"];
-            }
-            set
-            {
-                HttpContext.Current.Session["IdSubCategoria"] = value;
-            }
-        }
-
-        private static object IdTipoDocumentoSession
-        {
-            get
-            {
-                return HttpContext.Current.Session["IdTipoDocumento"];
-            }
-            set
-            {
-                HttpContext.Current.Session["IdTipoDocumento"] = value;
-            }
-        }
+        }     
 
         public TBL_Admin_Usuarios UserSession
         {
@@ -291,14 +328,11 @@ namespace Modules.Documentos.Admin
         {
             get
             {
-                int idCategoria = 0;
-                if (IdCategoriaSession != null)
-                    idCategoria = Convert.ToInt32(IdCategoriaSession);
-                return idCategoria;
+                return Convert.ToInt32(ddlCategoria.SelectedValue);
             }
             set
             {
-                IdCategoriaSession = value;
+                ddlCategoria.SelectedValue = value.ToString();
             }
         }
 
@@ -306,14 +340,11 @@ namespace Modules.Documentos.Admin
         {
             get
             {
-                int idSubCategoria = 0;
-                if (IdSubCategoriaSession != null)
-                    idSubCategoria = Convert.ToInt32(IdSubCategoriaSession);
-                return idSubCategoria;
+                return Convert.ToInt32(ddlSubCategoria.SelectedValue);
             }
             set
             {
-                IdSubCategoriaSession = value;
+                ddlSubCategoria.SelectedValue = value.ToString();
             }
         }
 
@@ -321,52 +352,13 @@ namespace Modules.Documentos.Admin
         {
             get
             {
-                int idTipoDocumento = 0;
-                if (IdTipoDocumentoSession != null)
-                    idTipoDocumento = Convert.ToInt32(IdTipoDocumentoSession);
-                return idTipoDocumento;
+                return Convert.ToInt32(ddlTipoDocumento.SelectedValue);
             }
             set
             {
-                IdTipoDocumentoSession = value;
+                ddlTipoDocumento.SelectedValue = value.ToString();
             }
-        }
-
-        public string Categoria
-        {
-            get
-            {
-                return txtCategoria.Text.ToUpper();
-            }
-            set
-            {
-                txtCategoria.Text = value;
-            }
-        }
-
-        public string SubCategoria
-        {
-            get
-            {
-                return txtSubCategoria.Text.ToUpper();
-            }
-            set
-            {
-                txtSubCategoria.Text = value;
-            }
-        }
-
-        public string TipoDocumento
-        {
-            get
-            {
-                return txtTipoDocumento.Text.ToUpper();
-            }
-            set
-            {
-                txtTipoDocumento.Text = value;
-            }
-        }
+        }       
 
         public int IdUsuarioResponsable
         {
@@ -376,120 +368,87 @@ namespace Modules.Documentos.Admin
             }
             set
             {
-                ddlResponsableDoc.SelectedIndex = -1;
-                ddlResponsableDoc.Items.FindByValue(value.ToString()).Selected = true;
+                ddlResponsableDoc.SelectedValue = value.ToString();
             }
         }
 
         public bool Activo
         {
-            get { return chkActiva.Checked; }
-            set { chkActiva.Checked = value; }
+            get { return true; }
+            set { ViewState["EditarDocumento_Activo"] = value; }
         }
 
         #endregion
 
         #region Métodos
+
+        void AddErrorMessages(List<string> messages)
+        {
+            if (messages.Any())
+            {
+                foreach (var msg in messages)
+                {
+                    var custVal = new CustomValidator();
+                    custVal.IsValid = false;
+                    custVal.ErrorMessage = msg;
+                    custVal.EnableClientScript = false;
+                    custVal.Display = ValidatorDisplay.None;
+                    custVal.ValidationGroup = "vgGeneral";
+                    this.Page.Form.Controls.Add(custVal);
+                }
+            }
+        }
         
         public void Responsables(IEnumerable<TBL_Admin_Usuarios> responsables)
         {
-            ddlResponsableDoc.Items.Clear();
-            foreach (var rp in responsables)
-                ddlResponsableDoc.Items.Add(new ListItem(rp.Nombres, rp.IdUser.ToString()));
-            var li = new ListItem("Seleccione", "0");
-            ddlResponsableDoc.Items.Insert(0, li);
+            ddlResponsableDoc.DataSource = responsables;
+            ddlResponsableDoc.DataTextField = "Nombres";
+            ddlResponsableDoc.DataValueField = "IdUser";
+            ddlResponsableDoc.DataBind();
         }
 
-        public void Adjuntos(IEnumerable<TBL_ModuloDocumentos_DocumentoAdjunto> adjuntos)
+        public void LoadCategorias(List<TBL_ModuloDocumentos_Categorias> items)
         {
-            rptAdjuntos.DataSource = adjuntos;
+            ddlCategoria.DataSource = items;
+            ddlCategoria.DataTextField = "Nombre";
+            ddlCategoria.DataValueField = "IdCategoria";
+            ddlCategoria.DataBind();
+        }
+
+        public void LoadSubCategorias(List<TBL_ModuloDocumentos_Categorias> items)
+        {
+            ddlSubCategoria.DataSource = items;
+            ddlSubCategoria.DataTextField = "Nombre";
+            ddlSubCategoria.DataValueField = "IdCategoria";
+            ddlSubCategoria.DataBind();
+        }
+
+        public void LoadTiposDocumento(List<TBL_ModuloDocumentos_Categorias> items)
+        {
+            ddlTipoDocumento.DataSource = items;
+            ddlTipoDocumento.DataTextField = "Nombre";
+            ddlTipoDocumento.DataValueField = "IdCategoria";
+            ddlTipoDocumento.DataBind();
+        }       
+
+        public void LoadArchivosAdjuntos(List<DTO_ValueKey> items)
+        {
+            rptAdjuntos.DataSource = items;
             rptAdjuntos.DataBind();
         }
 
         public void DescargarArchivo(TBL_ModuloDocumentos_DocumentoAdjunto adjunto)
         {
-            ViewPage<EditarDocumentoPresenter, IEditarDocumentoView>
-                .DownloadDocument(adjunto.Archivo, adjunto.NombreArchivo, "application/octet-stream");
+            DownloadDocument(adjunto.Archivo, adjunto.NombreArchivo, "application/octet-stream");
         }
 
-        #region Métodos Web
-
-        [WebMethod]
-        public static void AsignarCategoria(string Tipo, int Id)
+        public void ShowAdminCategoria(bool visible)
         {
-            try
-            {
-                switch (Tipo)
-                {
-                    case "categoria":
-                        {
-                            IdCategoriaSession = Id;
-                            break;
-                        }
-                    case "subcategoria":
-                        {
-                            IdSubCategoriaSession = Id;
-                            break;
-                        }
-                    case "tipodocumento":
-                        {
-                            IdTipoDocumentoSession = Id;
-                            break;
-                        }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error al recuperar el identificador de ctegoria: " + ex.Message);
-            }
+            if (visible)
+                mpeAdminCategoria.Show();
+            else
+                mpeAdminCategoria.Hide();
         }
-
-        [WebMethod]
-        public static void DespuesDeDigitarCategoria(string Categoria, string Contenido)
-        {
-            ISfTBL_ModuloDocumentos_CategoriasManagementServices categoriasServices;
-            TBL_ModuloDocumentos_Categorias categoria = null;
-            try
-            {
-                categoriasServices = IoC.Resolve<ISfTBL_ModuloDocumentos_CategoriasManagementServices>();
-                switch (Categoria)
-                {
-                    case "Categoria":
-                        {
-                            if (IdCategoriaSession == null)
-                                break;
-                            categoria = categoriasServices.FindById(Convert.ToInt32(IdCategoriaSession));
-                            if (!categoria.Nombre.ToLower().Equals(Contenido.ToLower()))
-                                IdCategoriaSession = null;
-                            break;
-                        }
-                    case "SubCategoria":
-                        {
-                            if (IdSubCategoriaSession == null)
-                                break;
-                            categoria = categoriasServices.FindById(Convert.ToInt32(IdSubCategoriaSession));
-                            if (!categoria.Nombre.ToLower().Equals(Contenido.ToLower()))
-                                IdSubCategoriaSession = null;
-                            break;
-                        }
-                    case "TipoDocumento":
-                        {
-                            if (IdTipoDocumentoSession == null)
-                                break;
-                            categoria = categoriasServices.FindById(Convert.ToInt32(IdTipoDocumentoSession));
-                            if (!categoria.Nombre.ToLower().Equals(Contenido.ToLower()))
-                                IdTipoDocumentoSession = null;
-                            break;
-                        }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error Despues De Digitar la Categoria: " + ex.Message);
-            }
-        }
-
-        #endregion
 
         #endregion
 
@@ -515,10 +474,86 @@ namespace Modules.Documentos.Admin
 
         protected void BtnAdjuntarClick(object sender, EventArgs e)
         {
-            EstaAdjuntandoOEliminando = true;
-            if (GuardarAdjuntoEvent != null)
+            if (!FileUploadArchivo.HasFile)
+                return;
+
+            if (IdDocumento == 0)
+            {
+                var docAdjunto = new DTO_ValueKey();
+                docAdjunto.Id = (ArchivosAdjuntos.Count + 1).ToString();
+                docAdjunto.Value = NombreArchivo;
+                docAdjunto.ComplexValue = Archivo;
+
+                ArchivosAdjuntos.Add(docAdjunto);
+
+                LoadArchivosAdjuntos(ArchivosAdjuntos);
+            }
+            else
+            {
                 GuardarAdjuntoEvent(null, EventArgs.Empty);
+            }
         }
 
+        public int IdNivelCategoria
+        {
+            get
+            {
+                if (ViewState["EditarDocumento_IdNivelCategoria"] == null)
+                    ViewState["EditarDocumento_IdNivelCategoria"] = 1;
+
+                return Convert.ToInt32(ViewState["EditarDocumento_IdNivelCategoria"]);
+            }
+            set
+            {
+                ViewState["EditarDocumento_IdNivelCategoria"] = value;
+            }
+        }
+
+        public string TituloCategoriaAdmin
+        {
+            set { lblAdminCategoriaTitle.Text = value; }
+        }
+
+        public string NuevaCategoria
+        {
+            get
+            {
+                return txtCategoria.Text;
+            }
+            set
+            {
+                txtCategoria.Text = value;
+            }
+        }
+
+        public List<DTO_ValueKey> ArchivosAdjuntos
+        {
+            get
+            {
+                if (Session["EditarDocumento_ArchivosAdjuntos"] == null)
+                    Session["EditarDocumento_ArchivosAdjuntos"] = new List<DTO_ValueKey>();
+
+                return Session["EditarDocumento_ArchivosAdjuntos"] as List<DTO_ValueKey>;
+            }
+            set
+            {
+                Session["EditarDocumento_ArchivosAdjuntos"] = value;
+            }
+        }
+
+        public void GoToViewDocument(int idDocumento)
+        {
+            Response.Redirect(string.Format("../Consulta/FrmVerDocumento.aspx?ModuleId={0}&IdDocumento={1}", IdModule, idDocumento));
+        }
+
+        public new string LogInfo
+        {
+            set { lblLogInfo.Text = value; }
+        }
+
+        public string Estado
+        {
+            set { lblEstado.Text = value; }
+        }
     }
 }

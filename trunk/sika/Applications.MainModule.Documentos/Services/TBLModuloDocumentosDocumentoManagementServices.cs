@@ -221,6 +221,12 @@ namespace Application.MainModule.Documentos.Services
              return _tblModuloDocumentosDocumentoRepository.GetDocumentsByIdWithCategories(specification);
          }
 
+         public TBL_ModuloDocumentos_Documento GetDocumentoByIdWithUsers(int id)
+         {
+             Specification<TBL_ModuloDocumentos_Documento> specification = new DirectSpecification<TBL_ModuloDocumentos_Documento>(doc => doc.IdDocumento == id);
+             return _tblModuloDocumentosDocumentoRepository.GetDocumentoByIdWithUsers(specification);
+         }
+
           /// <summary>
           /// Obtiene el listado de entidades activas y paginadas.
           /// </summary>
