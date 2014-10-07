@@ -142,8 +142,7 @@ namespace Applications.MainModule.Admin.Services
              {
                  Specification<TBL_Admin_OptionList> onlyEnabledSpec = new DirectSpecification<TBL_Admin_OptionList>
                     (u => 
-                        (u.IdModule.ToString().Contains(search) ||
-                        u.Key.Contains(search) ||
+                        (u.Key.Contains(search) ||
                         u.Value.Contains(search) ||
                         u.Descripcion.Contains(search)));
 
@@ -165,8 +164,7 @@ namespace Applications.MainModule.Admin.Services
 
                  Specification<TBL_Admin_OptionList> onlyEnabledSpec = new DirectSpecification<TBL_Admin_OptionList>
                            (u =>
-                               (u.IdModule.ToString().Contains(search) ||
-                               u.Key.Contains(search) ||
+                               (u.Key.Contains(search) ||
                                u.Value.Contains(search) ||
                                u.Descripcion.Contains(search)));
                  return _tblAdminOptionListRepository.GetBySpec(onlyEnabledSpec).Count();

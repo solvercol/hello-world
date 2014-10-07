@@ -26,7 +26,7 @@
                     Font-Size="0.8em">Ver Filtro...</asp:Label>
                 </div>
                 </div>
-                <asp:button id="btnNew" runat="server" Visible="true" OnClick="BtnNewClick" text="Nuevo Asesor"></asp:button>
+                <asp:button id="btnNew" runat="server" Visible="false" OnClick="BtnNewClick" text="Nuevo Option List"></asp:button>
             </td>
         </tr>
     </table>
@@ -108,7 +108,7 @@
                     </table>
 
                     <div class="pager">
-				            <csc:PagerLinq ID="pgrListado" runat="server" PageSize="20" OnPageChanged="PgrChanged"/>
+				            <csc:PagerLinq ID="pgrListado" runat="server" PageSize="14" OnPageChanged="PgrChanged"/>
 	                </div>	
                 </ContentTemplate>
                 </asp:UpdatePanel>            

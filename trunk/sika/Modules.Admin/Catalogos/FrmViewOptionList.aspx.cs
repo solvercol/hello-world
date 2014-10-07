@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using System.Web.UI.WebControls;
 using ASP.NETCLIENTE.UI;
 using Domain.MainModules.Entities;
-using Presenters.Reclamos.IViews;
-using Presenters.Reclamos.Presenters;
+using Presenters.Admin.IViews;
+using Presenters.Admin.Presenters;
 using System.Collections;
 using System.Linq;
 
 
-namespace Modules.Reclamos.Catalogos
+namespace Modules.Admin.Catalogos
 {
-    public partial class FrmViewActividadReclamo : ViewPage<DetailActividadReclamosPresenter, IDetailActividadReclamosView>, IDetailActividadReclamosView
+    public partial class FrmViewOptionList : ViewPage<DetailOptionListPresenter,IDetailOptionListView>,IDetailOptionListView
     {
         #region Load
 
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            ImprimirTituloVentana("Detalle Actividad Reclamos");
-            btnEdit.Visible = !string.IsNullOrEmpty(IdActividadReclamo);
+            ImprimirTituloVentana("Detalle Option List");
+            btnEdit.Visible = !string.IsNullOrEmpty(IdOpcion);
 
         }
 
@@ -40,12 +40,12 @@ namespace Modules.Reclamos.Catalogos
 
         protected void BtnBackClick(object sender, EventArgs e)
         {
-            Response.Redirect(string.Format("FrmAdminActividadesReclamos.aspx{0}", GetBaseQueryString()));
+            Response.Redirect(string.Format("FrmAdminOptionsList.aspx{0}", GetBaseQueryString()));
         }
 
         protected void BtnEditClick(object sender, EventArgs e)
         {
-            Response.Redirect(string.Format("FrmEditActividadReclamo.aspx{0}&ActividadReclamoId={1}", GetBaseQueryString(), IdActividadReclamo));
+            Response.Redirect(string.Format("FrmEditOptionItem.aspx{0}&OptionListId={1}", GetBaseQueryString(), IdOpcion));
         }
 
         #endregion
@@ -53,22 +53,24 @@ namespace Modules.Reclamos.Catalogos
         #region Members
 
 
-        public string Nombre
+        public string IdModulo
         {
-            set { txtNombre.Text = value; }
+            set { txtModule.Text = value; }
         }
 
-
-        public string Descripcion
+        public string descripcion
         {
             set { txtDescripcion.Text = value; }
         }
 
-
-        public string IdTipoReclamo
+        public string key
         {
-            set { txtReclamo.Text = value; }
-            get { return txtReclamo.Text; }
+            set { txtKey.Text = value; }
+        }
+
+        public string value
+        {
+            set { txtValue.Text = value; }
         }
 
         public bool Activo
@@ -96,9 +98,9 @@ namespace Modules.Reclamos.Catalogos
             set { lblModifiedOn.Text = value; }
         }
 
-        public string IdActividadReclamo
+        public string IdOpcion
         {
-            get { return Request.QueryString["ActividadReclamoId"]; }
+            get { return Request.QueryString["OptionListId"]; }
         }
 
         public TBL_Admin_Usuarios UserSession
@@ -112,5 +114,6 @@ namespace Modules.Reclamos.Catalogos
         }
 
         #endregion
+
     }
 }
