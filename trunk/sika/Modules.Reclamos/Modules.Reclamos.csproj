@@ -246,6 +246,7 @@
     </Compile>
     <Compile Include="Catalogos\FrmAddUnidadZona.aspx.cs">
       <DependentUpon>FrmAddUnidadZona.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Catalogos\FrmAddUnidadZona.aspx.designer.cs">
       <DependentUpon>FrmAddUnidadZona.aspx</DependentUpon>
@@ -315,6 +316,7 @@
     </Compile>
     <Compile Include="Catalogos\FrmEditUnidadZona.aspx.cs">
       <DependentUpon>FrmEditUnidadZona.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Catalogos\FrmEditUnidadZona.aspx.designer.cs">
       <DependentUpon>FrmEditUnidadZona.aspx</DependentUpon>
