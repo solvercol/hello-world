@@ -45,8 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IViews\IAdminOptionList.cs" />
+    <Compile Include="IViews\IDetailOptionListView.cs" />
     <Compile Include="IViews\IEditEmailTemplateView.cs" />
     <Compile Include="IViews\IEditModulesView.cs" />
+    <Compile Include="IViews\IEditOptionListView.cs" />
     <Compile Include="IViews\IEditRoleView.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -66,8 +69,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Presenters\AdminOptionsListPresenters.cs" />
+    <Compile Include="Presenters\DetailOptionListPresenter.cs" />
     <Compile Include="Presenters\EditEmailTemplatePresenter.cs" />
     <Compile Include="Presenters\EditModulePresenter.cs" />
+    <Compile Include="Presenters\EditOptionListPresenter.cs" />
     <Compile Include="Presenters\EditRolePresenter.cs">
       <SubType>Code</SubType>
     </Compile>

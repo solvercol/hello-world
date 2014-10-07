@@ -62,6 +62,7 @@
     <Compile Include="IViews\IEditAsesoresView.cs" />
     <Compile Include="IViews\IEditCategoriaProductoView.cs" />
     <Compile Include="IViews\IEditCategoriaReclamosView.cs" />
+    <Compile Include="IViews\IEditUnidadZonaView.cs" />
     <Compile Include="IViews\IMisActividadesView.cs" />
     <Compile Include="IViews\IAdminActividadReclamoView.cs" />
     <Compile Include="IViews\IAdminAlternativaReclamoView.cs" />
@@ -149,6 +150,7 @@
     <Compile Include="Presenters\EditAsesoresPresenter.cs" />
     <Compile Include="Presenters\EditCategoriaProductoPresenter.cs" />
     <Compile Include="Presenters\EditCategoriaReclamosPresenter.cs" />
+    <Compile Include="Presenters\EditUnidadZonaPresenter.cs" />
     <Compile Include="Presenters\SeguimientoPresenter.cs" />
     <Compile Include="Presenters\MisActividadesPresenter.cs" />
     <Compile Include="Presenters\FilterClientPresenter.cs" />
