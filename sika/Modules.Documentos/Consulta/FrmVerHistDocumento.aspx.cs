@@ -18,9 +18,14 @@ namespace Modules.Documentos.Consulta
 
         public event EventHandler DescargarArchivoEvent;
 
+        public string QueryStringFrom
+        {
+            get { return Request.QueryString.Get("from"); }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            ImprimirTituloVentana("Calidad Total - Historico");
+            ImprimirTituloVentana(string.Format("{0}", SubCategoria));
         }
 
         protected override void OnInit(EventArgs e)
@@ -31,8 +36,8 @@ namespace Modules.Documentos.Consulta
         protected void BtnRegresarClick(object sender, EventArgs e)
         {
             string url =
-                string.Format("~/pages/modules/documentos/Consulta/FrmVerDocumento.aspx?ModuleId={0}&IdDocumento={1}",
-                              ModuleId, IdDocumento);
+                string.Format("FrmVerDocumento.aspx?ModuleId={0}&IdDocumento={1}&from={2}",
+                              ModuleId, IdDocumento, QueryStringFrom);
             Response.Redirect(url);
         }
 
@@ -111,6 +116,10 @@ namespace Modules.Documentos.Consulta
 
         public string SubCategoria
         {
+            get
+            {
+                return txtSubCategoria.Text;
+            }
             set
             {
                 txtSubCategoria.Text = value;
@@ -156,5 +165,16 @@ namespace Modules.Documentos.Consulta
         {
             get { return ModuleId; }
         }
+
+        public new string LogInfo
+        {
+            set { lblLogInfo.Text = value; }
+        }
+
+        public string Estado
+        {
+            set { lblEstado.Text = value; }
+        }
+
     }
 }

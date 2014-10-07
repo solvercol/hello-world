@@ -29,6 +29,8 @@ namespace Application.MainModule.Documentos.IServices
                                                                  Int32 filtroIdUsuario);
 
         TBL_ModuloDocumentos_Documento GetDocumentoByIdWithCategories(int id);
+
+        TBL_ModuloDocumentos_Documento GetDocumentoByIdWithUsers(int id);
     }
 }
     

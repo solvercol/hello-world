@@ -22,6 +22,15 @@ namespace Modules.Documentos.Consulta {
         protected global::System.Web.UI.WebControls.Button btnRegresar;
         
         /// <summary>
+        /// btnEditar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEditar;
+        
+        /// <summary>
         /// LblTitulo control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,24 @@ namespace Modules.Documentos.Consulta {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LblTitulo;
+        
+        /// <summary>
+        /// lblVersionTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblVersionTitle;
+        
+        /// <summary>
+        /// lblVersion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblVersion;
         
         /// <summary>
         /// txtTitulo control.
@@ -40,40 +67,13 @@ namespace Modules.Documentos.Consulta {
         protected global::System.Web.UI.WebControls.Label txtTitulo;
         
         /// <summary>
-        /// tdCollapse control.
+        /// lblEstado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableCell tdCollapse;
-        
-        /// <summary>
-        /// pnlDetalle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlDetalle;
-        
-        /// <summary>
-        /// pnlContainer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlContainer;
-        
-        /// <summary>
-        /// rptAdjuntos control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptAdjuntos;
+        protected global::System.Web.UI.WebControls.Label lblEstado;
         
         /// <summary>
         /// txtCategoria control.
@@ -112,15 +112,6 @@ namespace Modules.Documentos.Consulta {
         protected global::System.Web.UI.WebControls.Label txtResponsableDoc;
         
         /// <summary>
-        /// lblVersion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblVersion;
-        
-        /// <summary>
         /// txtObservaciones control.
         /// </summary>
         /// <remarks>
@@ -130,6 +121,51 @@ namespace Modules.Documentos.Consulta {
         protected global::System.Web.UI.WebControls.Label txtObservaciones;
         
         /// <summary>
+        /// trAnexos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow trAnexos;
+        
+        /// <summary>
+        /// pnlDetalle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlDetalle;
+        
+        /// <summary>
+        /// pnlContainer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlContainer;
+        
+        /// <summary>
+        /// rptAdjuntos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptAdjuntos;
+        
+        /// <summary>
+        /// lblLogInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLogInfo;
+        
+        /// <summary>
         /// WUCLogCambiosDoc control.
         /// </summary>
         /// <remarks>
@@ -137,5 +173,14 @@ namespace Modules.Documentos.Consulta {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UserControl WUCLogCambiosDoc;
+        
+        /// <summary>
+        /// lblMsgCopyright control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMsgCopyright;
     }
 }

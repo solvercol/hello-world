@@ -27,6 +27,8 @@ namespace Presenters.Documentos.IViews
         string SubCategoria { set; }
         string TipoDocumento { set; }
         string UsuarioResponsable { set; }
+        string LogInfo { set; }
+        string Estado { set; }
         void DescargarArchivo(TBL_ModuloDocumentos_DocumentoAdjuntoHistorial histDocumento);
         void Adjuntos(IEnumerable<TBL_ModuloDocumentos_DocumentoAdjuntoHistorial> adjuntosHist);
         #endregion

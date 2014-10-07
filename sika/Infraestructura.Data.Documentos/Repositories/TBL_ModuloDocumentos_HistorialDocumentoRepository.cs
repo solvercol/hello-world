@@ -45,6 +45,9 @@ namespace Infraestructura.Data.Documentos.Repositories
                                     .Include(r => r.TBL_ModuloDocumentos_Categorias1)
                                     .Include(r => r.TBL_ModuloDocumentos_Categorias2)
                                     .Include(r => r.TBL_ModuloDocumentos_Estados)
+                                    .Include(r => r.TBL_Admin_Usuarios)
+                                    .Include(r => r.TBL_Admin_Usuarios1)
+                                    .Include(r => r.TBL_Admin_Usuarios2)
                                     .Where(specific)
                                     .SingleOrDefault();
             }

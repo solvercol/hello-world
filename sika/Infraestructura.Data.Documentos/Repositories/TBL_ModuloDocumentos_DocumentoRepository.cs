@@ -47,6 +47,31 @@ namespace Infraestructura.Data.Documentos.Repositories
             return null;
         }
 
+        public TBL_ModuloDocumentos_Documento GetDocumentoByIdWithUsers(ISpecification<TBL_ModuloDocumentos_Documento> specification)
+        {
+            //validate specification
+            if (specification == null)
+                throw new ArgumentNullException("specification");
+            var activeContext = UnitOfWork as IMainModuleUnitOfWork;
+            if (activeContext != null)
+            {
+                //perform operation in this repository
+                var specific = specification.SatisfiedBy();
+                return activeContext.TBL_ModuloDocumentos_Documento
+                                    .Include(r => r.TBL_ModuloDocumentos_Estados)
+                                    .Include(r => r.TBL_Admin_Usuarios)
+                                    .Include(r => r.TBL_Admin_Usuarios1)
+                                    .Include(r => r.TBL_Admin_Usuarios2)
+                                    .Where(specific)
+                                    .SingleOrDefault();
+            }
+            throw new InvalidOperationException(string.Format(
+                CultureInfo.InvariantCulture,
+                Messages.exception_InvalidStoreContext,
+                GetType().Name));
+
+        }
+
         public TBL_ModuloDocumentos_Documento GetDocumentoByIdWithAttachments(ISpecification<TBL_ModuloDocumentos_Documento> specification)
         {
             //validate specification
@@ -63,6 +88,9 @@ namespace Infraestructura.Data.Documentos.Repositories
                                     .Include(r => r.TBL_ModuloDocumentos_Categorias1)
                                     .Include(r => r.TBL_ModuloDocumentos_Categorias2)
                                     .Include(r => r.TBL_ModuloDocumentos_Estados)
+                                    .Include(r => r.TBL_Admin_Usuarios)
+                                    .Include(r => r.TBL_Admin_Usuarios1)
+                                    .Include(r => r.TBL_Admin_Usuarios2)
                                     .Where(specific)
                                     .SingleOrDefault();
             }
@@ -88,6 +116,9 @@ namespace Infraestructura.Data.Documentos.Repositories
                     .Include(r => r.TBL_ModuloDocumentos_Categorias1)
                     .Include(r => r.TBL_ModuloDocumentos_Categorias2)
                     .Include(r => r.TBL_ModuloDocumentos_Estados)
+                    .Include(r => r.TBL_Admin_Usuarios)
+                    .Include(r => r.TBL_Admin_Usuarios1)
+                    .Include(r => r.TBL_Admin_Usuarios2)
                     .Include(r => r.TBL_ModuloDocumentos_DocumentoAdjunto)
                     .Where(specific).ToList();
             }
@@ -113,6 +144,9 @@ namespace Infraestructura.Data.Documentos.Repositories
                     .Include(r => r.TBL_ModuloDocumentos_Categorias1)
                     .Include(r => r.TBL_ModuloDocumentos_Categorias2)
                     .Include(r => r.TBL_ModuloDocumentos_Estados)
+                    .Include(r => r.TBL_Admin_Usuarios)
+                    .Include(r => r.TBL_Admin_Usuarios1)
+                    .Include(r => r.TBL_Admin_Usuarios2)
                     .Include(r => r.TBL_ModuloDocumentos_DocumentoAdjunto)
                     .Where(specific).FirstOrDefault();
             }

@@ -8,7 +8,7 @@
                <table cellpadding="0" cellspacing="0" width="100%">
                 <tr>
                     <td colspan="2" id="tdCollapse" runat="server" class="ToolBar">
-                        Log De Cambios
+                        Historial del Documento
                         <asp:ImageButton 
                         ID="imgCollampseExpand" 
                         runat="server" 
@@ -23,10 +23,10 @@
                             
                             <table class="tbl" cellpadding="0" cellspacing="0" width="100%" style="height:15px">
                                <tr>
-                                    <th  style="width:12%" align="left" >
+                                    <th  style="width:14%" align="left" >
                                             Fecha
                                     </th>
-                                    <th  style="width:88%" align="left">
+                                    <th  style="width:86%" align="left">
                                             Descripción
                                     </th>
                                 </tr>
@@ -39,23 +39,23 @@
                                     runat="server">			                                               
 					                    <itemtemplate>
 						                <tr>
-							                <td style="width:12%" align="left">
+							                <td style="width:14%" align="left">
                                                 <asp:Literal ID="litDate" runat="server"></asp:Literal>
                                             </td>
-							                <td style="width:78%" align="left"><%# DataBinder.Eval(Container.DataItem, "Descripcion")%></td>
+							                <td style="width:76%" align="left"><%# DataBinder.Eval(Container.DataItem, "Descripcion")%></td>
 							                <td style="width:10%" align="left">
-                                                <asp:HyperLink ID="HyprLnkVerHistDoc" runat="server">Ver</asp:HyperLink>
+                                                <asp:HyperLink ID="HyprLnkVerHistDoc" runat="server">Ver Histórico</asp:HyperLink>
                                             </td>
 						                </tr>
 					                    </itemtemplate> 
                                         <AlternatingItemTemplate>
                                          <tr class="AlternateGridStyle">                                           
-							                <td style="width:10%" align="left">
+							                <td style="width:14%" align="left">
                                                 <asp:Literal ID="litDate" runat="server"></asp:Literal>
                                             </td>
-							                <td style="width:80%" align="left"><%# DataBinder.Eval(Container.DataItem, "Descripcion")%></td>            
+							                <td style="width:76%" align="left"><%# DataBinder.Eval(Container.DataItem, "Descripcion")%></td>            
 							                <td style="width:10%" align="left">
-                                                <asp:HyperLink ID="HyprLnkVerHistDoc" runat="server">Ver</asp:HyperLink>
+                                                <asp:HyperLink ID="HyprLnkVerHistDoc" runat="server">Ver Histórico</asp:HyperLink>
                                             </td>
 						                 </tr>
                                        </AlternatingItemTemplate>

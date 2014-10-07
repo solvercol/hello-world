@@ -16,6 +16,7 @@
 	<base target="_self"/>	
     <title>.: Sika :.</title>
     <link href="~/Resources/Styles/Site.css" rel="stylesheet" type="text/css" />   
+    <link href="~/Resources/modules/chosen/chosen.css" rel="stylesheet" type="text/css" /> 
     <asp:Literal ID="JavaScripts" runat="server" />
    <script language="javascript" type="text/javascript">
        javascript: window.history.forward(1);      
