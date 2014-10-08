@@ -5,6 +5,7 @@ using System.Text;
 using Applications.MainModule.WorkFlow.DTO;
 using Domain.MainModule.Contracts;
 using Domain.MainModule.Reclamos.Contracts;
+using Domain.MainModules.Entities;
 using Infrastructure.CrossCutting.NetFramework.Enums;
 using Infrastructure.CrossCutting.NetFramework.Services.Email;
 using Infrastructure.CrossCutting.NetFramework.Util;
@@ -36,8 +37,9 @@ namespace Applications.MainModule.WorkFlow.Util
         /// Envio notificaciones Workflow
         /// </summary>
         /// <param name="oDocument"></param>
+        /// <param name="userSession"></param>
         /// <returns></returns>
-        public bool EnviarCorreoElectronicoNotificacion(RenderTypeControlButtonDto oDocument)
+        public bool EnviarCorreoElectronicoNotificacion(RenderTypeControlButtonDto oDocument, TBL_Admin_Usuarios userSession)
         {
 
             var plantilla = ObtenerPlantilla(oDocument.NextStatus, "Colombia");
@@ -58,7 +60,7 @@ namespace Applications.MainModule.WorkFlow.Util
                                         {"$NumeroReclamo", oReclamo.NumeroReclamo}
                                     };
 
-            var strFrom = "Gestión de Reclamos" + "<" + GetFromEmail() + ">";
+            var strFrom = string.Format("Gestión de reclamos<{0}>. Enviado por: {1} ", GetFromEmail(), userSession.Nombres);
 
             bodyParams.Add("$NumeroReclamo",oReclamo.NumeroReclamo);
             bodyParams.Add("$Cliente", oReclamo.CodigoCliente);
@@ -66,6 +68,52 @@ namespace Applications.MainModule.WorkFlow.Util
             bodyParams.Add("$Url", UrlHelper.GetUrlPreViewDocumentforEmail());
 
             _iEmailService.ProcessEmail(strFrom,oDocument.EmailCurrentResponsibe,plantilla,subjectParams,bodyParams,null,null);
+            return true;
+        }
+
+        public bool EnviarCorreoElectronicoNotificacionCliente(RenderTypeControlButtonDto oDocument, TBL_Admin_Usuarios userSession)
+        {
+
+            var plantilla = ObtenerPlantilla("EmailContacto", "Colombia");
+
+            if (string.IsNullOrEmpty(plantilla)) return false;
+
+            var oReclamo = _reclamosRepository.GetReclamoById(Convert.ToInt32(oDocument.IdDocument));
+            if (oReclamo == null) return false;
+            
+            var bodyParams = new Dictionary<string, string>();
+
+            var subjectParams = new Dictionary<string, string>
+                                    {
+                                        {"$NumeroReclamo", oReclamo.NumeroReclamo}
+                                    };
+
+            
+            var strFrom = string.Format("Gestión de reclamos<{0}>. Enviado por: {1} ", GetFromEmail(), userSession.Nombres);
+
+            bodyParams.Add("$Cliente", oReclamo.CodigoCliente);
+            bodyParams.Add("$IngenieroResponsable", oReclamo.TBL_Admin_Usuarios4.Nombres);
+            bodyParams.Add("$TipoReclamo ", oReclamo.TipoReclamo);
+            
+            if(oReclamo.TipoReclamo == "Producto")
+            {
+                bodyParams.Add("$DetalleReclamo ", oReclamo.CodigoProducto);
+            }
+            else
+            {
+                var texto = string.Format("{0}<br/>{1}", oReclamo.TBL_ModuloReclamos_CategoriasReclamo.Descripcion,
+                                          string.IsNullOrEmpty(oReclamo.NombreObra)
+                                              ? string.Empty
+                                              : string.Format("Nombre de la Obra: {0}", oReclamo.NombreObra));
+
+                bodyParams.Add("$DetalleReclamo ", texto);
+            }
+
+
+            bodyParams.Add("$Responsable", oReclamo.TBL_Admin_Usuarios == null ? oDocument.CurrentResponsibe : oReclamo.TBL_Admin_Usuarios.Nombres);
+            bodyParams.Add("$Url", UrlHelper.GetUrlPreViewDocumentforEmail());
+
+            _iEmailService.ProcessEmail(strFrom, oDocument.EmailCurrentResponsibe, plantilla, subjectParams, bodyParams, null, null);
             return true;
         }
 
