@@ -6,8 +6,7 @@ using Domain.MainModules.Entities;
 
 namespace Presenters.Documentos.IViews
 {
-    public interface IVistaTotalDocumentosView
-        :IView
+    public interface IDocumentosTableView : IView
     {
         #region Propiedades
 
@@ -30,7 +29,7 @@ namespace Presenters.Documentos.IViews
         #endregion
 
         #region Members
-        
+
         void Estados(IEnumerable<TBL_ModuloDocumentos_Estados> estados);
 
         void Responsables(DataTable items);

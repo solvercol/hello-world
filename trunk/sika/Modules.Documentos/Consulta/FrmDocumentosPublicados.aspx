@@ -66,7 +66,7 @@
             <table class="tblSecciones" width="100%">
                 <tr>
                     <th class="TituloEtiqueta" style="text-align:center">
-                        #Filtro
+                        Filtro:
                     </th>
                     <td style="width:1%"></td>    
                     <td >

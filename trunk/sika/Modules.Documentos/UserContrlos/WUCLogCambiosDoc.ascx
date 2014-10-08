@@ -7,13 +7,13 @@
                 
                <table cellpadding="0" cellspacing="0" width="100%">
                 <tr>
-                    <td colspan="2" id="tdCollapse" runat="server" class="ToolBar">
-                        Historial del Documento
+                    <td colspan="2" id="tdCollapse" runat="server" class="ToolBar">                        
                         <asp:ImageButton 
                         ID="imgCollampseExpand" 
                         runat="server" 
                         Width="13" Height="13" BorderWidth="0"
                         ImageUrl="~/Resources/Images/collapse.gif" />  
+                        Historial del Documento
                     </td>
                 </tr>
                 <tr>
@@ -61,7 +61,9 @@
                                        </AlternatingItemTemplate>
 				                    </asp:repeater>
 			                      </table>                      
-                            </asp:Panel>                          
+                            </asp:Panel>  
+                            
+                            <asp:Label ID="lblMsgCopyright" runat="server" ForeColor="#808080" Font-Size="9pt" />                        
 
                         </asp:Panel>
 

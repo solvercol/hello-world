@@ -27,8 +27,7 @@ namespace Presenters.Documentos.IViews
         string TipoDocumento { set; }
         string UsuarioResponsable { set; }
         string LogInfo { set; }
-        string Estado { set; }
-        string MsgCopyright { set; }
+        string Estado { set; }        
 
         int IdRolAdministradorDocumentos { get; set; }
 

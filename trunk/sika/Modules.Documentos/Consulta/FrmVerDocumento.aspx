@@ -136,12 +136,7 @@
                             </asp:Panel>                         
                         </asp:Panel>
                     </td>
-                </tr>
-                <tr >
-                    <th style="text-align:left; vertical-align:top; padding-left: 10px; background-color:#e0e0e0" colspan="3">
-                        <asp:Label ID="lblLogInfo" runat="server" Font-Bold="true" ForeColor="#808080" Font-Size="9pt" />
-                    </th>
-                </tr>
+                </tr>                
             </table>             
         </td>
     </tr>
@@ -151,5 +146,11 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Footer" runat="server">    
     <uc1:WUCLogCambiosDoc runat="server" ID="WUCLogCambiosDoc" />
-    <asp:Label ID="lblMsgCopyright" runat="server" Font-Bold="true" ForeColor="#808080" Font-Size="9pt" />
+    <table width="100%">
+        <tr >
+            <td style="text-align:left; vertical-align:top; padding-left: 10px; background-color:#e0e0e0" >
+                <asp:Label ID="lblLogInfo" runat="server" ForeColor="#808080" Font-Size="8pt" />
+            </td>
+        </tr>
+    </table>
 </asp:Content>

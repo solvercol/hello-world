@@ -28,6 +28,8 @@ namespace Presenters.Documentos.IViews
 
         bool IsLoadedControl { get; set; }
 
+        string MsgCopyright { set; }
+
         #endregion
 
     }

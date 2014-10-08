@@ -211,15 +211,6 @@ namespace Modules.Documentos.Admin {
         protected global::System.Web.UI.WebControls.Repeater rptAdjuntos;
         
         /// <summary>
-        /// lblLogInfo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLogInfo;
-        
-        /// <summary>
         /// pnlPopUpCategoria control.
         /// </summary>
         /// <remarks>
@@ -272,5 +263,14 @@ namespace Modules.Documentos.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.ModalPopupExtender mpeAdminCategoria;
+        
+        /// <summary>
+        /// lblLogInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLogInfo;
     }
 }

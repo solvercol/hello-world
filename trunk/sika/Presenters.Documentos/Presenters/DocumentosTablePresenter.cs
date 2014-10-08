@@ -9,8 +9,7 @@ using Presenters.Documentos.IViews;
 
 namespace Presenters.Documentos.Presenters
 {
-    public class VistaTotalDocumentosPresenter
-        : Presenter<IVistaTotalDocumentosView>
+    public class DocumentosTablePresenter : Presenter<IDocumentosTableView>
     {        
 
         private readonly ISfTBL_ModuloDocumentos_DocumentoManagementServices _documentoServices;
@@ -19,7 +18,7 @@ namespace Presenters.Documentos.Presenters
         private readonly ISfTBL_Admin_UsuariosManagementServices _usuariosServices;
         readonly IDocumentosAdoService _documentosAdoService;
 
-        public VistaTotalDocumentosPresenter
+        public DocumentosTablePresenter
             (
                  ISfTBL_ModuloDocumentos_DocumentoManagementServices documentoServices
                 ,ISfTBL_ModuloDocumentos_CategoriasManagementServices categoriaServices
@@ -96,7 +95,7 @@ namespace Presenters.Documentos.Presenters
         {
             try
             {
-                var dt = _documentosAdoService.GetVistaDocumentos(View.FiltroIdResponsable, View.FiltroIdEstado, View.FiltroNombre, "admindocs", View.ServerHostPath, View.IdModule);
+                var dt = _documentosAdoService.GetVistaDocumentos(View.FiltroIdResponsable, View.FiltroIdEstado, View.FiltroNombre, "tabledocs", View.ServerHostPath, View.IdModule);
 
                 View.LoadView(dt);
             }

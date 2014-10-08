@@ -8,11 +8,10 @@ using Microsoft.Reporting.WebForms;
 using Presenters.Documentos.IViews;
 using Presenters.Documentos.Presenters;
 
-namespace Modules.Documentos.Admin
+namespace Modules.Documentos.Views
 {
-    public partial class FrmTotalDocumentos
-        : ViewPage<VistaTotalDocumentosPresenter, IVistaTotalDocumentosView>, IVistaTotalDocumentosView
-    {      
+    public partial class FrmDocumentosTable : ViewPage<DocumentosTablePresenter, IDocumentosTableView>, IDocumentosTableView
+    {
         public string FiltroNombre
         {
             get
@@ -57,7 +56,7 @@ namespace Modules.Documentos.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ImprimirTituloVentana("Total Documentos");
+            ImprimirTituloVentana("Consultar Documentos");
         }
 
         protected override void OnInit(EventArgs e)
@@ -80,7 +79,7 @@ namespace Modules.Documentos.Admin
         public TBL_Admin_Usuarios UserSession
         {
             get { return AuthenticatedUser; }
-        }       
+        }
 
         public void Estados(IEnumerable<TBL_ModuloDocumentos_Estados> estados)
         {
@@ -100,7 +99,7 @@ namespace Modules.Documentos.Admin
 
             var li = new ListItem("Todos", "0");
             ddlResponsableDoc.Items.Insert(0, li);
-        }               
+        }
 
         public string IdModule
         {
@@ -139,7 +138,7 @@ namespace Modules.Documentos.Admin
             rptView.Reset();
             rptView.LocalReport.DataSources.Clear();
             rptView.ProcessingMode = ProcessingMode.Local;
-            rptView.LocalReport.ReportPath = Server.MapPath(@"~/Pages/Modules/Documentos/Resources/ReportViewer/View_MisDocumentos.rdlc");
+            rptView.LocalReport.ReportPath = Server.MapPath(@"~/Pages/Modules/Documentos/Resources/ReportViewer/View_DocumentosTable.rdlc");
             rptView.LocalReport.EnableHyperlinks = true;
             rptView.LocalReport.DataSources.Add(new ReportDataSource("DS_Report", dt));
             rptView.DataBind();

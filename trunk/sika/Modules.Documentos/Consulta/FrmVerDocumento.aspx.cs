@@ -45,6 +45,9 @@ namespace Modules.Documentos.Consulta
                 case "admindocs":
                     url = string.Format("../Admin/FrmTotalDocumentos.aspx?ModuleId={0}", IdModule);
                     break;
+                case "tabledocs":
+                    url = string.Format("../Views/FrmDocumentosTable.aspx?ModuleId={0}", IdModule);
+                    break;
                 default:
                     url = string.Format("../Admin/FrmMisDocumentos.aspx?ModuleId={0}", IdModule);
                     break;
@@ -216,11 +219,6 @@ namespace Modules.Documentos.Consulta
         public string Estado
         {
             set { lblEstado.Text = value; }
-        }
-
-        public string MsgCopyright
-        {
-            set { lblMsgCopyright.Text = value; }
-        }
+        }        
     }
 }

@@ -217,7 +217,7 @@ namespace Application.MainModule.Documentos.Services
 
          public TBL_ModuloDocumentos_Documento GetDocumentoByIdWithCategories(int id)
          {
-             Specification<TBL_ModuloDocumentos_Documento> specification = new DirectSpecification<TBL_ModuloDocumentos_Documento>(doc => doc.IsActive && doc.IdDocumento == id);
+             Specification<TBL_ModuloDocumentos_Documento> specification = new DirectSpecification<TBL_ModuloDocumentos_Documento>(doc => doc.IdDocumento == id);
              return _tblModuloDocumentosDocumentoRepository.GetDocumentsByIdWithCategories(specification);
          }
 

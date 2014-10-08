@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FrmTotalDocumentos.aspx.cs" Inherits="Modules.Documentos.Admin.FrmTotalDocumentos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FrmDocumentosTable.aspx.cs" Inherits="Modules.Documentos.Views.FrmDocumentosTable" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 <%@ Register TagPrefix="csc" Namespace="ServerControls" Assembly="ServerControls" %>
@@ -80,4 +80,3 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Footer" runat="server">
 </asp:Content>
-
