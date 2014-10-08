@@ -1222,7 +1222,7 @@
         </TablixRowHierarchy>
         <DataSetName>DS_Report</DataSetName>
         <Height>2.99999cm</Height>
-        <Width>24cm</Width>
+        <Width>24.00001cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
