@@ -20,10 +20,14 @@
             </div>
             <table width="100%" style="position:relative; top:-25px;" >
                 <tr>
-                    <td colspan="4" class="SeccionesH1">                    
+                    <td colspan="3" class="SeccionesH1">                    
                         <asp:Label ID="LblTitulo" runat="server" />
                         <asp:Label ID="lblVersionTitle" Font-Size="8pt" runat="server" Text="Versión:" />
                         <asp:Label ID="lblVersion" Font-Size="8pt" runat="server" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="height:10px" colspan="3">
                     </td>
                 </tr>
                 <!--Título del documento-->
