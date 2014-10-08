@@ -110,6 +110,14 @@ namespace Domain.MainModules.Entities
             {
                 if (_idUsuarioDestino != value)
                 {
+                    ChangeTracker.RecordOriginalValue("IdUsuarioDestino", _idUsuarioDestino);
+                    if (!IsDeserializing)
+                    {
+                        if (TBL_Admin_Usuarios != null && TBL_Admin_Usuarios.IdUser != value)
+                        {
+                            TBL_Admin_Usuarios = null;
+                        }
+                    }
                     _idUsuarioDestino = value;
                     OnPropertyChanged("IdUsuarioDestino");
                 }
@@ -166,9 +174,9 @@ namespace Domain.MainModules.Entities
                     ChangeTracker.RecordOriginalValue("CreateBy", _createBy);
                     if (!IsDeserializing)
                     {
-                        if (TBL_Admin_Usuarios != null && TBL_Admin_Usuarios.IdUser != value)
+                        if (TBL_Admin_Usuarios1 != null && TBL_Admin_Usuarios1.IdUser != value)
                         {
-                            TBL_Admin_Usuarios = null;
+                            TBL_Admin_Usuarios1 = null;
                         }
                     }
                     _createBy = value;
@@ -204,9 +212,9 @@ namespace Domain.MainModules.Entities
                     ChangeTracker.RecordOriginalValue("ModifiedBy", _modifiedBy);
                     if (!IsDeserializing)
                     {
-                        if (TBL_Admin_Usuarios1 != null && TBL_Admin_Usuarios1.IdUser != value)
+                        if (TBL_Admin_Usuarios2 != null && TBL_Admin_Usuarios2.IdUser != value)
                         {
-                            TBL_Admin_Usuarios1 = null;
+                            TBL_Admin_Usuarios2 = null;
                         }
                     }
                     _modifiedBy = value;
@@ -267,6 +275,23 @@ namespace Domain.MainModules.Entities
             }
         }
         private TBL_Admin_Usuarios _tBL_Admin_Usuarios1;
+    
+        [DataMember]
+        public TBL_Admin_Usuarios TBL_Admin_Usuarios2
+        {
+            get { return _tBL_Admin_Usuarios2; }
+            set
+            {
+                if (!ReferenceEquals(_tBL_Admin_Usuarios2, value))
+                {
+                    var previousValue = _tBL_Admin_Usuarios2;
+                    _tBL_Admin_Usuarios2 = value;
+                    FixupTBL_Admin_Usuarios2(previousValue);
+                    OnNavigationPropertyChanged("TBL_Admin_Usuarios2");
+                }
+            }
+        }
+        private TBL_Admin_Usuarios _tBL_Admin_Usuarios2;
     
         [DataMember]
         public TrackableCollection<TBL_ModuloAPC_AnexosComentarioRespuesta> TBL_ModuloAPC_AnexosComentarioRespuesta
@@ -499,6 +524,7 @@ namespace Domain.MainModules.Entities
         {
             TBL_Admin_Usuarios = null;
             TBL_Admin_Usuarios1 = null;
+            TBL_Admin_Usuarios2 = null;
             TBL_ModuloAPC_AnexosComentarioRespuesta.Clear();
             TBL_ModuloAPC_ComentariosRespuesta1.Clear();
             TBL_ModuloAPC_ComentariosRespuesta2 = null;
@@ -528,7 +554,7 @@ namespace Domain.MainModules.Entities
                     TBL_Admin_Usuarios.TBL_ModuloAPC_ComentariosRespuesta.Add(this);
                 }
     
-                CreateBy = TBL_Admin_Usuarios.IdUser;
+                IdUsuarioDestino = TBL_Admin_Usuarios.IdUser;
             }
             if (ChangeTracker.ChangeTrackingEnabled)
             {
@@ -567,7 +593,7 @@ namespace Domain.MainModules.Entities
                     TBL_Admin_Usuarios1.TBL_ModuloAPC_ComentariosRespuesta1.Add(this);
                 }
     
-                ModifiedBy = TBL_Admin_Usuarios1.IdUser;
+                CreateBy = TBL_Admin_Usuarios1.IdUser;
             }
             if (ChangeTracker.ChangeTrackingEnabled)
             {
@@ -583,6 +609,45 @@ namespace Domain.MainModules.Entities
                 if (TBL_Admin_Usuarios1 != null && !TBL_Admin_Usuarios1.ChangeTracker.ChangeTrackingEnabled)
                 {
                     TBL_Admin_Usuarios1.StartTracking();
+                }
+            }
+        }
+    
+        private void FixupTBL_Admin_Usuarios2(TBL_Admin_Usuarios previousValue)
+        {
+            if (IsDeserializing)
+            {
+                return;
+            }
+    
+            if (previousValue != null && previousValue.TBL_ModuloAPC_ComentariosRespuesta2.Contains(this))
+            {
+                previousValue.TBL_ModuloAPC_ComentariosRespuesta2.Remove(this);
+            }
+    
+            if (TBL_Admin_Usuarios2 != null)
+            {
+                if (!TBL_Admin_Usuarios2.TBL_ModuloAPC_ComentariosRespuesta2.Contains(this))
+                {
+                    TBL_Admin_Usuarios2.TBL_ModuloAPC_ComentariosRespuesta2.Add(this);
+                }
+    
+                ModifiedBy = TBL_Admin_Usuarios2.IdUser;
+            }
+            if (ChangeTracker.ChangeTrackingEnabled)
+            {
+                if (ChangeTracker.OriginalValues.ContainsKey("TBL_Admin_Usuarios2")
+                    && (ChangeTracker.OriginalValues["TBL_Admin_Usuarios2"] == TBL_Admin_Usuarios2))
+                {
+                    ChangeTracker.OriginalValues.Remove("TBL_Admin_Usuarios2");
+                }
+                else
+                {
+                    ChangeTracker.RecordOriginalValue("TBL_Admin_Usuarios2", previousValue);
+                }
+                if (TBL_Admin_Usuarios2 != null && !TBL_Admin_Usuarios2.ChangeTracker.ChangeTrackingEnabled)
+                {
+                    TBL_Admin_Usuarios2.StartTracking();
                 }
             }
         }

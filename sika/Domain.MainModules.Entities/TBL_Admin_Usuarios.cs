@@ -833,6 +833,41 @@ namespace Domain.MainModules.Entities
         private TrackableCollection<TBL_ModuloAPC_ComentariosRespuesta> _tBL_ModuloAPC_ComentariosRespuesta1;
     
         [DataMember]
+        public TrackableCollection<TBL_ModuloAPC_ComentariosRespuesta> TBL_ModuloAPC_ComentariosRespuesta2
+        {
+            get
+            {
+                if (_tBL_ModuloAPC_ComentariosRespuesta2 == null)
+                {
+                    _tBL_ModuloAPC_ComentariosRespuesta2 = new TrackableCollection<TBL_ModuloAPC_ComentariosRespuesta>();
+                    _tBL_ModuloAPC_ComentariosRespuesta2.CollectionChanged += FixupTBL_ModuloAPC_ComentariosRespuesta2;
+                }
+                return _tBL_ModuloAPC_ComentariosRespuesta2;
+            }
+            set
+            {
+                if (!ReferenceEquals(_tBL_ModuloAPC_ComentariosRespuesta2, value))
+                {
+                    if (ChangeTracker.ChangeTrackingEnabled)
+                    {
+                        throw new InvalidOperationException("Cannot set the FixupChangeTrackingCollection when ChangeTracking is enabled");
+                    }
+                    if (_tBL_ModuloAPC_ComentariosRespuesta2 != null)
+                    {
+                        _tBL_ModuloAPC_ComentariosRespuesta2.CollectionChanged -= FixupTBL_ModuloAPC_ComentariosRespuesta2;
+                    }
+                    _tBL_ModuloAPC_ComentariosRespuesta2 = value;
+                    if (_tBL_ModuloAPC_ComentariosRespuesta2 != null)
+                    {
+                        _tBL_ModuloAPC_ComentariosRespuesta2.CollectionChanged += FixupTBL_ModuloAPC_ComentariosRespuesta2;
+                    }
+                    OnNavigationPropertyChanged("TBL_ModuloAPC_ComentariosRespuesta2");
+                }
+            }
+        }
+        private TrackableCollection<TBL_ModuloAPC_ComentariosRespuesta> _tBL_ModuloAPC_ComentariosRespuesta2;
+    
+        [DataMember]
         public TrackableCollection<TBL_ModuloAPC_Solicitud> TBL_ModuloAPC_Solicitud
         {
             get
@@ -3318,6 +3353,7 @@ namespace Domain.MainModules.Entities
             TBL_ModuloAPC_Causas1.Clear();
             TBL_ModuloAPC_ComentariosRespuesta.Clear();
             TBL_ModuloAPC_ComentariosRespuesta1.Clear();
+            TBL_ModuloAPC_ComentariosRespuesta2.Clear();
             TBL_ModuloAPC_Solicitud.Clear();
             TBL_ModuloAPC_Solicitud1.Clear();
             TBL_ModuloAPC_Solicitud2.Clear();
@@ -4010,6 +4046,45 @@ namespace Domain.MainModules.Entities
                     if (ChangeTracker.ChangeTrackingEnabled)
                     {
                         ChangeTracker.RecordRemovalFromCollectionProperties("TBL_ModuloAPC_ComentariosRespuesta1", item);
+                    }
+                }
+            }
+        }
+    
+        private void FixupTBL_ModuloAPC_ComentariosRespuesta2(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            if (IsDeserializing)
+            {
+                return;
+            }
+    
+            if (e.NewItems != null)
+            {
+                foreach (TBL_ModuloAPC_ComentariosRespuesta item in e.NewItems)
+                {
+                    item.TBL_Admin_Usuarios2 = this;
+                    if (ChangeTracker.ChangeTrackingEnabled)
+                    {
+                        if (!item.ChangeTracker.ChangeTrackingEnabled)
+                        {
+                            item.StartTracking();
+                        }
+                        ChangeTracker.RecordAdditionToCollectionProperties("TBL_ModuloAPC_ComentariosRespuesta2", item);
+                    }
+                }
+            }
+    
+            if (e.OldItems != null)
+            {
+                foreach (TBL_ModuloAPC_ComentariosRespuesta item in e.OldItems)
+                {
+                    if (ReferenceEquals(item.TBL_Admin_Usuarios2, this))
+                    {
+                        item.TBL_Admin_Usuarios2 = null;
+                    }
+                    if (ChangeTracker.ChangeTrackingEnabled)
+                    {
+                        ChangeTracker.RecordRemovalFromCollectionProperties("TBL_ModuloAPC_ComentariosRespuesta2", item);
                     }
                 }
             }
