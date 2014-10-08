@@ -8,6 +8,7 @@ using Application.MainModule.Documentos.IServices;
 using Applications.MainModule.Admin.IServices;
 using Infrastructure.CrossCutting.NetFramework.Enums;
 using Presenters.Documentos.IViews;
+using Application.MainModule.SqlServices.IServices;
 
 namespace Presenters.Documentos.Presenters
 {
@@ -19,6 +20,7 @@ namespace Presenters.Documentos.Presenters
         private readonly ISfTBL_ModuloDocumentos_CategoriasManagementServices _categoriaServices;
         private readonly ISfTBL_ModuloDocumentos_EstadosManagementServices _estadosServices;
         private readonly ISfTBL_Admin_UsuariosManagementServices _usuariosServices;
+        readonly IDocumentosAdoService _documentosAdoService;
 
         public VistaTotalDocumentosPresenter
             (
@@ -26,12 +28,14 @@ namespace Presenters.Documentos.Presenters
                 ,ISfTBL_ModuloDocumentos_CategoriasManagementServices categoriaServices
                 ,ISfTBL_ModuloDocumentos_EstadosManagementServices estadosServices
                 ,ISfTBL_Admin_UsuariosManagementServices usuariosManagementServices
+                ,IDocumentosAdoService documentosAdoService
             )
         {            
             _documentoServices = documentoServices;
             _categoriaServices = categoriaServices;
             _estadosServices = estadosServices;
             _usuariosServices = usuariosManagementServices;
+            _documentosAdoService = documentosAdoService;
         }
 
         public override void SubscribeViewToEvents()
@@ -96,9 +100,9 @@ namespace Presenters.Documentos.Presenters
         {
             try
             {
-                View.ListaDocumentos = _documentoServices.FindTotalDocsByFilters(View.FiltroNombre, View.FiltroIdEstado,
-                                                                                 View.FiltroIdResponsable);
-                View.ArbolDocumentos();
+                var dt = _documentosAdoService.GetVistaDocumentos(View.FiltroIdResponsable, View.FiltroIdEstado, View.FiltroNombre, "admindocs", View.ServerHostPath, View.IdModule);
+
+                View.LoadView(dt);
             }
             catch (Exception ex)
             {

@@ -56,6 +56,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\dll\Microsoft.Practices.Unity.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
@@ -119,6 +122,11 @@
     <Compile Include="Consulta\FrmVerHistDocumento.aspx.designer.cs">
       <DependentUpon>FrmVerHistDocumento.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DataSets\DS_Views.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Views.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DocumentosModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
@@ -151,6 +159,17 @@
     <Content Include="Site.Master" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="DataSets\DS_Views.xsc">
+      <DependentUpon>DS_Views.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DS_Views.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Views.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DS_Views.xss">
+      <DependentUpon>DS_Views.xsd</DependentUpon>
+    </None>
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -197,9 +216,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DataSets\" />
-    <Folder Include="Resources\ReportViewer\" />
     <Folder Include="Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ReportViewer\View_MisDocumentos.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -229,7 +249,8 @@
   </ProjectExtensions>
   <PropertyGroup>
     <PostBuildEvent>xcopy /s /y "$(TargetDir)Modules.Documentos*.dll" "$(SolutionDir)"Web\bin\
-xcopy /s /y "$(ProjectDir)*.as?x" "$(SolutionDir)"Web\Pages\Modules\Documentos\</PostBuildEvent>
+xcopy /s /y "$(ProjectDir)*.as?x" "$(SolutionDir)"Web\Pages\Modules\Documentos\
+xcopy /s /y "$(ProjectDir)*.rdlc" "$(SolutionDir)"Web\Pages\Modules\Documentos\</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
