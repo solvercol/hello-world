@@ -7,81 +7,81 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Modules.Documentos.UserContrlos {
+namespace Modules.Documentos.Views {
     
     
-    public partial class WUCLogCambiosDoc {
+    public partial class FrmDocumentosTable {
         
         /// <summary>
-        /// upListado control.
+        /// Img1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upListado;
+        protected global::System.Web.UI.HtmlControls.HtmlImage Img1;
         
         /// <summary>
-        /// tdCollapse control.
+        /// PanelFiltro control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableCell tdCollapse;
+        protected global::System.Web.UI.WebControls.Panel PanelFiltro;
         
         /// <summary>
-        /// imgCollampseExpand control.
+        /// txtFiltroNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton imgCollampseExpand;
+        protected global::System.Web.UI.WebControls.TextBox txtFiltroNombre;
         
         /// <summary>
-        /// pnlDetalle control.
+        /// ddlResponsableDoc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlDetalle;
+        protected global::System.Web.UI.WebControls.DropDownList ddlResponsableDoc;
         
         /// <summary>
-        /// pnlContainer control.
+        /// ddlEstado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlContainer;
+        protected global::System.Web.UI.WebControls.DropDownList ddlEstado;
         
         /// <summary>
-        /// rptListado control.
+        /// btnFiltrar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptListado;
+        protected global::System.Web.UI.WebControls.Button btnFiltrar;
         
         /// <summary>
-        /// lblMsgCopyright control.
+        /// pReporte control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMsgCopyright;
+        protected global::System.Web.UI.WebControls.Panel pReporte;
         
         /// <summary>
-        /// cpeCabecera control.
+        /// rptView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.CollapsiblePanelExtender cpeCabecera;
+        protected global::Microsoft.Reporting.WebForms.ReportViewer rptView;
     }
 }

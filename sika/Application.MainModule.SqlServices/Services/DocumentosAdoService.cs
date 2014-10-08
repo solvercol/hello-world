@@ -39,5 +39,20 @@ namespace Application.MainModule.SqlServices.Services
                 throw new SqlExecutionException("GetVistaDocumentos", ex);
             }
         }
+
+        public DataTable GetUsuariosResponsables()
+        {
+            try
+            {
+                string strSql = "Documentos_GetUsuariosResponables";
+                var result = _sql.ExecuteDataTable(strSql, CommandType.StoredProcedure);
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new SqlExecutionException("GetUsuariosResponsables", ex);
+            }
+        }
     }
 }

@@ -39,7 +39,7 @@
             <table class="tblSecciones" width="100%">
                 <tr>
                     <th class="TituloEtiqueta" style="text-align:center; width: 100px;">
-                        #Filtro
+                        Filtro:
                     </th>
                     <td style="width:1%"></td>    
                     <td style="text-align:center; width: 400px;">
@@ -47,7 +47,7 @@
                     </td>
                     <td style="width:1%"></td>    
                     <th class="TituloEtiqueta" style="text-align:center;width: 100px;">
-                        Estado
+                        Estado:
                     </th>
                     <td style="width:1%"></td>    
                     <td >

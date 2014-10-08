@@ -62,16 +62,10 @@ namespace Presenters.Documentos.Presenters
             try
             {
                 var op = optionListServices.ObtenerOpcionBykeyModuleId("IdRolAdministradorDocumentos", Convert.ToInt32(View.IdModule));
-                var msg = optionListServices.ObtenerOpcionBykeyModuleId("MensajeCopyright", Convert.ToInt32(View.IdModule));
-
+                
                 if (op != null)
                 {
                     View.IdRolAdministradorDocumentos = Convert.ToInt32(op.Value);
-                }
-
-                if (msg != null)
-                {
-                    View.MsgCopyright = msg.Value;
                 }
             }
             catch (Exception ex)

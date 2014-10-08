@@ -75,7 +75,7 @@
               <Width>3.50709in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.90293in</Width>
+              <Width>0.90294in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.33001in</Width>
@@ -898,7 +898,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -1223,7 +1222,7 @@
         </TablixRowHierarchy>
         <DataSetName>DS_Report</DataSetName>
         <Height>2.99999cm</Height>
-        <Width>23.99998cm</Width>
+        <Width>24cm</Width>
         <Style>
           <Border>
             <Style>None</Style>

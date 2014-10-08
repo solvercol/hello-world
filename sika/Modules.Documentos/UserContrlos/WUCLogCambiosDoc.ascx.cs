@@ -100,5 +100,10 @@ namespace Modules.Documentos.UserContrlos
         {
             get { return ModuleId; }
         }
+
+        public string MsgCopyright
+        {
+            set { lblMsgCopyright.Text = value; }
+        }
     }
 }

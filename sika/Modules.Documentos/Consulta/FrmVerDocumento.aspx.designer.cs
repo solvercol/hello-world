@@ -157,15 +157,6 @@ namespace Modules.Documentos.Consulta {
         protected global::System.Web.UI.WebControls.Repeater rptAdjuntos;
         
         /// <summary>
-        /// lblLogInfo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLogInfo;
-        
-        /// <summary>
         /// WUCLogCambiosDoc control.
         /// </summary>
         /// <remarks>
@@ -175,12 +166,12 @@ namespace Modules.Documentos.Consulta {
         protected global::System.Web.UI.UserControl WUCLogCambiosDoc;
         
         /// <summary>
-        /// lblMsgCopyright control.
+        /// lblLogInfo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMsgCopyright;
+        protected global::System.Web.UI.WebControls.Label lblLogInfo;
     }
 }

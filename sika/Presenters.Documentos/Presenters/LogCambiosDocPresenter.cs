@@ -7,6 +7,7 @@ using Application.Core;
 using Application.MainModule.Documentos.IServices;
 using Infrastructure.CrossCutting.NetFramework.Enums;
 using Presenters.Documentos.IViews;
+using Applications.MainModule.Admin.IServices;
 
 namespace Presenters.Documentos.Presenters
 {
@@ -14,10 +15,12 @@ namespace Presenters.Documentos.Presenters
         : Presenter<ILogCambiosDocView>
     {
         private readonly ISfTBL_ModuloDocumentos_LogCambiosManagementServices _log;
+        private readonly ISfTBL_Admin_OptionListManagementServices _optionListServices;
 
-        public LogCambiosDocPresenter(ISfTBL_ModuloDocumentos_LogCambiosManagementServices log)
+        public LogCambiosDocPresenter(ISfTBL_ModuloDocumentos_LogCambiosManagementServices log, ISfTBL_Admin_OptionListManagementServices optionListServices)
         {
             _log = log;
+            _optionListServices = optionListServices;
         }
 
         public override void SubscribeViewToEvents()
@@ -34,7 +37,26 @@ namespace Presenters.Documentos.Presenters
         void ViewLoad(object sender, EventArgs e)
         {
             if (View.IsPostBack) return;
+            LoadOptionListConfigValues();
             GetAll(0);
+        }
+
+        void LoadOptionListConfigValues()
+        {
+            try
+            {                
+                var msg = _optionListServices.ObtenerOpcionBykeyModuleId("MensajeCopyright", Convert.ToInt32(View.IdModule));
+
+                if (msg != null)
+                {
+                    View.MsgCopyright = msg.Value;
+                }
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+                InvokeMessageBox(new MessageBoxEventArgs(string.Format(Message.GetObjectError, "LoadOptionListConfigValues"), TypeError.Error));
+            }
         }
 
         private void GetAll(int currentePage)

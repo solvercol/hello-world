@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IViews\IDocumentosTableView.cs" />
     <Compile Include="IViews\IEditarDocumentoView.cs" />
     <Compile Include="IViews\ILogCambiosDocView.cs" />
     <Compile Include="IViews\IVerDocumentoView.cs" />
@@ -56,6 +57,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Presenters\DocumentosTablePresenter.cs" />
     <Compile Include="Presenters\EditarDocumentoPresenter.cs" />
     <Compile Include="Presenters\LogCambiosDocPresenter.cs" />
     <Compile Include="Presenters\VerDocumentoPresenter.cs" />
