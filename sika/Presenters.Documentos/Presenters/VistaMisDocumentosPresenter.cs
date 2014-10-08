@@ -4,6 +4,7 @@ using Application.Core;
 using Application.MainModule.Documentos.IServices;
 using Infrastructure.CrossCutting.NetFramework.Enums;
 using Presenters.Documentos.IViews;
+using Application.MainModule.SqlServices.IServices;
 
 namespace Presenters.Documentos.Presenters
 {
@@ -15,14 +16,18 @@ namespace Presenters.Documentos.Presenters
         
         private readonly ISfTBL_ModuloDocumentos_EstadosManagementServices _estadosServices;
 
+        readonly IDocumentosAdoService _documentosAdoService;
+
         public VistaMisDocumentosPresenter
             (
                  ISfTBL_ModuloDocumentos_DocumentoManagementServices documentoServices
                 ,ISfTBL_ModuloDocumentos_EstadosManagementServices estadosServices
+                ,IDocumentosAdoService documentosAdoService
             )
         {            
             _documentoServices = documentoServices;
             _estadosServices = estadosServices;
+            _documentosAdoService = documentosAdoService;
         }
 
         public override void SubscribeViewToEvents()
@@ -70,12 +75,9 @@ namespace Presenters.Documentos.Presenters
         {
             try
             {
-                var idUsuario = 0;
-                if (!View.UserSession.IsInRole("Administrador"))
-                    idUsuario = View.UserSession.IdUser;
-                View.ListaDocumentos = _documentoServices.FindMyDocsByFilters(View.FiltroNombre, View.FiltroIdEstado,
-                                                                              idUsuario);
-                View.ArbolDocumentos();
+                var dt = _documentosAdoService.GetVistaDocumentos(View.UserSession.IdUser, View.FiltroIdEstado, View.FiltroNombre, "misdocs", View.ServerHostPath, View.IdModule);
+
+                View.LoadView(dt);
             }
             catch (Exception ex)
             {

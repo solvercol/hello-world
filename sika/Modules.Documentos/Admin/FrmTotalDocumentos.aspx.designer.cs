@@ -13,6 +13,24 @@ namespace Modules.Documentos.Admin {
     public partial class FrmTotalDocumentos {
         
         /// <summary>
+        /// Img1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlImage Img1;
+        
+        /// <summary>
+        /// PanelFiltro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelFiltro;
+        
+        /// <summary>
         /// txtFiltroNombre control.
         /// </summary>
         /// <remarks>
@@ -20,6 +38,15 @@ namespace Modules.Documentos.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFiltroNombre;
+        
+        /// <summary>
+        /// ddlResponsableDoc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlResponsableDoc;
         
         /// <summary>
         /// ddlEstado control.
@@ -40,39 +67,21 @@ namespace Modules.Documentos.Admin {
         protected global::System.Web.UI.WebControls.Button btnFiltrar;
         
         /// <summary>
-        /// ddlResponsableDoc control.
+        /// pReporte control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlResponsableDoc;
+        protected global::System.Web.UI.WebControls.Panel pReporte;
         
         /// <summary>
-        /// btnLimpiar control.
+        /// rptView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLimpiar;
-        
-        /// <summary>
-        /// PnlContainer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PnlContainer;
-        
-        /// <summary>
-        /// TrvwDocumentos control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TreeView TrvwDocumentos;
+        protected global::Microsoft.Reporting.WebForms.ReportViewer rptView;
     }
 }

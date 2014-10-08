@@ -77,6 +77,10 @@
       <Project>{43E44D76-4378-4A99-9100-7C5CDFB9DAC0}</Project>
       <Name>Application.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Application.MainModule.SqlServices\Application.MainModule.SqlServices.csproj">
+      <Project>{A339985E-A4A5-4DC1-9632-1A622603F028}</Project>
+      <Name>Application.MainModule.SqlServices</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Applications.MainModule.Documentos\Application.MainModule.Documentos.csproj">
       <Project>{1448adfe-3242-43ae-9635-4615b15e3fba}</Project>
       <Name>Application.MainModule.Documentos</Name>

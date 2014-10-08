@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Application.Core;
 using Domain.MainModules.Entities;
+using System.Data;
 
 namespace Presenters.Documentos.IViews
 {
@@ -12,9 +13,9 @@ namespace Presenters.Documentos.IViews
     {
         #region Propiedades
 
-        List<TBL_ModuloDocumentos_Documento> ListaDocumentos { get; set; }
-
         string FiltroNombre { get; set; }
+
+        string ServerHostPath { get; }
 
         #endregion
 
@@ -26,7 +27,7 @@ namespace Presenters.Documentos.IViews
 
         #region Members
 
-        void ArbolDocumentos();
+        void LoadView(DataTable dt);
 
         #endregion
 

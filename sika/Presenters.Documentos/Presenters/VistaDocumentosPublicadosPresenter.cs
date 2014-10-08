@@ -7,6 +7,7 @@ using Application.MainModule.Documentos.IServices;
 using Domain.MainModules.Entities;
 using Infrastructure.CrossCutting.NetFramework.Enums;
 using Presenters.Documentos.IViews;
+using Application.MainModule.SqlServices.IServices;
 
 namespace Presenters.Documentos.Presenters
 {
@@ -18,19 +19,20 @@ namespace Presenters.Documentos.Presenters
         private readonly ISfTBL_ModuloDocumentos_DocumentoManagementServices _documentoServices;
         private readonly ISfTBL_ModuloDocumentos_CategoriasManagementServices _categoriaServices;
         private readonly ISfTBL_ModuloDocumentos_EstadosManagementServices _estadosServices;
+        readonly IDocumentosAdoService _documentosAdoService;
 
         public VistaDocumentosPublicadosPresenter
             (
                  ISfTBL_ModuloDocumentos_DocumentoManagementServices documentoServices
                 ,ISfTBL_ModuloDocumentos_CategoriasManagementServices categoriaServices
                 ,ISfTBL_ModuloDocumentos_EstadosManagementServices estadosServices
+                ,IDocumentosAdoService documentosAdoService
             )
         {            
             _documentoServices = documentoServices;
             _categoriaServices = categoriaServices;
             _estadosServices = estadosServices;
-            Estados = estadosServices.FindBySpec(true);
-            EstadoPublicado = Estados.Find(est => est.Codigo.Equals("PUBLICADO"));
+            _documentosAdoService = documentosAdoService;
         }
 
         public override void SubscribeViewToEvents()
@@ -54,8 +56,13 @@ namespace Presenters.Documentos.Presenters
         {
             try
             {
-                View.ListaDocumentos = _documentoServices.FindDocsPublicadosByFilters(View.FiltroNombre);
-                View.ArbolDocumentos();
+                Estados = _estadosServices.FindBySpec(true);
+                EstadoPublicado = Estados.Find(est => est.Codigo.Equals("PUBLICADO"));
+
+                var dt = _documentosAdoService.GetVistaDocumentos(0, EstadoPublicado.IdEstado, View.FiltroNombre, "docspub", View.ServerHostPath, View.IdModule);
+
+                View.LoadView(dt);
+                
             }
             catch (Exception ex)
             {
