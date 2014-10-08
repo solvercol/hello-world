@@ -313,11 +313,18 @@ namespace Applications.MainModule.WorkFlow.Services
                     //Crea un nuevo registro en el log del reclamo.
                     GenerarEntradalog(oDocument);
 
-                    GenerarNotificacionSistema(oDocument);
-
                     unitOfWork.CommitAndRefreshChanges();
 
                     scope.Complete();
+                }
+
+                try
+                {
+                    GenerarNotificacionSistema(oDocument);
+                }
+                catch (Exception ex)
+                {
+                    _traceManager.LogInfo(string.Format("Error al generar la notificación para el reclamo. Error: {0}", ex.Message), LogType.Notify);
                 }
 
                 try
@@ -698,12 +705,7 @@ namespace Applications.MainModule.WorkFlow.Services
         {
 
             var user = _usuariosRepository.RetornarUsuarioResponsabledocumento(idPedido);
-            if (user != null)
-            {
-                return user;
-            }
-
-            return null;
+            return user;
         }
         /// <summary>
         /// Realiza el proceso de validación de campos con base a las reglas definidas en la tabla FieldValidations.
@@ -871,7 +873,8 @@ namespace Applications.MainModule.WorkFlow.Services
         /// <returns></returns>
         private bool SendMail(RenderTypeControlButtonDto oDocument)
         {
-            return _sendMailNotificationServices.EnviarCorreoElectronicoNotificacion(oDocument);
+            var userSession = _autenticationService.GetUserFromSession;
+            return _sendMailNotificationServices.EnviarCorreoElectronicoNotificacion(oDocument, userSession);
         }
 
         /// <summary>
@@ -883,12 +886,17 @@ namespace Applications.MainModule.WorkFlow.Services
             var template = _sendMailNotificationServices.GetMergeTemplate(oDocument);
             if(template == null)return;
 
+            var unitOfWork = _notificacionesSistemaRepository.UnitOfWork;
+
             var oNotify = _reclamosDomainServices.GenerarEntradaNotificadorSistema(
                                        _notificacionesSistemaRepository.NewEntity(),
                                        Convert.ToInt32(oDocument.IdCurrentResponsibe),
                                        template, userSession);
 
             _notificacionesSistemaRepository.Add(oNotify);
+
+            unitOfWork.CommitAndRefreshChanges();
+
         }
 
 

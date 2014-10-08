@@ -1,10 +1,14 @@
 using Applications.MainModule.WorkFlow.DTO;
+using Domain.MainModules.Entities;
 
 namespace Applications.MainModule.WorkFlow.Util
 {
     public interface ISendMailNotification
     {
-        bool EnviarCorreoElectronicoNotificacion(RenderTypeControlButtonDto oDocument);
+        bool EnviarCorreoElectronicoNotificacion(RenderTypeControlButtonDto oDocument, TBL_Admin_Usuarios userSession);
+
+        bool EnviarCorreoElectronicoNotificacionCliente(RenderTypeControlButtonDto oDocument,
+                                                        TBL_Admin_Usuarios userSession);
 
         byte[] GetMergeTemplate(RenderTypeControlButtonDto oDocument);
     }

@@ -341,6 +341,7 @@ namespace Presenters.Reclamos.Presenters
             model.IdAsesoradoPor = Convert.ToInt32(View.IdAsesor);
             model.Planta = View.Planta;
             model.CodigoProducto = View.SelectedProduct.CodigoProducto;
+            model.NombreProducto = View.SelectedProduct.NombreProducto;
             model.IdCategoriaProducto = View.SelectedProduct.IdCategoriaProducto;
             model.CantidadVendida = View.CantidadVendidaUnidad;
             model.CantidadReclamada = View.CantidadReclamadaUnidad;
@@ -349,6 +350,7 @@ namespace Presenters.Reclamos.Presenters
             model.IdAtendidoPor = Convert.ToInt32(View.IdAtendidoPor);
             model.TipoContacto = View.TipoContacto;
             model.CodigoCliente = View.SelectedCliente.CodigoCliente;
+            model.NombreCliente = View.SelectedCliente.NombreCliente;
             model.UnidadZona = View.UnidadZona;
             model.Contacto = View.NombreContacto;
             model.EmailContacto = View.EmailContacto;

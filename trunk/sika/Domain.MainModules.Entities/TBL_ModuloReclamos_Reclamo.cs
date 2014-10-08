@@ -1377,6 +1377,36 @@ namespace Domain.MainModules.Entities
             }
         }
         private bool _indicadorAlt;
+    
+        [DataMember]
+        public string NombreCliente
+        {
+            get { return _nombreCliente; }
+            set
+            {
+                if (_nombreCliente != value)
+                {
+                    _nombreCliente = value;
+                    OnPropertyChanged("NombreCliente");
+                }
+            }
+        }
+        private string _nombreCliente;
+    
+        [DataMember]
+        public string NombreProducto
+        {
+            get { return _nombreProducto; }
+            set
+            {
+                if (_nombreProducto != value)
+                {
+                    _nombreProducto = value;
+                    OnPropertyChanged("NombreProducto");
+                }
+            }
+        }
+        private string _nombreProducto;
 
         #endregion
         #region Navigation Properties

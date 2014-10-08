@@ -1806,6 +1806,8 @@
           <Property Name="IndicadorAPC" Type="bit" Nullable="false" />
           <Property Name="IndicadorSol" Type="bit" Nullable="false" />
           <Property Name="IndicadorAlt" Type="bit" Nullable="false" />
+          <Property Name="NombreCliente" Type="varchar" MaxLength="250" />
+          <Property Name="NombreProducto" Type="varchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="TBL_ModuloReclamos_ReclamoJefeAsesor">
           <Key>
@@ -5972,6 +5974,8 @@
           <NavigationProperty Name="TBL_ModuloReclamos_Tracking" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_Tracking_TBL_ModuloReclamos_Reclamo" FromRole="TBL_ModuloReclamos_Reclamo" ToRole="TBL_ModuloReclamos_Tracking" />
           <NavigationProperty Name="TBL_ModuloDocumentosAnexos_Carpetas" Relationship="SolutionFramework.MainModel.TBL_ModuloReclamos_DocumentosAnexos" FromRole="TBL_ModuloReclamos_Reclamo" ToRole="TBL_ModuloDocumentosAnexos_Carpetas" />
           <NavigationProperty Name="TBL_Admin_Usuarios8" Relationship="SolutionFramework.MainModel.TBL_ModuloReclamos_ReclamoJefeAsesor" FromRole="TBL_ModuloReclamos_Reclamo" ToRole="TBL_Admin_Usuarios" />
+          <Property Type="String" Name="NombreCliente" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NombreProducto" MaxLength="250" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="TBL_ModuloReclamos_Soluciones">
           <Key>
@@ -8927,6 +8931,8 @@
           <EntitySetMapping Name="TBL_ModuloReclamos_Reclamo">
             <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_ModuloReclamos_Reclamo">
               <MappingFragment StoreEntitySet="TBL_ModuloReclamos_Reclamo">
+                <ScalarProperty Name="NombreProducto" ColumnName="NombreProducto" />
+                <ScalarProperty Name="NombreCliente" ColumnName="NombreCliente" />
                 <ScalarProperty Name="IndicadorAlt" ColumnName="IndicadorAlt" />
                 <ScalarProperty Name="IndicadorSol" ColumnName="IndicadorSol" />
                 <ScalarProperty Name="IndicadorAPC" ColumnName="IndicadorAPC" />
@@ -9258,7 +9264,7 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="MainModuleDataModel" ZoomLevel="46">
+      <Diagram Name="MainModuleDataModel" ZoomLevel="21">
         <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_Ciudades" Width="1.5" PointX="5.25" PointY="2.75" Height="2.9417936197916674" />
         <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_ConfiguracionServidores" Width="1.5" PointX="8.75" PointY="6.75" Height="3.1340950520833246" />
         <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_Departamentos" Width="1.5" PointX="3" PointY="2.625" Height="3.1340950520833246" />
