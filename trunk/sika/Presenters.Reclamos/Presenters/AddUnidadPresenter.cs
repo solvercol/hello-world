@@ -47,8 +47,8 @@ namespace Presenters.Reclamos.Presenters
         {
             View.Nombre = string.Empty;
             View.Activo = false;
-            View.CreateBy = View.UserSession.UserName;
-            View.CreateOn = DateTime.Now.ToShortDateString();
+            View.CreateBy = View.UserSession.Nombres;
+            View.CreateOn = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString();
        }
 
         private void GuardarUnidad()

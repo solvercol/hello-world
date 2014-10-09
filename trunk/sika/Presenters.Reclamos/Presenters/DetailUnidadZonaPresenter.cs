@@ -51,9 +51,9 @@ namespace Presenters.Reclamos.Presenters
             View.TarifasFletes = uz.TarifaFletes;
             View.Activo = uz.IsActive;
             View.CreateBy = uz.TBL_Admin_Usuarios.Nombres;
-            View.CreateOn = uz.CreateOn != null ? uz.CreateOn.ToShortDateString() : "";
+            View.CreateOn = uz.CreateOn != null ? uz.CreateOn.ToShortDateString() + " " + uz.CreateOn.ToShortTimeString() : "";
             View.ModifiedBy = uz.TBL_Admin_Usuarios2.Nombres;
-            View.ModifiedOn = uz.ModifiedOn != null ? uz.ModifiedOn.ToShortDateString() : "";
+            View.ModifiedOn = uz.ModifiedOn != null ? uz.ModifiedOn.ToShortDateString() + " " + uz.ModifiedOn.ToShortTimeString() : "";
 
         }
 

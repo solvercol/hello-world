@@ -130,10 +130,18 @@ namespace Presenters.Reclamos.Presenters
             try
             {
                 var idrolresponsable = _optionList.ObtenerOpcionBykey("IdRolJefeInmediato");
-                var rol = _rol.FindById(int.Parse(idrolresponsable.Value));
-                var listado = _usuarios.FindBySpecWithRols(true);
-                var listadoResponsables = listado.Where(u => u.TBL_Admin_Roles1.Contains(rol)).ToList();
-                View.GetJefes(listadoResponsables);
+                if (idrolresponsable.Value != "0")
+                {
+                    var rol = _rol.FindById(int.Parse(idrolresponsable.Value));
+                    var listado = _usuarios.FindBySpecWithRols(true);
+                    var listadoResponsables = listado.Where(u => u.TBL_Admin_Roles1.Contains(rol)).ToList();
+                    View.GetJefes(listadoResponsables);
+                }
+                else
+                {
+                    var listado = _usuarios.FindBySpec(true);
+                    View.GetJefes(listado);
+                }
             }
             catch (Exception ex)
             {

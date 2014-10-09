@@ -59,8 +59,8 @@ namespace Presenters.Reclamos.Presenters
             View.Descripcion = string.Empty;
             //View.TarifasFletes = 0;
             View.Activo = false;
-            View.CreateBy = View.UserSession.UserName;
-            View.CreateOn = DateTime.Now.ToShortDateString();
+            View.CreateBy = View.UserSession.Nombres;
+            View.CreateOn = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString();
         }
 
         /// <summary>

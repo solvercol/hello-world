@@ -47,9 +47,9 @@ namespace Presenters.Reclamos.Presenters
             View.IdTipoReclamo = cr.TBL_ModuloReclamos_TipoReclamo.Nombre;
             View.Activo = cr.IsActive;
             View.CreateBy = cr.TBL_Admin_Usuarios.Nombres;
-            View.CreateOn = cr.CreateOn != null ? cr.CreateOn.ToShortDateString() : "";
+            View.CreateOn = cr.CreateOn != null ? cr.CreateOn.ToShortDateString() + " " + cr.CreateOn.ToShortTimeString() : "";
             View.ModifiedBy = cr.TBL_Admin_Usuarios1.Nombres;
-            View.ModifiedOn = cr.ModifiedOn != null ? cr.ModifiedOn.ToShortDateString() : "";
+            View.ModifiedOn = cr.ModifiedOn != null ? cr.ModifiedOn.ToShortDateString() + " " + cr.ModifiedOn.ToShortTimeString() : "";
 
         }
 
