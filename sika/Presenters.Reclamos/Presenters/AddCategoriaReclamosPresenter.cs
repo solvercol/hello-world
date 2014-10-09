@@ -54,8 +54,8 @@ namespace Presenters.Reclamos.Presenters
             View.Area = string.Empty;
             View.GrupoInformacion = 0;
             View.Activo = false;
-            View.CreateBy = View.UserSession.UserName;
-            View.CreateOn = DateTime.Now.ToShortDateString();
+            View.CreateBy = View.UserSession.Nombres;
+            View.CreateOn = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString();
         }
 
         /// <summary>

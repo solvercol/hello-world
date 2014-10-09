@@ -55,8 +55,9 @@ namespace Presenters.Reclamos.Presenters
             View.Nombre = string.Empty;
             View.Descripcion = string.Empty;
             View.Activo = false;
-            View.CreateBy = View.UserSession.UserName;
-            View.CreateOn = DateTime.Now.ToShortDateString();
+            View.CreateBy = View.UserSession.Nombres;
+            View.CreateOn = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString();
+            View.UsuariosCopia = new System.Collections.Generic.List<DTO_ValueKey>();
         }
 
         /// <summary>
@@ -100,10 +101,19 @@ namespace Presenters.Reclamos.Presenters
             try
             {
                 var idrolresponsable = _optionList.ObtenerOpcionBykey("IdRolIngenieroResponsable");
-                var rol = _rol.FindById(int.Parse(idrolresponsable.Value));
-                var listado = _ingenieroResponsable.FindBySpecWithRols(true);
-                var listadoResponsables = listado.Where(u=> u.TBL_Admin_Roles1.Contains(rol)).ToList();
-                View.GetIngenieros(listadoResponsables);
+                if (idrolresponsable.Value != "0")
+                {
+                    var rol = _rol.FindById(int.Parse(idrolresponsable.Value));
+                    var listado = _ingenieroResponsable.FindBySpecWithRols(true);
+                    var listadoResponsables = listado.Where(u => u.TBL_Admin_Roles1.Contains(rol)).ToList();
+                    View.GetIngenieros(listadoResponsables);
+                }
+                else
+                {
+                    var listado = _ingenieroResponsable.FindBySpec(true);
+                    View.GetIngenieros(listado);
+                }
+              
             }
             catch (Exception ex)
             {

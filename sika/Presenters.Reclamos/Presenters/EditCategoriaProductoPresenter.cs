@@ -104,9 +104,10 @@ namespace Presenters.Reclamos.Presenters
                 View.Descripcion = cp.Descripcion;
                 View.Activo = cp.IsActive;
                 View.CreateBy = cp.TBL_Admin_Usuarios.Nombres;
-                View.CreateOn = cp.CreateOn != null ? cp.CreateOn.ToShortDateString() : string.Empty;
+                View.CreateOn = cp.CreateOn != null ? cp.CreateOn.ToShortDateString() + " " + cp.CreateOn.ToShortTimeString() : string.Empty;
                 View.ModifiedBy = cp.TBL_Admin_Usuarios1.Nombres;
-                View.ModifiedOn = cp.ModifiedOn != null ? cp.ModifiedOn.ToShortDateString() : string.Empty;
+                View.ModifiedOn = cp.ModifiedOn != null ? cp.ModifiedOn.ToShortDateString() + " " + cp.ModifiedOn.ToShortTimeString() : string.Empty;
+
                 List<DTO_ValueKey> Users = new List<DTO_ValueKey>();
                 foreach(var User in cp.TBL_Admin_Usuarios2)
                 {
@@ -131,10 +132,18 @@ namespace Presenters.Reclamos.Presenters
             try
             {
                 var idrolresponsable = _optionList.ObtenerOpcionBykey("IdRolIngenieroResponsable");
-                var rol = _rol.FindById(int.Parse(idrolresponsable.Value));
-                var listado = _ingenieroResponsable.FindBySpecWithRols(true);
-                var listadoResponsables = listado.Where(u=> u.TBL_Admin_Roles1.Contains(rol)).ToList();
-                View.GetIngenieros(listadoResponsables);
+                if (idrolresponsable.Value != "0")
+                {
+                    var rol = _rol.FindById(int.Parse(idrolresponsable.Value));
+                    var listado = _ingenieroResponsable.FindBySpecWithRols(true);
+                    var listadoResponsables = listado.Where(u => u.TBL_Admin_Roles1.Contains(rol)).ToList();
+                    View.GetIngenieros(listadoResponsables);
+                }
+                else
+                {
+                    var listado = _ingenieroResponsable.FindBySpec(true);
+                    View.GetIngenieros(listado);
+                }
             }
             catch (Exception ex)
             {

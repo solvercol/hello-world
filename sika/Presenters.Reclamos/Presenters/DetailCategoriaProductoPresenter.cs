@@ -50,9 +50,9 @@ namespace Presenters.Reclamos.Presenters
                 View.Descripcion = cp.Descripcion;
                 View.Activo = cp.IsActive;
                 View.CreateBy = cp.TBL_Admin_Usuarios.Nombres;
-                View.CreateOn = cp.CreateOn != null ? cp.CreateOn.ToShortDateString() : string.Empty;
+                View.CreateOn = cp.CreateOn != null ? cp.CreateOn.ToShortDateString() + " " + cp.CreateOn.ToShortTimeString() : string.Empty;
                 View.ModifiedBy = cp.TBL_Admin_Usuarios1.Nombres;
-                View.ModifiedOn = cp.ModifiedOn != null ? cp.ModifiedOn.ToShortDateString() : string.Empty;
+                View.ModifiedOn = cp.ModifiedOn != null ? cp.ModifiedOn.ToShortDateString() + " " + cp.ModifiedOn.ToShortTimeString() : string.Empty;
                 foreach (var User in cp.TBL_Admin_Usuarios2)
                 {
                     if (!string.IsNullOrEmpty(View.IngResponsables))
