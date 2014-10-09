@@ -190,16 +190,6 @@
 						    <th style="text-align:left;vertical-align:top">Activo:</th>
 						    <td align="left"><asp:checkbox id="chkActive" runat="server" Checked="true"></asp:checkbox></td>
                             <td>&nbsp;</td>
-					    </tr>	
-                        <tr>
-						    <th style="text-align:left;vertical-align:top">Creado por:</th>
-						    <td align="left"><asp:Label ID="lblCreateBy" runat="server"></asp:Label></td>
-                            <td>&nbsp;</td>
-					    </tr>
-                        <tr>
-						    <th style="text-align:left;vertical-align:top">Fecha creación:</th>
-						    <td align="left"><asp:Label ID="lblCreateOn" runat="server"></asp:Label></td>
-                            <td>&nbsp;</td>
 					    </tr>
 					    <tr>
                             <td align="left">&nbsp;</td>
@@ -211,4 +201,12 @@
     
     </table>
 </asp:Content>
-
+<asp:Content ID="Content2" ContentPlaceHolderID="Footer" runat="server">
+    <table width="100%">
+        <tr >
+            <td  style="text-align:left; vertical-align:top; padding-left: 10px; background-color:#e0e0e0; font-size:8pt; color:#808080;">
+                Creado por:&nbsp;<asp:Label ID="lblCreateBy" runat="server"/>&nbsp;en&nbsp;<asp:Label ID="lblCreateOn" runat="server"/>
+            </td>
+        </tr>
+    </table>
+</asp:Content>

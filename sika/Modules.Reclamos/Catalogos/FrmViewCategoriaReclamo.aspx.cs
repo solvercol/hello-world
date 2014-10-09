@@ -18,7 +18,7 @@ namespace Modules.Reclamos.Catalogos
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            ImprimirTituloVentana("Detalle Categoría Reclamos");
+            ImprimirTituloVentana("Detalle tipo Reclamos");
             btnEdit.Visible = !string.IsNullOrEmpty(IdCategoriaReclamo);
             if (this.IdTipoReclamo.ToUpper().Contains("SERVICIO"))
             {

@@ -23,7 +23,7 @@ namespace Modules.Reclamos.Catalogos
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ImprimirTituloVentana("Editar categoría Reclamo");
+            ImprimirTituloVentana("Editar tipo Reclamo");
 
            // btnEliminar.Visible = !string.IsNullOrEmpty(IdCategoriaReclamo);
             btnSave.Visible = !string.IsNullOrEmpty(IdCategoriaReclamo);

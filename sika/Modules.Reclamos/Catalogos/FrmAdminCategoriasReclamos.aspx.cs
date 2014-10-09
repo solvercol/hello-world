@@ -20,7 +20,7 @@ namespace Modules.Reclamos.Catalogos
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ImprimirTituloVentana("Administrador de Categorías de Reclamos");
+            ImprimirTituloVentana("Administrador de Tipos de Reclamos");
         }
 
         protected void BtnNewClick(object sender, EventArgs e)
