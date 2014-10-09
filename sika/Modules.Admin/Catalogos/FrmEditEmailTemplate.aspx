@@ -61,7 +61,7 @@
                         <tr>
 						    <th align="left">Código Plantilla</th>
 						    <td align="left">
-						        <asp:textbox id="txtCodigo" runat="server" width="200px" MaxLength="20">
+						        <asp:textbox id="txtCodigo" runat="server" width="200px" MaxLength="100">
 						        </asp:textbox>
 						        <asp:requiredfieldvalidator id="rfvtxtCodigo" 
 						        runat="server" 

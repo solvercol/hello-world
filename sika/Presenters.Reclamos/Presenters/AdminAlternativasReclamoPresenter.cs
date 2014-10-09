@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using Application.Core;
 using Application.MainModule.Reclamos.IServices;
+using Application.MainModule.Reclamos.Util;
 using Applications.MainModule.Admin.IServices;
 using Domain.MainModules.Entities;
 using Infrastructure.CrossCutting.NetFramework.Enums;
@@ -20,14 +21,16 @@ namespace Presenters.Reclamos.Presenters
         readonly ISfTBL_ModuloReclamos_AnexosAlternativaManagementServices _anexosService;
         readonly ISfTBL_ModuloReclamos_LogReclamosManagementServices _logReclamoService;
         readonly ISfTBL_ModuloReclamos_ReclamoManagementServices _reclamoService;
+        private readonly ISendEmail _senMailServices;
 
         public AdminAlternativasReclamoPresenter(ISfTBL_ModuloReclamos_AlternativasManagementServices alternativaReclamoService,
                                                  ISfTBL_Admin_UsuariosManagementServices usuariosService,
                                                  ISfTBL_ModuloReclamos_AnexosAlternativaManagementServices anexosService,
                                                  ISfTBL_ModuloReclamos_LogReclamosManagementServices logReclamoService,
-                                                 ISfTBL_ModuloReclamos_ReclamoManagementServices reclamoService)
+                                                 ISfTBL_ModuloReclamos_ReclamoManagementServices reclamoService, ISendEmail senMailServices)
         {
             _alternativaReclamoService = alternativaReclamoService;
+            _senMailServices = senMailServices;
             _usuariosService = usuariosService;
             _anexosService = anexosService;
             _logReclamoService = logReclamoService;
@@ -160,6 +163,17 @@ namespace Presenters.Reclamos.Presenters
                 _logReclamoService.Add(log);
 
                 LoadAlternativasReclamo();
+
+
+                try
+                {
+                    _senMailServices.EnviarCorreoelectronicoAlternativaSolucion(model.IdAlternativa, View.UserSession);
+                }
+                catch (Exception ex)
+                {
+                    CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+                }
+
             }
             catch (Exception ex)
             {

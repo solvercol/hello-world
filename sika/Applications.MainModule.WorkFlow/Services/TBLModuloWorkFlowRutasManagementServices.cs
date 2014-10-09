@@ -330,6 +330,9 @@ namespace Applications.MainModule.WorkFlow.Services
                 try
                 {
                     SendMail(oDocument);
+
+                    var userSession = _autenticationService.GetUserFromSession;
+                    _sendMailNotificationServices.EnviarCorreoElectronicoNotificacionCliente(oDocument, userSession);
                 }
                 catch (Exception ex)
                 {
@@ -495,7 +498,7 @@ namespace Applications.MainModule.WorkFlow.Services
                                       EmailNextResponsibe = nextResponsable == null ? string.Empty : nextResponsable.Email,
                                       OrdenCompra = odoc.OrdenCompra,
                                       Cliente = odoc.Cliente,
-                                      FormulaNextresponsible = oWorkflow.RoleNextResponsible
+                                      FormulaNextresponsible = oWorkflow.RoleNextResponsible,
                 };
 
                 return oRender;
@@ -530,6 +533,8 @@ namespace Applications.MainModule.WorkFlow.Services
                     throw new ArgumentException(string.Format("Error al recuperar el reclamo {0} desde la Base de Datos.", oDocument.IdDocument));
 
                 if (oDoc.IdEstado == Convert.ToInt32(oDocument.IdNextStatus)) return oDocument;
+
+                oDocument.TipoReclamo = oDoc.TipoReclamo;
 
                 var nextStatus = Convert.ToInt32(oDocument.IdNextStatus);
                 var currentRule = oEstado.TBL_ModuloWorkFlow_Rutas.Where(x => x.SiguienteEstado == nextStatus).SingleOrDefault();
@@ -874,7 +879,26 @@ namespace Applications.MainModule.WorkFlow.Services
         private bool SendMail(RenderTypeControlButtonDto oDocument)
         {
             var userSession = _autenticationService.GetUserFromSession;
-            return _sendMailNotificationServices.EnviarCorreoElectronicoNotificacion(oDocument, userSession);
+             _sendMailNotificationServices.EnviarCorreoElectronicoNotificacion(oDocument, userSession);
+
+           switch (oDocument.CurrentStatus)
+           {
+               case "Borrador":
+                   _sendMailNotificationServices.EnviarCorreoelectronicoAsesoresJefe(oDocument, userSession);
+                   break;
+               case "Cierre del Plan de Acción":
+                   _sendMailNotificationServices.EnviarCorreoelectronicoAutorReclamo(oDocument, userSession);
+                   break;
+           }
+
+           if (oDocument.CurrentStatus == "En Revisión CC" && oDocument.TipoReclamo == "Servicio")
+            {
+                userSession = _autenticationService.GetUserFromSession;
+                _sendMailNotificationServices.EnviarCorreoElectronicoNotificacionCliente(oDocument, userSession);
+            }
+
+
+            return true;
         }
 
         /// <summary>

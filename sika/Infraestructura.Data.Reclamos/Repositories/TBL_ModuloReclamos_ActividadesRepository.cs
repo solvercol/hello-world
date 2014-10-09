@@ -90,7 +90,25 @@ namespace Infrastructure.Data.MainModule.Reclamos.Repositories
 
         }
 
-      
+
+        public TBL_ModuloReclamos_Actividades GetActividadById(decimal id)
+        {
+            if (id > 0)
+            {
+                var set = _currentUnitOfWork.CreateSet<TBL_ModuloReclamos_Actividades>();
+
+                return set.Where(c => c.IdActividad == id)
+                    .Include(x => x.TBL_Admin_Usuarios2)    // Asignado
+                    .Include(x => x.TBL_Admin_Usuarios3)    // Usuarios Copia
+                    .Include(x=> x.TBL_ModuloReclamos_AnexosActividad) // anexos
+                    .Include(x=> x.TBL_ModuloReclamos_Reclamo.TBL_ModuloReclamos_TipoReclamo) // Reclamo
+                    .Include(x=> x.TBL_ModuloReclamos_ActividadesReclamo)
+                    .Select(c => c)
+                    .SingleOrDefault();
+            }
+            return null;
+        }
+
     }
 }
     

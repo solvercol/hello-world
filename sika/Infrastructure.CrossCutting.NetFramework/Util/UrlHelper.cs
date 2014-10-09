@@ -92,6 +92,21 @@ namespace Infrastructure.CrossCutting.NetFramework.Util
             return UrlUtil.GetUrlPreViewDocumentforEmail();
         }
 
+        public static string GetUrlPreViewComment(string idComentario)
+        {
+            return UrlUtil.GetUrlPreViewComment(idComentario);
+        }
+
+        public static string GetUrlPreViewAlternativaSolucion(string idAlternativa)
+        {
+            return UrlUtil.GetUrlPreViewAlternativaSolucion(idAlternativa);
+        }
+
+        public static string GetUrlPreViewActividad(string idActividad)
+        {
+              return UrlUtil.GetUrlPreViewActividad(idActividad);
+        }
+
         private static string GetHostUrl()
         {
             string securePort = HttpContext.Current.Request.ServerVariables["SERVER_PORT_SECURE"];

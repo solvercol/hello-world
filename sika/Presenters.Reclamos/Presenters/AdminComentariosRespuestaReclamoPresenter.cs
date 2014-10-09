@@ -3,6 +3,7 @@ using System.Linq;
 using System.Reflection;
 using Application.Core;
 using Application.MainModule.Reclamos.IServices;
+using Application.MainModule.Reclamos.Util;
 using Applications.MainModule.Admin.IServices;
 using Domain.MainModules.Entities;
 using Infrastructure.CrossCutting.NetFramework.Enums;
@@ -20,14 +21,17 @@ namespace Presenters.Reclamos.Presenters
         readonly ISfTBL_Admin_UsuariosManagementServices _usuariosService;
         readonly ISfTBL_ModuloReclamos_AnexosComentarioRespuestaManagementServices _anexosService;
         readonly IReclamosAdoService _reclamoAdoService;
+        private readonly ISendEmail _senMailServices;
+
 
         public AdminComentariosRespuestaReclamoPresenter(ISfTBL_ModuloReclamos_ComentariosRespuestaManagementServices comentariosRespuestaService,
                                                          ISfTBL_ModuloReclamos_ReclamoManagementServices reclamoService,
                                                          ISfTBL_Admin_UsuariosManagementServices usuariosService,
                                                          ISfTBL_ModuloReclamos_AnexosComentarioRespuestaManagementServices anexosService,
-                                                         IReclamosAdoService reclamoAdoService)
+                                                         IReclamosAdoService reclamoAdoService, ISendEmail senMailServices)
         {
             _comentariosRespuestaService = comentariosRespuestaService;
+            _senMailServices = senMailServices;
             _reclamoService = reclamoService;
             _usuariosService = usuariosService;
             _anexosService = anexosService;
@@ -37,6 +41,12 @@ namespace Presenters.Reclamos.Presenters
         public override void SubscribeViewToEvents()
         {
             View.Load += View_Load;
+            View.FilterEvent += ViewFilterEvent;
+        }
+
+        void ViewFilterEvent(object sender, EventArgs e)
+        {
+            LoadInfoReclamo();
         }
 
         void View_Load(object sender, EventArgs e)
@@ -161,6 +171,15 @@ namespace Presenters.Reclamos.Presenters
                     }
                 }
 
+                try
+                {
+                    _senMailServices.EnviarCorreoelectronicoAutorReclamo(model.IdComentario, View.UserSession);
+                }
+                catch (Exception ex)
+                {
+                    CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+                }
+
                 LoadComentariosReclamo();
             }
             catch (Exception ex)
@@ -215,6 +234,16 @@ namespace Presenters.Reclamos.Presenters
 
                         _anexosService.Add(anexo);
                     }
+                }
+
+
+                try
+                {
+                    _senMailServices.EnviarCorreoelectronicoRespuestaCliente(model.IdComentario, View.UserSession);
+                }
+                catch (Exception ex)
+                {
+                    CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
                 }
 
                 LoadComentariosReclamo();

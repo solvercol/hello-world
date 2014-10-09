@@ -9,6 +9,7 @@ namespace Domain.MainModule.Reclamos.Contracts
     {
         TBL_ModuloReclamos_ComentariosRespuesta GetCompleteEntityBySpec(ISpecification<TBL_ModuloReclamos_ComentariosRespuesta> specification);
         List<TBL_ModuloReclamos_ComentariosRespuesta> GetCompleteListBySpec(ISpecification<TBL_ModuloReclamos_ComentariosRespuesta> specification);
+        TBL_ModuloReclamos_ComentariosRespuesta GetComentarioById(decimal id);
     }
 }
    

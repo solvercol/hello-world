@@ -102,7 +102,7 @@
 
             <div style="padding:3px; text-align:right;">
                 <asp:Button ID="btnRegresar" runat="server" Text="Regresar"  />
-                <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="BtnSaveAlternativa_Click"  />
+                <asp:Button ID="btnGuardar" runat="server" Text="Enviar" OnClick="BtnSaveAlternativa_Click"  />
             </div>
 
             <asp:ValidationSummary ID="vsAlternativas" runat="server" DisplayMode="BulletList" ShowMessageBox="false" CssClass="validator" ShowSummary="true" ValidationGroup="vsAlternativas"/>

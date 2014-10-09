@@ -15,8 +15,11 @@ namespace Infrastructure.Data.MainModule.Reclamos.Repositories
 {
     public class TBL_ModuloReclamos_AlternativasRepository : GenericRepository<TBL_ModuloReclamos_Alternativas>, ITBL_ModuloReclamos_AlternativasRepository 
     {
+        IMainModuleUnitOfWork _currentUnitOfWork;
+
         public TBL_ModuloReclamos_AlternativasRepository(IMainModuleUnitOfWork unitOfWork, ITraceManager traceManager) : base(unitOfWork, traceManager)
         {
+            _currentUnitOfWork = unitOfWork;
         }
 
         public TBL_ModuloReclamos_Alternativas GetCompleteEntityBySpec(ISpecification<TBL_ModuloReclamos_Alternativas> specification)
@@ -69,5 +72,26 @@ namespace Infrastructure.Data.MainModule.Reclamos.Repositories
                 Messages.exception_InvalidStoreContext,
                 GetType().Name));
         }
+
+
+
+        public TBL_ModuloReclamos_Alternativas GetAlternativaById(decimal id)
+        {
+            if (id > 0)
+            {
+                var set = _currentUnitOfWork.CreateSet<TBL_ModuloReclamos_Alternativas>();
+
+                return set.Where(c => c.IdAlternativa == id)
+                          .Include(x => x.TBL_Admin_Usuarios)     // Creado Por
+                          .Include(x => x.TBL_Admin_Usuarios2)    // Responsable
+                          .Include(x => x.TBL_ModuloReclamos_Reclamo.TBL_ModuloReclamos_TipoReclamo)    // Reclamo
+                          .Include(x => x.TBL_ModuloReclamos_AnexosAlternativa)    // Anxos
+                          .Select(c => c)
+                          .SingleOrDefault();
+            }
+
+            return null;
+        }
+
     }
 } 

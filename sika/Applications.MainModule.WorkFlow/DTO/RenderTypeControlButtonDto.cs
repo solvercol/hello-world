@@ -37,6 +37,8 @@ namespace Applications.MainModule.WorkFlow.DTO
 
         public string Cliente { get; set; }
 
+        public string TipoReclamo { get; set; }
+
         public string FormulaNextresponsible { get; set; }
 
         private  List<string> _errores = new List<string>();

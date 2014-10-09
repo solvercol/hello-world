@@ -106,6 +106,43 @@ namespace Infrastructure.Data.MainModule.Reclamos.Repositories
                         .Include(x => x.TBL_ModuloReclamos_Zona)
                          .Where(specification.SatisfiedBy()).FirstOrDefault();
         }
+
+        public List<TBL_Admin_Usuarios> GetUsuariosAsesoresByIdAsesorado(int idUser)
+        {
+          
+            var activeContext = UnitOfWork as IMainModuleUnitOfWork;
+            if (activeContext != null)
+            {
+
+                //perform operation in this repository
+                var list = activeContext.TBL_ModuloReclamos_Asesores
+                                    .Include(x => x.TBL_Admin_Usuarios)
+                                    .Where(x=> x.IdUsuario == idUser)
+                                    .Select(x => x.TBL_Admin_Usuarios);
+
+                var oReturn = new List<TBL_Admin_Usuarios>();
+
+                foreach (var usr in list)
+                {
+                    foreach (var u in usr)
+                    {
+                        if (!oReturn.Contains(u))
+                            oReturn.Add(u);
+                    }
+                }
+
+                if (oReturn.Any())
+                {
+                    oReturn = oReturn.Distinct().ToList();
+                }
+
+                return oReturn;
+            }
+            throw new InvalidOperationException(string.Format(
+                CultureInfo.InvariantCulture,
+                Messages.exception_InvalidStoreContext,
+                GetType().Name));
+        }
     }
 }
     

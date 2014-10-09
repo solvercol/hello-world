@@ -162,5 +162,33 @@ namespace Infrastructure.CrossCutting.NetFramework.Util
             return string.Format("~/Pages/Modules/Reclamos/Admin/FrmReclamo.aspx?ModuleId={0}&IdReclamo={1}", idModule, idReclamo);
         }
 
+        public static string GetUrlPreViewComment(string idComentario)
+        {
+            var appRot = GetSiteUrl();
+            var idModule = HttpContext.Current.Request.QueryString["ModuleId"];
+            var idReclamo = HttpContext.Current.Request.QueryString["IdReclamo"];
+            var url= string.Format("{0}/Pages/Modules/Reclamos/Admin/FrmAdminComentarioRespuestaReclamo.aspx?ModuleId={1}&IdReclamo={2}&&IdComentario={3}&from=reclamo", appRot,idModule, idReclamo, idComentario);
+            return "<a href=\"" + url + "\"> De click aquí para abrir el documento.\"</a>";
+        }
+
+        public static string GetUrlPreViewAlternativaSolucion(string idAlternativa)
+        {
+            var appRot = GetSiteUrl();
+            var idModule = HttpContext.Current.Request.QueryString["ModuleId"];
+            var idReclamo = HttpContext.Current.Request.QueryString["IdReclamo"];
+            
+            var url = string.Format("{0}/Pages/Modules/Reclamos/Admin/FrmAdminAlternativaReclamo.aspx?ModuleId={1}&IdReclamo={2}&&IdAlternativa={3}&from=reclamo", appRot, idModule, idReclamo, idAlternativa);
+            return "<a href=\"" + url + "\"> De click aquí para abrir el documento.\"</a>";
+        }
+
+        public static string GetUrlPreViewActividad(string idActividad)
+        {
+            var appRot = GetSiteUrl();
+            var idModule = HttpContext.Current.Request.QueryString["ModuleId"];
+            var idReclamo = HttpContext.Current.Request.QueryString["IdReclamo"];
+            
+            var url = string.Format("{0}/Pages/Modules/Reclamos/Admin/FrmAdminActividadReclamo.aspx?ModuleId={1}&IdReclamo={2}&&IdActividad={3}&from=reclamo", appRot, idModule, idReclamo, idActividad);
+            return "<a href=\"" + url + "\"> De click aquí para abrir el documento.\"</a>";
+        }
     }
 }

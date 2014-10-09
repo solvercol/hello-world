@@ -73,7 +73,7 @@ namespace Infrastructure.CrossCutting.NetFramework.Services.Email
             }
         }
 
-        public void ProcessEmail(string from, string to, string contentTemplate, Dictionary<string, string> subjectParams, Dictionary<string, string> bodyParams, string[] cc, Stream attached)
+        public void ProcessEmail(string from, string to, string contentTemplate, Dictionary<string, string> subjectParams, Dictionary<string, string> bodyParams, string[] cc, Stream[] attached)
         {
 
             try

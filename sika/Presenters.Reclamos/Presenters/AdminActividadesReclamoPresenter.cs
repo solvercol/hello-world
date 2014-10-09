@@ -3,6 +3,7 @@ using System.Linq;
 using System.Reflection;
 using Application.Core;
 using Application.MainModule.Reclamos.IServices;
+using Application.MainModule.Reclamos.Util;
 using Applications.MainModule.Admin.IServices;
 using Domain.MainModules.Entities;
 using Infrastructure.CrossCutting.NetFramework.Enums;
@@ -23,6 +24,8 @@ namespace Presenters.Reclamos.Presenters
         readonly IReclamosAdoService _reclamoAdoService;
         readonly ISfTBL_ModuloReclamos_AnexosActividadManagementServices _anexosService;
         readonly ISfTBL_ModuloReclamos_LogReclamosManagementServices _logReclamoService;
+        private readonly ISendEmail _senMailServices;
+
 
         public AdminActividadesReclamoPresenter(ISfTBL_ModuloReclamos_ActividadesManagementServices actividadesService,
                                                 ISfTBL_ModuloReclamos_ActividadesReclamoManagementServices actividadesReclamoAdmService,
@@ -30,9 +33,10 @@ namespace Presenters.Reclamos.Presenters
                                                 ISfTBL_Admin_UsuariosManagementServices usuariosService,
                                                 IReclamosAdoService reclamoAdoService,
                                                 ISfTBL_ModuloReclamos_AnexosActividadManagementServices anexosService,
-                                                ISfTBL_ModuloReclamos_LogReclamosManagementServices logReclamoService)
+                                                ISfTBL_ModuloReclamos_LogReclamosManagementServices logReclamoService, ISendEmail senMailServices)
         {
             _actividadesService = actividadesService;
+            _senMailServices = senMailServices;
             _actividadesReclamoAdmService = actividadesReclamoAdmService;
             _reclamoService = reclamoService;
             _usuariosService = usuariosService;
@@ -190,6 +194,15 @@ namespace Presenters.Reclamos.Presenters
                 _logReclamoService.Add(log);
 
                 LoadActividadesReclamo();
+
+                try
+                {
+                    _senMailServices.EnviarCorreoelectronicoActividades(model.IdActividad, View.UserSession);
+                }
+                catch (Exception ex)
+                {
+                    CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+                }
             }
             catch (Exception ex)
             {
@@ -296,13 +309,14 @@ namespace Presenters.Reclamos.Presenters
 
         TBL_ModuloReclamos_Actividades GetModel()
         {
-            var model = new TBL_ModuloReclamos_Actividades();
+            var model = new TBL_ModuloReclamos_Actividades {IdReclamo = Convert.ToInt32(View.IdReclamo)};
 
-            model.IdReclamo = Convert.ToInt32(View.IdReclamo);
-            model.IdActividadReclamo = Convert.ToInt32(View.IdActividadReclamo);
+            if (!string.IsNullOrEmpty(View.IdActividadReclamo))
+                model.IdActividadReclamo = Convert.ToInt32(View.IdActividadReclamo);
             model.Descripcion = View.Descripcion;
             model.Fecha = View.FechaActividad;
-            model.IdUsuarioAsignacion = Convert.ToInt32(View.IdUsuarioAsignacion);            
+            if (!string.IsNullOrEmpty(View.IdUsuarioAsignacion))
+                model.IdUsuarioAsignacion = Convert.ToInt32(View.IdUsuarioAsignacion);            
             model.Estado = "Programada";
             model.IsActive = true;
             model.CreateBy = View.UserSession.IdUser;

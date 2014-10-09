@@ -236,10 +236,6 @@
             <End Role="TBL_ModuloAPC_Solicitud" EntitySet="TBL_ModuloAPC_Solicitud" />
             <End Role="TBL_ModuloAPC_Causas" EntitySet="TBL_ModuloAPC_Causas" />
           </AssociationSet>
-          <AssociationSet Name="FK_TBL_ModuloAPC_ComentariosRespuesta_TBL_Admin_Usuarios_UsuarioDestino" Association="SolutionFramework.MainModel.Store.FK_TBL_ModuloAPC_ComentariosRespuesta_TBL_Admin_Usuarios_UsuarioDestino">
-            <End Role="TBL_Admin_Usuarios" EntitySet="TBL_Admin_Usuarios" />
-            <End Role="TBL_ModuloAPC_ComentariosRespuesta" EntitySet="TBL_ModuloAPC_ComentariosRespuesta" />
-          </AssociationSet>
           <AssociationSet Name="FK_TBL_ModuloAPC_ComentariosRespuesta_TBL_Admin_UsuariosCreateBy" Association="SolutionFramework.MainModel.Store.FK_TBL_ModuloAPC_ComentariosRespuesta_TBL_Admin_UsuariosCreateBy">
             <End Role="TBL_Admin_Usuarios" EntitySet="TBL_Admin_Usuarios" />
             <End Role="TBL_ModuloAPC_ComentariosRespuesta" EntitySet="TBL_ModuloAPC_ComentariosRespuesta" />
@@ -1670,6 +1666,7 @@
           <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
           <Property Name="EsComentarioCliente" Type="bit" Nullable="false" />
           <Property Name="EmailDestinatarioCliente" Type="varchar" MaxLength="512" />
+          <Property Name="Estado" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="TBL_ModuloReclamos_CostosProducto">
           <Key>
@@ -2424,18 +2421,6 @@
             </Principal>
             <Dependent Role="TBL_ModuloAPC_Causas">
               <PropertyRef Name="IdSolicitudAPC" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TBL_ModuloAPC_ComentariosRespuesta_TBL_Admin_Usuarios_UsuarioDestino">
-          <End Role="TBL_Admin_Usuarios" Type="SolutionFramework.MainModel.Store.TBL_Admin_Usuarios" Multiplicity="1" />
-          <End Role="TBL_ModuloAPC_ComentariosRespuesta" Type="SolutionFramework.MainModel.Store.TBL_ModuloAPC_ComentariosRespuesta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_Admin_Usuarios">
-              <PropertyRef Name="IdUser" />
-            </Principal>
-            <Dependent Role="TBL_ModuloAPC_ComentariosRespuesta">
-              <PropertyRef Name="IdUsuarioDestino" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -5826,6 +5811,7 @@
           <NavigationProperty Name="TBL_ModuloReclamos_ComentariosRespuesta2" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_ComentariosRespuesta_TBL_ModuloReclamos_ComentariosRespuesta_Relacionado" FromRole="TBL_ModuloReclamos_ComentariosRespuesta1" ToRole="TBL_ModuloReclamos_ComentariosRespuesta" />
           <NavigationProperty Name="TBL_ModuloReclamos_Reclamo" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloReclamos_ComentariosRespuesta_TBL_ModuloReclamos_Reclamo" FromRole="TBL_ModuloReclamos_ComentariosRespuesta" ToRole="TBL_ModuloReclamos_Reclamo" />
           <NavigationProperty Name="TBL_Admin_Usuarios3" Relationship="SolutionFramework.MainModel.TBL_ModuloReclamos_UsuarioCopiaComentariosRespuesta" FromRole="TBL_ModuloReclamos_ComentariosRespuesta" ToRole="TBL_Admin_Usuarios" />
+          <Property Type="String" Name="Estado" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="TBL_ModuloReclamos_CostosProducto">
           <Key>
@@ -8877,6 +8863,7 @@
           <EntitySetMapping Name="TBL_ModuloReclamos_ComentariosRespuesta">
             <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_ModuloReclamos_ComentariosRespuesta">
               <MappingFragment StoreEntitySet="TBL_ModuloReclamos_ComentariosRespuesta">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
                 <ScalarProperty Name="EmailDestinatarioCliente" ColumnName="EmailDestinatarioCliente" />
                 <ScalarProperty Name="EsComentarioCliente" ColumnName="EsComentarioCliente" />
                 <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />

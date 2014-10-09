@@ -182,9 +182,9 @@ namespace Application.MainModule.Reclamos.Services
 
         public TBL_ModuloReclamos_Reclamo GetReclamoById(decimal id)
         {
-            Specification<TBL_ModuloReclamos_Reclamo> onlyEnabledSpec = new DirectSpecification<TBL_ModuloReclamos_Reclamo>(u => u.IdReclamo == id);
+            //Specification<TBL_ModuloReclamos_Reclamo> onlyEnabledSpec = new DirectSpecification<TBL_ModuloReclamos_Reclamo>(u => u.IdReclamo == id);
 
-            var oReturn = _TBLModuloReclamosReclamoRepository.GetEntityBySpec(onlyEnabledSpec);
+            var oReturn = _TBLModuloReclamosReclamoRepository.GetEntityById(id);
 
             if (oReturn != null)
             {

@@ -267,6 +267,21 @@ namespace Domain.MainModules.Entities
             }
         }
         private string _emailDestinatarioCliente;
+    
+        [DataMember]
+        public string Estado
+        {
+            get { return _estado; }
+            set
+            {
+                if (_estado != value)
+                {
+                    _estado = value;
+                    OnPropertyChanged("Estado");
+                }
+            }
+        }
+        private string _estado;
 
         #endregion
         #region Navigation Properties
