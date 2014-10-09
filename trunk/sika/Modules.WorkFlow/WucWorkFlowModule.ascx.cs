@@ -67,6 +67,27 @@ namespace Modules.WorkFlow
                                               ? new ViewResulteventArgs("UpdatePanel")
                                               : new ViewResulteventArgs(res));
                     break;
+
+                case "Devolucion":
+                    res = _module.DevolverReclamo(oDocument);
+                    InvokeActualizarEvent(res.Processestaus == "Ok"
+                                              ? new ViewResulteventArgs("UpdatePanel")
+                                              : new ViewResulteventArgs(res));
+                    break;
+
+                case "Rechazo":
+                    res = _module.CancelarReclamo(oDocument);
+                    InvokeActualizarEvent(res.Processestaus == "Ok"
+                                              ? new ViewResulteventArgs("UpdatePanel")
+                                              : new ViewResulteventArgs(res));
+                    break;
+
+                case "CambiarIngeniero":
+                    res = _module.CambiarIngeniero(oDocument);
+                    InvokeActualizarEvent(res.Processestaus == "Ok"
+                                              ? new ViewResulteventArgs("UpdatePanel")
+                                              : new ViewResulteventArgs(res));
+                    break;
             }
 
             CargarReclamo();
@@ -91,8 +112,12 @@ namespace Modules.WorkFlow
 
         private void RenderButtomControl(RenderTypeControlButtonDto oControl)
         {
-            if (oControl == null) return;
             plHolder.Controls.Clear();
+            if (oControl == null)
+            {
+                return;
+            }
+           
             var btn = new Button
             {
                 ID = "btnAprove",

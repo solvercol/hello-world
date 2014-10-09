@@ -9,6 +9,7 @@
 
 #pragma warning disable 1591 // this is for supress no xml comments in public members warnings 
 
+using System.Linq;
 using Domain.MainModule.Reclamos.Contracts;
 using Infraestructure.Data.Core;
 using Infrastructure.CrossCutting.Logging;
@@ -19,8 +20,23 @@ namespace Infrastructure.Data.MainModule.Repositories
 {
     public class TBL_ModuloReclamos_TrackingRepository : GenericRepository<TBL_ModuloReclamos_Tracking>, ITBL_ModuloReclamos_TrackingRepository 
     {
+        IMainModuleUnitOfWork _currentUnitOfWork;
+
         public TBL_ModuloReclamos_TrackingRepository(IMainModuleUnitOfWork unitOfWork, ITraceManager traceManager) : base(unitOfWork, traceManager)
         {
+            _currentUnitOfWork = unitOfWork;
+        }
+
+        public TBL_ModuloReclamos_Tracking GetLastTrackByIdreclamo(decimal id)
+        {
+            if (id > 0)
+            {
+                var set = _currentUnitOfWork.CreateSet<TBL_ModuloReclamos_Tracking>();
+                var idTrack = set.Where(x => x.IdReclamo == id).Max(x => x.IdTracking);
+                return set.Where(c => c.IdTracking == idTrack).FirstOrDefault();
+            }
+
+            return null;
         }
     }
 }

@@ -92,6 +92,8 @@ namespace Presenters.Reclamos.Presenters
                     View.TipoReclamo = reclamo.TBL_ModuloReclamos_TipoReclamo.Nombre;
                     View.NumeroReclamo = reclamo.NumeroReclamo;
 
+                    View.IdIngenieroResponsable = reclamo.IdIngenieroResponsable;
+
                     // Load Nav
                     View.IdCategoriaReclamo = reclamo.IdCategoriaReclamo.ToString();
                     if (reclamo.TBL_ModuloReclamos_CategoriasReclamo != null)
@@ -132,6 +134,9 @@ namespace Presenters.Reclamos.Presenters
 
                     ValidarBotonCambiarPrecio(reclamo);
                     ValidarBotonEditar(reclamo);
+                    TextoBotonDevolverEsatdo(reclamo);
+                    ValidarBotonCancelar(reclamo);
+                    ValidarBotonCambiarIngeniero(reclamo);
                 }
             }
             catch (Exception ex)
@@ -188,6 +193,48 @@ namespace Presenters.Reclamos.Presenters
             {
                 View.VerBotonEdicion = false;
             }
+        }
+
+        private void TextoBotonDevolverEsatdo(TBL_ModuloReclamos_Reclamo oReclamo)
+        {
+            if (oReclamo == null) return;
+            if (oReclamo.TBL_Admin_EstadosProceso == null) return;
+
+            View.TextoBotonDevolucion = string.Empty;
+
+            switch (oReclamo.TBL_Admin_EstadosProceso.Estado)
+            {
+                case "2":
+                    if (View.UserSession.IsInRole("Administrador"))
+                        View.TextoBotonDevolucion = "Devolver al Solicitante";
+                    break;
+                case "6":
+                case "4":
+                    if (View.UserSession.IsInRole("Administrador"))
+                        View.TextoBotonDevolucion = "Devolver al Responsable";
+                    break;
+                default:
+                    View.TextoBotonDevolucion = string.Empty;
+                    break;
+            }
+        }
+
+        private void ValidarBotonCancelar(TBL_ModuloReclamos_Reclamo oReclamo)
+        {
+            if (oReclamo == null) return;
+            if (oReclamo.TBL_Admin_EstadosProceso == null) return;
+
+            //Estamos utilizando el campo Programar Actividades para identificar si el estado permite
+            //realizar la canclacion del reclamo.
+            View.VerBotonRechazarReclamo = oReclamo.TBL_Admin_EstadosProceso.PermiteProgActividades.GetValueOrDefault() && View.UserSession.IsInRole("Administrador");
+        }
+
+        private void ValidarBotonCambiarIngeniero(TBL_ModuloReclamos_Reclamo oReclamo)
+        {
+            if (oReclamo == null) return;
+            if (oReclamo.TBL_Admin_EstadosProceso == null) return;
+
+            View.VerBotonCambiarIngeniero = oReclamo.TBL_Admin_EstadosProceso.Estado == "3" && View.UserSession.IsInRole("Administrador");
         }
 
         /// <summary>

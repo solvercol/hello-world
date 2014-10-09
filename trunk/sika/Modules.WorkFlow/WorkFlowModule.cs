@@ -61,6 +61,21 @@ namespace Modules.WorkFlow
             return _rutasServices.CategorizarReclamo(oDocument);
         }
 
+        public RenderTypeControlButtonDto DevolverReclamo(RenderTypeControlButtonDto oDocument)
+        {
+            return _rutasServices.DevolverReclamo(oDocument);
+        }
+
+        public RenderTypeControlButtonDto CancelarReclamo(RenderTypeControlButtonDto oDocument)
+        {
+            return _rutasServices.CancelarReclamo(oDocument);
+        }
+
+        public RenderTypeControlButtonDto CambiarIngeniero(RenderTypeControlButtonDto oDocument)
+        {
+            return _rutasServices.CambiarIngenieroResponsable(oDocument);
+        }
+
         #endregion
 
     }

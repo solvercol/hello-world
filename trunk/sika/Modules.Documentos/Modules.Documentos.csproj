@@ -143,13 +143,6 @@
     <Compile Include="UserContrlos\WUCLogCambiosDoc.ascx.designer.cs">
       <DependentUpon>WUCLogCambiosDoc.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Views\FrmDocumentosTable.aspx.cs">
-      <DependentUpon>FrmDocumentosTable.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\FrmDocumentosTable.aspx.designer.cs">
-      <DependentUpon>FrmDocumentosTable.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\FrmMisDocumentos.aspx" />
@@ -159,7 +152,6 @@
     <Content Include="Consulta\FrmVerDocumento.aspx" />
     <Content Include="Consulta\FrmVerHistDocumento.aspx" />
     <Content Include="UserContrlos\WUCLogCambiosDoc.ascx" />
-    <Content Include="Views\FrmDocumentosTable.aspx" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -223,7 +215,9 @@
       <Name>ServerControls</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\ReportViewer\View_DocumentosTable.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\View_MisDocumentos.rdlc" />

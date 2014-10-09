@@ -15,5 +15,9 @@ namespace Applications.MainModule.WorkFlow.Util
         bool EnviarCorreoelectronicoAutorReclamo(RenderTypeControlButtonDto oDocument, TBL_Admin_Usuarios userSession);
 
         byte[] GetMergeTemplate(RenderTypeControlButtonDto oDocument);
+
+        bool EnviarCorreoelectronicoDevolucion(RenderTypeControlButtonDto oDocument, TBL_Admin_Usuarios userSession);
+
+        bool EnviarCorreoelectronicoRechazoReclamo(RenderTypeControlButtonDto oDocument, TBL_Admin_Usuarios userSession);
     }
 }

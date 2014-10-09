@@ -16,7 +16,7 @@ namespace Domain.MainModule.Reclamos.Contracts
 {
     public interface ITBL_ModuloReclamos_TrackingRepository : IRepository<TBL_ModuloReclamos_Tracking>
     {
-        
+        TBL_ModuloReclamos_Tracking GetLastTrackByIdreclamo(decimal id);
     }
 }
     

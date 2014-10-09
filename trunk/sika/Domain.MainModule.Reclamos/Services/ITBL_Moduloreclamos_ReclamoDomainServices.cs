@@ -24,5 +24,18 @@ namespace Domain.MainModule.Reclamos.Services
             int idCurrentResponsible,
             byte[] contenido,
              TBL_Admin_Usuarios autenticationService);
+
+        TBL_ModuloReclamos_LogReclamos GenerarObjetoLog(
+            TBL_ModuloReclamos_LogReclamos oLog,
+            string accion,
+            int idReclamo,
+            TBL_Admin_Usuarios autenticationService,
+            string comentario);
+
+        TBL_ModuloReclamos_LogReclamos GenerarObjetoLog(
+            TBL_ModuloReclamos_LogReclamos oLog,
+            decimal idReclamo,
+            TBL_Admin_Usuarios autenticationService,
+            string mensaje);
     }
 }

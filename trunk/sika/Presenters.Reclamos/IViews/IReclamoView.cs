@@ -30,6 +30,10 @@ namespace Presenters.Reclamos.IViews
         string IdCategoria { get; set; }
         bool VerCrearAccion { set; }
         bool VerBotonEdicion { set; }
+        string TextoBotonDevolucion { set; }
+        bool VerBotonRechazarReclamo { set; }
+        bool VerBotonCambiarIngeniero {set; }
+        int? IdIngenieroResponsable { get; set; }
 
         // Load
         void LoadSecciones(IEnumerable<TBL_Admin_Secciones> secciones);

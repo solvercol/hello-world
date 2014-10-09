@@ -79,6 +79,31 @@ namespace Modules.Reclamos.Admin
             set { btnEdit.Visible = value; }
         }
 
+        public string TextoBotonDevolucion
+        {
+            set
+            {
+                btnDeclinar.Text = value;
+                btnDeclinar.Visible = !string.IsNullOrEmpty(value);
+            }
+        }
+
+        public bool VerBotonRechazarReclamo
+        {
+            set { btnRechazar.Visible = value; }
+        }
+
+        public bool VerBotonCambiarIngeniero
+        {
+            set { btnCambiarIngeniero.Visible = value; }
+        }
+
+        public int? IdIngenieroResponsable
+        {
+            get { return ViewState["IdIngenieroResponsable"] == null ? 0 : (int)ViewState["IdIngenieroResponsable"]; }
+            set { ViewState["IdIngenieroResponsable"] = value; }
+        }
+
         #endregion
 
         #region Page Events
@@ -286,12 +311,97 @@ namespace Modules.Reclamos.Admin
                     }
 
                     break;
+
+                case "Devolucion":
+                    {
+                        var uc = this.GetUserControl<WucComentariosDevolverReclamo>("UcRender", "phlVentanaMensajes");
+                        if (uc == null) return;
+                        if (string.IsNullOrEmpty(uc.RetornarComentario) ) return;
+
+                        var parameters = new InputParameter
+                        {
+                            Inputs = new Dictionary<string, string>
+                                                              {
+                                                                  {"Comentario", uc.RetornarComentario}
+                                                              }
+                        };
+
+                        EjecutarWorkFlow(parameters, InputWindow);
+                    }
+
+                    break;
+
+                case "Rechazo":
+                    {
+                        var uc = this.GetUserControl<WucComentariosDevolverReclamo>("UcRender", "phlVentanaMensajes");
+                        if (uc == null) return;
+                        if (string.IsNullOrEmpty(uc.RetornarComentario)) return;
+
+                        var parameters = new InputParameter
+                        {
+                            Inputs = new Dictionary<string, string>
+                                                              {
+                                                                  {"Comentario", uc.RetornarComentario}
+                                                              }
+                        };
+
+                        EjecutarWorkFlow(parameters, InputWindow);
+                    }
+                    break;
+
+                case "CambiarIngeniero":
+                    {
+                        var uc = this.GetUserControl<WucCambiarIngenieroResponsable>("UcRender", "phlVentanaMensajes");
+                        if (uc == null) return;
+                        if (string.IsNullOrEmpty(uc.Comentarios) || string.IsNullOrEmpty(uc.IngenieroSeleccionado)) return;
+
+                        var parameters = new InputParameter
+                        {
+                            Inputs = new Dictionary<string, string>
+                                                              {
+                                                                  {"IdIngeniero", uc.IngenieroSeleccionado},
+                                                                  {"NombreIngeniero", uc.NombreIngenieroSeleccionado},
+                                                                  {"Comentario", uc.Comentarios}
+                                                              }
+                        };
+
+                        EjecutarWorkFlow(parameters, InputWindow);
+                    }
+                    break;
             }
         }
 
         protected void BtnCreacionAccionesClick(object sender, EventArgs e)
         {
            Presenter.CrearAcciones();
+        }
+
+
+        protected void BtnDevolverReclamoClick(object sender, EventArgs e)
+        {
+            InputWindow = "Devolucion";
+            litTitulo.Text = @"Ingrese los motivos de la devolución.";
+            LastLoadedControlMessages = "../UserControls/WucComentariosDevolverReclamo.ascx";
+            LoadUserControlVentanaMensajes(null);
+            mpeVentanaEmergente.Show();
+        }
+
+        protected void BtnCancelarReclamoClick(object sender, EventArgs e)
+        {
+            InputWindow = "Rechazo";
+            litTitulo.Text = @"Ingrese los motivos del Rechazo.";
+            LastLoadedControlMessages = "../UserControls/WucComentariosDevolverReclamo.ascx";
+            LoadUserControlVentanaMensajes(null);
+            mpeVentanaEmergente.Show();
+        }
+
+        protected void BtnCambiarIngenieroClick(object sender, EventArgs e)
+        {
+            InputWindow = "CambiarIngeniero";
+            litTitulo.Text = @"Seleccione el Ingeniero Responsable.";
+            LastLoadedControlMessages = "../UserControls/WucCambiarIngenieroResponsable.ascx";
+            LoadUserControlVentanaMensajes(null);
+            mpeVentanaEmergente.Show();
         }
         #endregion
 
@@ -383,6 +493,8 @@ namespace Modules.Reclamos.Admin
             var uc = (BaseUserControl)oControl;
             if (uc == null) return;
             uc.IdDocument = IdCategoria;
+            if (IdIngenieroResponsable > 0)
+            uc.IdResponsable = IdIngenieroResponsable.ToString();
         }
 
         #endregion
@@ -620,5 +732,7 @@ namespace Modules.Reclamos.Admin
         #endregion
 
         #endregion
+
+       
     }
 }

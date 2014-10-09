@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Reflection;
 using Application.Core;
 using Application.MainModule.Reclamos.IServices;
@@ -40,7 +41,7 @@ namespace Presenters.Reclamos.Presenters
             {
                 //var total = _log.GetTotalLogReciboByReciboId(Convert.ToDecimal(View.IdReciboCaja));
                 //View.TotalRegistrosPaginador = total == 0 ? 1 : total;
-                var lista = _log.GetByIdReclamo(Convert.ToDecimal(View.IdReclamo));
+                var lista = _log.GetByIdReclamo(Convert.ToDecimal(View.IdReclamo)).OrderByDescending(x=> x.CreateOn).ToList();
                 View.LogsList(lista);
             }
             catch (Exception ex)
