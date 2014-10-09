@@ -2,8 +2,6 @@
 
     <%@ Register    Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
     <%@ Register    Assembly="Infragistics4.Web.v11.1, Version=11.1.20111.2238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb"
-                    Namespace="Infragistics.Web.UI.ListControls" TagPrefix="ig" %>
-    <%@ Register    Assembly="Infragistics4.Web.v11.1, Version=11.1.20111.2238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb"
                     Namespace="Infragistics.Web.UI.EditorControls" TagPrefix="ig" %>   
     <%@ Register src="WUCFilterClient.ascx" tagname="WucFilterClient" tagprefix="ucFilterClient" %> 
 
@@ -14,6 +12,16 @@
             var adiv = $get(divModal);
             adiv.style.visibility = 'visible';
         }
+    </script>
+
+    <script type="text/javascript">
+
+        function RebindScripts() {
+            $(".chzn-select").chosen({ allow_single_deselect: true });
+
+            $(".chzn-select-deselect").chosen({ allow_single_deselect: true });
+        }       
+ 
     </script>
     
     <div id="DivModal">
@@ -31,6 +39,11 @@
 
     <asp:ValidationSummary ID="vsGeneral" runat="server" DisplayMode="BulletList" ShowMessageBox="false" CssClass="validator" ShowSummary="true" ValidationGroup="vgGeneral"/>
 
+    <asp:UpdatePanel ID="upgeneral" runat="server">
+        <ContentTemplate>    
+        <script type="text/javascript" language="javascript">
+            Sys.Application.add_load(RebindScripts);
+        </script>  
 
     <ajaxToolkit:Accordion  ID="Secciones"
                             runat="Server"
@@ -84,20 +97,8 @@
 
                             <td class="Separador"></td>
 
-                            <td class="Line" >
-                                <ig:WebDropDown ID="wddAsesor" 
-                                                runat="server" 
-                                                EnableMultipleSelection="false"
-                                                MultipleSelectionType="Checkbox" 
-                                                DisplayMode="DropDown"
-                                                EnableClosingDropDownOnSelect="false"
-                                                StyleSetName="Claymation"
-                                                DropDownContainerWidth="300px"
-                                                DropDownContainerHeight="220px"
-                                                OnValueChanged="WddAsesor_ValueChanged"
-                                                AutoPostBack="true"
-                                                Width="98%">
-                                </ig:WebDropDown>
+                            <td class="Line" style="position: absolute; z-index: 1010;"  >
+                                <asp:DropDownList ID="wddAsesor" runat="server" Width="350px"  class="chzn-select" OnSelectedIndexChanged="WddAsesor_ValueChanged" AutoPostBack="true" />
                             </td>
 
                             <td class="Separador"></td>
@@ -127,13 +128,13 @@
 
                             <td class="Separador"></td>
 
-                            <th style="text-align:left; vertical-align:top">
+                            <th style="text-align:left; vertical-align:middle">
                                 # Diario de Inventario :
                             </th>
 
                             <td class="Separador"></td>
 
-                            <td class="Line" >
+                            <td class="Line" valign="middle" >
                                 <asp:TextBox ID="txtDiarioInventario" runat="server" Width="90%" MaxLength="512" />
                             </td>
                         </tr>
@@ -144,18 +145,8 @@
 
                             <td class="Separador"></td>
 
-                            <td class="Line" >
-                                <ig:WebDropDown ID="wddReclamoAtentidoPor" 
-                                                runat="server" 
-                                                EnableMultipleSelection="false"
-                                                MultipleSelectionType="Checkbox" 
-                                                DisplayMode="DropDown"
-                                                EnableClosingDropDownOnSelect="false"
-                                                StyleSetName="Claymation"
-                                                DropDownContainerWidth="300px"
-                                                DropDownContainerHeight="220px"
-                                                Width="98%">
-                                </ig:WebDropDown>
+                            <td class="Line" style="position: absolute; z-index: 1000;" >
+                                <asp:DropDownList ID="wddReclamoAtentidoPor" runat="server" Width="350px"  class="chzn-select" />
                             </td>
 
                             <td class="Separador"></td>
@@ -292,3 +283,6 @@
                 </ajaxToolkit:AccordionPane>       
         </Panes>
     </ajaxToolkit:Accordion>
+
+        </ContentTemplate>
+    </asp:UpdatePanel>    

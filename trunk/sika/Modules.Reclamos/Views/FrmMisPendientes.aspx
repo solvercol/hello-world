@@ -129,6 +129,16 @@
             adiv.style.visibility = 'visible';
         }
     </script>
+
+    <script type="text/javascript">
+
+        function RebindScripts() {
+            $(".chzn-select").chosen({ allow_single_deselect: true });
+
+            $(".chzn-select-deselect").chosen({ allow_single_deselect: true });
+        }           
+ 
+    </script>
     
     <div id="DivModal">
         <div id="VentanaMensaje">
@@ -271,7 +281,10 @@
 </div>    
         
  <asp:UpdatePanel ID="upgeneral" runat="server">
-    <ContentTemplate>     
+    <ContentTemplate>    
+        <script type="text/javascript" language="javascript">
+            Sys.Application.add_load(RebindScripts);
+        </script>  
 
         <asp:Panel ID="pnlNewReclamo"  runat="server" CssClass="popup_Container" Width="500" Height="150" style="display:none;">  
 
@@ -308,9 +321,8 @@
 
                         <td class="Separador"></td>
 
-                        <td class="Line" style="width:70%">
-                            <asp:DropDownList ID="ddlCategoriaReclamo" runat="server" Width="90%">
-                            </asp:DropDownList>
+                        <td class="Line" style="position: absolute; z-index: 1010;" >
+                            <asp:DropDownList ID="ddlCategoriaReclamo" runat="server" Width="350px"  class="chzn-select" />
                         </td>
 
                         <td class="Separador"></td>

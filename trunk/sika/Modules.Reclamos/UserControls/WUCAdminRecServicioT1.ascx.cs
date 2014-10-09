@@ -121,7 +121,7 @@ namespace Modules.Reclamos.UserControls
 
         #region DropDownList
 
-        protected void WddAsesor_ValueChanged(object sender, DropDownValueChangedEventArgs e)
+        protected void WddAsesor_ValueChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(SelectedCliente.CodigoCliente))
                 Presenter.LoadUnidadZonaAsesor();
@@ -179,12 +179,11 @@ namespace Modules.Reclamos.UserControls
             {
                 items = items.OrderBy(x => x.Asesor).ToList();
             }
-            wddAsesor.DataSource = items;
-            wddAsesor.TextField = "Asesor";
-            wddAsesor.ValueField = "IdUser";
-            wddAsesor.DataBind();
 
-            wddAsesor.SelectedItemIndex = 0;
+            wddAsesor.DataSource = items;
+            wddAsesor.DataTextField = "Asesor";
+            wddAsesor.DataValueField = "IdUser";
+            wddAsesor.DataBind();
         }
 
         public void LoadAtendidoPor(List<TBL_Admin_Usuarios> items)
@@ -194,8 +193,8 @@ namespace Modules.Reclamos.UserControls
                 items = items.OrderBy(x => x.Nombres).ToList();
             }
             wddReclamoAtentidoPor.DataSource = items;
-            wddReclamoAtentidoPor.TextField = "Nombres";
-            wddReclamoAtentidoPor.ValueField = "IdUser";
+            wddReclamoAtentidoPor.DataTextField = "Nombres";
+            wddReclamoAtentidoPor.DataValueField = "IdUser";
             wddReclamoAtentidoPor.DataBind();
         }
 
