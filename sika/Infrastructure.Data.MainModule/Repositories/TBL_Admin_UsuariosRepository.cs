@@ -113,8 +113,20 @@ namespace Infrastructure.Data.MainModule.Repositories
                           .SingleOrDefault();
             }
             return null;
-        }   
+        }
 
+        public TBL_Admin_Usuarios GetUsuarioByName(string name)
+        {
+            if (!string.IsNullOrEmpty(name))
+            {
+                var set = _currentUnitOfWork.CreateSet<TBL_Admin_Usuarios>();
+
+                return set.Where(c => c.Nombres.Equals(name))
+                          .Select(c => c)
+                          .SingleOrDefault();
+            }
+            return null;
+        }  
 
         public TBL_Admin_Usuarios RetornarUsuarioAutordocumento(int idDocumento)
         {

@@ -130,7 +130,9 @@
     <Content Include="UserControls\WUCAdminRecServicioT5.ascx" />
     <Content Include="UserControls\WUCAdminSolucionesReclamo.ascx" />
     <Content Include="UserControls\WUCAdminCostosReclamo.ascx" />
+    <Content Include="UserControls\WucCambiarIngenieroResponsable.ascx" />
     <Content Include="UserControls\WucCategorizarReclamo.ascx" />
+    <Content Include="UserControls\WucComentariosDevolverReclamo.ascx" />
     <Content Include="UserControls\WUCFilterClient.ascx" />
     <Content Include="UserControls\WUCFilterProduct.ascx" />
     <Content Include="UserControls\WucIngresarIngenieroResponsable.ascx" />
@@ -473,12 +475,26 @@
     <Compile Include="UserControls\WUCAdminCostosReclamo.ascx.designer.cs">
       <DependentUpon>WUCAdminCostosReclamo.ascx</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\WucCambiarIngenieroResponsable.ascx.cs">
+      <DependentUpon>WucCambiarIngenieroResponsable.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WucCambiarIngenieroResponsable.ascx.designer.cs">
+      <DependentUpon>WucCambiarIngenieroResponsable.ascx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\WucCategorizarReclamo.ascx.cs">
       <DependentUpon>WucCategorizarReclamo.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserControls\WucCategorizarReclamo.ascx.designer.cs">
       <DependentUpon>WucCategorizarReclamo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WucComentariosDevolverReclamo.ascx.cs">
+      <DependentUpon>WucComentariosDevolverReclamo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WucComentariosDevolverReclamo.ascx.designer.cs">
+      <DependentUpon>WucComentariosDevolverReclamo.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\WUCFilterClient.ascx.cs">
       <DependentUpon>WUCFilterClient.ascx</DependentUpon>

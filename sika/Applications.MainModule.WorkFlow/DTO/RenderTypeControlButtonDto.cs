@@ -41,6 +41,8 @@ namespace Applications.MainModule.WorkFlow.DTO
 
         public string FormulaNextresponsible { get; set; }
 
+        public string Comentarios { get; set; }
+
         private  List<string> _errores = new List<string>();
 
         private List<string> _output = new List<string>();

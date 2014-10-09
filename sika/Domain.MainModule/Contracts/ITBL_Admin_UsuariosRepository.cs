@@ -58,6 +58,13 @@ namespace Domain.MainModule.Contracts
         /// <param name="specification"></param>
         /// <returns></returns>
         List<TBL_Admin_Usuarios> RetornarUsuariosConRoles(ISpecification<TBL_Admin_Usuarios> specification);
+
+        /// <summary>
+        /// Obtiene el usuario filtrado por el nombre
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        TBL_Admin_Usuarios GetUsuarioByName(string name);
     }
 }
     

@@ -97,13 +97,16 @@
                         </asp:UpdatePanel>
                     </td>   
                     
-                    <td align="right" style="width:35%" valign="top">
+                    <td align="right" style="width:45%" valign="top">
                         <asp:UpdatePanel ID="upMenuBar" runat="server">
                             <ContentTemplate>
                                  <div style="padding:3px; text-align:right;">
                                     <asp:Button ID="btnRegresar" runat="server" Text="Regresar" OnClick="BtnRegresarClick" />
                                     <asp:Button ID="btnActualizarIndicadores" runat="server" Text="Creacion Acciones" OnClick="BtnCreacionAccionesClick" Visible="false" />
                                     <asp:Button ID="btnEdit" runat="server" Text="Editar" OnClick="BtnEditReclamoClick" Visible="false" />
+                                    <asp:Button ID="btnDeclinar" runat="server" Text="Devolver" OnClick="BtnDevolverReclamoClick" Visible="false" />
+                                    <asp:Button ID="btnRechazar" runat="server" Text="Rechazar Reclamo" OnClick="BtnCancelarReclamoClick" Visible="false" />
+                                    <asp:Button ID="btnCambiarIngeniero" runat="server" Text="Cambiar Ingeniero R." OnClick="BtnCambiarIngenieroClick" Visible="false" />
                                     <asp:PlaceHolder ID="plhWf" runat="server"></asp:PlaceHolder>
                                 </div>
                             </ContentTemplate>

@@ -98,6 +98,7 @@ namespace Infrastructure.Data.MainModule.Reclamos.Repositories
                           .Include(x => x.TBL_Admin_Usuarios)     // Responsable Actual
                           .Include(x => x.TBL_Admin_Usuarios3)
                           .Include(x => x.TBL_Admin_Usuarios2)
+                          .Include(x => x.TBL_Admin_Usuarios4)
                           .Include(x => x.TBL_ModuloReclamos_CategoriasReclamo)
                           .Select(c => c)
                           .SingleOrDefault();

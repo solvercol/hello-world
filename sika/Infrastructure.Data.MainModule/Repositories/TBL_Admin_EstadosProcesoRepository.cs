@@ -36,11 +36,21 @@ namespace Infrastructure.Data.MainModule.Repositories
             if (id > 0)
             {
                 var set = _currentUnitOfWork.CreateSet<TBL_Admin_EstadosProceso>();
-
                 return set.Include(c => c.TBL_ModuloWorkFlow_CamposValidacion)
                           .Include(x=> x.TBL_ModuloWorkFlow_Rutas.Select(r=> r.TBL_ModuloWorkFlow_ValidacionesSalida))
-                          
                           .Where(c => c.IdEstado == id)
+                          .Select(c => c)
+                          .SingleOrDefault();
+            }
+            return null;
+        }
+
+        public TBL_Admin_EstadosProceso GetEstadoByName(string estado)
+        {
+            if (!string.IsNullOrEmpty(estado))
+            {
+                var set = _currentUnitOfWork.CreateSet<TBL_Admin_EstadosProceso>();
+                return set.Where(c => c.Descripcion.Equals(estado))
                           .Select(c => c)
                           .SingleOrDefault();
             }

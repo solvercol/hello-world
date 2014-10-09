@@ -225,6 +225,331 @@ namespace Applications.MainModule.WorkFlow.Services
             return _sqlReclamosServices.GetReclamoWorkFlowById(id);
         }
          #endregion
+
+        public RenderTypeControlButtonDto CambiarIngenieroResponsable(RenderTypeControlButtonDto oDocument)
+        {
+            try
+            {
+
+                if (string.IsNullOrEmpty(oDocument.IdDocument))
+                {
+                    oDocument.MessagesError = new List<string> { "Error de lectura del identificador del reclamo" };
+                    return oDocument;
+                }
+
+                if (oDocument.Parameters.Count == 0)
+                {
+                    oDocument.MessagesError = new List<string> { "No se han especificado los parametros de entrada (Comentarios)" };
+                    return oDocument;
+                }
+
+
+                string strComment;
+                var result = oDocument.Parameters.TryGetValue("Comentario", out strComment);
+                if (!result)
+                {
+                    oDocument.MessagesError = new List<string> { "Error al leer el comentario ingresado en la reasignación del ingeniero." };
+                    return oDocument;
+                }
+
+                string idIngeniero;
+                result = oDocument.Parameters.TryGetValue("IdIngeniero", out idIngeniero);
+                if (!result)
+                {
+                    oDocument.MessagesError = new List<string> { "Error al obtener el ID del Ingeniero seleccionado." };
+                    return oDocument;
+                }
+
+                string nombreIngeniero;
+                result = oDocument.Parameters.TryGetValue("NombreIngeniero", out nombreIngeniero);
+                if (!result)
+                {
+                    oDocument.MessagesError = new List<string> { "Error al leer el Nombre del Ingeniero seleccionado." };
+                    return oDocument;
+                }
+
+
+                var oReclamo = _tblDocumentosRepository.GetReclamoById(Convert.ToInt32(oDocument.IdDocument));
+
+                if (oReclamo == null)
+                {
+                    oDocument.MessagesError = new List<string> { "Error al recuperar el reclamo desde la Base de Datos" };
+                    return oDocument;
+                }
+
+                var txSettings = new TransactionOptions
+                {
+                    Timeout = TransactionManager.DefaultTimeout,
+                    IsolationLevel = IsolationLevel.Serializable
+                };
+
+                //TODO: se actualiza el ingeniero responsable que es  el siguiente responsable del documento.
+                using (var scope = new TransactionScope(TransactionScopeOption.Required, txSettings))
+                {
+
+                    var unitOfWork = _tblDocumentosRepository.UnitOfWork;
+
+                    var ingenieroAnterior = oReclamo.TBL_Admin_Usuarios4 == null
+                                                ? string.Empty
+                                                : oReclamo.TBL_Admin_Usuarios4.Nombres;
+
+                    oReclamo.IdIngenieroResponsable = Convert.ToInt32(idIngeniero);
+
+                    oReclamo.IdResponsableActual = Convert.ToInt32(idIngeniero);
+
+                    oReclamo.ModifiedOn = DateTime.Now;
+
+                    oReclamo.ModifiedBy = _autenticationService.GetUserFromSession.IdUser;
+
+                    _tblDocumentosRepository.Modify(oReclamo);
+
+                    //Crea un nuevo registro en el log del reclamo.
+                    var mensaje =
+                        string.Format(
+                            "El Reclamo fue Re-Asignado por el siguiente motivo: [{0}]. Ingeniero Anterior: [{1}] - Ingeniero Asignado:[{2}]",
+                            strComment, ingenieroAnterior, nombreIngeniero);
+
+                    GenerarEntradalog(mensaje,oReclamo.IdReclamo);
+
+                    unitOfWork.CommitAndRefreshChanges();
+
+                    scope.Complete();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("CancelarReclamo", ex);
+            }
+
+            oDocument.Processestaus = "Ok";
+            return oDocument;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="oDocument"></param>
+        /// <returns></returns>
+        public RenderTypeControlButtonDto CancelarReclamo(RenderTypeControlButtonDto oDocument)
+        {
+            try
+            {
+
+                if (string.IsNullOrEmpty(oDocument.IdDocument))
+                {
+                    oDocument.MessagesError = new List<string> { "Error de lectura del identificador del reclamo" };
+                    return oDocument;
+                }
+
+                if (oDocument.Parameters.Count == 0)
+                {
+                    oDocument.MessagesError = new List<string> { "No se han especificado los parametros de entrada (Comentarios)" };
+                    return oDocument;
+                }
+
+
+                string strComment;
+                var result = oDocument.Parameters.TryGetValue("Comentario", out strComment);
+                if (!result)
+                {
+                    oDocument.MessagesError = new List<string> { "Error al leer el comentario ingresado en la cancelación del reclamo." };
+                    return oDocument;
+                }
+
+                var estadoCancelado = _estadosRepository.GetEstadoByName("Cancelado");
+                if (estadoCancelado == null)
+                {
+                    oDocument.MessagesError = new List<string> { string.Format("Error al obtener el estado CANCELADO desde la Base de Datos") };
+                    return oDocument;
+                }
+
+                var oReclamo = _tblDocumentosRepository.GetReclamoById(Convert.ToInt32(oDocument.IdDocument));
+
+                if (oReclamo == null)
+                {
+                    oDocument.MessagesError = new List<string> { "Error al recuperar el reclamo desde la Base de Datos" };
+                    return oDocument;
+                }
+
+                var txSettings = new TransactionOptions
+                {
+                    Timeout = TransactionManager.DefaultTimeout,
+                    IsolationLevel = IsolationLevel.Serializable
+                };
+
+                //TODO: se actualiza el ingeniero responsable que es  el siguiente responsable del documento.
+                using (var scope = new TransactionScope(TransactionScopeOption.Required, txSettings))
+                {
+
+                    var unitOfWork = _tblDocumentosRepository.UnitOfWork;
+
+                    oReclamo.IdResponsableActual =null;
+
+                    oReclamo.IdEstado = estadoCancelado.IdEstado;
+
+                    oReclamo.ModifiedOn = DateTime.Now;
+
+                    oReclamo.ModifiedBy = _autenticationService.GetUserFromSession.IdUser;
+
+                    _tblDocumentosRepository.Modify(oReclamo);
+
+                    //Crea un nuevo registro en el log del reclamo.
+                    oDocument.TextControl = estadoCancelado.Descripcion;
+                    GenerarEntradalog(oDocument, strComment);
+
+                    unitOfWork.CommitAndRefreshChanges();
+
+                    scope.Complete();
+                }
+
+
+                try
+                {
+                    oDocument.Comentarios = strComment;
+                    var userSession = _autenticationService.GetUserFromSession;
+                    _sendMailNotificationServices.EnviarCorreoelectronicoRechazoReclamo(oDocument, userSession);
+                }
+                catch (Exception ex)
+                {
+                    _traceManager.LogInfo(string.Format("Error al generar la notificación para el reclamo. Error: {0}", ex.Message), LogType.Notify);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("CancelarReclamo", ex);
+            }
+
+            oDocument.Processestaus = "Ok";
+            return oDocument;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="oDocument"></param>
+        /// <returns></returns>
+        public RenderTypeControlButtonDto DevolverReclamo(RenderTypeControlButtonDto oDocument)
+        {
+            try
+            {
+
+                if (string.IsNullOrEmpty(oDocument.IdDocument))
+                {
+                    oDocument.MessagesError = new List<string> { "Error de lectura del identificador del reclamo" };
+                    return oDocument;
+                }
+
+                if (oDocument.Parameters.Count == 0)
+                {
+                    oDocument.MessagesError = new List<string> { "No se han especificado los parametros de entrada (Comentarios)" };
+                    return oDocument;
+                }
+
+
+                string strComment;
+
+                var result = oDocument.Parameters.TryGetValue("Comentario", out strComment);
+                if(!result)
+                {
+                    oDocument.MessagesError = new List<string> { "Error al leer el comentario ingresado en la devolución del reclamo." };
+                    return oDocument;
+                }
+
+                var oTrack = _trackRepository.GetLastTrackByIdreclamo(Convert.ToDecimal(oDocument.IdDocument));
+
+                if(oTrack == null)
+                {
+                    oDocument.MessagesError = new List<string> { "Error al leer el tracking asociado al reclamo." };
+                    return oDocument;
+                }
+
+
+                var estadoAnterior = _estadosRepository.GetEstadoByName(oTrack.EstadoAnterior);
+                if(estadoAnterior == null)
+                {
+                    oDocument.MessagesError = new List<string> { string.Format("Error al obtener el estado {0} desde la Base de Datos",oTrack.EstadoAnterior) };
+                    return oDocument;
+                }
+
+                var responsableAnterior = _usuariosRepository.GetUsuarioByName(oTrack.Autor);
+                if(responsableAnterior == null)
+                {
+                    oDocument.MessagesError = new List<string> { string.Format("Error al obtener el usuario responsable [{0}] del estado [{1}] desde la Base de Datos", oTrack.Autor, oTrack.EstadoAnterior) };
+                    return oDocument;
+                }
+                
+
+                var oReclamo = _tblDocumentosRepository.GetReclamoById(Convert.ToInt32(oDocument.IdDocument));
+
+                if (oReclamo == null)
+                {
+                    oDocument.MessagesError = new List<string> { "Error al recuperar el reclamo desde la Base de Datos" };
+                    return oDocument;
+                }
+
+                var txSettings = new TransactionOptions
+                {
+                    Timeout = TransactionManager.DefaultTimeout,
+                    IsolationLevel = IsolationLevel.Serializable
+                };
+
+                //TODO: se actualiza el ingeniero responsable que es  el siguiente responsable del documento.
+                using (var scope = new TransactionScope(TransactionScopeOption.Required, txSettings))
+                {
+
+                    var unitOfWork = _tblDocumentosRepository.UnitOfWork;
+
+                    oReclamo.IdResponsableActual = responsableAnterior.IdUser;
+
+                    oReclamo.IdEstado = estadoAnterior.IdEstado;
+
+                    oReclamo.ModifiedOn = DateTime.Now;
+
+                    oReclamo.ModifiedBy = _autenticationService.GetUserFromSession.IdUser;
+
+                    _tblDocumentosRepository.Modify(oReclamo);
+
+                    oDocument.TextControl = "Devolución Reclamo";
+                    oDocument.CurrentResponsibe = oTrack.NuevoResponsable;
+                    oDocument.CurrentStatus = oTrack.Nuevoestado;
+                    oDocument.NextStatus = estadoAnterior.Descripcion;
+                    oDocument.NextResponsibe = responsableAnterior.Nombres;
+                    oDocument.IdCurrentResponsibe = responsableAnterior.IdUser.ToString();
+                    oDocument.Comentarios = strComment;
+
+                    //Crea un nuevo registro en el tracking del reclamo
+                    GenerarEntradatracking(oDocument);
+
+                    //Crea un nuevo registro en el log del reclamo.
+                    oDocument.TextControl = estadoAnterior.Descripcion;
+                    GenerarEntradalog(oDocument, strComment);
+
+                    unitOfWork.CommitAndRefreshChanges();
+
+                    scope.Complete();
+                }
+
+
+                try
+                {
+                    GenerarNotificacionSistema(oDocument);
+                    var userSession = _autenticationService.GetUserFromSession;
+                    _sendMailNotificationServices.EnviarCorreoelectronicoDevolucion(oDocument, userSession);
+                }
+                catch (Exception ex)
+                {
+                    _traceManager.LogInfo(string.Format("Error al generar la notificación para el reclamo. Error: {0}", ex.Message), LogType.Notify);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("DevolverReclamo", ex);
+            }
+
+            oDocument.Processestaus = "Ok";
+            return oDocument;
+        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -851,10 +1176,14 @@ namespace Applications.MainModule.WorkFlow.Services
         {
 
             var userSession = _autenticationService.GetUserFromSession;
-            var oTrack = _reclamosDomainServices.GenerarObjetoTrack(_trackRepository.NewEntity(), oDocument.TextControl,
-                                                             oDocument.CurrentStatus,
-                                                             Convert.ToInt32(oDocument.IdDocument), oDocument.NextStatus,
-                                                             oDocument.NextResponsibe, userSession);
+            var oTrack = _reclamosDomainServices.GenerarObjetoTrack
+                (_trackRepository.NewEntity(), 
+                oDocument.TextControl,
+                oDocument.CurrentStatus,
+                Convert.ToInt32(oDocument.IdDocument), 
+                oDocument.NextStatus,
+                oDocument.NextResponsibe, 
+                userSession);
             _trackRepository.Add(oTrack);
         }
 
@@ -868,6 +1197,22 @@ namespace Applications.MainModule.WorkFlow.Services
             var oLog = _reclamosDomainServices.GenerarObjetoLog(_logDocumentosRepository.NewEntity(),
                                                                      oDocument.TextControl,
                                                                      Convert.ToInt32(oDocument.IdDocument), userSession);
+            _logDocumentosRepository.Add(oLog);
+        }
+
+        private void GenerarEntradalog(RenderTypeControlButtonDto oDocument, string comentario)
+        {
+            var userSession = _autenticationService.GetUserFromSession;
+            var oLog = _reclamosDomainServices.GenerarObjetoLog(_logDocumentosRepository.NewEntity(),
+                                                                     oDocument.TextControl,
+                                                                     Convert.ToInt32(oDocument.IdDocument), userSession,comentario);
+            _logDocumentosRepository.Add(oLog);
+        }
+
+        private void GenerarEntradalog(string mensaje, decimal idreclamo)
+        {
+            var userSession = _autenticationService.GetUserFromSession;
+            var oLog = _reclamosDomainServices.GenerarObjetoLog(_logDocumentosRepository.NewEntity(), idreclamo, userSession, mensaje);
             _logDocumentosRepository.Add(oLog);
         }
 

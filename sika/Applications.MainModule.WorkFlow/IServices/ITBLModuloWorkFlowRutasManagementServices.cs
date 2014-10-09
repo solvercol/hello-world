@@ -65,6 +65,28 @@ namespace Applications.MainModule.WorkFlow.IServices
         /// <param name="oDocument"></param>
         /// <returns></returns>
         RenderTypeControlButtonDto CategorizarReclamo(RenderTypeControlButtonDto oDocument);
+
+        /// <summary>
+        /// Devuelve el  reclamo al estado inmediatamente anterior segun ultimo registro ingresado en el tracking
+        /// </summary>
+        /// <param name="oDocument"></param>
+        /// <returns></returns>
+        RenderTypeControlButtonDto DevolverReclamo(RenderTypeControlButtonDto oDocument);
+
+        /// <summary>
+        /// Cancela el reclamo generando entradas en el log y tracking.
+        /// </summary>
+        /// <param name="oDocument"></param>
+        /// <returns></returns>
+        RenderTypeControlButtonDto CancelarReclamo(RenderTypeControlButtonDto oDocument);
+
+        /// <summary>
+        /// Actualiza la columna IdIngenieroResponsable y la columna IdcurrentResponsible con la información
+        /// seleccionada desde la caja de texto.
+        /// </summary>
+        /// <param name="oDocument"></param>
+        /// <returns></returns>
+        RenderTypeControlButtonDto CambiarIngenieroResponsable(RenderTypeControlButtonDto oDocument);
     }
 }
     

@@ -17,6 +17,8 @@ namespace Domain.MainModule.Contracts
     public interface ITBL_Admin_EstadosProcesoRepository : IRepository<TBL_Admin_EstadosProceso>
     {
         TBL_Admin_EstadosProceso GetEstadoById(int id);
+
+        TBL_Admin_EstadosProceso GetEstadoByName(string estado);
     }
 }
     

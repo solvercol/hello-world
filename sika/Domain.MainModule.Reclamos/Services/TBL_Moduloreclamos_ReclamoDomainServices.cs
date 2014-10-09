@@ -33,14 +33,54 @@ namespace Domain.MainModule.Reclamos.Services
             return oTrack;
         }
 
-        public TBL_ModuloReclamos_LogReclamos GenerarObjetoLog(TBL_ModuloReclamos_LogReclamos oLog, string accion, int idReclamo, TBL_Admin_Usuarios autenticationService)
+        public TBL_ModuloReclamos_LogReclamos GenerarObjetoLog(
+            TBL_ModuloReclamos_LogReclamos oLog, 
+            string accion, 
+            int idReclamo, 
+            TBL_Admin_Usuarios autenticationService)
         {
             oLog.CreateBy = autenticationService.IdUser;
             oLog.CreateOn = DateTime.Now;
-            oLog.Descripcion = string.Format("El Usuario [{0}] cambió el estado del pedido a [{1}] a las {2} ",
+            oLog.Descripcion = string.Format("El Usuario [{0}] cambió el estado del Reclamo a [{1}] a las {2} ",
                                              autenticationService.Nombres, accion,
                                              DateTime.Now.ToShortTimeString());
 
+            oLog.IdReclamo = idReclamo;
+            oLog.IsActive = true;
+            oLog.IdLog = Guid.NewGuid();
+            return oLog;
+        }
+
+        public TBL_ModuloReclamos_LogReclamos GenerarObjetoLog(
+            TBL_ModuloReclamos_LogReclamos oLog,
+            string accion,
+            int idReclamo,
+            TBL_Admin_Usuarios autenticationService,
+            string comentario)
+        {
+            oLog.CreateBy = autenticationService.IdUser;
+            oLog.CreateOn = DateTime.Now;
+            oLog.Descripcion = string.Format("El Usuario [{0}] cambió el estado del Reclamo a [{1}] a las {2}. Comentario: {3} ",
+                                             autenticationService.Nombres, accion,
+                                             DateTime.Now.ToShortTimeString(),
+                                             comentario);
+
+            oLog.IdReclamo = idReclamo;
+            oLog.IsActive = true;
+            oLog.IdLog = Guid.NewGuid();
+            return oLog;
+        }
+
+
+        public TBL_ModuloReclamos_LogReclamos GenerarObjetoLog(
+           TBL_ModuloReclamos_LogReclamos oLog,
+           decimal idReclamo,
+           TBL_Admin_Usuarios autenticationService,
+           string mensaje)
+        {
+            oLog.CreateBy = autenticationService.IdUser;
+            oLog.CreateOn = DateTime.Now;
+            oLog.Descripcion = mensaje;
             oLog.IdReclamo = idReclamo;
             oLog.IsActive = true;
             oLog.IdLog = Guid.NewGuid();

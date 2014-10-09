@@ -126,7 +126,12 @@ namespace Applications.MainModule.WorkFlow.Util
             return true;
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="oDocument"></param>
+        /// <param name="userSession"></param>
+        /// <returns></returns>
         public bool EnviarCorreoelectronicoAsesoresJefe(RenderTypeControlButtonDto oDocument, TBL_Admin_Usuarios userSession)
         {
 
@@ -179,6 +184,12 @@ namespace Applications.MainModule.WorkFlow.Util
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="oDocument"></param>
+        /// <param name="userSession"></param>
+        /// <returns></returns>
         public bool EnviarCorreoelectronicoAutorReclamo(RenderTypeControlButtonDto oDocument, TBL_Admin_Usuarios userSession)
         {
 
@@ -225,6 +236,73 @@ namespace Applications.MainModule.WorkFlow.Util
 
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="oDocument"></param>
+        /// <param name="userSession"></param>
+        /// <returns></returns>
+        public bool EnviarCorreoelectronicoDevolucion(RenderTypeControlButtonDto oDocument, TBL_Admin_Usuarios userSession)
+        {
+
+            var plantilla = ObtenerPlantilla("DevolucionResponsable", "Colombia");
+
+            if (string.IsNullOrEmpty(plantilla)) return false;
+
+            var oReclamo = _reclamosRepository.GetReclamoById(Convert.ToInt32(oDocument.IdDocument));
+            if (oReclamo == null) return false;
+
+            var bodyParams = new Dictionary<string, string>();
+
+            var subjectParams = new Dictionary<string, string>
+                                    {
+                                        {"$NumeroReclamo", oReclamo.NumeroReclamo}
+                                    };
+
+
+            var strFrom = string.Format("Gestión de Reclamos. Enviado por: {0}<{1}>", userSession.Nombres, GetFromEmail());
+
+            bodyParams.Add("$Responsable", oReclamo.TBL_Admin_Usuarios == null ? oDocument.CurrentResponsibe : oReclamo.TBL_Admin_Usuarios.Nombres);
+            bodyParams.Add("$Motivo", oDocument.Comentarios);
+            bodyParams.Add("$Url", UrlHelper.GetUrlPreViewDocumentforEmail());
+
+            _iEmailService.ProcessEmail(strFrom, oReclamo.TBL_Admin_Usuarios2.Email, plantilla, subjectParams, bodyParams, null, null);
+
+            return true;
+
+        }
+
+
+        public bool EnviarCorreoelectronicoRechazoReclamo(RenderTypeControlButtonDto oDocument, TBL_Admin_Usuarios userSession)
+        {
+
+            var plantilla = ObtenerPlantilla("RechazarReclamo", "Colombia");
+
+            if (string.IsNullOrEmpty(plantilla)) return false;
+
+            var oReclamo = _reclamosRepository.GetReclamoById(Convert.ToInt32(oDocument.IdDocument));
+            if (oReclamo == null) return false;
+
+            var bodyParams = new Dictionary<string, string>();
+
+            var subjectParams = new Dictionary<string, string>
+                                    {
+                                        {"$NumeroReclamo", oReclamo.NumeroReclamo}
+                                    };
+
+
+            var strFrom = string.Format("Gestión de Reclamos. Enviado por: {0}<{1}>", userSession.Nombres, GetFromEmail());
+
+            bodyParams.Add("$Responsable", oReclamo.TBL_Admin_Usuarios3 == null ? oDocument.CurrentResponsibe : oReclamo.TBL_Admin_Usuarios3.Nombres);
+            bodyParams.Add("$Motivo", oDocument.Comentarios);
+            bodyParams.Add("$Url", UrlHelper.GetUrlPreViewDocumentforEmail());
+
+            _iEmailService.ProcessEmail(strFrom, oReclamo.TBL_Admin_Usuarios2.Email, plantilla, subjectParams, bodyParams, null, null);
+
+            return true;
+
+        }
 
         /// <summary>
         /// 

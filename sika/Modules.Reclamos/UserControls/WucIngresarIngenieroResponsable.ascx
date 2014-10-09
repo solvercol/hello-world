@@ -13,7 +13,7 @@
             ControlToValidate="ddlIngeniero" 
             Text="*" 
             CssClass="validator" 
-            ValidationGroup="np"></asp:RequiredFieldValidator>
+            ValidationGroup="grpInput"></asp:RequiredFieldValidator>
         </td>
     </tr>
    
