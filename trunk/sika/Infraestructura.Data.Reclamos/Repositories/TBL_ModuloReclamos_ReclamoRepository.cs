@@ -87,7 +87,7 @@ namespace Infrastructure.Data.MainModule.Reclamos.Repositories
                 GetType().Name));
         }
 
-        public TBL_ModuloReclamos_Reclamo GetReclamoById(int id)
+        public TBL_ModuloReclamos_Reclamo GetReclamoById(decimal id)
         {
             if (id > 0)
             {
@@ -97,6 +97,8 @@ namespace Infrastructure.Data.MainModule.Reclamos.Repositories
                           .Include(x => x.TBL_ModuloReclamos_TipoReclamo)
                           .Include(x => x.TBL_Admin_Usuarios)     // Responsable Actual
                           .Include(x => x.TBL_Admin_Usuarios3)
+                          .Include(x => x.TBL_Admin_Usuarios2)
+                          .Include(x => x.TBL_ModuloReclamos_CategoriasReclamo)
                           .Select(c => c)
                           .SingleOrDefault();
             }
@@ -117,6 +119,20 @@ namespace Infrastructure.Data.MainModule.Reclamos.Repositories
 
             return null;
         }
+
+        public TBL_ModuloReclamos_Reclamo GetEntityById(decimal idreclamo)
+        {
+            var actualContext = UnitOfWork as IMainModuleUnitOfWork;
+            if (actualContext != null)
+            {
+                return (from rec in actualContext.TBL_ModuloReclamos_Reclamo
+                        where rec.IdReclamo == idreclamo
+                        select rec
+                       ).SingleOrDefault();
+            }
+            return null;
+        }
+
     }
 }
     

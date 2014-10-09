@@ -456,6 +456,12 @@ namespace Modules.Reclamos.UserControls
             rptArchivosAdjuntos.DataBind();
         }
 
+        public void RefreshUserControl()
+        {
+            if (FilterEvent != null)
+                FilterEvent(null, EventArgs.Empty);
+        }
+
         #endregion
 
         #region Properties
@@ -471,6 +477,8 @@ namespace Modules.Reclamos.UserControls
         {
             get { return ModuleId; }
         }
+
+        public event EventHandler FilterEvent;
 
         public string IdReclamo
         {

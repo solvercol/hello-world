@@ -165,7 +165,7 @@ namespace Presenters.Reclamos.Presenters
             if(oReclamo == null)return;
             if (oReclamo.TBL_Admin_EstadosProceso == null)return;
 
-            if (oReclamo.TBL_Admin_EstadosProceso.Descripcion == "En Proceso" && !oReclamo.IndicadorAlt && !oReclamo.IndicadorAPC && !oReclamo.IndicadorSol)   
+            if (oReclamo.TBL_Admin_EstadosProceso.Descripcion == "En Proceso" && (!oReclamo.IndicadorAlt || !oReclamo.IndicadorAPC || !oReclamo.IndicadorSol))   
             {
                 View.VerCrearAccion = View.UserSession.IdUser == oReclamo.IdResponsableActual;
             }

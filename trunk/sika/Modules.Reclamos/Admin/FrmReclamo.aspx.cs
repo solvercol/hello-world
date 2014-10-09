@@ -162,6 +162,12 @@ namespace Modules.Reclamos.Admin
                 return;
             }
 
+            var rr = this.GetUserControl<WUCAdminComentariosRespuestaReclamo>("WUCAdminComentariosRespuestaReclamo", "phlContent");
+            if (rr != null)
+            {
+                rr.RefreshUserControl();
+                return;
+            }
         }
         #endregion
 

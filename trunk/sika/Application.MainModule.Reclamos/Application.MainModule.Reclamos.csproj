@@ -86,6 +86,8 @@
     <Compile Include="Services\TBLModuloReclamosUnidadesZonasManagementServices.cs" />
     <Compile Include="Services\TBLModuloReclamosUnidadManagementServices.cs" />
     <Compile Include="Services\TBLModuloReclamosZonaManagementServices.cs" />
+    <Compile Include="Util\ISendEmail.cs" />
+    <Compile Include="Util\SendEmail.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Messages.resx">
@@ -114,6 +116,18 @@
     <ProjectReference Include="..\Domain.MainModules.Entities\Domain.MainModules.Entities.csproj">
       <Project>{6FA9FF63-4F79-4A9F-882C-7A7AE27C7332}</Project>
       <Name>Domain.MainModules.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.MainModule\Domain.MainModule.csproj">
+      <Project>{2B568262-DA63-44FC-97F3-B2C717CEF5A3}</Project>
+      <Name>Domain.MainModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure.CrossCutting.NetFramework\Infrastructure.CrossCutting.NetFramework.csproj">
+      <Project>{21EBA478-507F-45AF-B1CC-619578E8FA8B}</Project>
+      <Name>Infrastructure.CrossCutting.NetFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure.CrossCutting\Infrastructure.CrossCutting.csproj">
+      <Project>{1063AE74-49D5-4D8A-B6A3-2C38349F55BF}</Project>
+      <Name>Infrastructure.CrossCutting</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

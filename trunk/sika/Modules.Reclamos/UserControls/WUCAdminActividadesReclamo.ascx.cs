@@ -86,12 +86,19 @@ namespace Modules.Reclamos.UserControls
             if (string.IsNullOrEmpty(Descripcion))
                 messages.Add("Es necesario ingresar una descripción.");
 
+            if (string.IsNullOrEmpty(wddUsuarioAsignacion.SelectedValue))
+            {
+                messages.Add("Seleccione nuevamente el asignar a.");
+            }
+
             if (messages.Any())
             {
                 AddErrorMessages(messages);
                 ShowAdminActividadWindow(true);
                 return;
             }
+
+          
 
             if (IsNewActividad)
                 Presenter.AddActividadReclamo();
@@ -190,7 +197,7 @@ namespace Modules.Reclamos.UserControls
                 }
 
                 var lblFechaActividad = e.Item.FindControl("lblFechaActividad") as Label;
-                if (lblFechaActividad != null) lblFechaActividad.Text = string.Format("{0:dd/MM/yyyy hh:mm:ss tt}", item.Fecha);
+                if (lblFechaActividad != null) lblFechaActividad.Text = item.Fecha.ToShortDateString();
 
                 var lblAsignado = e.Item.FindControl("lblAsignado") as Label;
                 if (lblAsignado != null) lblAsignado.Text = string.Format("{0}", item.TBL_Admin_Usuarios2.Nombres);

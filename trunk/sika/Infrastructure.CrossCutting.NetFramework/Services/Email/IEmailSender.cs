@@ -23,7 +23,7 @@ namespace Infrastructure.CrossCutting.NetFramework.Services.Email
         /// <param name="cc"></param>
         /// <param name="bcc"></param>
         /// <param name="documentoAdjunto"></param>
-        void Send(string from, string to, string subject, string body, string[] cc, string[] bcc, Stream documentoAdjunto);
+        void Send(string from, string to, string subject, string body, string[] cc, string[] bcc, Stream[] documentoAdjunto);
 
        
     }

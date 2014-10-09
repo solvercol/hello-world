@@ -7,6 +7,9 @@ namespace Presenters.Reclamos.IViews
 {
     public interface IAdminComentariosRespuestaReclamoView : IView
     {
+
+        event EventHandler FilterEvent;
+
         // Admin Comentario
         string IdReclamo { get; }
         string Asunto { get; set; }

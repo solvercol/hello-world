@@ -9,5 +9,6 @@ namespace Domain.MainModule.Reclamos.Contracts
     {
         TBL_ModuloReclamos_Alternativas GetCompleteEntityBySpec(ISpecification<TBL_ModuloReclamos_Alternativas> specification);
         List<TBL_ModuloReclamos_Alternativas> GetCompleteListBySpec(ISpecification<TBL_ModuloReclamos_Alternativas> specification);
+        TBL_ModuloReclamos_Alternativas GetAlternativaById(decimal id);
     }
 }

@@ -46,7 +46,7 @@ namespace Infrastructure.CrossCutting.NetFramework.Services.Email
         /// <param name="cc"></param>
         /// <param name="attached"></param>
         void ProcessEmail(string from, string to, string contentTemplate, Dictionary<string, string> subjectParams,
-                          Dictionary<string, string> bodyParams, string[] cc, Stream attached);
+                          Dictionary<string, string> bodyParams, string[] cc, Stream[] attached);
 
         /// <summary>
         /// Retorna un vector de dos posiciones con el Subject[0] y Body[1] mapeados con los valores

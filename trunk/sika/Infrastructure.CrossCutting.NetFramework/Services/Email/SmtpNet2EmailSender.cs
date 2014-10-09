@@ -73,7 +73,7 @@ namespace Infrastructure.CrossCutting.NetFramework.Services.Email
             Send(from, to, subject, body, null, null, null);
         }
 
-        public void Send(string from, string to, string subject, string body, string[] cc, string[] bcc, Stream documentoAdjunto)
+        public void Send(string from, string to, string subject, string body, string[] cc, string[] bcc, Stream[] documentoAdjunto)
         {
             // Create mail message
             var message = new MailMessage(from, to, subject, body)
@@ -97,11 +97,14 @@ namespace Infrastructure.CrossCutting.NetFramework.Services.Email
                 }
             }
 
-            if (documentoAdjunto != null)
+            if (documentoAdjunto != null && documentoAdjunto.Length > 0)
             {
-                documentoAdjunto.Seek(0, SeekOrigin.Begin);
-                var att = new Attachment(documentoAdjunto, "Click para descargar el documento adjunto...");
-                message.Attachments.Add(att);
+                foreach (var stream in documentoAdjunto)
+                {
+                    stream.Seek(0, SeekOrigin.Begin);
+                    var att = new Attachment(stream, "Click para descargar el documento adjunto...");
+                    message.Attachments.Add(att);
+                }
             }
 
             // Send email

@@ -9,5 +9,6 @@ namespace Domain.MainModule.Reclamos.Contracts
     {
         List<TBL_Admin_Usuarios> GetUsuariosBySpec(ISpecification<TBL_ModuloReclamos_Asesores> specification);
         TBL_ModuloReclamos_Asesores GetAsesoresBySpec(ISpecification<TBL_ModuloReclamos_Asesores> specification);
+        List<TBL_Admin_Usuarios> GetUsuariosAsesoresByIdAsesorado(int idUser);
     }
 }

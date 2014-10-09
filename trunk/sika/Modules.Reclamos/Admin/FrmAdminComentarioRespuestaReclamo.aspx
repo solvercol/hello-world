@@ -79,7 +79,7 @@
                                     <asp:Button ID="btnRegresar" runat="server" Text="Regresar" OnClick="BtnRegresarClick"  />
                                     <asp:Button ID="btnEdit" runat="server" Text="Comentar" OnClick="BtnEditComentarioClick" OnClientClick="return ShowSplashModalLoading();" />
                                     <asp:Button ID="btnCancel" runat="server" Text="Salir" Visible="false" OnClick="BtnCancelComentarioClick" OnClientClick="return ShowSplashModalLoading();" />
-                                    <asp:Button ID="btnSave" runat="server" Text="Guardar" Visible="false" OnClick="BtnSaveComentarioClick" OnClientClick="return ShowSplashModalLoading();" />
+                                    <asp:Button ID="btnSave" runat="server" Text="Enviar" Visible="false" OnClick="BtnSaveComentarioClick" OnClientClick="return ShowSplashModalLoading();" />
                                 </div>
                             </td>
                         </tr>                
