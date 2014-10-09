@@ -61,7 +61,6 @@ namespace Modules.Reclamos.Catalogos
 
         #endregion
 
-
         #region Members
 
         public void GetTipoReclamos(IList<TBL_ModuloReclamos_TipoReclamo> items)

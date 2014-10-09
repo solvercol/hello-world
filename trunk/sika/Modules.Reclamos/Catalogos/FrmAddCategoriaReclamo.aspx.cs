@@ -23,7 +23,7 @@ namespace Modules.Reclamos.Catalogos
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ImprimirTituloVentana("Adicionar categoría Reclamo");
+            ImprimirTituloVentana("Adicionar Tipo Reclamo");
             btnSave.Visible = true;
         }
 
