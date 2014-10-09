@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.UI.WebControls;
 using ASP.NETCLIENTE.UI;
 using Domain.MainModules.Entities;
@@ -21,7 +22,9 @@ namespace ASP.NETCLIENTE.Pages.UserControls
         public void OpcionesMenu(IEnumerable<TBL_Admin_OpcionesMenu> items)
         {
             mnuMenuPrincipal.Items.Clear();
-            foreach (var item in items)
+            foreach (var item in from node1 in items
+                                 where (VerificarPermisos(node1.TBL_Admin_Roles))
+                                 select node1)
             {
                 if (item.IdopcionPadre == null)
                 {
@@ -38,10 +41,12 @@ namespace ASP.NETCLIENTE.Pages.UserControls
             }
         }
 
-        private static void AddMenuItem(IEnumerable<TBL_Admin_OpcionesMenu> items, MenuItem itemMenu)
+        private void AddMenuItem(IEnumerable<TBL_Admin_OpcionesMenu> items, MenuItem itemMenu)
         {
 
-            foreach (var item in items)
+            foreach (var item in from node1 in items
+                                 where (VerificarPermisos(node1.TBL_Admin_Roles))
+                                 select node1)
             {
                 if (item.IdopcionPadre != null && (Convert.ToInt32(itemMenu.Value) == item.TBL_Admin_OpcionesMenu2.IdOpcionMenu))
                 {

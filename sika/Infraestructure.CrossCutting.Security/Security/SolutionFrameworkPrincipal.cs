@@ -27,9 +27,14 @@ namespace Infraestructure.CrossCutting.Security.Security
             get { return _user; }
         }
 
-        public bool IsInRole(string role)
+        public bool IsInRoleLabel(string role)
         {
             return _user.TBL_Admin_Roles.Any(x => x.NombreRol.Equals(role));
+        }
+
+        public bool IsInRole(string role)
+        {
+            return _user.TBL_Admin_Roles1.Any(x => x.NombreRol.Equals(role));
         }
 
         public IIdentity Identity
