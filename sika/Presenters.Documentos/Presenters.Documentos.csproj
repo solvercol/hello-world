@@ -47,6 +47,7 @@
     <Compile Include="IViews\IDocumentosTableView.cs" />
     <Compile Include="IViews\IEditarDocumentoView.cs" />
     <Compile Include="IViews\ILogCambiosDocView.cs" />
+    <Compile Include="IViews\IReclamoView.cs" />
     <Compile Include="IViews\IVerDocumentoView.cs" />
     <Compile Include="IViews\IVerHistDocumentoView.cs" />
     <Compile Include="IViews\IVistaDocumentosPublicadosView.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="Presenters\DocumentosTablePresenter.cs" />
     <Compile Include="Presenters\EditarDocumentoPresenter.cs" />
     <Compile Include="Presenters\LogCambiosDocPresenter.cs" />
+    <Compile Include="Presenters\ReclamoPresenter.cs" />
     <Compile Include="Presenters\VerDocumentoPresenter.cs" />
     <Compile Include="Presenters\VerHistDocumentoPresenter.cs" />
     <Compile Include="Presenters\VistaDocumentosPublicadosPresenter.cs" />
