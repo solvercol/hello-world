@@ -208,7 +208,7 @@ namespace Modules.Reclamos.UserControls
 
         void InitAdminSolucion()
         {
-            wddDepartamento.SelectedItemIndex = 0;
+            wddDepartamento.SelectedIndex = 0;
             Observaciones = string.Empty;
             ArchivosAdjuntos = new List<DTO_ValueKey>();
             LoadArchivosAdjuntos(ArchivosAdjuntos);
@@ -253,11 +253,9 @@ namespace Modules.Reclamos.UserControls
             }
 
             wddDepartamento.DataSource = items;
-            wddDepartamento.TextField = "Value";
-            wddDepartamento.ValueField = "Id";
+            wddDepartamento.DataTextField = "Value";
+            wddDepartamento.DataValueField = "Id";
             wddDepartamento.DataBind();
-
-            wddDepartamento.SelectedItemIndex = 0;
         }
 
         public void LoadArchivosAdjuntos(List<DTO_ValueKey> items)

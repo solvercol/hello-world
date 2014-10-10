@@ -230,8 +230,8 @@ namespace Modules.Reclamos.Admin
             }
 
             wddDestinatarios.DataSource = items;
-            wddDestinatarios.TextField = "Nombres";
-            wddDestinatarios.ValueField = "IdUser";
+            wddDestinatarios.DataTextField = "Nombres";
+            wddDestinatarios.DataValueField = "IdUser";
             wddDestinatarios.DataBind();
         }
 

@@ -14,6 +14,16 @@
         adiv.style.visibility = 'visible';
     }
 </script>
+
+<script type="text/javascript">
+
+    function RebindScripts() {
+        $(".chzn-select").chosen({ allow_single_deselect: true });
+
+        $(".chzn-select-deselect").chosen({ allow_single_deselect: true });
+    }       
+ 
+</script>
     
 <div id="DivModal">
     <div id="VentanaMensaje">
@@ -154,6 +164,9 @@
     <div style=" margin-top:2px;">    
         <asp:UpdatePanel ID="upContenidoReclamos" runat="server" ChildrenAsTriggers="true">
             <ContentTemplate>  
+                <script type="text/javascript" language="javascript">
+                    Sys.Application.add_load(RebindScripts);
+                </script>  
                 <div style="width:100%;">
                         <asp:PlaceHolder ID="phlContent"  runat="server"></asp:PlaceHolder>
                 </div>  

@@ -15,9 +15,21 @@
     }
 </script>
 
+<script type="text/javascript">
+
+    function RebindScripts() {
+        $(".chzn-select").chosen({ allow_single_deselect: true });
+
+        $(".chzn-select-deselect").chosen({ allow_single_deselect: true });
+    }       
+ 
+</script>
+
 <asp:UpdatePanel ID="upGeneral" runat="server">
     <ContentTemplate>
-    
+        <script type="text/javascript" language="javascript">
+            Sys.Application.add_load(RebindScripts);
+        </script>
         <div id="DivModal">
             <div id="VentanaMensaje">
                 <div id="Msg">
@@ -214,17 +226,7 @@
                             <td class="Separador"></td>
 
                             <td class="Line">
-                                <ig:WebDropDown ID="wddDestinatarios" 
-                                            runat="server" 
-                                            EnableMultipleSelection="false"
-                                            MultipleSelectionType="Checkbox" 
-                                            DisplayMode="DropDown"
-                                            EnableClosingDropDownOnSelect="false"
-                                            StyleSetName="Claymation"
-                                            DropDownContainerWidth="300px"
-                                            DropDownContainerHeight="220px"
-                                            Width="50%">
-                            </ig:WebDropDown>
+                                <asp:DropDownList ID="wddDestinatarios" runat="server" Width="350px"  class="chzn-select" />
                             </td>
 
                             <td class="Separador"></td>

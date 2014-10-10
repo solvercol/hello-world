@@ -1,8 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WUCAdminActividadesReclamo.ascx.cs" Inherits="Modules.Reclamos.UserControls.WUCAdminActividadesReclamo" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
-<%@ Register Assembly="Infragistics4.Web.v11.1, Version=11.1.20111.2238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb"
-             Namespace="Infragistics.Web.UI.ListControls" TagPrefix="ig" %>
 
 <table width="100%">
     <tr class="SectionMainTitle">
@@ -55,16 +53,7 @@
                                             BorderStyle="None"
                                             ImageUrl="~/Resources/Images/select.png"
                                             OnClick="BtnSelectActividad_Click" />
-                            </td>
-                           <%-- <td style="text-align:center; ">
-                                <asp:ImageButton 
-                                            ID="imgDeleteActividad" 
-                                            runat="server"
-                                            CausesValidation="false"
-                                            BorderStyle="None"
-                                            ImageUrl="~/Resources/Images/RemoveGrid.png"
-                                            OnClick="BtnRemoveActividad_Click" />
-                            </td> --%>                                       
+                            </td>                                    
                             <td style="text-align:left">
                                 <asp:Label ID="lblActividad" runat="server" />
                             </td>
@@ -90,6 +79,9 @@
 
 <asp:UpdatePanel ID="upModal" runat="server">
     <ContentTemplate> 
+        <script type="text/javascript" language="javascript">
+            Sys.Application.add_load(RebindScripts);
+        </script>
         <asp:Panel ID="pnlAdminActividad"  runat="server" CssClass="popup_Container" Width="500" Height="500" style="display:none;">  
 
             <div class="popup_Titlebar" id="PopupHeader">
@@ -110,24 +102,25 @@
             <div class="popup_Body">                                                    
                 <table width="100%" class="tblSecciones">
                     <tr>
-                        <th style="text-align:left; width: 25%; vertical-align:top">
+                        <th style="text-align:left; width: 25%;">
+                        </th>
+
+                        <td class="Separador"></td>
+
+                        <td class="Line" style="width:70%;">
+                        </td>
+
+                        <td class="Separador"></td>
+                    </tr>
+                    <tr>
+                        <th style="text-align:left; vertical-align:top">
                             Actividad :
                         </th>
 
                         <td class="Separador"></td>
 
-                        <td class="Line" style="width:70%">
-                            <ig:WebDropDown ID="wddActividadesReclamo" 
-                                            runat="server" 
-                                            EnableMultipleSelection="false"
-                                            MultipleSelectionType="Checkbox" 
-                                            DisplayMode="DropDown"
-                                            EnableClosingDropDownOnSelect="false"
-                                            StyleSetName="Claymation"
-                                            DropDownContainerWidth="300px"
-                                            DropDownContainerHeight="220px"
-                                            Width="98%">
-                            </ig:WebDropDown>
+                        <td class="Line" style="position: absolute; z-index: 300;" >
+                            <asp:DropDownList ID="wddActividadesReclamo" runat="server" Width="350px"  class="chzn-select" />
                             <asp:Label ID="lblActividadesReclamo" runat="server" />
                         </td>
 
@@ -176,18 +169,8 @@
 
                         <td class="Separador"></td>
 
-                        <td class="Line">
-                            <ig:WebDropDown ID="wddUsuarioAsignacion" 
-                                            runat="server" 
-                                            EnableMultipleSelection="false"
-                                            MultipleSelectionType="Checkbox" 
-                                            DisplayMode="DropDown"
-                                            EnableClosingDropDownOnSelect="false"
-                                            StyleSetName="Claymation"
-                                            DropDownContainerWidth="300px"
-                                            DropDownContainerHeight="220px"
-                                            Width="98%">
-                            </ig:WebDropDown>
+                        <td class="Line" style="position: absolute; z-index: 200;" >
+                            <asp:DropDownList ID="wddUsuarioAsignacion" runat="server" Width="350px"  class="chzn-select" />
                             <asp:Label ID="lblUsuarioAsignacion" runat="server" />
                         </td>
 
@@ -225,18 +208,14 @@
                       
                                     <table class="tblSecciones" width="100%">
                                         <tr>
-                                            <td>
-                                                <ig:WebDropDown ID="wddUsuarioCopia" 
-                                                                runat="server" 
-                                                                EnableMultipleSelection="false"
-                                                                MultipleSelectionType="Checkbox" 
-                                                                DisplayMode="DropDown"
-                                                                EnableClosingDropDownOnSelect="false"
-                                                                StyleSetName="Claymation"
-                                                                DropDownContainerWidth="300px"
-                                                                DropDownContainerHeight="220px"
-                                                                Width="98%">
-                                                </ig:WebDropDown>
+                                            <td style="width:90%">
+                                            </td>
+                                            <td style="width:10%">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="position:absolute; z-index: 100;">
+                                                <asp:DropDownList ID="wddUsuarioCopia" runat="server" Width="290px"  class="chzn-select" />
                                             </td>
                                             <td>
                                                 <asp:Button ID="btnAddCopia" runat="server" Text="Agregar" OnClick="BtnAddUsuarioCopia_Click" />

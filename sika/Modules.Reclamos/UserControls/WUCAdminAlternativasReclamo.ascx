@@ -1,8 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WUCAdminAlternativasReclamo.ascx.cs" Inherits="Modules.Reclamos.UserControls.WUCAdminAlternativasReclamo" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
-<%@ Register Assembly="Infragistics4.Web.v11.1, Version=11.1.20111.2238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb"
-             Namespace="Infragistics.Web.UI.ListControls" TagPrefix="ig" %>
 
 <table width="100%">
     <tr class="SectionMainTitle">
@@ -56,15 +54,6 @@
                                             ImageUrl="~/Resources/Images/select.png" 
                                             OnClick="BtnSelectAlternativa_Click" />
                             </td>
-                            <%--<td style="text-align:center; ">
-                                <asp:ImageButton 
-                                            ID="imgDeleteAlternativa" 
-                                            runat="server"
-                                            CausesValidation="false"
-                                            BorderStyle="None"
-                                            ImageUrl="~/Resources/Images/RemoveGrid.png"
-                                            OnClick="BtnRemoveAlternativa_Click" />
-                            </td>--%>
                             <td style="text-align:left;vertical-align:top">
                                 <asp:Label ID="lblAlternativa" runat="server" />
                             </td>
@@ -90,6 +79,9 @@
 
 <asp:UpdatePanel ID="upModal" runat="server">
     <ContentTemplate> 
+        <script type="text/javascript" language="javascript">
+            Sys.Application.add_load(RebindScripts);
+        </script>
         <asp:Panel ID="pnlAdminAlternativa"  runat="server" CssClass="popup_Container" Width="500" Height="580" style="display:none;">  
 
             <div class="popup_Titlebar" id="PopupHeader">
@@ -159,17 +151,7 @@
                         <td class="Separador"></td>
 
                         <td class="Line">
-                            <ig:WebDropDown ID="wddResponsable" 
-                                            runat="server" 
-                                            EnableMultipleSelection="false"
-                                            MultipleSelectionType="Checkbox" 
-                                            DisplayMode="DropDown"
-                                            EnableClosingDropDownOnSelect="false"
-                                            StyleSetName="Claymation"
-                                            DropDownContainerWidth="300px"
-                                            DropDownContainerHeight="220px"
-                                            Width="98%">
-                            </ig:WebDropDown>
+                            <asp:DropDownList ID="wddResponsable" runat="server" Width="350px"  class="chzn-select" />
                             <asp:Label ID="lblResponsable" runat="server" />
                         </td>
 
