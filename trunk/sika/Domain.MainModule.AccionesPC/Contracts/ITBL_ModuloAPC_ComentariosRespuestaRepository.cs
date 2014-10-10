@@ -12,12 +12,14 @@
 using Domain.Core;
 using Domain.MainModules.Entities;
 using Domain.Core.Specification;
+using System.Collections.Generic;
 
 namespace Domain.MainModule.AccionesPC.Contracts
 {
     public interface ITBL_ModuloAPC_ComentariosRespuestaRepository : IRepository<TBL_ModuloAPC_ComentariosRespuesta>
     {
-        
+        TBL_ModuloAPC_ComentariosRespuesta GetCompleteEntityBySpec(ISpecification<TBL_ModuloAPC_ComentariosRespuesta> specification);
+        List<TBL_ModuloAPC_ComentariosRespuesta> GetCompleteListBySpec(ISpecification<TBL_ModuloAPC_ComentariosRespuesta> specification);
     }
 }
     
