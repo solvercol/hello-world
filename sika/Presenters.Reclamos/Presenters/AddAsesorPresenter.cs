@@ -79,12 +79,12 @@ namespace Presenters.Reclamos.Presenters
                 asesor.IdUsuario = int.Parse(View.IdUser);
                 asesor.IdUnidad = int.Parse(View.IdUnidad);
                 asesor.IdZona = int.Parse(View.IdZona);
-                asesor.TBL_Admin_Usuarios.Clear();
+                asesor.TBL_Admin_Usuarios2.Clear();
 
                 foreach (var item in View.UsuariosCopia)
                 {
                     var obj = _usuarios.FindById(Convert.ToInt32(item.Id));
-                    asesor.TBL_Admin_Usuarios.Add(obj);
+                    asesor.TBL_Admin_Usuarios2.Add(obj);
                 }
                 _asesores.Add(asesor);
                 InvokeMessageBox(new MessageBoxEventArgs(string.Format(Message.ProcessOk), TypeError.Ok));
