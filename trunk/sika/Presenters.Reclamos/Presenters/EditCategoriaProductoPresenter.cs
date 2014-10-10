@@ -64,26 +64,33 @@ namespace Presenters.Reclamos.Presenters
             try
             {
                 if (string.IsNullOrEmpty(View.IdCategoriaProducto)) return;
-
-                var cp = _catProducto.FindById(Convert.ToInt32(View.IdCategoriaProducto));
-
-                if (cp == null) return;
-
-                cp.Nombre = View.Nombre;
-                cp.Descripcion = View.Descripcion;
-                cp.IsActive = View.Activo;
-                cp.ModifiedBy = View.UserSession.IdUser;
-                cp.ModifiedOn = DateTime.Now;
-                cp.TBL_Admin_Usuarios2.Clear();
-
-                foreach (var item in View.UsuariosCopia)
+                if (View.UsuariosCopia.Count >= 1)
                 {
-                    var obj = _ingenieroResponsable.FindById(Convert.ToInt32(item.Id));
-                    cp.TBL_Admin_Usuarios2.Add(obj);
-                }
+                    var cp = _catProducto.FindById(Convert.ToInt32(View.IdCategoriaProducto));
 
-                _catProducto.Modify(cp);
-                InvokeMessageBox(new MessageBoxEventArgs(string.Format(Message.ProcessOk), TypeError.Ok));
+                    if (cp == null) return;
+
+                    cp.Nombre = View.Nombre;
+                    cp.Descripcion = View.Descripcion;
+                    cp.IsActive = View.Activo;
+                    cp.ModifiedBy = View.UserSession.IdUser;
+                    cp.ModifiedOn = DateTime.Now;
+                    cp.TBL_Admin_Usuarios2.Clear();
+
+                    foreach (var item in View.UsuariosCopia)
+                    {
+                        var obj = _ingenieroResponsable.FindById(Convert.ToInt32(item.Id));
+                        cp.TBL_Admin_Usuarios2.Add(obj);
+                    }
+
+                    _catProducto.Modify(cp);
+                    InvokeMessageBox(new MessageBoxEventArgs(string.Format(Message.ProcessOk), TypeError.Ok));
+                }
+                else
+                {
+                    InvokeMessageBox(new MessageBoxEventArgs(string.Format("Debe Existir al menos un Ingeniero Responsable asociado"), TypeError.Error));
+                }
+                
             }
             catch (Exception ex)
             {
