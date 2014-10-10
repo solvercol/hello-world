@@ -58,17 +58,16 @@ namespace Modules.Reclamos.Catalogos
             Response.Redirect(string.Format("FrmAdminCategoriasReclamos.aspx{0}", GetBaseQueryString()));
         }
 
-        protected void wddReclamo_SelectionChanged(object sender, EventArgs eventArgs)
+        protected void wddReclamo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(this.wddReclamo.SelectedItem.ToString().ToUpper().Contains("SERVICIO"))
+            if (this.wddReclamo.SelectedItem.ToString().ToUpper().Contains("SERVICIO"))
             {
-                trGrupoInformacion.Visible=true;
+                trGrupoInformacion.Visible = true;
             }
             else
             {
                 trGrupoInformacion.Visible = false;
             }
-            
         }
         #endregion
 
@@ -82,8 +81,8 @@ namespace Modules.Reclamos.Catalogos
             }
 
             wddResponsables.DataSource = items;
-            wddResponsables.TextField = "Nombres";
-            wddResponsables.ValueField = "IdUser";
+            wddResponsables.DataTextField = "Nombres";
+            wddResponsables.DataValueField = "IdUser";
             wddResponsables.DataBind();
         }
 
@@ -93,10 +92,10 @@ namespace Modules.Reclamos.Catalogos
             {
                 items = items.OrderBy(x => x.Nombre).ToList();
             }
-
+            
             wddReclamo.DataSource = items;
-            wddReclamo.TextField = "Nombre";
-            wddReclamo.ValueField = "IdTipoReclamo";
+            wddReclamo.DataTextField = "Nombre";
+            wddReclamo.DataValueField = "IdTipoReclamo";
             wddReclamo.DataBind();
         }
 
@@ -180,5 +179,7 @@ namespace Modules.Reclamos.Catalogos
         }
 
         #endregion
+
+
     }
 }

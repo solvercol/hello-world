@@ -1,7 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FrmEditCategoriaProducto.aspx.cs" Inherits="Modules.Reclamos.Catalogos.FrmEditCategoriaProducto" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="True" CodeBehind="FrmEditCategoriaProducto.aspx.cs" Inherits="Modules.Reclamos.Catalogos.FrmEditCategoriaProducto" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
-<%@ Register Assembly="Infragistics4.Web.v11.1, Version=11.1.20111.2238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb"
-             Namespace="Infragistics.Web.UI.ListControls" TagPrefix="ig" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 <asp:ValidationSummary ID="vsGeneral" runat="server" DisplayMode="BulletList" ShowMessageBox="true" CssClass="validator" ShowSummary="true" ValidationGroup="vgGeneral"/>
  <div style="padding:3px; text-align:right;">
@@ -19,7 +17,7 @@
 						    <td>&nbsp;</td>
 					    </tr>
 					    <tr>
-						    <th style="text-align:left;vertical-align:top">Nombre:</th>
+						    <th style="text-align:left;vertical-align:top">Categoría:</th>
 						    <td align="left">
 						        <asp:textbox id="txtNombre" runat="server" width="400px" MaxLength="512">
 						        </asp:textbox>
@@ -55,17 +53,7 @@
                                     <table class="tblSecciones" width="100%">
                                         <tr>
                                             <td>
-                                                <ig:WebDropDown ID="wddResponsables" CurrentValue=""
-                                                            runat="server" 
-                                                            EnableMultipleSelection="false"
-                                                            MultipleSelectionType="Checkbox" 
-                                                            DisplayMode="DropDown"
-                                                            EnableClosingDropDownOnSelect="false"
-                                                            StyleSetName="Claymation"
-                                                            DropDownContainerWidth="300px"
-                                                            DropDownContainerHeight="220px"
-                                                            Width="50%" AutoPostBack="True">
-                                                </ig:WebDropDown>
+                                                <asp:DropDownList ID="wddResponsables" class="chzn-select" runat="server" Width="50%" />
                                             </td>
                                         </tr>
                                         <tr>
@@ -121,7 +109,12 @@
 				    </table>
             </td>
         </tr>
-    
+       <script type="text/javascript">
+
+           $(".chzn-select").chosen({ allow_single_deselect: true });
+
+           $(".chzn-select-deselect").chosen({ allow_single_deselect: true });
+    </script>
     </table>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Footer" runat="server">

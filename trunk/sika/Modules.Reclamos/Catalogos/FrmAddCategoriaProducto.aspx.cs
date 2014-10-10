@@ -90,8 +90,8 @@ namespace Modules.Reclamos.Catalogos
             }
 
             wddResponsables.DataSource = items;
-            wddResponsables.TextField = "Nombres";
-            wddResponsables.ValueField = "IdUser";
+            wddResponsables.DataTextField = "Nombres";
+            wddResponsables.DataValueField = "IdUser";
             wddResponsables.DataBind();
         }
 

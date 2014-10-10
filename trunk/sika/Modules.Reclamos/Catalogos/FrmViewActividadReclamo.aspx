@@ -18,8 +18,14 @@
 						    <td>&nbsp;</td>
 						    <td>&nbsp;</td>
 					    </tr>
+                        <tr>
+						    <th style="text-align:left;vertical-align:top">Tipo Reclamo:</th>
+						    <td align="left">
+                                <asp:Literal runat="server" ID="txtReclamo"></asp:Literal>
+						    </td>
+					    </tr>
 					    <tr>
-						    <th style="text-align:left;vertical-align:top">Nombre:</th>
+						    <th style="text-align:left;vertical-align:top">Actividad:</th>
 						    <td align="left">
                                 <asp:Literal runat="server" ID="txtNombre"></asp:Literal>
                             </td>
@@ -28,12 +34,6 @@
 						    <th style="text-align:left;vertical-align:top">Descripción:</th>
 						    <td align="left">
                             <asp:Literal runat="server" ID="txtDescripcion"></asp:Literal>
-						    </td>
-					    </tr>
-                        <tr>
-						<th style="text-align:left;vertical-align:top">Tipo Reclamo:</th>
-						<td align="left">
-                                <asp:Literal runat="server" ID="txtReclamo"></asp:Literal>
 						    </td>
 					    </tr>
 					    <tr>

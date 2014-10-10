@@ -64,7 +64,7 @@ namespace Modules.Reclamos.Catalogos {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Infragistics.Web.UI.ListControls.WebDropDown wddUnidad;
+        protected global::System.Web.UI.WebControls.DropDownList wddUnidad;
         
         /// <summary>
         /// rfvUnidad control.
@@ -91,7 +91,7 @@ namespace Modules.Reclamos.Catalogos {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Infragistics.Web.UI.ListControls.WebDropDown wddZona;
+        protected global::System.Web.UI.WebControls.DropDownList wddZona;
         
         /// <summary>
         /// rfvZona control.
@@ -118,7 +118,7 @@ namespace Modules.Reclamos.Catalogos {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Infragistics.Web.UI.ListControls.WebDropDown wddGerente;
+        protected global::System.Web.UI.WebControls.DropDownList wddGerente;
         
         /// <summary>
         /// rfvgerente control.

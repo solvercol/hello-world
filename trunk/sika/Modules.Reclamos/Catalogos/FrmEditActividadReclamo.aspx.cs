@@ -75,8 +75,8 @@ namespace Modules.Reclamos.Catalogos
             }
 
             wddReclamo.DataSource = items;
-            wddReclamo.TextField = "Nombre";
-            wddReclamo.ValueField = "IdTipoReclamo";
+            wddReclamo.DataTextField = "Nombre";
+            wddReclamo.DataValueField = "IdTipoReclamo";
             wddReclamo.DataBind();
         }
 

@@ -27,7 +27,7 @@ namespace Modules.Reclamos.Catalogos
 
            // btnEliminar.Visible = !string.IsNullOrEmpty(IdCategoriaReclamo);
             btnSave.Visible = !string.IsNullOrEmpty(IdCategoriaReclamo);
-            wddReclamo_SelectionChanged(sender, e);
+            wddReclamo_SelectedIndexChanged(sender, e);
         }
 
         protected override void OnInit(EventArgs e)
@@ -66,7 +66,7 @@ namespace Modules.Reclamos.Catalogos
             Response.Redirect(string.Format("FrmAdminCategoriasReclamos.aspx{0}", GetBaseQueryString()));
         }
 
-        protected void wddReclamo_SelectionChanged(object sender, EventArgs eventArgs)
+        protected void wddReclamo_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.wddReclamo.SelectedItem.ToString().ToUpper().Contains("SERVICIO"))
             {
@@ -76,7 +76,6 @@ namespace Modules.Reclamos.Catalogos
             {
                 trGrupoInformacion.Visible = false;
             }
-
         }
         #endregion
 
@@ -92,8 +91,8 @@ namespace Modules.Reclamos.Catalogos
             }
 
             wddResponsables.DataSource = items;
-            wddResponsables.TextField = "Nombres";
-            wddResponsables.ValueField = "IdUser";
+            wddResponsables.DataTextField = "Nombres";
+            wddResponsables.DataValueField = "IdUser";
             wddResponsables.DataBind();
         }
 
@@ -105,8 +104,8 @@ namespace Modules.Reclamos.Catalogos
             }
 
             wddReclamo.DataSource = items;
-            wddReclamo.TextField = "Nombre";
-            wddReclamo.ValueField = "IdTipoReclamo";
+            wddReclamo.DataTextField = "Nombre";
+            wddReclamo.DataValueField = "IdTipoReclamo";
             wddReclamo.DataBind();
         }
 

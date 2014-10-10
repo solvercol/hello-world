@@ -18,14 +18,20 @@
 						    <td>&nbsp;</td>
 						    <td>&nbsp;</td>
 					    </tr>
+                        <tr>
+						<th style="text-align:left;vertical-align:top">Tipo Reclamo:</th>
+						    <td align="left">
+                                <asp:Literal runat="server" ID="txtReclamo"></asp:Literal>
+						    </td>
+					    </tr>
 					    <tr>
-						    <th style="text-align:left;vertical-align:top">Nombre:</th>
+						    <th style="text-align:left;vertical-align:top">Categoría:</th>
 						    <td align="left">
                                 <asp:Literal runat="server" ID="txtNombre"></asp:Literal>
                             </td>
 					    </tr>
 					    <tr>
-						    <th style="text-align:left;vertical-align:top">SubCategoria:</th>
+						    <th style="text-align:left;vertical-align:top">SubCategoría:</th>
 						    <td align="left">
 						        <asp:Literal runat="server" ID="txtSubcategoria"></asp:Literal>
 						    </td>
@@ -43,27 +49,10 @@
 						    </td>
 					    </tr>
                         <tr>
-						    <th style="text-align:left;vertical-align:top">Ingeniero(s) Responsable(s):</th>
+						    <th style="text-align:left;vertical-align:top">Ingeniero Responsable:</th>
 						    <td align="left">
                              <asp:Literal runat="server" ID="txtResponsables"></asp:Literal>
 				<%--		        <ig:WebDropDown ID="wddResponsables"
-                                            runat="server" 
-                                            EnableMultipleSelection="false"
-                                            MultipleSelectionType="Checkbox" 
-                                            DisplayMode="DropDown"
-                                            EnableClosingDropDownOnSelect="false"
-                                            StyleSetName="Claymation"
-                                            DropDownContainerWidth="300px"
-                                            DropDownContainerHeight="220px"
-                                            Width="50%" enabled="false">
-                                </ig:WebDropDown>--%>
-						    </td>
-					    </tr>
-                        <tr>
-						<th style="text-align:left;vertical-align:top">Tipo Reclamo:</th>
-						<td align="left">
-                                <asp:Literal runat="server" ID="txtReclamo"></asp:Literal>
-						    <%--    <ig:WebDropDown ID="wddReclamo" 
                                             runat="server" 
                                             EnableMultipleSelection="false"
                                             MultipleSelectionType="Checkbox" 
