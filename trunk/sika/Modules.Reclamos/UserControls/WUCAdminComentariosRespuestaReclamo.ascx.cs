@@ -407,8 +407,8 @@ namespace Modules.Reclamos.UserControls
             }
 
             wddDestinatarios.DataSource = items;
-            wddDestinatarios.TextField = "Nombres";
-            wddDestinatarios.ValueField = "IdUser";
+            wddDestinatarios.DataTextField = "Nombres";
+            wddDestinatarios.DataValueField = "IdUser";
             wddDestinatarios.DataBind();
         }
 
@@ -420,11 +420,9 @@ namespace Modules.Reclamos.UserControls
             }
 
             wddUsuarioCopia.DataSource = items;
-            wddUsuarioCopia.TextField = "Nombres";
-            wddUsuarioCopia.ValueField = "IdUser";
+            wddUsuarioCopia.DataTextField = "Nombres";
+            wddUsuarioCopia.DataValueField = "IdUser";
             wddUsuarioCopia.DataBind();
-
-            wddUsuarioCopia.SelectedItemIndex = 0;
         }
 
         public void LoadUsuariosCopia(List<DTO_ValueKey> items)

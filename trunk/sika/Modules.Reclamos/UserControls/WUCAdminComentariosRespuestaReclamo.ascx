@@ -1,8 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WUCAdminComentariosRespuestaReclamo.ascx.cs" Inherits="Modules.Reclamos.UserControls.WUCAdminComentariosRespuestaReclamo" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
-<%@ Register Assembly="Infragistics4.Web.v11.1, Version=11.1.20111.2238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb"
-             Namespace="Infragistics.Web.UI.ListControls" TagPrefix="ig" %>
 
 <table width="100%">
     <tr class="SectionMainTitle">
@@ -111,6 +109,9 @@
 
 <asp:UpdatePanel ID="upModal" runat="server">
     <ContentTemplate> 
+        <script type="text/javascript" language="javascript">
+            Sys.Application.add_load(RebindScripts);
+        </script>
         <asp:Panel ID="pnlAdminComentarioRespuesta"  runat="server" CssClass="popup_Container" Width="500" Height="470" style="display:none;">  
 
             <div class="popup_Titlebar" id="PopupHeader">
@@ -166,18 +167,8 @@
 
                         <td class="Separador"></td>
 
-                        <td class="Line">
-                            <ig:WebDropDown ID="wddDestinatarios" 
-                                            runat="server" 
-                                            EnableMultipleSelection="false"
-                                            MultipleSelectionType="Checkbox" 
-                                            DisplayMode="DropDown"
-                                            EnableClosingDropDownOnSelect="false"
-                                            StyleSetName="Claymation"
-                                            DropDownContainerWidth="300px"
-                                            DropDownContainerHeight="220px"
-                                            Width="98%">
-                            </ig:WebDropDown>
+                        <td class="Line" style="position: absolute; z-index: 300;" >
+                            <asp:DropDownList ID="wddDestinatarios" runat="server" Width="350px"  class="chzn-select" />
                             <asp:Label ID="lblDestinatarios" runat="server"/>
                         </td>
 
@@ -228,18 +219,14 @@
                       
                                     <table class="tblSecciones" width="100%">
                                         <tr>
-                                            <td>
-                                                <ig:WebDropDown ID="wddUsuarioCopia" 
-                                                                runat="server" 
-                                                                EnableMultipleSelection="false"
-                                                                MultipleSelectionType="Checkbox" 
-                                                                DisplayMode="DropDown"
-                                                                EnableClosingDropDownOnSelect="false"
-                                                                StyleSetName="Claymation"
-                                                                DropDownContainerWidth="300px"
-                                                                DropDownContainerHeight="220px"
-                                                                Width="98%">
-                                                </ig:WebDropDown>
+                                            <td style="width:90%">
+                                            </td>
+                                            <td style="width:10%">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="position:absolute; z-index: 100;">
+                                                <asp:DropDownList ID="wddUsuarioCopia" runat="server" Width="290px"  class="chzn-select" />
                                             </td>
                                             <td>
                                                 <asp:Button ID="btnAddCopia" runat="server" Text="Agregar" OnClick="BtnAddUsuarioCopia_Click"  />

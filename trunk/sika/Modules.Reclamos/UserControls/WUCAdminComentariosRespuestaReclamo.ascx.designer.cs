@@ -154,7 +154,7 @@ namespace Modules.Reclamos.UserControls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Infragistics.Web.UI.ListControls.WebDropDown wddDestinatarios;
+        protected global::System.Web.UI.WebControls.DropDownList wddDestinatarios;
         
         /// <summary>
         /// lblDestinatarios control.
@@ -217,7 +217,7 @@ namespace Modules.Reclamos.UserControls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Infragistics.Web.UI.ListControls.WebDropDown wddUsuarioCopia;
+        protected global::System.Web.UI.WebControls.DropDownList wddUsuarioCopia;
         
         /// <summary>
         /// btnAddCopia control.

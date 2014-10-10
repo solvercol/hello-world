@@ -271,7 +271,7 @@ namespace Modules.Reclamos.UserControls
 
         void InitAdminActividad()
         {
-            wddActividadesReclamo.SelectedItemIndex = 0;
+            wddActividadesReclamo.SelectedIndex = 0;
             IdUsuarioAsignacion = UserSession.IdUser.ToString();
             Descripcion = string.Empty;
             FechaActividad = DateTime.Now;
@@ -331,8 +331,8 @@ namespace Modules.Reclamos.UserControls
             }
 
             wddUsuarioAsignacion.DataSource = items;
-            wddUsuarioAsignacion.TextField = "Nombres";
-            wddUsuarioAsignacion.ValueField = "IdUser";
+            wddUsuarioAsignacion.DataTextField = "Nombres";
+            wddUsuarioAsignacion.DataValueField = "IdUser";
             wddUsuarioAsignacion.DataBind();
         }
 
@@ -344,11 +344,9 @@ namespace Modules.Reclamos.UserControls
             }
 
             wddUsuarioCopia.DataSource = items;
-            wddUsuarioCopia.TextField = "Nombres";
-            wddUsuarioCopia.ValueField = "IdUser";
+            wddUsuarioCopia.DataTextField = "Nombres";
+            wddUsuarioCopia.DataValueField = "IdUser";
             wddUsuarioCopia.DataBind();
-
-            wddUsuarioCopia.SelectedItemIndex = 0;
         }
 
         public void LoadActividadesAdmin(List<TBL_ModuloReclamos_ActividadesReclamo> items)
@@ -359,8 +357,8 @@ namespace Modules.Reclamos.UserControls
             }
 
             wddActividadesReclamo.DataSource = items;
-            wddActividadesReclamo.TextField = "Nombre";
-            wddActividadesReclamo.ValueField = "IdActividad";
+            wddActividadesReclamo.DataTextField = "Nombre";
+            wddActividadesReclamo.DataValueField = "IdActividad";
             wddActividadesReclamo.DataBind();
         }
 

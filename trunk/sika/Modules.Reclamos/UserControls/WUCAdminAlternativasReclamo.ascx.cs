@@ -313,8 +313,8 @@ namespace Modules.Reclamos.UserControls
             }
 
             wddResponsable.DataSource = items;
-            wddResponsable.TextField = "Nombres";
-            wddResponsable.ValueField = "IdUser";
+            wddResponsable.DataTextField = "Nombres";
+            wddResponsable.DataValueField = "IdUser";
             wddResponsable.DataBind();
         }
 

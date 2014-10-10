@@ -136,7 +136,7 @@ namespace Modules.Reclamos.UserControls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Infragistics.Web.UI.ListControls.WebDropDown wddResponsable;
+        protected global::System.Web.UI.WebControls.DropDownList wddResponsable;
         
         /// <summary>
         /// lblResponsable control.
