@@ -141,7 +141,33 @@ namespace Application.MainModule.AccionesPC.Services
             return _TBLModuloAPCComentariosRespuestaRepository.GetPagedElements(pageIndex, pageCount, u => u.IdComentario, onlyEnabledSpec, true).ToList();
          }
 
+
+         public TBL_ModuloAPC_ComentariosRespuesta GetById(decimal id)
+         {
+
+             Specification<TBL_ModuloAPC_ComentariosRespuesta> spec = new DirectSpecification<TBL_ModuloAPC_ComentariosRespuesta>(u => u.IdComentario == id);
+
+             return _TBLModuloAPCComentariosRespuestaRepository.GetCompleteEntityBySpec(spec);
+         }
+
+         public List<TBL_ModuloAPC_ComentariosRespuesta> GetByIdSolicitud(decimal idSolicitud)
+         {
+             Specification<TBL_ModuloAPC_ComentariosRespuesta> spec = new DirectSpecification<TBL_ModuloAPC_ComentariosRespuesta>(u => u.IdSolicitudAPC == idSolicitud);
+
+             return _TBLModuloAPCComentariosRespuestaRepository.GetCompleteListBySpec(spec);
+         }
+
+
+         public List<TBL_ModuloAPC_ComentariosRespuesta> GetByIdComentarioRelacionado(decimal idComentario)
+         {
+             Specification<TBL_ModuloAPC_ComentariosRespuesta> spec = new DirectSpecification<TBL_ModuloAPC_ComentariosRespuesta>(u => u.IdComentarioRelacionado == idComentario);
+
+             return _TBLModuloAPCComentariosRespuestaRepository.GetCompleteListBySpec(spec);
+         }
+
          #endregion
+
+
 
          #region IDisposable Members
 
