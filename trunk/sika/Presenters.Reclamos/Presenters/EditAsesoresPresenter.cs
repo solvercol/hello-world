@@ -76,12 +76,12 @@ namespace Presenters.Reclamos.Presenters
                 if (asesor == null) return;
                 asesor.IdUnidad = int.Parse(View.IdUnidad);
                 asesor.IdZona = int.Parse(View.IdZona);
-                asesor.TBL_Admin_Usuarios.Clear();
+                asesor.TBL_Admin_Usuarios2.Clear();
 
                 foreach (var item in View.UsuariosCopia)
                 {
                     var obj = _usuarios.FindById(Convert.ToInt32(item.Id));
-                    asesor.TBL_Admin_Usuarios.Add(obj);
+                    asesor.TBL_Admin_Usuarios2.Add(obj);
                 }
 
                 _asesores.Modify(asesor);
@@ -107,7 +107,7 @@ namespace Presenters.Reclamos.Presenters
                 View.AsesorName = _usuarios.FindById(asesor.IdUsuario).Nombres;
              
                 List<DTO_ValueKey> Users = new List<DTO_ValueKey>();
-                foreach (var User in asesor.TBL_Admin_Usuarios)
+                foreach (var User in asesor.TBL_Admin_Usuarios2)
                 {
                     Users.Add(new DTO_ValueKey() { Id = User.IdUser.ToString(), Value = User.Nombres });
 

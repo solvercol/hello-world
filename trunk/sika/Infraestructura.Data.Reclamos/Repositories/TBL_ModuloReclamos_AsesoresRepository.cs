@@ -43,11 +43,8 @@ namespace Infrastructure.Data.MainModule.Reclamos.Repositories
 
                 foreach (var usr in list)
                 {
-                    foreach (var u in usr)
-                    {
-                        if (!oReturn.Contains(u))
-                            oReturn.Add(u);
-                    }
+                    if (!oReturn.Contains(usr))
+                        oReturn.Add(usr);
                 }
 
                 if (oReturn.Any())
@@ -124,11 +121,8 @@ namespace Infrastructure.Data.MainModule.Reclamos.Repositories
 
                 foreach (var usr in list)
                 {
-                    foreach (var u in usr)
-                    {
-                        if (!oReturn.Contains(u))
-                            oReturn.Add(u);
-                    }
+                    if (!oReturn.Contains(usr))
+                        oReturn.Add(usr);
                 }
 
                 if (oReturn.Any())

@@ -44,7 +44,7 @@ namespace Presenters.Reclamos.Presenters
             View.IdUnidad = asesor.TBL_ModuloReclamos_Unidad.Nombre;
             View.IdZona = asesor.TBL_ModuloReclamos_Zona.Descripcion;
             View.AsesorName = _usuarios.FindById(asesor.IdUsuario).Nombres;
-            foreach (var User in asesor.TBL_Admin_Usuarios)
+            foreach (var User in asesor.TBL_Admin_Usuarios2)
             {
                 if (!string.IsNullOrEmpty(View.JefesInmediatos))
                 {

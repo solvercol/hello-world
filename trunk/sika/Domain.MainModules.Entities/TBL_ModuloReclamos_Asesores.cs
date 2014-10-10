@@ -20,9 +20,9 @@ using Domain.Core.Entities;
 namespace Domain.MainModules.Entities
 {
     [DataContract(IsReference = true)]
+    [KnownType(typeof(TBL_Admin_Usuarios))]
     [KnownType(typeof(TBL_ModuloReclamos_Unidad))]
     [KnownType(typeof(TBL_ModuloReclamos_Zona))]
-    [KnownType(typeof(TBL_Admin_Usuarios))]
     
     public partial class TBL_ModuloReclamos_Asesores: IObjectWithChangeTracker, INotifyPropertyChanged
     {
@@ -92,9 +92,134 @@ namespace Domain.MainModules.Entities
             }
         }
         private int _idZona;
+    
+        [DataMember]
+        public bool IsActive
+        {
+            get { return _isActive; }
+            set
+            {
+                if (_isActive != value)
+                {
+                    _isActive = value;
+                    OnPropertyChanged("IsActive");
+                }
+            }
+        }
+        private bool _isActive;
+    
+        [DataMember]
+        public int CreateBy
+        {
+            get { return _createBy; }
+            set
+            {
+                if (_createBy != value)
+                {
+                    ChangeTracker.RecordOriginalValue("CreateBy", _createBy);
+                    if (!IsDeserializing)
+                    {
+                        if (TBL_Admin_Usuarios != null && TBL_Admin_Usuarios.IdUser != value)
+                        {
+                            TBL_Admin_Usuarios = null;
+                        }
+                    }
+                    _createBy = value;
+                    OnPropertyChanged("CreateBy");
+                }
+            }
+        }
+        private int _createBy;
+    
+        [DataMember]
+        public System.DateTime CreateOn
+        {
+            get { return _createOn; }
+            set
+            {
+                if (_createOn != value)
+                {
+                    _createOn = value;
+                    OnPropertyChanged("CreateOn");
+                }
+            }
+        }
+        private System.DateTime _createOn;
+    
+        [DataMember]
+        public int ModifiedBy
+        {
+            get { return _modifiedBy; }
+            set
+            {
+                if (_modifiedBy != value)
+                {
+                    ChangeTracker.RecordOriginalValue("ModifiedBy", _modifiedBy);
+                    if (!IsDeserializing)
+                    {
+                        if (TBL_Admin_Usuarios1 != null && TBL_Admin_Usuarios1.IdUser != value)
+                        {
+                            TBL_Admin_Usuarios1 = null;
+                        }
+                    }
+                    _modifiedBy = value;
+                    OnPropertyChanged("ModifiedBy");
+                }
+            }
+        }
+        private int _modifiedBy;
+    
+        [DataMember]
+        public System.DateTime ModifiedOn
+        {
+            get { return _modifiedOn; }
+            set
+            {
+                if (_modifiedOn != value)
+                {
+                    _modifiedOn = value;
+                    OnPropertyChanged("ModifiedOn");
+                }
+            }
+        }
+        private System.DateTime _modifiedOn;
 
         #endregion
         #region Navigation Properties
+    
+        [DataMember]
+        public TBL_Admin_Usuarios TBL_Admin_Usuarios
+        {
+            get { return _tBL_Admin_Usuarios; }
+            set
+            {
+                if (!ReferenceEquals(_tBL_Admin_Usuarios, value))
+                {
+                    var previousValue = _tBL_Admin_Usuarios;
+                    _tBL_Admin_Usuarios = value;
+                    FixupTBL_Admin_Usuarios(previousValue);
+                    OnNavigationPropertyChanged("TBL_Admin_Usuarios");
+                }
+            }
+        }
+        private TBL_Admin_Usuarios _tBL_Admin_Usuarios;
+    
+        [DataMember]
+        public TBL_Admin_Usuarios TBL_Admin_Usuarios1
+        {
+            get { return _tBL_Admin_Usuarios1; }
+            set
+            {
+                if (!ReferenceEquals(_tBL_Admin_Usuarios1, value))
+                {
+                    var previousValue = _tBL_Admin_Usuarios1;
+                    _tBL_Admin_Usuarios1 = value;
+                    FixupTBL_Admin_Usuarios1(previousValue);
+                    OnNavigationPropertyChanged("TBL_Admin_Usuarios1");
+                }
+            }
+        }
+        private TBL_Admin_Usuarios _tBL_Admin_Usuarios1;
     
         [DataMember]
         public TBL_ModuloReclamos_Unidad TBL_ModuloReclamos_Unidad
@@ -131,39 +256,39 @@ namespace Domain.MainModules.Entities
         private TBL_ModuloReclamos_Zona _tBL_ModuloReclamos_Zona;
     
         [DataMember]
-        public TrackableCollection<TBL_Admin_Usuarios> TBL_Admin_Usuarios
+        public TrackableCollection<TBL_Admin_Usuarios> TBL_Admin_Usuarios2
         {
             get
             {
-                if (_tBL_Admin_Usuarios == null)
+                if (_tBL_Admin_Usuarios2 == null)
                 {
-                    _tBL_Admin_Usuarios = new TrackableCollection<TBL_Admin_Usuarios>();
-                    _tBL_Admin_Usuarios.CollectionChanged += FixupTBL_Admin_Usuarios;
+                    _tBL_Admin_Usuarios2 = new TrackableCollection<TBL_Admin_Usuarios>();
+                    _tBL_Admin_Usuarios2.CollectionChanged += FixupTBL_Admin_Usuarios2;
                 }
-                return _tBL_Admin_Usuarios;
+                return _tBL_Admin_Usuarios2;
             }
             set
             {
-                if (!ReferenceEquals(_tBL_Admin_Usuarios, value))
+                if (!ReferenceEquals(_tBL_Admin_Usuarios2, value))
                 {
                     if (ChangeTracker.ChangeTrackingEnabled)
                     {
                         throw new InvalidOperationException("Cannot set the FixupChangeTrackingCollection when ChangeTracking is enabled");
                     }
-                    if (_tBL_Admin_Usuarios != null)
+                    if (_tBL_Admin_Usuarios2 != null)
                     {
-                        _tBL_Admin_Usuarios.CollectionChanged -= FixupTBL_Admin_Usuarios;
+                        _tBL_Admin_Usuarios2.CollectionChanged -= FixupTBL_Admin_Usuarios2;
                     }
-                    _tBL_Admin_Usuarios = value;
-                    if (_tBL_Admin_Usuarios != null)
+                    _tBL_Admin_Usuarios2 = value;
+                    if (_tBL_Admin_Usuarios2 != null)
                     {
-                        _tBL_Admin_Usuarios.CollectionChanged += FixupTBL_Admin_Usuarios;
+                        _tBL_Admin_Usuarios2.CollectionChanged += FixupTBL_Admin_Usuarios2;
                     }
-                    OnNavigationPropertyChanged("TBL_Admin_Usuarios");
+                    OnNavigationPropertyChanged("TBL_Admin_Usuarios2");
                 }
             }
         }
-        private TrackableCollection<TBL_Admin_Usuarios> _tBL_Admin_Usuarios;
+        private TrackableCollection<TBL_Admin_Usuarios> _tBL_Admin_Usuarios2;
 
         #endregion
         #region ChangeTracking
@@ -243,13 +368,93 @@ namespace Domain.MainModules.Entities
     
         protected virtual void ClearNavigationProperties()
         {
+            TBL_Admin_Usuarios = null;
+            TBL_Admin_Usuarios1 = null;
             TBL_ModuloReclamos_Unidad = null;
             TBL_ModuloReclamos_Zona = null;
-            TBL_Admin_Usuarios.Clear();
+            TBL_Admin_Usuarios2.Clear();
         }
 
         #endregion
         #region Association Fixup
+    
+        private void FixupTBL_Admin_Usuarios(TBL_Admin_Usuarios previousValue)
+        {
+            if (IsDeserializing)
+            {
+                return;
+            }
+    
+            if (previousValue != null && previousValue.TBL_ModuloReclamos_Asesores.Contains(this))
+            {
+                previousValue.TBL_ModuloReclamos_Asesores.Remove(this);
+            }
+    
+            if (TBL_Admin_Usuarios != null)
+            {
+                if (!TBL_Admin_Usuarios.TBL_ModuloReclamos_Asesores.Contains(this))
+                {
+                    TBL_Admin_Usuarios.TBL_ModuloReclamos_Asesores.Add(this);
+                }
+    
+                CreateBy = TBL_Admin_Usuarios.IdUser;
+            }
+            if (ChangeTracker.ChangeTrackingEnabled)
+            {
+                if (ChangeTracker.OriginalValues.ContainsKey("TBL_Admin_Usuarios")
+                    && (ChangeTracker.OriginalValues["TBL_Admin_Usuarios"] == TBL_Admin_Usuarios))
+                {
+                    ChangeTracker.OriginalValues.Remove("TBL_Admin_Usuarios");
+                }
+                else
+                {
+                    ChangeTracker.RecordOriginalValue("TBL_Admin_Usuarios", previousValue);
+                }
+                if (TBL_Admin_Usuarios != null && !TBL_Admin_Usuarios.ChangeTracker.ChangeTrackingEnabled)
+                {
+                    TBL_Admin_Usuarios.StartTracking();
+                }
+            }
+        }
+    
+        private void FixupTBL_Admin_Usuarios1(TBL_Admin_Usuarios previousValue)
+        {
+            if (IsDeserializing)
+            {
+                return;
+            }
+    
+            if (previousValue != null && previousValue.TBL_ModuloReclamos_Asesores1.Contains(this))
+            {
+                previousValue.TBL_ModuloReclamos_Asesores1.Remove(this);
+            }
+    
+            if (TBL_Admin_Usuarios1 != null)
+            {
+                if (!TBL_Admin_Usuarios1.TBL_ModuloReclamos_Asesores1.Contains(this))
+                {
+                    TBL_Admin_Usuarios1.TBL_ModuloReclamos_Asesores1.Add(this);
+                }
+    
+                ModifiedBy = TBL_Admin_Usuarios1.IdUser;
+            }
+            if (ChangeTracker.ChangeTrackingEnabled)
+            {
+                if (ChangeTracker.OriginalValues.ContainsKey("TBL_Admin_Usuarios1")
+                    && (ChangeTracker.OriginalValues["TBL_Admin_Usuarios1"] == TBL_Admin_Usuarios1))
+                {
+                    ChangeTracker.OriginalValues.Remove("TBL_Admin_Usuarios1");
+                }
+                else
+                {
+                    ChangeTracker.RecordOriginalValue("TBL_Admin_Usuarios1", previousValue);
+                }
+                if (TBL_Admin_Usuarios1 != null && !TBL_Admin_Usuarios1.ChangeTracker.ChangeTrackingEnabled)
+                {
+                    TBL_Admin_Usuarios1.StartTracking();
+                }
+            }
+        }
     
         private void FixupTBL_ModuloReclamos_Unidad(TBL_ModuloReclamos_Unidad previousValue)
         {
@@ -329,7 +534,7 @@ namespace Domain.MainModules.Entities
             }
         }
     
-        private void FixupTBL_Admin_Usuarios(object sender, NotifyCollectionChangedEventArgs e)
+        private void FixupTBL_Admin_Usuarios2(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (IsDeserializing)
             {
@@ -340,9 +545,9 @@ namespace Domain.MainModules.Entities
             {
                 foreach (TBL_Admin_Usuarios item in e.NewItems)
                 {
-                    if (!item.TBL_ModuloReclamos_Asesores.Contains(this))
+                    if (!item.TBL_ModuloReclamos_Asesores2.Contains(this))
                     {
-                        item.TBL_ModuloReclamos_Asesores.Add(this);
+                        item.TBL_ModuloReclamos_Asesores2.Add(this);
                     }
                     if (ChangeTracker.ChangeTrackingEnabled)
                     {
@@ -350,7 +555,7 @@ namespace Domain.MainModules.Entities
                         {
                             item.StartTracking();
                         }
-                        ChangeTracker.RecordAdditionToCollectionProperties("TBL_Admin_Usuarios", item);
+                        ChangeTracker.RecordAdditionToCollectionProperties("TBL_Admin_Usuarios2", item);
                     }
                 }
             }
@@ -359,13 +564,13 @@ namespace Domain.MainModules.Entities
             {
                 foreach (TBL_Admin_Usuarios item in e.OldItems)
                 {
-                    if (item.TBL_ModuloReclamos_Asesores.Contains(this))
+                    if (item.TBL_ModuloReclamos_Asesores2.Contains(this))
                     {
-                        item.TBL_ModuloReclamos_Asesores.Remove(this);
+                        item.TBL_ModuloReclamos_Asesores2.Remove(this);
                     }
                     if (ChangeTracker.ChangeTrackingEnabled)
                     {
-                        ChangeTracker.RecordRemovalFromCollectionProperties("TBL_Admin_Usuarios", item);
+                        ChangeTracker.RecordRemovalFromCollectionProperties("TBL_Admin_Usuarios2", item);
                     }
                 }
             }

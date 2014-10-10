@@ -106,7 +106,7 @@ namespace Modules.Reclamos.Catalogos
                 var litJefe = e.Item.FindControl("litJefe") as Literal;
                 if (litJefe != null)
                 {
-                    foreach (var ing in Asesor.TBL_Admin_Usuarios)
+                    foreach (var ing in Asesor.TBL_Admin_Usuarios2)
                     {
                         if (ing.Nombres != string.Empty)
                         {
