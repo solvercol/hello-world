@@ -49,6 +49,15 @@ namespace Modules.Reclamos.UserControls {
         protected global::System.Web.UI.WebControls.ValidationSummary vsGeneral;
         
         /// <summary>
+        /// upgeneral control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upgeneral;
+        
+        /// <summary>
         /// Secciones control.
         /// </summary>
         /// <remarks>
@@ -91,7 +100,7 @@ namespace Modules.Reclamos.UserControls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Infragistics.Web.UI.ListControls.WebDropDown wddSubCategoriaReclamo;
+        protected global::System.Web.UI.WebControls.DropDownList wddSubCategoriaReclamo;
         
         /// <summary>
         /// wddAsesor control.
@@ -100,7 +109,7 @@ namespace Modules.Reclamos.UserControls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Infragistics.Web.UI.ListControls.WebDropDown wddAsesor;
+        protected global::System.Web.UI.WebControls.DropDownList wddAsesor;
         
         /// <summary>
         /// wddPlanta control.
@@ -109,7 +118,7 @@ namespace Modules.Reclamos.UserControls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Infragistics.Web.UI.ListControls.WebDropDown wddPlanta;
+        protected global::System.Web.UI.WebControls.DropDownList wddPlanta;
         
         /// <summary>
         /// wddReclamoAtentidoPor control.
@@ -118,7 +127,7 @@ namespace Modules.Reclamos.UserControls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Infragistics.Web.UI.ListControls.WebDropDown wddReclamoAtentidoPor;
+        protected global::System.Web.UI.WebControls.DropDownList wddReclamoAtentidoPor;
         
         /// <summary>
         /// rblTipoContacto control.
