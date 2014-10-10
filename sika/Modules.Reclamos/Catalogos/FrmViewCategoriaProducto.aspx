@@ -19,7 +19,7 @@
 						    <td>&nbsp;</td>
 					    </tr>
 					    <tr>
-						    <th style="text-align:left;vertical-align:top">Nombre:</th>
+						    <th style="text-align:left;vertical-align:top">Categoría:</th>
 						    <td align="left">
                                 <asp:Literal runat="server" ID="txtNombre"></asp:Literal>
                             </td>

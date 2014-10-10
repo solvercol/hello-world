@@ -1,7 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FrmAddActividadReclamo.aspx.cs" Inherits="Modules.Reclamos.Catalogos.FrmAddActividadCategoria" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
-<%@ Register Assembly="Infragistics4.Web.v11.1, Version=11.1.20111.2238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb"
-             Namespace="Infragistics.Web.UI.ListControls" TagPrefix="ig" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 <asp:ValidationSummary ID="vsGeneral" runat="server" DisplayMode="BulletList" ShowMessageBox="true" CssClass="validator" ShowSummary="true" ValidationGroup="vgGeneral"/>
  <div style="padding:3px; text-align:right;">
@@ -13,13 +11,26 @@
           
             <td>
 				    <table id="userdetails" width="100%">
-					    
 					    <tr>
 						    <td>&nbsp;</td>
 						    <td>&nbsp;</td>
 					    </tr>
+                        <tr>
+						    <th style="text-align:left;vertical-align:top">Tipo Reclamo:</th>
+						    <td align="left">
+						 <asp:RadioButtonList ID="wddReclamo" RepeatDirection="Horizontal" CssClass="radioButtonList" runat="server"></asp:RadioButtonList>
+						        <asp:requiredfieldvalidator id="RFVReclamo" 
+						        runat="server" 
+						        errormessage="El campo [Tipo Reclamo] es requerido!!." 
+						        cssclass="validator"
+								display="Dynamic" 
+								enableclientscript="true" 
+								controltovalidate="wddReclamo">
+								</asp:requiredfieldvalidator>
+						    </td>
+					    </tr>
 					    <tr>
-						    <th style="text-align:left;vertical-align:top">Nombre:</th>
+						    <th style="text-align:left;vertical-align:top">Actividad:</th>
 						    <td align="left">
 						        <asp:textbox id="txtNombre" runat="server" width="400px" MaxLength="512">
 						        </asp:textbox>
@@ -45,30 +56,6 @@
 								display="Dynamic" 
 								enableclientscript="true" 
 								controltovalidate="txtDescripcion">
-								</asp:requiredfieldvalidator>
-						    </td>
-					    </tr>
-                        <tr>
-						    <th style="text-align:left;vertical-align:top">Tipo Reclamo:</th>
-						    <td align="left">
-						        <ig:WebDropDown ID="wddReclamo" CurrentValue=""   
-                                            runat="server" 
-                                            EnableMultipleSelection="false"
-                                            MultipleSelectionType="Checkbox" 
-                                            DisplayMode="DropDown"
-                                            EnableClosingDropDownOnSelect="false"
-                                            StyleSetName="Claymation"
-                                            DropDownContainerWidth="300px"
-                                            DropDownContainerHeight="100px"
-                                            Width="50%">
-                                </ig:WebDropDown>
-						        <asp:requiredfieldvalidator id="RFVReclamo" 
-						        runat="server" 
-						        errormessage="El campo [Tipo Reclamo] es requerido!!." 
-						        cssclass="validator"
-								display="Dynamic" 
-								enableclientscript="true" 
-								controltovalidate="wddReclamo">
 								</asp:requiredfieldvalidator>
 						    </td>
 					    </tr>

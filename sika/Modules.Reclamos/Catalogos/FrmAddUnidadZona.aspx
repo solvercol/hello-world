@@ -1,7 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FrmAddUnidadZona.aspx.cs" Inherits="Modules.Reclamos.Catalogos.FrmAddUnidadZona" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
-<%@ Register Assembly="Infragistics4.Web.v11.1, Version=11.1.20111.2238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb"
-             Namespace="Infragistics.Web.UI.ListControls" TagPrefix="ig" %>
 <%@ Register src="../UserControls/WUCAddUnidad.ascx" tagname="WUCAddUnidad" tagprefix="uc1" %>
 <%@ Register src="../UserControls/WUCAddZona.ascx" tagname="WUCAddZona" tagprefix="uc2" %>
 
@@ -9,51 +7,7 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
- <script type="text/javascript">
-     function ItemSeleccionado(sender, eventArgs) {
-         var fuente = sender.get_element().name.toLowerCase();
-         var tipo = "";
-         if (fuente.indexOf("descripcion") != -1) {
-             tipo = "descripcion";
-         }
-         $.ajax({
-             type: "POST",
-             url: "FrmAddUnidadZona.aspx/AsignarZona",
-             contentType: "application/json; charset=utf-8",
-             dataType: "json",
-             data: "{ Tipo: '" + tipo + "', Id: " + eventArgs.get_value() + "}",
-             success: function (response) {
-             },
-             error: function (xmlRequest) {
-                 alert(xmlRequest.status + ' \n\r ' +
-                          xmlRequest.statusText + '\n\r' +
-                          xmlRequest.responseText);
-             }
-         });
-     }
 
-     function DespuesDeDigitarZona(categoria) {
-         var contenido = "";
-         if (categoria == "descripcion") {
-             contenido = document.getElementById('<%=txtDescripcion.ClientID%>').value;
-         }
-         $.ajax({
-             type: "POST",
-             url: "FrmAddUnidadZona.aspx/DespuesDeDigitarCategoria",
-             contentType: "application/json; charset=utf-8",
-             dataType: "json",
-             data: "{ Categoria: '" + categoria + "', Contenido: '" + contenido + "'}",
-             success: function (response) {
-
-             },
-             error: function (xmlRequest) {
-                 alert(xmlRequest.status + ' \n\r ' +
-                          xmlRequest.statusText + '\n\r' +
-                          xmlRequest.responseText);
-             }
-         });
-     }
-    </script>
 <asp:ValidationSummary ID="vsGeneral" runat="server" DisplayMode="BulletList" ShowMessageBox="true" CssClass="validator" ShowSummary="true" ValidationGroup="vgGeneral"/>
  <div style="padding:3px; text-align:right;">
     <asp:button id="btnReturn" runat="server" OnClick="BtnBackClick" text="Regresar" causesvalidation="False"></asp:button>
@@ -89,17 +43,7 @@
                         <tr>
 						    <th style="text-align:left;vertical-align:top">Unidad:</th>
 						    <td align="left">
-						        <ig:WebDropDown ID="wddUnidad" CurrentValue=""
-                                            runat="server" 
-                                            EnableMultipleSelection="false"
-                                            MultipleSelectionType="Checkbox" 
-                                            DisplayMode="DropDown"
-                                            EnableClosingDropDownOnSelect="false"
-                                            StyleSetName="Claymation"
-                                            DropDownContainerWidth="300px"
-                                            DropDownContainerHeight="220px"
-                                            Width="90%" AutoPostBack="True">
-                                </ig:WebDropDown>  
+                            <asp:DropDownList ID="wddUnidad" class="chzn-select" runat="server" Width="100%" />
 						        <asp:requiredfieldvalidator id="rfvUnidad" 
 						        runat="server" 
 						        errormessage="El campo [Unidad] es requerido!!." 
@@ -116,17 +60,7 @@
                         <tr>
 						    <th style="text-align:left;vertical-align:top">Zona:</th>
 						    <td align="left">
-						        <ig:WebDropDown ID="wddZona" CurrentValue=""
-                                            runat="server" 
-                                            EnableMultipleSelection="false"
-                                            MultipleSelectionType="Checkbox" 
-                                            DisplayMode="DropDown"
-                                            EnableClosingDropDownOnSelect="false"
-                                            StyleSetName="Claymation"
-                                            DropDownContainerWidth="300px"
-                                            DropDownContainerHeight="220px"
-                                            Width="90%" AutoPostBack="True">
-                                </ig:WebDropDown>
+                             <asp:DropDownList ID="wddZona" class="chzn-select" runat="server" Width="100%" />
 						        <asp:requiredfieldvalidator id="rfvZona" 
 						        runat="server" 
 						        errormessage="El campo [Zona] es requerido!!." 
@@ -143,17 +77,7 @@
                         <tr>
 						    <th style="text-align:left;vertical-align:top">Gerente:</th>
 						    <td align="left">
-						        <ig:WebDropDown ID="wddGerente" CurrentValue=""
-                                            runat="server" 
-                                            EnableMultipleSelection="false"
-                                            MultipleSelectionType="Checkbox" 
-                                            DisplayMode="DropDown"
-                                            EnableClosingDropDownOnSelect="false"
-                                            StyleSetName="Claymation"
-                                            DropDownContainerWidth="300px"
-                                            DropDownContainerHeight="220px"
-                                            Width="90%" AutoPostBack="True">
-                                </ig:WebDropDown>
+                            <asp:DropDownList ID="wddGerente" class="chzn-select" runat="server" Width="50%" />
 						        <asp:requiredfieldvalidator id="rfvgerente" 
 						        runat="server" 
 						        errormessage="El campo [Gerente] es requerido!!." 
@@ -198,7 +122,56 @@
                     </table>
             </td>
         </tr>
-    
+     <script type="text/javascript">
+         function ItemSeleccionado(sender, eventArgs) {
+             var fuente = sender.get_element().name.toLowerCase();
+             var tipo = "";
+             if (fuente.indexOf("descripcion") != -1) {
+                 tipo = "descripcion";
+             }
+             $.ajax({
+                 type: "POST",
+                 url: "FrmAddUnidadZona.aspx/AsignarZona",
+                 contentType: "application/json; charset=utf-8",
+                 dataType: "json",
+                 data: "{ Tipo: '" + tipo + "', Id: " + eventArgs.get_value() + "}",
+                 success: function (response) {
+                 },
+                 error: function (xmlRequest) {
+                     alert(xmlRequest.status + ' \n\r ' +
+                          xmlRequest.statusText + '\n\r' +
+                          xmlRequest.responseText);
+                 }
+             });
+         }
+
+         function DespuesDeDigitarZona(categoria) {
+             var contenido = "";
+             if (categoria == "descripcion") {
+                 contenido = document.getElementById('<%=txtDescripcion.ClientID%>').value;
+             }
+             $.ajax({
+                 type: "POST",
+                 url: "FrmAddUnidadZona.aspx/DespuesDeDigitarCategoria",
+                 contentType: "application/json; charset=utf-8",
+                 dataType: "json",
+                 data: "{ Categoria: '" + categoria + "', Contenido: '" + contenido + "'}",
+                 success: function (response) {
+
+                 },
+                 error: function (xmlRequest) {
+                     alert(xmlRequest.status + ' \n\r ' +
+                          xmlRequest.statusText + '\n\r' +
+                          xmlRequest.responseText);
+                 }
+             });
+         }
+
+
+         $(".chzn-select").chosen({ allow_single_deselect: true });
+
+         $(".chzn-select-deselect").chosen({ allow_single_deselect: true });
+    </script>
     </table>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Footer" runat="server">

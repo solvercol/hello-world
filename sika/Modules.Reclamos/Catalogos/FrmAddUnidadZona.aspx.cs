@@ -7,6 +7,7 @@ using Presenters.Reclamos.IViews;
 using Presenters.Reclamos.Presenters;
 using System.Collections;
 using System.Linq;
+using System.Data;
 
 namespace Modules.Reclamos.Catalogos
 {
@@ -77,8 +78,8 @@ namespace Modules.Reclamos.Catalogos
                 items = items.OrderBy(x => x.Nombres).ToList();
             }
             wddGerente.DataSource = items;
-            wddGerente.TextField = "Nombres";
-            wddGerente.ValueField = "IdUser";
+            wddGerente.DataTextField = "Nombres";
+            wddGerente.DataValueField = "IdUser";
             wddGerente.DataBind();
         }
 
@@ -90,8 +91,8 @@ namespace Modules.Reclamos.Catalogos
             }
 
             wddUnidad.DataSource = items;
-            wddUnidad.TextField = "Nombre";
-            wddUnidad.ValueField = "IdUnidad";
+            wddUnidad.DataTextField = "Nombre";
+            wddUnidad.DataValueField = "IdUnidad";
             wddUnidad.DataBind();
         }
 
@@ -103,8 +104,8 @@ namespace Modules.Reclamos.Catalogos
             }
 
             wddZona.DataSource = items;
-            wddZona.TextField = "Descripcion";
-            wddZona.ValueField = "IdZona";
+            wddZona.DataTextField = "Descripcion";
+            wddZona.DataValueField = "IdZona";
             wddZona.DataBind();
         }
 
@@ -167,5 +168,9 @@ namespace Modules.Reclamos.Catalogos
         }
 
         #endregion
+
     }
+
 }
+
+

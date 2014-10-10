@@ -1,8 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FrmAddCategoriaReclamo.aspx.cs" Inherits="Modules.Reclamos.Catalogos.FrmAddCategoriaReclamo" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
-<%@ Register Assembly="Infragistics4.Web.v11.1, Version=11.1.20111.2238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb"
-             Namespace="Infragistics.Web.UI.ListControls" TagPrefix="ig" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
 <asp:ValidationSummary ID="vsGeneral" runat="server" DisplayMode="BulletList" ShowMessageBox="true" CssClass="validator" ShowSummary="true" ValidationGroup="vgGeneral"/>
  <div style="padding:3px; text-align:right;">
     <asp:button id="btnReturn" runat="server" OnClick="BtnBackClick" text="Regresar" causesvalidation="False"></asp:button>
@@ -18,8 +17,22 @@
 						    <td>&nbsp;</td>
 						    <td>&nbsp;</td>
 					    </tr>
+                        <tr>
+						    <th style="text-align:left;vertical-align:top">Tipo Reclamo:</th>
+						    <td align="left">
+                            <asp:RadioButtonList ID="wddReclamo" runat="server" RepeatDirection="Horizontal" CssClass="radioButtonList" onselectedindexchanged="wddReclamo_SelectedIndexChanged" AutoPostBack="true" ></asp:RadioButtonList>
+						        <asp:requiredfieldvalidator id="RFVReclamo" 
+						        runat="server" 
+						        errormessage="El campo [Tipo Reclamo] es requerido!!." 
+						        cssclass="validator"
+								display="Dynamic" 
+								enableclientscript="true" 
+								controltovalidate="wddReclamo">
+								</asp:requiredfieldvalidator>
+						    </td>
+					    </tr>
 					    <tr>
-						    <th style="text-align:left;vertical-align:top">Nombre:</th>
+						    <th style="text-align:left;vertical-align:top">Categoría:</th>
 						    <td align="left">
 						        <asp:textbox id="txtNombre" runat="server" width="400px" MaxLength="512">
 						        </asp:textbox>
@@ -34,7 +47,7 @@
                             </td>
 					    </tr>
 					    <tr>
-						    <th style="text-align:left;vertical-align:top">SubCategoria:</th>
+						    <th style="text-align:left;vertical-align:top">SubCategoría:</th>
 						    <td align="left">
 						        <asp:textbox id="txtSubcategoria" runat="server" width="400px" MaxLength="512">
 						        </asp:textbox>
@@ -79,19 +92,9 @@
 						    </td>
 					    </tr>
                         <tr>
-						    <th style="text-align:left;vertical-align:top">Ingeniero(s) Responsable(s):</th>
+						    <th style="text-align:left;vertical-align:top">Ingeniero Responsable:</th>
 						    <td align="left">
-						        <ig:WebDropDown ID="wddResponsables" CurrentValue=""
-                                            runat="server" 
-                                            EnableMultipleSelection="false"
-                                            MultipleSelectionType="Checkbox" 
-                                            DisplayMode="DropDown"
-                                            EnableClosingDropDownOnSelect="false"
-                                            StyleSetName="Claymation"
-                                            DropDownContainerWidth="300px"
-                                            DropDownContainerHeight="220px"
-                                            Width="50%" AutoPostBack="True">
-                                </ig:WebDropDown>
+                                <asp:DropDownList ID="wddResponsables" class="chzn-select" runat="server" Width="50%" />
 						        <asp:requiredfieldvalidator id="rfvesponsables" 
 						        runat="server" 
 						        errormessage="El campo [Responsable] es requerido!!." 
@@ -102,52 +105,16 @@
 								</asp:requiredfieldvalidator>
 						    </td>
 					    </tr>
-
-                        <tr>
-						    <th style="text-align:left;vertical-align:top">Tipo Reclamo:</th>
-						    <td align="left">
-						        <ig:WebDropDown ID="wddReclamo" CurrentValue=""   
-                                            runat="server" 
-                                            EnableMultipleSelection="false" AutoPostBack="true"
-                                            MultipleSelectionType="Checkbox" 
-                                            DisplayMode="DropDown"
-                                            EnableClosingDropDownOnSelect="false"
-                                            StyleSetName="Claymation"
-                                            DropDownContainerWidth="300px"
-                                            DropDownContainerHeight="100px"
-                                            Width="50%" OnSelectionChanged="wddReclamo_SelectionChanged">
-                                </ig:WebDropDown>
-						        <asp:requiredfieldvalidator id="RFVReclamo" 
-						        runat="server" 
-						        errormessage="El campo [Tipo Reclamo] es requerido!!." 
-						        cssclass="validator"
-								display="Dynamic" 
-								enableclientscript="true" 
-								controltovalidate="wddReclamo">
-								</asp:requiredfieldvalidator>
-						    </td>
-					    </tr>
                         <tr id="trGrupoInformacion" runat="server" visible="false">
 						    <th style="text-align:left;vertical-align:top">Grupo Información:</th>
 						    <td align="left">
-						        <ig:WebDropDown ID="WddGrupoInformacion" CurrentValue=""
-                                            runat="server" 
-                                            EnableMultipleSelection="false"
-                                            MultipleSelectionType="Checkbox" 
-                                            DisplayMode="DropDown"
-                                            EnableClosingDropDownOnSelect="false"
-                                            StyleSetName="Claymation"
-                                            DropDownContainerWidth="300px"
-                                            DropDownContainerHeight="100px"
-                                            Width="50%">
-                                        <Items>
-                                             <ig:DropDownItem Selected="False" Text="1" Value="1"/>
-                                             <ig:DropDownItem Selected="False" Text="2" Value="2"/>
-                                             <ig:DropDownItem Selected="False" Text="3" Value="3"/>
-                                             <ig:DropDownItem Selected="False" Text="4" Value="4"/>
-                                             <ig:DropDownItem Selected="False" Text="5" Value="5"/>
-                                        </Items>
-                                </ig:WebDropDown>
+                              <asp:DropDownList ID="WddGrupoInformacion" class="chzn-select" runat="server" Width="50%" >
+                                  <asp:ListItem Selected="False" Text="1" Value="1"/>
+                                  <asp:ListItem Selected="False" Text="2" Value="2"/>
+                                  <asp:ListItem Selected="False" Text="3" Value="3"/>
+                                  <asp:ListItem Selected="False" Text="4" Value="4"/>
+                                  <asp:ListItem Selected="False" Text="5" Value="5"/>
+                              </asp:DropDownList>
 						        <asp:requiredfieldvalidator id="rfvGrupoInformacion" 
 						        runat="server" 
 						        errormessage="El campo [Grupo Información] es requerido!!." 
@@ -169,8 +136,13 @@
 				    </table>
             </td>
         </tr>
-    
+     <script type="text/javascript">
+         $(".chzn-select").chosen({ allow_single_deselect: true });
+
+         $(".chzn-select-deselect").chosen({ allow_single_deselect: true });
+    </script>
     </table>
+   
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Footer" runat="server">
     <table width="100%">
