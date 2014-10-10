@@ -128,7 +128,7 @@ namespace Modules.Reclamos.UserControls
 
         #region DropDownList
 
-        protected void WddAsesor_ValueChanged(object sender, DropDownValueChangedEventArgs e)
+        protected void WddAsesor_ValueChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(SelectedCliente.CodigoCliente))
                 Presenter.LoadUnidadZonaAsesor();
@@ -187,11 +187,9 @@ namespace Modules.Reclamos.UserControls
                 items = items.OrderBy(x => x.Asesor).ToList();
             }
             wddAsesor.DataSource = items;
-            wddAsesor.TextField = "Asesor";
-            wddAsesor.ValueField = "IdUser";
+            wddAsesor.DataTextField = "Asesor";
+            wddAsesor.DataValueField = "IdUser";
             wddAsesor.DataBind();
-
-            wddAsesor.SelectedItemIndex = 0;
         }
 
         public void LoadAtendidoPor(List<TBL_Admin_Usuarios> items)
@@ -201,8 +199,8 @@ namespace Modules.Reclamos.UserControls
                 items = items.OrderBy(x => x.Nombres).ToList();
             }
             wddReclamoAtentidoPor.DataSource = items;
-            wddReclamoAtentidoPor.TextField = "Nombres";
-            wddReclamoAtentidoPor.ValueField = "IdUser";
+            wddReclamoAtentidoPor.DataTextField = "Nombres";
+            wddReclamoAtentidoPor.DataValueField = "IdUser";
             wddReclamoAtentidoPor.DataBind();
         }
 
@@ -213,11 +211,9 @@ namespace Modules.Reclamos.UserControls
                 items = items.OrderBy(x => x.Value).ToList();
             }
             wddPlanta.DataSource = items;
-            wddPlanta.TextField = "Id";
-            wddPlanta.ValueField = "Value";
+            wddPlanta.DataTextField = "Id";
+            wddPlanta.DataValueField = "Value";
             wddPlanta.DataBind();
-
-            wddPlanta.SelectedItemIndex = 0;
         }
 
         public void LoadSubCategoriaReclamo(List<DTO_ValueKey> items)
@@ -227,11 +223,9 @@ namespace Modules.Reclamos.UserControls
                 items = items.OrderBy(x => x.Value).ToList();
             }
             wddSubCategoriaReclamo.DataSource = items;
-            wddSubCategoriaReclamo.TextField = "Id";
-            wddSubCategoriaReclamo.ValueField = "Value";
+            wddSubCategoriaReclamo.DataTextField = "Id";
+            wddSubCategoriaReclamo.DataValueField = "Value";
             wddSubCategoriaReclamo.DataBind();
-
-            wddSubCategoriaReclamo.SelectedItemIndex = 0;
         }
 
         public void SetSelectedClient(Dto_Cliente cliente)

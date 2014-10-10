@@ -148,8 +148,8 @@ namespace Modules.Reclamos.UserControls
                 items = items.OrderBy(x => x.Nombres).ToList();
             }
             wddQuienReclama.DataSource = items;
-            wddQuienReclama.TextField = "Nombres";
-            wddQuienReclama.ValueField = "IdUser";
+            wddQuienReclama.DataTextField = "Nombres";
+            wddQuienReclama.DataValueField = "IdUser";
             wddQuienReclama.DataBind();
         }
 
@@ -160,8 +160,8 @@ namespace Modules.Reclamos.UserControls
                 items = items.OrderBy(x => x.Nombres).ToList();
             }
             wddReclamoAtentidoPor.DataSource = items;
-            wddReclamoAtentidoPor.TextField = "Nombres";
-            wddReclamoAtentidoPor.ValueField = "IdUser";
+            wddReclamoAtentidoPor.DataTextField = "Nombres";
+            wddReclamoAtentidoPor.DataValueField = "IdUser";
             wddReclamoAtentidoPor.DataBind();
         }
 
@@ -172,11 +172,9 @@ namespace Modules.Reclamos.UserControls
                 items = items.OrderBy(x => x.Value).ToList();
             }
             wddPlanta.DataSource = items;
-            wddPlanta.TextField = "Id";
-            wddPlanta.ValueField = "Value";
+            wddPlanta.DataTextField = "Id";
+            wddPlanta.DataValueField = "Value";
             wddPlanta.DataBind();
-
-            wddPlanta.SelectedItemIndex = 0;
         }
 
         public void LoadAreaIncumpleProcedimiento(List<DTO_ValueKey> items)
@@ -186,11 +184,9 @@ namespace Modules.Reclamos.UserControls
                 items = items.OrderBy(x => x.Value).ToList();
             }
             wddAreaIncumpleProcedimiento.DataSource = items;
-            wddAreaIncumpleProcedimiento.TextField = "Id";
-            wddAreaIncumpleProcedimiento.ValueField = "Value";
+            wddAreaIncumpleProcedimiento.DataTextField = "Id";
+            wddAreaIncumpleProcedimiento.DataValueField = "Value";
             wddAreaIncumpleProcedimiento.DataBind();
-
-            wddAreaIncumpleProcedimiento.SelectedItemIndex = 0;
         }
 
         public void LoadProcedimientoInternoAfectado(List<DTO_ValueKey> items)
@@ -200,11 +196,9 @@ namespace Modules.Reclamos.UserControls
                 items = items.OrderBy(x => x.Value).ToList();
             }
             wddProcedimientoInternoAfectado.DataSource = items;
-            wddProcedimientoInternoAfectado.TextField = "Id";
-            wddProcedimientoInternoAfectado.ValueField = "Value";
+            wddProcedimientoInternoAfectado.DataTextField = "Id";
+            wddProcedimientoInternoAfectado.DataValueField = "Value";
             wddProcedimientoInternoAfectado.DataBind();
-
-            wddProcedimientoInternoAfectado.SelectedItemIndex = 0;
         }
 
         #endregion
