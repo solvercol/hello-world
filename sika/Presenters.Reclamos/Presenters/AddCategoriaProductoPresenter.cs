@@ -68,25 +68,32 @@ namespace Presenters.Reclamos.Presenters
 
             try
             {
-                var cp = _catProducto.NewEntity();
-
-                cp.Nombre = View.Nombre;
-                cp.Descripcion = View.Descripcion;
-                cp.IsActive = View.Activo;
-                cp.CreateBy = View.UserSession.IdUser;
-                cp.CreateOn = DateTime.Now;
-                cp.ModifiedBy = View.UserSession.IdUser;
-                cp.ModifiedOn = DateTime.Now;
-                foreach (var item in View.UsuariosCopia)
+                if (View.UsuariosCopia.Count >= 1)
                 {
-                    var obj = _ingenieroResponsable.FindById(Convert.ToInt32(item.Id));
-                    cp.TBL_Admin_Usuarios2.Add(obj);
+                    var cp = _catProducto.NewEntity();
+
+                    cp.Nombre = View.Nombre;
+                    cp.Descripcion = View.Descripcion;
+                    cp.IsActive = View.Activo;
+                    cp.CreateBy = View.UserSession.IdUser;
+                    cp.CreateOn = DateTime.Now;
+                    cp.ModifiedBy = View.UserSession.IdUser;
+                    cp.ModifiedOn = DateTime.Now;
+                    foreach (var item in View.UsuariosCopia)
+                    {
+                        var obj = _ingenieroResponsable.FindById(Convert.ToInt32(item.Id));
+                        cp.TBL_Admin_Usuarios2.Add(obj);
+                    }
+
+                    _catProducto.Add(cp);
+                    View.IdCategoriaProducto = cp.IdCategoria.ToString();
+
+                    InvokeMessageBox(new MessageBoxEventArgs(string.Format(Message.ProcessOk), TypeError.Ok));
                 }
-
-                _catProducto.Add(cp);
-                View.IdCategoriaProducto = cp.IdCategoria.ToString();
-
-                InvokeMessageBox(new MessageBoxEventArgs(string.Format(Message.ProcessOk), TypeError.Ok));
+                else
+                {
+                    InvokeMessageBox(new MessageBoxEventArgs(string.Format("Debe existir al menos un Ingeniero Responsable asociado"), TypeError.Error));
+                }
             }
             catch (Exception ex)
             {

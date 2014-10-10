@@ -9,6 +9,8 @@ using Infrastructure.CrossCutting.NetFramework.Enums;
 using Presenters.Reclamos.IViews;
 using System.Collections;
 using System.Linq;
+using Application.MainModule.SqlServices.IServices;
+using System.Data;
 
 namespace Presenters.Reclamos.Presenters
 {
@@ -22,15 +24,19 @@ namespace Presenters.Reclamos.Presenters
 
         private readonly ISfTBL_ModuloReclamos_ZonaManagementServices _zona;
 
+        private readonly IReclamosAdoService _adoServices;
+
         public AddUnidadZonaPresenter(ISfTBL_ModuloReclamos_UnidadesZonasManagementServices unidadesZona,
             ISfTBL_Admin_UsuariosManagementServices gerente,
             ISfTBL_ModuloReclamos_UnidadManagementServices unidad,
-            ISfTBL_ModuloReclamos_ZonaManagementServices zona)
+            ISfTBL_ModuloReclamos_ZonaManagementServices zona,
+            IReclamosAdoService adoServices)
         {
             _unidadesZona = unidadesZona;
             _gerente = gerente;
             _unidad = unidad;
             _zona = zona;
+            _adoServices = adoServices;
         }
 
         public override void SubscribeViewToEvents()
