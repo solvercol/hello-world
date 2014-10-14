@@ -358,12 +358,6 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
         }
         private ObjectSet<TBL_ModuloAPC_Solicitud> _tBL_ModuloAPC_Solicitud;
     
-        public IObjectSet<TBL_ModuloAPC_UsuarioCopiaComentariosRespuesta> TBL_ModuloAPC_UsuarioCopiaComentariosRespuesta
-        {
-            get { return _tBL_ModuloAPC_UsuarioCopiaComentariosRespuesta  ?? (_tBL_ModuloAPC_UsuarioCopiaComentariosRespuesta = CreateObjectSet<TBL_ModuloAPC_UsuarioCopiaComentariosRespuesta>("TBL_ModuloAPC_UsuarioCopiaComentariosRespuesta")); }
-        }
-        private ObjectSet<TBL_ModuloAPC_UsuarioCopiaComentariosRespuesta> _tBL_ModuloAPC_UsuarioCopiaComentariosRespuesta;
-    
         public IObjectSet<TBL_ModuloDocumentos_Categorias> TBL_ModuloDocumentos_Categorias
         {
             get { return _tBL_ModuloDocumentos_Categorias  ?? (_tBL_ModuloDocumentos_Categorias = CreateObjectSet<TBL_ModuloDocumentos_Categorias>("TBL_ModuloDocumentos_Categorias")); }
