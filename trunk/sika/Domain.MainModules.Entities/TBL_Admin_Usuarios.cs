@@ -3155,6 +3155,41 @@ namespace Domain.MainModules.Entities
         private TrackableCollection<TBL_Admin_Roles> _tBL_Admin_Roles1;
     
         [DataMember]
+        public TrackableCollection<TBL_ModuloAPC_ComentariosRespuesta> TBL_ModuloAPC_ComentariosRespuesta3
+        {
+            get
+            {
+                if (_tBL_ModuloAPC_ComentariosRespuesta3 == null)
+                {
+                    _tBL_ModuloAPC_ComentariosRespuesta3 = new TrackableCollection<TBL_ModuloAPC_ComentariosRespuesta>();
+                    _tBL_ModuloAPC_ComentariosRespuesta3.CollectionChanged += FixupTBL_ModuloAPC_ComentariosRespuesta3;
+                }
+                return _tBL_ModuloAPC_ComentariosRespuesta3;
+            }
+            set
+            {
+                if (!ReferenceEquals(_tBL_ModuloAPC_ComentariosRespuesta3, value))
+                {
+                    if (ChangeTracker.ChangeTrackingEnabled)
+                    {
+                        throw new InvalidOperationException("Cannot set the FixupChangeTrackingCollection when ChangeTracking is enabled");
+                    }
+                    if (_tBL_ModuloAPC_ComentariosRespuesta3 != null)
+                    {
+                        _tBL_ModuloAPC_ComentariosRespuesta3.CollectionChanged -= FixupTBL_ModuloAPC_ComentariosRespuesta3;
+                    }
+                    _tBL_ModuloAPC_ComentariosRespuesta3 = value;
+                    if (_tBL_ModuloAPC_ComentariosRespuesta3 != null)
+                    {
+                        _tBL_ModuloAPC_ComentariosRespuesta3.CollectionChanged += FixupTBL_ModuloAPC_ComentariosRespuesta3;
+                    }
+                    OnNavigationPropertyChanged("TBL_ModuloAPC_ComentariosRespuesta3");
+                }
+            }
+        }
+        private TrackableCollection<TBL_ModuloAPC_ComentariosRespuesta> _tBL_ModuloAPC_ComentariosRespuesta3;
+    
+        [DataMember]
         public TrackableCollection<TBL_ModuloReclamos_Asesores> TBL_ModuloReclamos_Asesores2
         {
             get
@@ -3489,6 +3524,7 @@ namespace Domain.MainModules.Entities
             TBL_ModuloReclamos_Zona1.Clear();
             TBL_Admin_Roles.Clear();
             TBL_Admin_Roles1.Clear();
+            TBL_ModuloAPC_ComentariosRespuesta3.Clear();
             TBL_ModuloReclamos_Asesores2.Clear();
             TBL_ModuloReclamos_CategoriaProducto2.Clear();
             TBL_ModuloReclamos_Reclamo8.Clear();
@@ -6710,6 +6746,48 @@ namespace Domain.MainModules.Entities
                     if (ChangeTracker.ChangeTrackingEnabled)
                     {
                         ChangeTracker.RecordRemovalFromCollectionProperties("TBL_Admin_Roles1", item);
+                    }
+                }
+            }
+        }
+    
+        private void FixupTBL_ModuloAPC_ComentariosRespuesta3(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            if (IsDeserializing)
+            {
+                return;
+            }
+    
+            if (e.NewItems != null)
+            {
+                foreach (TBL_ModuloAPC_ComentariosRespuesta item in e.NewItems)
+                {
+                    if (!item.TBL_Admin_Usuarios3.Contains(this))
+                    {
+                        item.TBL_Admin_Usuarios3.Add(this);
+                    }
+                    if (ChangeTracker.ChangeTrackingEnabled)
+                    {
+                        if (!item.ChangeTracker.ChangeTrackingEnabled)
+                        {
+                            item.StartTracking();
+                        }
+                        ChangeTracker.RecordAdditionToCollectionProperties("TBL_ModuloAPC_ComentariosRespuesta3", item);
+                    }
+                }
+            }
+    
+            if (e.OldItems != null)
+            {
+                foreach (TBL_ModuloAPC_ComentariosRespuesta item in e.OldItems)
+                {
+                    if (item.TBL_Admin_Usuarios3.Contains(this))
+                    {
+                        item.TBL_Admin_Usuarios3.Remove(this);
+                    }
+                    if (ChangeTracker.ChangeTrackingEnabled)
+                    {
+                        ChangeTracker.RecordRemovalFromCollectionProperties("TBL_ModuloAPC_ComentariosRespuesta3", item);
                     }
                 }
             }

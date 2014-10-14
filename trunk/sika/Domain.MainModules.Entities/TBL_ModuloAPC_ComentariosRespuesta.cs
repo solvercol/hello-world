@@ -24,7 +24,6 @@ namespace Domain.MainModules.Entities
     [KnownType(typeof(TBL_ModuloAPC_AnexosComentarioRespuesta))]
     [KnownType(typeof(TBL_ModuloAPC_ComentariosRespuesta))]
     [KnownType(typeof(TBL_ModuloAPC_Solicitud))]
-    [KnownType(typeof(TBL_ModuloAPC_UsuarioCopiaComentariosRespuesta))]
     
     public partial class TBL_ModuloAPC_ComentariosRespuesta: IObjectWithChangeTracker, INotifyPropertyChanged
     {
@@ -398,51 +397,39 @@ namespace Domain.MainModules.Entities
         private TBL_ModuloAPC_Solicitud _tBL_ModuloAPC_Solicitud;
     
         [DataMember]
-        public TrackableCollection<TBL_ModuloAPC_UsuarioCopiaComentariosRespuesta> TBL_ModuloAPC_UsuarioCopiaComentariosRespuesta
+        public TrackableCollection<TBL_Admin_Usuarios> TBL_Admin_Usuarios3
         {
             get
             {
-                if (_tBL_ModuloAPC_UsuarioCopiaComentariosRespuesta == null)
+                if (_tBL_Admin_Usuarios3 == null)
                 {
-                    _tBL_ModuloAPC_UsuarioCopiaComentariosRespuesta = new TrackableCollection<TBL_ModuloAPC_UsuarioCopiaComentariosRespuesta>();
-                    _tBL_ModuloAPC_UsuarioCopiaComentariosRespuesta.CollectionChanged += FixupTBL_ModuloAPC_UsuarioCopiaComentariosRespuesta;
+                    _tBL_Admin_Usuarios3 = new TrackableCollection<TBL_Admin_Usuarios>();
+                    _tBL_Admin_Usuarios3.CollectionChanged += FixupTBL_Admin_Usuarios3;
                 }
-                return _tBL_ModuloAPC_UsuarioCopiaComentariosRespuesta;
+                return _tBL_Admin_Usuarios3;
             }
             set
             {
-                if (!ReferenceEquals(_tBL_ModuloAPC_UsuarioCopiaComentariosRespuesta, value))
+                if (!ReferenceEquals(_tBL_Admin_Usuarios3, value))
                 {
                     if (ChangeTracker.ChangeTrackingEnabled)
                     {
                         throw new InvalidOperationException("Cannot set the FixupChangeTrackingCollection when ChangeTracking is enabled");
                     }
-                    if (_tBL_ModuloAPC_UsuarioCopiaComentariosRespuesta != null)
+                    if (_tBL_Admin_Usuarios3 != null)
                     {
-                        _tBL_ModuloAPC_UsuarioCopiaComentariosRespuesta.CollectionChanged -= FixupTBL_ModuloAPC_UsuarioCopiaComentariosRespuesta;
-                        // This is the principal end in an association that performs cascade deletes.
-                        // Remove the cascade delete event handler for any entities in the current collection.
-                        foreach (TBL_ModuloAPC_UsuarioCopiaComentariosRespuesta item in _tBL_ModuloAPC_UsuarioCopiaComentariosRespuesta)
-                        {
-                            ChangeTracker.ObjectStateChanging -= item.HandleCascadeDelete;
-                        }
+                        _tBL_Admin_Usuarios3.CollectionChanged -= FixupTBL_Admin_Usuarios3;
                     }
-                    _tBL_ModuloAPC_UsuarioCopiaComentariosRespuesta = value;
-                    if (_tBL_ModuloAPC_UsuarioCopiaComentariosRespuesta != null)
+                    _tBL_Admin_Usuarios3 = value;
+                    if (_tBL_Admin_Usuarios3 != null)
                     {
-                        _tBL_ModuloAPC_UsuarioCopiaComentariosRespuesta.CollectionChanged += FixupTBL_ModuloAPC_UsuarioCopiaComentariosRespuesta;
-                        // This is the principal end in an association that performs cascade deletes.
-                        // Add the cascade delete event handler for any entities that are already in the new collection.
-                        foreach (TBL_ModuloAPC_UsuarioCopiaComentariosRespuesta item in _tBL_ModuloAPC_UsuarioCopiaComentariosRespuesta)
-                        {
-                            ChangeTracker.ObjectStateChanging += item.HandleCascadeDelete;
-                        }
+                        _tBL_Admin_Usuarios3.CollectionChanged += FixupTBL_Admin_Usuarios3;
                     }
-                    OnNavigationPropertyChanged("TBL_ModuloAPC_UsuarioCopiaComentariosRespuesta");
+                    OnNavigationPropertyChanged("TBL_Admin_Usuarios3");
                 }
             }
         }
-        private TrackableCollection<TBL_ModuloAPC_UsuarioCopiaComentariosRespuesta> _tBL_ModuloAPC_UsuarioCopiaComentariosRespuesta;
+        private TrackableCollection<TBL_Admin_Usuarios> _tBL_Admin_Usuarios3;
 
         #endregion
         #region ChangeTracking
@@ -529,7 +516,7 @@ namespace Domain.MainModules.Entities
             TBL_ModuloAPC_ComentariosRespuesta1.Clear();
             TBL_ModuloAPC_ComentariosRespuesta2 = null;
             TBL_ModuloAPC_Solicitud = null;
-            TBL_ModuloAPC_UsuarioCopiaComentariosRespuesta.Clear();
+            TBL_Admin_Usuarios3.Clear();
         }
 
         #endregion
@@ -813,7 +800,7 @@ namespace Domain.MainModules.Entities
             }
         }
     
-        private void FixupTBL_ModuloAPC_UsuarioCopiaComentariosRespuesta(object sender, NotifyCollectionChangedEventArgs e)
+        private void FixupTBL_Admin_Usuarios3(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (IsDeserializing)
             {
@@ -822,44 +809,35 @@ namespace Domain.MainModules.Entities
     
             if (e.NewItems != null)
             {
-                foreach (TBL_ModuloAPC_UsuarioCopiaComentariosRespuesta item in e.NewItems)
+                foreach (TBL_Admin_Usuarios item in e.NewItems)
                 {
-                    item.TBL_ModuloAPC_ComentariosRespuesta = this;
+                    if (!item.TBL_ModuloAPC_ComentariosRespuesta3.Contains(this))
+                    {
+                        item.TBL_ModuloAPC_ComentariosRespuesta3.Add(this);
+                    }
                     if (ChangeTracker.ChangeTrackingEnabled)
                     {
                         if (!item.ChangeTracker.ChangeTrackingEnabled)
                         {
                             item.StartTracking();
                         }
-                        ChangeTracker.RecordAdditionToCollectionProperties("TBL_ModuloAPC_UsuarioCopiaComentariosRespuesta", item);
+                        ChangeTracker.RecordAdditionToCollectionProperties("TBL_Admin_Usuarios3", item);
                     }
-                    // This is the principal end in an association that performs cascade deletes.
-                    // Update the event listener to refer to the new dependent.
-                    ChangeTracker.ObjectStateChanging += item.HandleCascadeDelete;
                 }
             }
     
             if (e.OldItems != null)
             {
-                foreach (TBL_ModuloAPC_UsuarioCopiaComentariosRespuesta item in e.OldItems)
+                foreach (TBL_Admin_Usuarios item in e.OldItems)
                 {
-                    if (ReferenceEquals(item.TBL_ModuloAPC_ComentariosRespuesta, this))
+                    if (item.TBL_ModuloAPC_ComentariosRespuesta3.Contains(this))
                     {
-                        item.TBL_ModuloAPC_ComentariosRespuesta = null;
+                        item.TBL_ModuloAPC_ComentariosRespuesta3.Remove(this);
                     }
                     if (ChangeTracker.ChangeTrackingEnabled)
                     {
-                        ChangeTracker.RecordRemovalFromCollectionProperties("TBL_ModuloAPC_UsuarioCopiaComentariosRespuesta", item);
-                        // Delete the dependent end of this identifying association. If the current state is Added,
-                        // allow the relationship to be changed without causing the dependent to be deleted.
-                        if (item.ChangeTracker.State != ObjectState.Added)
-                        {
-                            item.MarkAsDeleted();
-                        }
+                        ChangeTracker.RecordRemovalFromCollectionProperties("TBL_Admin_Usuarios3", item);
                     }
-                    // This is the principal end in an association that performs cascade deletes.
-                    // Remove the previous dependent from the event listener.
-                    ChangeTracker.ObjectStateChanging -= item.HandleCascadeDelete;
                 }
             }
         }
