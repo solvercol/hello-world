@@ -157,9 +157,6 @@
     <Compile Include="TBL_ModuloAPC_Solicitud.cs">
       <DependentUpon>MainModuleContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="TBL_ModuloAPC_UsuarioCopiaComentariosRespuesta.cs">
-      <DependentUpon>MainModuleContext.tt</DependentUpon>
-    </Compile>
     <Compile Include="TBL_ModuloDocumentosAnexos_Carpetas.cs">
       <DependentUpon>MainModuleContext.tt</DependentUpon>
     </Compile>
