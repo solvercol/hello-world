@@ -40,6 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IViews\IAdminComentarioRespuestaAPCView.cs" />
+    <Compile Include="IViews\IAdminComentariosRespuestaAPCView.cs" />
+    <Compile Include="Presenters\AdminComentarioRespuestaAPCPresenter.cs" />
+    <Compile Include="Presenters\AdminComentariosRespuestaAPCPresenter.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Messages.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -91,9 +97,7 @@
       <Name>Infrastructure.CrossCutting.NetFramework</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Presenters\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy /s /y "$(TargetDir)Presenters.AccionesPC*.dll" "$(SolutionDir)"Web\bin\</PostBuildEvent>

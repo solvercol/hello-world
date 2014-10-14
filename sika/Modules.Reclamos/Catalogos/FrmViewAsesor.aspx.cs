@@ -86,6 +86,30 @@ namespace Modules.Reclamos.Catalogos
             get { return ModuleId; }
         }
 
+        public bool Activo
+        {
+            set { chkActive.Checked = value; }
+        }
+
+        public string CreateBy
+        {
+            set { lblCreateBy.Text = value; }
+        }
+
+        public string CreateOn
+        {
+            set { lblCreateOn.Text = value; }
+        }
+
+        public string ModifiedBy
+        {
+            set { lblModifiedBy.Text = value; }
+        }
+
+        public string ModifiedOn
+        {
+            set { lblModifiedOn.Text = value; }
+        }
         #endregion
     }
 }

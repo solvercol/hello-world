@@ -80,6 +80,7 @@ namespace Infrastructure.Data.MainModule.Reclamos.Repositories
                         .Include(x => x.TBL_Admin_Usuarios)
                         .Include(x => x.TBL_ModuloReclamos_Unidad)
                         .Include(x => x.TBL_ModuloReclamos_Zona)
+                        .Include(x => x.TBL_Admin_Usuarios2)
                         .Where(specification.SatisfiedBy())
                         .OrderBy(orderByExpression)
                         .Skip(pageIndex * pageCount)
@@ -89,6 +90,7 @@ namespace Infrastructure.Data.MainModule.Reclamos.Repositories
                             .Include(x => x.TBL_Admin_Usuarios)
                             .Include(x => x.TBL_ModuloReclamos_Unidad)
                             .Include(x => x.TBL_ModuloReclamos_Zona)
+                            .Include(x => x.TBL_Admin_Usuarios2)
                             .Where(specification.SatisfiedBy())
                             .OrderByDescending(orderByExpression)
                             .Skip(pageIndex * pageCount)
@@ -101,6 +103,7 @@ namespace Infrastructure.Data.MainModule.Reclamos.Repositories
                         .Include(x => x.TBL_Admin_Usuarios)
                         .Include(x => x.TBL_ModuloReclamos_Unidad)
                         .Include(x => x.TBL_ModuloReclamos_Zona)
+                         .Include(x => x.TBL_Admin_Usuarios2)
                          .Where(specification.SatisfiedBy()).FirstOrDefault();
         }
 

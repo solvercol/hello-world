@@ -25,17 +25,7 @@
                         <tr>
 						    <th style="text-align:left;vertical-align:top">Unidad:</th>
 						    <td align="left">
-						        <ig:WebDropDown ID="wddUnidad" CurrentValue=""
-                                            runat="server" 
-                                            EnableMultipleSelection="false"
-                                            MultipleSelectionType="Checkbox" 
-                                            DisplayMode="DropDown"
-                                            EnableClosingDropDownOnSelect="false"
-                                            StyleSetName="Claymation"
-                                            DropDownContainerWidth="300px"
-                                            DropDownContainerHeight="220px"
-                                            Width="50%" AutoPostBack="True">
-                                </ig:WebDropDown>
+                                <asp:DropDownList ID="wddUnidad" class="chzn-select" runat="server" Width="50%" />
 						        <asp:requiredfieldvalidator id="rfvUnidad" 
 						        runat="server" 
 						        errormessage="El campo [Unidad] es requerido!!." 
@@ -49,17 +39,7 @@
                         <tr>
 						    <th style="text-align:left;vertical-align:top">Zona:</th>
 						    <td align="left">
-						        <ig:WebDropDown ID="wddZona" CurrentValue=""
-                                            runat="server" 
-                                            EnableMultipleSelection="false"
-                                            MultipleSelectionType="Checkbox" 
-                                            DisplayMode="DropDown"
-                                            EnableClosingDropDownOnSelect="false"
-                                            StyleSetName="Claymation"
-                                            DropDownContainerWidth="300px"
-                                            DropDownContainerHeight="220px"
-                                            Width="50%" AutoPostBack="True">
-                                </ig:WebDropDown>
+                                <asp:DropDownList ID="wddZona" class="chzn-select" runat="server" Width="50%" />
 						        <asp:requiredfieldvalidator id="rfvZona" 
 						        runat="server" 
 						        errormessage="El campo [Zona] es requerido!!." 
@@ -77,17 +57,7 @@
                                     <table class="tblSecciones" width="100%">
                                         <tr>
                                             <td>
-                                                <ig:WebDropDown ID="wddJefes" CurrentValue=""
-                                                            runat="server" 
-                                                            EnableMultipleSelection="false"
-                                                            MultipleSelectionType="Checkbox" 
-                                                            DisplayMode="DropDown"
-                                                            EnableClosingDropDownOnSelect="false"
-                                                            StyleSetName="Claymation"
-                                                            DropDownContainerWidth="300px"
-                                                            DropDownContainerHeight="220px"
-                                                            Width="50%" AutoPostBack="True">
-                                                </ig:WebDropDown>
+                                                <asp:DropDownList ID="wddJefes" class="chzn-select" runat="server" Width="50%" />
                                             </td>
                                         </tr>
                                         <tr>
@@ -107,6 +77,10 @@
                                 </asp:Panel>
 						    </td>
 					    </tr>
+                        <tr>
+						    <th style="text-align:left;vertical-align:top">Activo:</th>
+						    <td align="left"><asp:checkbox id="chkActive" runat="server" Checked="true"></asp:checkbox></td>
+					    </tr>
 					    <tr>
 						    <td align="left"></td>
 						    <td align="left"></td>
@@ -114,8 +88,21 @@
 				    </table>
             </td>
         </tr>
-    
+           <script type="text/javascript">
+
+               $(".chzn-select").chosen({ allow_single_deselect: true });
+
+               $(".chzn-select-deselect").chosen({ allow_single_deselect: true });
+            </script>
     </table>
 </asp:Content>
-
+<asp:Content ID="Content2" ContentPlaceHolderID="Footer" runat="server">
+    <table width="100%">
+        <tr >
+            <td  style="text-align:left; vertical-align:top; padding-left: 10px; background-color:#e0e0e0; font-size:8pt; color:#808080;">
+                Creado por:&nbsp;<asp:Label ID="lblCreateBy" runat="server"/>&nbsp;en&nbsp;<asp:Label ID="lblCreateOn" runat="server"/>&nbsp;&#44;&nbsp;Modificado por:&nbsp;<asp:Label ID="lblModifiedBy" runat="server"/>&nbsp;en&nbsp;<asp:Label ID="lblModifiedOn" runat="server"/>
+            </td>
+        </tr>
+    </table>
+</asp:Content>
 

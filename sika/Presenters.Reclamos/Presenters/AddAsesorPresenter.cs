@@ -67,6 +67,9 @@ namespace Presenters.Reclamos.Presenters
         {
             View.UsuariosCopia.Clear();
             View.LoadUsuariosCopia(null);
+            View.Activo = false;
+            View.CreateBy = View.UserSession.Nombres;
+            View.CreateOn = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString();
         }
 
         private void GuardarAsesor()
@@ -80,7 +83,11 @@ namespace Presenters.Reclamos.Presenters
                 asesor.IdUnidad = int.Parse(View.IdUnidad);
                 asesor.IdZona = int.Parse(View.IdZona);
                 asesor.TBL_Admin_Usuarios2.Clear();
-
+                asesor.IsActive = View.Activo;
+                asesor.CreateBy = View.UserSession.IdUser;
+                asesor.CreateOn = DateTime.Now;
+                asesor.ModifiedBy = View.UserSession.IdUser;
+                asesor.ModifiedOn = DateTime.Now;
                 foreach (var item in View.UsuariosCopia)
                 {
                     var obj = _usuarios.FindById(Convert.ToInt32(item.Id));
