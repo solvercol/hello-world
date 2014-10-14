@@ -25,7 +25,11 @@ namespace Presenters.Reclamos.IViews
         string AsesorName { set; }
         List<DTO_ValueKey> UsuariosCopia { get; set; }
         void LoadUsuariosCopia(List<DTO_ValueKey> items);
-
+        bool Activo { get; set; }
+        string CreateBy { set; }
+        string CreateOn { set; }
+        string ModifiedBy { set; }
+        string ModifiedOn { set; }
         #endregion
 
     }

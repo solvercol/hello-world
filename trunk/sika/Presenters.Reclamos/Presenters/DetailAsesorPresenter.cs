@@ -44,6 +44,11 @@ namespace Presenters.Reclamos.Presenters
             View.IdUnidad = asesor.TBL_ModuloReclamos_Unidad.Nombre;
             View.IdZona = asesor.TBL_ModuloReclamos_Zona.Descripcion;
             View.AsesorName = _usuarios.FindById(asesor.IdUsuario).Nombres;
+            View.Activo = asesor.IsActive;
+            View.CreateBy = asesor.TBL_Admin_Usuarios.Nombres;
+            View.CreateOn = asesor.CreateOn != null ? asesor.CreateOn.ToShortDateString() + " " + asesor.CreateOn.ToShortTimeString() : string.Empty;
+            View.ModifiedBy = asesor.TBL_Admin_Usuarios1.Nombres;
+            View.ModifiedOn = asesor.ModifiedOn != null ? asesor.ModifiedOn.ToShortDateString() + " " + asesor.ModifiedOn.ToShortTimeString() : string.Empty;
             foreach (var User in asesor.TBL_Admin_Usuarios2)
             {
                 if (!string.IsNullOrEmpty(View.JefesInmediatos))

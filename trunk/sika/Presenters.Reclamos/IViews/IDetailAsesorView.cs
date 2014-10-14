@@ -13,7 +13,11 @@ namespace Presenters.Reclamos.IViews
         string IdZona { set; }
         string AsesorName { set; }
         string JefesInmediatos { get; set; }
-
+        bool Activo { set; }
+        string CreateBy { set; }
+        string CreateOn { set; }
+        string ModifiedBy { set; }
+        string ModifiedOn { set; }
         #endregion
     }
 }

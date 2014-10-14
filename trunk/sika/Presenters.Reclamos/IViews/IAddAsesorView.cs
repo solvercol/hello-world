@@ -22,6 +22,9 @@ namespace Presenters.Reclamos.IViews
         string IdUser { get; set; }
         string IdUnidad { get; }
         string IdZona { get;}
+        bool Activo { get; set; }
+        string CreateBy { set; }
+        string CreateOn { set; }
         bool InsertFlag { get; set; }
         List<DTO_ValueKey> UsuariosCopia { get; set; }
         void LoadUsuariosCopia(List<DTO_ValueKey> items);

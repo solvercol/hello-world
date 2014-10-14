@@ -59,14 +59,14 @@ namespace Presenters.Reclamos.Presenters
 
         void ViewSaveEvent(object sender, EventArgs e)
         {
-            GuardarUnidadZona();
+            GuardarAsesor();
         }
         private void Load()
         {
             GetAsesorInfo();
         }
 
-        private void GuardarUnidadZona()
+        private void GuardarAsesor()
         {
 
             try
@@ -76,6 +76,9 @@ namespace Presenters.Reclamos.Presenters
                 if (asesor == null) return;
                 asesor.IdUnidad = int.Parse(View.IdUnidad);
                 asesor.IdZona = int.Parse(View.IdZona);
+                asesor.IsActive = View.Activo;
+                asesor.ModifiedBy = View.UserSession.IdUser;
+                asesor.ModifiedOn = DateTime.Now;
                 asesor.TBL_Admin_Usuarios2.Clear();
 
                 foreach (var item in View.UsuariosCopia)
@@ -105,7 +108,11 @@ namespace Presenters.Reclamos.Presenters
                 View.IdUnidad = asesor.IdUnidad.ToString();
                 View.IdZona = asesor.IdZona.ToString();
                 View.AsesorName = _usuarios.FindById(asesor.IdUsuario).Nombres;
-             
+                View.Activo = asesor.IsActive;
+                View.CreateBy = asesor.TBL_Admin_Usuarios.Nombres;
+                View.CreateOn = asesor.CreateOn != null ? asesor.CreateOn.ToShortDateString() + " " + asesor.CreateOn.ToShortTimeString() : string.Empty;
+                View.ModifiedBy = asesor.TBL_Admin_Usuarios1.Nombres;
+                View.ModifiedOn = asesor.ModifiedOn != null ? asesor.ModifiedOn.ToShortDateString() + " " + asesor.ModifiedOn.ToShortTimeString() : string.Empty;
                 List<DTO_ValueKey> Users = new List<DTO_ValueKey>();
                 foreach (var User in asesor.TBL_Admin_Usuarios2)
                 {

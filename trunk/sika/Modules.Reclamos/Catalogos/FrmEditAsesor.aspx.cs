@@ -89,8 +89,8 @@ namespace Modules.Reclamos.Catalogos
                 items = items.OrderBy(x => x.Nombres).ToList();
             }
             wddJefes.DataSource = items;
-            wddJefes.TextField = "Nombres";
-            wddJefes.ValueField = "IdUser";
+            wddJefes.DataTextField = "Nombres";
+            wddJefes.DataValueField = "IdUser";
             wddJefes.DataBind();
         }
 
@@ -102,8 +102,8 @@ namespace Modules.Reclamos.Catalogos
             }
 
             wddUnidad.DataSource = items;
-            wddUnidad.TextField = "Nombre";
-            wddUnidad.ValueField = "IdUnidad";
+            wddUnidad.DataTextField = "Nombre";
+            wddUnidad.DataValueField = "IdUnidad";
             wddUnidad.DataBind();
         }
 
@@ -115,8 +115,8 @@ namespace Modules.Reclamos.Catalogos
             }
 
             wddZona.DataSource = items;
-            wddZona.TextField = "Descripcion";
-            wddZona.ValueField = "IdZona";
+            wddZona.DataTextField = "Descripcion";
+            wddZona.DataValueField = "IdZona";
             wddZona.DataBind();
         }
 
@@ -210,6 +210,32 @@ namespace Modules.Reclamos.Catalogos
         {
             get { return txtAsesor.Text; }
             set { txtAsesor.Text = value.ToString(); }
+        }
+
+        public bool Activo
+        {
+            get { return chkActive.Checked; }
+            set { chkActive.Checked = value; }
+        }
+
+        public string CreateBy
+        {
+            set { lblCreateBy.Text = value; }
+        }
+
+        public string CreateOn
+        {
+            set { lblCreateOn.Text = value; }
+        }
+
+        public string ModifiedBy
+        {
+            set { lblModifiedBy.Text = value; }
+        }
+
+        public string ModifiedOn
+        {
+            set { lblModifiedOn.Text = value; }
         }
 
         #endregion

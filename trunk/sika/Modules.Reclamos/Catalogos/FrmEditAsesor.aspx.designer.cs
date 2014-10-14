@@ -55,7 +55,7 @@ namespace Modules.Reclamos.Catalogos {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Infragistics.Web.UI.ListControls.WebDropDown wddUnidad;
+        protected global::System.Web.UI.WebControls.DropDownList wddUnidad;
         
         /// <summary>
         /// rfvUnidad control.
@@ -73,7 +73,7 @@ namespace Modules.Reclamos.Catalogos {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Infragistics.Web.UI.ListControls.WebDropDown wddZona;
+        protected global::System.Web.UI.WebControls.DropDownList wddZona;
         
         /// <summary>
         /// rfvZona control.
@@ -100,7 +100,7 @@ namespace Modules.Reclamos.Catalogos {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Infragistics.Web.UI.ListControls.WebDropDown wddJefes;
+        protected global::System.Web.UI.WebControls.DropDownList wddJefes;
         
         /// <summary>
         /// btnAddCopia control.
@@ -128,5 +128,50 @@ namespace Modules.Reclamos.Catalogos {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListBox lstUsuariosCopia;
+        
+        /// <summary>
+        /// chkActive control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkActive;
+        
+        /// <summary>
+        /// lblCreateBy control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCreateBy;
+        
+        /// <summary>
+        /// lblCreateOn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCreateOn;
+        
+        /// <summary>
+        /// lblModifiedBy control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblModifiedBy;
+        
+        /// <summary>
+        /// lblModifiedOn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblModifiedOn;
     }
 }
