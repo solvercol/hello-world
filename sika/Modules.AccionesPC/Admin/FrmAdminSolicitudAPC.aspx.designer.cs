@@ -154,7 +154,7 @@ namespace Modules.AccionesPC.Admin {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Infragistics.Web.UI.ListControls.WebDropDown wddArea;
+        protected global::System.Web.UI.WebControls.DropDownList wddArea;
         
         /// <summary>
         /// wddProceso control.
@@ -163,7 +163,7 @@ namespace Modules.AccionesPC.Admin {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Infragistics.Web.UI.ListControls.WebDropDown wddProceso;
+        protected global::System.Web.UI.WebControls.DropDownList wddProceso;
         
         /// <summary>
         /// lblGerenteArea control.
@@ -229,6 +229,15 @@ namespace Modules.AccionesPC.Admin {
         protected global::AjaxControlToolkit.CalendarExtender cexTxtFechaFin;
         
         /// <summary>
+        /// trContainerAnexos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow trContainerAnexos;
+        
+        /// <summary>
         /// fupAnexoArchivo control.
         /// </summary>
         /// <remarks>
@@ -272,5 +281,14 @@ namespace Modules.AccionesPC.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptArchivosAdjuntos;
+        
+        /// <summary>
+        /// lblLogInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLogInfo;
     }
 }
