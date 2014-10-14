@@ -40,7 +40,7 @@ namespace Infrastructure.Data.MainModule.AccionesPC.Repositories
                                     .Include(x => x.TBL_Admin_Usuarios)     // Creado Por
                                     .Include(x => x.TBL_Admin_Usuarios1)    // Modificado Por
                                     .Include(x => x.TBL_Admin_Usuarios2)    // Destinatario no existe
-                                    .Include(x => x.TBL_ModuloAPC_UsuarioCopiaComentariosRespuesta)//copia 
+                                    .Include(x => x.TBL_Admin_Usuarios3)//copia 
                                     .Include(x => x.TBL_ModuloAPC_AnexosComentarioRespuesta)
                                     .Where(specific)
                                     .SingleOrDefault();
@@ -67,7 +67,7 @@ namespace Infrastructure.Data.MainModule.AccionesPC.Repositories
                                     .Include(x => x.TBL_Admin_Usuarios)     // Creado Por
                                     .Include(x => x.TBL_Admin_Usuarios1)    // Modificado Por
                                     .Include(x => x.TBL_Admin_Usuarios2)    // Destinatario no existe
-                                    .Include(x=> x.TBL_ModuloAPC_UsuarioCopiaComentariosRespuesta)//copia 
+                                    .Include(x => x.TBL_Admin_Usuarios3)//copia 
                                     .Where(specific)
                                     .ToList();
             }
