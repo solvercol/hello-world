@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IViews\IAdminSolicitudAPCView.cs" />
+    <Compile Include="Presenters\AdminSolicitudAPCPresenter.cs" />
     <Compile Include="IViews\IAdminComentarioRespuestaAPCView.cs" />
     <Compile Include="IViews\IAdminComentariosRespuestaAPCView.cs" />
     <Compile Include="Presenters\AdminComentarioRespuestaAPCPresenter.cs" />
@@ -68,6 +70,10 @@
       <Project>{F08F4BCB-00C4-4626-B7EA-5A245ADEDF36}</Project>
       <Name>Application.MainModule.AccionesPC</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Application.MainModule.Reclamos\Application.MainModule.Reclamos.csproj">
+      <Project>{C9837181-2A13-4F70-8132-570940C442C0}</Project>
+      <Name>Application.MainModule.Reclamos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Application.MainModule.SqlServices\Application.MainModule.SqlServices.csproj">
       <Project>{A339985E-A4A5-4DC1-9632-1A622603F028}</Project>
       <Name>Application.MainModule.SqlServices</Name>
@@ -87,6 +93,10 @@
     <ProjectReference Include="..\Domain.MainModule.AccionesPC\Domain.MainModule.AccionesPC.csproj">
       <Project>{28C94AC4-37B5-40C2-984D-725B536DF460}</Project>
       <Name>Domain.MainModule.AccionesPC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.MainModule.Reclamos\Domain.MainModule.Reclamos.csproj">
+      <Project>{50D7DFA7-2314-41D2-A9BF-9630ADA55B98}</Project>
+      <Name>Domain.MainModule.Reclamos</Name>
     </ProjectReference>
     <ProjectReference Include="..\Domain.MainModules.Entities\Domain.MainModules.Entities.csproj">
       <Project>{6FA9FF63-4F79-4A9F-882C-7A7AE27C7332}</Project>
