@@ -42,9 +42,7 @@
   <ItemGroup>
     <Compile Include="IViews\IAdminSolicitudAPCView.cs" />
     <Compile Include="Presenters\AdminSolicitudAPCPresenter.cs" />
-    <Compile Include="IViews\IAdminComentarioRespuestaAPCView.cs" />
     <Compile Include="IViews\IAdminComentariosRespuestaAPCView.cs" />
-    <Compile Include="Presenters\AdminComentarioRespuestaAPCPresenter.cs" />
     <Compile Include="Presenters\AdminComentariosRespuestaAPCPresenter.cs">
       <SubType>Code</SubType>
     </Compile>
