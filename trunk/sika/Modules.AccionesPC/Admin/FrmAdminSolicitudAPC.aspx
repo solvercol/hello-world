@@ -1,11 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FrmAdminSolicitudAPC.aspx.cs" Inherits="Modules.AccionesPC.Admin.FrmAdminSolicitudAPC" %>
 
 <%@ Register    Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
-<%@ Register    Assembly="Infragistics4.Web.v11.1, Version=11.1.20111.2238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb"
-                Namespace="Infragistics.Web.UI.ListControls" TagPrefix="ig" %>
-<%@ Register    Assembly="Infragistics4.Web.v11.1, Version=11.1.20111.2238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb"
-                Namespace="Infragistics.Web.UI.EditorControls" TagPrefix="ig" %>   
-<%@ Register src="WUCFilterClient.ascx" tagname="WucFilterClient" tagprefix="ucFilterClient" %> 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     
@@ -16,6 +11,16 @@
             var adiv = $get(divModal);
             adiv.style.visibility = 'visible';
         }
+    </script>
+
+    <script type="text/javascript">
+
+        function RebindScripts() {
+            $(".chzn-select").chosen({ allow_single_deselect: true });
+
+            $(".chzn-select-deselect").chosen({ allow_single_deselect: true });
+        }
+ 
     </script>
     
     <div id="DivModal">
@@ -28,9 +33,12 @@
 
     <asp:UpdatePanel ID="upgeneral" runat="server">
         <ContentTemplate>
+            <script type="text/javascript" language="javascript">
+                Sys.Application.add_load(RebindScripts);
+            </script>  
             <div style="padding:3px; text-align:right;">
                 <asp:Button ID="btnRegresar" runat="server" Text="Regresar" />
-                <asp:Button ID="btnSave" runat="server" Text="Guardar"  ValidationGroup="vgGeneral" OnClientClick="return ShowSplashModal();" />
+                <asp:Button ID="btnSave" runat="server" Text="Guardar"  ValidationGroup="vgGeneral" OnClick="BtnSaveSolicitudAPCClick" OnClientClick="return ShowSplashModal();" />
             </div>
 
             <asp:ValidationSummary ID="vsGeneral" runat="server" DisplayMode="BulletList" ShowMessageBox="false" CssClass="validator" ShowSummary="true" ValidationGroup="vgGeneral"/>
@@ -89,19 +97,7 @@
                                 <td class="Separador"></td>
 
                                 <td class="Line" style="width: 90%">
-                                    <ig:WebDropDown ID="wddArea" 
-                                                    runat="server" 
-                                                    EnableMultipleSelection="false"
-                                                    MultipleSelectionType="Checkbox" 
-                                                    DisplayMode="DropDown"
-                                                    EnableClosingDropDownOnSelect="false"
-                                                    StyleSetName="Claymation"
-                                                    DropDownContainerWidth="300px"
-                                                    DropDownContainerHeight="220px"
-                                                    OnValueChanged="WddAsesor_ValueChanged"
-                                                    AutoPostBack="true"
-                                                    Width="98%">
-                                    </ig:WebDropDown>
+                                    <asp:DropDownList ID="wddArea" runat="server" Width="350px"  class="chzn-select" OnSelectedIndexChanged="WddArea_ValueChanged" AutoPostBack="true" />
                                 </td>
 
                                 <td class="Separador"></td>
@@ -114,19 +110,7 @@
                                 <td class="Separador"></td>
 
                                 <td class="Line" >
-                                    <ig:WebDropDown ID="wddProceso" 
-                                                    runat="server" 
-                                                    EnableMultipleSelection="false"
-                                                    MultipleSelectionType="Checkbox" 
-                                                    DisplayMode="DropDown"
-                                                    EnableClosingDropDownOnSelect="false"
-                                                    StyleSetName="Claymation"
-                                                    DropDownContainerWidth="300px"
-                                                    DropDownContainerHeight="220px"
-                                                    OnValueChanged="WddAsesor_ValueChanged"
-                                                    AutoPostBack="true"
-                                                    Width="98%">
-                                    </ig:WebDropDown>
+                                    <asp:DropDownList ID="wddProceso" runat="server" Width="350px"  class="chzn-select" />
                                 </td>
 
                                 <td class="Separador"></td>
@@ -224,7 +208,7 @@
                     <td class="SeparadorVertical">            
                     </td>
                 </tr> 
-                <tr>
+                <tr id="trContainerAnexos" runat="server">
                     <td>
                         <table width="100%" cellpadding="0" cellspacing="0" class="tblSecciones">
                             <tr>
@@ -237,7 +221,7 @@
                                 <td class="Line">
                                     <asp:FileUpload ID="fupAnexoArchivo" runat="server" />
 
-                                    <asp:Button ID="btnAddArchivoAdjunto" runat="server" Text="Agregar" OnClientClick="return ShowSplashModalLoading();" />
+                                    <asp:Button ID="btnAddArchivoAdjunto" runat="server" Text="Agregar" OnClick="BtnAddArchivoAdjunto_Click" OnClientClick="return ShowSplashModalLoading();" />
                                 </td>
 
                                 <td class="Separador"></td>
@@ -255,12 +239,12 @@
                                             <td colspan="2">
                                                 <asp:Panel ID="pnlArchivosAdjuntos" runat="server" Width="100%" Height="65px" ScrollBars="Vertical">
                                                     <table width="100%">
-                                                        <asp:repeater id="rptArchivosAdjuntos" runat="server" >                                                                 
+                                                        <asp:repeater id="rptArchivosAdjuntos" runat="server" OnItemDataBound="RptArchivosAdjuntos_ItemDataBound" >                                                                 
                                                             <ItemTemplate>
                                                                 <tr>
                                                                     <td >
                                                                         <asp:HiddenField ID="hddIdArchivo" runat="server" />                                                                
-                                                                        <asp:LinkButton ID="lnkNombreArchivo" runat="server" />
+                                                                        <asp:LinkButton ID="lnkNombreArchivo" runat="server" OnClick="BtnDownloadArchivoAdjunto_Click" />
                                                                     </td>
                                                                     <td style="width:27px;" >
                                                                          <asp:ImageButton 
@@ -268,7 +252,9 @@
                                                                             runat="server"
                                                                             CausesValidation="false"
                                                                             BorderStyle="None"
-                                                                            ImageUrl="~/Resources/Images/RemoveGrid.png" />
+                                                                            ImageUrl="~/Resources/Images/RemoveGrid.png"
+                                                                            OnClick="BtnRemoveArchivoAdjunto_Click"
+                                                                             />
                                                                     </td>
                                                                 </tr>
                                                             </ItemTemplate>
@@ -288,8 +274,18 @@
             </table>          
             
         </ContentTemplate>
+        <Triggers>
+            <asp:PostBackTrigger ControlID="btnAddArchivoAdjunto" />
+        </Triggers>
     </asp:UpdatePanel>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Footer" runat="server">
+    <table width="100%">
+        <tr >
+            <td style="text-align:left; vertical-align:top; padding-left: 10px; background-color:#e0e0e0" >
+                <asp:Label ID="lblLogInfo" runat="server" ForeColor="#808080" Font-Size="8pt" />
+            </td>
+        </tr>
+    </table>
 </asp:Content>
