@@ -217,7 +217,6 @@
     <Compile Include="Admin\FrmReclamo.aspx.designer.cs">
       <DependentUpon>FrmReclamo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\ScriptManager.cs" />
     <Compile Include="Catalogos\FrmAddActividadReclamo.aspx.cs">
       <DependentUpon>FrmAddActividadReclamo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
