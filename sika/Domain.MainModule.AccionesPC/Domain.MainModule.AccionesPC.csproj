@@ -48,7 +48,6 @@
     <Compile Include="Contracts\ITBL_ModuloAPC_CausasRepository.cs" />
     <Compile Include="Contracts\ITBL_ModuloAPC_ComentariosRespuestaRepository.cs" />
     <Compile Include="Contracts\ITBL_ModuloAPC_SolicitudRepository.cs" />
-    <Compile Include="Contracts\ITBL_ModuloAPC_UsuarioCopiaComentariosRespuestaRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
