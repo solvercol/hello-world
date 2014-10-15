@@ -31,15 +31,17 @@
         </div>
     </div>
 
+    <div style="padding:3px; text-align:right;">
+        <asp:Button ID="btnRegresar" runat="server" Text="Regresar" OnClick="BtnRegresarClick" />
+        <asp:Button ID="btnSave" runat="server" Text="Guardar"  ValidationGroup="vgGeneral" OnClick="BtnSaveSolicitudAPCClick" OnClientClick="return ShowSplashModal();" />
+    </div>
+
     <asp:UpdatePanel ID="upgeneral" runat="server">
         <ContentTemplate>
             <script type="text/javascript" language="javascript">
                 Sys.Application.add_load(RebindScripts);
             </script>  
-            <div style="padding:3px; text-align:right;">
-                <asp:Button ID="btnRegresar" runat="server" Text="Regresar" />
-                <asp:Button ID="btnSave" runat="server" Text="Guardar"  ValidationGroup="vgGeneral" OnClick="BtnSaveSolicitudAPCClick" OnClientClick="return ShowSplashModal();" />
-            </div>
+            
 
             <asp:ValidationSummary ID="vsGeneral" runat="server" DisplayMode="BulletList" ShowMessageBox="false" CssClass="validator" ShowSummary="true" ValidationGroup="vgGeneral"/>
             

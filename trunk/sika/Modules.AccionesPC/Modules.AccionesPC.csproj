@@ -76,8 +76,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\FrmAdminSolicitudAPC.aspx" />
+    <Content Include="Admin\FrmSolicitudAPC.aspx" />
     <Content Include="Admin\FrmTestWUC.aspx" />
+    <Content Include="UserControls\WUCAdminAnexosSolicitud.ascx" />
     <Content Include="UserControls\WUCAdminComentariosRespuestaSolicitud.ascx" />
+    <Content Include="UserControls\WUCAdminInformacionSolicitud.ascx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -95,6 +98,13 @@
     <Compile Include="Admin\FrmAdminSolicitudAPC.aspx.designer.cs">
       <DependentUpon>FrmAdminSolicitudAPC.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\FrmSolicitudAPC.aspx.cs">
+      <DependentUpon>FrmSolicitudAPC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FrmSolicitudAPC.aspx.designer.cs">
+      <DependentUpon>FrmSolicitudAPC.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\FrmTestWUC.aspx.cs">
       <DependentUpon>FrmTestWUC.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -111,12 +121,26 @@
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
     <Compile Include="UI\ISolicitudWebUserControl.cs" />
+    <Compile Include="UserControls\WUCAdminAnexosSolicitud.ascx.cs">
+      <DependentUpon>WUCAdminAnexosSolicitud.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WUCAdminAnexosSolicitud.ascx.designer.cs">
+      <DependentUpon>WUCAdminAnexosSolicitud.ascx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\WUCAdminComentariosRespuestaSolicitud.ascx.cs">
       <DependentUpon>WUCAdminComentariosRespuestaSolicitud.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserControls\WUCAdminComentariosRespuestaSolicitud.ascx.designer.cs">
       <DependentUpon>WUCAdminComentariosRespuestaSolicitud.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WUCAdminInformacionSolicitud.ascx.cs">
+      <DependentUpon>WUCAdminInformacionSolicitud.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WUCAdminInformacionSolicitud.ascx.designer.cs">
+      <DependentUpon>WUCAdminInformacionSolicitud.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

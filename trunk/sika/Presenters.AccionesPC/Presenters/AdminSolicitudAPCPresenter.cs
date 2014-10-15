@@ -66,6 +66,7 @@ namespace Presenters.AccionesPC.Presenters
             View.FechaHasta = DateTime.Now.AddMonths(1);
             View.ShowInfoReclamo = false;
             View.ArchivosAdjuntos = new List<DTO_ValueKey>();
+            View.LogInfoMessage = string.Format("Creado por {0} en {1:dd/MM/yyyy hh:mm ss tt}.", View.UserSession.Nombres, DateTime.Now);
         }
 
         void LoadConsecutivoReclamo()
@@ -144,6 +145,10 @@ namespace Presenters.AccionesPC.Presenters
                     if (item.IdReclamoCreacion.HasValue)
                         LoadReclamo(item.IdReclamoCreacion.GetValueOrDefault());
 
+                    View.LogInfoMessage = string.Format("Creado por {0} en {1:dd/MM/yyyy hh:mm ss tt}. Modificado por {2} en {3:dd/MM/yyyy hh:mm ss tt}.",
+                                                        item.TBL_Admin_Usuarios3.Nombres, item.CreateOn,
+                                                        item.TBL_Admin_Usuarios5.Nombres, item.ModifiedOn);
+
                     View.ShowArchivosAdjuntos = false;
                     //LoadArhchivosAdjuntos();
                 }
@@ -200,6 +205,7 @@ namespace Presenters.AccionesPC.Presenters
                     archivo.NombreArchivo = adjunto.Value;
                     archivo.Archivo = (byte[])adjunto.ComplexValue;
                     archivo.CreateBy = View.UserSession.IdUser;
+                    archivo.IsActive = true;
                     archivo.CreateOn = DateTime.Now;
                     archivo.ModifiedBy = View.UserSession.IdUser;
                     archivo.ModifiedOn = DateTime.Now;
@@ -210,6 +216,37 @@ namespace Presenters.AccionesPC.Presenters
                 InvokeMessageBox(new MessageBoxEventArgs(string.Format("Datos Guardados Con Exito."), TypeError.Ok));
                 
 
+                View.GoToSolicitudView(string.Format("{0}", model.IdSolucitudAPC));
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
+        }
+
+        public void UpdateSolicitudAPC()
+        {
+            if (string.IsNullOrEmpty(View.IdSolicitud))
+                return;
+
+            try
+            {
+                var model = _solicitudService.GetById(Convert.ToDecimal(View.IdSolicitud));
+
+                model.TipoAccion = View.TipoAccion;
+                model.IdAreaAccion = View.IdAreaAccion;
+                model.Proceso = View.Proceso;
+                model.IdGerente = View.IdGerente;
+                model.DescripcionAccion = View.DescripcionAccion;
+                model.FechaDesde = View.FechaDesde;
+                model.FechaHasta = View.FechaHasta;
+                model.ModifiedBy = View.UserSession.IdUser;
+                model.ModifiedOn = DateTime.Now;
+
+                _solicitudService.Modify(model);
+
+                InvokeMessageBox(new MessageBoxEventArgs(string.Format("Datos Actualizados Con Exito."), TypeError.Ok));
+                
                 View.GoToSolicitudView(string.Format("{0}", model.IdSolucitudAPC));
             }
             catch (Exception ex)
@@ -275,6 +312,7 @@ namespace Presenters.AccionesPC.Presenters
                 archivo.NombreArchivo = View.NombreArchivoAdjunto;
                 archivo.Archivo = View.ArchivoAdjunto;
                 archivo.CreateBy = View.UserSession.IdUser;
+                archivo.IsActive = true;
                 archivo.CreateOn = DateTime.Now;
                 archivo.ModifiedBy = View.UserSession.IdUser;
                 archivo.ModifiedOn = DateTime.Now;
