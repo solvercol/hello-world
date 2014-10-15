@@ -77,25 +77,18 @@ namespace Modules.AccionesPC.Admin
 
         protected void BtnRegresarClick(object sender, EventArgs e)
         {
-            //if (string.IsNullOrEmpty(FromPage))
-            //{
-            //    Response.Redirect(string.Format("../Views/FrmMisActividadesPendientes.aspx?ModuleId={0}", ModuleId));
-            //}
-            //else
-            //{
-            //    switch (FromPage)
-            //    {
-            //        case "reclamo":
-            //            Response.Redirect(string.Format("FrmReclamo.aspx?ModuleId={0}&IdReclamo={1}&from={2}", ModuleId, IdReclamoQS, FromPageAux));
-            //            break;
-            //        case "misact":
-            //            Response.Redirect(string.Format("../Views/FrmMisActividades.aspx?ModuleId={0}", ModuleId));
-            //            break;
-            //        case "actpersona":
-            //            Response.Redirect(string.Format("../Views/FrmActividadesPorPersona.aspx?ModuleId={0}", ModuleId));
-            //            break;
-            //    }
-            //}
+            switch (FromPage)
+            {
+                case "reclamo":
+                    Response.Redirect(string.Format("FrmReclamo.aspx?ModuleId={0}&IdReclamo={1}&from={2}", ModuleId, IdReclamoQS, FromPageAux));
+                    break;
+                case "solicitud":
+                    Response.Redirect(string.Format("FrmSolicitudAPC.aspx?ModuleId={0}&IdSolicitud={1}", ModuleId, IdSolicitud));
+                    break;
+                default:
+                    Response.Redirect(string.Format("~/Default.aspx?ModuleId={0}", ModuleId));
+                    break;
+            }
         }
 
         protected void BtnViewReclamo_Click(object sender, EventArgs e)
@@ -105,8 +98,21 @@ namespace Modules.AccionesPC.Admin
 
         protected void BtnSaveSolicitudAPCClick(object sender, EventArgs e)
         {
+            var messages = new List<string>();
+
+            if (string.IsNullOrEmpty(DescripcionAccion))
+                messages.Add("Es necesario ingresar una descripción del posible problema o conformidad.");
+
+            if (messages.Any())
+            {
+                AddErrorMessages(messages);
+                return;
+            }
+
             if (string.IsNullOrEmpty(IdSolicitud))
                 Presenter.SaveSolicitudAPC();
+            else
+                Presenter.UpdateSolicitudAPC();
         }
 
         protected void BtnAddArchivoAdjunto_Click(object sender, EventArgs e)
@@ -198,6 +204,23 @@ namespace Modules.AccionesPC.Admin
 
         #region Methods
 
+        void AddErrorMessages(List<string> messages)
+        {
+            if (messages.Any())
+            {
+                foreach (var msg in messages)
+                {
+                    var custVal = new CustomValidator();
+                    custVal.IsValid = false;
+                    custVal.ErrorMessage = msg;
+                    custVal.EnableClientScript = false;
+                    custVal.Display = ValidatorDisplay.None;
+                    custVal.ValidationGroup = "vgGeneral";
+                    this.Page.Form.Controls.Add(custVal);
+                }
+            }
+        }
+
         #endregion
 
         #region View Members
@@ -235,7 +258,7 @@ namespace Modules.AccionesPC.Admin
 
         public void GoToSolicitudView(string idSolicitud)
         {
-            throw new NotImplementedException();
+            Response.Redirect(string.Format("FrmSolicitudAPC.aspx?ModuleId={0}&IdSolicitud={1}", ModuleId, idSolicitud));
         }
      
 
