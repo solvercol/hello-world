@@ -118,6 +118,7 @@ namespace Infrastructure.CrossCutting.IoC
             
             container.RegisterType<IReclamosExternalInterfacesService, ReclamosExternalInterfacesService>(new TransientLifetimeManager());
             container.RegisterType<IReclamosAdoService, ReclamosAdoService>(new TransientLifetimeManager());
+            container.RegisterType<ISolicitudAdoService, SolicitudAdoService>(new TransientLifetimeManager());
             container.RegisterType<IDocumentosAdoService, DocumentosAdoService>(new TransientLifetimeManager());
 
             #endregion
