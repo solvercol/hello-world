@@ -11,12 +11,14 @@
 using Domain.Core;
 using Domain.MainModules.Entities;
 using Domain.Core.Specification;
+using System.Collections.Generic;
 
 namespace Application.MainModule.AccionesPC.IServices
 {
     public interface ISfTBL_ModuloAPC_AnexosComentarioRespuestaManagementServices : IGenericServices<TBL_ModuloAPC_AnexosComentarioRespuesta>
     {
-     
+        List<TBL_ModuloAPC_AnexosComentarioRespuesta> GetByComentarioId(decimal idComentario);
+        TBL_ModuloAPC_AnexosComentarioRespuesta GetById(decimal id);
 
     }
 }

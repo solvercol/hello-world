@@ -11,12 +11,15 @@
 using Domain.Core;
 using Domain.MainModules.Entities;
 using Domain.Core.Specification;
+using System.Collections.Generic;
 
 namespace Application.MainModule.AccionesPC.IServices
 {
     public interface ISfTBL_ModuloAPC_AnexosActividadesManagementServices : IGenericServices<TBL_ModuloAPC_AnexosActividades>
     {
-     
+        List<TBL_ModuloAPC_AnexosActividades> GetByIdActividad(decimal idActividad);
+
+        TBL_ModuloAPC_AnexosActividades GetById(decimal idArchivo);
 
     }
 }
