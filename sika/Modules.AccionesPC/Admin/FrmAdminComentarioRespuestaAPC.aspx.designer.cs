@@ -31,6 +31,15 @@ namespace Modules.AccionesPC.Admin {
         protected global::System.Web.UI.HtmlControls.HtmlImage Img1;
         
         /// <summary>
+        /// trInfoReclamo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow trInfoReclamo;
+        
+        /// <summary>
         /// lblTitleReclamo control.
         /// </summary>
         /// <remarks>
@@ -56,6 +65,60 @@ namespace Modules.AccionesPC.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTitleReclamoFrom;
+        
+        /// <summary>
+        /// lblUnidadTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUnidadTitle;
+        
+        /// <summary>
+        /// lblUnidad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUnidad;
+        
+        /// <summary>
+        /// lblAsesorTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAsesorTitle;
+        
+        /// <summary>
+        /// lblAsesor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAsesor;
+        
+        /// <summary>
+        /// lblFechaTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFechaTitle;
+        
+        /// <summary>
+        /// lblFechaReclamo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFechaReclamo;
         
         /// <summary>
         /// lblTipoAccion control.
