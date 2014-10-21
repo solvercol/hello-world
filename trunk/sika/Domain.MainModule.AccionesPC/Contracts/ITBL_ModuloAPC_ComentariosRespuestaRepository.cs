@@ -20,6 +20,7 @@ namespace Domain.MainModule.AccionesPC.Contracts
     {
         TBL_ModuloAPC_ComentariosRespuesta GetCompleteEntityBySpec(ISpecification<TBL_ModuloAPC_ComentariosRespuesta> specification);
         List<TBL_ModuloAPC_ComentariosRespuesta> GetCompleteListBySpec(ISpecification<TBL_ModuloAPC_ComentariosRespuesta> specification);
+        TBL_ModuloAPC_ComentariosRespuesta GetComentarioById(decimal id);
     }
 }
     
