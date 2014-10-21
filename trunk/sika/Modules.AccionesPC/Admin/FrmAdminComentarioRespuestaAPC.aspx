@@ -45,31 +45,37 @@
             </tr>
              <tr>
                 <td>
-                        <tr>             
+                        <tr id="trInfoReclamo" runat="server">             
 
                             <td valign="top">
-                                <table width="100%" >
-                                    <tr>
-                                        <td class="SeccionesH1" colspan="2">
-                                            <asp:Label ID="lblTitleReclamo" runat="server" />
-                                            <asp:ImageButton 
-                                                ID="ImgSearch" 
-                                                BorderWidth="0" 
-                                                BorderStyle="None" 
-                                                CausesValidation="false" 
-                                                runat="server" 
-                                                ToolTip="Ver información de reclamo"
-                                                ImageUrl="~/Resources/Images/LupaNegra.png" 
-                                                OnClick="BtnViewReclamo_Click"
-                                            />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="SeccionesH2" colspan="2">
-                                            <asp:Label ID="lblTitleReclamoFrom" runat="server" />
-                                        </td>
-                                    </tr>
-                                </table>
+                          <table width="100%" >
+                           <tr >
+                                <td class="SeccionesH1" colspan="2">
+                                    <asp:Label ID="lblTitleReclamo" runat="server" />
+                                    <asp:ImageButton 
+                                        ID="ImgSearch" 
+                                        BorderWidth="0" 
+                                        BorderStyle="None" 
+                                        CausesValidation="false" 
+                                        runat="server" 
+                                        ToolTip="Ver información de reclamo"
+                                        ImageUrl="~/Resources/Images/LupaNegra.png"
+                                    />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="SeccionesH2" colspan="2">
+                                    <asp:Label ID="lblTitleReclamoFrom" runat="server" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="SeccionesH4" colspan="2">
+                                    <asp:Label ID="lblUnidadTitle" runat="server" Text="Unidad: " Font-Bold="true" /><asp:Label ID="lblUnidad" runat="server" />
+                                    <asp:Label ID="lblAsesorTitle" runat="server" Text=" Asesorado Por: " Font-Bold="true" /><asp:Label ID="lblAsesor" runat="server"  />
+                                    <asp:Label ID="lblFechaTitle" runat="server" Text=" Fecha Reclamo: " Font-Bold="true" /><asp:Label ID="lblFechaReclamo" runat="server" />
+                                </td>
+                            </tr>
+                        </table>
 
                             </td>   
                         </tr>
@@ -160,11 +166,9 @@
 
                 <td class="Separador"></td>
 
-                <td class="Line">
+                <td class="Line"  colspan="2">
                     <asp:Label ID="lblAsunto" runat="server" />
                 </td>
-
-                <td class="Separador"></td>
             </tr>
             <tr>
                 <th style="text-align:left; vertical-align:top">
@@ -173,11 +177,9 @@
 
                 <td class="Separador"></td>
 
-                <td class="Line">
+                <td class="Line"  colspan="2">
                     <asp:Label ID="lblMensaje" runat="server" />
                 </td>
-
-                <td class="Separador"></td>
             </tr>
             <tr>
                 <th style="text-align:left; vertical-align:top">
@@ -186,11 +188,9 @@
 
                 <td class="Separador"></td>
 
-                <td class="Line">
+                <td class="Line"  colspan="2">
                     <asp:Label ID="lblDestinatario" runat="server" />
                 </td>
-
-                <td class="Separador"></td>
             </tr>
             <tr>
                 <th style="text-align:left; vertical-align:top">
@@ -199,11 +199,9 @@
 
                 <td class="Separador"></td>
 
-                <td class="Line" >
+                <td class="Line"  colspan="2" >
                     <asp:Label ID="lblFecha" runat="server" />
                 </td>
-
-                <td class="Separador"></td>
             </tr>
             <tr id="trUsuariosCopia" runat="server">
                 <th style=" text-align:left; vertical-align:top">
@@ -212,11 +210,9 @@
 
                 <td class="Separador"></td>
 
-                <td class="Line" >
+                <td class="Line" colspan="2">
                     <asp:ListBox ID="lstUsuariosCopia" runat="server" SelectionMode="Single" Width="98%" Height="80px" />
                 </td>
-
-                <td class="Separador"></td>
             </tr>
             <tr id="trComentariosRespuesta" runat="server">
                 <th style="text-align:left; vertical-align:top">
@@ -225,7 +221,7 @@
 
                 <td class="Separador"></td>
 
-                <td class="Line">
+                <td class="Line"  colspan="2">
                     <table width="100%" >
                         <asp:repeater id="rptComentariosAsociados" runat="server" OnItemDataBound="RptComentariosAsociados_ItemDataBound"  >                                                                 
                             <ItemTemplate>
@@ -244,8 +240,6 @@
                         </asp:repeater>
                     </table> 
                 </td>
-
-                <td class="Separador"></td>
             </tr>  
             <tr id="trComentarios" runat="server">
                 <th style="text-align:left; vertical-align:top">
@@ -254,11 +248,9 @@
 
                 <td class="Separador"></td>
 
-                <td class="Line">
+                <td class="Line"  colspan="2">
                     <asp:TextBox ID="txtComentario" runat="server" Width="98%" TextMode="MultiLine" Rows="3" />
                 </td>
-
-                <td class="Separador"></td>
             </tr>
             <tr id="trDestinatarios" runat="server">
                 <th style="text-align:left; vertical-align:top">
@@ -267,11 +259,9 @@
 
                 <td class="Separador"></td>
 
-                <td class="Line">
+                <td class="Line"  colspan="2">
                     <asp:DropDownList ID="wddDestinatarios" runat="server" Width="350px"  class="chzn-select" />
                 </td>
-
-                <td class="Separador"></td>
             </tr>                      
             <tr>
                 <th style="text-align:left; vertical-align:top">
@@ -280,19 +270,17 @@
 
                 <td class="Separador"></td>
 
-                <td class="Line">
+                <td class="Line" colspan="2">
                     <asp:FileUpload ID="fupAnexoArchivo" runat="server" />
 
                     <asp:Button ID="btnAddArchivoAdjunto" runat="server" Text="Agregar" OnClick="BtnAddArchivoAdjunto_Click" OnClientClick="return ShowSplashModalLoading();" />
                 </td>
-
-                <td class="Separador"></td>
             </tr>
             <tr id="trAnexos" runat="server">
                 <td></td>
                 <td class="Separador"></td>
 
-                <td class="Line">
+                <td class="Line"  colspan="2">
                     <table class="tbl" width="100%">
                         <tr>
                             <th style="width:100%">Archivo</th>
@@ -325,8 +313,6 @@
                         </tr>                                
                     </table>
                 </td>
-
-                <td class="Separador"></td>
             </tr>
          
         </table>

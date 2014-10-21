@@ -381,6 +381,14 @@ namespace Modules.AccionesPC.Admin
             }
         }
 
+        public string IdReclamoQS
+        {
+            get
+            {
+                return Request.QueryString["IdReclamo"];
+            }
+        }
+
         public DateTime FechaComentario
         {
             get
@@ -482,6 +490,117 @@ namespace Modules.AccionesPC.Admin
             set { lblLogInfo.Text = value; }
         }
         #endregion
+
+        #region InfoReclamos
+        public string IdReclamo
+        {
+            get
+            {
+                return ViewState["AdminSolicitud_IdReclamo"] == null ? IdReclamoQS : ViewState["AdminSolicitud_IdReclamo"].ToString();
+            }
+            set
+            {
+                ViewState["AdminSolicitud_IdReclamo"] = value;
+            }
+        }
+
+        public string NumeroReclamo
+        {
+            get
+            {
+                return ViewState["Reclamo_NumeroReclamo"] == null ? string.Empty : ViewState["Reclamo_NumeroReclamo"].ToString();
+            }
+            set
+            {
+                ViewState["Reclamo_NumeroReclamo"] = value;
+            }
+        }
+
+        public string TipoReclamo
+        {
+            get
+            {
+                return ViewState["AdminSolicitud_TipoReclamo"] == null ? string.Empty : ViewState["AdminSolicitud_TipoReclamo"].ToString();
+            }
+            set
+            {
+                ViewState["AdminSolicitud_TipoReclamo"] = value;
+            }
+        }
+
+        public string TitleReclamo
+        {
+            get
+            {
+                return lblTitleReclamo.Text;
+            }
+            set
+            {
+                lblTitleReclamo.Text = value;
+            }
+        }
+
+        public string TitleReclamoFrom
+        {
+            get
+            {
+                return lblTitleReclamoFrom.Text;
+            }
+            set
+            {
+                lblTitleReclamoFrom.Text = value;
+            }
+        }
+
+        public string Unidad
+        {
+            get
+            {
+                return lblUnidad.Text;
+            }
+            set
+            {
+                lblUnidad.Text = value;
+            }
+        }
+
+        public string FechaReclamo
+        {
+            get
+            {
+                return lblFechaReclamo.Text;
+            }
+            set
+            {
+                lblFechaReclamo.Text = value;
+            }
+        }
+
+        public string Asesor
+        {
+            get
+            {
+                return lblAsesor.Text;
+            }
+            set
+            {
+                lblAsesor.Text = value;
+            }
+        }
+
+        public bool ShowInfoReclamo
+        {
+            get
+            {
+                return trInfoReclamo.Visible;
+            }
+            set
+            {
+                trInfoReclamo.Visible = value;
+            }
+        }
+        #endregion
+
 
         #endregion
     }
