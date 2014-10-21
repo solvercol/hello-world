@@ -43,6 +43,7 @@
     <Compile Include="IViews\IAdminAnexosSolicitudView.cs" />
     <Compile Include="IViews\IAdminInformacionSolicitudView.cs" />
     <Compile Include="IViews\IAdminSolicitudAPCView.cs" />
+    <Compile Include="IViews\IMisSolicitudesPendientesView.cs" />
     <Compile Include="IViews\ISolicitudAPCView.cs" />
     <Compile Include="Presenters\AdminAnexosSolicitudPresenter.cs" />
     <Compile Include="Presenters\AdminInformacionSolicitudPresenter.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="Presenters\AdminComentariosRespuestaAPCPresenter.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Presenters\MisSolicitudesPendientesPresenter.cs" />
     <Compile Include="Presenters\SolicitudAPCPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Messages.Designer.cs">

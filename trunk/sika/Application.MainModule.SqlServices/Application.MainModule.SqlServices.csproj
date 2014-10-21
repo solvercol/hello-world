@@ -50,10 +50,14 @@
     <Compile Include="IServices\IDocumentosAdoService.cs" />
     <Compile Include="IServices\IReclamosAdoService.cs" />
     <Compile Include="IServices\IReclamosExternalInterfacesService.cs" />
+    <Compile Include="IServices\ISolicitudAdoService.cs.cs" />
+    <Compile Include="IServices\ISolicitudesAPCAdoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DocumentosAdoService.cs" />
     <Compile Include="Services\ReclamosAdoService.cs" />
     <Compile Include="Services\ReclamosExternalInterfacesService.cs" />
+    <Compile Include="Services\SolicitudAdoService.cs" />
+    <Compile Include="Services\SolicitudesAPCAdoService.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
