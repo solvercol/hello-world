@@ -161,6 +161,20 @@ namespace Application.MainModule.AccionesPC.Services
         }
 
         #endregion
+
+        public List<TBL_ModuloAPC_AnexosActividades> GetByIdActividad(decimal idActividad)
+        {
+            Specification<TBL_ModuloAPC_AnexosActividades> spec = new DirectSpecification<TBL_ModuloAPC_AnexosActividades>(u => u.IdActividad == idActividad);
+
+            return _TBLModuloAPCAnexosActividadesRepository.GetBySpec(spec).ToList();
+        }
+
+        public TBL_ModuloAPC_AnexosActividades GetById(decimal idArchivo)
+        {
+            Specification<TBL_ModuloAPC_AnexosActividades> spec = new DirectSpecification<TBL_ModuloAPC_AnexosActividades>(u => u.IdAnexoActividad == idArchivo);
+
+            return _TBLModuloAPCAnexosActividadesRepository.GetEntityBySpec(spec);
+        }
     }
 }
     

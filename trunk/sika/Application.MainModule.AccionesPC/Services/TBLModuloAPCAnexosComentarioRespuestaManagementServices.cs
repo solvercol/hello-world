@@ -141,6 +141,20 @@ namespace Application.MainModule.AccionesPC.Services
             return _TBLModuloAPCAnexosComentarioRespuestaRepository.GetPagedElements(pageIndex, pageCount, u => u.IdAnexoComentario, onlyEnabledSpec, true).ToList();
          }
 
+
+         public TBL_ModuloAPC_AnexosComentarioRespuesta GetById(decimal id)
+         {
+             Specification<TBL_ModuloAPC_AnexosComentarioRespuesta> spec = new DirectSpecification<TBL_ModuloAPC_AnexosComentarioRespuesta>(u => u.IdAnexoComentario == id);
+
+             return _TBLModuloAPCAnexosComentarioRespuestaRepository.GetEntityBySpec(spec);
+         }
+
+         public List<TBL_ModuloAPC_AnexosComentarioRespuesta> GetByComentarioId(decimal idComentario)
+         {
+             Specification<TBL_ModuloAPC_AnexosComentarioRespuesta> spec = new DirectSpecification<TBL_ModuloAPC_AnexosComentarioRespuesta>(u => u.IdComentario == idComentario);
+
+             return _TBLModuloAPCAnexosComentarioRespuestaRepository.GetBySpec(spec).ToList();
+         }
          #endregion
 
          #region IDisposable Members

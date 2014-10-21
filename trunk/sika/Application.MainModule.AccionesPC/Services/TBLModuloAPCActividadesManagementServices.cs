@@ -141,6 +141,20 @@ namespace Application.MainModule.AccionesPC.Services
             return _TBLModuloAPCActividadesRepository.GetPagedElements(pageIndex, pageCount, u => u.IdActividad, onlyEnabledSpec, true).ToList();
          }
 
+         public TBL_ModuloAPC_Actividades GetById(decimal id)
+         {
+             Specification<TBL_ModuloAPC_Actividades> spec = new DirectSpecification<TBL_ModuloAPC_Actividades>(u => u.IdActividad == id);
+
+             return _TBLModuloAPCActividadesRepository.GetCompleteEntityBySpec(spec);
+         }
+
+         public List<TBL_ModuloAPC_Actividades> GetByIdSolicitud(decimal idSolicitud)
+         {
+             Specification<TBL_ModuloAPC_Actividades> spec = new DirectSpecification<TBL_ModuloAPC_Actividades>(u => u.IdSolicitudAPC == idSolicitud);
+
+             return _TBLModuloAPCActividadesRepository.GetCompleteListBySpec(spec);
+         }
+
          #endregion
 
          #region IDisposable Members
