@@ -12,12 +12,16 @@
 using Domain.Core;
 using Domain.MainModules.Entities;
 using Domain.Core.Specification;
+using System.Collections.Generic;
 
 namespace Domain.MainModule.AccionesPC.Contracts
 {
     public interface ITBL_ModuloAPC_ActividadesRepository : IRepository<TBL_ModuloAPC_Actividades>
     {
-        
+        TBL_ModuloAPC_Actividades GetCompleteEntityBySpec(ISpecification<TBL_ModuloAPC_Actividades> specification);
+        List<TBL_ModuloAPC_Actividades> GetCompleteListBySpec(ISpecification<TBL_ModuloAPC_Actividades> specification);
+        bool VerificarActividadesPorEstadoPorsolicitud(string estado, decimal idSolicitud);
+        TBL_ModuloAPC_Actividades GetActividadById(decimal id);
     }
 }
     
