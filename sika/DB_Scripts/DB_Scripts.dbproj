@@ -71,6 +71,8 @@
     <Folder Include="Scripts\Modules\Reclamos\Vistas" />
     <Folder Include="Scripts\Modules\Documentos" />
     <Folder Include="Scripts\Modules\Documentos\Vistas" />
+    <Folder Include="Scripts\Modules\SolicitudAPC" />
+    <Folder Include="Scripts\Modules\SolicitudAPC\Vistas" />
   </ItemGroup>
   <ItemGroup>
     <PropertiesFile Include="Properties\Database.sqlsettings">
@@ -169,6 +171,9 @@
       <SubType>NotInBuild</SubType>
     </NotInBuild>
     <NotInBuild Include="Scripts\Modules\Documentos\Vistas\02_Documentos_GetUsuariosResponables.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Scripts\Modules\SolicitudAPC\Vistas\01_SolicitudesAPC_Vistas_MisPendientes.sql">
       <SubType>NotInBuild</SubType>
     </NotInBuild>
   </ItemGroup>

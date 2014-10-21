@@ -1,17 +1,15 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using Application.Core;
 using Application.MainModule.AccionesPC.IServices;
-using Application.MainModule.SqlServices.IServices;
+using Application.MainModule.Reclamos.IServices;
 using Applications.MainModule.Admin.IServices;
+using Domain.MainModule.Reclamos.DTO;
 using Domain.MainModules.Entities;
 using Infrastructure.CrossCutting.NetFramework.Enums;
 using Presenters.AccionesPC.IViews;
-using Presenters.AccionesPC.Resources;
-using Application.MainModule.Reclamos.IServices;
-using Domain.MainModule.Reclamos.DTO;
 
 namespace Presenters.AccionesPC.Presenters
 {
