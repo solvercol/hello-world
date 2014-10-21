@@ -33,30 +33,36 @@
             </tr>
             <tr>
                 <td>
-                        <tr>
+                        <tr id="trInfoReclamo" runat="server">
                             <td valign="top">
-                                <table width="100%" >
-                                    <tr>
-                                        <td class="SeccionesH1" colspan="2">
-                                            <asp:Label ID="lblTitleReclamo" runat="server" />
-                                            <asp:ImageButton 
-                                                ID="ImgSearch" 
-                                                BorderWidth="0" 
-                                                BorderStyle="None" 
-                                                CausesValidation="false" 
-                                                runat="server" 
-                                                ToolTip="Ver información de Solicitud"
-                                                ImageUrl="~/Resources/Images/LupaNegra.png" 
-                                                OnClick="BtnViewReclamo_Click"
-                                            />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="SeccionesH2" colspan="2">
-                                            <asp:Label ID="lblTitleReclamoFrom" runat="server" />
-                                        </td>
-                                    </tr>
-                                </table>
+                            <table width="100%" >
+                                <tr >
+                                <td class="SeccionesH1" colspan="2">
+                                    <asp:Label ID="lblTitleReclamo" runat="server" />
+                                    <asp:ImageButton 
+                                        ID="ImgSearch" 
+                                        BorderWidth="0" 
+                                        BorderStyle="None" 
+                                        CausesValidation="false" 
+                                        runat="server" 
+                                        ToolTip="Ver información de reclamo"
+                                        ImageUrl="~/Resources/Images/LupaNegra.png"
+                                    />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="SeccionesH2" colspan="2">
+                                    <asp:Label ID="lblTitleReclamoFrom" runat="server" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="SeccionesH4" colspan="2">
+                                    <asp:Label ID="lblUnidadTitle" runat="server" Text="Unidad: " Font-Bold="true" /><asp:Label ID="lblUnidad" runat="server" />
+                                    <asp:Label ID="lblAsesorTitle" runat="server" Text=" Asesorado Por: " Font-Bold="true" /><asp:Label ID="lblAsesor" runat="server"  />
+                                    <asp:Label ID="lblFechaTitle" runat="server" Text=" Fecha Reclamo: " Font-Bold="true" /><asp:Label ID="lblFechaReclamo" runat="server" />
+                                </td>
+                            </tr>
+                        </table>
 
                             </td>
                         </tr>
@@ -84,7 +90,7 @@
                                 Visible="false" />
                             <asp:Button ID="btnSaveRealizada" runat="server" 
                                 OnClick="BtnSaveRealizadaClick" 
-                                OnClientClick="return ShowSplashModalLoading();" Text="Cerrar" 
+                                OnClientClick="return ShowSplashModalLoading();" Text="Marcar Realizada" 
                                 Visible="false" />
                             <asp:Button ID="btnCancelActividad" runat="server" 
                                 OnClick="BtnCancelarActividadClick" 
@@ -164,16 +170,14 @@
                     </th>
                     <td class="Separador">
                     </td>
-                    <td class="Line">
+                    <td class="Line" colspan="2">
                         <asp:Label ID="lblEstado" runat="server" />
                         <asp:DropDownList ID="ddlEstado" runat="server" Visible="false">
                             <asp:ListItem Text="Registrada" Value="Registrada" />
                             <asp:ListItem Text="Programada" Value="Programada" />
-                            <asp:ListItem Text="Cerrada" Value="Cerrada" />
+                            <asp:ListItem Text="Realizada" Value="Realizada" />
                             <asp:ListItem Text="Cancelada" Value="Cancelada" />
                         </asp:DropDownList>
-                    </td>
-                    <td class="Separador">
                     </td>
                 </tr>
                 <tr>
@@ -182,10 +186,8 @@
                     </th>
                     <td class="Separador">
                     </td>
-                    <td class="Line">
+                    <td class="Line"  colspan="2">
                         <asp:Label ID="lblDescripcion" runat="server" />
-                    </td>
-                    <td class="Separador">
                     </td>
                 </tr>
                 <tr>
@@ -194,10 +196,8 @@
                     </th>
                     <td class="Separador">
                     </td>
-                    <td class="Line">
+                    <td class="Line"  colspan="2">
                         <asp:Label ID="lblFecha" runat="server" />
-                    </td>
-                    <td class="Separador">
                     </td>
                 </tr>
                 <tr>
@@ -206,10 +206,8 @@
                     </th>
                     <td class="Separador">
                     </td>
-                    <td class="Line">
+                    <td class="Line"  colspan="2">
                         <asp:Label ID="lblUsuarioSeguimiento" runat="server" />
-                    </td>
-                    <td class="Separador">
                     </td>
                 </tr>
                 <tr>
@@ -218,10 +216,8 @@
                     </th>
                     <td class="Separador">
                     </td>
-                    <td class="Line">
+                    <td class="Line"  colspan="2">
                         <asp:Label ID="lblUsuarioEjecucion" runat="server" />
-                    </td>
-                    <td class="Separador">
                     </td>
                 </tr>
                 <tr ID="trObservaciones" runat="server">
@@ -230,12 +226,10 @@
                     </th>
                     <td class="Separador">
                     </td>
-                    <td class="Line">
+                    <td class="Line"  colspan="2">
                         <asp:Label ID="lblObservaciones" runat="server" />
                         <asp:TextBox ID="txtObservaciones" runat="server" Rows="3" TextMode="MultiLine" 
                             Width="98%" />
-                    </td>
-                    <td class="Separador">
                     </td>
                 </tr>
                 <tr>
@@ -244,13 +238,11 @@
                     </th>
                     <td class="Separador">
                     </td>
-                    <td class="Line">
+                    <td class="Line"  colspan="2">
                         <asp:FileUpload ID="fupAnexoArchivo" runat="server" />
                         <asp:Button ID="btnAddArchivoAdjunto" runat="server" 
                             OnClick="BtnAddArchivoAdjunto_Click" 
                             OnClientClick="return ShowSplashModalLoading();" Text="Agregar" />
-                    </td>
-                    <td class="Separador">
                     </td>
                 </tr>
                 <tr ID="trAnexos" runat="server">
@@ -258,7 +250,7 @@
                     </td>
                     <td class="Separador">
                     </td>
-                    <td class="Line">
+                    <td class="Line"  colspan="2">
                         <table class="tbl" width="100%">
                             <tr>
                                 <th style="width:100%">
@@ -291,8 +283,6 @@
                                 </td>
                             </tr>
                         </table>
-                    </td>
-                    <td class="Separador">
                     </td>
                 </tr>
         </table>
