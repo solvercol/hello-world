@@ -10,7 +10,7 @@ using Infrastructure.CrossCutting.IoC;
 using Application.MainModule.SqlServices.IServices;
 using System.Data;
 
-namespace Modules.Documentos.Admin
+namespace Modules.Reclamos.Catalogos
 {
     /// <summary>
     /// Descripción breve de WSAutocompletar

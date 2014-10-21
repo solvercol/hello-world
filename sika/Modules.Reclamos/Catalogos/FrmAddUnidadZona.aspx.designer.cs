@@ -40,6 +40,15 @@ namespace Modules.Reclamos.Catalogos {
         protected global::System.Web.UI.WebControls.Button btnSave;
         
         /// <summary>
+        /// test control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel test;
+        
+        /// <summary>
         /// txtDescripcion control.
         /// </summary>
         /// <remarks>
@@ -76,13 +85,13 @@ namespace Modules.Reclamos.Catalogos {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvUnidad;
         
         /// <summary>
-        /// WUCAddUnidad1 control.
+        /// ImgUnidad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Modules.Reclamos.UserControls.WUCAddUnidad WUCAddUnidad1;
+        protected global::System.Web.UI.WebControls.ImageButton ImgUnidad;
         
         /// <summary>
         /// wddZona control.
@@ -103,13 +112,13 @@ namespace Modules.Reclamos.Catalogos {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvZona;
         
         /// <summary>
-        /// WUCAddZona1 control.
+        /// ImgZona control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Modules.Reclamos.UserControls.WUCAddZona WUCAddZona1;
+        protected global::System.Web.UI.WebControls.ImageButton ImgZona;
         
         /// <summary>
         /// wddGerente control.
@@ -164,6 +173,204 @@ namespace Modules.Reclamos.Catalogos {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkActive;
+        
+        /// <summary>
+        /// UPFormUnidad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UPFormUnidad;
+        
+        /// <summary>
+        /// pnlUnidades control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlUnidades;
+        
+        /// <summary>
+        /// btnSaveUnidad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSaveUnidad;
+        
+        /// <summary>
+        /// txtNombreUnidad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNombreUnidad;
+        
+        /// <summary>
+        /// acNombre control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.AutoCompleteExtender acNombre;
+        
+        /// <summary>
+        /// rfvNombreUnidad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombreUnidad;
+        
+        /// <summary>
+        /// chbActiveUnidad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chbActiveUnidad;
+        
+        /// <summary>
+        /// lblCreateByUnidad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCreateByUnidad;
+        
+        /// <summary>
+        /// lblCreateOnUnidad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCreateOnUnidad;
+        
+        /// <summary>
+        /// btnTargetControlU control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnTargetControlU;
+        
+        /// <summary>
+        /// mpeUnidades control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ModalPopupExtender mpeUnidades;
+        
+        /// <summary>
+        /// upFormZonas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upFormZonas;
+        
+        /// <summary>
+        /// PanelZonas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelZonas;
+        
+        /// <summary>
+        /// btnSaveZona control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSaveZona;
+        
+        /// <summary>
+        /// txtNombreZona control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNombreZona;
+        
+        /// <summary>
+        /// acDescripcion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.AutoCompleteExtender acDescripcion;
+        
+        /// <summary>
+        /// rfvNombreZona control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombreZona;
+        
+        /// <summary>
+        /// chbActiveZona control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chbActiveZona;
+        
+        /// <summary>
+        /// lblCreateByZona control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCreateByZona;
+        
+        /// <summary>
+        /// lblCreateOnZona control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCreateOnZona;
+        
+        /// <summary>
+        /// btnTargetControlZ control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnTargetControlZ;
+        
+        /// <summary>
+        /// mpeZonas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ModalPopupExtender mpeZonas;
         
         /// <summary>
         /// lblCreateBy control.
