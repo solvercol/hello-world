@@ -16,6 +16,8 @@ namespace Modules.Reclamos.Catalogos
         #region Delegates
 
         public event EventHandler SaveEvent;
+        public event EventHandler SaveEventZona;
+        public event EventHandler SaveEventUnidad;
 
         #endregion
 
@@ -25,6 +27,8 @@ namespace Modules.Reclamos.Catalogos
         {
             ImprimirTituloVentana("Adicionar Unidades por Zona");
             btnSave.Visible = true;
+            btnSaveUnidad.Visible = true;
+            btnSaveZona.Visible = true;
         }
 
         protected override void OnInit(EventArgs e)
@@ -59,13 +63,72 @@ namespace Modules.Reclamos.Catalogos
             }
         }
 
+        protected void BtnSaveZonaClick(object sender, EventArgs e)
+        {
 
+            rfvNombreZona.Validate();
+            if (rfvNombreZona.IsValid)
+            {
+                if (SaveEventZona != null)
+                    SaveEventZona(null, EventArgs.Empty);
+            }
+            else
+            {
+                rfvNombreZona.Focus();
+                mpeZonas.Show();
+            }
+        }
+
+        protected void BtnSaveUnidadClick(object sender, EventArgs e)
+        {
+
+            rfvNombreUnidad.Validate();
+            if (rfvNombreUnidad.IsValid)
+            {
+                if (SaveEventUnidad != null)
+                    SaveEventUnidad(null, EventArgs.Empty);
+            }
+            else
+            {
+                rfvNombreUnidad.Focus();
+                mpeUnidades.Show();
+            }
+        }
 
         protected void BtnBackClick(object sender, EventArgs e)
         {
             Response.Redirect(string.Format("FrmAdminUnidadesZonas.aspx{0}", GetBaseQueryString()));
         }
 
+        protected void BtnAddUnidad_Click(object sender, EventArgs e)
+        {
+            this.NombreUnidad = string.Empty;
+            this.ActivoUnidad = true;
+            ShowSelectUnidadWindow(true);
+        }
+
+        public void ShowSelectUnidadWindow(bool visible)
+        {
+            if (visible)
+                mpeUnidades.Show();
+            else
+                mpeUnidades.Hide();
+        }
+
+        protected void BtnAddZona_Click(object sender, EventArgs e)
+        {
+            this.DescripcionZona = string.Empty;
+            this.ActivoZona = true;
+            ShowSelectZonaWindow(true);
+        }
+
+        public void ShowSelectZonaWindow(bool visible)
+        {
+            if (visible)
+                mpeZonas.Show();
+            else
+                mpeZonas.Hide();
+        }
 
         #endregion
 
@@ -166,6 +229,60 @@ namespace Modules.Reclamos.Catalogos
         {
             get { return ModuleId; }
         }
+
+        #endregion
+
+        #region Members Unidad
+
+        public string NombreUnidad
+        {
+            get { return txtNombreUnidad.Text; }
+            set { txtNombreUnidad.Text = value; }
+        }
+
+        public bool ActivoUnidad
+        {
+            get { return chbActiveUnidad.Checked; }
+            set { chbActiveUnidad.Checked = value; }
+        }
+
+        public string CreateByUnidad
+        {
+            set { lblCreateByUnidad.Text = value; }
+        }
+
+        public string CreateOnUnidad
+        {
+            set { lblCreateOnUnidad.Text = value; }
+        }
+
+
+        #endregion
+
+        #region Members  Zonas
+
+        public string DescripcionZona
+        {
+            get { return txtNombreZona.Text; }
+            set { txtNombreZona.Text = value; }
+        }
+
+        public bool ActivoZona
+        {
+            get { return chbActiveZona.Checked; }
+            set { chbActiveZona.Checked = value; }
+        }
+
+        public string CreateByZona
+        {
+            set { lblCreateByZona.Text = value; }
+        }
+
+        public string CreateOnZona
+        {
+            set { lblCreateOnZona.Text = value; }
+        }
+
 
         #endregion
 
