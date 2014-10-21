@@ -13,7 +13,7 @@ using System.Web.UI.HtmlControls;
 
 namespace Modules.AccionesPC.UserControls
 {
-    public partial class WUCAdminComentariosRespuestaSolicitud : ViewUserControl<AdminComentariosRespuestaAPCPresenter, IAdminComentariosRespuestaAPCView>, IAdminComentariosRespuestaAPCView
+    public partial class WUCAdminComentariosRespuestaSolicitud : ViewUserControl<AdminComentariosRespuestaAPCPresenter, IAdminComentariosRespuestaAPCView>, IAdminComentariosRespuestaAPCView, ISolicitudWebUserControl
     {
         #region Members
 
@@ -131,7 +131,7 @@ namespace Modules.AccionesPC.UserControls
 
             IdSelectedComentario = btn.CommandArgument;
 
-            Response.Redirect(string.Format("../Admin/FrmAdminComentarioRespuestaSolicitud.aspx?ModuleId={0}&IdComentario={1}&from=reclamo&IdSolicitud={2}&fromaux={3}&idfromaux={4}", IdModule, IdSelectedComentario, IdSolicitud, FromPage, IdFrom));
+            Response.Redirect(string.Format("../Admin/FrmAdminComentarioRespuestaAPC.aspx?ModuleId={0}&IdComentario={1}&from=solicitud&IdSolicitud={2}&fromaux={3}&idfromaux={4}", IdModule, IdSelectedComentario, IdSolicitud, FromPage, IdFrom));
 
             //Presenter.LoadComentarioReclamo();
         }
@@ -407,8 +407,8 @@ namespace Modules.AccionesPC.UserControls
             }
 
             wddDestinatarios.DataSource = items;
-            wddDestinatarios.TextField = "Nombres";
-            wddDestinatarios.ValueField = "IdUser";
+            wddDestinatarios.DataTextField = "Nombres";
+            wddDestinatarios.DataValueField = "IdUser";
             wddDestinatarios.DataBind();
         }
 
@@ -420,11 +420,11 @@ namespace Modules.AccionesPC.UserControls
             }
 
             wddUsuarioCopia.DataSource = items;
-            wddUsuarioCopia.TextField = "Nombres";
-            wddUsuarioCopia.ValueField = "IdUser";
+            wddUsuarioCopia.DataTextField = "Nombres";
+            wddUsuarioCopia.DataValueField = "IdUser";
             wddUsuarioCopia.DataBind();
 
-            wddUsuarioCopia.SelectedItemIndex = 0;
+            wddUsuarioCopia.SelectedIndex = 0;
         }
 
         public void LoadUsuariosCopia(List<DTO_ValueKey> items)
@@ -624,17 +624,6 @@ namespace Modules.AccionesPC.UserControls
             }
         }
 
-        public bool CanSendMailToCLient
-        {
-            get
-            {
-                return btnNuevoRespuestaCliente.Visible;
-            }
-            set
-            {
-                btnNuevoRespuestaCliente.Visible = value;
-            }
-        }
 
         #endregion
 

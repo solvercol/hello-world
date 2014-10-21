@@ -48,11 +48,11 @@
     <Compile Include="Contracts\ITBL_ModuloAPC_CausasRepository.cs" />
     <Compile Include="Contracts\ITBL_ModuloAPC_ComentariosRespuestaRepository.cs" />
     <Compile Include="Contracts\ITBL_ModuloAPC_SolicitudRepository.cs" />
+    <Compile Include="Enum\EstadosSolicitud.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DTO\" />
-    <Folder Include="Enum\" />
     <Folder Include="Services\" />
     <Folder Include="Spec\" />
   </ItemGroup>

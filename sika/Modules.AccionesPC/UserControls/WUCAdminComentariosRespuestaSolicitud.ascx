@@ -14,7 +14,7 @@
         <td >
             <div style="padding:3px; text-align:right;">
                 <asp:Button ID="btnNuevoComentarioRespuesta" runat="server" Text="Registrar Comentario" OnClick="BtnAddComentario_Click" />
-                <asp:Button ID="btnNuevoRespuestaCliente" runat="server" Text="Enviar Respuesta Cliente" OnClick="BtnAddRespuestaCliente_Click" />
+               <%-- <asp:Button ID="btnNuevoRespuestaCliente" enabled="false" runat="server" Text="Enviar Respuesta Cliente" OnClick="BtnAddRespuestaCliente_Click" />--%>
             </div>
         </td>
     </tr>
@@ -111,6 +111,9 @@
 
 <asp:UpdatePanel ID="upModal" runat="server">
     <ContentTemplate> 
+        <script type="text/javascript" language="javascript">
+                Sys.Application.add_load(RebindScripts);
+        </script>
         <asp:Panel ID="pnlAdminComentarioRespuesta"  runat="server" CssClass="popup_Container" Width="500" Height="470" style="display:none;">  
 
             <div class="popup_Titlebar" id="PopupHeader">
@@ -167,17 +170,7 @@
                         <td class="Separador"></td>
 
                         <td class="Line">
-                            <ig:WebDropDown ID="wddDestinatarios" 
-                                            runat="server" 
-                                            EnableMultipleSelection="false"
-                                            MultipleSelectionType="Checkbox" 
-                                            DisplayMode="DropDown"
-                                            EnableClosingDropDownOnSelect="false"
-                                            StyleSetName="Claymation"
-                                            DropDownContainerWidth="300px"
-                                            DropDownContainerHeight="220px"
-                                            Width="98%">
-                            </ig:WebDropDown>
+                            <asp:DropDownList ID="wddDestinatarios" runat="server" Width="350px"  class="chzn-select" />
                             <asp:Label ID="lblDestinatarios" runat="server"/>
                         </td>
 
@@ -229,17 +222,7 @@
                                     <table class="tblSecciones" width="100%">
                                         <tr>
                                             <td>
-                                                <ig:WebDropDown ID="wddUsuarioCopia" 
-                                                                runat="server" 
-                                                                EnableMultipleSelection="false"
-                                                                MultipleSelectionType="Checkbox" 
-                                                                DisplayMode="DropDown"
-                                                                EnableClosingDropDownOnSelect="false"
-                                                                StyleSetName="Claymation"
-                                                                DropDownContainerWidth="300px"
-                                                                DropDownContainerHeight="220px"
-                                                                Width="98%">
-                                                </ig:WebDropDown>
+                                                <asp:DropDownList ID="wddUsuarioCopia" runat="server" Width="350px"  class="chzn-select" />
                                             </td>
                                             <td>
                                                 <asp:Button ID="btnAddCopia" runat="server" Text="Agregar" OnClick="BtnAddUsuarioCopia_Click"  />

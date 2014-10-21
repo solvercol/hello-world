@@ -19,19 +19,19 @@ namespace Presenters.AccionesPC.Presenters
         readonly ISfTBL_ModuloAPC_SolicitudManagementServices _solicitudService;
         readonly ISfTBL_Admin_UsuariosManagementServices _usuariosService;
         readonly ISfTBL_ModuloAPC_AnexosComentarioRespuestaManagementServices _anexosService;
-        readonly IReclamosAdoService _reclamoAdoService;
+        readonly ISolicitudAdoService _solicitudAdoService;
 
         public AdminComentariosRespuestaAPCPresenter(ISfTBL_ModuloAPC_ComentariosRespuestaManagementServices comentariosRespuestaService,
                                                          ISfTBL_ModuloAPC_SolicitudManagementServices solicitudService,
                                                          ISfTBL_Admin_UsuariosManagementServices usuariosService,
                                                          ISfTBL_ModuloAPC_AnexosComentarioRespuestaManagementServices anexosService,
-                                                         IReclamosAdoService reclamoAdoService)
+                                                         ISolicitudAdoService solicitudAdoService)
         {
             _comentariosRespuestaService = comentariosRespuestaService;
             _solicitudService = solicitudService;
             _usuariosService = usuariosService;
             _anexosService = anexosService;
-            _reclamoAdoService = reclamoAdoService;
+            _solicitudAdoService = solicitudAdoService;
         }
 
         public override void SubscribeViewToEvents()
@@ -119,7 +119,7 @@ namespace Presenters.AccionesPC.Presenters
                 {
                     foreach (var item in View.UsuariosCopia)
                     {
-                        _reclamoAdoService.InsertUsuarioCopiaComentario(item.Id, string.Format("{0}", model.IdComentario));
+                        _solicitudAdoService.InsertUsuarioCopiaComentario(item.Id, string.Format("{0}", model.IdComentario));
                     }
                 }
 
