@@ -40,12 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IViews\IAdminActividadesSolicitudView.cs" />
+    <Compile Include="IViews\IAdminActividadSolicitudView.cs" />
     <Compile Include="IViews\IAdminAnexosSolicitudView.cs" />
+    <Compile Include="IViews\IAdminComentarioRespuestaAPCView.cs" />
     <Compile Include="IViews\IAdminInformacionSolicitudView.cs" />
     <Compile Include="IViews\IAdminSolicitudAPCView.cs" />
     <Compile Include="IViews\IMisSolicitudesPendientesView.cs" />
     <Compile Include="IViews\ISolicitudAPCView.cs" />
+    <Compile Include="Presenters\AdminActividadesSolicitudPresenter.cs" />
+    <Compile Include="Presenters\AdminActividadSolicitudPresentador.cs" />
     <Compile Include="Presenters\AdminAnexosSolicitudPresenter.cs" />
+    <Compile Include="Presenters\AdminComentarioRespuestaAPCPresenter.cs" />
     <Compile Include="Presenters\AdminInformacionSolicitudPresenter.cs" />
     <Compile Include="Presenters\AdminSolicitudAPCPresenter.cs" />
     <Compile Include="IViews\IAdminComentariosRespuestaAPCView.cs" />

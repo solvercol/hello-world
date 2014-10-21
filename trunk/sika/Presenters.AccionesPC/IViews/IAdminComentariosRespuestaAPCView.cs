@@ -15,7 +15,6 @@ namespace Presenters.AccionesPC.IViews
         string IdUsuarioDestino { get; set; }
         //string MailContacto { get; set; }
         //string MailContactoTmp { get; set; }
-
         string IdSelectedComentario { get; set; }
         bool IsNewComentario { get; set; }
 
@@ -29,7 +28,7 @@ namespace Presenters.AccionesPC.IViews
         void LoadDestinatarios(List<TBL_Admin_Usuarios> items);
         void LoadUsuarioCopia(List<TBL_Admin_Usuarios> items);
         void LoadUsuariosCopia(List<DTO_ValueKey> items);
-
+    
         void EnableEdit(bool enable);
         #endregion
 
@@ -39,9 +38,6 @@ namespace Presenters.AccionesPC.IViews
         void LoadArchivosAdjuntos(List<DTO_ValueKey> items);
         #endregion
 
-        #region Permisos envio Cliente
-
-        bool CanSendMailToCLient { get; set; }
-        #endregion
+   
     }
 }

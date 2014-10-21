@@ -77,9 +77,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\FrmAdminActividadSolicitud.aspx" />
+    <Content Include="Admin\FrmAdminComentarioRespuestaAPC.aspx" />
     <Content Include="Admin\FrmAdminSolicitudAPC.aspx" />
     <Content Include="Admin\FrmSolicitudAPC.aspx" />
     <Content Include="Admin\FrmTestWUC.aspx" />
+    <Content Include="UserControls\WUCAdminActividadesSolicitudes.ascx" />
     <Content Include="UserControls\WUCAdminAnexosSolicitud.ascx" />
     <Content Include="UserControls\WUCAdminComentariosRespuestaSolicitud.ascx" />
     <Content Include="UserControls\WUCAdminInformacionSolicitud.ascx" />
@@ -94,6 +97,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccionesPCModule.cs" />
+    <Compile Include="Admin\FrmAdminActividadSolicitud.aspx.cs">
+      <DependentUpon>FrmAdminActividadSolicitud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FrmAdminActividadSolicitud.aspx.designer.cs">
+      <DependentUpon>FrmAdminActividadSolicitud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FrmAdminComentarioRespuestaAPC.aspx.cs">
+      <DependentUpon>FrmAdminComentarioRespuestaAPC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FrmAdminComentarioRespuestaAPC.aspx.designer.cs">
+      <DependentUpon>FrmAdminComentarioRespuestaAPC.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\FrmAdminSolicitudAPC.aspx.cs">
       <DependentUpon>FrmAdminSolicitudAPC.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -129,6 +146,13 @@
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
     <Compile Include="UI\ISolicitudWebUserControl.cs" />
+    <Compile Include="UserControls\WUCAdminActividadesSolicitudes.ascx.cs">
+      <DependentUpon>WUCAdminActividadesSolicitudes.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WUCAdminActividadesSolicitudes.ascx.designer.cs">
+      <DependentUpon>WUCAdminActividadesSolicitudes.ascx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\WUCAdminAnexosSolicitud.ascx.cs">
       <DependentUpon>WUCAdminAnexosSolicitud.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
