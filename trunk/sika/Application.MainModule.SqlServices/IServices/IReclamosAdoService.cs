@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using Domain.MainModule.Reclamos.DTO;
+using Infrastructure.CrossCutting.NetFramework.Enums;
 
 namespace Application.MainModule.SqlServices.IServices
 {
@@ -14,9 +15,9 @@ namespace Application.MainModule.SqlServices.IServices
         void InsertUsuarioCopiaActividades(string idUsuario, string idActividad);
         void InsertUsuarioCopiaComentario(string idUsuario, string idComentario);
 
-        string EstadoReclamo(string idreclamo);
+        string EstadoDocumento(string id, ModulosAplicacion module);
 
-        DataTable GetReclamoWorkFlowById(string idReclamo);
+        DataTable GetDocumentWorkFlowById(string id, ModulosAplicacion module);
 
         string EjecutarSpToBool(string spName, Dictionary<string, string> parametros);
 

@@ -5,6 +5,7 @@ using Application.Core;
 using Applications.MainModule.WorkFlow.DTO;
 using ASP.NETCLIENTE.UI;
 using Domain.MainModule.WorkFlow.Enums;
+using Infrastructure.CrossCutting.NetFramework.Enums;
 using Infrastructure.CrossCutting.NetFramework.Structures;
 
 namespace Modules.WorkFlow
@@ -27,7 +28,7 @@ namespace Modules.WorkFlow
 
                 if (ViewState["control"] == null)
                 {
-                    CargarReclamo();
+                    CargarWorkFlow();
                 }
                 else
                 {
@@ -46,7 +47,7 @@ namespace Modules.WorkFlow
 
             if (e.Sender.ToString() == "Refresh")
             {
-                CargarReclamo();
+                CargarWorkFlow();
                 return;
             }
 
@@ -90,17 +91,23 @@ namespace Modules.WorkFlow
                     break;
             }
 
-            CargarReclamo();
+            CargarWorkFlow();
         }
 
 
-        private void CargarReclamo()
+        private void CargarWorkFlow()
         {
             try
             {
-                var idDocumento = Request.QueryString["IdReclamo"];
-                if(string.IsNullOrEmpty(idDocumento))return;
-                var oControl = _module.CargarWorkFlow(idDocumento);
+                
+                if (Module == null)return;
+                if(Module.Seccion == null)return;
+                if( Module.Seccion.TBL_Admin_Modulos == null)return;
+                var module = Module.Seccion.TBL_Admin_Modulos.NombreModulo == "Reclamos" ? ModulosAplicacion.Reclamos : ModulosAplicacion.AccionesPc;
+                var idDocumento = module == ModulosAplicacion.Reclamos ? Request.QueryString["IdReclamo"] : Request.QueryString["IdSolicitud"];
+
+                if (string.IsNullOrEmpty(idDocumento)) return;
+                var oControl = _module.CargarWorkFlow(idDocumento, module);
                 RenderButtomControl(oControl);
                 ViewState["control"] = oControl;
             }
@@ -148,14 +155,20 @@ namespace Modules.WorkFlow
             {
                 var oDocument = (RenderTypeControlButtonDto)ViewState["control"];
                 if (oDocument == null) return;
-                var doc = _module.EjecutarWorkFlow(oDocument);
+
+                
+                
+                var doc = Module.Seccion.TBL_Admin_Modulos.NombreModulo == "Reclamos" ? 
+                    _module.EjecutarWorkFlow(oDocument) :
+                    _module.EjecutarWorkFlowModuloSolicitudes(oDocument);
+
                 //todo: pendiente por implementar logica cuando el objeto es null
                 if (doc == null) return;
 
                 switch (doc.Processestaus)
                 {
                     case "Ok":
-                        CargarReclamo();
+                        CargarWorkFlow();
                         InvokeActualizarEvent(new ViewResulteventArgs("UpdatePanel"));
                         break;
 

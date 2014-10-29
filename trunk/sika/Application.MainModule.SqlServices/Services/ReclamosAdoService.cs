@@ -7,6 +7,7 @@ using Application.MainModule.SqlServices.Domain;
 using Application.MainModule.SqlServices.IServices;
 using Domain.MainModule.Reclamos.DTO;
 using Infraestructure.Data.Core;
+using Infrastructure.CrossCutting.NetFramework.Enums;
 using SqlHelper = Application.MainModule.SqlServices.Domain.SqlHelper;
 
 namespace Application.MainModule.SqlServices.Services
@@ -109,16 +110,17 @@ namespace Application.MainModule.SqlServices.Services
             }
         }
 
-        public string EstadoReclamo(string idreclamo)
+        public string EstadoDocumento(string id, ModulosAplicacion module)
         {
             var oreclamo = new Reclamos(_sql);
-            return oreclamo.EstadoReclamo(idreclamo);
+            return module == ModulosAplicacion.Reclamos ? oreclamo.EstadoReclamo(id) : oreclamo.EstadoAccionesPc(id);
         }
 
-        public DataTable GetReclamoWorkFlowById(string idReclamo)
+        public DataTable GetDocumentWorkFlowById(string id, ModulosAplicacion module)
         {
             var oreclamo = new Reclamos(_sql);
-            return oreclamo.GetReclamoWorkFlowById(idReclamo);
+
+            return module == ModulosAplicacion.Reclamos ? oreclamo.GetReclamoWorkFlowById(id) : oreclamo.GetAccionesWorkFlowById(id);
         }
 
         public string EjecutarSpToBool(string spName, Dictionary<string ,string > parametros)

@@ -43,8 +43,9 @@ namespace Applications.MainModule.WorkFlow.IServices
         /// <summary>
         /// Carga los parámetros del WorkFlow dependiendo del estado del documento y del tipo de modulo a evaluar.
         /// </summary>
-        /// <param name="idPedido"></param>
-        RenderTypeControlButtonDto CargarWorkFlow(string idPedido);
+        /// <param name="id"></param>
+        /// <param name="module"></param>
+        RenderTypeControlButtonDto CargarWorkFlow(string id, ModulosAplicacion module);
 
         /// <summary>
         /// 
@@ -87,6 +88,13 @@ namespace Applications.MainModule.WorkFlow.IServices
         /// <param name="oDocument"></param>
         /// <returns></returns>
         RenderTypeControlButtonDto CambiarIngenieroResponsable(RenderTypeControlButtonDto oDocument);
+
+        /// <summary>
+        /// Ejecuta el Work Flow asociado al modulo de solicitudes
+        /// </summary>
+        /// <param name="oDocument"></param>
+        /// <returns></returns>
+        RenderTypeControlButtonDto EjecutarWorkFlowModuloSolicitudes(RenderTypeControlButtonDto oDocument);
     }
 }
     

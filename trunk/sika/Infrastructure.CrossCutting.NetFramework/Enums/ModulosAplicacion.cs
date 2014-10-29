@@ -17,6 +17,10 @@ namespace Infrastructure.CrossCutting.NetFramework.Enums
         /// <summary>
         /// 4 Modulo WorkFlow
         /// </summary>
-        WorkFlow = 4
+        WorkFlow = 4,
+        /// <summary>
+        /// Modulo de Acciones Preventivas Correctivas
+        /// </summary>
+        AccionesPc = 5
     }
 }
