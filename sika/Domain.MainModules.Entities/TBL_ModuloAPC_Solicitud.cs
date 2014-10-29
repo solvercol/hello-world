@@ -590,6 +590,21 @@ namespace Domain.MainModules.Entities
             }
         }
         private System.DateTime _modifiedOn;
+    
+        [DataMember]
+        public Nullable<int> idGrupo
+        {
+            get { return _idGrupo; }
+            set
+            {
+                if (_idGrupo != value)
+                {
+                    _idGrupo = value;
+                    OnPropertyChanged("idGrupo");
+                }
+            }
+        }
+        private Nullable<int> _idGrupo;
 
         #endregion
         #region Navigation Properties
