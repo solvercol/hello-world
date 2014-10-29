@@ -164,14 +164,6 @@
             <End Role="TBL_Admin_Modulos" EntitySet="TBL_Admin_Modulos" />
             <End Role="TBL_Admin_TypeByModules" EntitySet="TBL_Admin_TypeByModules" />
           </AssociationSet>
-          <AssociationSet Name="FK_TBL_ModuloAPC_Actividades_TBL_Admin_Usuarios_ResponsableEjecucion" Association="SolutionFramework.MainModel.Store.FK_TBL_ModuloAPC_Actividades_TBL_Admin_Usuarios_ResponsableEjecucion">
-            <End Role="TBL_Admin_Usuarios" EntitySet="TBL_Admin_Usuarios" />
-            <End Role="TBL_ModuloAPC_Actividades" EntitySet="TBL_ModuloAPC_Actividades" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TBL_ModuloAPC_Actividades_TBL_Admin_Usuarios_ResponsableSeguimiento" Association="SolutionFramework.MainModel.Store.FK_TBL_ModuloAPC_Actividades_TBL_Admin_Usuarios_ResponsableSeguimiento">
-            <End Role="TBL_Admin_Usuarios" EntitySet="TBL_Admin_Usuarios" />
-            <End Role="TBL_ModuloAPC_Actividades" EntitySet="TBL_ModuloAPC_Actividades" />
-          </AssociationSet>
           <AssociationSet Name="FK_TBL_ModuloAPC_Actividades_TBL_Admin_UsuariosCreateBy" Association="SolutionFramework.MainModel.Store.FK_TBL_ModuloAPC_Actividades_TBL_Admin_UsuariosCreateBy">
             <End Role="TBL_Admin_Usuarios" EntitySet="TBL_Admin_Usuarios" />
             <End Role="TBL_ModuloAPC_Actividades" EntitySet="TBL_ModuloAPC_Actividades" />
@@ -1262,7 +1254,7 @@
           <Property Name="Resultado" Type="varchar" MaxLength="50" />
           <Property Name="Cerrada" Type="bit" Nullable="false" />
           <Property Name="ObservacionesCierre" Type="varchar" MaxLength="512" />
-          <Property Name="IdResponsableActual" Type="int" Nullable="false" />
+          <Property Name="IdResponsableActual" Type="int" />
           <Property Name="FechaCierre" Type="datetime" />
           <Property Name="IdUsuarioCierre" Type="int" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
@@ -1270,6 +1262,7 @@
           <Property Name="CreateOn" Type="datetime" Nullable="false" />
           <Property Name="ModifiedBy" Type="int" Nullable="false" />
           <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+          <Property Name="idGrupo" Type="int" />
         </EntityType>
         <EntityType Name="TBL_ModuloAPC_UsuarioCopiaComentariosRespuesta">
           <Key>
@@ -1314,6 +1307,7 @@
           <Property Name="CreateOn" Type="datetime" Nullable="false" />
           <Property Name="ModifiedBy" Type="int" Nullable="false" />
           <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+          <Property Name="IdDocumentoLotus" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="TBL_ModuloDocumentos_DocumentoAdjunto">
           <Key>
@@ -1459,6 +1453,7 @@
           <Property Name="CreatedOn" Type="datetime" />
           <Property Name="ModifiedBy" Type="varchar" MaxLength="30" />
           <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="tipo" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="TBL_ModuloPlanAccion_BancoActividades">
           <Key>
@@ -2237,30 +2232,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_TBL_ModuloAPC_Actividades_TBL_Admin_Usuarios_ResponsableEjecucion">
-          <End Role="TBL_Admin_Usuarios" Type="SolutionFramework.MainModel.Store.TBL_Admin_Usuarios" Multiplicity="1" />
-          <End Role="TBL_ModuloAPC_Actividades" Type="SolutionFramework.MainModel.Store.TBL_ModuloAPC_Actividades" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_Admin_Usuarios">
-              <PropertyRef Name="IdUser" />
-            </Principal>
-            <Dependent Role="TBL_ModuloAPC_Actividades">
-              <PropertyRef Name="IdResponsableEjecucion" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TBL_ModuloAPC_Actividades_TBL_Admin_Usuarios_ResponsableSeguimiento">
-          <End Role="TBL_Admin_Usuarios" Type="SolutionFramework.MainModel.Store.TBL_Admin_Usuarios" Multiplicity="1" />
-          <End Role="TBL_ModuloAPC_Actividades" Type="SolutionFramework.MainModel.Store.TBL_ModuloAPC_Actividades" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_Admin_Usuarios">
-              <PropertyRef Name="IdUser" />
-            </Principal>
-            <Dependent Role="TBL_ModuloAPC_Actividades">
-              <PropertyRef Name="IdResponsableSeguimiento" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_TBL_ModuloAPC_Actividades_TBL_Admin_UsuariosCreateBy">
           <End Role="TBL_Admin_Usuarios" Type="SolutionFramework.MainModel.Store.TBL_Admin_Usuarios" Multiplicity="1" />
           <End Role="TBL_ModuloAPC_Actividades" Type="SolutionFramework.MainModel.Store.TBL_ModuloAPC_Actividades" Multiplicity="*" />
@@ -2622,7 +2593,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TBL_ModuloAPC_Solicitud_TBL_Admin_UsuariosResponsableActual">
-          <End Role="TBL_Admin_Usuarios" Type="SolutionFramework.MainModel.Store.TBL_Admin_Usuarios" Multiplicity="1" />
+          <End Role="TBL_Admin_Usuarios" Type="SolutionFramework.MainModel.Store.TBL_Admin_Usuarios" Multiplicity="0..1" />
           <End Role="TBL_ModuloAPC_Solicitud" Type="SolutionFramework.MainModel.Store.TBL_ModuloAPC_Solicitud" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TBL_Admin_Usuarios">
@@ -5435,6 +5406,7 @@
           <NavigationProperty Name="TBL_ModuloAPC_Causas" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloAPC_Causas_TBL_ModuloAPC_Solicitud" FromRole="TBL_ModuloAPC_Solicitud" ToRole="TBL_ModuloAPC_Causas" />
           <NavigationProperty Name="TBL_ModuloAPC_ComentariosRespuesta" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloAPC_ComentariosRespuesta_TBL_ModuloAPC_Solicitud" FromRole="TBL_ModuloAPC_Solicitud" ToRole="TBL_ModuloAPC_ComentariosRespuesta" />
           <NavigationProperty Name="TBL_ModuloReclamos_Reclamo" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloAPC_Solicitud_TBL_ModuloReclamos_ReclamoCreacion" FromRole="TBL_ModuloAPC_Solicitud" ToRole="TBL_ModuloReclamos_Reclamo" />
+          <Property Type="Int32" Name="idGrupo" />
         </EntityType>
         <EntityType Name="TBL_ModuloDocumentos_Categorias">
           <Key>
@@ -5487,6 +5459,7 @@
           <NavigationProperty Name="TBL_ModuloDocumentos_DocumentoAdjunto" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_DocumentoAdjunto_TBL_ModuloDocumentos_Documento" FromRole="TBL_ModuloDocumentos_Documento" ToRole="TBL_ModuloDocumentos_DocumentoAdjunto" />
           <NavigationProperty Name="TBL_ModuloDocumentos_HistorialDocumento" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_HistorialDocumento_TBL_ModuloDocumentos_Documento" FromRole="TBL_ModuloDocumentos_Documento" ToRole="TBL_ModuloDocumentos_HistorialDocumento" />
           <NavigationProperty Name="TBL_ModuloDocumentos_LogCambios" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentos_LogCambios_TBL_ModuloDocumentos_Documento" FromRole="TBL_ModuloDocumentos_Documento" ToRole="TBL_ModuloDocumentos_LogCambios" />
+          <Property Type="String" Name="IdDocumentoLotus" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="TBL_ModuloDocumentos_DocumentoAdjunto">
           <Key>
@@ -5650,6 +5623,7 @@
           <Property Type="DateTime" Name="ModifiedOn" />
           <NavigationProperty Name="TBL_ModuloDocumentosAnexos_Carpetas" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentosAnexos_Documento_TBL_ModuloDocumentosAnexos_Carpetas" FromRole="TBL_ModuloDocumentosAnexos_Documento" ToRole="TBL_ModuloDocumentosAnexos_Carpetas" />
           <NavigationProperty Name="TBL_ModuloDocumentosAnexos_Contenido" Relationship="SolutionFramework.MainModel.FK_TBL_ModuloDocumentosAnexos_Contenido_TBL_ModuloDocumentosAnexos_Documento" FromRole="TBL_ModuloDocumentosAnexos_Documento" ToRole="TBL_ModuloDocumentosAnexos_Contenido" />
+          <Property Type="String" Name="tipo" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="TBL_ModuloPlanAccion_BancoActividades">
           <Key>
@@ -8578,6 +8552,7 @@
           <EntitySetMapping Name="TBL_ModuloAPC_Solicitud">
             <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_ModuloAPC_Solicitud">
               <MappingFragment StoreEntitySet="TBL_ModuloAPC_Solicitud">
+                <ScalarProperty Name="idGrupo" ColumnName="idGrupo" />
                 <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
                 <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
                 <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
@@ -8628,6 +8603,7 @@
           <EntitySetMapping Name="TBL_ModuloDocumentos_Documento">
             <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_ModuloDocumentos_Documento">
               <MappingFragment StoreEntitySet="TBL_ModuloDocumentos_Documento">
+                <ScalarProperty Name="IdDocumentoLotus" ColumnName="IdDocumentoLotus" />
                 <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
                 <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
                 <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
@@ -8781,6 +8757,7 @@
           <EntitySetMapping Name="TBL_ModuloDocumentosAnexos_Documento">
             <EntityTypeMapping TypeName="SolutionFramework.MainModel.TBL_ModuloDocumentosAnexos_Documento">
               <MappingFragment StoreEntitySet="TBL_ModuloDocumentosAnexos_Documento">
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
                 <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
                 <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
                 <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
@@ -9417,7 +9394,7 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="MainModuleDataModel" ZoomLevel="21">
+      <Diagram Name="MainModuleDataModel" ZoomLevel="10">
         <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_Ciudades" Width="1.5" PointX="5.25" PointY="2.75" Height="2.9417936197916674" />
         <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_ConfiguracionServidores" Width="1.5" PointX="8.75" PointY="6.75" Height="3.1340950520833246" />
         <EntityTypeShape EntityType="SolutionFramework.MainModel.TBL_Admin_Departamentos" Width="1.5" PointX="3" PointY="2.625" Height="3.1340950520833246" />

@@ -203,6 +203,21 @@ namespace Domain.MainModules.Entities
             }
         }
         private Nullable<System.DateTime> _modifiedOn;
+    
+        [DataMember]
+        public string tipo
+        {
+            get { return _tipo; }
+            set
+            {
+                if (_tipo != value)
+                {
+                    _tipo = value;
+                    OnPropertyChanged("tipo");
+                }
+            }
+        }
+        private string _tipo;
 
         #endregion
         #region Navigation Properties

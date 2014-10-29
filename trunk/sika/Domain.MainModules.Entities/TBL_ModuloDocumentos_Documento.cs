@@ -360,6 +360,21 @@ namespace Domain.MainModules.Entities
             }
         }
         private System.DateTime _modifiedOn;
+    
+        [DataMember]
+        public string IdDocumentoLotus
+        {
+            get { return _idDocumentoLotus; }
+            set
+            {
+                if (_idDocumentoLotus != value)
+                {
+                    _idDocumentoLotus = value;
+                    OnPropertyChanged("IdDocumentoLotus");
+                }
+            }
+        }
+        private string _idDocumentoLotus;
 
         #endregion
         #region Navigation Properties
