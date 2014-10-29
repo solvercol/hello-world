@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Acciones\GenerarConsecutivo.cs" />
     <Compile Include="DTO\DocumentDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\SendEmailActivityResponsible.cs" />
@@ -58,6 +59,10 @@
     <ProjectReference Include="..\Domain.Core\Domain.Core.csproj">
       <Project>{94FCB1C4-2C52-4D9D-A07B-F01AC38CF88E}</Project>
       <Name>Domain.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.MainModule.AccionesPC\Domain.MainModule.AccionesPC.csproj">
+      <Project>{28C94AC4-37B5-40C2-984D-725B536DF460}</Project>
+      <Name>Domain.MainModule.AccionesPC</Name>
     </ProjectReference>
     <ProjectReference Include="..\Domain.MainModule.PlanAccion\Domain.MainModule.PlanAccion.csproj">
       <Project>{0A961C07-D6A7-4693-8314-2413693CE840}</Project>
@@ -92,9 +97,7 @@
       <Name>Infrastructure.CrossCutting</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Acciones\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy /s /y "$(TargetDir)Applications.MainModule.AccionesSistema*.dll" "$(SolutionDir)"Web\bin\</PostBuildEvent>

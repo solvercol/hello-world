@@ -9,5 +9,6 @@ namespace Domain.MainModule.AccionesPC.Contracts
     {
         TBL_ModuloAPC_Solicitud GetCompleteEntity(ISpecification<TBL_ModuloAPC_Solicitud> specification);
         List<TBL_ModuloAPC_Solicitud> GetCompleteEntityList(ISpecification<TBL_ModuloAPC_Solicitud> specification);
+        TBL_ModuloAPC_Solicitud GetSolicitudById(decimal id);
     }
 }

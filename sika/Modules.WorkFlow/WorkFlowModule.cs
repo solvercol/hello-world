@@ -2,6 +2,7 @@ using Application.Core;
 using Applications.MainModule.Admin.IServices;
 using Applications.MainModule.WorkFlow.DTO;
 using Applications.MainModule.WorkFlow.IServices;
+using Infrastructure.CrossCutting.NetFramework.Enums;
 
 namespace Modules.WorkFlow
 {
@@ -46,9 +47,15 @@ namespace Modules.WorkFlow
            return _rutasServices.EjecutarWorkFlow(document);
         }
 
-        public RenderTypeControlButtonDto CargarWorkFlow(string idDocumento)
+        public RenderTypeControlButtonDto EjecutarWorkFlowModuloSolicitudes(RenderTypeControlButtonDto document)
         {
-           return  _rutasServices.CargarWorkFlow(idDocumento);
+            return _rutasServices.EjecutarWorkFlowModuloSolicitudes(document);
+        }
+
+        
+        public RenderTypeControlButtonDto CargarWorkFlow(string idDocumento, ModulosAplicacion module)
+        {
+           return  _rutasServices.CargarWorkFlow(idDocumento, module);
         }
 
         public RenderTypeControlButtonDto ActualizarIngenieroResponsable(RenderTypeControlButtonDto oDocument)

@@ -21,15 +21,18 @@ namespace Presenters.AccionesPC.Presenters
         readonly ISfTBL_ModuloAPC_AnexosSolicitudManagementServices _anexosService;
         readonly ISfTBL_ModuloReclamos_ReclamoManagementServices _reclamoService;
         readonly ISfTBL_ModuloAPC_AreasManagementServices _areasService;
+        private readonly ISfTBL_Admin_EstadosProcesoManagementServices _estados;
 
         public AdminSolicitudAPCPresenter(ISfTBL_Admin_UsuariosManagementServices usuariosService,
                                             ISfTBL_Admin_OptionListManagementServices optionListService,
                                             ISfTBL_ModuloAPC_SolicitudManagementServices solicitudService,
                                             ISfTBL_ModuloReclamos_ReclamoManagementServices reclamoService,
                                             ISfTBL_ModuloAPC_AreasManagementServices areasService,
-                                            ISfTBL_ModuloAPC_AnexosSolicitudManagementServices anexosService)
+                                            ISfTBL_ModuloAPC_AnexosSolicitudManagementServices anexosService, 
+                                            ISfTBL_Admin_EstadosProcesoManagementServices estados)
         {
             _usuariosService = usuariosService;
+            _estados = estados;
             _optionListService = optionListService;
             _solicitudService = solicitudService;
             _reclamoService = reclamoService;
@@ -396,6 +399,11 @@ namespace Presenters.AccionesPC.Presenters
 
         TBL_ModuloAPC_Solicitud GetModel()
         {
+            var estadoRegistrado = _estados.EstadoPorTipoModuloNombreEstado(ModulosAplicacion.AccionesPc,
+                                                                            EstadosAplicacion.Registro);
+            
+            
+
             var model = new TBL_ModuloAPC_Solicitud();
 
             model.Consecutivo = Convert.ToInt32(View.ConsecutivoSolicitud) + 1;
@@ -416,7 +424,7 @@ namespace Presenters.AccionesPC.Presenters
             model.DescripcionAccion = View.DescripcionAccion;
             model.FechaDesde = View.FechaDesde;
             model.FechaHasta = View.FechaHasta;
-            model.IdEstado = 1; // Registrado - Borrador
+            model.IdEstado = estadoRegistrado == null ? 11 : estadoRegistrado.IdEstado;
             model.IsActive = true;
             model.CreateBy = View.UserSession.IdUser;
             model.CreateOn = DateTime.Now;

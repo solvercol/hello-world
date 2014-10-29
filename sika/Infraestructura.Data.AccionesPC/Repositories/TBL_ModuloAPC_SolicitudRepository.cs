@@ -89,6 +89,30 @@ namespace Infrastructure.Data.MainModule.AccionesPC.Repositories
                 Messages.exception_InvalidStoreContext,
                 GetType().Name));
         }
+
+        public TBL_ModuloAPC_Solicitud GetSolicitudById(decimal id)
+        {
+            if (id > 0)
+            {
+                var set = _currentUnitOfWork.CreateSet<TBL_ModuloAPC_Solicitud>();
+
+                return set.Where(c => c.IdSolucitudAPC == id)
+                                    .Include(x => x.TBL_Admin_Usuarios)  // IdAdministrador
+                                    .Include(x => x.TBL_Admin_Usuarios1) // IdAdministradorFuncional
+                                    .Include(x => x.TBL_Admin_Usuarios2) // IdUsuarioCierre
+                                    .Include(x => x.TBL_Admin_Usuarios3) // CreateBy
+                                    .Include(x => x.TBL_Admin_Usuarios4) // IdGerente
+                                    .Include(x => x.TBL_Admin_Usuarios5) // ModifiedBy
+                                    .Include(x => x.TBL_Admin_Usuarios6) // IdResponsableActual
+                                    .Include(x => x.TBL_Admin_Usuarios7) // IdResponsableEjecucion
+                                    .Include(x => x.TBL_Admin_Usuarios8) // IdResponsableSeguimiento
+                                    .Include(x => x.TBL_Admin_Usuarios9) // IdSolicitante
+                                    .Include(x => x.TBL_Admin_EstadosProceso)
+                          .Select(c => c)
+                          .SingleOrDefault();
+            }
+            return null;
+        }
     }
 }
     

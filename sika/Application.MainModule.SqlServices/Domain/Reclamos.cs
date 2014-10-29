@@ -15,19 +15,35 @@ namespace Application.MainModule.SqlServices.Domain
             _sql = sql;
         }
 
-        public string EstadoReclamo(string idReclamo)
+        public string EstadoReclamo(string id)
         {
             try
             {
                 const string strSql = " Select Est.Estado from TBL_ModuloReclamos_Reclamo Rec INNER JOIN TBL_Admin_EstadosProceso Est On Rec.IdEstado = Est.IdEstado where Rec.IdReclamo = @IdReclamo";
                 var result = _sql.ExecuteScalar(strSql, CommandType.Text,
-                                       new SqlParameter("@IdReclamo", idReclamo));
+                                       new SqlParameter("@IdReclamo", id));
 
                 return result == null ? string.Empty : result.ToString();
             }
             catch (Exception ex)
             {
                 throw new SqlExecutionException("EstadoPedido", ex);
+            }
+        }
+
+        public string EstadoAccionesPc(string id)
+        {
+            try
+            {
+                const string strSql = " Select Est.Estado from TBL_ModuloAPC_Solicitud Sol INNER JOIN TBL_Admin_EstadosProceso Est On Sol.IdEstado = Est.IdEstado where Sol.IdSolucitudAPC = @Id";
+                var result = _sql.ExecuteScalar(strSql, CommandType.Text,
+                                       new SqlParameter("@Id", id));
+
+                return result == null ? string.Empty : result.ToString();
+            }
+            catch (Exception ex)
+            {
+                throw new SqlExecutionException("EstadoAccionesPc", ex);
             }
         }
 
@@ -41,6 +57,19 @@ namespace Application.MainModule.SqlServices.Domain
             catch (Exception ex)
             {
                 throw new SqlExecutionException("CargarPedidoCompletoPorIdPedido", ex);
+            }
+        }
+
+        public DataTable GetAccionesWorkFlowById(string id)
+        {
+            try
+            {
+                return _sql.ExecuteDataTable("GetAccionesPcWorkFlowById", CommandType.StoredProcedure,
+                                       new SqlParameter("@Id", id));
+            }
+            catch (Exception ex)
+            {
+                throw new SqlExecutionException("GetAccionesWorkFlowById", ex);
             }
         }
 
