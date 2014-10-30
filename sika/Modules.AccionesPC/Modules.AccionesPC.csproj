@@ -84,10 +84,20 @@
     <Content Include="Admin\FrmTestWUC.aspx" />
     <Content Include="UserControls\WUCAdminActividadesSolicitudes.ascx" />
     <Content Include="UserControls\WUCAdminAnexosSolicitud.ascx" />
+    <Content Include="UserControls\WUCAdminCausasSolicitud.ascx" />
     <Content Include="UserControls\WUCAdminComentariosRespuestaSolicitud.ascx" />
     <Content Include="UserControls\WUCAdminInformacionSolicitud.ascx" />
     <Content Include="UserControls\WucAsignarResponsableSolicitud.ascx" />
     <Content Include="Views\FrmMisSolicitudesPendientes.aspx" />
+    <Content Include="Views\FrmMisSolicitudesPorEstado.aspx" />
+    <Content Include="Views\FrmMisSolicitudesPorFecha.aspx" />
+    <Content Include="Views\FrmSeguimientoPorArea.aspx" />
+    <Content Include="Views\FrmSeguimientoPorAutor.aspx" />
+    <Content Include="Views\FrmSeguimientoPorEstado.aspx" />
+    <Content Include="Views\FrmSeguimientoPorFecha.aspx" />
+    <Content Include="Views\FrmSeguimientoPorRespActual.aspx" />
+    <Content Include="Views\FrmSeguimientoPorTipo.aspx" />
+    <Content Include="Views\FrmSeguimientoTotalSolicitudes.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -161,6 +171,13 @@
     <Compile Include="UserControls\WUCAdminAnexosSolicitud.ascx.designer.cs">
       <DependentUpon>WUCAdminAnexosSolicitud.ascx</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\WUCAdminCausasSolicitud.ascx.cs">
+      <DependentUpon>WUCAdminCausasSolicitud.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WUCAdminCausasSolicitud.ascx.designer.cs">
+      <DependentUpon>WUCAdminCausasSolicitud.ascx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\WUCAdminComentariosRespuestaSolicitud.ascx.cs">
       <DependentUpon>WUCAdminComentariosRespuestaSolicitud.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -188,6 +205,69 @@
     </Compile>
     <Compile Include="Views\FrmMisSolicitudesPendientes.aspx.designer.cs">
       <DependentUpon>FrmMisSolicitudesPendientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmMisSolicitudesPorEstado.aspx.cs">
+      <DependentUpon>FrmMisSolicitudesPorEstado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FrmMisSolicitudesPorEstado.aspx.designer.cs">
+      <DependentUpon>FrmMisSolicitudesPorEstado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmMisSolicitudesPorFecha.aspx.cs">
+      <DependentUpon>FrmMisSolicitudesPorFecha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FrmMisSolicitudesPorFecha.aspx.designer.cs">
+      <DependentUpon>FrmMisSolicitudesPorFecha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmSeguimientoPorArea.aspx.cs">
+      <DependentUpon>FrmSeguimientoPorArea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FrmSeguimientoPorArea.aspx.designer.cs">
+      <DependentUpon>FrmSeguimientoPorArea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmSeguimientoPorAutor.aspx.cs">
+      <DependentUpon>FrmSeguimientoPorAutor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FrmSeguimientoPorAutor.aspx.designer.cs">
+      <DependentUpon>FrmSeguimientoPorAutor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmSeguimientoPorEstado.aspx.cs">
+      <DependentUpon>FrmSeguimientoPorEstado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FrmSeguimientoPorEstado.aspx.designer.cs">
+      <DependentUpon>FrmSeguimientoPorEstado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmSeguimientoPorFecha.aspx.cs">
+      <DependentUpon>FrmSeguimientoPorFecha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FrmSeguimientoPorFecha.aspx.designer.cs">
+      <DependentUpon>FrmSeguimientoPorFecha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmSeguimientoPorRespActual.aspx.cs">
+      <DependentUpon>FrmSeguimientoPorRespActual.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FrmSeguimientoPorRespActual.aspx.designer.cs">
+      <DependentUpon>FrmSeguimientoPorRespActual.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmSeguimientoPorTipo.aspx.cs">
+      <DependentUpon>FrmSeguimientoPorTipo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FrmSeguimientoPorTipo.aspx.designer.cs">
+      <DependentUpon>FrmSeguimientoPorTipo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmSeguimientoTotalSolicitudes.aspx.cs">
+      <DependentUpon>FrmSeguimientoTotalSolicitudes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FrmSeguimientoTotalSolicitudes.aspx.designer.cs">
+      <DependentUpon>FrmSeguimientoTotalSolicitudes.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />
@@ -262,7 +342,16 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Resources\ReportViewer\RptSeguimientoTotalSolicitudes.rdlc" />
+    <EmbeddedResource Include="Resources\ReportViewer\RptSeguimientoPorTipo.rdlc" />
+    <EmbeddedResource Include="Resources\ReportViewer\RptSeguimientoPorAutor.rdlc" />
+    <EmbeddedResource Include="Resources\ReportViewer\RptSeguimientoPorResponsableActual.rdlc" />
+    <EmbeddedResource Include="Resources\ReportViewer\RptSeguimientoPorFecha.rdlc" />
+    <EmbeddedResource Include="Resources\ReportViewer\RptSeguimientoPorEstado.rdlc" />
+    <EmbeddedResource Include="Resources\ReportViewer\RptMisSolicitudesPorFecha.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\RptMisSolicitudesPendientes.rdlc" />
+    <EmbeddedResource Include="Resources\ReportViewer\RptMisSolicitudesPorEstado.rdlc" />
+    <EmbeddedResource Include="Resources\ReportViewer\RptSeguimientoPorArea.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataSets\DS_Report.xsc">
