@@ -8,6 +8,7 @@ using Application.MainModule.SqlServices.IServices;
 using Application.MainModule.SqlServices.Services;
 using Applications.MainModule.Admin.IServices;
 using Applications.MainModule.Admin.Services;
+using Domain.MainModule.AccionesPC.Services;
 using Domain.MainModule.Contracts;
 using Domain.MainModule.Reclamos.Services;
 using Domain.MainModule.WorkFlow.Services.FieldsValidatos;
@@ -138,7 +139,7 @@ namespace Infrastructure.CrossCutting.IoC
             #endregion
 
           
-             #region Servicios Transversales
+            #region Servicios Transversales
             container.RegisterType<IAutentication, AutenticationServices>(new TransientLifetimeManager());
             container.RegisterType<IEmailService, DefaultEmailService>(new TransientLifetimeManager());
             container.RegisterType<IEmailTemplateEngine, SimpleEmailTemplateEngine>(new TransientLifetimeManager());
@@ -149,10 +150,12 @@ namespace Infrastructure.CrossCutting.IoC
             #region Servicios Capa de Dominio
             //Reclamos
             container.RegisterType<ITBL_Moduloreclamos_ReclamoDomainServices, TBL_Moduloreclamos_ReclamoDomainServices>(new TransientLifetimeManager());
-
+            //Solicitudes APC
+            container.RegisterType<ISolicitudesDomainServices, SolicitudesDomainServices>(new TransientLifetimeManager());
             //WorkFlow
             container.RegisterType<ITblModuloWorkFlowRutasFieldsValidatorDomainServices, TblModuloWorkFlowRutasFieldsValidatorDomainServices>(new TransientLifetimeManager());
             container.RegisterType<ITblModuloWorkFlowRutaDomainServices, TblModuloWorkFlowRutaDomainServices>(new TransientLifetimeManager());
+            
             #endregion
         }
 

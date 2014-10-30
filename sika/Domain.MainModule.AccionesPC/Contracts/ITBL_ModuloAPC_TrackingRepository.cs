@@ -12,13 +12,11 @@
 using Domain.Core;
 using Domain.MainModules.Entities;
 
-namespace Domain.MainModule.Contracts
+namespace Domain.MainModule.AccionesPC.Contracts
 {
-    public interface ITBL_Admin_RolesRepository : IRepository<TBL_Admin_Roles>
+    public interface ITBL_ModuloAPC_TrackingRepository : IRepository<TBL_ModuloAPC_Tracking>
     {
-        TBL_Admin_Roles GetURoleById(int id);
-
-        TBL_Admin_Roles GetURoleByName(string name);
+        
     }
 }
     

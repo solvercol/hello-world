@@ -57,7 +57,7 @@ namespace Modules.Reclamos.Admin
             set { ViewState["IdCategoria"] = value; }
         }
 
-        public string InputWindow
+        private string InputWindow
         {
             get
             {

@@ -19,6 +19,7 @@ using Applications.MainModule.WorkFlow.Resources;
 using Applications.MainModule.WorkFlow.Util;
 using Domain.Core;
 using Domain.MainModule.AccionesPC.Contracts;
+using Domain.MainModule.AccionesPC.Services;
 using Domain.MainModule.Contracts;
 using Domain.MainModule.Reclamos.Contracts;
 using Domain.MainModule.Reclamos.Services;
@@ -49,6 +50,7 @@ namespace Applications.MainModule.WorkFlow.Services
         private readonly ITblModuloWorkFlowRutaDomainServices _workFlowDomainServices;
         private readonly IAutentication _autenticationService;
         private readonly ITBL_Admin_UsuariosRepository _usuariosRepository;
+        private readonly ITBL_Admin_RolesRepository _rolesRepository;
         private readonly ITBL_Admin_SistemaNotificacionesRepository _notificacionesSistemaRepository;
         private readonly ISendMailNotification _sendMailNotificationServices;
         private readonly IReclamosAdoService _sqlReclamosServices;
@@ -58,6 +60,12 @@ namespace Applications.MainModule.WorkFlow.Services
         private readonly ISystemActionsManagementServices _systemActionsServices;
         readonly ITraceManager _traceManager;
         private readonly ITBL_ModuloAPC_SolicitudRepository _solicitudesRepository;
+        private readonly ISolicitudesDomainServices _solicitudesDomainServices;
+        private readonly ITBL_ModuloAPC_TrackingRepository _trackSolicitudesRepository;
+        private readonly ITBL_ModuloAPC_LogSolicitudRepository _logSolicitudesRepository;
+
+
+
         #endregion
 
          #region Constructor
@@ -80,11 +88,19 @@ namespace Applications.MainModule.WorkFlow.Services
              ISystemActionsManagementServices systemActionsServices, 
              ITBL_ModuloReclamos_LogReclamosRepository logDocumentosRepository, 
              ITraceManager traceManager, 
-             ITBL_ModuloAPC_SolicitudRepository solicitudesRepository)
+             ITBL_ModuloAPC_SolicitudRepository solicitudesRepository, 
+             ITBL_Admin_RolesRepository rolesRepository, 
+             ISolicitudesDomainServices solicitudesDomainServices, 
+             ITBL_ModuloAPC_TrackingRepository trackSolicitudesRepository, 
+             ITBL_ModuloAPC_LogSolicitudRepository logSolicitudesRepository)
          {
             if (tblModuloWorkFlowRutasRepository == null)
                 throw new ArgumentNullException("tblModuloWorkFlowRutasRepository");
             _tblModuloWorkFlowRutasRepository = tblModuloWorkFlowRutasRepository;
+             _logSolicitudesRepository = logSolicitudesRepository;
+             _trackSolicitudesRepository = trackSolicitudesRepository;
+             _solicitudesDomainServices = solicitudesDomainServices;
+             _rolesRepository = rolesRepository;
              _solicitudesRepository = solicitudesRepository;
              _traceManager = traceManager;
              _logDocumentosRepository = logDocumentosRepository;
@@ -537,7 +553,7 @@ namespace Applications.MainModule.WorkFlow.Services
 
                 try
                 {
-                    GenerarNotificacionSistema(oDocument);
+                    GenerarNotificacionSistema(oDocument, ModulosAplicacion.Reclamos);
                     var userSession = _autenticationService.GetUserFromSession;
                     _sendMailNotificationServices.EnviarCorreoelectronicoDevolucion(oDocument, userSession);
                 }
@@ -650,7 +666,7 @@ namespace Applications.MainModule.WorkFlow.Services
 
                 try
                 {
-                    GenerarNotificacionSistema(oDocument);
+                    GenerarNotificacionSistema(oDocument, ModulosAplicacion.Reclamos);
                 }
                 catch (Exception ex)
                 {
@@ -659,7 +675,7 @@ namespace Applications.MainModule.WorkFlow.Services
 
                 try
                 {
-                    SendMail(oDocument);
+                    SendMail(oDocument, ModulosAplicacion.Reclamos);
 
                     var userSession = _autenticationService.GetUserFromSession;
                     _sendMailNotificationServices.EnviarCorreoElectronicoNotificacionCliente(oDocument, userSession);
@@ -752,7 +768,7 @@ namespace Applications.MainModule.WorkFlow.Services
                     //Crea un nuevo registro en el log del reclamo.
                     GenerarEntradalog(oDocument);
 
-                    GenerarNotificacionSistema(oDocument);
+                    GenerarNotificacionSistema(oDocument, ModulosAplicacion.Reclamos);
 
                     unitOfWork.CommitAndRefreshChanges();
 
@@ -762,7 +778,7 @@ namespace Applications.MainModule.WorkFlow.Services
 
                 try
                 {
-                    SendMail(oDocument);
+                    SendMail(oDocument, ModulosAplicacion.Reclamos);
                 }
                 catch (Exception ex)
                 {
@@ -791,6 +807,11 @@ namespace Applications.MainModule.WorkFlow.Services
             try
             {
 
+                TBL_Admin_Usuarios nextResponsable = null;
+                TBL_Admin_Roles nextGroupResponsible = null;
+                TBL_Admin_Usuarios currentResponsable = null;
+                TBL_Admin_Roles currentGroupResponsible = null;
+
                 var estadoDocumento = _sqlReclamosServices.EstadoDocumento(idDocument, module);
 
                 if (string.IsNullOrEmpty(estadoDocumento))
@@ -807,10 +828,30 @@ namespace Applications.MainModule.WorkFlow.Services
                 var oWorkflow = _workFlowDomainServices.CargarWorkFlow(listadoRutas, dtDocumento, odoc);
 
                 if (oWorkflow == null) return null;
-               
-                var nextResponsable = RetornarSiguienteUsuarioResponsable(oWorkflow.RoleNextResponsible, Convert.ToInt32(idDocument), dtDocumento);
 
-                var currentResponsible = RetornarResponsableDocumento(Convert.ToInt32(idDocument));
+                var m = DefinedRegexEvaluation.Grupo.Match(oWorkflow.RoleNextResponsible);
+                var isNextGroup = false;
+                var iscurrentGroup = false;
+
+                if (m.Success)
+                {
+                    nextGroupResponsible = RetornarGruporesponsable(oWorkflow.RoleNextResponsible);
+                    isNextGroup = true;
+                }
+                else
+                {
+                    nextResponsable = RetornarSiguienteUsuarioResponsable(oWorkflow.RoleNextResponsible, Convert.ToInt32(idDocument), dtDocumento);
+                }
+
+                if (dtDocumento.Rows[0]["IdGrupo"] is DBNull)
+                {
+                    currentResponsable = RetornarResponsableDocumento(Convert.ToInt32(idDocument));
+                }
+                else
+                {
+                    currentGroupResponsible = RetornarGruporesponsableById(Convert.ToInt32(dtDocumento.Rows[0]["IdGrupo"]));
+                    iscurrentGroup = true;
+                }
 
                 var oRender = new RenderTypeControlButtonDto
                                   {
@@ -820,15 +861,20 @@ namespace Applications.MainModule.WorkFlow.Services
                                       IdNextStatus = oWorkflow.IdNextStatus,
                                       TextControl = oWorkflow.TextControl,
                                       IdDocument = idDocument,
-                                      CurrentResponsibe = currentResponsible == null ? string.Empty : currentResponsible.Nombres,
-                                      IdCurrentResponsibe = currentResponsible == null ? string.Empty : currentResponsible.IdUser.ToString(),
-                                      EmailCurrentResponsibe = currentResponsible == null ? string.Empty : currentResponsible.Email,
-                                      NextResponsibe = nextResponsable == null ? string.Empty : nextResponsable.Nombres,
-                                      IdNextResponsibe = nextResponsable == null ? string.Empty : nextResponsable.IdUser.ToString(),
+
+                                      CurrentResponsibe = currentResponsable == null ? (currentGroupResponsible == null ? string.Empty : currentGroupResponsible.NombreRol) : currentResponsable.Nombres,
+                                      IdCurrentResponsibe = currentResponsable == null ? (currentGroupResponsible == null ? string.Empty : currentGroupResponsible.IdRol.ToString()) : currentResponsable.IdUser.ToString(),
+                                      EmailCurrentResponsibe = currentResponsable == null ? string.Empty : currentResponsable.Email,
+
+                                      NextResponsibe = nextResponsable == null ? (nextGroupResponsible==null?string.Empty:nextGroupResponsible.NombreRol) : nextResponsable.Nombres,
+                                      IdNextResponsibe = nextResponsable == null ? (nextGroupResponsible == null ? string.Empty : nextGroupResponsible.IdRol.ToString()) : nextResponsable.IdUser.ToString(),
+                                      
                                       EmailNextResponsibe = nextResponsable == null ? string.Empty : nextResponsable.Email,
                                       OrdenCompra = odoc.OrdenCompra,
                                       Cliente = odoc.Cliente,
                                       FormulaNextresponsible = oWorkflow.RoleNextResponsible,
+                                      IsNextGroupResponsible = isNextGroup,
+                                      IsCurrentGroupResponsible = iscurrentGroup
                 };
 
                 return oRender;
@@ -954,7 +1000,7 @@ namespace Applications.MainModule.WorkFlow.Services
                     //Crea un nuevo registro en el log del pedido.
                     GenerarEntradalog(oDocument);
 
-                    GenerarNotificacionSistema(oDocument);
+                    GenerarNotificacionSistema(oDocument,ModulosAplicacion.Reclamos);
 
                     unitOfWork.CommitAndRefreshChanges();
 
@@ -965,7 +1011,7 @@ namespace Applications.MainModule.WorkFlow.Services
 
                 try
                 {
-                    SendMail(oDocument);
+                    SendMail(oDocument, ModulosAplicacion.Reclamos);
                 }
                 catch (Exception ex)
                 {
@@ -1083,20 +1129,30 @@ namespace Applications.MainModule.WorkFlow.Services
 
                     oDoc.ModifiedOn = DateTime.Now;
 
-                    if (!string.IsNullOrEmpty(oDocument.IdNextResponsibe))
-                        oDoc.IdResponsableActual = Convert.ToInt32(oDocument.IdNextResponsibe);
-                    //else
-                    //    oDoc.IdResponsableActual = null;
+                    if (oDocument.IsNextGroupResponsible)
+                    {
+                        if (!string.IsNullOrEmpty(oDocument.IdNextResponsibe))
+                            oDoc.idGrupo = Convert.ToInt32(oDocument.IdNextResponsibe);
+                        else
+                            oDoc.idGrupo = null;
+                    }
+                    else
+                    {
+                        if (!string.IsNullOrEmpty(oDocument.IdNextResponsibe))
+                            oDoc.IdResponsableActual = Convert.ToInt32(oDocument.IdNextResponsibe);
+                        else
+                            oDoc.IdResponsableActual = null;
+                    }
 
                     _solicitudesRepository.Modify(oDoc);
 
                     //Crea un nuevo registro en el tracking del pedido
-                    GenerarEntradatracking(oDocument);
+                    GenerarEntradatrackingSolicitud(oDocument);
 
                     //Crea un nuevo registro en el log del pedido.
-                    GenerarEntradalog(oDocument);
+                    GenerarEntradalogSolicitudes(oDocument);
 
-                    GenerarNotificacionSistema(oDocument);
+                    //GenerarNotificacionSistema(oDocument);
 
                     unitOfWork.CommitAndRefreshChanges();
 
@@ -1107,7 +1163,7 @@ namespace Applications.MainModule.WorkFlow.Services
 
                 try
                 {
-                    SendMail(oDocument);
+                    SendMail(oDocument, ModulosAplicacion.AccionesPc);
                 }
                 catch (Exception ex)
                 {
@@ -1168,7 +1224,32 @@ namespace Applications.MainModule.WorkFlow.Services
                 }
             }
 
+          
+
             return null;
+        }
+
+        /// <summary>
+        /// Retorna el grupo responsable de aprobación para el estado de la solicitud.
+        /// </summary>
+        /// <param name="role"></param>
+        /// <returns></returns>
+        private TBL_Admin_Roles RetornarGruporesponsable(string role)
+        {
+            var m = DefinedRegexEvaluation.Grupo.Match(role.Trim());
+            if (m.Success)
+            {
+                var grupo = _rolesRepository.GetURoleByName(m.Groups[1].Value);
+                return grupo;
+            }
+            return null;
+        }
+
+        private TBL_Admin_Roles RetornarGruporesponsableById(int idGroup)
+        {
+
+            var grupo = _rolesRepository.GetURoleById(idGroup);
+            return grupo;
         }
 
         /// <summary>
@@ -1211,6 +1292,15 @@ namespace Applications.MainModule.WorkFlow.Services
             return isValidFields;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="TEntity"></typeparam>
+        /// <typeparam name="TEntityRules"></typeparam>
+        /// <param name="item"></param>
+        /// <param name="rules"></param>
+        /// <param name="oDocument"></param>
+        /// <returns></returns>
         private bool ValidacionDeCampos<TEntity, TEntityRules>(TEntity item, TEntityRules rules, RenderTypeControlButtonDto oDocument)
             where TEntity : class
             where TEntityRules : class
@@ -1303,17 +1393,33 @@ namespace Applications.MainModule.WorkFlow.Services
             foreach (var salida in ovalidaciones)
             {
 
-                var m = DefinedRegexEvaluation.Condition.Match(salida.NombreEnsamblado);
-                if(m.Success)
+                if (!string.IsNullOrEmpty(salida.NombreEnsamblado))
                 {
-                    var condicion = m.Groups[1].Value;
-                    if(string.IsNullOrEmpty(condicion))
+                    var m = DefinedRegexEvaluation.Condition.Match(salida.NombreEnsamblado);
+                    if (m.Success)
                     {
-                        oDocument.MessagesError = new List<string>{string.Format("Error de lectura de la condición de validación para la ruta {0}",salida.IdRuta)};
-                        continue;
+                        var condicion = m.Groups[1].Value;
+                        if (string.IsNullOrEmpty(condicion))
+                        {
+                            oDocument.MessagesError = new List<string>
+                                                          {
+                                                              string.Format(
+                                                                  "Error de lectura de la condición de validación para la ruta {0}",
+                                                                  salida.IdRuta)
+                                                          };
+                            continue;
+                        }
+                        var result = _workFlowDomainFieldsValidatorServices.MappingAndValidField(item, condicion);
+                        if (result)
+                        {
+                            m = DefinedRegexEvaluation.InputParameters.Match(salida.NombreMetodo);
+                            if (m.Success)
+                            {
+                                inputList.Add(m.Groups[1].Value);
+                            }
+                        }
                     }
-                    var result = _workFlowDomainFieldsValidatorServices.MappingAndValidField(item, condicion);
-                    if(result)
+                    else
                     {
                         m = DefinedRegexEvaluation.InputParameters.Match(salida.NombreMetodo);
                         if (m.Success)
@@ -1324,7 +1430,7 @@ namespace Applications.MainModule.WorkFlow.Services
                 }
                 else
                 {
-                    m = DefinedRegexEvaluation.InputParameters.Match(salida.NombreMetodo);
+                    var m = DefinedRegexEvaluation.InputParameters.Match(salida.NombreMetodo);
                     if (m.Success)
                     {
                         inputList.Add(m.Groups[1].Value);
@@ -1335,10 +1441,12 @@ namespace Applications.MainModule.WorkFlow.Services
             oDocument.OutputParameters = inputList;
         }
 
-       
+
+        #region  TrackReclamos
+
 
         /// <summary>
-        /// Crea un nuevo registro en el trackin del pedido
+        /// Crea un nuevo registro en el trackin del Reclamo
         /// </summary>
         /// <param name="oDocument"></param>
         private void GenerarEntradatracking(RenderTypeControlButtonDto oDocument)
@@ -1356,6 +1464,10 @@ namespace Applications.MainModule.WorkFlow.Services
             _trackRepository.Add(oTrack);
         }
 
+        #endregion
+
+        #region logreclamos
+
         /// <summary>
         /// 
         /// </summary>
@@ -1369,6 +1481,11 @@ namespace Applications.MainModule.WorkFlow.Services
             _logDocumentosRepository.Add(oLog);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="oDocument"></param>
+        /// <param name="comentario"></param>
         private void GenerarEntradalog(RenderTypeControlButtonDto oDocument, string comentario)
         {
             var userSession = _autenticationService.GetUserFromSession;
@@ -1378,6 +1495,11 @@ namespace Applications.MainModule.WorkFlow.Services
             _logDocumentosRepository.Add(oLog);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="mensaje"></param>
+        /// <param name="idreclamo"></param>
         private void GenerarEntradalog(string mensaje, decimal idreclamo)
         {
             var userSession = _autenticationService.GetUserFromSession;
@@ -1385,15 +1507,59 @@ namespace Applications.MainModule.WorkFlow.Services
             _logDocumentosRepository.Add(oLog);
         }
 
+
+        #endregion
+
+
+        #region trackSolicitudes
+
+        /// <summary>
+        /// Crea un nuevo registro en el trackin de la solicitud
+        /// </summary>
+        /// <param name="oDocument"></param>
+        private void GenerarEntradatrackingSolicitud(RenderTypeControlButtonDto oDocument)
+        {
+
+            var userSession = _autenticationService.GetUserFromSession;
+            var oTrack = _solicitudesDomainServices.GenerarObjetoTrack
+                (_trackSolicitudesRepository.NewEntity(),
+                oDocument.TextControl,
+                oDocument.CurrentStatus,
+                Convert.ToInt32(oDocument.IdDocument),
+                oDocument.NextStatus,
+                oDocument.NextResponsibe,
+                userSession);
+            _trackSolicitudesRepository.Add(oTrack);
+        }
+
+        #endregion
+
+        #region LogSolicitudes
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="oDocument"></param>
+        private void GenerarEntradalogSolicitudes(RenderTypeControlButtonDto oDocument)
+        {
+            var userSession = _autenticationService.GetUserFromSession;
+            var oLog = _solicitudesDomainServices.GenerarObjetoLog(_logSolicitudesRepository.NewEntity(),
+                                                                     oDocument.TextControl,
+                                                                     Convert.ToInt32(oDocument.IdDocument), userSession);
+            _logSolicitudesRepository.Add(oLog);
+        }
+
+        #endregion
+
         /// <summary>
         /// Envía una notificación al responsable del documento al correo electronico.
         /// </summary>
         /// <param name="oDocument"></param>
+        /// <param name="module"></param>
         /// <returns></returns>
-        private bool SendMail(RenderTypeControlButtonDto oDocument)
+        private bool SendMail(RenderTypeControlButtonDto oDocument, ModulosAplicacion module)
         {
             var userSession = _autenticationService.GetUserFromSession;
-             _sendMailNotificationServices.EnviarCorreoElectronicoNotificacion(oDocument, userSession);
+            _sendMailNotificationServices.EnviarCorreoElectronicoNotificacion(oDocument, userSession, module);
 
            switch (oDocument.CurrentStatus)
            {
@@ -1418,10 +1584,10 @@ namespace Applications.MainModule.WorkFlow.Services
         /// <summary>
         /// Crea un nuevo registro en la tabla de notificaciones para el usuario responsable del documento.
         /// </summary>
-        private void GenerarNotificacionSistema(RenderTypeControlButtonDto oDocument)
+        private void GenerarNotificacionSistema(RenderTypeControlButtonDto oDocument, ModulosAplicacion module)
         {
             var userSession = _autenticationService.GetUserFromSession;
-            var template = _sendMailNotificationServices.GetMergeTemplate(oDocument);
+            var template = _sendMailNotificationServices.GetMergeTemplate(oDocument, module);
             if(template == null)return;
 
             var unitOfWork = _notificacionesSistemaRepository.UnitOfWork;

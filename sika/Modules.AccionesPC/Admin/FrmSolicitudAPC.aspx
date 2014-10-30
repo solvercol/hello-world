@@ -65,7 +65,7 @@
                                                             runat="server" 
                                                             ToolTip="Ver información de reclamo"
                                                             ImageUrl="~/Resources/Images/LupaNegra.png"
-                                                            OnClick="BtnViewReclamo_Click"
+                                                            OnClick="BtnViewReclamoClick"
                                                         />
                                                     </td>
                                                 </tr>
@@ -234,7 +234,7 @@
                         <td class="Separador15"></td>
                         <td>  
                         
-                            <asp:Button ID="btnAceptarInput" runat="server" Text="Aceptar"  ValidationGroup="grpInput" />
+                            <asp:Button ID="btnAceptarInput" runat="server" Text="Aceptar"  ValidationGroup="grpInput" OnClick="BtnAceptarInputClick" />
                                                      
                         </td>
                     </tr>

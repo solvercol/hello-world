@@ -154,7 +154,13 @@
     <Compile Include="TBL_ModuloAPC_ComentariosRespuesta.cs">
       <DependentUpon>MainModuleContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="TBL_ModuloAPC_LogSolicitud.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="TBL_ModuloAPC_Solicitud.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_ModuloAPC_Tracking.cs">
       <DependentUpon>MainModuleContext.tt</DependentUpon>
     </Compile>
     <Compile Include="TBL_ModuloDocumentosAnexos_Carpetas.cs">

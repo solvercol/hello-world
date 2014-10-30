@@ -9,16 +9,19 @@
 
 #pragma warning disable 1591 // this is for supress no xml comments in public members warnings 
 
-using Domain.Core;
+using Domain.MainModule.AccionesPC.Contracts;
+using Infraestructure.Data.Core;
+using Infrastructure.CrossCutting.Logging;
 using Domain.MainModules.Entities;
+using Infrastructure.Data.MainModule.UnitOfWork;
 
-namespace Domain.MainModule.Contracts
+namespace Infraestructura.Data.AccionesPC.Repositories
 {
-    public interface ITBL_Admin_RolesRepository : IRepository<TBL_Admin_Roles>
+    public class TBL_ModuloAPC_TrackingRepository : GenericRepository<TBL_ModuloAPC_Tracking>, ITBL_ModuloAPC_TrackingRepository 
     {
-        TBL_Admin_Roles GetURoleById(int id);
-
-        TBL_Admin_Roles GetURoleByName(string name);
+        public TBL_ModuloAPC_TrackingRepository(IMainModuleUnitOfWork unitOfWork, ITraceManager traceManager) : base(unitOfWork, traceManager)
+        {
+        }
     }
 }
     

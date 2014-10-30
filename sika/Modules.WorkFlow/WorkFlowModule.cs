@@ -83,6 +83,11 @@ namespace Modules.WorkFlow
             return _rutasServices.CambiarIngenieroResponsable(oDocument);
         }
 
+
+        public RenderTypeControlButtonDto AsignarresponsableSolicitud(RenderTypeControlButtonDto oDocument)
+        {
+            return _rutasServices.CambiarIngenieroResponsable(oDocument);
+        }
         #endregion
 
     }

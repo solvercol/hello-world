@@ -14,7 +14,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Data.Mapping.EntityViewGenerationAttribute(typeof(Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySets6ED4062531A4B0F34DA349713DC74726DDB9BAD3E160F59889F0E1767CB6BA50))]
+[assembly: System.Data.Mapping.EntityViewGenerationAttribute(typeof(Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsB411758F2024BA6867A7385933BE9F716287FF2D2D500243ABB64A61611B7F1E))]
 
 namespace Edm_EntityMappingGeneratedViews
 {
@@ -23,19 +23,19 @@ namespace Edm_EntityMappingGeneratedViews
     /// <Summary>
     /// The type contains views for EntitySets and AssociationSets that were generated at design time.
     /// </Summary>
-    public sealed class ViewsForBaseEntitySets6ED4062531A4B0F34DA349713DC74726DDB9BAD3E160F59889F0E1767CB6BA50 : System.Data.Mapping.EntityViewContainer
+    public sealed class ViewsForBaseEntitySetsB411758F2024BA6867A7385933BE9F716287FF2D2D500243ABB64A61611B7F1E : System.Data.Mapping.EntityViewContainer
     {
         
         /// <Summary>
         /// The constructor stores the views for the extents and also the hash values generated based on the metadata and mapping closure and views.
         /// </Summary>
-        public ViewsForBaseEntitySets6ED4062531A4B0F34DA349713DC74726DDB9BAD3E160F59889F0E1767CB6BA50()
+        public ViewsForBaseEntitySetsB411758F2024BA6867A7385933BE9F716287FF2D2D500243ABB64A61611B7F1E()
         {
             this.EdmEntityContainerName = "MainModuleContext";
             this.StoreEntityContainerName = "SolutionFrameworkMainModelStoreContainer";
-            this.HashOverMappingClosure = "527002362ebf645f36677b3fdd6505f4bc39f98c1e30d9cff676152d5fbf770c";
-            this.HashOverAllExtentViews = "0c5b306d8fc401f7e9491862b18fc2952839b3266d18598997a1d9fc4c901172";
-            this.ViewCount = 156;
+            this.HashOverMappingClosure = "9bc4d58784b1d12b20ab7b75de4ac3a62f6cd0782805e6e79a76baae45943cc4";
+            this.HashOverAllExtentViews = "e8f8c0117f5a6443537d911bf2f05051b32eccbeb6870eba46dd7a2fad40751e";
+            this.ViewCount = 160;
         }
         
         /// <Summary>
@@ -667,6 +667,22 @@ namespace Edm_EntityMappingGeneratedViews
             {
                 return GetView155();
             }
+            if ((index == 156))
+            {
+                return GetView156();
+            }
+            if ((index == 157))
+            {
+                return GetView157();
+            }
+            if ((index == 158))
+            {
+                return GetView158();
+            }
+            if ((index == 159))
+            {
+                return GetView159();
+            }
             throw new System.IndexOutOfRangeException();
         }
         
@@ -791,7 +807,7 @@ namespace Edm_EntityMappingGeneratedViews
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_Admin_Plantillas", @"
     SELECT VALUE -- Constructing TBL_Admin_Plantillas
-        [SolutionFramework.MainModel.Store.TBL_Admin_Plantillas](T1.[TBL_Admin_Plantillas.IdPlantilla], T1.[TBL_Admin_Plantillas.IdPais], T1.[TBL_Admin_Plantillas.Nombre], T1.[TBL_Admin_Plantillas.Codigo], T1.[TBL_Admin_Plantillas.Contenido], T1.[TBL_Admin_Plantillas.IsActive], T1.[TBL_Admin_Plantillas.CreateBy], T1.[TBL_Admin_Plantillas.CreateOn], T1.[TBL_Admin_Plantillas.ModifiedBy], T1.[TBL_Admin_Plantillas.ModifiedOn])
+        [SolutionFramework.MainModel.Store.TBL_Admin_Plantillas](T1.[TBL_Admin_Plantillas.IdPlantilla], T1.[TBL_Admin_Plantillas.IdPais], T1.[TBL_Admin_Plantillas.Nombre], T1.[TBL_Admin_Plantillas.Codigo], T1.[TBL_Admin_Plantillas.Contenido], T1.[TBL_Admin_Plantillas.IdModulo], T1.[TBL_Admin_Plantillas.IsActive], T1.[TBL_Admin_Plantillas.CreateBy], T1.[TBL_Admin_Plantillas.CreateOn], T1.[TBL_Admin_Plantillas.ModifiedBy], T1.[TBL_Admin_Plantillas.ModifiedOn])
     FROM (
         SELECT 
             T.IdPlantilla AS [TBL_Admin_Plantillas.IdPlantilla], 
@@ -799,6 +815,7 @@ namespace Edm_EntityMappingGeneratedViews
             T.Nombre AS [TBL_Admin_Plantillas.Nombre], 
             T.Codigo AS [TBL_Admin_Plantillas.Codigo], 
             T.Contenido AS [TBL_Admin_Plantillas.Contenido], 
+            T.IdModulo AS [TBL_Admin_Plantillas.IdModulo], 
             T.IsActive AS [TBL_Admin_Plantillas.IsActive], 
             T.CreateBy AS [TBL_Admin_Plantillas.CreateBy], 
             T.CreateOn AS [TBL_Admin_Plantillas.CreateOn], 
@@ -930,7 +947,7 @@ namespace Edm_EntityMappingGeneratedViews
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_Admin_Plantillas", @"
     SELECT VALUE -- Constructing TBL_Admin_Plantillas
-        [SolutionFramework.MainModel.TBL_Admin_Plantillas](T1.[TBL_Admin_Plantillas.IdPlantilla], T1.[TBL_Admin_Plantillas.IdPais], T1.[TBL_Admin_Plantillas.Nombre], T1.[TBL_Admin_Plantillas.Codigo], T1.[TBL_Admin_Plantillas.Contenido], T1.[TBL_Admin_Plantillas.IsActive], T1.[TBL_Admin_Plantillas.CreateBy], T1.[TBL_Admin_Plantillas.CreateOn], T1.[TBL_Admin_Plantillas.ModifiedBy], T1.[TBL_Admin_Plantillas.ModifiedOn])
+        [SolutionFramework.MainModel.TBL_Admin_Plantillas](T1.[TBL_Admin_Plantillas.IdPlantilla], T1.[TBL_Admin_Plantillas.IdPais], T1.[TBL_Admin_Plantillas.Nombre], T1.[TBL_Admin_Plantillas.Codigo], T1.[TBL_Admin_Plantillas.Contenido], T1.[TBL_Admin_Plantillas.IsActive], T1.[TBL_Admin_Plantillas.CreateBy], T1.[TBL_Admin_Plantillas.CreateOn], T1.[TBL_Admin_Plantillas.ModifiedBy], T1.[TBL_Admin_Plantillas.ModifiedOn], T1.[TBL_Admin_Plantillas.IdModulo])
     FROM (
         SELECT 
             T.IdPlantilla AS [TBL_Admin_Plantillas.IdPlantilla], 
@@ -943,6 +960,7 @@ namespace Edm_EntityMappingGeneratedViews
             T.CreateOn AS [TBL_Admin_Plantillas.CreateOn], 
             T.ModifiedBy AS [TBL_Admin_Plantillas.ModifiedBy], 
             T.ModifiedOn AS [TBL_Admin_Plantillas.ModifiedOn], 
+            T.IdModulo AS [TBL_Admin_Plantillas.IdModulo], 
             True AS _from0
         FROM SolutionFrameworkMainModelStoreContainer.TBL_Admin_Plantillas AS T
     ) AS T1");
@@ -1582,67 +1600,9 @@ namespace Edm_EntityMappingGeneratedViews
         }
         
         /// <Summary>
-        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloAPC_Solicitud
-        /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView36()
-        {
-            System.Text.StringBuilder viewString = new System.Text.StringBuilder(3877);
-            viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloAPC_Solicitud\r\n        [SolutionFra");
-            viewString.Append("mework.MainModel.Store.TBL_ModuloAPC_Solicitud](T1.[TBL_ModuloAPC_Solicitud.IdSo");
-            viewString.Append("lucitudAPC], T1.[TBL_ModuloAPC_Solicitud.Consecutivo], T1.[TBL_ModuloAPC_Solicit");
-            viewString.Append("ud.IdDocumentoLotus], T1.[TBL_ModuloAPC_Solicitud.IdEstado], T1.[TBL_ModuloAPC_S");
-            viewString.Append("olicitud.IdSolicitante], T1.[TBL_ModuloAPC_Solicitud.IdResponsableEjecucion], T1");
-            viewString.Append(".[TBL_ModuloAPC_Solicitud.IdResponsableSeguimiento], T1.[TBL_ModuloAPC_Solicitud");
-            viewString.Append(".TipoAccion], T1.[TBL_ModuloAPC_Solicitud.FechaSolicitud], T1.[TBL_ModuloAPC_Sol");
-            viewString.Append("icitud.Codigo], T1.[TBL_ModuloAPC_Solicitud.IdReclamoCreacion], T1.[TBL_ModuloAP");
-            viewString.Append("C_Solicitud.IdAreaAccion], T1.[TBL_ModuloAPC_Solicitud.Proceso], T1.[TBL_ModuloA");
-            viewString.Append("PC_Solicitud.IdGerente], T1.[TBL_ModuloAPC_Solicitud.DescripcionAccion], T1.[TBL");
-            viewString.Append("_ModuloAPC_Solicitud.FechaDesde], T1.[TBL_ModuloAPC_Solicitud.FechaHasta], T1.[T");
-            viewString.Append("BL_ModuloAPC_Solicitud.IdAdministrador], T1.[TBL_ModuloAPC_Solicitud.IdAdministr");
-            viewString.Append("adorFuncional], T1.[TBL_ModuloAPC_Solicitud.Resultado], T1.[TBL_ModuloAPC_Solici");
-            viewString.Append("tud.Cerrada], T1.[TBL_ModuloAPC_Solicitud.ObservacionesCierre], T1.[TBL_ModuloAP");
-            viewString.Append("C_Solicitud.IdResponsableActual], T1.[TBL_ModuloAPC_Solicitud.FechaCierre], T1.[");
-            viewString.Append("TBL_ModuloAPC_Solicitud.IdUsuarioCierre], T1.[TBL_ModuloAPC_Solicitud.IsActive],");
-            viewString.Append(" T1.[TBL_ModuloAPC_Solicitud.CreateBy], T1.[TBL_ModuloAPC_Solicitud.CreateOn], T");
-            viewString.Append("1.[TBL_ModuloAPC_Solicitud.ModifiedBy], T1.[TBL_ModuloAPC_Solicitud.ModifiedOn],");
-            viewString.Append(" T1.[TBL_ModuloAPC_Solicitud.idGrupo])\r\n    FROM (\r\n        SELECT \r\n           ");
-            viewString.Append(" T.IdSolucitudAPC AS [TBL_ModuloAPC_Solicitud.IdSolucitudAPC], \r\n            T.C");
-            viewString.Append("onsecutivo AS [TBL_ModuloAPC_Solicitud.Consecutivo], \r\n            T.IdDocumento");
-            viewString.Append("Lotus AS [TBL_ModuloAPC_Solicitud.IdDocumentoLotus], \r\n            T.IdEstado AS");
-            viewString.Append(" [TBL_ModuloAPC_Solicitud.IdEstado], \r\n            T.IdSolicitante AS [TBL_Modul");
-            viewString.Append("oAPC_Solicitud.IdSolicitante], \r\n            T.IdResponsableEjecucion AS [TBL_Mo");
-            viewString.Append("duloAPC_Solicitud.IdResponsableEjecucion], \r\n            T.IdResponsableSeguimie");
-            viewString.Append("nto AS [TBL_ModuloAPC_Solicitud.IdResponsableSeguimiento], \r\n            T.TipoA");
-            viewString.Append("ccion AS [TBL_ModuloAPC_Solicitud.TipoAccion], \r\n            T.FechaSolicitud AS");
-            viewString.Append(" [TBL_ModuloAPC_Solicitud.FechaSolicitud], \r\n            T.Codigo AS [TBL_Modulo");
-            viewString.Append("APC_Solicitud.Codigo], \r\n            T.IdReclamoCreacion AS [TBL_ModuloAPC_Solic");
-            viewString.Append("itud.IdReclamoCreacion], \r\n            T.IdAreaAccion AS [TBL_ModuloAPC_Solicitu");
-            viewString.Append("d.IdAreaAccion], \r\n            T.Proceso AS [TBL_ModuloAPC_Solicitud.Proceso], \r");
-            viewString.Append("\n            T.IdGerente AS [TBL_ModuloAPC_Solicitud.IdGerente], \r\n            T");
-            viewString.Append(".DescripcionAccion AS [TBL_ModuloAPC_Solicitud.DescripcionAccion], \r\n           ");
-            viewString.Append(" T.FechaDesde AS [TBL_ModuloAPC_Solicitud.FechaDesde], \r\n            T.FechaHast");
-            viewString.Append("a AS [TBL_ModuloAPC_Solicitud.FechaHasta], \r\n            T.IdAdministrador AS [T");
-            viewString.Append("BL_ModuloAPC_Solicitud.IdAdministrador], \r\n            T.IdAdministradorFunciona");
-            viewString.Append("l AS [TBL_ModuloAPC_Solicitud.IdAdministradorFuncional], \r\n            T.Resulta");
-            viewString.Append("do AS [TBL_ModuloAPC_Solicitud.Resultado], \r\n            T.Cerrada AS [TBL_Modul");
-            viewString.Append("oAPC_Solicitud.Cerrada], \r\n            T.ObservacionesCierre AS [TBL_ModuloAPC_S");
-            viewString.Append("olicitud.ObservacionesCierre], \r\n            T.IdResponsableActual AS [TBL_Modul");
-            viewString.Append("oAPC_Solicitud.IdResponsableActual], \r\n            T.FechaCierre AS [TBL_ModuloA");
-            viewString.Append("PC_Solicitud.FechaCierre], \r\n            T.IdUsuarioCierre AS [TBL_ModuloAPC_Sol");
-            viewString.Append("icitud.IdUsuarioCierre], \r\n            T.IsActive AS [TBL_ModuloAPC_Solicitud.Is");
-            viewString.Append("Active], \r\n            T.CreateBy AS [TBL_ModuloAPC_Solicitud.CreateBy], \r\n     ");
-            viewString.Append("       T.CreateOn AS [TBL_ModuloAPC_Solicitud.CreateOn], \r\n            T.Modifie");
-            viewString.Append("dBy AS [TBL_ModuloAPC_Solicitud.ModifiedBy], \r\n            T.ModifiedOn AS [TBL_");
-            viewString.Append("ModuloAPC_Solicitud.ModifiedOn], \r\n            T.idGrupo AS [TBL_ModuloAPC_Solic");
-            viewString.Append("itud.idGrupo], \r\n            True AS _from0\r\n        FROM MainModuleContext.TBL_");
-            viewString.Append("ModuloAPC_Solicitud AS T\r\n    ) AS T1");
-            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloAPC_Solicitud", viewString.ToString());
-        }
-        
-        /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_Categorias
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView37()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView36()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_Categorias", @"
     SELECT VALUE -- Constructing TBL_ModuloDocumentos_Categorias
@@ -1665,7 +1625,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_Documento
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView38()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView37()
         {
             System.Text.StringBuilder viewString = new System.Text.StringBuilder(2718);
             viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloDocumentos_Documento\r\n        [Solu");
@@ -1708,7 +1668,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_DocumentoAdjunto
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView39()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView38()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_DocumentoAdjunto", "\r\n    SELECT VALUE -- Constructing TBL_ModuloDocumentos_DocumentoAdjunto\r\n       " +
                     " [SolutionFramework.MainModel.Store.TBL_ModuloDocumentos_DocumentoAdjunto](T1.[T" +
@@ -1735,7 +1695,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_DocumentoAdjuntoHistorial
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView40()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView39()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_DocumentoAdjuntoHis" +
                     "torial", "\r\n    SELECT VALUE -- Constructing TBL_ModuloDocumentos_DocumentoAdjuntoHistorial" +
@@ -1765,7 +1725,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_Estados
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView41()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView40()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_Estados", @"
     SELECT VALUE -- Constructing TBL_ModuloDocumentos_Estados
@@ -1789,7 +1749,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_HistorialDocumento
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView42()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView41()
         {
             System.Text.StringBuilder viewString = new System.Text.StringBuilder(2907);
             viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloDocumentos_HistorialDocumento\r\n    ");
@@ -1835,7 +1795,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_LogCambios
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView43()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView42()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentos_LogCambios", @"
     SELECT VALUE -- Constructing TBL_ModuloDocumentos_LogCambios
@@ -1857,7 +1817,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentosAnexos_Carpetas
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView44()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView43()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentosAnexos_Carpetas", @"
     SELECT VALUE -- Constructing TBL_ModuloDocumentosAnexos_Carpetas
@@ -1881,7 +1841,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentosAnexos_Categorias
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView45()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView44()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentosAnexos_Categorias", @"
     SELECT VALUE -- Constructing TBL_ModuloDocumentosAnexos_Categorias
@@ -1904,7 +1864,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentosAnexos_Contenido
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView46()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView45()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentosAnexos_Contenido", "\r\n    SELECT VALUE -- Constructing TBL_ModuloDocumentosAnexos_Contenido\r\n        " +
                     "[SolutionFramework.MainModel.Store.TBL_ModuloDocumentosAnexos_Contenido](T1.[TBL" +
@@ -1935,7 +1895,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentosAnexos_Documento
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView47()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView46()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentosAnexos_Documento", "\r\n    SELECT VALUE -- Constructing TBL_ModuloDocumentosAnexos_Documento\r\n        " +
                     "[SolutionFramework.MainModel.Store.TBL_ModuloDocumentosAnexos_Documento](T1.[TBL" +
@@ -1966,7 +1926,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_Actividades
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView48()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView47()
         {
             System.Text.StringBuilder viewString = new System.Text.StringBuilder(2325);
             viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_Actividades\r\n        [Solu");
@@ -2005,7 +1965,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_ActividadesReclamo
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView49()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView48()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_ActividadesReclamo", "\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_ActividadesReclamo\r\n       " +
                     " [SolutionFramework.MainModel.Store.TBL_ModuloReclamos_ActividadesReclamo](T1.[T" +
@@ -2031,7 +1991,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_Alternativas
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView50()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView49()
         {
             System.Text.StringBuilder viewString = new System.Text.StringBuilder(2273);
             viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_Alternativas\r\n        [Sol");
@@ -2069,7 +2029,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_AnexosActividad
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView51()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView50()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_AnexosActividad", @"
     SELECT VALUE -- Constructing TBL_ModuloReclamos_AnexosActividad
@@ -2093,7 +2053,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_AnexosAlternativa
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView52()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView51()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_AnexosAlternativa", "\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_AnexosAlternativa\r\n        " +
                     "[SolutionFramework.MainModel.Store.TBL_ModuloReclamos_AnexosAlternativa](T1.[TBL" +
@@ -2120,7 +2080,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_AnexosComentarioRespuesta
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView53()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView52()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_AnexosComentarioRespu" +
                     "esta", "\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_AnexosComentarioRespuesta\r\n" +
@@ -2150,7 +2110,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_AnexosSolucion
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView54()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView53()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_AnexosSolucion", @"
     SELECT VALUE -- Constructing TBL_ModuloReclamos_AnexosSolucion
@@ -2174,7 +2134,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_Asesores
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView55()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView54()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_Asesores", @"
     SELECT VALUE -- Constructing TBL_ModuloReclamos_Asesores
@@ -2197,7 +2157,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_CategoriaProducto
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView56()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView55()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_CategoriaProducto", @"
     SELECT VALUE -- Constructing TBL_ModuloReclamos_CategoriaProducto
@@ -2220,7 +2180,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_CategoriasReclamo
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView57()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView56()
         {
             System.Text.StringBuilder viewString = new System.Text.StringBuilder(2073);
             viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_CategoriasReclamo\r\n       ");
@@ -2255,7 +2215,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_ComentariosRespuesta
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView58()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView57()
         {
             System.Text.StringBuilder viewString = new System.Text.StringBuilder(2367);
             viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_ComentariosRespuesta\r\n    ");
@@ -2294,7 +2254,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_CostosProducto
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView59()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView58()
         {
             System.Text.StringBuilder viewString = new System.Text.StringBuilder(2517);
             viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_CostosProducto\r\n        [S");
@@ -2335,7 +2295,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_LogReclamos
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView60()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView59()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_LogReclamos", @"
     SELECT VALUE -- Constructing TBL_ModuloReclamos_LogReclamos
@@ -2356,7 +2316,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_Reclamo
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView61()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView60()
         {
             System.Text.StringBuilder viewString = new System.Text.StringBuilder(11019);
             viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_Reclamo\r\n        [Solution");
@@ -2503,7 +2463,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_Soluciones
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView62()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView61()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_Soluciones", @"
     SELECT VALUE -- Constructing TBL_ModuloReclamos_Soluciones
@@ -2527,7 +2487,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_TipoReclamo
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView63()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView62()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_TipoReclamo", @"
     SELECT VALUE -- Constructing TBL_ModuloReclamos_TipoReclamo
@@ -2549,7 +2509,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_Tracking
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView64()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView63()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_Tracking", "\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_Tracking\r\n        [Solution" +
                     "Framework.MainModel.Store.TBL_ModuloReclamos_Tracking](T1.[TBL_ModuloReclamos_Tr" +
@@ -2577,7 +2537,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_Unidad
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView65()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView64()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_Unidad", @"
     SELECT VALUE -- Constructing TBL_ModuloReclamos_Unidad
@@ -2599,7 +2559,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_UnidadesZonas
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView66()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView65()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_UnidadesZonas", "\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_UnidadesZonas\r\n        [Sol" +
                     "utionFramework.MainModel.Store.TBL_ModuloReclamos_UnidadesZonas](T1.[TBL_ModuloR" +
@@ -2626,7 +2586,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_Zona
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView67()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView66()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_Zona", @"
     SELECT VALUE -- Constructing TBL_ModuloReclamos_Zona
@@ -2648,7 +2608,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloWorkFlow_CamposValidacion
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView68()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView67()
         {
             System.Text.StringBuilder viewString = new System.Text.StringBuilder(2092);
             viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloWorkFlow_CamposValidacion\r\n        ");
@@ -2684,7 +2644,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloWorkFlow_Rutas
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView69()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView68()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloWorkFlow_Rutas", "\r\n    SELECT VALUE -- Constructing TBL_ModuloWorkFlow_Rutas\r\n        [SolutionFra" +
                     "mework.MainModel.Store.TBL_ModuloWorkFlow_Rutas](T1.[TBL_ModuloWorkFlow_Rutas.Id" +
@@ -2716,7 +2676,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloWorkFlow_ValidacionesSalida
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView70()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView69()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloWorkFlow_ValidacionesSalida", "\r\n    SELECT VALUE -- Constructing TBL_ModuloWorkFlow_ValidacionesSalida\r\n       " +
                     " [SolutionFramework.MainModel.Store.TBL_ModuloWorkFlow_ValidacionesSalida](T1.[T" +
@@ -2744,9 +2704,115 @@ namespace Edm_EntityMappingGeneratedViews
         }
         
         /// <Summary>
-        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_Admin_ResponsablesAprobacion
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloAPC_LogSolicitud
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView70()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloAPC_LogSolicitud", @"
+    SELECT VALUE -- Constructing TBL_ModuloAPC_LogSolicitud
+        [SolutionFramework.MainModel.Store.TBL_ModuloAPC_LogSolicitud](T1.[TBL_ModuloAPC_LogSolicitud.IdLog], T1.[TBL_ModuloAPC_LogSolicitud.IdSolicitud], T1.[TBL_ModuloAPC_LogSolicitud.Descripcion], T1.[TBL_ModuloAPC_LogSolicitud.CreateBy], T1.[TBL_ModuloAPC_LogSolicitud.CreateOn], T1.[TBL_ModuloAPC_LogSolicitud.IsActive])
+    FROM (
+        SELECT 
+            T.IdLog AS [TBL_ModuloAPC_LogSolicitud.IdLog], 
+            T.IdSolicitud AS [TBL_ModuloAPC_LogSolicitud.IdSolicitud], 
+            T.Descripcion AS [TBL_ModuloAPC_LogSolicitud.Descripcion], 
+            T.CreateBy AS [TBL_ModuloAPC_LogSolicitud.CreateBy], 
+            T.CreateOn AS [TBL_ModuloAPC_LogSolicitud.CreateOn], 
+            T.IsActive AS [TBL_ModuloAPC_LogSolicitud.IsActive], 
+            True AS _from0
+        FROM MainModuleContext.TBL_ModuloAPC_LogSolicitud AS T
+    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloAPC_Tracking
         /// </Summary>
         private System.Collections.Generic.KeyValuePair<string, string> GetView71()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloAPC_Tracking", "\r\n    SELECT VALUE -- Constructing TBL_ModuloAPC_Tracking\r\n        [SolutionFrame" +
+                    "work.MainModel.Store.TBL_ModuloAPC_Tracking](T1.[TBL_ModuloAPC_Tracking.IdTracki" +
+                    "ng], T1.[TBL_ModuloAPC_Tracking.IdSolicitud], T1.[TBL_ModuloAPC_Tracking.Autor]," +
+                    " T1.[TBL_ModuloAPC_Tracking.EstadoAnterior], T1.[TBL_ModuloAPC_Tracking.Accion]," +
+                    " T1.[TBL_ModuloAPC_Tracking.Nuevoestado], T1.[TBL_ModuloAPC_Tracking.NuevoRespon" +
+                    "sable], T1.[TBL_ModuloAPC_Tracking.IsActive], T1.[TBL_ModuloAPC_Tracking.CreateB" +
+                    "y], T1.[TBL_ModuloAPC_Tracking.CreateOn], T1.[TBL_ModuloAPC_Tracking.ModifiedBy]" +
+                    ", T1.[TBL_ModuloAPC_Tracking.ModifiedOn])\r\n    FROM (\r\n        SELECT \r\n        " +
+                    "    T.IdTracking AS [TBL_ModuloAPC_Tracking.IdTracking], \r\n            T.IdSolic" +
+                    "itud AS [TBL_ModuloAPC_Tracking.IdSolicitud], \r\n            T.Autor AS [TBL_Modu" +
+                    "loAPC_Tracking.Autor], \r\n            T.EstadoAnterior AS [TBL_ModuloAPC_Tracking" +
+                    ".EstadoAnterior], \r\n            T.Accion AS [TBL_ModuloAPC_Tracking.Accion], \r\n " +
+                    "           T.Nuevoestado AS [TBL_ModuloAPC_Tracking.Nuevoestado], \r\n            " +
+                    "T.NuevoResponsable AS [TBL_ModuloAPC_Tracking.NuevoResponsable], \r\n            T" +
+                    ".IsActive AS [TBL_ModuloAPC_Tracking.IsActive], \r\n            T.CreateBy AS [TBL" +
+                    "_ModuloAPC_Tracking.CreateBy], \r\n            T.CreateOn AS [TBL_ModuloAPC_Tracki" +
+                    "ng.CreateOn], \r\n            T.ModifiedBy AS [TBL_ModuloAPC_Tracking.ModifiedBy]," +
+                    " \r\n            T.ModifiedOn AS [TBL_ModuloAPC_Tracking.ModifiedOn], \r\n          " +
+                    "  True AS _from0\r\n        FROM MainModuleContext.TBL_ModuloAPC_Tracking AS T\r\n  " +
+                    "  ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloAPC_Solicitud
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView72()
+        {
+            System.Text.StringBuilder viewString = new System.Text.StringBuilder(3877);
+            viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloAPC_Solicitud\r\n        [SolutionFra");
+            viewString.Append("mework.MainModel.Store.TBL_ModuloAPC_Solicitud](T1.[TBL_ModuloAPC_Solicitud.IdSo");
+            viewString.Append("lucitudAPC], T1.[TBL_ModuloAPC_Solicitud.Consecutivo], T1.[TBL_ModuloAPC_Solicit");
+            viewString.Append("ud.IdDocumentoLotus], T1.[TBL_ModuloAPC_Solicitud.IdEstado], T1.[TBL_ModuloAPC_S");
+            viewString.Append("olicitud.IdSolicitante], T1.[TBL_ModuloAPC_Solicitud.IdResponsableEjecucion], T1");
+            viewString.Append(".[TBL_ModuloAPC_Solicitud.IdResponsableSeguimiento], T1.[TBL_ModuloAPC_Solicitud");
+            viewString.Append(".TipoAccion], T1.[TBL_ModuloAPC_Solicitud.FechaSolicitud], T1.[TBL_ModuloAPC_Sol");
+            viewString.Append("icitud.Codigo], T1.[TBL_ModuloAPC_Solicitud.IdReclamoCreacion], T1.[TBL_ModuloAP");
+            viewString.Append("C_Solicitud.IdAreaAccion], T1.[TBL_ModuloAPC_Solicitud.Proceso], T1.[TBL_ModuloA");
+            viewString.Append("PC_Solicitud.IdGerente], T1.[TBL_ModuloAPC_Solicitud.DescripcionAccion], T1.[TBL");
+            viewString.Append("_ModuloAPC_Solicitud.FechaDesde], T1.[TBL_ModuloAPC_Solicitud.FechaHasta], T1.[T");
+            viewString.Append("BL_ModuloAPC_Solicitud.IdAdministrador], T1.[TBL_ModuloAPC_Solicitud.IdAdministr");
+            viewString.Append("adorFuncional], T1.[TBL_ModuloAPC_Solicitud.Resultado], T1.[TBL_ModuloAPC_Solici");
+            viewString.Append("tud.Cerrada], T1.[TBL_ModuloAPC_Solicitud.ObservacionesCierre], T1.[TBL_ModuloAP");
+            viewString.Append("C_Solicitud.IdResponsableActual], T1.[TBL_ModuloAPC_Solicitud.FechaCierre], T1.[");
+            viewString.Append("TBL_ModuloAPC_Solicitud.IdUsuarioCierre], T1.[TBL_ModuloAPC_Solicitud.IsActive],");
+            viewString.Append(" T1.[TBL_ModuloAPC_Solicitud.CreateBy], T1.[TBL_ModuloAPC_Solicitud.CreateOn], T");
+            viewString.Append("1.[TBL_ModuloAPC_Solicitud.ModifiedBy], T1.[TBL_ModuloAPC_Solicitud.ModifiedOn],");
+            viewString.Append(" T1.[TBL_ModuloAPC_Solicitud.idGrupo])\r\n    FROM (\r\n        SELECT \r\n           ");
+            viewString.Append(" T.IdSolucitudAPC AS [TBL_ModuloAPC_Solicitud.IdSolucitudAPC], \r\n            T.C");
+            viewString.Append("onsecutivo AS [TBL_ModuloAPC_Solicitud.Consecutivo], \r\n            T.IdDocumento");
+            viewString.Append("Lotus AS [TBL_ModuloAPC_Solicitud.IdDocumentoLotus], \r\n            T.IdEstado AS");
+            viewString.Append(" [TBL_ModuloAPC_Solicitud.IdEstado], \r\n            T.IdSolicitante AS [TBL_Modul");
+            viewString.Append("oAPC_Solicitud.IdSolicitante], \r\n            T.IdResponsableEjecucion AS [TBL_Mo");
+            viewString.Append("duloAPC_Solicitud.IdResponsableEjecucion], \r\n            T.IdResponsableSeguimie");
+            viewString.Append("nto AS [TBL_ModuloAPC_Solicitud.IdResponsableSeguimiento], \r\n            T.TipoA");
+            viewString.Append("ccion AS [TBL_ModuloAPC_Solicitud.TipoAccion], \r\n            T.FechaSolicitud AS");
+            viewString.Append(" [TBL_ModuloAPC_Solicitud.FechaSolicitud], \r\n            T.Codigo AS [TBL_Modulo");
+            viewString.Append("APC_Solicitud.Codigo], \r\n            T.IdReclamoCreacion AS [TBL_ModuloAPC_Solic");
+            viewString.Append("itud.IdReclamoCreacion], \r\n            T.IdAreaAccion AS [TBL_ModuloAPC_Solicitu");
+            viewString.Append("d.IdAreaAccion], \r\n            T.Proceso AS [TBL_ModuloAPC_Solicitud.Proceso], \r");
+            viewString.Append("\n            T.IdGerente AS [TBL_ModuloAPC_Solicitud.IdGerente], \r\n            T");
+            viewString.Append(".DescripcionAccion AS [TBL_ModuloAPC_Solicitud.DescripcionAccion], \r\n           ");
+            viewString.Append(" T.FechaDesde AS [TBL_ModuloAPC_Solicitud.FechaDesde], \r\n            T.FechaHast");
+            viewString.Append("a AS [TBL_ModuloAPC_Solicitud.FechaHasta], \r\n            T.IdAdministrador AS [T");
+            viewString.Append("BL_ModuloAPC_Solicitud.IdAdministrador], \r\n            T.IdAdministradorFunciona");
+            viewString.Append("l AS [TBL_ModuloAPC_Solicitud.IdAdministradorFuncional], \r\n            T.Resulta");
+            viewString.Append("do AS [TBL_ModuloAPC_Solicitud.Resultado], \r\n            T.Cerrada AS [TBL_Modul");
+            viewString.Append("oAPC_Solicitud.Cerrada], \r\n            T.ObservacionesCierre AS [TBL_ModuloAPC_S");
+            viewString.Append("olicitud.ObservacionesCierre], \r\n            T.IdResponsableActual AS [TBL_Modul");
+            viewString.Append("oAPC_Solicitud.IdResponsableActual], \r\n            T.FechaCierre AS [TBL_ModuloA");
+            viewString.Append("PC_Solicitud.FechaCierre], \r\n            T.IdUsuarioCierre AS [TBL_ModuloAPC_Sol");
+            viewString.Append("icitud.IdUsuarioCierre], \r\n            T.IsActive AS [TBL_ModuloAPC_Solicitud.Is");
+            viewString.Append("Active], \r\n            T.CreateBy AS [TBL_ModuloAPC_Solicitud.CreateBy], \r\n     ");
+            viewString.Append("       T.CreateOn AS [TBL_ModuloAPC_Solicitud.CreateOn], \r\n            T.Modifie");
+            viewString.Append("dBy AS [TBL_ModuloAPC_Solicitud.ModifiedBy], \r\n            T.ModifiedOn AS [TBL_");
+            viewString.Append("ModuloAPC_Solicitud.ModifiedOn], \r\n            T.idGrupo AS [TBL_ModuloAPC_Solic");
+            viewString.Append("itud.idGrupo], \r\n            True AS _from0\r\n        FROM MainModuleContext.TBL_");
+            viewString.Append("ModuloAPC_Solicitud AS T\r\n    ) AS T1");
+            return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloAPC_Solicitud", viewString.ToString());
+        }
+        
+        /// <Summary>
+        /// return view for SolutionFrameworkMainModelStoreContainer.TBL_Admin_ResponsablesAprobacion
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView73()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_Admin_ResponsablesAprobacion", @"
     SELECT VALUE -- Constructing TBL_Admin_ResponsablesAprobacion
@@ -2763,7 +2829,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_Admin_RolesPorOpcionMenu
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView72()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView74()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_Admin_RolesPorOpcionMenu", @"
     SELECT VALUE -- Constructing TBL_Admin_RolesPorOpcionMenu
@@ -2780,7 +2846,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_Admin_UsuariosByRol
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView73()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView75()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_Admin_UsuariosByRol", @"
     SELECT VALUE -- Constructing TBL_Admin_UsuariosByRol
@@ -2797,7 +2863,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloAPC_UsuarioCopiaComentariosRespuesta
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView74()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView76()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloAPC_UsuarioCopiaComentariosRes" +
                     "puesta", @"
@@ -2815,7 +2881,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentosAnexos_CarpetasXrol
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView75()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView77()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloDocumentosAnexos_CarpetasXrol", @"
     SELECT VALUE -- Constructing TBL_ModuloDocumentosAnexos_CarpetasXrol
@@ -2832,7 +2898,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_AsesorJefe
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView76()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView78()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_AsesorJefe", @"
     SELECT VALUE -- Constructing TBL_ModuloReclamos_AsesorJefe
@@ -2849,7 +2915,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_DocumentosAnexos
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView77()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView79()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_DocumentosAnexos", @"
     SELECT VALUE -- Constructing TBL_ModuloReclamos_DocumentosAnexos
@@ -2866,7 +2932,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_IngenierosResponsablesByCategoriaProducto
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView78()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView80()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_IngenierosResponsable" +
                     "sByCategoriaProducto", @"
@@ -2884,7 +2950,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_ReclamoJefeAsesor
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView79()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView81()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_ReclamoJefeAsesor", @"
     SELECT VALUE -- Constructing TBL_ModuloReclamos_ReclamoJefeAsesor
@@ -2901,7 +2967,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_UsuarioCopiaComentariosRespuesta
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView80()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView82()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_UsuarioCopiaComentari" +
                     "osRespuesta", @"
@@ -2919,7 +2985,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_UsuariosCopiaActividades
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView81()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView83()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloReclamos_UsuariosCopiaActivida" +
                     "des", @"
@@ -2937,7 +3003,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_Admin_EstadosProceso
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView82()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView84()
         {
             System.Text.StringBuilder viewString = new System.Text.StringBuilder(2078);
             viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_Admin_EstadosProceso\r\n        [SolutionFr");
@@ -2972,7 +3038,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_Admin_ModuleRepository
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView83()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView85()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_Admin_ModuleRepository", @"
     SELECT VALUE -- Constructing TBL_Admin_ModuleRepository
@@ -2994,7 +3060,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_Admin_ModuleService
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView84()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView86()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_Admin_ModuleService", @"
     SELECT VALUE -- Constructing TBL_Admin_ModuleService
@@ -3016,7 +3082,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_Admin_ModuleType
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView85()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView87()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_Admin_ModuleType", @"
     SELECT VALUE -- Constructing TBL_Admin_ModuleType
@@ -3043,7 +3109,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_Admin_Modulos
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView86()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView88()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_Admin_Modulos", @"
     SELECT VALUE -- Constructing TBL_Admin_Modulos
@@ -3070,7 +3136,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_Admin_OpcionesMenu
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView87()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView89()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_Admin_OpcionesMenu", "\r\n    SELECT VALUE -- Constructing TBL_Admin_OpcionesMenu\r\n        [SolutionFrame" +
                     "work.MainModel.TBL_Admin_OpcionesMenu](T1.[TBL_Admin_OpcionesMenu.IdOpcionMenu]," +
@@ -3100,7 +3166,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_Admin_Roles
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView88()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView90()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_Admin_Roles", @"
     SELECT VALUE -- Constructing TBL_Admin_Roles
@@ -3123,7 +3189,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_Admin_Secciones
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView89()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView91()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_Admin_Secciones", "\r\n    SELECT VALUE -- Constructing TBL_Admin_Secciones\r\n        [SolutionFramewor" +
                     "k.MainModel.TBL_Admin_Secciones](T1.[TBL_Admin_Secciones.IdSeccion], T1.[TBL_Adm" +
@@ -3151,7 +3217,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_Admin_SistemaNotificaciones
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView90()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView92()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_Admin_SistemaNotificaciones", "\r\n    SELECT VALUE -- Constructing TBL_Admin_SistemaNotificaciones\r\n        [Solu" +
                     "tionFramework.MainModel.TBL_Admin_SistemaNotificaciones](T1.[TBL_Admin_SistemaNo" +
@@ -3181,7 +3247,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_Admin_TypeByModules
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView91()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView93()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_Admin_TypeByModules", "\r\n    SELECT VALUE -- Constructing TBL_Admin_TypeByModules\r\n        [SolutionFram" +
                     "ework.MainModel.TBL_Admin_TypeByModules](T1.[TBL_Admin_TypeByModules.OID], T1.[T" +
@@ -3208,7 +3274,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_Admin_Usuarios
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView92()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView94()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_Admin_Usuarios", "\r\n    SELECT VALUE -- Constructing TBL_Admin_Usuarios\r\n        [SolutionFramework" +
                     ".MainModel.TBL_Admin_Usuarios](T1.[TBL_Admin_Usuarios.IdUser], T1.[TBL_Admin_Usu" +
@@ -3235,7 +3301,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloAPC_Actividades
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView93()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView95()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloAPC_Actividades", "\r\n    SELECT VALUE -- Constructing TBL_ModuloAPC_Actividades\r\n        [SolutionFr" +
                     "amework.MainModel.TBL_ModuloAPC_Actividades](T1.[TBL_ModuloAPC_Actividades.IdAct" +
@@ -3268,7 +3334,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloAPC_AnexosActividades
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView94()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView96()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloAPC_AnexosActividades", @"
     SELECT VALUE -- Constructing TBL_ModuloAPC_AnexosActividades
@@ -3292,7 +3358,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloAPC_AnexosComentarioRespuesta
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView95()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView97()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloAPC_AnexosComentarioRespuesta", "\r\n    SELECT VALUE -- Constructing TBL_ModuloAPC_AnexosComentarioRespuesta\r\n     " +
                     "   [SolutionFramework.MainModel.TBL_ModuloAPC_AnexosComentarioRespuesta](T1.[TBL" +
@@ -3320,7 +3386,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloAPC_AnexosSolicitud
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView96()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView98()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloAPC_AnexosSolicitud", @"
     SELECT VALUE -- Constructing TBL_ModuloAPC_AnexosSolicitud
@@ -3344,7 +3410,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloAPC_Areas
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView97()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView99()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloAPC_Areas", @"
     SELECT VALUE -- Constructing TBL_ModuloAPC_Areas
@@ -3368,7 +3434,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloAPC_Causas
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView98()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView100()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloAPC_Causas", @"
     SELECT VALUE -- Constructing TBL_ModuloAPC_Causas
@@ -3392,7 +3458,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloAPC_ComentariosRespuesta
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView99()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView101()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloAPC_ComentariosRespuesta", "\r\n    SELECT VALUE -- Constructing TBL_ModuloAPC_ComentariosRespuesta\r\n        [S" +
                     "olutionFramework.MainModel.TBL_ModuloAPC_ComentariosRespuesta](T1.[TBL_ModuloAPC" +
@@ -3420,67 +3486,9 @@ namespace Edm_EntityMappingGeneratedViews
         }
         
         /// <Summary>
-        /// return view for MainModuleContext.TBL_ModuloAPC_Solicitud
-        /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView100()
-        {
-            System.Text.StringBuilder viewString = new System.Text.StringBuilder(3894);
-            viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloAPC_Solicitud\r\n        [SolutionFra");
-            viewString.Append("mework.MainModel.TBL_ModuloAPC_Solicitud](T1.[TBL_ModuloAPC_Solicitud.IdSolucitu");
-            viewString.Append("dAPC], T1.[TBL_ModuloAPC_Solicitud.Consecutivo], T1.[TBL_ModuloAPC_Solicitud.IdD");
-            viewString.Append("ocumentoLotus], T1.[TBL_ModuloAPC_Solicitud.IdEstado], T1.[TBL_ModuloAPC_Solicit");
-            viewString.Append("ud.IdSolicitante], T1.[TBL_ModuloAPC_Solicitud.IdResponsableEjecucion], T1.[TBL_");
-            viewString.Append("ModuloAPC_Solicitud.IdResponsableSeguimiento], T1.[TBL_ModuloAPC_Solicitud.TipoA");
-            viewString.Append("ccion], T1.[TBL_ModuloAPC_Solicitud.FechaSolicitud], T1.[TBL_ModuloAPC_Solicitud");
-            viewString.Append(".Codigo], T1.[TBL_ModuloAPC_Solicitud.IdReclamoCreacion], T1.[TBL_ModuloAPC_Soli");
-            viewString.Append("citud.IdAreaAccion], T1.[TBL_ModuloAPC_Solicitud.Proceso], T1.[TBL_ModuloAPC_Sol");
-            viewString.Append("icitud.IdGerente], T1.[TBL_ModuloAPC_Solicitud.DescripcionAccion], T1.[TBL_Modul");
-            viewString.Append("oAPC_Solicitud.FechaDesde], T1.[TBL_ModuloAPC_Solicitud.FechaHasta], T1.[TBL_Mod");
-            viewString.Append("uloAPC_Solicitud.IdAdministrador], T1.[TBL_ModuloAPC_Solicitud.IdAdministradorFu");
-            viewString.Append("ncional], T1.[TBL_ModuloAPC_Solicitud.Resultado], T1.[TBL_ModuloAPC_Solicitud.Ce");
-            viewString.Append("rrada], T1.[TBL_ModuloAPC_Solicitud.ObservacionesCierre], T1.[TBL_ModuloAPC_Soli");
-            viewString.Append("citud.IdResponsableActual], T1.[TBL_ModuloAPC_Solicitud.FechaCierre], T1.[TBL_Mo");
-            viewString.Append("duloAPC_Solicitud.IdUsuarioCierre], T1.[TBL_ModuloAPC_Solicitud.IsActive], T1.[T");
-            viewString.Append("BL_ModuloAPC_Solicitud.CreateBy], T1.[TBL_ModuloAPC_Solicitud.CreateOn], T1.[TBL");
-            viewString.Append("_ModuloAPC_Solicitud.ModifiedBy], T1.[TBL_ModuloAPC_Solicitud.ModifiedOn], T1.[T");
-            viewString.Append("BL_ModuloAPC_Solicitud.idGrupo])\r\n    FROM (\r\n        SELECT \r\n            T.IdS");
-            viewString.Append("olucitudAPC AS [TBL_ModuloAPC_Solicitud.IdSolucitudAPC], \r\n            T.Consecu");
-            viewString.Append("tivo AS [TBL_ModuloAPC_Solicitud.Consecutivo], \r\n            T.IdDocumentoLotus ");
-            viewString.Append("AS [TBL_ModuloAPC_Solicitud.IdDocumentoLotus], \r\n            T.IdEstado AS [TBL_");
-            viewString.Append("ModuloAPC_Solicitud.IdEstado], \r\n            T.IdSolicitante AS [TBL_ModuloAPC_S");
-            viewString.Append("olicitud.IdSolicitante], \r\n            T.IdResponsableEjecucion AS [TBL_ModuloAP");
-            viewString.Append("C_Solicitud.IdResponsableEjecucion], \r\n            T.IdResponsableSeguimiento AS");
-            viewString.Append(" [TBL_ModuloAPC_Solicitud.IdResponsableSeguimiento], \r\n            T.TipoAccion ");
-            viewString.Append("AS [TBL_ModuloAPC_Solicitud.TipoAccion], \r\n            T.FechaSolicitud AS [TBL_");
-            viewString.Append("ModuloAPC_Solicitud.FechaSolicitud], \r\n            T.Codigo AS [TBL_ModuloAPC_So");
-            viewString.Append("licitud.Codigo], \r\n            T.IdReclamoCreacion AS [TBL_ModuloAPC_Solicitud.I");
-            viewString.Append("dReclamoCreacion], \r\n            T.IdAreaAccion AS [TBL_ModuloAPC_Solicitud.IdAr");
-            viewString.Append("eaAccion], \r\n            T.Proceso AS [TBL_ModuloAPC_Solicitud.Proceso], \r\n     ");
-            viewString.Append("       T.IdGerente AS [TBL_ModuloAPC_Solicitud.IdGerente], \r\n            T.Descr");
-            viewString.Append("ipcionAccion AS [TBL_ModuloAPC_Solicitud.DescripcionAccion], \r\n            T.Fec");
-            viewString.Append("haDesde AS [TBL_ModuloAPC_Solicitud.FechaDesde], \r\n            T.FechaHasta AS [");
-            viewString.Append("TBL_ModuloAPC_Solicitud.FechaHasta], \r\n            T.IdAdministrador AS [TBL_Mod");
-            viewString.Append("uloAPC_Solicitud.IdAdministrador], \r\n            T.IdAdministradorFuncional AS [");
-            viewString.Append("TBL_ModuloAPC_Solicitud.IdAdministradorFuncional], \r\n            T.Resultado AS ");
-            viewString.Append("[TBL_ModuloAPC_Solicitud.Resultado], \r\n            T.Cerrada AS [TBL_ModuloAPC_S");
-            viewString.Append("olicitud.Cerrada], \r\n            T.ObservacionesCierre AS [TBL_ModuloAPC_Solicit");
-            viewString.Append("ud.ObservacionesCierre], \r\n            T.IdResponsableActual AS [TBL_ModuloAPC_S");
-            viewString.Append("olicitud.IdResponsableActual], \r\n            T.FechaCierre AS [TBL_ModuloAPC_Sol");
-            viewString.Append("icitud.FechaCierre], \r\n            T.IdUsuarioCierre AS [TBL_ModuloAPC_Solicitud");
-            viewString.Append(".IdUsuarioCierre], \r\n            T.IsActive AS [TBL_ModuloAPC_Solicitud.IsActive");
-            viewString.Append("], \r\n            T.CreateBy AS [TBL_ModuloAPC_Solicitud.CreateBy], \r\n           ");
-            viewString.Append(" T.CreateOn AS [TBL_ModuloAPC_Solicitud.CreateOn], \r\n            T.ModifiedBy AS");
-            viewString.Append(" [TBL_ModuloAPC_Solicitud.ModifiedBy], \r\n            T.ModifiedOn AS [TBL_Modulo");
-            viewString.Append("APC_Solicitud.ModifiedOn], \r\n            T.idGrupo AS [TBL_ModuloAPC_Solicitud.i");
-            viewString.Append("dGrupo], \r\n            True AS _from0\r\n        FROM SolutionFrameworkMainModelSt");
-            viewString.Append("oreContainer.TBL_ModuloAPC_Solicitud AS T\r\n    ) AS T1");
-            return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloAPC_Solicitud", viewString.ToString());
-        }
-        
-        /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloDocumentos_Categorias
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView101()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView102()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloDocumentos_Categorias", @"
     SELECT VALUE -- Constructing TBL_ModuloDocumentos_Categorias
@@ -3503,7 +3511,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloDocumentos_Documento
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView102()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView103()
         {
             System.Text.StringBuilder viewString = new System.Text.StringBuilder(2735);
             viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloDocumentos_Documento\r\n        [Solu");
@@ -3547,7 +3555,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloDocumentos_DocumentoAdjunto
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView103()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView104()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloDocumentos_DocumentoAdjunto", "\r\n    SELECT VALUE -- Constructing TBL_ModuloDocumentos_DocumentoAdjunto\r\n       " +
                     " [SolutionFramework.MainModel.TBL_ModuloDocumentos_DocumentoAdjunto](T1.[TBL_Mod" +
@@ -3574,7 +3582,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloDocumentos_DocumentoAdjuntoHistorial
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView104()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView105()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloDocumentos_DocumentoAdjuntoHistorial", "\r\n    SELECT VALUE -- Constructing TBL_ModuloDocumentos_DocumentoAdjuntoHistorial" +
                     "\r\n        [SolutionFramework.MainModel.TBL_ModuloDocumentos_DocumentoAdjuntoHist" +
@@ -3604,7 +3612,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloDocumentos_Estados
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView105()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView106()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloDocumentos_Estados", @"
     SELECT VALUE -- Constructing TBL_ModuloDocumentos_Estados
@@ -3628,7 +3636,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloDocumentos_HistorialDocumento
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView106()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView107()
         {
             System.Text.StringBuilder viewString = new System.Text.StringBuilder(2924);
             viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloDocumentos_HistorialDocumento\r\n    ");
@@ -3674,7 +3682,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloDocumentos_LogCambios
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView107()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView108()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloDocumentos_LogCambios", @"
     SELECT VALUE -- Constructing TBL_ModuloDocumentos_LogCambios
@@ -3696,7 +3704,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloDocumentosAnexos_Carpetas
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView108()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView109()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloDocumentosAnexos_Carpetas", @"
     SELECT VALUE -- Constructing TBL_ModuloDocumentosAnexos_Carpetas
@@ -3720,7 +3728,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloDocumentosAnexos_Categorias
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView109()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView110()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloDocumentosAnexos_Categorias", @"
     SELECT VALUE -- Constructing TBL_ModuloDocumentosAnexos_Categorias
@@ -3743,7 +3751,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloDocumentosAnexos_Contenido
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView110()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView111()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloDocumentosAnexos_Contenido", "\r\n    SELECT VALUE -- Constructing TBL_ModuloDocumentosAnexos_Contenido\r\n        " +
                     "[SolutionFramework.MainModel.TBL_ModuloDocumentosAnexos_Contenido](T1.[TBL_Modul" +
@@ -3774,7 +3782,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloDocumentosAnexos_Documento
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView111()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView112()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloDocumentosAnexos_Documento", "\r\n    SELECT VALUE -- Constructing TBL_ModuloDocumentosAnexos_Documento\r\n        " +
                     "[SolutionFramework.MainModel.TBL_ModuloDocumentosAnexos_Documento](T1.[TBL_Modul" +
@@ -3805,7 +3813,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloReclamos_Actividades
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView112()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView113()
         {
             System.Text.StringBuilder viewString = new System.Text.StringBuilder(2342);
             viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_Actividades\r\n        [Solu");
@@ -3844,7 +3852,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloReclamos_ActividadesReclamo
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView113()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView114()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_ActividadesReclamo", "\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_ActividadesReclamo\r\n       " +
                     " [SolutionFramework.MainModel.TBL_ModuloReclamos_ActividadesReclamo](T1.[TBL_Mod" +
@@ -3871,7 +3879,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloReclamos_Alternativas
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView114()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView115()
         {
             System.Text.StringBuilder viewString = new System.Text.StringBuilder(2290);
             viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_Alternativas\r\n        [Sol");
@@ -3909,7 +3917,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloReclamos_AnexosActividad
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView115()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView116()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_AnexosActividad", @"
     SELECT VALUE -- Constructing TBL_ModuloReclamos_AnexosActividad
@@ -3933,7 +3941,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloReclamos_AnexosAlternativa
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView116()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView117()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_AnexosAlternativa", "\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_AnexosAlternativa\r\n        " +
                     "[SolutionFramework.MainModel.TBL_ModuloReclamos_AnexosAlternativa](T1.[TBL_Modul" +
@@ -3960,7 +3968,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloReclamos_AnexosComentarioRespuesta
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView117()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView118()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_AnexosComentarioRespuesta", "\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_AnexosComentarioRespuesta\r\n" +
                     "        [SolutionFramework.MainModel.TBL_ModuloReclamos_AnexosComentarioRespuest" +
@@ -3989,7 +3997,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloReclamos_AnexosSolucion
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView118()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView119()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_AnexosSolucion", @"
     SELECT VALUE -- Constructing TBL_ModuloReclamos_AnexosSolucion
@@ -4013,7 +4021,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloReclamos_Asesores
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView119()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView120()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_Asesores", @"
     SELECT VALUE -- Constructing TBL_ModuloReclamos_Asesores
@@ -4036,7 +4044,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloReclamos_CategoriaProducto
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView120()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView121()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_CategoriaProducto", @"
     SELECT VALUE -- Constructing TBL_ModuloReclamos_CategoriaProducto
@@ -4059,7 +4067,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloReclamos_CategoriasReclamo
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView121()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView122()
         {
             System.Text.StringBuilder viewString = new System.Text.StringBuilder(2090);
             viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_CategoriasReclamo\r\n       ");
@@ -4095,7 +4103,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloReclamos_ComentariosRespuesta
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView122()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView123()
         {
             System.Text.StringBuilder viewString = new System.Text.StringBuilder(2384);
             viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_ComentariosRespuesta\r\n    ");
@@ -4134,7 +4142,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloReclamos_CostosProducto
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView123()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView124()
         {
             System.Text.StringBuilder viewString = new System.Text.StringBuilder(2534);
             viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_CostosProducto\r\n        [S");
@@ -4175,7 +4183,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloReclamos_LogReclamos
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView124()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView125()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_LogReclamos", @"
     SELECT VALUE -- Constructing TBL_ModuloReclamos_LogReclamos
@@ -4196,7 +4204,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloReclamos_Reclamo
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView125()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView126()
         {
             System.Text.StringBuilder viewString = new System.Text.StringBuilder(11036);
             viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_Reclamo\r\n        [Solution");
@@ -4343,7 +4351,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloReclamos_Soluciones
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView126()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView127()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_Soluciones", @"
     SELECT VALUE -- Constructing TBL_ModuloReclamos_Soluciones
@@ -4367,7 +4375,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloReclamos_TipoReclamo
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView127()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView128()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_TipoReclamo", @"
     SELECT VALUE -- Constructing TBL_ModuloReclamos_TipoReclamo
@@ -4389,7 +4397,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloReclamos_Tracking
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView128()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView129()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_Tracking", "\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_Tracking\r\n        [Solution" +
                     "Framework.MainModel.TBL_ModuloReclamos_Tracking](T1.[TBL_ModuloReclamos_Tracking" +
@@ -4417,7 +4425,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloReclamos_Unidad
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView129()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView130()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_Unidad", @"
     SELECT VALUE -- Constructing TBL_ModuloReclamos_Unidad
@@ -4439,7 +4447,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloReclamos_UnidadesZonas
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView130()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView131()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_UnidadesZonas", "\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_UnidadesZonas\r\n        [Sol" +
                     "utionFramework.MainModel.TBL_ModuloReclamos_UnidadesZonas](T1.[TBL_ModuloReclamo" +
@@ -4466,7 +4474,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloReclamos_Zona
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView131()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView132()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_Zona", @"
     SELECT VALUE -- Constructing TBL_ModuloReclamos_Zona
@@ -4488,7 +4496,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloWorkFlow_CamposValidacion
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView132()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView133()
         {
             System.Text.StringBuilder viewString = new System.Text.StringBuilder(2109);
             viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloWorkFlow_CamposValidacion\r\n        ");
@@ -4524,7 +4532,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloWorkFlow_Rutas
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView133()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView134()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloWorkFlow_Rutas", "\r\n    SELECT VALUE -- Constructing TBL_ModuloWorkFlow_Rutas\r\n        [SolutionFra" +
                     "mework.MainModel.TBL_ModuloWorkFlow_Rutas](T1.[TBL_ModuloWorkFlow_Rutas.IdRuta]," +
@@ -4556,7 +4564,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloWorkFlow_ValidacionesSalida
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView134()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView135()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloWorkFlow_ValidacionesSalida", "\r\n    SELECT VALUE -- Constructing TBL_ModuloWorkFlow_ValidacionesSalida\r\n       " +
                     " [SolutionFramework.MainModel.TBL_ModuloWorkFlow_ValidacionesSalida](T1.[TBL_Mod" +
@@ -4584,9 +4592,115 @@ namespace Edm_EntityMappingGeneratedViews
         }
         
         /// <Summary>
+        /// return view for MainModuleContext.TBL_ModuloAPC_LogSolicitud
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView136()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloAPC_LogSolicitud", @"
+    SELECT VALUE -- Constructing TBL_ModuloAPC_LogSolicitud
+        [SolutionFramework.MainModel.TBL_ModuloAPC_LogSolicitud](T1.[TBL_ModuloAPC_LogSolicitud.IdLog], T1.[TBL_ModuloAPC_LogSolicitud.IdSolicitud], T1.[TBL_ModuloAPC_LogSolicitud.Descripcion], T1.[TBL_ModuloAPC_LogSolicitud.CreateBy], T1.[TBL_ModuloAPC_LogSolicitud.CreateOn], T1.[TBL_ModuloAPC_LogSolicitud.IsActive])
+    FROM (
+        SELECT 
+            T.IdLog AS [TBL_ModuloAPC_LogSolicitud.IdLog], 
+            T.IdSolicitud AS [TBL_ModuloAPC_LogSolicitud.IdSolicitud], 
+            T.Descripcion AS [TBL_ModuloAPC_LogSolicitud.Descripcion], 
+            T.CreateBy AS [TBL_ModuloAPC_LogSolicitud.CreateBy], 
+            T.CreateOn AS [TBL_ModuloAPC_LogSolicitud.CreateOn], 
+            T.IsActive AS [TBL_ModuloAPC_LogSolicitud.IsActive], 
+            True AS _from0
+        FROM SolutionFrameworkMainModelStoreContainer.TBL_ModuloAPC_LogSolicitud AS T
+    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for MainModuleContext.TBL_ModuloAPC_Tracking
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView137()
+        {
+            return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloAPC_Tracking", "\r\n    SELECT VALUE -- Constructing TBL_ModuloAPC_Tracking\r\n        [SolutionFrame" +
+                    "work.MainModel.TBL_ModuloAPC_Tracking](T1.[TBL_ModuloAPC_Tracking.IdTracking], T" +
+                    "1.[TBL_ModuloAPC_Tracking.IdSolicitud], T1.[TBL_ModuloAPC_Tracking.Autor], T1.[T" +
+                    "BL_ModuloAPC_Tracking.EstadoAnterior], T1.[TBL_ModuloAPC_Tracking.Accion], T1.[T" +
+                    "BL_ModuloAPC_Tracking.Nuevoestado], T1.[TBL_ModuloAPC_Tracking.NuevoResponsable]" +
+                    ", T1.[TBL_ModuloAPC_Tracking.IsActive], T1.[TBL_ModuloAPC_Tracking.CreateBy], T1" +
+                    ".[TBL_ModuloAPC_Tracking.CreateOn], T1.[TBL_ModuloAPC_Tracking.ModifiedBy], T1.[" +
+                    "TBL_ModuloAPC_Tracking.ModifiedOn])\r\n    FROM (\r\n        SELECT \r\n            T." +
+                    "IdTracking AS [TBL_ModuloAPC_Tracking.IdTracking], \r\n            T.IdSolicitud A" +
+                    "S [TBL_ModuloAPC_Tracking.IdSolicitud], \r\n            T.Autor AS [TBL_ModuloAPC_" +
+                    "Tracking.Autor], \r\n            T.EstadoAnterior AS [TBL_ModuloAPC_Tracking.Estad" +
+                    "oAnterior], \r\n            T.Accion AS [TBL_ModuloAPC_Tracking.Accion], \r\n       " +
+                    "     T.Nuevoestado AS [TBL_ModuloAPC_Tracking.Nuevoestado], \r\n            T.Nuev" +
+                    "oResponsable AS [TBL_ModuloAPC_Tracking.NuevoResponsable], \r\n            T.IsAct" +
+                    "ive AS [TBL_ModuloAPC_Tracking.IsActive], \r\n            T.CreateBy AS [TBL_Modul" +
+                    "oAPC_Tracking.CreateBy], \r\n            T.CreateOn AS [TBL_ModuloAPC_Tracking.Cre" +
+                    "ateOn], \r\n            T.ModifiedBy AS [TBL_ModuloAPC_Tracking.ModifiedBy], \r\n   " +
+                    "         T.ModifiedOn AS [TBL_ModuloAPC_Tracking.ModifiedOn], \r\n            True" +
+                    " AS _from0\r\n        FROM SolutionFrameworkMainModelStoreContainer.TBL_ModuloAPC_" +
+                    "Tracking AS T\r\n    ) AS T1");
+        }
+        
+        /// <Summary>
+        /// return view for MainModuleContext.TBL_ModuloAPC_Solicitud
+        /// </Summary>
+        private System.Collections.Generic.KeyValuePair<string, string> GetView138()
+        {
+            System.Text.StringBuilder viewString = new System.Text.StringBuilder(3894);
+            viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloAPC_Solicitud\r\n        [SolutionFra");
+            viewString.Append("mework.MainModel.TBL_ModuloAPC_Solicitud](T1.[TBL_ModuloAPC_Solicitud.IdSolucitu");
+            viewString.Append("dAPC], T1.[TBL_ModuloAPC_Solicitud.Consecutivo], T1.[TBL_ModuloAPC_Solicitud.IdD");
+            viewString.Append("ocumentoLotus], T1.[TBL_ModuloAPC_Solicitud.IdEstado], T1.[TBL_ModuloAPC_Solicit");
+            viewString.Append("ud.IdSolicitante], T1.[TBL_ModuloAPC_Solicitud.IdResponsableEjecucion], T1.[TBL_");
+            viewString.Append("ModuloAPC_Solicitud.IdResponsableSeguimiento], T1.[TBL_ModuloAPC_Solicitud.TipoA");
+            viewString.Append("ccion], T1.[TBL_ModuloAPC_Solicitud.FechaSolicitud], T1.[TBL_ModuloAPC_Solicitud");
+            viewString.Append(".Codigo], T1.[TBL_ModuloAPC_Solicitud.IdReclamoCreacion], T1.[TBL_ModuloAPC_Soli");
+            viewString.Append("citud.IdAreaAccion], T1.[TBL_ModuloAPC_Solicitud.Proceso], T1.[TBL_ModuloAPC_Sol");
+            viewString.Append("icitud.IdGerente], T1.[TBL_ModuloAPC_Solicitud.DescripcionAccion], T1.[TBL_Modul");
+            viewString.Append("oAPC_Solicitud.FechaDesde], T1.[TBL_ModuloAPC_Solicitud.FechaHasta], T1.[TBL_Mod");
+            viewString.Append("uloAPC_Solicitud.IdAdministrador], T1.[TBL_ModuloAPC_Solicitud.IdAdministradorFu");
+            viewString.Append("ncional], T1.[TBL_ModuloAPC_Solicitud.Resultado], T1.[TBL_ModuloAPC_Solicitud.Ce");
+            viewString.Append("rrada], T1.[TBL_ModuloAPC_Solicitud.ObservacionesCierre], T1.[TBL_ModuloAPC_Soli");
+            viewString.Append("citud.IdResponsableActual], T1.[TBL_ModuloAPC_Solicitud.FechaCierre], T1.[TBL_Mo");
+            viewString.Append("duloAPC_Solicitud.IdUsuarioCierre], T1.[TBL_ModuloAPC_Solicitud.IsActive], T1.[T");
+            viewString.Append("BL_ModuloAPC_Solicitud.CreateBy], T1.[TBL_ModuloAPC_Solicitud.CreateOn], T1.[TBL");
+            viewString.Append("_ModuloAPC_Solicitud.ModifiedBy], T1.[TBL_ModuloAPC_Solicitud.ModifiedOn], T1.[T");
+            viewString.Append("BL_ModuloAPC_Solicitud.idGrupo])\r\n    FROM (\r\n        SELECT \r\n            T.IdS");
+            viewString.Append("olucitudAPC AS [TBL_ModuloAPC_Solicitud.IdSolucitudAPC], \r\n            T.Consecu");
+            viewString.Append("tivo AS [TBL_ModuloAPC_Solicitud.Consecutivo], \r\n            T.IdDocumentoLotus ");
+            viewString.Append("AS [TBL_ModuloAPC_Solicitud.IdDocumentoLotus], \r\n            T.IdEstado AS [TBL_");
+            viewString.Append("ModuloAPC_Solicitud.IdEstado], \r\n            T.IdSolicitante AS [TBL_ModuloAPC_S");
+            viewString.Append("olicitud.IdSolicitante], \r\n            T.IdResponsableEjecucion AS [TBL_ModuloAP");
+            viewString.Append("C_Solicitud.IdResponsableEjecucion], \r\n            T.IdResponsableSeguimiento AS");
+            viewString.Append(" [TBL_ModuloAPC_Solicitud.IdResponsableSeguimiento], \r\n            T.TipoAccion ");
+            viewString.Append("AS [TBL_ModuloAPC_Solicitud.TipoAccion], \r\n            T.FechaSolicitud AS [TBL_");
+            viewString.Append("ModuloAPC_Solicitud.FechaSolicitud], \r\n            T.Codigo AS [TBL_ModuloAPC_So");
+            viewString.Append("licitud.Codigo], \r\n            T.IdReclamoCreacion AS [TBL_ModuloAPC_Solicitud.I");
+            viewString.Append("dReclamoCreacion], \r\n            T.IdAreaAccion AS [TBL_ModuloAPC_Solicitud.IdAr");
+            viewString.Append("eaAccion], \r\n            T.Proceso AS [TBL_ModuloAPC_Solicitud.Proceso], \r\n     ");
+            viewString.Append("       T.IdGerente AS [TBL_ModuloAPC_Solicitud.IdGerente], \r\n            T.Descr");
+            viewString.Append("ipcionAccion AS [TBL_ModuloAPC_Solicitud.DescripcionAccion], \r\n            T.Fec");
+            viewString.Append("haDesde AS [TBL_ModuloAPC_Solicitud.FechaDesde], \r\n            T.FechaHasta AS [");
+            viewString.Append("TBL_ModuloAPC_Solicitud.FechaHasta], \r\n            T.IdAdministrador AS [TBL_Mod");
+            viewString.Append("uloAPC_Solicitud.IdAdministrador], \r\n            T.IdAdministradorFuncional AS [");
+            viewString.Append("TBL_ModuloAPC_Solicitud.IdAdministradorFuncional], \r\n            T.Resultado AS ");
+            viewString.Append("[TBL_ModuloAPC_Solicitud.Resultado], \r\n            T.Cerrada AS [TBL_ModuloAPC_S");
+            viewString.Append("olicitud.Cerrada], \r\n            T.ObservacionesCierre AS [TBL_ModuloAPC_Solicit");
+            viewString.Append("ud.ObservacionesCierre], \r\n            T.IdResponsableActual AS [TBL_ModuloAPC_S");
+            viewString.Append("olicitud.IdResponsableActual], \r\n            T.FechaCierre AS [TBL_ModuloAPC_Sol");
+            viewString.Append("icitud.FechaCierre], \r\n            T.IdUsuarioCierre AS [TBL_ModuloAPC_Solicitud");
+            viewString.Append(".IdUsuarioCierre], \r\n            T.IsActive AS [TBL_ModuloAPC_Solicitud.IsActive");
+            viewString.Append("], \r\n            T.CreateBy AS [TBL_ModuloAPC_Solicitud.CreateBy], \r\n           ");
+            viewString.Append(" T.CreateOn AS [TBL_ModuloAPC_Solicitud.CreateOn], \r\n            T.ModifiedBy AS");
+            viewString.Append(" [TBL_ModuloAPC_Solicitud.ModifiedBy], \r\n            T.ModifiedOn AS [TBL_Modulo");
+            viewString.Append("APC_Solicitud.ModifiedOn], \r\n            T.idGrupo AS [TBL_ModuloAPC_Solicitud.i");
+            viewString.Append("dGrupo], \r\n            True AS _from0\r\n        FROM SolutionFrameworkMainModelSt");
+            viewString.Append("oreContainer.TBL_ModuloAPC_Solicitud AS T\r\n    ) AS T1");
+            return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloAPC_Solicitud", viewString.ToString());
+        }
+        
+        /// <Summary>
         /// return view for MainModuleContext.TBL_Admin_ResponsablesAprobacion
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView135()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView139()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_Admin_ResponsablesAprobacion", @"
     SELECT VALUE -- Constructing TBL_Admin_ResponsablesAprobacion
@@ -4613,7 +4727,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_Admin_RolesPorOpcionMenu
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView136()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView140()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_Admin_RolesPorOpcionMenu", @"
     SELECT VALUE -- Constructing TBL_Admin_RolesPorOpcionMenu
@@ -4640,7 +4754,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_Admin_UsuariosByRol
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView137()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView141()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_Admin_UsuariosByRol", @"
     SELECT VALUE -- Constructing TBL_Admin_UsuariosByRol
@@ -4667,7 +4781,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloAPC_UsuarioCopiaComentariosRespuesta
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView138()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView142()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloAPC_UsuarioCopiaComentariosRespuesta", "\r\n    SELECT VALUE -- Constructing TBL_ModuloAPC_UsuarioCopiaComentariosRespuesta" +
                     "\r\n        [SolutionFramework.MainModel.TBL_ModuloAPC_UsuarioCopiaComentariosResp" +
@@ -4697,7 +4811,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloDocumentosAnexos_CarpetasXrol
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView139()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView143()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloDocumentosAnexos_CarpetasXrol", "\r\n    SELECT VALUE -- Constructing TBL_ModuloDocumentosAnexos_CarpetasXrol\r\n     " +
                     "   [SolutionFramework.MainModel.TBL_ModuloDocumentosAnexos_CarpetasXrol](T3.[TBL" +
@@ -4725,7 +4839,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloReclamos_AsesorJefe
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView140()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView144()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_AsesorJefe", @"
     SELECT VALUE -- Constructing TBL_ModuloReclamos_AsesorJefe
@@ -4752,7 +4866,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloReclamos_DocumentosAnexos
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView141()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView145()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_DocumentosAnexos", "\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_DocumentosAnexos\r\n        [" +
                     "SolutionFramework.MainModel.TBL_ModuloReclamos_DocumentosAnexos](T3.[TBL_ModuloR" +
@@ -4781,7 +4895,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloReclamos_IngenierosResponsablesByCategoriaProducto
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView142()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView146()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_IngenierosResponsablesByCategoriaProducto", "\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_IngenierosResponsablesByCat" +
                     "egoriaProducto\r\n        [SolutionFramework.MainModel.TBL_ModuloReclamos_Ingenier" +
@@ -4813,7 +4927,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloReclamos_ReclamoJefeAsesor
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView143()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView147()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_ReclamoJefeAsesor", "\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_ReclamoJefeAsesor\r\n        " +
                     "[SolutionFramework.MainModel.TBL_ModuloReclamos_ReclamoJefeAsesor](T3.[TBL_Modul" +
@@ -4840,7 +4954,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloReclamos_UsuarioCopiaComentariosRespuesta
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView144()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView148()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_UsuarioCopiaComentariosRespuesta", "\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_UsuarioCopiaComentariosResp" +
                     "uesta\r\n        [SolutionFramework.MainModel.TBL_ModuloReclamos_UsuarioCopiaComen" +
@@ -4871,7 +4985,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloReclamos_UsuariosCopiaActividades
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView145()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView149()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloReclamos_UsuariosCopiaActividades", "\r\n    SELECT VALUE -- Constructing TBL_ModuloReclamos_UsuariosCopiaActividades\r\n " +
                     "       [SolutionFramework.MainModel.TBL_ModuloReclamos_UsuariosCopiaActividades]" +
@@ -4900,7 +5014,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_Admin_ModuleVersion
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView146()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView150()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_Admin_ModuleVersion", @"
     SELECT VALUE -- Constructing TBL_Admin_ModuleVersion
@@ -4920,7 +5034,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_Admin_ModuleVersion
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView147()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView151()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_Admin_ModuleVersion", @"
     SELECT VALUE -- Constructing TBL_Admin_ModuleVersion
@@ -4940,7 +5054,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_Admin_OptionList
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView148()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView152()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_Admin_OptionList", @"
     SELECT VALUE -- Constructing TBL_Admin_OptionList
@@ -4965,7 +5079,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_Admin_OptionList
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView149()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView153()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_Admin_OptionList", @"
     SELECT VALUE -- Constructing TBL_Admin_OptionList
@@ -4990,7 +5104,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloPlanAccion_BancoActividades
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView150()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView154()
         {
             System.Text.StringBuilder viewString = new System.Text.StringBuilder(2430);
             viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloPlanAccion_BancoActividades\r\n      ");
@@ -5030,7 +5144,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloPlanAccion_Categorias
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView151()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView155()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("SolutionFrameworkMainModelStoreContainer.TBL_ModuloPlanAccion_Categorias", @"
     SELECT VALUE -- Constructing TBL_ModuloPlanAccion_Categorias
@@ -5054,7 +5168,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for SolutionFrameworkMainModelStoreContainer.TBL_ModuloPlanAccion_ConfiguracionActividades
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView152()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView156()
         {
             System.Text.StringBuilder viewString = new System.Text.StringBuilder(2643);
             viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloPlanAccion_ConfiguracionActividades");
@@ -5098,7 +5212,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloPlanAccion_BancoActividades
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView153()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView157()
         {
             System.Text.StringBuilder viewString = new System.Text.StringBuilder(2447);
             viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloPlanAccion_BancoActividades\r\n      ");
@@ -5138,7 +5252,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloPlanAccion_Categorias
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView154()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView158()
         {
             return new System.Collections.Generic.KeyValuePair<string, string>("MainModuleContext.TBL_ModuloPlanAccion_Categorias", @"
     SELECT VALUE -- Constructing TBL_ModuloPlanAccion_Categorias
@@ -5162,7 +5276,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// <Summary>
         /// return view for MainModuleContext.TBL_ModuloPlanAccion_ConfiguracionActividades
         /// </Summary>
-        private System.Collections.Generic.KeyValuePair<string, string> GetView155()
+        private System.Collections.Generic.KeyValuePair<string, string> GetView159()
         {
             System.Text.StringBuilder viewString = new System.Text.StringBuilder(2660);
             viewString.Append("\r\n    SELECT VALUE -- Constructing TBL_ModuloPlanAccion_ConfiguracionActividades");

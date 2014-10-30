@@ -65,6 +65,13 @@ namespace Domain.MainModule.Contracts
         /// <param name="name"></param>
         /// <returns></returns>
         TBL_Admin_Usuarios GetUsuarioByName(string name);
+
+        /// <summary>
+        /// Retorna el listado de usuarios aprobadores pertenecientes al grupo ....[group][/group]
+        /// </summary>
+        /// <param name="role"></param>
+        /// <returns></returns>
+        List<TBL_Admin_Usuarios> RetornarUsuariosReponsablesAprobacion(string role);
     }
 }
     

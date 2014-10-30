@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using Applications.MainModule.WorkFlow.DTO;
+using Domain.Core;
+using Domain.MainModule.AccionesPC.Contracts;
 using Domain.MainModule.Contracts;
 using Domain.MainModule.Reclamos.Contracts;
 using Domain.MainModules.Entities;
@@ -20,16 +22,22 @@ namespace Applications.MainModule.WorkFlow.Util
         private readonly ITBL_Admin_OptionListRepository _optionsRepository;
         private readonly ITBL_ModuloReclamos_ReclamoRepository _reclamosRepository;
         private readonly ITBL_ModuloReclamos_AsesoresRepository _asesoresRepository;
+        private readonly ITBL_ModuloAPC_SolicitudRepository _solicitudRepository;
+        private readonly ITBL_Admin_UsuariosRepository _usuariosRepository;
 
         public SendMailNotification(
             IEmailService iEmailService, 
             ITBL_Admin_PlantillasRepository plantillasrepository, 
             ITBL_Admin_OptionListRepository optionsRepository, 
             ITBL_ModuloReclamos_ReclamoRepository reclamosRepository, 
-            ITBL_ModuloReclamos_AsesoresRepository asesoresRepository)
+            ITBL_ModuloReclamos_AsesoresRepository asesoresRepository, 
+            ITBL_ModuloAPC_SolicitudRepository solicitudRepository, 
+            ITBL_Admin_UsuariosRepository usuariosRepository)
         {
           
             _iEmailService = iEmailService;
+            _usuariosRepository = usuariosRepository;
+            _solicitudRepository = solicitudRepository;
             _asesoresRepository = asesoresRepository;
             _reclamosRepository = reclamosRepository;
             _optionsRepository = optionsRepository;
@@ -41,11 +49,28 @@ namespace Applications.MainModule.WorkFlow.Util
         /// </summary>
         /// <param name="oDocument"></param>
         /// <param name="userSession"></param>
+        /// <param name="module"></param>
         /// <returns></returns>
-        public bool EnviarCorreoElectronicoNotificacion(RenderTypeControlButtonDto oDocument, TBL_Admin_Usuarios userSession)
+        public bool EnviarCorreoElectronicoNotificacion(RenderTypeControlButtonDto oDocument, TBL_Admin_Usuarios userSession, ModulosAplicacion module)
         {
 
-            var plantilla = ObtenerPlantilla(oDocument.NextStatus, "Colombia");
+            var plantilla = ObtenerPlantilla(oDocument.NextStatus, "Colombia", module);
+
+            return module == ModulosAplicacion.Reclamos ? 
+                SendEmailReclamo(oDocument, userSession, plantilla) : 
+                SendEmailSolicitud(oDocument, userSession, plantilla);
+        }
+
+        /// <summary>
+        /// Envio de notificaciones desde el WF para el modulo de Reclamos
+        /// </summary>
+        /// <param name="oDocument"></param>
+        /// <param name="userSession"></param>
+        /// <param name="plantilla"></param>
+        /// <returns></returns>
+        private bool SendEmailReclamo(RenderTypeControlButtonDto oDocument, TBL_Admin_Usuarios userSession, string plantilla)
+        {
+            
 
             if (string.IsNullOrEmpty(plantilla)) return false;
 
@@ -65,14 +90,75 @@ namespace Applications.MainModule.WorkFlow.Util
 
             var strFrom = string.Format("Gestión de Reclamos. Enviado por: {0}<{1}>", userSession.Nombres, GetFromEmail());
 
-            bodyParams.Add("$NumeroReclamo",oReclamo.NumeroReclamo);
+            bodyParams.Add("$NumeroReclamo", oReclamo.NumeroReclamo);
             bodyParams.Add("$Cliente", string.IsNullOrEmpty(oReclamo.NombreCliente) ? oReclamo.CodigoCliente : oReclamo.NombreCliente);
             bodyParams.Add("$Responsable", oReclamo.TBL_Admin_Usuarios == null ? oDocument.CurrentResponsibe : oReclamo.TBL_Admin_Usuarios.Nombres);
             bodyParams.Add("$Url", UrlHelper.GetUrlPreViewDocumentforEmail());
 
-            _iEmailService.ProcessEmail(strFrom,oDocument.EmailCurrentResponsibe,plantilla,subjectParams,bodyParams,null,null);
+            _iEmailService.ProcessEmail(strFrom, oDocument.EmailCurrentResponsibe, plantilla, subjectParams, bodyParams, null, null);
             return true;
         }
+
+        /// <summary>
+        /// Envio de notificaciones desde el WF para el modulo de Solicitudes APC
+        /// </summary>
+        /// <param name="oDocument"></param>
+        /// <param name="userSession"></param>
+        /// <param name="plantilla"></param>
+        /// <returns></returns>
+        private bool SendEmailSolicitud(RenderTypeControlButtonDto oDocument, TBL_Admin_Usuarios userSession, string plantilla)
+        {
+
+
+            if (string.IsNullOrEmpty(plantilla)) return false;
+
+            var oSolicitud = _solicitudRepository.GetSolicitudById(Convert.ToInt32(oDocument.IdDocument));
+            if (oSolicitud == null) return false;
+
+
+            var bodyParams = new Dictionary<string, string>();
+
+
+            var subjectParams = new Dictionary<string, string>
+                                    {
+                                        {"$Aplicacion", "SIka - Gestión de Calidad."},
+                                        {"$Consecutivo", oSolicitud.Codigo}
+                                    };
+
+            var strFrom = string.Format("Gestión de Calidad. Enviado por: {0}<{1}>", userSession.Nombres, GetFromEmail());
+
+            bodyParams.Add("$Area", oSolicitud.TBL_ModuloAPC_Areas.Nombre);
+            bodyParams.Add("$Proceso", oSolicitud.Proceso);
+            bodyParams.Add("$TipoAccion", oSolicitud.TipoAccion);
+            bodyParams.Add("$Solicitante", oSolicitud.TBL_Admin_Usuarios9.Nombres);
+            bodyParams.Add("$Responsable", oSolicitud.TBL_Admin_Usuarios6.Nombres);
+            bodyParams.Add("$Url", UrlHelper.GetUrlPreViewDocumentSolicitudforEmail());
+
+            if(!oDocument.IsNextGroupResponsible)
+                _iEmailService.ProcessEmail(strFrom, oDocument.EmailCurrentResponsibe, plantilla, subjectParams, bodyParams, null, null);
+            else
+            {
+                var m = DefinedRegexEvaluation.Grupo.Match(oDocument.FormulaNextresponsible);
+                if(m.Success)
+                {
+                    bodyParams.Remove("$Responsable");
+                    var usuarios = _usuariosRepository.RetornarUsuariosReponsablesAprobacion(m.Groups[1].Value);
+                    var strResponsables = string.Empty;
+                    var strEmails = string.Empty;
+                    foreach (var usu in usuarios)
+                    {
+                        strResponsables += string.Format("{0}, ", usu.Nombres);
+                        strEmails += string.Format("{0},", usu.Email);
+                    }
+
+                    bodyParams.Add("$Responsable", strResponsables.Substring(0,strResponsables.Length-1));
+                    _iEmailService.ProcessEmail(strFrom, strEmails.Substring(0, strEmails.Length-1), plantilla, subjectParams, bodyParams, null, null);
+                }
+            }
+
+            return true;
+        }
+
 
         /// <summary>
         /// 
@@ -83,7 +169,7 @@ namespace Applications.MainModule.WorkFlow.Util
         public bool EnviarCorreoElectronicoNotificacionCliente(RenderTypeControlButtonDto oDocument, TBL_Admin_Usuarios userSession)
         {
 
-            var plantilla = ObtenerPlantilla("EmailContacto", "Colombia");
+            var plantilla = ObtenerPlantilla("EmailContacto", "Colombia",ModulosAplicacion.Reclamos);
 
             if (string.IsNullOrEmpty(plantilla)) return false;
 
@@ -135,7 +221,7 @@ namespace Applications.MainModule.WorkFlow.Util
         public bool EnviarCorreoelectronicoAsesoresJefe(RenderTypeControlButtonDto oDocument, TBL_Admin_Usuarios userSession)
         {
 
-            var plantilla = ObtenerPlantilla("EmailJefes", "Colombia");
+            var plantilla = ObtenerPlantilla("EmailJefes", "Colombia",ModulosAplicacion.Reclamos);
 
             if (string.IsNullOrEmpty(plantilla)) return false;
 
@@ -193,7 +279,7 @@ namespace Applications.MainModule.WorkFlow.Util
         public bool EnviarCorreoelectronicoAutorReclamo(RenderTypeControlButtonDto oDocument, TBL_Admin_Usuarios userSession)
         {
 
-            var plantilla = ObtenerPlantilla("MailAutor", "Colombia");
+            var plantilla = ObtenerPlantilla("MailAutor", "Colombia",ModulosAplicacion.Reclamos);
 
             if (string.IsNullOrEmpty(plantilla)) return false;
 
@@ -246,7 +332,7 @@ namespace Applications.MainModule.WorkFlow.Util
         public bool EnviarCorreoelectronicoDevolucion(RenderTypeControlButtonDto oDocument, TBL_Admin_Usuarios userSession)
         {
 
-            var plantilla = ObtenerPlantilla("DevolucionResponsable", "Colombia");
+            var plantilla = ObtenerPlantilla("DevolucionResponsable", "Colombia",ModulosAplicacion.Reclamos);
 
             if (string.IsNullOrEmpty(plantilla)) return false;
 
@@ -277,7 +363,7 @@ namespace Applications.MainModule.WorkFlow.Util
         public bool EnviarCorreoelectronicoRechazoReclamo(RenderTypeControlButtonDto oDocument, TBL_Admin_Usuarios userSession)
         {
 
-            var plantilla = ObtenerPlantilla("RechazarReclamo", "Colombia");
+            var plantilla = ObtenerPlantilla("RechazarReclamo", "Colombia",ModulosAplicacion.Reclamos);
 
             if (string.IsNullOrEmpty(plantilla)) return false;
 
@@ -308,10 +394,12 @@ namespace Applications.MainModule.WorkFlow.Util
         /// 
         /// </summary>
         /// <param name="oDocument"></param>
+        /// <param name="module"></param>
         /// <returns></returns>
-        public byte[] GetMergeTemplate(RenderTypeControlButtonDto oDocument)
+        public byte[] GetMergeTemplate(RenderTypeControlButtonDto oDocument, ModulosAplicacion module)
         {
-            var plantilla = ObtenerPlantilla(oDocument.NextStatus,  "Colombia");
+            
+            var plantilla = ObtenerPlantilla(oDocument.NextStatus, "Colombia", module);
 
             if (string.IsNullOrEmpty(plantilla)) return null;
 
@@ -354,10 +442,13 @@ namespace Applications.MainModule.WorkFlow.Util
         /// </summary>
         /// <param name="codigoPlantilla"></param>
         /// <param name="pais"></param>
+        /// <param name="module"></param>
         /// <returns></returns>
-        private  string ObtenerPlantilla(string codigoPlantilla, string pais)
+        private string ObtenerPlantilla(string codigoPlantilla, string pais, ModulosAplicacion module)
         {
-            var plantilla = _plantillasrepository.GetPlantillaByIdPaisByCodigo(codigoPlantilla,pais);
+            var idModule = (int) module;
+
+            var plantilla = _plantillasrepository.GetPlantillaByIdPaisByCodigo(codigoPlantilla, pais, idModule.ToString());
 
             if (plantilla == null) return string.Empty;
 

@@ -190,5 +190,19 @@ namespace Infrastructure.CrossCutting.NetFramework.Util
             var url = string.Format("{0}/Pages/Modules/Reclamos/Admin/FrmAdminActividadReclamo.aspx?ModuleId={1}&IdReclamo={2}&&IdActividad={3}&from=reclamo", appRot, idModule, idReclamo, idActividad);
             return "<a href=\"" + url + "\"> De click aquí para abrir el documento.\"</a>";
         }
+
+        #region Solicitudes
+
+        public static string GetUrlPreViewDocumentSolicitudforEmail()
+        {
+            var appRot = GetSiteUrl();
+            var idModule = HttpContext.Current.Request.QueryString["ModuleId"];
+            var idSolicitud = HttpContext.Current.Request.QueryString["IdSolicitud"];
+
+            var url = string.Format("{0}/Pages/Modules/AccionesPC/Admin/FrmSolicitudAPC.aspx?ModuleId={1}&IdReclamo={2}", appRot, idModule, idSolicitud);
+            return "<a href=\"" + url + "\"> De click aquí para abrir el documento.\"</a>";
+        }
+
+        #endregion
     }
 }

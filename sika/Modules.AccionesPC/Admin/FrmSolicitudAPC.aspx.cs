@@ -49,7 +49,7 @@ namespace Modules.AccionesPC.Admin
             }
         }
 
-        public string InputWindow
+        private string InputWindow
         {
             get
             {
@@ -75,8 +75,64 @@ namespace Modules.AccionesPC.Admin
 
         protected override void OnInit(EventArgs e)
         {
+            SystemActionsEvent += SolicitudSystemActionsEvent;
             base.OnInit(e);
-        }     
+        }
+
+        void SolicitudSystemActionsEvent(object sender, ViewResulteventArgs e)
+        {
+            if (e.MessageView == null) return;
+
+
+            if (e.MessageView.ToString() == "UpdatePanel")
+            {
+                //todo: Bloque de código que se encargará de actuaizar el panel de resumen cuando el WF termine el paso..
+                //WucPanelEstado1.ActualizarPanelResumen();
+                //ActualizarControlUsuarioActivo();
+                //wucLogReclamo.CargarLog();
+                //if (FilterEvent != null)
+                //    FilterEvent(null, EventArgs.Empty);
+
+                ShowMessageOk("Proceso realizado satisfactoriamente.");
+            }
+            else
+            {
+                var oDocument = (RenderTypeControlButtonDto)e.MessageView;
+
+                if (oDocument.MessagesError.Count > 0)
+                {
+                    //LastLoadedControlMessages = string.Format("{0}WucRenderMessagesError.ascx", ROOTUC);
+                    //LoadUserControlVentanaMensajes(oDocument.MessagesError);
+                    //pnlVentanaEmergente.Width = 550;
+                    //pnlVentanaEmergente.Height = 200;
+                    //litTitulo.Text = @"Resultado del proceso de validación.";
+                    //mpeVentanaEmergente.Show();
+                }
+                else if (oDocument.OutputParameters.Count > 0)
+                {
+                    var ventana = oDocument.OutputParameters[0];
+                    InputWindow = ventana;
+
+                    switch (ventana)
+                    {
+                        case "ResponsableSolicitud":
+                            litTitulo.Text = @"Seleccione el Responsable.";
+                            LastLoadedControlMessages = "../UserControls/WucAsignarResponsableSolicitud.ascx";
+                            LoadUserControlVentanaMensajes(null);
+                            mpeVentanaEmergente.Show();
+                            break;
+
+                        //case "CategorizacionReclamo":
+                        //    litTitulo.Text = @"Caregorización del reclamo.";
+                        //    LastLoadedControlMessages = "../UserControls/WucCategorizarReclamo.ascx";
+                        //    LoadUserControlVentanaMensajes(null);
+                        //    mpeVentanaEmergente.Show();
+                        //    break;
+                    }
+                }
+            }
+
+        }
 
         #endregion
 
@@ -143,11 +199,115 @@ namespace Modules.AccionesPC.Admin
                                                ));
         }
 
-        protected void BtnViewReclamo_Click(object sender, EventArgs e)
+        protected void BtnViewReclamoClick(object sender, EventArgs e)
         {
             //Response.Redirect(string.Format("FrmReclamo.aspx?ModuleId={0}&IdReclamo={1}&from=admactividad&idfrom={2}", ModuleId, IdReclamo, IdActividad));
         }
-        
+
+        protected void BtnAceptarInputClick(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(InputWindow)) return;
+
+            switch (InputWindow)
+            {
+                case "ResponsableSolicitud":
+                    {
+                        var ucr = this.GetUserControl<WucAsignarResponsableSolicitud>("UcRender", "phlVentanaMensajes");
+                        if (ucr == null) return;
+                        if (string.IsNullOrEmpty(ucr.IngenieroSeleccionado)) return;
+
+                        var parameters = new InputParameter
+                        {
+                            Inputs = new Dictionary<string, string>
+                                                              {
+                                                                  {"IdIngeniero", ucr.IngenieroSeleccionado}
+                                                              }
+                        };
+
+                        EjecutarWorkFlow(parameters, InputWindow);
+
+                    }
+                    break;
+
+                //case "CategorizacionReclamo":
+                //    {
+                //        var uc = this.GetUserControl<WucCategorizarReclamo>("UcRender", "phlVentanaMensajes");
+                //        if (uc == null) return;
+                //        if (string.IsNullOrEmpty(uc.AreaSeleccionada) || string.IsNullOrEmpty(uc.CategoriaSeleccionada)) return;
+
+                //        var parameters = new InputParameter
+                //        {
+                //            Inputs = new Dictionary<string, string>
+                //                                              {
+                //                                                  {"Idcategoria", uc.CategoriaSeleccionada},
+                //                                                  {"Area", uc.AreaSeleccionada}
+                //                                              }
+                //        };
+
+                //        EjecutarWorkFlow(parameters, InputWindow);
+                //    }
+
+                //    break;
+
+                //case "Devolucion":
+                //    {
+                //        var uc = this.GetUserControl<WucComentariosDevolverReclamo>("UcRender", "phlVentanaMensajes");
+                //        if (uc == null) return;
+                //        if (string.IsNullOrEmpty(uc.RetornarComentario)) return;
+
+                //        var parameters = new InputParameter
+                //        {
+                //            Inputs = new Dictionary<string, string>
+                //                                              {
+                //                                                  {"Comentario", uc.RetornarComentario}
+                //                                              }
+                //        };
+
+                //        EjecutarWorkFlow(parameters, InputWindow);
+                //    }
+
+                //    break;
+
+                //case "Rechazo":
+                //    {
+                //        var uc = this.GetUserControl<WucComentariosDevolverReclamo>("UcRender", "phlVentanaMensajes");
+                //        if (uc == null) return;
+                //        if (string.IsNullOrEmpty(uc.RetornarComentario)) return;
+
+                //        var parameters = new InputParameter
+                //        {
+                //            Inputs = new Dictionary<string, string>
+                //                                              {
+                //                                                  {"Comentario", uc.RetornarComentario}
+                //                                              }
+                //        };
+
+                //        EjecutarWorkFlow(parameters, InputWindow);
+                //    }
+                //    break;
+
+                //case "CambiarIngeniero":
+                //    {
+                //        var uc = this.GetUserControl<WucCambiarIngenieroResponsable>("UcRender", "phlVentanaMensajes");
+                //        if (uc == null) return;
+                //        if (string.IsNullOrEmpty(uc.Comentarios) || string.IsNullOrEmpty(uc.IngenieroSeleccionado)) return;
+
+                //        var parameters = new InputParameter
+                //        {
+                //            Inputs = new Dictionary<string, string>
+                //                                              {
+                //                                                  {"IdIngeniero", uc.IngenieroSeleccionado},
+                //                                                  {"NombreIngeniero", uc.NombreIngenieroSeleccionado},
+                //                                                  {"Comentario", uc.Comentarios}
+                //                                              }
+                //        };
+
+                //        EjecutarWorkFlow(parameters, InputWindow);
+                //    }
+                //    break;
+            }
+        }
+
         #endregion
 
         #region Menu
@@ -200,8 +360,48 @@ namespace Modules.AccionesPC.Admin
                 ucReclamo.LoadControlData();
                 //ucReclamo.RiseFatherPostback += RefreshReclamoInfo;
             }   
-        }       
+        }
 
+
+        private void LoadUserControlVentanaMensajes(IEnumerable<string> items)
+        {
+            var controlPath = LastLoadedControlMessages;
+
+            if (string.IsNullOrEmpty(controlPath))
+            {
+                //controlPath = "WucFechaEntrega.ascx";
+                return;
+            }
+            if (string.IsNullOrEmpty(controlPath)) return;
+            phlVentanaMensajes.Controls.Clear();
+            var uc = LoadControl(controlPath);
+            uc.ID = "UcRender";
+            ConfigurarUserControl(uc);
+            phlVentanaMensajes.Controls.Add(uc);
+
+            //if (items != null)
+            //{
+            //    if (controlPath.Contains("WucRenderMessagesError"))
+            //    {
+            //        var bl = this.GetUserControl<WucRenderMessagesError>("UcRender", "phlVentanaMensajes");
+            //        if (bl != null)
+            //        {
+            //            bl.RenderMessages(items);
+            //        }
+            //    }
+            //}
+        }
+
+        private void ConfigurarUserControl(Control oControl)
+        {
+            var uc = (BaseUserControl)oControl;
+            if (uc == null) return;
+            //uc.IdDocument = IdCategoria;
+            //if (IdIngenieroResponsable > 0)
+            //    uc.IdResponsable = IdIngenieroResponsable.ToString();
+        }
+
+       
         #endregion
 
         #region View Members
@@ -248,7 +448,21 @@ namespace Modules.AccionesPC.Admin
         #endregion
 
         #region Properties
-        
+
+       
+
+        private string LastLoadedControlMessages
+        {
+            get
+            {
+                return ViewState["LastLoadedControlMessages"] as string;
+            }
+            set
+            {
+                ViewState["LastLoadedControlMessages"] = value;
+            }
+        }
+
         public TBL_Admin_Usuarios UserSession
         {
             get { return AuthenticatedUser; }
@@ -457,5 +671,7 @@ namespace Modules.AccionesPC.Admin
         #endregion
 
         #endregion
+
+       
     }
 }

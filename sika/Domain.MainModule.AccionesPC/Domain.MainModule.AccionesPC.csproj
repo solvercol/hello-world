@@ -47,13 +47,16 @@
     <Compile Include="Contracts\ITBL_ModuloAPC_AreasRepository.cs" />
     <Compile Include="Contracts\ITBL_ModuloAPC_CausasRepository.cs" />
     <Compile Include="Contracts\ITBL_ModuloAPC_ComentariosRespuestaRepository.cs" />
+    <Compile Include="Contracts\ITBL_ModuloAPC_LogSolicitudRepository.cs" />
     <Compile Include="Contracts\ITBL_ModuloAPC_SolicitudRepository.cs" />
+    <Compile Include="Contracts\ITBL_ModuloAPC_TrackingRepository.cs" />
     <Compile Include="Enum\EstadosSolicitud.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ISolicitudesDomainServices.cs" />
+    <Compile Include="Services\SolicitudesDomainServices.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DTO\" />
-    <Folder Include="Services\" />
     <Folder Include="Spec\" />
   </ItemGroup>
   <ItemGroup>
