@@ -13,6 +13,7 @@ using Domain.Core;
 using Domain.Core.Specification;
 using Domain.MainModules.Entities;
 using System.Collections.Generic;
+using Infrastructure.CrossCutting.NetFramework.Enums;
 
 namespace Domain.MainModule.Contracts
 {
@@ -47,11 +48,12 @@ namespace Domain.MainModule.Contracts
         TBL_Admin_Usuarios RetornarUsuarioAutordocumento(int idDocumento);
 
         /// <summary>
-        /// Retorna el usuario responsable del reclamo
+        /// Retorna el usuario responsable del reclamo o de la solicitud dependiendo del parámetro module.
         /// </summary>
-        /// <param name="idReclamo"></param>
+        /// <param name="idDocumento"></param>
+        /// <param name="module"></param>
         /// <returns></returns>
-        TBL_Admin_Usuarios RetornarUsuarioResponsabledocumento(int idReclamo);
+        TBL_Admin_Usuarios RetornarUsuarioResponsabledocumento(int idDocumento, ModulosAplicacion module);
         /// <summary>
         /// RETORNA LISTADO DE USUARIOS CON ROLES
         /// </summary>

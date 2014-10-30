@@ -56,6 +56,18 @@ namespace Infrastructure.Data.MainModule.Repositories
             }
             return null;
         }
+
+        public TBL_Admin_EstadosProceso GetEstadoByNameByModule(string estado,int tipoModulo )
+        {
+            if (!string.IsNullOrEmpty(estado))
+            {
+                var set = _currentUnitOfWork.CreateSet<TBL_Admin_EstadosProceso>();
+                return set.Where(c => c.Descripcion.Equals(estado) && c.TipoModulo == tipoModulo)
+                          .Select(c => c)
+                          .SingleOrDefault();
+            }
+            return null;
+        }
     }
 }
     

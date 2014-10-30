@@ -71,6 +71,7 @@ namespace Modules.AccionesPC.Admin
         {
             ImprimirTituloVentana(string.Format("Acciones Preventivas Correctivas."));
             LoadUserControl();
+            LoadUserControlVentanaMensajes(null);
         }
 
         protected override void OnInit(EventArgs e)
@@ -122,12 +123,21 @@ namespace Modules.AccionesPC.Admin
                             mpeVentanaEmergente.Show();
                             break;
 
-                        //case "CategorizacionReclamo":
-                        //    litTitulo.Text = @"Caregorización del reclamo.";
-                        //    LastLoadedControlMessages = "../UserControls/WucCategorizarReclamo.ascx";
-                        //    LoadUserControlVentanaMensajes(null);
-                        //    mpeVentanaEmergente.Show();
-                        //    break;
+                        case "EnvioActividades":
+                            litTitulo.Text = @"Envío de notificacíones";
+                            LastLoadedControlMessages = "../UserControls/WucEnviarActividades.ascx";
+                            LoadUserControlVentanaMensajes(null);
+                            mpeVentanaEmergente.Show();
+                            break;
+
+                        case "CerrarSolicitud":
+                            litTitulo.Text = @"Cierre de la acción";
+                            pnlVentanaEmergente.Width = 600;
+                            pnlVentanaEmergente.Height = 250;
+                            LastLoadedControlMessages = "../UserControls/WucCierreSolicitud.ascx";
+                            LoadUserControlVentanaMensajes(null);
+                            mpeVentanaEmergente.Show();
+                            break;
                     }
                 }
             }
@@ -220,7 +230,8 @@ namespace Modules.AccionesPC.Admin
                         {
                             Inputs = new Dictionary<string, string>
                                                               {
-                                                                  {"IdIngeniero", ucr.IngenieroSeleccionado}
+                                                                  {"IdResponsable", ucr.IngenieroSeleccionado},
+                                                                  {"NombreResponsable", ucr.NombreIngenieroSeleccionado}
                                                               }
                         };
 
@@ -229,44 +240,37 @@ namespace Modules.AccionesPC.Admin
                     }
                     break;
 
-                //case "CategorizacionReclamo":
-                //    {
-                //        var uc = this.GetUserControl<WucCategorizarReclamo>("UcRender", "phlVentanaMensajes");
-                //        if (uc == null) return;
-                //        if (string.IsNullOrEmpty(uc.AreaSeleccionada) || string.IsNullOrEmpty(uc.CategoriaSeleccionada)) return;
+                case "EnvioActividades":
+                    {
+                        var parameters = new InputParameter();
+                        EjecutarWorkFlow(parameters, InputWindow);
+                    }
 
-                //        var parameters = new InputParameter
-                //        {
-                //            Inputs = new Dictionary<string, string>
-                //                                              {
-                //                                                  {"Idcategoria", uc.CategoriaSeleccionada},
-                //                                                  {"Area", uc.AreaSeleccionada}
-                //                                              }
-                //        };
+                    break;
 
-                //        EjecutarWorkFlow(parameters, InputWindow);
-                //    }
+                case "CerrarSolicitud":
+                    {
+                        var uc = this.GetUserControl<WucCierreSolicitud>("UcRender", "phlVentanaMensajes");
+                        if (uc == null) return;
+                        if (string.IsNullOrEmpty(uc.Adecuada) || string.IsNullOrEmpty(uc.Eficaz)) return;
+                        if(string.IsNullOrEmpty(uc.ConformidadEliminada))return;
 
-                //    break;
 
-                //case "Devolucion":
-                //    {
-                //        var uc = this.GetUserControl<WucComentariosDevolverReclamo>("UcRender", "phlVentanaMensajes");
-                //        if (uc == null) return;
-                //        if (string.IsNullOrEmpty(uc.RetornarComentario)) return;
+                        var parameters = new InputParameter
+                        {
+                            Inputs = new Dictionary<string, string>
+                                                              {
+                                                                  {"Adecuada", uc.Adecuada},
+                                                                  {"Eficaz", uc.Eficaz},
+                                                                  {"ConformidadEliminada", uc.ConformidadEliminada},
+                                                                  {"Observaciones", uc.Observaciones}
+                                                              }
+                        };
 
-                //        var parameters = new InputParameter
-                //        {
-                //            Inputs = new Dictionary<string, string>
-                //                                              {
-                //                                                  {"Comentario", uc.RetornarComentario}
-                //                                              }
-                //        };
+                        EjecutarWorkFlow(parameters, InputWindow);
+                    }
 
-                //        EjecutarWorkFlow(parameters, InputWindow);
-                //    }
-
-                //    break;
+                    break;
 
                 //case "Rechazo":
                 //    {
@@ -308,6 +312,10 @@ namespace Modules.AccionesPC.Admin
             }
         }
 
+        protected void BtnCancelarInputClick(object sender, EventArgs e)
+        {
+            mpeVentanaEmergente.Hide();
+        }
         #endregion
 
         #region Menu

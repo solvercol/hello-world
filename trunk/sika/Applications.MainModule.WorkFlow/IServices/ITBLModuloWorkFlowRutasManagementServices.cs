@@ -95,6 +95,16 @@ namespace Applications.MainModule.WorkFlow.IServices
         /// <param name="oDocument"></param>
         /// <returns></returns>
         RenderTypeControlButtonDto EjecutarWorkFlowModuloSolicitudes(RenderTypeControlButtonDto oDocument);
+
+        #region Solicitudes
+
+        RenderTypeControlButtonDto AsignarResponsableSolicitud(RenderTypeControlButtonDto oDocument);
+
+        RenderTypeControlButtonDto EnviarActividadesSolicitud(RenderTypeControlButtonDto oDocument);
+
+        RenderTypeControlButtonDto CerrarAccion(RenderTypeControlButtonDto oDocument);
+
+        #endregion
     }
 }
     

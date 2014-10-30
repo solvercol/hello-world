@@ -19,6 +19,8 @@ namespace Domain.MainModule.Contracts
         TBL_Admin_EstadosProceso GetEstadoById(int id);
 
         TBL_Admin_EstadosProceso GetEstadoByName(string estado);
+
+        TBL_Admin_EstadosProceso GetEstadoByNameByModule(string estado, int tipoModulo);
     }
 }
     

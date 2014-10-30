@@ -83,11 +83,26 @@ namespace Modules.WorkFlow
             return _rutasServices.CambiarIngenieroResponsable(oDocument);
         }
 
+        #region Solicitudes APC
 
         public RenderTypeControlButtonDto AsignarresponsableSolicitud(RenderTypeControlButtonDto oDocument)
         {
-            return _rutasServices.CambiarIngenieroResponsable(oDocument);
+            return _rutasServices.AsignarResponsableSolicitud(oDocument);
         }
+
+        public RenderTypeControlButtonDto EnviarActividadesSolicitud(RenderTypeControlButtonDto oDocument)
+        {
+            return _rutasServices.EnviarActividadesSolicitud(oDocument);
+        }
+
+        public RenderTypeControlButtonDto CerrarAccion(RenderTypeControlButtonDto oDocument)
+        {
+            return _rutasServices.CerrarAccion(oDocument);
+        }
+
+        #endregion
+
+      
         #endregion
 
     }

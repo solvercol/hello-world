@@ -228,14 +228,10 @@
             <div class="popup_Body">      
                 <asp:PlaceHolder ID="phlVentanaMensajes" runat="server"></asp:PlaceHolder>                
                 <table width="100%" cellpadding="0" cellpadding="0">
-                    <tr>
-                        <td style=" width:45%">
-                        </td>
-                        <td class="Separador15"></td>
-                        <td>  
-                        
-                            <asp:Button ID="btnAceptarInput" runat="server" Text="Aceptar"  ValidationGroup="grpInput" OnClick="BtnAceptarInputClick" />
-                                                     
+                    <tr>  
+                        <td align="center">                     
+                         <asp:Button ID="btnCancelar" runat="server" Text="Cacelar"  OnClick="BtnCancelarInputClick" />
+                         <asp:Button ID="btnAceptarInput" runat="server" Text="Aceptar"  ValidationGroup="grpInput" OnClick="BtnAceptarInputClick" />                                                  
                         </td>
                     </tr>
                 </table>

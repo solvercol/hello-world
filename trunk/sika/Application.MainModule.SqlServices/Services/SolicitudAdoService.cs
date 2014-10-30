@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Web.Management;
-using Application.MainModule.SqlServices.Domain;
 using Application.MainModule.SqlServices.IServices;
 using Infraestructure.Data.Core;
-using SqlHelper = Application.MainModule.SqlServices.Domain.SqlHelper;
 
 namespace Application.MainModule.SqlServices.Services
 {
@@ -30,5 +27,20 @@ namespace Application.MainModule.SqlServices.Services
                 throw new SqlExecutionException("InsertUsuarioCopiaComentario", ex);
             }
         }
+
+
+        public DataTable ListadoActividadesPorSolicitudApc(string idSolicitud)
+        {
+            try
+            {
+                var srtSql = "ListadoActividadesPorSolicitudAPC";
+                return _sql.ExecuteDataTable(srtSql, CommandType.StoredProcedure, new SqlParameter("@IdSolicitud",idSolicitud));
+            }
+            catch (Exception ex)
+            {
+                throw new SqlExecutionException("ListadoActividadesPorSolicitudApc", ex);
+            }
+        }
+
     }
 }

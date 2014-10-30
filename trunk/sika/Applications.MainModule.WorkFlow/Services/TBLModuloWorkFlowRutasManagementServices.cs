@@ -63,7 +63,7 @@ namespace Applications.MainModule.WorkFlow.Services
         private readonly ISolicitudesDomainServices _solicitudesDomainServices;
         private readonly ITBL_ModuloAPC_TrackingRepository _trackSolicitudesRepository;
         private readonly ITBL_ModuloAPC_LogSolicitudRepository _logSolicitudesRepository;
-
+        private readonly ISolicitudAdoService _sqlSolicitudesServices;
 
 
         #endregion
@@ -92,11 +92,13 @@ namespace Applications.MainModule.WorkFlow.Services
              ITBL_Admin_RolesRepository rolesRepository, 
              ISolicitudesDomainServices solicitudesDomainServices, 
              ITBL_ModuloAPC_TrackingRepository trackSolicitudesRepository, 
-             ITBL_ModuloAPC_LogSolicitudRepository logSolicitudesRepository)
+             ITBL_ModuloAPC_LogSolicitudRepository logSolicitudesRepository,
+             ISolicitudAdoService sqlSolicitudesServices)
          {
             if (tblModuloWorkFlowRutasRepository == null)
                 throw new ArgumentNullException("tblModuloWorkFlowRutasRepository");
             _tblModuloWorkFlowRutasRepository = tblModuloWorkFlowRutasRepository;
+             _sqlSolicitudesServices = sqlSolicitudesServices;
              _logSolicitudesRepository = logSolicitudesRepository;
              _trackSolicitudesRepository = trackSolicitudesRepository;
              _solicitudesDomainServices = solicitudesDomainServices;
@@ -247,7 +249,321 @@ namespace Applications.MainModule.WorkFlow.Services
         }
          #endregion
 
-        public RenderTypeControlButtonDto CambiarIngenieroResponsable(RenderTypeControlButtonDto oDocument)
+         #region Solicitudes APC
+
+         public RenderTypeControlButtonDto AsignarResponsableSolicitud(RenderTypeControlButtonDto oDocument)
+         {
+             try
+             {
+
+                 if (string.IsNullOrEmpty(oDocument.IdDocument))
+                 {
+                     oDocument.MessagesError = new List<string> { "Error de lectura del identificador del reclamo" };
+                     return oDocument;
+                 }
+
+                 if (oDocument.Parameters.Count == 0)
+                 {
+                     oDocument.MessagesError = new List<string> { "No se han especificado los parametros de entrad" };
+                     return oDocument;
+                 }
+
+
+                 string idResponsable;
+                 var result = oDocument.Parameters.TryGetValue("IdResponsable", out idResponsable);
+                 if (!result)
+                 {
+                     oDocument.MessagesError = new List<string> { "Error al obtener el ID del responsable." };
+                     return oDocument;
+                 }
+
+                 string nombreResponsable;
+                 result = oDocument.Parameters.TryGetValue("NombreResponsable", out nombreResponsable);
+                 if(!result)
+                 {
+                     oDocument.MessagesError = new List<string> { "Error al obtener el nombre del responsable." };
+                     return oDocument;
+                 }
+
+
+                 var oSolicitud = _solicitudesRepository.GetSolicitudById(Convert.ToInt32(oDocument.IdDocument));
+
+                 if (oSolicitud == null)
+                 {
+                     oDocument.MessagesError = new List<string> { "Error al recuperar la solicitud desde la Base de Datos" };
+                     return oDocument;
+                 }
+
+                 var estado = _estadosRepository.GetEstadoByNameByModule("En Proceso", (int)ModulosAplicacion.AccionesPc);
+                 if (estado == null)
+                 {
+                     oDocument.MessagesError = new List<string> { string.Format("Error al obtener el estado EN APROBACIÓN desde la Base de Datos") };
+                     return oDocument;
+                 }
+
+                 var responsable = _usuariosRepository.GetUsuarioById(Convert.ToInt32(idResponsable));
+
+                 if(responsable == null)
+                 {
+                     oDocument.MessagesError = new List<string> { string.Format("Error al obtener el responsable desde la Base de Datos") };
+                     return oDocument;
+                 }
+
+                 oDocument.IdCurrentResponsibe = responsable.IdUser.ToString();
+                 oDocument.EmailCurrentResponsibe = responsable.Email;
+
+                 var txSettings = new TransactionOptions
+                 {
+                     Timeout = TransactionManager.DefaultTimeout,
+                     IsolationLevel = IsolationLevel.Serializable
+                 };
+
+                 //TODO: se actualiza el ingeniero responsable que es  el siguiente responsable del documento.
+                 using (var scope = new TransactionScope(TransactionScopeOption.Required, txSettings))
+                 {
+
+                     var unitOfWork = _tblDocumentosRepository.UnitOfWork;
+
+                     oSolicitud.IdResponsableActual = Convert.ToInt32(idResponsable);
+
+                     oSolicitud.idGrupo = null;
+
+                     oSolicitud.IdEstado = estado.IdEstado;
+
+                     oSolicitud.ModifiedOn = DateTime.Now;
+
+                     oSolicitud.ModifiedBy = _autenticationService.GetUserFromSession.IdUser;
+
+                     _solicitudesRepository.Modify(oSolicitud);
+
+                     //Crea un nuevo registro en el log del reclamo.
+                     var mensaje =
+                         string.Format(
+                             "El usuario: [{0}] aceptó y asigno la acción al usuario [{1}].",_autenticationService.GetUserFromSession.Nombres,  nombreResponsable);
+
+                     GenerarEntradalogSolicitudes(mensaje, oSolicitud.IdSolucitudAPC);
+
+                     unitOfWork.CommitAndRefreshChanges();
+
+                     scope.Complete();
+                 }
+
+                 try
+                 {
+                     SendMail(oDocument, ModulosAplicacion.AccionesPc);
+                 }
+                 catch (Exception ex)
+                 {
+                     _traceManager.LogInfo(string.Format("Error al enviar el Correo electronico. Error: {0}", ex.Message), LogType.Notify);
+                 }
+             }
+             catch (Exception ex)
+             {
+                 throw new Exception("AsignarResponsableSolicitud", ex);
+             }
+
+             oDocument.Processestaus = "Ok";
+             return oDocument;
+         }
+
+         public RenderTypeControlButtonDto EnviarActividadesSolicitud(RenderTypeControlButtonDto oDocument)
+         {
+             try
+             {
+
+                 if (string.IsNullOrEmpty(oDocument.IdDocument))
+                 {
+                     oDocument.MessagesError = new List<string> { "Error de lectura del identificador del reclamo" };
+                     return oDocument;
+                 }
+
+                 try
+                 {
+                     var dt = _sqlSolicitudesServices.ListadoActividadesPorSolicitudApc(oDocument.IdDocument);
+                     if (dt.Rows.Count > 0)
+                     {
+                         _sendMailNotificationServices.SendEmailActividadesSolicitud(oDocument,
+                                                                                     _autenticationService.
+                                                                                         GetUserFromSession, dt,
+                                                                                     ModulosAplicacion.AccionesPc);
+                     }
+                 }
+                 catch (Exception ex)
+                 {
+                     _traceManager.LogInfo(string.Format("Error al enviar las solicitudes por Correo electronico. Error: {0}", ex.Message), LogType.Notify);
+                 }
+                
+                
+
+                 var oSolicitud = _solicitudesRepository.GetSolicitudById(Convert.ToInt32(oDocument.IdDocument));
+
+                 if (oSolicitud == null)
+                 {
+                     oDocument.MessagesError = new List<string> { "Error al recuperar la solicitud desde la Base de Datos" };
+                     return oDocument;
+                 }
+
+                 var estado = _estadosRepository.GetEstadoByNameByModule("Acción Respondida", (int)ModulosAplicacion.AccionesPc);
+                 if (estado == null)
+                 {
+                     oDocument.MessagesError = new List<string> { string.Format("Error al obtener el estado EN APROBACIÓN desde la Base de Datos") };
+                     return oDocument;
+                 }
+
+
+                 var txSettings = new TransactionOptions
+                 {
+                     Timeout = TransactionManager.DefaultTimeout,
+                     IsolationLevel = IsolationLevel.Serializable
+                 };
+
+                 //TODO: se actualiza el ingeniero responsable que es  el siguiente responsable del documento.
+                 using (var scope = new TransactionScope(TransactionScopeOption.Required, txSettings))
+                 {
+
+                     var unitOfWork = _tblDocumentosRepository.UnitOfWork;
+
+                     oSolicitud.IdResponsableActual = Convert.ToInt32(oDocument.IdCurrentResponsibe);
+
+                     oSolicitud.idGrupo = null;
+
+                     oSolicitud.IdEstado = estado.IdEstado;
+
+                     oSolicitud.ModifiedOn = DateTime.Now;
+
+                     oSolicitud.ModifiedBy = _autenticationService.GetUserFromSession.IdUser;
+
+                     _solicitudesRepository.Modify(oSolicitud);
+
+                     //Crea un nuevo registro en el log del reclamo.
+                     var mensaje =
+                         string.Format(
+                             "El usuario: [{0}] envió las actividades a sus Responsables y pasó el documento a Acción Respondida.", _autenticationService.GetUserFromSession.Nombres);
+
+                     GenerarEntradalogSolicitudes(mensaje, oSolicitud.IdSolucitudAPC);
+
+                     unitOfWork.CommitAndRefreshChanges();
+
+                     scope.Complete();
+                 }
+             }
+             catch (Exception ex)
+             {
+                 throw new Exception("AsignarResponsableSolicitud", ex);
+             }
+
+             oDocument.Processestaus = "Ok";
+             return oDocument;
+         }
+
+         public RenderTypeControlButtonDto CerrarAccion(RenderTypeControlButtonDto oDocument)
+         {
+             try
+             {
+
+                 if (string.IsNullOrEmpty(oDocument.IdDocument))
+                 {
+                     oDocument.MessagesError = new List<string> { "Error de lectura del identificador del reclamo" };
+                     return oDocument;
+                 }
+
+
+                 string eficaz;
+                 oDocument.Parameters.TryGetValue("Eficaz", out eficaz);
+                 
+
+                 string adecuada;
+                 oDocument.Parameters.TryGetValue("Adecuada", out adecuada);
+
+                 string conformidadEliminada;
+                 oDocument.Parameters.TryGetValue("ConformidadEliminada", out conformidadEliminada);
+                 
+
+                 string observaciones;
+                 oDocument.Parameters.TryGetValue("Observaciones", out observaciones);
+
+
+                 string strEficazAdecuada;
+
+                 if (!string.IsNullOrEmpty(eficaz) && !string.IsNullOrEmpty(adecuada))
+                     strEficazAdecuada = string.Format("{0},{1}", eficaz, adecuada);
+                 else if (!string.IsNullOrEmpty(eficaz))
+                     strEficazAdecuada = eficaz;
+                 else
+                     strEficazAdecuada = adecuada;
+
+
+                 
+                 var oSolicitud = _solicitudesRepository.GetSolicitudById(Convert.ToInt32(oDocument.IdDocument));
+
+                 if (oSolicitud == null)
+                 {
+                     oDocument.MessagesError = new List<string> { "Error al recuperar la solicitud desde la Base de Datos" };
+                     return oDocument;
+                 }
+
+                 var estado = _estadosRepository.GetEstadoByNameByModule("Acción Cerrada", (int)ModulosAplicacion.AccionesPc);
+                 if (estado == null)
+                 {
+                     oDocument.MessagesError = new List<string> { string.Format("Error al obtener el estado ACCIÓN CERRADA desde la Base de Datos") };
+                     return oDocument;
+                 }
+
+
+                 var txSettings = new TransactionOptions
+                 {
+                     Timeout = TransactionManager.DefaultTimeout,
+                     IsolationLevel = IsolationLevel.Serializable
+                 };
+
+                 //TODO: se actualiza el ingeniero responsable que es  el siguiente responsable del documento.
+                 using (var scope = new TransactionScope(TransactionScopeOption.Required, txSettings))
+                 {
+
+                     var unitOfWork = _tblDocumentosRepository.UnitOfWork;
+
+                     oSolicitud.IdResponsableActual = null;
+
+                     oSolicitud.idGrupo = null;
+
+                     oSolicitud.IdEstado = estado.IdEstado;
+
+                     oSolicitud.ModifiedOn = DateTime.Now;
+
+                     oSolicitud.ModifiedBy = _autenticationService.GetUserFromSession.IdUser;
+
+                     oSolicitud.Resultado = strEficazAdecuada;
+
+                     oSolicitud.Cerrada = conformidadEliminada == "true" ? true : false;
+
+                     oSolicitud.ObservacionesCierre = observaciones;
+
+                     _solicitudesRepository.Modify(oSolicitud);
+
+                     //Crea un nuevo registro en el log del reclamo.
+                     var mensaje =
+                         string.Format(
+                             "El usuario: [{0}] marco como cerrada la acción.", _autenticationService.GetUserFromSession.Nombres);
+
+                     GenerarEntradalogSolicitudes(mensaje, oSolicitud.IdSolucitudAPC);
+
+                     unitOfWork.CommitAndRefreshChanges();
+
+                     scope.Complete();
+                 }
+             }
+             catch (Exception ex)
+             {
+                 throw new Exception("AsignarResponsableSolicitud", ex);
+             }
+
+             oDocument.Processestaus = "Ok";
+             return oDocument;
+         }
+
+         #endregion
+
+         public RenderTypeControlButtonDto CambiarIngenieroResponsable(RenderTypeControlButtonDto oDocument)
         {
             try
             {
@@ -829,23 +1145,28 @@ namespace Applications.MainModule.WorkFlow.Services
 
                 if (oWorkflow == null) return null;
 
-                var m = DefinedRegexEvaluation.Grupo.Match(oWorkflow.RoleNextResponsible);
+                
                 var isNextGroup = false;
                 var iscurrentGroup = false;
 
-                if (m.Success)
+                if (!string.IsNullOrEmpty(oWorkflow.RoleNextResponsible))
                 {
-                    nextGroupResponsible = RetornarGruporesponsable(oWorkflow.RoleNextResponsible);
-                    isNextGroup = true;
-                }
-                else
-                {
-                    nextResponsable = RetornarSiguienteUsuarioResponsable(oWorkflow.RoleNextResponsible, Convert.ToInt32(idDocument), dtDocumento);
+                    var m = DefinedRegexEvaluation.Grupo.Match(oWorkflow.RoleNextResponsible);
+                    if (m.Success)
+                    {
+                        nextGroupResponsible = RetornarGruporesponsable(oWorkflow.RoleNextResponsible);
+                        isNextGroup = true;
+                    }
+                    else
+                    {
+                        nextResponsable = RetornarSiguienteUsuarioResponsable(oWorkflow.RoleNextResponsible,
+                                                                              Convert.ToInt32(idDocument), dtDocumento);
+                    }
                 }
 
                 if (dtDocumento.Rows[0]["IdGrupo"] is DBNull)
                 {
-                    currentResponsable = RetornarResponsableDocumento(Convert.ToInt32(idDocument));
+                    currentResponsable = RetornarResponsableDocumento(Convert.ToInt32(idDocument), module);
                 }
                 else
                 {
@@ -1245,6 +1566,11 @@ namespace Applications.MainModule.WorkFlow.Services
             return null;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="idGroup"></param>
+        /// <returns></returns>
         private TBL_Admin_Roles RetornarGruporesponsableById(int idGroup)
         {
 
@@ -1257,10 +1583,10 @@ namespace Applications.MainModule.WorkFlow.Services
         /// </summary>
         /// <param name="idPedido"></param>
         /// <returns></returns>
-        private TBL_Admin_Usuarios RetornarResponsableDocumento(int idPedido)
+        private TBL_Admin_Usuarios RetornarResponsableDocumento(int idPedido, ModulosAplicacion module)
         {
 
-            var user = _usuariosRepository.RetornarUsuarioResponsabledocumento(idPedido);
+            var user = _usuariosRepository.RetornarUsuarioResponsabledocumento(idPedido, module);
             return user;
         }
         /// <summary>
@@ -1510,7 +1836,6 @@ namespace Applications.MainModule.WorkFlow.Services
 
         #endregion
 
-
         #region trackSolicitudes
 
         /// <summary>
@@ -1545,6 +1870,13 @@ namespace Applications.MainModule.WorkFlow.Services
             var oLog = _solicitudesDomainServices.GenerarObjetoLog(_logSolicitudesRepository.NewEntity(),
                                                                      oDocument.TextControl,
                                                                      Convert.ToInt32(oDocument.IdDocument), userSession);
+            _logSolicitudesRepository.Add(oLog);
+        }
+
+        private void GenerarEntradalogSolicitudes(string mensaje, decimal idSolicitud)
+        {
+            var userSession = _autenticationService.GetUserFromSession;
+            var oLog = _solicitudesDomainServices.GenerarObjetoLog(_logSolicitudesRepository.NewEntity(), idSolicitud, userSession, mensaje);
             _logSolicitudesRepository.Add(oLog);
         }
 

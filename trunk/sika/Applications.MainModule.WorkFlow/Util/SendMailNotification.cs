@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -55,7 +56,7 @@ namespace Applications.MainModule.WorkFlow.Util
         {
 
             var plantilla = ObtenerPlantilla(oDocument.NextStatus, "Colombia", module);
-
+            if (string.IsNullOrEmpty(plantilla)) return true;
             return module == ModulosAplicacion.Reclamos ? 
                 SendEmailReclamo(oDocument, userSession, plantilla) : 
                 SendEmailSolicitud(oDocument, userSession, plantilla);
@@ -159,6 +160,54 @@ namespace Applications.MainModule.WorkFlow.Util
             return true;
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="oDocument"></param>
+        /// <param name="userSession"></param>
+        /// <param name="dt"></param>
+        /// <param name="module"></param>
+        /// <returns></returns>
+        public bool SendEmailActividadesSolicitud(RenderTypeControlButtonDto oDocument, TBL_Admin_Usuarios userSession, DataTable dt, ModulosAplicacion module)
+        {
+
+            var plantilla = ObtenerPlantilla(oDocument.NextStatus, "Colombia", module);
+            if (string.IsNullOrEmpty(plantilla)) return false;
+
+
+            var strFrom = string.Format("Gestión de Calidad. Enviado por: {0}<{1}>", userSession.Nombres, GetFromEmail());
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                var subjectParams = new Dictionary<string, string>
+                                    {
+                                        {"$Aplicacion", "SIka - Gestión de Calidad."},
+                                        {"$Consecutivo", dr["Codigo"].ToString()}
+                                    };
+
+                var bodyParams = new Dictionary<string, string>
+                                     {
+                                         {"$Area",dr["Area"].ToString()},
+                                         {"$Fecha", dr["FechaActividad"].ToString()},
+                                         {"$TipoAccion",dr["TipoAccion"].ToString()},
+                                         {"$Solicitante", dr["Solicitante"].ToString()},
+                                         {"$Responsable", dr["Responsable"].ToString()},
+                                         {"$Url", UrlHelper.GetUrlPreViewActividadSolicitudforEmail(dr["IdActividad"].ToString(),oDocument.IdDocument)}
+                                     };
+                string[] cc = null;
+                if (!(dr["ResponsableSeguimiento"] is DBNull))
+                {
+                    cc= new string[1];
+                    cc[0] = dr["ResponsableSeguimiento"].ToString();
+                }
+
+                _iEmailService.ProcessEmail(strFrom, dr["EmailResponsable"].ToString(), plantilla, subjectParams, bodyParams, cc, null);
+            }
+
+            
+            return true;
+        }
 
         /// <summary>
         /// 

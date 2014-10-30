@@ -88,6 +88,8 @@
     <Content Include="UserControls\WUCAdminComentariosRespuestaSolicitud.ascx" />
     <Content Include="UserControls\WUCAdminInformacionSolicitud.ascx" />
     <Content Include="UserControls\WucAsignarResponsableSolicitud.ascx" />
+    <Content Include="UserControls\WucCierreSolicitud.ascx" />
+    <Content Include="UserControls\WucEnviarActividades.ascx" />
     <Content Include="Views\FrmMisSolicitudesPendientes.aspx" />
     <Content Include="Views\FrmMisSolicitudesPorEstado.aspx" />
     <Content Include="Views\FrmMisSolicitudesPorFecha.aspx" />
@@ -198,6 +200,20 @@
     </Compile>
     <Compile Include="UserControls\WucAsignarResponsableSolicitud.ascx.designer.cs">
       <DependentUpon>WucAsignarResponsableSolicitud.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WucCierreSolicitud.ascx.cs">
+      <DependentUpon>WucCierreSolicitud.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WucCierreSolicitud.ascx.designer.cs">
+      <DependentUpon>WucCierreSolicitud.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WucEnviarActividades.ascx.cs">
+      <DependentUpon>WucEnviarActividades.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WucEnviarActividades.ascx.designer.cs">
+      <DependentUpon>WucEnviarActividades.ascx</DependentUpon>
     </Compile>
     <Compile Include="Views\FrmMisSolicitudesPendientes.aspx.cs">
       <DependentUpon>FrmMisSolicitudesPendientes.aspx</DependentUpon>
