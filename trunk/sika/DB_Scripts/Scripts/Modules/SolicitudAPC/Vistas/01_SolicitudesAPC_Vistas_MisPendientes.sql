@@ -17,11 +17,11 @@ CREATE PROCEDURE SolicitudesAPC_Vistas_MisPendientes
 	,@Area int
 	,@Proceso varchar(512)
 	,@IdResponsable int
+	,@FromView varchar(50)
 )
 AS
-
 /*************************** Variables De Prueba **********************/
---declare @dateFrom datetime,@dateEnd datetime, @ServerHostPath varchar(512),@ModuleId varchar(4), @NoAccion varchar(50),@Tipo varchar(50),@Area int,@Proceso varchar(512)
+--declare @dateFrom datetime,@dateEnd datetime, @ServerHostPath varchar(512),@ModuleId varchar(4), @NoAccion varchar(50),@Tipo varchar(50),@Area int,@Proceso varchar(512), @FromView varchar(50), @IdResponsable int
 --set @dateFrom = '2014-01-01'
 --set @dateEnd = '2014-12-01'
 --set @ServerHostPath = 'http://localhost:8081/sikadev'
@@ -31,12 +31,82 @@ AS
 --set @Area = 0
 --set @Proceso = ''
 --set @IdResponsable = 1
+--set @FromView = 'misolicitudes'
 /***********************************************************************/
+declare	@View table
+		(
+			IdSolicitudAPC				decimal(18,0)
+			,FechaSolicitud				datetime
+			,IdMes						int
+			,Mes						varchar(50)
+			,Codigo						varchar(50)
+			,Tipo						varchar(50)
+			,Accion						varchar(512)
+			,Proceso					varchar(512)
+			,AreaAccion					varchar(512)
+			,Estado						varchar(512)
+			,Autor						varchar(512)
+			,GerenteArea				varchar(512)
+			,ResponsableActual			varchar(512)
+			,ResponsableSeguimiento		varchar(512)
+			,ResponsableEjecucion		varchar(512)
+			,UrlSolicitud				varchar(2048)
+		)
 
+-- Seleccionando Datos
+insert	into
+		@View
+		(
+			IdSolicitudAPC
+			,FechaSolicitud
+			,IdMes
+			,Mes
+			,Codigo
+			,Tipo
+			,Accion
+			,Proceso
+			,AreaAccion
+			,Estado
+			,Autor
+			,GerenteArea
+			,ResponsableActual
+			,ResponsableSeguimiento
+			,ResponsableEjecucion
+			,UrlSolicitud
+		)
 select	distinct
-		solicitud.FechaSolicitud			as FechaSolicitud
+		solicitud.IdSolucitudAPC			as IdSolucitudAPC
+		,solicitud.FechaSolicitud			as FechaSolicitud
+		,month(solicitud.FechaSolicitud)	as IdMes
+		,case month(solicitud.FechaSolicitud)
+				when 1
+				then 'Enero'
+				when 2
+				then 'Febrero'
+				when 3
+				then 'Marzo'
+				when 4
+				then 'Abril'
+				when 5
+				then 'Mayo'
+				when 6
+				then 'Junio'
+				when 7
+				then 'Julio'
+				when 8
+				then 'Agosto'
+				when 9
+				then 'Septiembre'
+				when 10
+				then 'Octubre'
+				when 11
+				then 'Noviembre'
+				when 12
+				then 'Diciembre'
+			end								as Mes
 		,solicitud.Codigo					as Codigo
 		,solicitud.TipoAccion				as Tipo
+		,solicitud.DescripcionAccion		as Accion
 		,solicitud.Proceso					as Proceso
 		,area.Nombre						as AreaAccion
 		,estado.Descripcion					as Estado
@@ -45,6 +115,7 @@ select	distinct
 		,responsableActual.Nombres			as ResponsableActual
 		,responsableSeguimiento.Nombres		as ResponsableSeguimiento
 		,responsableEjecucion.Nombres		as ResponsableEjecucion
+		,@ServerHostPath + '/Pages/Modules/AccionesPC/Admin/FrmSolicitudAPC.aspx?ModuleId=' + @ModuleId + '&IdSolicitud=' + cast(solicitud.IdSolucitudAPC as varchar(18)) + '&from=' + @FromView as UrlSolicitud
 from	TBL_ModuloAPC_Solicitud solicitud with(nolock)
 		inner join TBL_ModuloAPC_Areas area with(nolock)
 			on solicitud.IdAreaAccion = area.IdArea
@@ -60,12 +131,31 @@ from	TBL_ModuloAPC_Solicitud solicitud with(nolock)
 			on solicitud.IdResponsableSeguimiento = responsableSeguimiento.IdUser
 		inner join TBL_Admin_Usuarios responsableEjecucion with(nolock)
 			on solicitud.IdResponsableEjecucion = responsableEjecucion.IdUser
-where	year(solicitud.FechaSolicitud) >= year(@dateFrom)
-		and year(solicitud.FechaSolicitud) <= year(@dateEnd)
-		and month(solicitud.FechaSolicitud) >= month(@dateFrom)
-		and month(solicitud.FechaSolicitud) <= month(@dateEnd)
+where	solicitud.FechaSolicitud >= @dateFrom
+		and solicitud.FechaSolicitud <= @dateEnd
 		and solicitud.Codigo like '%' + case @NoAccion when '' then solicitud.Codigo else @NoAccion end + '%'
 		and solicitud.TipoAccion like '%' + case @Tipo when '' then solicitud.TipoAccion else @Tipo end + '%'
 		and solicitud.IdAreaAccion = case @Area when 0 then solicitud.IdAreaAccion else @Area end
 		and solicitud.Proceso like '%' +  case @Proceso when '' then solicitud.Proceso else @Proceso end + '%'
 		and solicitud.IdResponsableActual = case @IdResponsable when 0 then solicitud.IdResponsableActual else @IdResponsable end
+		
+		
+-- Result View
+select	distinct
+		IdSolicitudAPC
+		,FechaSolicitud
+		,IdMes
+		,Mes
+		,Codigo
+		,Tipo
+		,Accion
+		,Proceso
+		,AreaAccion
+		,Estado
+		,Autor
+		,GerenteArea
+		,ResponsableActual
+		,ResponsableSeguimiento
+		,ResponsableEjecucion
+		,UrlSolicitud
+from	@View
