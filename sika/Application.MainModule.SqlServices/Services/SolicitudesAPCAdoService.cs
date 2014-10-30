@@ -19,7 +19,7 @@ namespace Application.MainModule.SqlServices.Services
             _sql = sql;
         }
 
-        public DataTable  GetVistaSolicitudesMisPendientes(DateTime from, DateTime end, string serverHost, string moduleId,
+        public DataTable GetVistaSolicitudesMisPendientes(DateTime from, DateTime end, string serverHost, string moduleId, string fromview,
                                                             string noSolicitud, string tipo, int area, string proceso, int idResponsable)
         {
             try
@@ -34,7 +34,8 @@ namespace Application.MainModule.SqlServices.Services
                                        , new SqlParameter("@Tipo", tipo)
                                        , new SqlParameter("@Area", area)
                                        , new SqlParameter("@Proceso", proceso)
-                                       , new SqlParameter("@IdResponsable", idResponsable));
+                                       , new SqlParameter("@IdResponsable", idResponsable)
+                                       , new SqlParameter("@FromView", fromview));
 
                 return result;
             }
