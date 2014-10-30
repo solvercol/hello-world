@@ -10,12 +10,12 @@ using Presenters.AccionesPC.IViews;
 
 namespace Presenters.AccionesPC.Presenters
 {
-    public class MisSolicitudesPendientesPresenter : Presenter<IMisSolicitudesPendientesView>
+    public class SeguimientoTotalSolicitudesPresenter : Presenter<ISeguimientoTotalSolicitudesView>
     {
         readonly ISfTBL_ModuloAPC_AreasManagementServices _areasService;
         readonly ISolicitudesAPCAdoService _solicitudesAdoService;
 
-        public MisSolicitudesPendientesPresenter(ISfTBL_ModuloAPC_AreasManagementServices areasService, ISolicitudesAPCAdoService solicitudesAdoService)
+        public SeguimientoTotalSolicitudesPresenter(ISfTBL_ModuloAPC_AreasManagementServices areasService, ISolicitudesAPCAdoService solicitudesAdoService)
         {
             _areasService = areasService;
             _solicitudesAdoService = solicitudesAdoService;
@@ -94,7 +94,7 @@ namespace Presenters.AccionesPC.Presenters
         {
             try
             {
-                var dt = _solicitudesAdoService.GetVistaSolicitudesMisPendientes(View.FechaFilterFrom, View.FechaFilterTo, View.ServerHostPath, View.IdModule, "mispendientes"
+                var dt = _solicitudesAdoService.GetVistaSolicitudesMisPendientes(View.FechaFilterFrom, View.FechaFilterTo, View.ServerHostPath, View.IdModule, "misolestados"
                                                                          , View.FilterNoSolicitud, View.FilterTipo, View.FilterArea, View.FilterProceso, View.UserSession.IdUser);
                 View.LoadView(dt);
             }

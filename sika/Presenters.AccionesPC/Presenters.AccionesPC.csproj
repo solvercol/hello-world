@@ -43,14 +43,25 @@
     <Compile Include="IViews\IAdminActividadesSolicitudView.cs" />
     <Compile Include="IViews\IAdminActividadSolicitudView.cs" />
     <Compile Include="IViews\IAdminAnexosSolicitudView.cs" />
+    <Compile Include="IViews\IAdminCausasSolicitudView.cs" />
     <Compile Include="IViews\IAdminComentarioRespuestaAPCView.cs" />
     <Compile Include="IViews\IAdminInformacionSolicitudView.cs" />
     <Compile Include="IViews\IAdminSolicitudAPCView.cs" />
     <Compile Include="IViews\IMisSolicitudesPendientesView.cs" />
+    <Compile Include="IViews\IMisSolicitudesPorEstadoView.cs" />
+    <Compile Include="IViews\IMisSolicitudesPorFechaView.cs" />
+    <Compile Include="IViews\ISeguimientoPorAreaView.cs" />
+    <Compile Include="IViews\ISeguimientoPorAutorView.cs" />
+    <Compile Include="IViews\ISeguimientoPorEstadoView.cs" />
+    <Compile Include="IViews\ISeguimientoPorFechaView.cs" />
+    <Compile Include="IViews\ISeguimientoPorRespActualView.cs" />
+    <Compile Include="IViews\ISeguimientoPorTipoView.cs" />
+    <Compile Include="IViews\ISeguimientoTotalSolicitudesView.cs" />
     <Compile Include="IViews\ISolicitudAPCView.cs" />
     <Compile Include="Presenters\AdminActividadesSolicitudPresenter.cs" />
     <Compile Include="Presenters\AdminActividadSolicitudPresentador.cs" />
     <Compile Include="Presenters\AdminAnexosSolicitudPresenter.cs" />
+    <Compile Include="Presenters\AdminCausasSolicitudPresenter.cs" />
     <Compile Include="Presenters\AdminComentarioRespuestaAPCPresenter.cs" />
     <Compile Include="Presenters\AdminInformacionSolicitudPresenter.cs" />
     <Compile Include="Presenters\AdminSolicitudAPCPresenter.cs" />
@@ -59,6 +70,15 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Presenters\MisSolicitudesPendientesPresenter.cs" />
+    <Compile Include="Presenters\MisSolicitudesPorEstadoPresenter.cs" />
+    <Compile Include="Presenters\MisSolicitudesPorFechaPresenter.cs" />
+    <Compile Include="Presenters\SeguimientoPorAreaPresenter.cs" />
+    <Compile Include="Presenters\SeguimientoPorAutorPresenter.cs" />
+    <Compile Include="Presenters\SeguimientoPorEstadoPresenter.cs" />
+    <Compile Include="Presenters\SeguimientoPorFechaPresenter.cs" />
+    <Compile Include="Presenters\SeguimientoPorRespActualPresenter.cs" />
+    <Compile Include="Presenters\SeguimientoPorTipoPresenter.cs" />
+    <Compile Include="Presenters\SeguimientoTotalSolicitudesPresenter.cs" />
     <Compile Include="Presenters\SolicitudAPCPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Messages.Designer.cs">
