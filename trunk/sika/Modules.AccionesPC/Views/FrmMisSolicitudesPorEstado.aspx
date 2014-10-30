@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FrmMisSolicitudesPendientes.aspx.cs" Inherits="Modules.AccionesPC.Views.FrmMisSolicitudesPendientes" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FrmMisSolicitudesPorEstado.aspx.cs" Inherits="Modules.AccionesPC.Views.FrmMisSolicitudesPorEstado" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 <%@ Register TagPrefix="csc" Namespace="ServerControls" Assembly="ServerControls" %>

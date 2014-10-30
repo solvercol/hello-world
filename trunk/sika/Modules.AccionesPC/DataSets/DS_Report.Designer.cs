@@ -279,11 +279,19 @@ namespace Modules.AccionesPC.DataSets {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class SolicitudesAPC_Vistas_MisPendientesDataTable : global::System.Data.TypedTableBase<SolicitudesAPC_Vistas_MisPendientesRow> {
             
+            private global::System.Data.DataColumn columnIdSolicitudAPC;
+            
             private global::System.Data.DataColumn columnFechaSolicitud;
+            
+            private global::System.Data.DataColumn columnIdMes;
+            
+            private global::System.Data.DataColumn columnMes;
             
             private global::System.Data.DataColumn columnCodigo;
             
             private global::System.Data.DataColumn columnTipo;
+            
+            private global::System.Data.DataColumn columnAccion;
             
             private global::System.Data.DataColumn columnProceso;
             
@@ -300,6 +308,8 @@ namespace Modules.AccionesPC.DataSets {
             private global::System.Data.DataColumn columnResponsableSeguimiento;
             
             private global::System.Data.DataColumn columnResponsableEjecucion;
+            
+            private global::System.Data.DataColumn columnUrlSolicitud;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -336,9 +346,33 @@ namespace Modules.AccionesPC.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IdSolicitudAPCColumn {
+                get {
+                    return this.columnIdSolicitudAPC;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn FechaSolicitudColumn {
                 get {
                     return this.columnFechaSolicitud;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IdMesColumn {
+                get {
+                    return this.columnIdMes;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MesColumn {
+                get {
+                    return this.columnMes;
                 }
             }
             
@@ -355,6 +389,14 @@ namespace Modules.AccionesPC.DataSets {
             public global::System.Data.DataColumn TipoColumn {
                 get {
                     return this.columnTipo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AccionColumn {
+                get {
+                    return this.columnAccion;
                 }
             }
             
@@ -424,6 +466,14 @@ namespace Modules.AccionesPC.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn UrlSolicitudColumn {
+                get {
+                    return this.columnUrlSolicitud;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -459,12 +509,32 @@ namespace Modules.AccionesPC.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SolicitudesAPC_Vistas_MisPendientesRow AddSolicitudesAPC_Vistas_MisPendientesRow(System.DateTime FechaSolicitud, string Codigo, string Tipo, string Proceso, string AreaAccion, string Estado, string Autor, string GerenteArea, string ResponsableActual, string ResponsableSeguimiento, string ResponsableEjecucion) {
+            public SolicitudesAPC_Vistas_MisPendientesRow AddSolicitudesAPC_Vistas_MisPendientesRow(
+                        decimal IdSolicitudAPC, 
+                        System.DateTime FechaSolicitud, 
+                        int IdMes, 
+                        string Mes, 
+                        string Codigo, 
+                        string Tipo, 
+                        string Accion, 
+                        string Proceso, 
+                        string AreaAccion, 
+                        string Estado, 
+                        string Autor, 
+                        string GerenteArea, 
+                        string ResponsableActual, 
+                        string ResponsableSeguimiento, 
+                        string ResponsableEjecucion, 
+                        string UrlSolicitud) {
                 SolicitudesAPC_Vistas_MisPendientesRow rowSolicitudesAPC_Vistas_MisPendientesRow = ((SolicitudesAPC_Vistas_MisPendientesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        IdSolicitudAPC,
                         FechaSolicitud,
+                        IdMes,
+                        Mes,
                         Codigo,
                         Tipo,
+                        Accion,
                         Proceso,
                         AreaAccion,
                         Estado,
@@ -472,7 +542,8 @@ namespace Modules.AccionesPC.DataSets {
                         GerenteArea,
                         ResponsableActual,
                         ResponsableSeguimiento,
-                        ResponsableEjecucion};
+                        ResponsableEjecucion,
+                        UrlSolicitud};
                 rowSolicitudesAPC_Vistas_MisPendientesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSolicitudesAPC_Vistas_MisPendientesRow);
                 return rowSolicitudesAPC_Vistas_MisPendientesRow;
@@ -495,9 +566,13 @@ namespace Modules.AccionesPC.DataSets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
+                this.columnIdSolicitudAPC = base.Columns["IdSolicitudAPC"];
                 this.columnFechaSolicitud = base.Columns["FechaSolicitud"];
+                this.columnIdMes = base.Columns["IdMes"];
+                this.columnMes = base.Columns["Mes"];
                 this.columnCodigo = base.Columns["Codigo"];
                 this.columnTipo = base.Columns["Tipo"];
+                this.columnAccion = base.Columns["Accion"];
                 this.columnProceso = base.Columns["Proceso"];
                 this.columnAreaAccion = base.Columns["AreaAccion"];
                 this.columnEstado = base.Columns["Estado"];
@@ -506,17 +581,26 @@ namespace Modules.AccionesPC.DataSets {
                 this.columnResponsableActual = base.Columns["ResponsableActual"];
                 this.columnResponsableSeguimiento = base.Columns["ResponsableSeguimiento"];
                 this.columnResponsableEjecucion = base.Columns["ResponsableEjecucion"];
+                this.columnUrlSolicitud = base.Columns["UrlSolicitud"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
+                this.columnIdSolicitudAPC = new global::System.Data.DataColumn("IdSolicitudAPC", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdSolicitudAPC);
                 this.columnFechaSolicitud = new global::System.Data.DataColumn("FechaSolicitud", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFechaSolicitud);
+                this.columnIdMes = new global::System.Data.DataColumn("IdMes", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdMes);
+                this.columnMes = new global::System.Data.DataColumn("Mes", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMes);
                 this.columnCodigo = new global::System.Data.DataColumn("Codigo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCodigo);
                 this.columnTipo = new global::System.Data.DataColumn("Tipo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTipo);
+                this.columnAccion = new global::System.Data.DataColumn("Accion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAccion);
                 this.columnProceso = new global::System.Data.DataColumn("Proceso", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnProceso);
                 this.columnAreaAccion = new global::System.Data.DataColumn("AreaAccion", typeof(string), null, global::System.Data.MappingType.Element);
@@ -533,26 +617,21 @@ namespace Modules.AccionesPC.DataSets {
                 base.Columns.Add(this.columnResponsableSeguimiento);
                 this.columnResponsableEjecucion = new global::System.Data.DataColumn("ResponsableEjecucion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnResponsableEjecucion);
-                this.columnFechaSolicitud.AllowDBNull = false;
-                this.columnCodigo.AllowDBNull = false;
+                this.columnUrlSolicitud = new global::System.Data.DataColumn("UrlSolicitud", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUrlSolicitud);
+                this.columnMes.MaxLength = 50;
                 this.columnCodigo.MaxLength = 50;
-                this.columnTipo.AllowDBNull = false;
                 this.columnTipo.MaxLength = 50;
-                this.columnProceso.AllowDBNull = false;
+                this.columnAccion.MaxLength = 512;
                 this.columnProceso.MaxLength = 512;
-                this.columnAreaAccion.AllowDBNull = false;
                 this.columnAreaAccion.MaxLength = 512;
-                this.columnEstado.MaxLength = 50;
-                this.columnAutor.AllowDBNull = false;
-                this.columnAutor.MaxLength = 60;
-                this.columnGerenteArea.AllowDBNull = false;
-                this.columnGerenteArea.MaxLength = 60;
-                this.columnResponsableActual.AllowDBNull = false;
-                this.columnResponsableActual.MaxLength = 60;
-                this.columnResponsableSeguimiento.AllowDBNull = false;
-                this.columnResponsableSeguimiento.MaxLength = 60;
-                this.columnResponsableEjecucion.AllowDBNull = false;
-                this.columnResponsableEjecucion.MaxLength = 60;
+                this.columnEstado.MaxLength = 512;
+                this.columnAutor.MaxLength = 512;
+                this.columnGerenteArea.MaxLength = 512;
+                this.columnResponsableActual.MaxLength = 512;
+                this.columnResponsableSeguimiento.MaxLength = 512;
+                this.columnResponsableEjecucion.MaxLength = 512;
+                this.columnUrlSolicitud.MaxLength = 2048;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -695,9 +774,32 @@ namespace Modules.AccionesPC.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal IdSolicitudAPC {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableSolicitudesAPC_Vistas_MisPendientes.IdSolicitudAPCColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IdSolicitudAPC\' in table \'SolicitudesAPC_Vistas_MisPendient" +
+                                "es\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSolicitudesAPC_Vistas_MisPendientes.IdSolicitudAPCColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public System.DateTime FechaSolicitud {
                 get {
-                    return ((global::System.DateTime)(this[this.tableSolicitudesAPC_Vistas_MisPendientes.FechaSolicitudColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSolicitudesAPC_Vistas_MisPendientes.FechaSolicitudColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FechaSolicitud\' in table \'SolicitudesAPC_Vistas_MisPendient" +
+                                "es\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableSolicitudesAPC_Vistas_MisPendientes.FechaSolicitudColumn] = value;
@@ -706,9 +808,49 @@ namespace Modules.AccionesPC.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int IdMes {
+                get {
+                    try {
+                        return ((int)(this[this.tableSolicitudesAPC_Vistas_MisPendientes.IdMesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IdMes\' in table \'SolicitudesAPC_Vistas_MisPendientes\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableSolicitudesAPC_Vistas_MisPendientes.IdMesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Mes {
+                get {
+                    try {
+                        return ((string)(this[this.tableSolicitudesAPC_Vistas_MisPendientes.MesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Mes\' in table \'SolicitudesAPC_Vistas_MisPendientes\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableSolicitudesAPC_Vistas_MisPendientes.MesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Codigo {
                 get {
-                    return ((string)(this[this.tableSolicitudesAPC_Vistas_MisPendientes.CodigoColumn]));
+                    try {
+                        return ((string)(this[this.tableSolicitudesAPC_Vistas_MisPendientes.CodigoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Codigo\' in table \'SolicitudesAPC_Vistas_MisPendientes\' is D" +
+                                "BNull.", e);
+                    }
                 }
                 set {
                     this[this.tableSolicitudesAPC_Vistas_MisPendientes.CodigoColumn] = value;
@@ -719,7 +861,13 @@ namespace Modules.AccionesPC.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Tipo {
                 get {
-                    return ((string)(this[this.tableSolicitudesAPC_Vistas_MisPendientes.TipoColumn]));
+                    try {
+                        return ((string)(this[this.tableSolicitudesAPC_Vistas_MisPendientes.TipoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Tipo\' in table \'SolicitudesAPC_Vistas_MisPendientes\' is DBN" +
+                                "ull.", e);
+                    }
                 }
                 set {
                     this[this.tableSolicitudesAPC_Vistas_MisPendientes.TipoColumn] = value;
@@ -728,9 +876,32 @@ namespace Modules.AccionesPC.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Accion {
+                get {
+                    try {
+                        return ((string)(this[this.tableSolicitudesAPC_Vistas_MisPendientes.AccionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Accion\' in table \'SolicitudesAPC_Vistas_MisPendientes\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSolicitudesAPC_Vistas_MisPendientes.AccionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Proceso {
                 get {
-                    return ((string)(this[this.tableSolicitudesAPC_Vistas_MisPendientes.ProcesoColumn]));
+                    try {
+                        return ((string)(this[this.tableSolicitudesAPC_Vistas_MisPendientes.ProcesoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Proceso\' in table \'SolicitudesAPC_Vistas_MisPendientes\' is " +
+                                "DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableSolicitudesAPC_Vistas_MisPendientes.ProcesoColumn] = value;
@@ -741,7 +912,13 @@ namespace Modules.AccionesPC.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string AreaAccion {
                 get {
-                    return ((string)(this[this.tableSolicitudesAPC_Vistas_MisPendientes.AreaAccionColumn]));
+                    try {
+                        return ((string)(this[this.tableSolicitudesAPC_Vistas_MisPendientes.AreaAccionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'AreaAccion\' in table \'SolicitudesAPC_Vistas_MisPendientes\' " +
+                                "is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableSolicitudesAPC_Vistas_MisPendientes.AreaAccionColumn] = value;
@@ -769,7 +946,13 @@ namespace Modules.AccionesPC.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Autor {
                 get {
-                    return ((string)(this[this.tableSolicitudesAPC_Vistas_MisPendientes.AutorColumn]));
+                    try {
+                        return ((string)(this[this.tableSolicitudesAPC_Vistas_MisPendientes.AutorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Autor\' in table \'SolicitudesAPC_Vistas_MisPendientes\' is DB" +
+                                "Null.", e);
+                    }
                 }
                 set {
                     this[this.tableSolicitudesAPC_Vistas_MisPendientes.AutorColumn] = value;
@@ -780,7 +963,13 @@ namespace Modules.AccionesPC.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string GerenteArea {
                 get {
-                    return ((string)(this[this.tableSolicitudesAPC_Vistas_MisPendientes.GerenteAreaColumn]));
+                    try {
+                        return ((string)(this[this.tableSolicitudesAPC_Vistas_MisPendientes.GerenteAreaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'GerenteArea\' in table \'SolicitudesAPC_Vistas_MisPendientes\'" +
+                                " is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableSolicitudesAPC_Vistas_MisPendientes.GerenteAreaColumn] = value;
@@ -791,7 +980,13 @@ namespace Modules.AccionesPC.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string ResponsableActual {
                 get {
-                    return ((string)(this[this.tableSolicitudesAPC_Vistas_MisPendientes.ResponsableActualColumn]));
+                    try {
+                        return ((string)(this[this.tableSolicitudesAPC_Vistas_MisPendientes.ResponsableActualColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ResponsableActual\' in table \'SolicitudesAPC_Vistas_MisPendi" +
+                                "entes\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableSolicitudesAPC_Vistas_MisPendientes.ResponsableActualColumn] = value;
@@ -802,7 +997,13 @@ namespace Modules.AccionesPC.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string ResponsableSeguimiento {
                 get {
-                    return ((string)(this[this.tableSolicitudesAPC_Vistas_MisPendientes.ResponsableSeguimientoColumn]));
+                    try {
+                        return ((string)(this[this.tableSolicitudesAPC_Vistas_MisPendientes.ResponsableSeguimientoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ResponsableSeguimiento\' in table \'SolicitudesAPC_Vistas_Mis" +
+                                "Pendientes\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableSolicitudesAPC_Vistas_MisPendientes.ResponsableSeguimientoColumn] = value;
@@ -813,11 +1014,142 @@ namespace Modules.AccionesPC.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string ResponsableEjecucion {
                 get {
-                    return ((string)(this[this.tableSolicitudesAPC_Vistas_MisPendientes.ResponsableEjecucionColumn]));
+                    try {
+                        return ((string)(this[this.tableSolicitudesAPC_Vistas_MisPendientes.ResponsableEjecucionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ResponsableEjecucion\' in table \'SolicitudesAPC_Vistas_MisPe" +
+                                "ndientes\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableSolicitudesAPC_Vistas_MisPendientes.ResponsableEjecucionColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string UrlSolicitud {
+                get {
+                    try {
+                        return ((string)(this[this.tableSolicitudesAPC_Vistas_MisPendientes.UrlSolicitudColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'UrlSolicitud\' in table \'SolicitudesAPC_Vistas_MisPendientes" +
+                                "\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSolicitudesAPC_Vistas_MisPendientes.UrlSolicitudColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsIdSolicitudAPCNull() {
+                return this.IsNull(this.tableSolicitudesAPC_Vistas_MisPendientes.IdSolicitudAPCColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetIdSolicitudAPCNull() {
+                this[this.tableSolicitudesAPC_Vistas_MisPendientes.IdSolicitudAPCColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFechaSolicitudNull() {
+                return this.IsNull(this.tableSolicitudesAPC_Vistas_MisPendientes.FechaSolicitudColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFechaSolicitudNull() {
+                this[this.tableSolicitudesAPC_Vistas_MisPendientes.FechaSolicitudColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsIdMesNull() {
+                return this.IsNull(this.tableSolicitudesAPC_Vistas_MisPendientes.IdMesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetIdMesNull() {
+                this[this.tableSolicitudesAPC_Vistas_MisPendientes.IdMesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMesNull() {
+                return this.IsNull(this.tableSolicitudesAPC_Vistas_MisPendientes.MesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMesNull() {
+                this[this.tableSolicitudesAPC_Vistas_MisPendientes.MesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCodigoNull() {
+                return this.IsNull(this.tableSolicitudesAPC_Vistas_MisPendientes.CodigoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCodigoNull() {
+                this[this.tableSolicitudesAPC_Vistas_MisPendientes.CodigoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTipoNull() {
+                return this.IsNull(this.tableSolicitudesAPC_Vistas_MisPendientes.TipoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTipoNull() {
+                this[this.tableSolicitudesAPC_Vistas_MisPendientes.TipoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAccionNull() {
+                return this.IsNull(this.tableSolicitudesAPC_Vistas_MisPendientes.AccionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAccionNull() {
+                this[this.tableSolicitudesAPC_Vistas_MisPendientes.AccionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsProcesoNull() {
+                return this.IsNull(this.tableSolicitudesAPC_Vistas_MisPendientes.ProcesoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetProcesoNull() {
+                this[this.tableSolicitudesAPC_Vistas_MisPendientes.ProcesoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAreaAccionNull() {
+                return this.IsNull(this.tableSolicitudesAPC_Vistas_MisPendientes.AreaAccionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAreaAccionNull() {
+                this[this.tableSolicitudesAPC_Vistas_MisPendientes.AreaAccionColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -830,6 +1162,78 @@ namespace Modules.AccionesPC.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetEstadoNull() {
                 this[this.tableSolicitudesAPC_Vistas_MisPendientes.EstadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAutorNull() {
+                return this.IsNull(this.tableSolicitudesAPC_Vistas_MisPendientes.AutorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAutorNull() {
+                this[this.tableSolicitudesAPC_Vistas_MisPendientes.AutorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsGerenteAreaNull() {
+                return this.IsNull(this.tableSolicitudesAPC_Vistas_MisPendientes.GerenteAreaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetGerenteAreaNull() {
+                this[this.tableSolicitudesAPC_Vistas_MisPendientes.GerenteAreaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsResponsableActualNull() {
+                return this.IsNull(this.tableSolicitudesAPC_Vistas_MisPendientes.ResponsableActualColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetResponsableActualNull() {
+                this[this.tableSolicitudesAPC_Vistas_MisPendientes.ResponsableActualColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsResponsableSeguimientoNull() {
+                return this.IsNull(this.tableSolicitudesAPC_Vistas_MisPendientes.ResponsableSeguimientoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetResponsableSeguimientoNull() {
+                this[this.tableSolicitudesAPC_Vistas_MisPendientes.ResponsableSeguimientoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsResponsableEjecucionNull() {
+                return this.IsNull(this.tableSolicitudesAPC_Vistas_MisPendientes.ResponsableEjecucionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetResponsableEjecucionNull() {
+                this[this.tableSolicitudesAPC_Vistas_MisPendientes.ResponsableEjecucionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsUrlSolicitudNull() {
+                return this.IsNull(this.tableSolicitudesAPC_Vistas_MisPendientes.UrlSolicitudColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetUrlSolicitudNull() {
+                this[this.tableSolicitudesAPC_Vistas_MisPendientes.UrlSolicitudColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -992,9 +1396,13 @@ namespace Modules.AccionesPC.DataSets.DS_ReportTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "SolicitudesAPC_Vistas_MisPendientes";
+            tableMapping.ColumnMappings.Add("IdSolicitudAPC", "IdSolicitudAPC");
             tableMapping.ColumnMappings.Add("FechaSolicitud", "FechaSolicitud");
+            tableMapping.ColumnMappings.Add("IdMes", "IdMes");
+            tableMapping.ColumnMappings.Add("Mes", "Mes");
             tableMapping.ColumnMappings.Add("Codigo", "Codigo");
             tableMapping.ColumnMappings.Add("Tipo", "Tipo");
+            tableMapping.ColumnMappings.Add("Accion", "Accion");
             tableMapping.ColumnMappings.Add("Proceso", "Proceso");
             tableMapping.ColumnMappings.Add("AreaAccion", "AreaAccion");
             tableMapping.ColumnMappings.Add("Estado", "Estado");
@@ -1003,6 +1411,7 @@ namespace Modules.AccionesPC.DataSets.DS_ReportTableAdapters {
             tableMapping.ColumnMappings.Add("ResponsableActual", "ResponsableActual");
             tableMapping.ColumnMappings.Add("ResponsableSeguimiento", "ResponsableSeguimiento");
             tableMapping.ColumnMappings.Add("ResponsableEjecucion", "ResponsableEjecucion");
+            tableMapping.ColumnMappings.Add("UrlSolicitud", "UrlSolicitud");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1031,13 +1440,14 @@ namespace Modules.AccionesPC.DataSets.DS_ReportTableAdapters {
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Area", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Proceso", global::System.Data.SqlDbType.VarChar, 512, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdResponsable", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FromView", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DS_Report.SolicitudesAPC_Vistas_MisPendientesDataTable dataTable, global::System.Nullable<global::System.DateTime> dateFrom, global::System.Nullable<global::System.DateTime> dateEnd, string ServerHostPath, string ModuleId, string NoAccion, string Tipo, global::System.Nullable<int> Area, string Proceso, global::System.Nullable<int> IdResponsable) {
+        public virtual int Fill(DS_Report.SolicitudesAPC_Vistas_MisPendientesDataTable dataTable, global::System.Nullable<global::System.DateTime> dateFrom, global::System.Nullable<global::System.DateTime> dateEnd, string ServerHostPath, string ModuleId, string NoAccion, string Tipo, global::System.Nullable<int> Area, string Proceso, global::System.Nullable<int> IdResponsable, string FromView) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((dateFrom.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(dateFrom.Value));
@@ -1092,6 +1502,12 @@ namespace Modules.AccionesPC.DataSets.DS_ReportTableAdapters {
             }
             else {
                 this.Adapter.SelectCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((FromView == null)) {
+                this.Adapter.SelectCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[10].Value = ((string)(FromView));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1104,7 +1520,7 @@ namespace Modules.AccionesPC.DataSets.DS_ReportTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DS_Report.SolicitudesAPC_Vistas_MisPendientesDataTable GetData(global::System.Nullable<global::System.DateTime> dateFrom, global::System.Nullable<global::System.DateTime> dateEnd, string ServerHostPath, string ModuleId, string NoAccion, string Tipo, global::System.Nullable<int> Area, string Proceso, global::System.Nullable<int> IdResponsable) {
+        public virtual DS_Report.SolicitudesAPC_Vistas_MisPendientesDataTable GetData(global::System.Nullable<global::System.DateTime> dateFrom, global::System.Nullable<global::System.DateTime> dateEnd, string ServerHostPath, string ModuleId, string NoAccion, string Tipo, global::System.Nullable<int> Area, string Proceso, global::System.Nullable<int> IdResponsable, string FromView) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((dateFrom.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(dateFrom.Value));
@@ -1159,6 +1575,12 @@ namespace Modules.AccionesPC.DataSets.DS_ReportTableAdapters {
             }
             else {
                 this.Adapter.SelectCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((FromView == null)) {
+                this.Adapter.SelectCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[10].Value = ((string)(FromView));
             }
             DS_Report.SolicitudesAPC_Vistas_MisPendientesDataTable dataTable = new DS_Report.SolicitudesAPC_Vistas_MisPendientesDataTable();
             this.Adapter.Fill(dataTable);
