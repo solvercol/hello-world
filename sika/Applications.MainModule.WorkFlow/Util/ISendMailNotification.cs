@@ -1,3 +1,4 @@
+using System.Data;
 using Applications.MainModule.WorkFlow.DTO;
 using Domain.MainModules.Entities;
 using Infrastructure.CrossCutting.NetFramework.Enums;
@@ -20,5 +21,8 @@ namespace Applications.MainModule.WorkFlow.Util
         bool EnviarCorreoelectronicoDevolucion(RenderTypeControlButtonDto oDocument, TBL_Admin_Usuarios userSession);
 
         bool EnviarCorreoelectronicoRechazoReclamo(RenderTypeControlButtonDto oDocument, TBL_Admin_Usuarios userSession);
+
+        bool SendEmailActividadesSolicitud(RenderTypeControlButtonDto oDocument, TBL_Admin_Usuarios userSession, DataTable dt,
+                                      ModulosAplicacion module);
     }
 }

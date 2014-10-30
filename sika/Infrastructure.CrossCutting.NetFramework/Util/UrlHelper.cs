@@ -114,6 +114,10 @@ namespace Infrastructure.CrossCutting.NetFramework.Util
             return UrlUtil.GetUrlPreViewDocumentSolicitudforEmail();
         }
 
+        public static string GetUrlPreViewActividadSolicitudforEmail(string idActividad, string idSolicitud)
+        {
+            return UrlUtil.GetUrlPreViewActividadSolicitudforEmail(idActividad, idSolicitud);
+        }
         #endregion
 
 

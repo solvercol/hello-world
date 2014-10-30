@@ -18,6 +18,7 @@ using Domain.MainModules.Entities;
 using Infraestructure.Data.Core;
 using Infraestructure.Data.Core.Extensions;
 using Infrastructure.CrossCutting.Logging;
+using Infrastructure.CrossCutting.NetFramework.Enums;
 using Infrastructure.Data.MainModule.Resources;
 using Infrastructure.Data.MainModule.UnitOfWork;
 using System.Collections.Generic;
@@ -141,22 +142,37 @@ namespace Infrastructure.Data.MainModule.Repositories
         }
 
         /// <summary>
-        /// Usuario responsable del reclamo
+        /// Usuario responsable del reclamo o de la solicitud dependiendo del parámetro module.
         /// </summary>
-        /// <param name="idReclamo"></param>
+        /// <param name="idDocumento"></param>
+        /// <param name="module"></param>
         /// <returns></returns>
-        public TBL_Admin_Usuarios RetornarUsuarioResponsabledocumento(int idReclamo)
+        public TBL_Admin_Usuarios RetornarUsuarioResponsabledocumento(int idDocumento, ModulosAplicacion module)
         {
-            var oUser = (
-                            from rec in _currentUnitOfWork.TBL_ModuloReclamos_Reclamo
-                            join usu in _currentUnitOfWork.TBL_Admin_Usuarios on rec.IdResponsableActual equals usu.IdUser
-                            where rec.IdReclamo == idReclamo
+            if (module == ModulosAplicacion.Reclamos)
+            {
+                var oUser = (
+                                from rec in _currentUnitOfWork.TBL_ModuloReclamos_Reclamo
+                                join usu in _currentUnitOfWork.TBL_Admin_Usuarios on rec.IdResponsableActual equals
+                                    usu.IdUser
+                                where rec.IdReclamo == idDocumento
+                                select usu).SingleOrDefault();
+
+                return oUser;
+            }
+            else
+            {
+                var oUser = (
+                            from sol in _currentUnitOfWork.TBL_ModuloAPC_Solicitud
+                            join usu in _currentUnitOfWork.TBL_Admin_Usuarios on sol.IdResponsableActual equals usu.IdUser
+                            where sol.IdSolucitudAPC == idDocumento
                             select usu).SingleOrDefault();
 
-            return oUser;
+                return oUser;
+            }
         }
 
-
+       
         public List<TBL_Admin_Usuarios> RetornarUsuariosReponsablesAprobacion(string role)
         {
             var actualContext = UnitOfWork as IMainModuleUnitOfWork;

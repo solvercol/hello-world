@@ -96,6 +96,21 @@ namespace Modules.WorkFlow
                                               ? new ViewResulteventArgs("UpdatePanel")
                                               : new ViewResulteventArgs(res));
                     break;
+
+                case "EnvioActividades":
+                    res = _module.EnviarActividadesSolicitud(oDocument);
+                    InvokeActualizarEvent(res.Processestaus == "Ok"
+                                              ? new ViewResulteventArgs("UpdatePanel")
+                                              : new ViewResulteventArgs(res));
+                    break;
+
+
+                case "CerrarSolicitud":
+                    res = _module.CerrarAccion(oDocument);
+                    InvokeActualizarEvent(res.Processestaus == "Ok"
+                                              ? new ViewResulteventArgs("UpdatePanel")
+                                              : new ViewResulteventArgs(res));
+                    break;
             }
 
             CargarWorkFlow();

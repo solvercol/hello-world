@@ -24,12 +24,20 @@ namespace Modules.AccionesPC.UserControls
             ddlResponsable.DataValueField = "IdUser";
             ddlResponsable.DataTextField = "Nombres";
             ddlResponsable.DataBind();
+
+            var li = new ListItem("--Selecione--", string.Empty);
+            ddlResponsable.Items.Insert(0,li);
         }
 
 
         public string IngenieroSeleccionado
         {
             get { return ddlResponsable.SelectedValue; }
+        }
+
+        public string NombreIngenieroSeleccionado
+        {
+            get { return ddlResponsable.SelectedItem.Text; }
         }
     }
 }
