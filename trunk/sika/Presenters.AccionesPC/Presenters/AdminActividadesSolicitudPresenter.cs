@@ -1,17 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Application.Core;
 using Application.MainModule.AccionesPC.IServices;
-//using Application.MainModule.AccionesPC.Util;
+using Application.MainModule.SqlServices.IServices;
 using Applications.MainModule.Admin.IServices;
+using Domain.MainModule.AccionesPC.Enum;
 using Domain.MainModules.Entities;
 using Infrastructure.CrossCutting.NetFramework.Enums;
 using Presenters.AccionesPC.IViews;
-using Application.MainModule.SqlServices.IServices;
-using System.Collections.Generic;
-using Presenters.AccionesPC.Resources;
-using Domain.MainModule.AccionesPC.Enum;
 
 namespace Presenters.AccionesPC.Presenters
 {
@@ -22,7 +20,6 @@ namespace Presenters.AccionesPC.Presenters
         readonly ISfTBL_Admin_UsuariosManagementServices _usuariosService;
         readonly ISolicitudAdoService _solicitudAdoService;
         readonly ISfTBL_ModuloAPC_AnexosActividadesManagementServices _anexosService;
-       // private readonly ISendEmail _senMailServices;
 
         public AdminActividadesSolicitudPresenter(ISfTBL_ModuloAPC_ActividadesManagementServices actividadesService,
                                                 ISfTBL_ModuloAPC_SolicitudManagementServices solicitudService,
