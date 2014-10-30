@@ -22,6 +22,7 @@
                     OnItemDataBound="RptListadoItemDataBound">
 	                    <headertemplate>
 		                    <tr>
+                                <th>Module</th>
 		                        <th>Country</th>
 			                    <th>Template Name </th>
 			                    <th>Code Template</th>
@@ -32,6 +33,7 @@
 	                    </headertemplate>
 	                    <itemtemplate>
 		                    <tr>
+                                <td align="left"><%# DataBinder.Eval(Container.DataItem, "IdModulo")%></td>
 		                        <td align="left"><asp:Literal ID="litPais" runat="server"></asp:Literal></td>
 			                    <td align="left"><%# DataBinder.Eval(Container.DataItem, "Nombre")%></td>
 			                    <td align="left"><asp:Literal ID="litCodeTemplate" runat="server"></asp:Literal></td>
@@ -44,6 +46,7 @@
 	                    </itemtemplate>
                         <AlternatingItemTemplate>
                             <tr class="AlternateGridStyle">
+                                <td align="left"><%# DataBinder.Eval(Container.DataItem, "IdModulo")%></td>
 		                       <td align="left"><asp:Literal ID="litPais" runat="server"></asp:Literal></td>
 			                    <td align="left"><%# DataBinder.Eval(Container.DataItem, "Nombre")%></td>
 			                    <td align="left"><asp:Literal ID="litCodeTemplate" runat="server"></asp:Literal></td>

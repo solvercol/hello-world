@@ -31,13 +31,13 @@ namespace Infrastructure.Data.MainModule.Repositories
             _currentUnitOfWork = unitOfWork;
         }
 
-        public TBL_Admin_Plantillas GetPlantillaByIdPaisByCodigo(string codigo, string pais)
+        public TBL_Admin_Plantillas GetPlantillaByIdPaisByCodigo(string codigo, string pais, string idModulo)
         {
             if (!string.IsNullOrEmpty(codigo) && !string.IsNullOrEmpty(pais))
             {
                 var set = _currentUnitOfWork.CreateSet<TBL_Admin_Plantillas>();
 
-                return set.Where(c => c.Codigo.Equals(codigo) && c.TBL_Admin_Paises.Nombre.Equals(pais))
+                return set.Where(c => c.Codigo.Equals(codigo) && c.TBL_Admin_Paises.Nombre.Equals(pais) && c.IdModulo==idModulo )
                           .Select(c => c)
                           .SingleOrDefault();
             }

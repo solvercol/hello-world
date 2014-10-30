@@ -89,6 +89,13 @@ namespace Modules.WorkFlow
                                               ? new ViewResulteventArgs("UpdatePanel")
                                               : new ViewResulteventArgs(res));
                     break;
+
+                case "ResponsableSolicitud":
+                    res = _module.AsignarresponsableSolicitud(oDocument);
+                    InvokeActualizarEvent(res.Processestaus == "Ok"
+                                              ? new ViewResulteventArgs("UpdatePanel")
+                                              : new ViewResulteventArgs(res));
+                    break;
             }
 
             CargarWorkFlow();
@@ -137,7 +144,12 @@ namespace Modules.WorkFlow
                 if (string.IsNullOrEmpty(oControl.IdCurrentResponsibe))
                     btn.Visible = false;
                 else
-                    btn.Visible = oControl.IdCurrentResponsibe == AuthenticatedUser.IdUser.ToString();
+                {
+                    if (oControl.IsCurrentGroupResponsible)
+                        btn.Visible = AuthenticatedUser.IsInRoleId(Convert.ToInt32(oControl.IdCurrentResponsibe));
+                    else
+                        btn.Visible = oControl.IdCurrentResponsibe == AuthenticatedUser.IdUser.ToString();
+                }
             }
 
             btn.Click += BtnClick;

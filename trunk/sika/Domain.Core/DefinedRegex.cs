@@ -32,6 +32,8 @@ namespace Domain.Core
 
         private const string CStrRole = @"\[ROLE\](.*)\[\/ROLE\]";
 
+        private const string CStrGrupo = @"\[GRUPO\](.*)\[\/GRUPO\]";
+
         private const string CStrField = @"\[FIELD\](.*)\[\/FIELD\]";
 
         private const string CStrInputParameters = @"\[INPUTPARAMETERS\](.*)\[\/INPUTPARAMETERS\]";
@@ -41,6 +43,13 @@ namespace Domain.Core
         private const string CStrAutor = @"\[AUTOR\]";
 
         private const string CStrResponsable = @"\[RESPONSABLE\]";
+
+
+
+        public static readonly Regex Grupo = new Regex(
+        CStrGrupo,
+       RegexOptions.Compiled | RegexOptions.IgnoreCase
+      );
 
 
         public static readonly Regex Responsable = new Regex(

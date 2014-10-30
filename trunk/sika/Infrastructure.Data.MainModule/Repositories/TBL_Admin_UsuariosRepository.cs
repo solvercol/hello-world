@@ -156,5 +156,25 @@ namespace Infrastructure.Data.MainModule.Repositories
             return oUser;
         }
 
+
+        public List<TBL_Admin_Usuarios> RetornarUsuariosReponsablesAprobacion(string role)
+        {
+            var actualContext = UnitOfWork as IMainModuleUnitOfWork;
+            if (actualContext != null)
+            {
+                return (from user
+                            in actualContext.TBL_Admin_Usuarios
+                        where
+                            user.TBL_Admin_Roles1.Any(x => x.NombreRol == role)
+                        select
+                            user).ToList();
+            }
+
+            throw new InvalidOperationException(string.Format(
+                CultureInfo.InvariantCulture,
+                Messages.exception_InvalidStoreContext,
+                GetType().Name));
+        }
+
     }
 }

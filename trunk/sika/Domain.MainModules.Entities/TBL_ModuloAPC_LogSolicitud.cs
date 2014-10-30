@@ -20,116 +20,71 @@ using Domain.Core.Entities;
 namespace Domain.MainModules.Entities
 {
     [DataContract(IsReference = true)]
-    [KnownType(typeof(TBL_Admin_Paises))]
+    [KnownType(typeof(TBL_ModuloAPC_Solicitud))]
     
-    public partial class TBL_Admin_Plantillas: IObjectWithChangeTracker, INotifyPropertyChanged
+    public partial class TBL_ModuloAPC_LogSolicitud: IObjectWithChangeTracker, INotifyPropertyChanged
     {
         #region Primitive Properties
     
         [DataMember]
-        public int IdPlantilla
+        public decimal IdLog
         {
-            get { return _idPlantilla; }
+            get { return _idLog; }
             set
             {
-                if (_idPlantilla != value)
+                if (_idLog != value)
                 {
                     if (ChangeTracker.ChangeTrackingEnabled && ChangeTracker.State != ObjectState.Added)
                     {
-                        throw new InvalidOperationException("The property 'IdPlantilla' is part of the object's key and cannot be changed. Changes to key properties can only be made when the object is not being tracked or is in the Added state.");
+                        throw new InvalidOperationException("The property 'IdLog' is part of the object's key and cannot be changed. Changes to key properties can only be made when the object is not being tracked or is in the Added state.");
                     }
-                    _idPlantilla = value;
-                    OnPropertyChanged("IdPlantilla");
+                    _idLog = value;
+                    OnPropertyChanged("IdLog");
                 }
             }
         }
-        private int _idPlantilla;
+        private decimal _idLog;
     
         [DataMember]
-        public int IdPais
+        public decimal IdSolicitud
         {
-            get { return _idPais; }
+            get { return _idSolicitud; }
             set
             {
-                if (_idPais != value)
+                if (_idSolicitud != value)
                 {
-                    ChangeTracker.RecordOriginalValue("IdPais", _idPais);
+                    ChangeTracker.RecordOriginalValue("IdSolicitud", _idSolicitud);
                     if (!IsDeserializing)
                     {
-                        if (TBL_Admin_Paises != null && TBL_Admin_Paises.IdPais != value)
+                        if (TBL_ModuloAPC_Solicitud != null && TBL_ModuloAPC_Solicitud.IdSolucitudAPC != value)
                         {
-                            TBL_Admin_Paises = null;
+                            TBL_ModuloAPC_Solicitud = null;
                         }
                     }
-                    _idPais = value;
-                    OnPropertyChanged("IdPais");
+                    _idSolicitud = value;
+                    OnPropertyChanged("IdSolicitud");
                 }
             }
         }
-        private int _idPais;
+        private decimal _idSolicitud;
     
         [DataMember]
-        public string Nombre
+        public string Descripcion
         {
-            get { return _nombre; }
+            get { return _descripcion; }
             set
             {
-                if (_nombre != value)
+                if (_descripcion != value)
                 {
-                    _nombre = value;
-                    OnPropertyChanged("Nombre");
+                    _descripcion = value;
+                    OnPropertyChanged("Descripcion");
                 }
             }
         }
-        private string _nombre;
+        private string _descripcion;
     
         [DataMember]
-        public string Codigo
-        {
-            get { return _codigo; }
-            set
-            {
-                if (_codigo != value)
-                {
-                    _codigo = value;
-                    OnPropertyChanged("Codigo");
-                }
-            }
-        }
-        private string _codigo;
-    
-        [DataMember]
-        public byte[] Contenido
-        {
-            get { return _contenido; }
-            set
-            {
-                if (_contenido != value)
-                {
-                    _contenido = value;
-                    OnPropertyChanged("Contenido");
-                }
-            }
-        }
-        private byte[] _contenido;
-    
-        [DataMember]
-        public bool IsActive
-        {
-            get { return _isActive; }
-            set
-            {
-                if (_isActive != value)
-                {
-                    _isActive = value;
-                    OnPropertyChanged("IsActive");
-                }
-            }
-        }
-        private bool _isActive;
-    
-        [DataMember]
-        public string CreateBy
+        public Nullable<int> CreateBy
         {
             get { return _createBy; }
             set
@@ -141,7 +96,7 @@ namespace Domain.MainModules.Entities
                 }
             }
         }
-        private string _createBy;
+        private Nullable<int> _createBy;
     
         [DataMember]
         public Nullable<System.DateTime> CreateOn
@@ -159,69 +114,39 @@ namespace Domain.MainModules.Entities
         private Nullable<System.DateTime> _createOn;
     
         [DataMember]
-        public string ModifiedBy
+        public bool IsActive
         {
-            get { return _modifiedBy; }
+            get { return _isActive; }
             set
             {
-                if (_modifiedBy != value)
+                if (_isActive != value)
                 {
-                    _modifiedBy = value;
-                    OnPropertyChanged("ModifiedBy");
+                    _isActive = value;
+                    OnPropertyChanged("IsActive");
                 }
             }
         }
-        private string _modifiedBy;
-    
-        [DataMember]
-        public Nullable<System.DateTime> ModifiedOn
-        {
-            get { return _modifiedOn; }
-            set
-            {
-                if (_modifiedOn != value)
-                {
-                    _modifiedOn = value;
-                    OnPropertyChanged("ModifiedOn");
-                }
-            }
-        }
-        private Nullable<System.DateTime> _modifiedOn;
-    
-        [DataMember]
-        public string IdModulo
-        {
-            get { return _idModulo; }
-            set
-            {
-                if (_idModulo != value)
-                {
-                    _idModulo = value;
-                    OnPropertyChanged("IdModulo");
-                }
-            }
-        }
-        private string _idModulo;
+        private bool _isActive;
 
         #endregion
         #region Navigation Properties
     
         [DataMember]
-        public TBL_Admin_Paises TBL_Admin_Paises
+        public TBL_ModuloAPC_Solicitud TBL_ModuloAPC_Solicitud
         {
-            get { return _tBL_Admin_Paises; }
+            get { return _tBL_ModuloAPC_Solicitud; }
             set
             {
-                if (!ReferenceEquals(_tBL_Admin_Paises, value))
+                if (!ReferenceEquals(_tBL_ModuloAPC_Solicitud, value))
                 {
-                    var previousValue = _tBL_Admin_Paises;
-                    _tBL_Admin_Paises = value;
-                    FixupTBL_Admin_Paises(previousValue);
-                    OnNavigationPropertyChanged("TBL_Admin_Paises");
+                    var previousValue = _tBL_ModuloAPC_Solicitud;
+                    _tBL_ModuloAPC_Solicitud = value;
+                    FixupTBL_ModuloAPC_Solicitud(previousValue);
+                    OnNavigationPropertyChanged("TBL_ModuloAPC_Solicitud");
                 }
             }
         }
-        private TBL_Admin_Paises _tBL_Admin_Paises;
+        private TBL_ModuloAPC_Solicitud _tBL_ModuloAPC_Solicitud;
 
         #endregion
         #region ChangeTracking
@@ -301,47 +226,47 @@ namespace Domain.MainModules.Entities
     
         protected virtual void ClearNavigationProperties()
         {
-            TBL_Admin_Paises = null;
+            TBL_ModuloAPC_Solicitud = null;
         }
 
         #endregion
         #region Association Fixup
     
-        private void FixupTBL_Admin_Paises(TBL_Admin_Paises previousValue)
+        private void FixupTBL_ModuloAPC_Solicitud(TBL_ModuloAPC_Solicitud previousValue)
         {
             if (IsDeserializing)
             {
                 return;
             }
     
-            if (previousValue != null && previousValue.TBL_Admin_Plantillas.Contains(this))
+            if (previousValue != null && previousValue.TBL_ModuloAPC_LogSolicitud.Contains(this))
             {
-                previousValue.TBL_Admin_Plantillas.Remove(this);
+                previousValue.TBL_ModuloAPC_LogSolicitud.Remove(this);
             }
     
-            if (TBL_Admin_Paises != null)
+            if (TBL_ModuloAPC_Solicitud != null)
             {
-                if (!TBL_Admin_Paises.TBL_Admin_Plantillas.Contains(this))
+                if (!TBL_ModuloAPC_Solicitud.TBL_ModuloAPC_LogSolicitud.Contains(this))
                 {
-                    TBL_Admin_Paises.TBL_Admin_Plantillas.Add(this);
+                    TBL_ModuloAPC_Solicitud.TBL_ModuloAPC_LogSolicitud.Add(this);
                 }
     
-                IdPais = TBL_Admin_Paises.IdPais;
+                IdSolicitud = TBL_ModuloAPC_Solicitud.IdSolucitudAPC;
             }
             if (ChangeTracker.ChangeTrackingEnabled)
             {
-                if (ChangeTracker.OriginalValues.ContainsKey("TBL_Admin_Paises")
-                    && (ChangeTracker.OriginalValues["TBL_Admin_Paises"] == TBL_Admin_Paises))
+                if (ChangeTracker.OriginalValues.ContainsKey("TBL_ModuloAPC_Solicitud")
+                    && (ChangeTracker.OriginalValues["TBL_ModuloAPC_Solicitud"] == TBL_ModuloAPC_Solicitud))
                 {
-                    ChangeTracker.OriginalValues.Remove("TBL_Admin_Paises");
+                    ChangeTracker.OriginalValues.Remove("TBL_ModuloAPC_Solicitud");
                 }
                 else
                 {
-                    ChangeTracker.RecordOriginalValue("TBL_Admin_Paises", previousValue);
+                    ChangeTracker.RecordOriginalValue("TBL_ModuloAPC_Solicitud", previousValue);
                 }
-                if (TBL_Admin_Paises != null && !TBL_Admin_Paises.ChangeTracker.ChangeTrackingEnabled)
+                if (TBL_ModuloAPC_Solicitud != null && !TBL_ModuloAPC_Solicitud.ChangeTracker.ChangeTrackingEnabled)
                 {
-                    TBL_Admin_Paises.StartTracking();
+                    TBL_ModuloAPC_Solicitud.StartTracking();
                 }
             }
         }

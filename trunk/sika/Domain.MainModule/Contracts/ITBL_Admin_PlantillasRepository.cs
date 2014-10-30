@@ -17,7 +17,7 @@ namespace Domain.MainModule.Contracts
 {
     public interface ITBL_Admin_PlantillasRepository : IRepository<TBL_Admin_Plantillas>
     {
-        TBL_Admin_Plantillas GetPlantillaByIdPaisByCodigo(string codigo, string pais);
+        TBL_Admin_Plantillas GetPlantillaByIdPaisByCodigo(string codigo, string pais, string idModulo);
 
         IEnumerable<TBL_Admin_Plantillas> GetPlantillasByPaged(int pageIndex, int pageCount);
     }

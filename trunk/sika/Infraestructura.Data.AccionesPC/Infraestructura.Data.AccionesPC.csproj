@@ -49,7 +49,9 @@
     <Compile Include="Repositories\TBL_ModuloAPC_AreasRepository.cs" />
     <Compile Include="Repositories\TBL_ModuloAPC_CausasRepository.cs" />
     <Compile Include="Repositories\TBL_ModuloAPC_ComentariosRespuestaRepository.cs" />
+    <Compile Include="Repositories\TBL_ModuloAPC_LogSolicitudRepository.cs" />
     <Compile Include="Repositories\TBL_ModuloAPC_SolicitudRepository.cs" />
+    <Compile Include="Repositories\TBL_ModuloAPC_TrackingRepository.cs" />
     <Compile Include="Resources\Messages.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

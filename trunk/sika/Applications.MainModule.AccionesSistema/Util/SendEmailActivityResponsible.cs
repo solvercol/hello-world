@@ -66,7 +66,8 @@ namespace Applications.MainModule.AccionesSistema.Util
 
         private string ObtenerPlantilla(string codigoPlantilla, string pais)
         {
-            var plantilla = _plantillasrepository.GetPlantillaByIdPaisByCodigo(codigoPlantilla, pais);
+            const int idModule = (int) ModulosAplicacion.Reclamos;
+            var plantilla = _plantillasrepository.GetPlantillaByIdPaisByCodigo(codigoPlantilla, pais, idModule.ToString());
 
             if (plantilla == null) return string.Empty;
 

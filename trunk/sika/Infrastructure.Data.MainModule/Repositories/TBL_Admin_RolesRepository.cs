@@ -9,6 +9,7 @@
 
 #pragma warning disable 1591 // this is for supress no xml comments in public members warnings 
 
+using System.Linq;
 using Domain.MainModule.Contracts;
 using Infraestructure.Data.Core;
 using Infrastructure.CrossCutting.Logging;
@@ -21,9 +22,39 @@ namespace Infrastructure.Data.MainModule.Repositories
 {
     public class TBL_Admin_RolesRepository : GenericRepository<TBL_Admin_Roles>, ITBL_Admin_RolesRepository 
     {
+        IMainModuleUnitOfWork _currentUnitOfWork;
+
         public TBL_Admin_RolesRepository(IMainModuleUnitOfWork unitOfWork, ITraceManager traceManager) : base(unitOfWork, traceManager)
         {
+            _currentUnitOfWork = unitOfWork;
         }
+
+        public TBL_Admin_Roles GetURoleById(int id)
+        {
+            if (id > 0)
+            {
+                var set = _currentUnitOfWork.CreateSet<TBL_Admin_Roles>();
+
+                return set.Where(c => c.IdRol == id)
+                          .Select(c => c)
+                          .SingleOrDefault();
+            }
+            return null;
+        }
+
+        public TBL_Admin_Roles GetURoleByName(string name)
+        {
+            if (!string.IsNullOrEmpty(name))
+            {
+                var set = _currentUnitOfWork.CreateSet<TBL_Admin_Roles>();
+
+                return set.Where(c => c.NombreRol == name)
+                          .Select(c => c)
+                          .SingleOrDefault();
+            }
+            return null;
+        }
+
     }
 }
     

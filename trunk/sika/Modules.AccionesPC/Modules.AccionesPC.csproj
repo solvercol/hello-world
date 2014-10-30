@@ -86,6 +86,7 @@
     <Content Include="UserControls\WUCAdminAnexosSolicitud.ascx" />
     <Content Include="UserControls\WUCAdminComentariosRespuestaSolicitud.ascx" />
     <Content Include="UserControls\WUCAdminInformacionSolicitud.ascx" />
+    <Content Include="UserControls\WucAsignarResponsableSolicitud.ascx" />
     <Content Include="Views\FrmMisSolicitudesPendientes.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -173,6 +174,13 @@
     </Compile>
     <Compile Include="UserControls\WUCAdminInformacionSolicitud.ascx.designer.cs">
       <DependentUpon>WUCAdminInformacionSolicitud.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WucAsignarResponsableSolicitud.ascx.cs">
+      <DependentUpon>WucAsignarResponsableSolicitud.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WucAsignarResponsableSolicitud.ascx.designer.cs">
+      <DependentUpon>WucAsignarResponsableSolicitud.ascx</DependentUpon>
     </Compile>
     <Compile Include="Views\FrmMisSolicitudesPendientes.aspx.cs">
       <DependentUpon>FrmMisSolicitudesPendientes.aspx</DependentUpon>

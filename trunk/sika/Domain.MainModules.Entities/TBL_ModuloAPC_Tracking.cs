@@ -20,98 +20,128 @@ using Domain.Core.Entities;
 namespace Domain.MainModules.Entities
 {
     [DataContract(IsReference = true)]
-    [KnownType(typeof(TBL_Admin_Paises))]
+    [KnownType(typeof(TBL_ModuloAPC_Solicitud))]
     
-    public partial class TBL_Admin_Plantillas: IObjectWithChangeTracker, INotifyPropertyChanged
+    public partial class TBL_ModuloAPC_Tracking: IObjectWithChangeTracker, INotifyPropertyChanged
     {
         #region Primitive Properties
     
         [DataMember]
-        public int IdPlantilla
+        public decimal IdTracking
         {
-            get { return _idPlantilla; }
+            get { return _idTracking; }
             set
             {
-                if (_idPlantilla != value)
+                if (_idTracking != value)
                 {
                     if (ChangeTracker.ChangeTrackingEnabled && ChangeTracker.State != ObjectState.Added)
                     {
-                        throw new InvalidOperationException("The property 'IdPlantilla' is part of the object's key and cannot be changed. Changes to key properties can only be made when the object is not being tracked or is in the Added state.");
+                        throw new InvalidOperationException("The property 'IdTracking' is part of the object's key and cannot be changed. Changes to key properties can only be made when the object is not being tracked or is in the Added state.");
                     }
-                    _idPlantilla = value;
-                    OnPropertyChanged("IdPlantilla");
+                    _idTracking = value;
+                    OnPropertyChanged("IdTracking");
                 }
             }
         }
-        private int _idPlantilla;
+        private decimal _idTracking;
     
         [DataMember]
-        public int IdPais
+        public decimal IdSolicitud
         {
-            get { return _idPais; }
+            get { return _idSolicitud; }
             set
             {
-                if (_idPais != value)
+                if (_idSolicitud != value)
                 {
-                    ChangeTracker.RecordOriginalValue("IdPais", _idPais);
+                    ChangeTracker.RecordOriginalValue("IdSolicitud", _idSolicitud);
                     if (!IsDeserializing)
                     {
-                        if (TBL_Admin_Paises != null && TBL_Admin_Paises.IdPais != value)
+                        if (TBL_ModuloAPC_Solicitud != null && TBL_ModuloAPC_Solicitud.IdSolucitudAPC != value)
                         {
-                            TBL_Admin_Paises = null;
+                            TBL_ModuloAPC_Solicitud = null;
                         }
                     }
-                    _idPais = value;
-                    OnPropertyChanged("IdPais");
+                    _idSolicitud = value;
+                    OnPropertyChanged("IdSolicitud");
                 }
             }
         }
-        private int _idPais;
+        private decimal _idSolicitud;
     
         [DataMember]
-        public string Nombre
+        public string Autor
         {
-            get { return _nombre; }
+            get { return _autor; }
             set
             {
-                if (_nombre != value)
+                if (_autor != value)
                 {
-                    _nombre = value;
-                    OnPropertyChanged("Nombre");
+                    _autor = value;
+                    OnPropertyChanged("Autor");
                 }
             }
         }
-        private string _nombre;
+        private string _autor;
     
         [DataMember]
-        public string Codigo
+        public string EstadoAnterior
         {
-            get { return _codigo; }
+            get { return _estadoAnterior; }
             set
             {
-                if (_codigo != value)
+                if (_estadoAnterior != value)
                 {
-                    _codigo = value;
-                    OnPropertyChanged("Codigo");
+                    _estadoAnterior = value;
+                    OnPropertyChanged("EstadoAnterior");
                 }
             }
         }
-        private string _codigo;
+        private string _estadoAnterior;
     
         [DataMember]
-        public byte[] Contenido
+        public string Accion
         {
-            get { return _contenido; }
+            get { return _accion; }
             set
             {
-                if (_contenido != value)
+                if (_accion != value)
                 {
-                    _contenido = value;
-                    OnPropertyChanged("Contenido");
+                    _accion = value;
+                    OnPropertyChanged("Accion");
                 }
             }
         }
-        private byte[] _contenido;
+        private string _accion;
+    
+        [DataMember]
+        public string Nuevoestado
+        {
+            get { return _nuevoestado; }
+            set
+            {
+                if (_nuevoestado != value)
+                {
+                    _nuevoestado = value;
+                    OnPropertyChanged("Nuevoestado");
+                }
+            }
+        }
+        private string _nuevoestado;
+    
+        [DataMember]
+        public string NuevoResponsable
+        {
+            get { return _nuevoResponsable; }
+            set
+            {
+                if (_nuevoResponsable != value)
+                {
+                    _nuevoResponsable = value;
+                    OnPropertyChanged("NuevoResponsable");
+                }
+            }
+        }
+        private string _nuevoResponsable;
     
         [DataMember]
         public bool IsActive
@@ -187,41 +217,26 @@ namespace Domain.MainModules.Entities
             }
         }
         private Nullable<System.DateTime> _modifiedOn;
-    
-        [DataMember]
-        public string IdModulo
-        {
-            get { return _idModulo; }
-            set
-            {
-                if (_idModulo != value)
-                {
-                    _idModulo = value;
-                    OnPropertyChanged("IdModulo");
-                }
-            }
-        }
-        private string _idModulo;
 
         #endregion
         #region Navigation Properties
     
         [DataMember]
-        public TBL_Admin_Paises TBL_Admin_Paises
+        public TBL_ModuloAPC_Solicitud TBL_ModuloAPC_Solicitud
         {
-            get { return _tBL_Admin_Paises; }
+            get { return _tBL_ModuloAPC_Solicitud; }
             set
             {
-                if (!ReferenceEquals(_tBL_Admin_Paises, value))
+                if (!ReferenceEquals(_tBL_ModuloAPC_Solicitud, value))
                 {
-                    var previousValue = _tBL_Admin_Paises;
-                    _tBL_Admin_Paises = value;
-                    FixupTBL_Admin_Paises(previousValue);
-                    OnNavigationPropertyChanged("TBL_Admin_Paises");
+                    var previousValue = _tBL_ModuloAPC_Solicitud;
+                    _tBL_ModuloAPC_Solicitud = value;
+                    FixupTBL_ModuloAPC_Solicitud(previousValue);
+                    OnNavigationPropertyChanged("TBL_ModuloAPC_Solicitud");
                 }
             }
         }
-        private TBL_Admin_Paises _tBL_Admin_Paises;
+        private TBL_ModuloAPC_Solicitud _tBL_ModuloAPC_Solicitud;
 
         #endregion
         #region ChangeTracking
@@ -301,47 +316,47 @@ namespace Domain.MainModules.Entities
     
         protected virtual void ClearNavigationProperties()
         {
-            TBL_Admin_Paises = null;
+            TBL_ModuloAPC_Solicitud = null;
         }
 
         #endregion
         #region Association Fixup
     
-        private void FixupTBL_Admin_Paises(TBL_Admin_Paises previousValue)
+        private void FixupTBL_ModuloAPC_Solicitud(TBL_ModuloAPC_Solicitud previousValue)
         {
             if (IsDeserializing)
             {
                 return;
             }
     
-            if (previousValue != null && previousValue.TBL_Admin_Plantillas.Contains(this))
+            if (previousValue != null && previousValue.TBL_ModuloAPC_Tracking.Contains(this))
             {
-                previousValue.TBL_Admin_Plantillas.Remove(this);
+                previousValue.TBL_ModuloAPC_Tracking.Remove(this);
             }
     
-            if (TBL_Admin_Paises != null)
+            if (TBL_ModuloAPC_Solicitud != null)
             {
-                if (!TBL_Admin_Paises.TBL_Admin_Plantillas.Contains(this))
+                if (!TBL_ModuloAPC_Solicitud.TBL_ModuloAPC_Tracking.Contains(this))
                 {
-                    TBL_Admin_Paises.TBL_Admin_Plantillas.Add(this);
+                    TBL_ModuloAPC_Solicitud.TBL_ModuloAPC_Tracking.Add(this);
                 }
     
-                IdPais = TBL_Admin_Paises.IdPais;
+                IdSolicitud = TBL_ModuloAPC_Solicitud.IdSolucitudAPC;
             }
             if (ChangeTracker.ChangeTrackingEnabled)
             {
-                if (ChangeTracker.OriginalValues.ContainsKey("TBL_Admin_Paises")
-                    && (ChangeTracker.OriginalValues["TBL_Admin_Paises"] == TBL_Admin_Paises))
+                if (ChangeTracker.OriginalValues.ContainsKey("TBL_ModuloAPC_Solicitud")
+                    && (ChangeTracker.OriginalValues["TBL_ModuloAPC_Solicitud"] == TBL_ModuloAPC_Solicitud))
                 {
-                    ChangeTracker.OriginalValues.Remove("TBL_Admin_Paises");
+                    ChangeTracker.OriginalValues.Remove("TBL_ModuloAPC_Solicitud");
                 }
                 else
                 {
-                    ChangeTracker.RecordOriginalValue("TBL_Admin_Paises", previousValue);
+                    ChangeTracker.RecordOriginalValue("TBL_ModuloAPC_Solicitud", previousValue);
                 }
-                if (TBL_Admin_Paises != null && !TBL_Admin_Paises.ChangeTracker.ChangeTrackingEnabled)
+                if (TBL_ModuloAPC_Solicitud != null && !TBL_ModuloAPC_Solicitud.ChangeTracker.ChangeTrackingEnabled)
                 {
-                    TBL_Admin_Paises.StartTracking();
+                    TBL_ModuloAPC_Solicitud.StartTracking();
                 }
             }
         }

@@ -21,8 +21,8 @@ namespace Domain.MainModules.Entities
 {
     [DataContract(IsReference = true)]
     [KnownType(typeof(TBL_Admin_Usuarios))]
-    [KnownType(typeof(TBL_ModuloAPC_Solicitud))]
     [KnownType(typeof(TBL_ModuloAPC_AnexosActividades))]
+    [KnownType(typeof(TBL_ModuloAPC_Solicitud))]
     
     public partial class TBL_ModuloAPC_Actividades: IObjectWithChangeTracker, INotifyPropertyChanged
     {
@@ -354,23 +354,6 @@ namespace Domain.MainModules.Entities
         private TBL_Admin_Usuarios _tBL_Admin_Usuarios3;
     
         [DataMember]
-        public TBL_ModuloAPC_Solicitud TBL_ModuloAPC_Solicitud
-        {
-            get { return _tBL_ModuloAPC_Solicitud; }
-            set
-            {
-                if (!ReferenceEquals(_tBL_ModuloAPC_Solicitud, value))
-                {
-                    var previousValue = _tBL_ModuloAPC_Solicitud;
-                    _tBL_ModuloAPC_Solicitud = value;
-                    FixupTBL_ModuloAPC_Solicitud(previousValue);
-                    OnNavigationPropertyChanged("TBL_ModuloAPC_Solicitud");
-                }
-            }
-        }
-        private TBL_ModuloAPC_Solicitud _tBL_ModuloAPC_Solicitud;
-    
-        [DataMember]
         public TrackableCollection<TBL_ModuloAPC_AnexosActividades> TBL_ModuloAPC_AnexosActividades
         {
             get
@@ -404,6 +387,23 @@ namespace Domain.MainModules.Entities
             }
         }
         private TrackableCollection<TBL_ModuloAPC_AnexosActividades> _tBL_ModuloAPC_AnexosActividades;
+    
+        [DataMember]
+        public TBL_ModuloAPC_Solicitud TBL_ModuloAPC_Solicitud
+        {
+            get { return _tBL_ModuloAPC_Solicitud; }
+            set
+            {
+                if (!ReferenceEquals(_tBL_ModuloAPC_Solicitud, value))
+                {
+                    var previousValue = _tBL_ModuloAPC_Solicitud;
+                    _tBL_ModuloAPC_Solicitud = value;
+                    FixupTBL_ModuloAPC_Solicitud(previousValue);
+                    OnNavigationPropertyChanged("TBL_ModuloAPC_Solicitud");
+                }
+            }
+        }
+        private TBL_ModuloAPC_Solicitud _tBL_ModuloAPC_Solicitud;
 
         #endregion
         #region ChangeTracking
@@ -487,8 +487,8 @@ namespace Domain.MainModules.Entities
             TBL_Admin_Usuarios1 = null;
             TBL_Admin_Usuarios2 = null;
             TBL_Admin_Usuarios3 = null;
-            TBL_ModuloAPC_Solicitud = null;
             TBL_ModuloAPC_AnexosActividades.Clear();
+            TBL_ModuloAPC_Solicitud = null;
         }
 
         #endregion

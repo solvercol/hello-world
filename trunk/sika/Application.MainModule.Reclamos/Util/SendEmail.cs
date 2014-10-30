@@ -404,7 +404,8 @@ namespace Application.MainModule.Reclamos.Util
         /// <returns></returns>
         private string ObtenerPlantilla(string codigoPlantilla, string pais)
         {
-            var plantilla = _plantillasrepository.GetPlantillaByIdPaisByCodigo(codigoPlantilla, pais);
+            const ModulosAplicacion idModule = ModulosAplicacion.Reclamos;
+            var plantilla = _plantillasrepository.GetPlantillaByIdPaisByCodigo(codigoPlantilla, pais, idModule.ToString());
 
             if (plantilla == null) return string.Empty;
 

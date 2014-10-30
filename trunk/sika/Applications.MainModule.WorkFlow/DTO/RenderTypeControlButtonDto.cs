@@ -49,6 +49,9 @@ namespace Applications.MainModule.WorkFlow.DTO
 
         private Dictionary<string, string> _params = new Dictionary<string, string>();
 
+        public bool IsNextGroupResponsible { get; set; }
+
+        public bool IsCurrentGroupResponsible { get; set; }
 
         /// <summary>
         /// Propiedad que permite identificar si el WF se ejecutó de forma apropiada o presento algun error tanto en la validación como en la ejecución

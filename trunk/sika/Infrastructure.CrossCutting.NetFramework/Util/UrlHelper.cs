@@ -107,6 +107,16 @@ namespace Infrastructure.CrossCutting.NetFramework.Util
               return UrlUtil.GetUrlPreViewActividad(idActividad);
         }
 
+        #region Solicitudes
+
+        public static string GetUrlPreViewDocumentSolicitudforEmail()
+        {
+            return UrlUtil.GetUrlPreViewDocumentSolicitudforEmail();
+        }
+
+        #endregion
+
+
         private static string GetHostUrl()
         {
             string securePort = HttpContext.Current.Request.ServerVariables["SERVER_PORT_SECURE"];

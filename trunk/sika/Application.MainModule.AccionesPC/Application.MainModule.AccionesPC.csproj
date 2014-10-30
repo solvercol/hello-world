@@ -47,7 +47,9 @@
     <Compile Include="IServices\ITBLModuloAPCAreasManagementServices.cs" />
     <Compile Include="IServices\ITBLModuloAPCCausasManagementServices.cs" />
     <Compile Include="IServices\ITBLModuloAPCComentariosRespuestaManagementServices.cs" />
+    <Compile Include="IServices\ITBLModuloAPCLogSolicitudManagementServices.cs" />
     <Compile Include="IServices\ITBLModuloAPCSolicitudManagementServices.cs" />
+    <Compile Include="IServices\ITBLModuloAPCTrackingManagementServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Messages.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -61,7 +63,9 @@
     <Compile Include="Services\TBLModuloAPCAreasManagementServices.cs" />
     <Compile Include="Services\TBLModuloAPCCausasManagementServices.cs" />
     <Compile Include="Services\TBLModuloAPCComentariosRespuestaManagementServices.cs" />
+    <Compile Include="Services\TBLModuloAPCLogSolicitudManagementServices.cs" />
     <Compile Include="Services\TBLModuloAPCSolicitudManagementServices.cs" />
+    <Compile Include="Services\TBLModuloAPCTrackingManagementServices.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Messages.resx">
