@@ -88,8 +88,8 @@ namespace Modules.AccionesPC.Admin
             if (e.MessageView.ToString() == "UpdatePanel")
             {
                 //todo: Bloque de código que se encargará de actuaizar el panel de resumen cuando el WF termine el paso..
-                //WucPanelEstado1.ActualizarPanelResumen();
-                //ActualizarControlUsuarioActivo();
+                WucPanelEstado1.ActualizarPanelResumen();
+                ActualizarControlUsuarioActivo();
                 //wucLogReclamo.CargarLog();
                 //if (FilterEvent != null)
                 //    FilterEvent(null, EventArgs.Empty);
@@ -144,6 +144,15 @@ namespace Modules.AccionesPC.Admin
 
         }
 
+        private void ActualizarControlUsuarioActivo()
+        {
+            var uc = this.GetUserControl<WucSeguimiento>("WucSeguimiento", "phlContent");
+            if (uc != null)
+            {
+                uc.Actualizarlistado();
+                return;
+            }
+        }
         #endregion
 
         #region Buttons

@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FrmSolicitudAPC.aspx.cs" Inherits="Modules.AccionesPC.Admin.FrmSolicitudAPC" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
- 
+<%@ Register src="../UserControls/WucPanelEstado.ascx" tagname="WucPanelEstado" tagprefix="uc1" %>
+<%@ Register src="../UserControls/WucLogSolicitudesApc.ascx" tagname="WucLogSolicitudesApc" tagprefix="uc2" %> 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -154,9 +155,8 @@
                         </asp:UpdatePanel>
                         <asp:UpdatePanel ID="upResumen" runat="server">
                             <ContentTemplate>
-                                <div class="ContentPanelResumen">                           
-                                                                    
-                                                                    
+                                <div class="ContentPanelResumen">              
+                                    <uc1:WucPanelEstado ID="WucPanelEstado1" runat="server" />                                                                    
                                 </div>    
                             </ContentTemplate>
                         </asp:UpdatePanel>                  
@@ -259,11 +259,24 @@
 
 
 <asp:Content ID="footerContent" runat="server" ContentPlaceHolderID="Footer">
+    
+     <uc2:WucLogSolicitudesApc ID="WucLogSolicitudesApc1" runat="server" />
      <table width="100%">
         <tr >
-            <td style="text-align:left; vertical-align:top; padding-left: 10px; background-color:#e0e0e0" >
+            <td style="text-align:left; vertical-align:top; padding-left: 10px; background-color:#e0e0e0" 
+                class="style1" >
                 <asp:Label ID="lblLogInfo" runat="server" ForeColor="#808080" Font-Size="8pt" />
+               
             </td>
         </tr>
     </table>
 </asp:Content>
+
+<%--<asp:Content ID="Content2" runat="server" contentplaceholderid="HeadContent">
+    <style type="text/css">
+        .style1
+        {
+            height: 18px;
+        }
+    </style>
+</asp:Content>--%>
