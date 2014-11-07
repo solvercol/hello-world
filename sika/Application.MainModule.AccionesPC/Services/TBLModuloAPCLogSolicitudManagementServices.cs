@@ -130,6 +130,26 @@ namespace Application.MainModule.AccionesPC.Services
             return _tblModuloApcLogSolicitudRepository.GetPagedElements(pageIndex, pageCount, u => u.IdLog, onlyEnabledSpec, true).ToList();
          }
 
+         public List<TBL_ModuloAPC_LogSolicitud> LisadoByIdSolicitud(int idSolicitud, int pageIndex, int pageCount)
+         {
+             if (pageIndex < 0)
+                 throw new ArgumentException(Resources.Messages.exception_InvalidPageIndex, "pageIndex");
+
+             if (pageCount <= 0)
+                 throw new ArgumentException(Resources.Messages.exception_InvalidPageCount, "pageCount");
+
+             var specification = new DirectSpecification<TBL_ModuloAPC_LogSolicitud>(u => u.IsActive && u.IdSolicitud == idSolicitud);
+
+             return _tblModuloApcLogSolicitudRepository.GetPagedElements(pageIndex, pageCount, u => u.CreateOn, specification, false).ToList();
+         }
+
+         public int CountByIdSolicitud(int idSolicitud)
+         {
+            
+             var specification = new DirectSpecification<TBL_ModuloAPC_LogSolicitud>(u => u.IsActive && u.IdSolicitud == idSolicitud);
+
+             return _tblModuloApcLogSolicitudRepository.GetBySpec(specification).Count();
+         }
          #endregion
 
          #region IDisposable Members

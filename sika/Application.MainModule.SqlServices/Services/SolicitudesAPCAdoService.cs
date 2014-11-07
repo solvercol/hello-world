@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Application.MainModule.SqlServices.IServices;
 using Infraestructure.Data.Core;
 using System.Data;
@@ -44,5 +41,23 @@ namespace Application.MainModule.SqlServices.Services
                 throw new SqlExecutionException("SolicitudesAPC_Vistas_MisPendientes", ex);
             }
         }
+
+
+        public DataTable ResumenSolicitudesApcPanelWorkFlow(string idSolicitud)
+        {
+            try
+            {
+                string strSql = "GetResumenSolicitudAPCPanelWf";
+                var result = _sql.ExecuteDataTable(strSql, CommandType.StoredProcedure
+                                       , new SqlParameter("@IdSolicitud", idSolicitud));
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new SqlExecutionException("ResumenReclamosPanelWorkFlow", ex);
+            }
+        }
+
     }
 }

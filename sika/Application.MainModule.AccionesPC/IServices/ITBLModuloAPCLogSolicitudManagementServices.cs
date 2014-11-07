@@ -8,6 +8,7 @@
 
 #pragma warning disable 1591 // this is for supress no xml comments in public members warnings 
 
+using System.Collections.Generic;
 using Domain.Core;
 using Domain.MainModules.Entities;
 
@@ -15,8 +16,10 @@ namespace Application.MainModule.AccionesPC.IServices
 {
     public interface ISfTBL_ModuloAPC_LogSolicitudManagementServices : IGenericServices<TBL_ModuloAPC_LogSolicitud>
     {
-     
 
+        List<TBL_ModuloAPC_LogSolicitud> LisadoByIdSolicitud(int idSolicitud, int pageIndex, int pageCount);
+
+        int CountByIdSolicitud(int idSolicitud);
     }
 }
     

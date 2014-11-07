@@ -229,6 +229,15 @@ namespace Modules.AccionesPC.Admin {
         protected global::System.Web.UI.UpdatePanel upResumen;
         
         /// <summary>
+        /// WucPanelEstado1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Modules.AccionesPC.UserControls.WucPanelEstado WucPanelEstado1;
+        
+        /// <summary>
         /// upSecciones control.
         /// </summary>
         /// <remarks>
@@ -335,6 +344,15 @@ namespace Modules.AccionesPC.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.ModalPopupExtender mpeVentanaEmergente;
+        
+        /// <summary>
+        /// WucLogSolicitudesApc1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Modules.AccionesPC.UserControls.WucLogSolicitudesApc WucLogSolicitudesApc1;
         
         /// <summary>
         /// lblLogInfo control.

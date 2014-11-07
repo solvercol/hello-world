@@ -1,11 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Application.Core;
 using Domain.MainModules.Entities;
 
-namespace Presenters.Reclamos.IViews
+namespace Presenters.AccionesPC.IViews
 {
-    public interface ILogReclamoView : IView
+    public interface ILogSolicitudesView : IView
     {
         #region Events
 
@@ -15,11 +15,15 @@ namespace Presenters.Reclamos.IViews
 
         #region Members
 
-        void LogsList(List<TBL_ModuloReclamos_LogReclamos> items);
+        void LogsList(List<TBL_ModuloAPC_LogSolicitud> items);
 
-        string IdReclamo { get; }
+        string IdSolicitud { get; }
 
         bool IsLoadedControl { get; set; }
+
+        int TotalRegistrosPaginador { set; }
+
+        int PageSize { get; }
 
         #endregion
 

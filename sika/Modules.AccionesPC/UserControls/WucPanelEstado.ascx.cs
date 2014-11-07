@@ -1,15 +1,13 @@
 ﻿using System;
 using ASP.NETCLIENTE.UI;
 using Domain.MainModules.Entities;
-using Presenters.Reclamos.IViews;
-using Presenters.Reclamos.Presenters;
+using Presenters.AccionesPC.IViews;
+using Presenters.AccionesPC.Presenters;
 
-namespace Modules.Reclamos.UserControls
+namespace Modules.AccionesPC.UserControls
 {
-    public partial class WucPanelEstado : ViewUserControl<PanelEstadosPresenter, IPanelEstadosView>, IPanelEstadosView
+    public partial class WucPanelEstado : ViewUserControl<PanelResumenWf, IPanelResumenWfView>, IPanelResumenWfView
     {
-        
-
         public event EventHandler UpdateEvent;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -17,18 +15,16 @@ namespace Modules.Reclamos.UserControls
 
         }
 
-        public string IdReclamo
+        public string IdSolicitud
         {
-            get { return Request.QueryString["IdReclamo"]; }
+            get { return Request.QueryString["IdSolicitud"]; }
         }
 
         public TBL_Admin_Usuarios UserSession
         {
             get { return AuthenticatedUser; }
         }
-
-      
-
+        
         public string Estado
         {
             get { return litestado.Text; }

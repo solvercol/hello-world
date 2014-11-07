@@ -129,6 +129,12 @@ namespace Application.MainModule.AccionesPC.Services
             return _tblModuloApcTrackingRepository.GetPagedElements(pageIndex, pageCount, u => u.IdTracking, onlyEnabledSpec, true).ToList();
          }
 
+         public List<TBL_ModuloAPC_Tracking> ListadoByIdSolicitud(int idSolicitud)
+         {
+             Specification<TBL_ModuloAPC_Tracking> specification = new DirectSpecification<TBL_ModuloAPC_Tracking>(u => u.IdSolicitud == idSolicitud);
+             return _tblModuloApcTrackingRepository.GetBySpec(specification).OrderByDescending(x => x.CreateOn).ToList();
+         }
+
          #endregion
 
          #region IDisposable Members

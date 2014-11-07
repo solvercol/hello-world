@@ -10,6 +10,7 @@ namespace Application.MainModule.SqlServices.IServices
         DataTable GetVistaSolicitudesMisPendientes(DateTime from, DateTime end, string serverHost, string moduleId, string fromview,
                                                   string noSolicitud, string tipo, int area, string proceso,int idResponsable);
 
+        DataTable ResumenSolicitudesApcPanelWorkFlow(string idSolicitud);
 
         #endregion
     }
