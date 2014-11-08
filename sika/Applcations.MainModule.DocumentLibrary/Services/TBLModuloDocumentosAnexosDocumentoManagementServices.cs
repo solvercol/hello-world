@@ -134,7 +134,7 @@ namespace Applcations.MainModule.DocumentLibrary.Services
          }
 
 
-         public bool SaveDocument(int idFolder, TBL_Admin_Usuarios user, string nameFile, string comentarios, byte[] adjunto, string contentType)
+         public bool SaveDocument(int idFolder, TBL_Admin_Usuarios user, string nameFile, string comentarios, byte[] adjunto, string contentType, string  tipo)
          {
 
              var txSettings = new TransactionOptions()
@@ -156,9 +156,12 @@ namespace Applcations.MainModule.DocumentLibrary.Services
                  oDoc.CreatedOn = DateTime.Now;
                  oDoc.ModifiedBy = user.Nombres;
                  oDoc.ModifiedOn = DateTime.Now;
-
-                 oDoc.TBL_ModuloDocumentosAnexos_Contenido.Add(AddContentDocument(adjunto, comentarios, contentType, user.Nombres,
-                                                                            nameFile));
+                 oDoc.Adjunto = adjunto;
+                 oDoc.contentTypeC = contentType;
+                 oDoc.Comentarios = comentarios;
+                 oDoc.Tipo = tipo;
+                 //oDoc.TBL_ModuloDocumentosAnexos_Contenido.Add(AddContentDocument(adjunto, comentarios, contentType, user.Nombres,
+                 //                                                           nameFile));
 
                  _tblModuloDocumentosAnexosDocumentoRepository.Add(oDoc);
 
@@ -171,24 +174,6 @@ namespace Applcations.MainModule.DocumentLibrary.Services
 
          }
 
-         private static TBL_ModuloDocumentosAnexos_Contenido AddContentDocument(byte[] attach, string comentarios, string contentType, string nombreAutor, string nameFile)
-         {
-             var oContent = new TBL_ModuloDocumentosAnexos_Contenido
-             {
-                 Adjunto = attach,
-                 Comentarios = comentarios,
-                 contentTypeC = contentType,
-                 CreatedBy = nombreAutor,
-                 CreatedOn = DateTime.Now,
-                 IsActive = true,
-                 ModifiedBy = nombreAutor,
-                 ModifiedOn = DateTime.Now,
-                 Nombre = nameFile,
-                 Revision = 1
-             };
-             return oContent;
-         }
-
          public bool BulkDeleteFromId(int id)
          {
              var specification = new DirectSpecification<TBL_ModuloDocumentosAnexos_Documento>(u => u.IdDocumento == id);
@@ -196,8 +181,7 @@ namespace Applcations.MainModule.DocumentLibrary.Services
              return res > 0;
          }
 
-
-        public void DeleteDocumentAndContent( Dictionary<string,string > parameters)
+         public void DeleteDocumentAndContent( Dictionary<string,string > parameters)
         {
             var txSettings = new TransactionOptions()
             {
@@ -212,8 +196,8 @@ namespace Applcations.MainModule.DocumentLibrary.Services
                 foreach (var parameter in parameters)
                 {
 
-                    var result = DeleteContent(Convert.ToInt32(parameter.Value));
-                    if(result)
+                    //var result = DeleteContent(Convert.ToInt32(parameter.Value));
+                    //if(result)
                         BulkDeleteFromId(Convert.ToInt32(parameter.Key));
                 }
 
@@ -223,18 +207,41 @@ namespace Applcations.MainModule.DocumentLibrary.Services
             }
         }
 
-        /// <summary>
-        /// Elimina el contenido asociado al documento
-        /// </summary>
-        /// <param name="idcontent"></param>
-        /// <returns></returns>
-        private bool DeleteContent(int idcontent)
-        {
-           
-            var specification = new DirectSpecification<TBL_ModuloDocumentosAnexos_Contenido>(u => u.IdContenido == idcontent);
-            var res = _contentRepository.BulkDeletebySpec(specification);
-            return res > 0;
-        }
+
+         public List<TBL_ModuloDocumentosAnexos_Documento> FindByIdFolder(int idFolder, string  nombreArchivo,int pageIndex, int pageCount)
+         {
+             if (pageIndex < 0)
+                 throw new ArgumentException(Resources.Messages.exception_InvalidPageIndex, "pageIndex");
+
+             if (pageCount <= 0)
+                 throw new ArgumentException(Resources.Messages.exception_InvalidPageCount, "pageCount");
+
+
+             Specification<TBL_ModuloDocumentosAnexos_Documento> onlyEnabledSpec = new DirectSpecification<TBL_ModuloDocumentosAnexos_Documento>(u => u.IdFolder == idFolder);
+
+             if (!string.IsNullOrEmpty(nombreArchivo))
+             {
+                 onlyEnabledSpec &= new DirectSpecification<TBL_ModuloDocumentosAnexos_Documento>(u => u.Nombre.Contains(nombreArchivo));
+             }
+
+
+             return _tblModuloDocumentosAnexosDocumentoRepository.GetPagedElements(pageIndex, pageCount, u => u.IdDocumento, onlyEnabledSpec, true).ToList();
+         }
+
+         public int CountByIdFolder(int idFolder, string nombreArchivo)
+         {
+             
+
+             Specification<TBL_ModuloDocumentosAnexos_Documento> onlyEnabledSpec = new DirectSpecification<TBL_ModuloDocumentosAnexos_Documento>(u =>  u.IdFolder == idFolder);
+
+             if (!string.IsNullOrEmpty(nombreArchivo))
+             {
+                 onlyEnabledSpec &= new DirectSpecification<TBL_ModuloDocumentosAnexos_Documento>(u => u.Nombre.Contains(nombreArchivo));
+             }
+
+
+             return _tblModuloDocumentosAnexosDocumentoRepository.GetBySpec(onlyEnabledSpec).Count();
+         }
 
          #endregion
 

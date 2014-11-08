@@ -17,9 +17,14 @@ namespace Applcations.MainModule.DocumentLibrary.IServices
     public interface ISfTBL_ModuloDocumentosAnexos_DocumentoManagementServices : IGenericServices<TBL_ModuloDocumentosAnexos_Documento>
     {
         bool SaveDocument(int idFolder, TBL_Admin_Usuarios user, string nameFile, string comentarios, byte[] adjunto,
-                          string contentType);
+                          string contentType, string tipo);
 
         void DeleteDocumentAndContent(Dictionary<string, string> parameters);
+
+        List<TBL_ModuloDocumentosAnexos_Documento> FindByIdFolder(int idFolder, string nombreArchivo, int pageIndex,
+                                                                  int pageCount);
+
+        int CountByIdFolder(int idFolder, string nombreArchivo);
 
     }
 }

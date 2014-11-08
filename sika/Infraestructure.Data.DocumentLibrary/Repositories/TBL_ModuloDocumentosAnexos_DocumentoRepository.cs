@@ -35,7 +35,6 @@ namespace Infraestructure.Data.DocumentLibrary.Repositories
                 var set = _currentUnitOfWork.CreateSet<TBL_ModuloDocumentosAnexos_Documento>();
 
                 return set.Where(c => c.IdDocumento == id)
-                          .Include(x=> x.TBL_ModuloDocumentosAnexos_Contenido)
                           .Select(c => c)
                           .SingleOrDefault();
             }

@@ -153,7 +153,7 @@ namespace Applcations.MainModule.DocumentLibrary.Services
 
          public List<TBL_ModuloDocumentosAnexos_Contenido> FindByIdFolder(int idFolder, string nombreArchivo, int pageIndex, int pageCount)
          {
-             Specification<TBL_ModuloDocumentosAnexos_Contenido> specification = new DirectSpecification<TBL_ModuloDocumentosAnexos_Contenido>(u => u.TBL_ModuloDocumentosAnexos_Documento.IdFolder == idFolder);
+             Specification<TBL_ModuloDocumentosAnexos_Contenido> specification = new DirectSpecification<TBL_ModuloDocumentosAnexos_Contenido>(u => u.IdContenido == idFolder);
 
              if (!string.IsNullOrEmpty(nombreArchivo))
              {
@@ -167,7 +167,7 @@ namespace Applcations.MainModule.DocumentLibrary.Services
 
          public int CountByIdFolder(int idFolder, string nombreArchivo)
          {
-             Specification<TBL_ModuloDocumentosAnexos_Contenido> specification = new DirectSpecification<TBL_ModuloDocumentosAnexos_Contenido>(u => u.TBL_ModuloDocumentosAnexos_Documento.IdFolder == idFolder);
+             Specification<TBL_ModuloDocumentosAnexos_Contenido> specification = new DirectSpecification<TBL_ModuloDocumentosAnexos_Contenido>(u => u.IdContenido == idFolder);
 
              if (!string.IsNullOrEmpty(nombreArchivo))
              {

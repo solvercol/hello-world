@@ -23,6 +23,10 @@ namespace Presenters.DocumentLibrary.IViews
 
         string ContentTypeFile { get; }
 
+        string TipoArchivo { get; }
+
+        void ListadoTipos(string[] items);
+
         #endregion
 
 

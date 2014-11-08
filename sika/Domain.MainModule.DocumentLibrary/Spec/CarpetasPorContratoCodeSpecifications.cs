@@ -25,7 +25,7 @@ namespace Domain.MainModule.DocumentLibrary.Spec
             if (!String.IsNullOrEmpty(_idContrato) && !String.IsNullOrWhiteSpace(_idContrato))
             {
                 var id = Convert.ToDecimal(_idContrato);
-                spec &= new DirectSpecification<TBL_ModuloDocumentosAnexos_Carpetas>(u => u.TBL_ModuloReclamos_Reclamo.Any(x => x.IdReclamo == id));
+                spec &= new DirectSpecification<TBL_ModuloDocumentosAnexos_Carpetas>(u => u.IdReclamo == id);
             }
 
             return spec.SatisfiedBy();

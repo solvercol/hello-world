@@ -7,7 +7,7 @@
         <ContentTemplate>
             
 
-        <asp:Panel ID="pnlLoadFileDocLibrary"  runat="server" CssClass="popup_Container" Width="400" Height="200" style="display:none;">             
+        <asp:Panel ID="pnlLoadFileDocLibrary"  runat="server" CssClass="popup_Container" Width="400" Height="240" style="display:none;">             
               
 
             <div class="popup_Titlebar" id="PopupHeader">

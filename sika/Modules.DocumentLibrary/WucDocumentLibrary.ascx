@@ -108,18 +108,17 @@
                                                 <th style="width:50px;" align="left" > 
                                                     <asp:CheckBox ID="chkSelectAll" runat="server" OnClick="checkAll(this,'divBarraMenus');" Visible="false" />
                                                 </th>
-                                                <th style="width:30%" class="FondoTh">Description</th>
-                                                <th style="width:30%" class="FondoTh">Name</th>
-                                                <th style="width:20%" class="FondoTh">Author</th>                                                
-                                                <th style="width:5%"  class="FondoTh">Version</th>
-                                                <th style="width:5%"  class="FondoTh">File</th>
-                                                <th style="width:15%" class="FondoTh">Size</th>
+                                                <th style="width:30%" class="FondoTh">Comentarios</th>
+                                                <th style="width:30%" class="FondoTh">Nombre</th>
+                                                <th style="width:20%" class="FondoTh">Autor</th>                                                
+                                                <th style="width:5%"  class="FondoTh">Tipo</th>
+                                                <th style="width:5%"  class="FondoTh">Archivo</th>
                                          </tr>
                                     
                                     </HeaderTemplate>
 
                                     <ItemTemplate>
-                                        <tr >
+                                         <tr >
                                             <td style="width:15px" class="Noline">
                                                 <asp:CheckBox ID="chkSelect" runat="server" onclick="ShowMenuBar('divBarraMenus');" />
                                             </td>
@@ -128,12 +127,9 @@
                                             </td>
                                             <td style="width:30%" class="Noline"><%# DataBinder.Eval(Container.DataItem, "Nombre")%></td>
                                             <td style="width:20%" class="Noline"><%# DataBinder.Eval(Container.DataItem, "CreatedBy")%></td>
-                                                <td style="width:5%"><%# DataBinder.Eval(Container.DataItem, "Revision")%></td>
+                                            <td style="width:10%" class="Noline"><%# DataBinder.Eval(Container.DataItem, "Tipo")%></td>
                                             <td align="center" style="width:5%" class="Noline">
                                                     <asp:ImageButton ID="imgDownload" runat="server" BorderWidth="0" Width="14" Height="14" />
-                                            </td>
-                                            <td align="center" style="width:15%" class="Noline">
-                                                <asp:Literal ID="litSize" runat="server"></asp:Literal>
                                             </td>
                                         </tr>
                                     </ItemTemplate>
@@ -147,12 +143,9 @@
                                             </td>
                                             <td style="width:30%" class="Noline"><%# DataBinder.Eval(Container.DataItem, "Nombre")%></td>
                                             <td style="width:20%" class="Noline"><%# DataBinder.Eval(Container.DataItem, "CreatedBy")%></td>
-                                                <td style="width:5%"><%# DataBinder.Eval(Container.DataItem, "Revision")%></td>
+                                            <td style="width:10%" class="Noline"><%# DataBinder.Eval(Container.DataItem, "Tipo")%></td>
                                             <td align="center" style="width:5%" class="Noline">
                                                     <asp:ImageButton ID="imgDownload" runat="server" BorderWidth="0" Width="14" Height="14" />
-                                            </td>
-                                            <td align="center" style="width:15%" class="Noline">
-                                                <asp:Literal ID="litSize" runat="server"></asp:Literal>
                                             </td>
                                         </tr>
                                     </AlternatingItemTemplate>

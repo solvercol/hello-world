@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Web.UI.WebControls;
 using Application.Core;
 using ASP.NETCLIENTE.UI;
 using Domain.MainModules.Entities;
@@ -33,6 +34,20 @@ namespace Modules.DocumentLibrary.UserControls
             get
             {
                 return fuSingleFile.HasFile ? fuSingleFile.PostedFile.ContentType : string.Empty;
+            }
+        }
+
+        public string TipoArchivo
+        {
+            get { return ddlTipo.SelectedValue; }
+        }
+
+        public void ListadoTipos(string[] items)
+        {
+            ddlTipo.Items.Clear();
+            foreach (var item in items)
+            {
+                ddlTipo.Items.Add(new ListItem(item,item));
             }
         }
 

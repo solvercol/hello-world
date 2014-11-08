@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Application.Core;
 using ASP.NETCLIENTE.UI;
 using Domain.MainModules.Entities;
@@ -27,10 +26,7 @@ namespace Modules.DocumentLibrary.UserControls
             get { return FolderId; }
         }
 
-        public string Idcategoria
-        {
-            get { return ddlcategoria.SelectedValue; }
-        }
+       
 
         public string NombreFolder
         {
@@ -41,15 +37,6 @@ namespace Modules.DocumentLibrary.UserControls
         {
             get { return Request.QueryString["IdReclamo"]; }
         }
-
-        public void Listadocategorias(List<TBL_ModuloDocumentosAnexos_Categorias> items)
-        {
-            ddlcategoria.DataSource = items;
-            ddlcategoria.DataValueField = "IdCategoria";
-            ddlcategoria.DataTextField = "Nombre";
-            ddlcategoria.DataBind();
-        }
-
        
         protected void OkButtonClick(object sender, EventArgs e)
         {

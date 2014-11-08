@@ -166,21 +166,13 @@ namespace Applcations.MainModule.DocumentLibrary.Services
                  var oFolder = NewEntity();
                  oFolder.CreatedBy = idUser;
                  oFolder.CreatedOn = DateTime.Now;
-                 oFolder.IdCategoria = Convert.ToInt32(idcategory);
+                 oFolder.IdReclamo = Convert.ToDecimal(idReclamo);
                  if (!string.IsNullOrEmpty(idParent))
                      oFolder.IdParent = Convert.ToInt32(idParent);
                  oFolder.IsActive = true;
                  oFolder.Nombre = nombre;
                  oFolder.ModifiedBy = idUser;
                  oFolder.ModifiedOn = DateTime.Now;
-
-                 var oContrato = LoadReclamo(idReclamo);
-                 if (oContrato == null)
-                 {
-                     throw new Exception(string.Format("Error al obtener el reclamo {0} desde la Base de Datos.", idReclamo));
-                 }
-
-                 oFolder.TBL_ModuloReclamos_Reclamo.Add(oContrato);
 
                  _tblModuloDocumentosAnexosCarpetasRepository.Add(oFolder);
 
@@ -194,11 +186,6 @@ namespace Applcations.MainModule.DocumentLibrary.Services
 
          }
 
-
-         private TBL_ModuloReclamos_Reclamo LoadReclamo(string idReclamo)
-         {
-             return _reclamoRepository.GetReclamoById(Convert.ToInt32(idReclamo));
-         }
 
          public bool DeleteFolderAndFiles(int idFolder)
          {

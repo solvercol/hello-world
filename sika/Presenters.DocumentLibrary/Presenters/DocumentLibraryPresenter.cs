@@ -11,17 +11,14 @@ namespace Presenters.DocumentLibrary.Presenters
     public class DocumentLibraryPresenter : Presenter<IDocumentLibraryView>
     {
         private readonly ISfTBL_ModuloDocumentosAnexos_CarpetasManagementServices _foldersservices;
-        private readonly ISfTBL_ModuloDocumentosAnexos_ContenidoManagementServices _contenidoServices;
         private readonly ISfTBL_ModuloDocumentosAnexos_DocumentoManagementServices _documentServices;
 
         public DocumentLibraryPresenter(
             ISfTBL_ModuloDocumentosAnexos_CarpetasManagementServices foldersservices,
-            ISfTBL_ModuloDocumentosAnexos_ContenidoManagementServices contenidoServices, 
             ISfTBL_ModuloDocumentosAnexos_DocumentoManagementServices documentServices)
         {
             _foldersservices = foldersservices;
             _documentServices = documentServices;
-            _contenidoServices = contenidoServices;
         }
 
         public override void SubscribeViewToEvents()
@@ -96,10 +93,10 @@ namespace Presenters.DocumentLibrary.Presenters
                 if (string.IsNullOrEmpty(View.IdFolder)) return;
                 var idFolder = Convert.ToInt32(View.IdFolder);
 
-                var total = _contenidoServices.CountByIdFolder(idFolder, View.NameFile);
+                var total = _documentServices.CountByIdFolder(idFolder, View.NameFile);
                 View.TotalRegistrosPaginador = total == 0 ? 1 : total;
 
-                var list = _contenidoServices.FindByIdFolder(idFolder, View.NameFile, currentFile, View.PageSize);
+                var list = _documentServices.FindByIdFolder(idFolder, View.NameFile, currentFile, View.PageSize);
                 View.DocumentList(list);
             }
             catch (Exception ex)
@@ -120,7 +117,7 @@ namespace Presenters.DocumentLibrary.Presenters
 
         private void DownloadFile(int idDocument)
         {
-            var doc = _contenidoServices.FindById(idDocument);
+            var doc = _documentServices.FindById(idDocument);
             if (doc == null) return;
             View.DownloadFile(doc.Adjunto, doc.Nombre);
         }

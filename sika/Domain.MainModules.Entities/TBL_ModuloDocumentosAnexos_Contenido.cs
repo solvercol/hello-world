@@ -20,7 +20,6 @@ using Domain.Core.Entities;
 namespace Domain.MainModules.Entities
 {
     [DataContract(IsReference = true)]
-    [KnownType(typeof(TBL_ModuloDocumentosAnexos_Documento))]
     
     public partial class TBL_ModuloDocumentosAnexos_Contenido: IObjectWithChangeTracker, INotifyPropertyChanged
     {
@@ -53,14 +52,6 @@ namespace Domain.MainModules.Entities
             {
                 if (_idDocumento != value)
                 {
-                    ChangeTracker.RecordOriginalValue("IdDocumento", _idDocumento);
-                    if (!IsDeserializing)
-                    {
-                        if (TBL_ModuloDocumentosAnexos_Documento != null && TBL_ModuloDocumentosAnexos_Documento.IdDocumento != value)
-                        {
-                            TBL_ModuloDocumentosAnexos_Documento = null;
-                        }
-                    }
                     _idDocumento = value;
                     OnPropertyChanged("IdDocumento");
                 }
@@ -219,26 +210,6 @@ namespace Domain.MainModules.Entities
         private Nullable<System.DateTime> _modifiedOn;
 
         #endregion
-        #region Navigation Properties
-    
-        [DataMember]
-        public TBL_ModuloDocumentosAnexos_Documento TBL_ModuloDocumentosAnexos_Documento
-        {
-            get { return _tBL_ModuloDocumentosAnexos_Documento; }
-            set
-            {
-                if (!ReferenceEquals(_tBL_ModuloDocumentosAnexos_Documento, value))
-                {
-                    var previousValue = _tBL_ModuloDocumentosAnexos_Documento;
-                    _tBL_ModuloDocumentosAnexos_Documento = value;
-                    FixupTBL_ModuloDocumentosAnexos_Documento(previousValue);
-                    OnNavigationPropertyChanged("TBL_ModuloDocumentosAnexos_Documento");
-                }
-            }
-        }
-        private TBL_ModuloDocumentosAnexos_Documento _tBL_ModuloDocumentosAnexos_Documento;
-
-        #endregion
         #region ChangeTracking
     
         protected virtual void OnPropertyChanged(String propertyName)
@@ -316,49 +287,6 @@ namespace Domain.MainModules.Entities
     
         protected virtual void ClearNavigationProperties()
         {
-            TBL_ModuloDocumentosAnexos_Documento = null;
-        }
-
-        #endregion
-        #region Association Fixup
-    
-        private void FixupTBL_ModuloDocumentosAnexos_Documento(TBL_ModuloDocumentosAnexos_Documento previousValue)
-        {
-            if (IsDeserializing)
-            {
-                return;
-            }
-    
-            if (previousValue != null && previousValue.TBL_ModuloDocumentosAnexos_Contenido.Contains(this))
-            {
-                previousValue.TBL_ModuloDocumentosAnexos_Contenido.Remove(this);
-            }
-    
-            if (TBL_ModuloDocumentosAnexos_Documento != null)
-            {
-                if (!TBL_ModuloDocumentosAnexos_Documento.TBL_ModuloDocumentosAnexos_Contenido.Contains(this))
-                {
-                    TBL_ModuloDocumentosAnexos_Documento.TBL_ModuloDocumentosAnexos_Contenido.Add(this);
-                }
-    
-                IdDocumento = TBL_ModuloDocumentosAnexos_Documento.IdDocumento;
-            }
-            if (ChangeTracker.ChangeTrackingEnabled)
-            {
-                if (ChangeTracker.OriginalValues.ContainsKey("TBL_ModuloDocumentosAnexos_Documento")
-                    && (ChangeTracker.OriginalValues["TBL_ModuloDocumentosAnexos_Documento"] == TBL_ModuloDocumentosAnexos_Documento))
-                {
-                    ChangeTracker.OriginalValues.Remove("TBL_ModuloDocumentosAnexos_Documento");
-                }
-                else
-                {
-                    ChangeTracker.RecordOriginalValue("TBL_ModuloDocumentosAnexos_Documento", previousValue);
-                }
-                if (TBL_ModuloDocumentosAnexos_Documento != null && !TBL_ModuloDocumentosAnexos_Documento.ChangeTracker.ChangeTrackingEnabled)
-                {
-                    TBL_ModuloDocumentosAnexos_Documento.StartTracking();
-                }
-            }
         }
 
         #endregion
