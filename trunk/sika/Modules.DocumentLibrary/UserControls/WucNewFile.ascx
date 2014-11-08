@@ -58,8 +58,22 @@
                                 </div>  
                             </td>
                         </tr>
-                                    
-                            <tr>
+                        <tr>
+                            <td>
+                                    <table width="100%" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td align="left" style="width:20%">
+                                            Tipo
+                                        </td>
+                                        <td style="width:80%">
+                                            <asp:DropDownList ID="ddlTipo" runat="server"></asp:DropDownList>
+                                        </td>
+                                    </tr>
+                                </table>
+                                   
+                            </td>
+                        </tr>                                    
+                        <tr>
                             <td>
                                     <table width="100%" cellpadding="0" cellspacing="0">
                                     <tr>

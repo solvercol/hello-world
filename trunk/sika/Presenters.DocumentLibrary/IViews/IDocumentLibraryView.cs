@@ -28,7 +28,7 @@ namespace Presenters.DocumentLibrary.IViews
 
         void FolderList(List<TBL_ModuloDocumentosAnexos_Carpetas> list);
 
-        void DocumentList(List<TBL_ModuloDocumentosAnexos_Contenido> list);
+        void DocumentList(List<TBL_ModuloDocumentosAnexos_Documento> list);
 
         void DownloadFile(byte[] adjunto, string nombre);
 

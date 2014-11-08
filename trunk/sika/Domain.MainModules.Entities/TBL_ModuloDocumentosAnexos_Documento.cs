@@ -21,7 +21,6 @@ namespace Domain.MainModules.Entities
 {
     [DataContract(IsReference = true)]
     [KnownType(typeof(TBL_ModuloDocumentosAnexos_Carpetas))]
-    [KnownType(typeof(TBL_ModuloDocumentosAnexos_Contenido))]
     
     public partial class TBL_ModuloDocumentosAnexos_Documento: IObjectWithChangeTracker, INotifyPropertyChanged
     {
@@ -115,6 +114,51 @@ namespace Domain.MainModules.Entities
         private Nullable<int> _ownerId;
     
         [DataMember]
+        public byte[] Adjunto
+        {
+            get { return _adjunto; }
+            set
+            {
+                if (_adjunto != value)
+                {
+                    _adjunto = value;
+                    OnPropertyChanged("Adjunto");
+                }
+            }
+        }
+        private byte[] _adjunto;
+    
+        [DataMember]
+        public string Comentarios
+        {
+            get { return _comentarios; }
+            set
+            {
+                if (_comentarios != value)
+                {
+                    _comentarios = value;
+                    OnPropertyChanged("Comentarios");
+                }
+            }
+        }
+        private string _comentarios;
+    
+        [DataMember]
+        public string contentTypeC
+        {
+            get { return _contentTypeC; }
+            set
+            {
+                if (_contentTypeC != value)
+                {
+                    _contentTypeC = value;
+                    OnPropertyChanged("contentTypeC");
+                }
+            }
+        }
+        private string _contentTypeC;
+    
+        [DataMember]
         public Nullable<System.DateTime> FechaVencimiento
         {
             get { return _fechaVencimiento; }
@@ -205,7 +249,7 @@ namespace Domain.MainModules.Entities
         private Nullable<System.DateTime> _modifiedOn;
     
         [DataMember]
-        public string tipo
+        public string Tipo
         {
             get { return _tipo; }
             set
@@ -213,7 +257,7 @@ namespace Domain.MainModules.Entities
                 if (_tipo != value)
                 {
                     _tipo = value;
-                    OnPropertyChanged("tipo");
+                    OnPropertyChanged("Tipo");
                 }
             }
         }
@@ -238,41 +282,6 @@ namespace Domain.MainModules.Entities
             }
         }
         private TBL_ModuloDocumentosAnexos_Carpetas _tBL_ModuloDocumentosAnexos_Carpetas;
-    
-        [DataMember]
-        public TrackableCollection<TBL_ModuloDocumentosAnexos_Contenido> TBL_ModuloDocumentosAnexos_Contenido
-        {
-            get
-            {
-                if (_tBL_ModuloDocumentosAnexos_Contenido == null)
-                {
-                    _tBL_ModuloDocumentosAnexos_Contenido = new TrackableCollection<TBL_ModuloDocumentosAnexos_Contenido>();
-                    _tBL_ModuloDocumentosAnexos_Contenido.CollectionChanged += FixupTBL_ModuloDocumentosAnexos_Contenido;
-                }
-                return _tBL_ModuloDocumentosAnexos_Contenido;
-            }
-            set
-            {
-                if (!ReferenceEquals(_tBL_ModuloDocumentosAnexos_Contenido, value))
-                {
-                    if (ChangeTracker.ChangeTrackingEnabled)
-                    {
-                        throw new InvalidOperationException("Cannot set the FixupChangeTrackingCollection when ChangeTracking is enabled");
-                    }
-                    if (_tBL_ModuloDocumentosAnexos_Contenido != null)
-                    {
-                        _tBL_ModuloDocumentosAnexos_Contenido.CollectionChanged -= FixupTBL_ModuloDocumentosAnexos_Contenido;
-                    }
-                    _tBL_ModuloDocumentosAnexos_Contenido = value;
-                    if (_tBL_ModuloDocumentosAnexos_Contenido != null)
-                    {
-                        _tBL_ModuloDocumentosAnexos_Contenido.CollectionChanged += FixupTBL_ModuloDocumentosAnexos_Contenido;
-                    }
-                    OnNavigationPropertyChanged("TBL_ModuloDocumentosAnexos_Contenido");
-                }
-            }
-        }
-        private TrackableCollection<TBL_ModuloDocumentosAnexos_Contenido> _tBL_ModuloDocumentosAnexos_Contenido;
 
         #endregion
         #region ChangeTracking
@@ -353,7 +362,6 @@ namespace Domain.MainModules.Entities
         protected virtual void ClearNavigationProperties()
         {
             TBL_ModuloDocumentosAnexos_Carpetas = null;
-            TBL_ModuloDocumentosAnexos_Contenido.Clear();
         }
 
         #endregion
@@ -394,45 +402,6 @@ namespace Domain.MainModules.Entities
                 if (TBL_ModuloDocumentosAnexos_Carpetas != null && !TBL_ModuloDocumentosAnexos_Carpetas.ChangeTracker.ChangeTrackingEnabled)
                 {
                     TBL_ModuloDocumentosAnexos_Carpetas.StartTracking();
-                }
-            }
-        }
-    
-        private void FixupTBL_ModuloDocumentosAnexos_Contenido(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            if (IsDeserializing)
-            {
-                return;
-            }
-    
-            if (e.NewItems != null)
-            {
-                foreach (TBL_ModuloDocumentosAnexos_Contenido item in e.NewItems)
-                {
-                    item.TBL_ModuloDocumentosAnexos_Documento = this;
-                    if (ChangeTracker.ChangeTrackingEnabled)
-                    {
-                        if (!item.ChangeTracker.ChangeTrackingEnabled)
-                        {
-                            item.StartTracking();
-                        }
-                        ChangeTracker.RecordAdditionToCollectionProperties("TBL_ModuloDocumentosAnexos_Contenido", item);
-                    }
-                }
-            }
-    
-            if (e.OldItems != null)
-            {
-                foreach (TBL_ModuloDocumentosAnexos_Contenido item in e.OldItems)
-                {
-                    if (ReferenceEquals(item.TBL_ModuloDocumentosAnexos_Documento, this))
-                    {
-                        item.TBL_ModuloDocumentosAnexos_Documento = null;
-                    }
-                    if (ChangeTracker.ChangeTrackingEnabled)
-                    {
-                        ChangeTracker.RecordRemovalFromCollectionProperties("TBL_ModuloDocumentosAnexos_Contenido", item);
-                    }
                 }
             }
         }

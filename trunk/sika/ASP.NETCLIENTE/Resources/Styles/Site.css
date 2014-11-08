@@ -778,7 +778,8 @@ padding: 4px 8px;
 font-size:0.95em;
 font-family: 'klavika_lightplain_basic', Calibri;
 font-weight: normal;
-text-align:right;
+text-align:center;
+background-color:#F6F7F8;
 }
 
 table.tblPreView .line {

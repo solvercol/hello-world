@@ -20,7 +20,6 @@ using Domain.Core.Entities;
 namespace Domain.MainModules.Entities
 {
     [DataContract(IsReference = true)]
-    [KnownType(typeof(TBL_ModuloDocumentosAnexos_Carpetas))]
     
     public partial class TBL_ModuloDocumentosAnexos_Categorias: IObjectWithChangeTracker, INotifyPropertyChanged
     {
@@ -151,44 +150,6 @@ namespace Domain.MainModules.Entities
         private Nullable<System.DateTime> _modifiedOn;
 
         #endregion
-        #region Navigation Properties
-    
-        [DataMember]
-        public TrackableCollection<TBL_ModuloDocumentosAnexos_Carpetas> TBL_ModuloDocumentosAnexos_Carpetas
-        {
-            get
-            {
-                if (_tBL_ModuloDocumentosAnexos_Carpetas == null)
-                {
-                    _tBL_ModuloDocumentosAnexos_Carpetas = new TrackableCollection<TBL_ModuloDocumentosAnexos_Carpetas>();
-                    _tBL_ModuloDocumentosAnexos_Carpetas.CollectionChanged += FixupTBL_ModuloDocumentosAnexos_Carpetas;
-                }
-                return _tBL_ModuloDocumentosAnexos_Carpetas;
-            }
-            set
-            {
-                if (!ReferenceEquals(_tBL_ModuloDocumentosAnexos_Carpetas, value))
-                {
-                    if (ChangeTracker.ChangeTrackingEnabled)
-                    {
-                        throw new InvalidOperationException("Cannot set the FixupChangeTrackingCollection when ChangeTracking is enabled");
-                    }
-                    if (_tBL_ModuloDocumentosAnexos_Carpetas != null)
-                    {
-                        _tBL_ModuloDocumentosAnexos_Carpetas.CollectionChanged -= FixupTBL_ModuloDocumentosAnexos_Carpetas;
-                    }
-                    _tBL_ModuloDocumentosAnexos_Carpetas = value;
-                    if (_tBL_ModuloDocumentosAnexos_Carpetas != null)
-                    {
-                        _tBL_ModuloDocumentosAnexos_Carpetas.CollectionChanged += FixupTBL_ModuloDocumentosAnexos_Carpetas;
-                    }
-                    OnNavigationPropertyChanged("TBL_ModuloDocumentosAnexos_Carpetas");
-                }
-            }
-        }
-        private TrackableCollection<TBL_ModuloDocumentosAnexos_Carpetas> _tBL_ModuloDocumentosAnexos_Carpetas;
-
-        #endregion
         #region ChangeTracking
     
         protected virtual void OnPropertyChanged(String propertyName)
@@ -266,49 +227,6 @@ namespace Domain.MainModules.Entities
     
         protected virtual void ClearNavigationProperties()
         {
-            TBL_ModuloDocumentosAnexos_Carpetas.Clear();
-        }
-
-        #endregion
-        #region Association Fixup
-    
-        private void FixupTBL_ModuloDocumentosAnexos_Carpetas(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            if (IsDeserializing)
-            {
-                return;
-            }
-    
-            if (e.NewItems != null)
-            {
-                foreach (TBL_ModuloDocumentosAnexos_Carpetas item in e.NewItems)
-                {
-                    item.TBL_ModuloDocumentosAnexos_Categorias = this;
-                    if (ChangeTracker.ChangeTrackingEnabled)
-                    {
-                        if (!item.ChangeTracker.ChangeTrackingEnabled)
-                        {
-                            item.StartTracking();
-                        }
-                        ChangeTracker.RecordAdditionToCollectionProperties("TBL_ModuloDocumentosAnexos_Carpetas", item);
-                    }
-                }
-            }
-    
-            if (e.OldItems != null)
-            {
-                foreach (TBL_ModuloDocumentosAnexos_Carpetas item in e.OldItems)
-                {
-                    if (ReferenceEquals(item.TBL_ModuloDocumentosAnexos_Categorias, this))
-                    {
-                        item.TBL_ModuloDocumentosAnexos_Categorias = null;
-                    }
-                    if (ChangeTracker.ChangeTrackingEnabled)
-                    {
-                        ChangeTracker.RecordRemovalFromCollectionProperties("TBL_ModuloDocumentosAnexos_Carpetas", item);
-                    }
-                }
-            }
         }
 
         #endregion

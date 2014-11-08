@@ -49,7 +49,7 @@ namespace Modules.DocumentLibrary
         protected void RptDocumentsitemDataBound(object sender, RepeaterItemEventArgs e)
         {
 
-            var doc = e.Item.DataItem as TBL_ModuloDocumentosAnexos_Contenido;
+            var doc = e.Item.DataItem as TBL_ModuloDocumentosAnexos_Documento;
             if (doc == null) return;
 
             ViewState[e.Item.UniqueID] = doc.IdDocumento.ToString();
@@ -58,7 +58,7 @@ namespace Modules.DocumentLibrary
             if (imgDownload != null)
             {
                 imgDownload.CommandName = "Download";
-                imgDownload.CommandArgument = doc.IdContenido.ToString();
+                imgDownload.CommandArgument = doc.IdDocumento.ToString();
                 imgDownload.ImageUrl = IconoPlantilla(doc.Nombre);
                 RegistrarControlScriptManager(imgDownload);
             }
@@ -68,20 +68,21 @@ namespace Modules.DocumentLibrary
             {
                 litFechaModificacion.Text = doc.CreatedOn.HasValue ? doc.CreatedOn.GetValueOrDefault().ToShortDateString() : string.Empty;
             }
-            var litSize = e.Item.FindControl("litSize") as Literal;
-            if (litSize == null) return;
-            if (doc.Adjunto == null) return;
-            var size = Convert.ToDecimal(doc.Adjunto.LongLength);
-            litSize.Text = TamañoArchivo(size);
+
+            //var litSize = e.Item.FindControl("litSize") as Literal;
+            //if (litSize == null) return;
+            //if (doc.Adjunto == null) return;
+            //var size = Convert.ToDecimal(doc.Adjunto.LongLength);
+            //litSize.Text = TamañoArchivo(size);
 
             var litDescripcion = e.Item.FindControl("litDescripcion") as Literal;
             if (litDescripcion != null)
-                litDescripcion.Text = string.Format("<b>{0}</b>", doc.Nombre);
+                litDescripcion.Text = string.Format("<b>{0}</b>", doc.Comentarios);
 
             var chkSelect = e.Item.FindControl("chkSelect") as CheckBox;
             if (chkSelect != null)
             {
-                chkSelect.Attributes.Add("idDoc",doc.IdContenido.ToString());
+                chkSelect.Attributes.Add("idDoc",doc.IdDocumento.ToString());
             }
 
         }
@@ -188,7 +189,7 @@ namespace Modules.DocumentLibrary
             }
         }
 
-        public void DocumentList(List<TBL_ModuloDocumentosAnexos_Contenido> list)
+        public void DocumentList(List<TBL_ModuloDocumentosAnexos_Documento> list)
         {
             rptDocuments.DataSource = list;
             rptDocuments.DataBind();

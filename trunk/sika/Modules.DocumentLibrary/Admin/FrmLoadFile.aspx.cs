@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Web.UI;
 using ASP.NETCLIENTE.UI;
 using Domain.MainModules.Entities;
 using Presenters.DocumentLibrary.IViews;
@@ -7,7 +8,7 @@ using Presenters.DocumentLibrary.Presenters;
 
 namespace Modules.DocumentLibrary.Admin
 {
-    public partial class FrmLoadFile : ViewPage<LoadFilePresenter, ILoadFileView>, ILoadFileView
+    public partial class FrmLoadFile :Page// ViewPage<LoadFilePresenter, ILoadFileView>, ILoadFileView
     {
         public event EventHandler SaveEvent;
 
@@ -23,15 +24,15 @@ namespace Modules.DocumentLibrary.Admin
         }
 
 
-        public TBL_Admin_Usuarios UserSession
-        {
-            get { return AuthenticatedUser; }
-        }
+        //public TBL_Admin_Usuarios UserSession
+        //{
+        //    get { return AuthenticatedUser; }
+        //}
 
-        public string IdModule
-        {
-            get { return ModuleId; }
-        }
+        //public string IdModule
+        //{
+        //    get { return ModuleId; }
+        //}
 
         public byte[] Attachments
         {
@@ -66,6 +67,16 @@ namespace Modules.DocumentLibrary.Admin
         public string ContentTypeFile
         {
             get { return fuSingleFile.PostedFile.ContentType;     }
+        }
+
+        public string TipoArchivo
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        public void ListadoTipos(string[] items)
+        {
+            throw new NotImplementedException();
         }
     }
 }

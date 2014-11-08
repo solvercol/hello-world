@@ -47,7 +47,7 @@ namespace Infraestructure.Data.DocumentLibrary.Repositories
                 //perform operation in this repository
                 var specific = specification.SatisfiedBy();
                 return activeContext.TBL_ModuloDocumentosAnexos_Contenido
-                                    .Include(r => r.TBL_ModuloDocumentosAnexos_Documento.TBL_ModuloDocumentosAnexos_Carpetas)
+                                    //.Include(r => r.TBL_ModuloDocumentosAnexos_Documento.TBL_ModuloDocumentosAnexos_Carpetas)
                                     .Where(specific)
                                     .ToList();
             }

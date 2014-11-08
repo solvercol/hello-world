@@ -55,14 +55,6 @@
     </tr>
 
     <tr>
-        <th style="width:10%">
-            Categoría:
-        </th>
-        <td style="width:90%">
-            <asp:DropDownList ID="ddlcategoria" runat="server"></asp:DropDownList>
-        </td>
-    </tr>
-    <tr>
         <th>
             Nombre&nbsp;Carpeta:
         </th>
