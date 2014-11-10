@@ -24,5 +24,8 @@ namespace Applications.MainModule.WorkFlow.Util
 
         bool SendEmailActividadesSolicitud(RenderTypeControlButtonDto oDocument, TBL_Admin_Usuarios userSession, DataTable dt,
                                       ModulosAplicacion module);
+
+        bool SendEmailSolicitudCerrada(RenderTypeControlButtonDto oDocument, TBL_Admin_Usuarios userSession,
+                                       TBL_ModuloAPC_Solicitud apcSolicitud, ModulosAplicacion module);
     }
 }

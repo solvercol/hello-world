@@ -6,6 +6,6 @@ namespace Application.MainModule.SqlServices.IServices
     {
         void InsertUsuarioCopiaComentario(string idUsuario, string idComentario);
 
-        DataTable ListadoActividadesPorSolicitudApc(string idSolicitud);
+        DataTable ListadoActividadesProgramadasPorSolicitudApc(string idSolicitud, string estado);
     }
 }
