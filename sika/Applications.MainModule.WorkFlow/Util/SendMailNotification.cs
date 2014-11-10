@@ -172,7 +172,7 @@ namespace Applications.MainModule.WorkFlow.Util
         public bool SendEmailActividadesSolicitud(RenderTypeControlButtonDto oDocument, TBL_Admin_Usuarios userSession, DataTable dt, ModulosAplicacion module)
         {
 
-            var plantilla = ObtenerPlantilla(oDocument.NextStatus, "Colombia", module);
+            var plantilla = ObtenerPlantilla("ActividadesProgramadasAPC", "Colombia", module);
             if (string.IsNullOrEmpty(plantilla)) return false;
 
 
@@ -183,31 +183,74 @@ namespace Applications.MainModule.WorkFlow.Util
                 var subjectParams = new Dictionary<string, string>
                                     {
                                         {"$Aplicacion", "SIka - Gestión de Calidad."},
-                                        {"$Consecutivo", dr["Codigo"].ToString()}
+                                        {"$Consecutivo", dr["codigo"].ToString()}
                                     };
 
                 var bodyParams = new Dictionary<string, string>
                                      {
-                                         {"$Area",dr["Area"].ToString()},
-                                         {"$Fecha", dr["FechaActividad"].ToString()},
+                                         {"$Area",dr["Nombre"].ToString()},
+                                         {"$FechaProgramacion", dr["FechaActividad"].ToString()},
                                          {"$TipoAccion",dr["TipoAccion"].ToString()},
-                                         {"$Solicitante", dr["Solicitante"].ToString()},
-                                         {"$Responsable", dr["Responsable"].ToString()},
+                                         {"$Autor", dr["Autor"].ToString()},
+                                         {"$Responsable", dr["ResponsableEjecucion"].ToString()},
+                                         {"$Actividad", dr["Descripcion"].ToString()},
+                                         {"$Proceso", dr["Proceso"].ToString()},
                                          {"$Url", UrlHelper.GetUrlPreViewActividadSolicitudforEmail(dr["IdActividad"].ToString(),oDocument.IdDocument)}
                                      };
                 string[] cc = null;
-                if (!(dr["ResponsableSeguimiento"] is DBNull))
+                if (!(dr["EmailResponsableSeguimiento"] is DBNull))
                 {
                     cc= new string[1];
-                    cc[0] = dr["ResponsableSeguimiento"].ToString();
+                    cc[0] = dr["EmailResponsableSeguimiento"].ToString();
                 }
 
-                _iEmailService.ProcessEmail(strFrom, dr["EmailResponsable"].ToString(), plantilla, subjectParams, bodyParams, cc, null);
+                _iEmailService.ProcessEmail(strFrom, dr["EmailResponsableEjecucion"].ToString(), plantilla, subjectParams, bodyParams, cc, null);
             }
 
             
             return true;
         }
+
+
+        public bool SendEmailSolicitudCerrada(RenderTypeControlButtonDto oDocument, TBL_Admin_Usuarios userSession, TBL_ModuloAPC_Solicitud apcSolicitud, ModulosAplicacion module)
+        {
+
+            var plantilla = ObtenerPlantilla("AccionCerrada", "Colombia", module);
+            if (string.IsNullOrEmpty(plantilla)) return false;
+
+
+            var strFrom = string.Format("Gestión de Calidad. Enviado por: {0}<{1}>", userSession.Nombres, GetFromEmail());
+
+            var subjectParams = new Dictionary<string, string>
+                                    {
+                                        {"$Aplicacion", "SIka - Gestión de Calidad."},
+                                        {"$Consecutivo", apcSolicitud.Codigo}
+                                    };
+
+            var bodyParams = new Dictionary<string, string>
+                                 {
+                                     {"$Solicitante", apcSolicitud.TBL_Admin_Usuarios9.Nombres},
+                                     {"$Area", apcSolicitud.TBL_ModuloAPC_Areas.Nombre},
+                                     {"$Proceso", apcSolicitud.Proceso},
+                                     {"$TipoAccion", apcSolicitud.TipoAccion},
+                                     {"$Url", UrlHelper.GetUrlPreViewDocumentSolicitudforEmail()}
+                                 };
+
+
+            var usuarios = _usuariosRepository.RetornarUsuariosReponsablesAprobacion("AdministradoresAPC");
+            var strEmails = usuarios.Aggregate(string.Empty, (current, usu) => current + string.Format("{0},", usu.Email));
+            strEmails = apcSolicitud.TBL_ModuloAPC_Actividades.Aggregate(strEmails, (current, act) => current + string.Format("{0},{1},", act.TBL_Admin_Usuarios2.Email, act.TBL_Admin_Usuarios3.Email));
+            strEmails = strEmails.Substring(0, strEmails.Length - 1);
+            var cc = strEmails.Split(',').Distinct().ToArray();
+
+            _iEmailService.ProcessEmail(strFrom, apcSolicitud.TBL_Admin_Usuarios9.Email, plantilla, subjectParams,
+                                        bodyParams, cc, null);
+
+           
+
+            return true;
+        }
+
 
         /// <summary>
         /// 
@@ -408,7 +451,12 @@ namespace Applications.MainModule.WorkFlow.Util
 
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="oDocument"></param>
+        /// <param name="userSession"></param>
+        /// <returns></returns>
         public bool EnviarCorreoelectronicoRechazoReclamo(RenderTypeControlButtonDto oDocument, TBL_Admin_Usuarios userSession)
         {
 
@@ -438,6 +486,9 @@ namespace Applications.MainModule.WorkFlow.Util
             return true;
 
         }
+
+
+
 
         /// <summary>
         /// 

@@ -106,6 +106,27 @@ namespace Infrastructure.Data.MainModule.AccionesPC.Repositories
             }
             return null;
         }
+
+
+        public TBL_ModuloAPC_Solicitud GetSolicitudCierreWf(decimal id)
+        {
+            if (id > 0)
+            {
+                var set = _currentUnitOfWork.CreateSet<TBL_ModuloAPC_Solicitud>();
+
+                return set.Where(c => c.IdSolucitudAPC == id)
+                                    .Include(x => x.TBL_Admin_Usuarios9) // Solicitante
+                                    .Include(x => x.TBL_ModuloAPC_Areas) // Areas
+                                    .Include(x => x.TBL_Admin_EstadosProceso)
+                                    .Include(x => x.TBL_ModuloAPC_Actividades.Select(y => y.TBL_Admin_Usuarios3)) // Resposable Seguimiento
+                                    .Include(x => x.TBL_ModuloAPC_Actividades.Select(y => y.TBL_Admin_Usuarios2)) //Resposable Ejecucion
+                          .Select(c => c)
+                          .Select(c => c)
+                          .SingleOrDefault();
+            }
+            return null;
+        }
+
     }
 }
     

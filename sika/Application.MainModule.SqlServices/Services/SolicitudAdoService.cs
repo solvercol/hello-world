@@ -29,16 +29,18 @@ namespace Application.MainModule.SqlServices.Services
         }
 
 
-        public DataTable ListadoActividadesPorSolicitudApc(string idSolicitud)
+       
+
+        public DataTable ListadoActividadesProgramadasPorSolicitudApc(string idSolicitud, string estado)
         {
             try
             {
-                var srtSql = "ListadoActividadesPorSolicitudAPC";
-                return _sql.ExecuteDataTable(srtSql, CommandType.StoredProcedure, new SqlParameter("@IdSolicitud",idSolicitud));
+                var srtSql = "ListadoActividadesprogramadasApc";
+                return _sql.ExecuteDataTable(srtSql, CommandType.StoredProcedure, new SqlParameter("@IdSolicitud", idSolicitud), new SqlParameter("@Estado", estado));
             }
             catch (Exception ex)
             {
-                throw new SqlExecutionException("ListadoActividadesPorSolicitudApc", ex);
+                throw new SqlExecutionException("ListadoActividadesProgramadasPorSolicitudApc", ex);
             }
         }
 

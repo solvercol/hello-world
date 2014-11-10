@@ -155,9 +155,9 @@ namespace Application.MainModule.AccionesPC.Services
 
         public TBL_ModuloAPC_Solicitud GetById(decimal id)
         {
-            Specification<TBL_ModuloAPC_Solicitud> onlyEnabledSpec = new DirectSpecification<TBL_ModuloAPC_Solicitud>(u => u.IsActive && u.IdSolucitudAPC == id);
+            //Specification<TBL_ModuloAPC_Solicitud> onlyEnabledSpec = new DirectSpecification<TBL_ModuloAPC_Solicitud>(u => u.IsActive && u.IdSolucitudAPC == id);
 
-            return _TBLModuloAPCSolicitudRepository.GetEntityBySpec(onlyEnabledSpec);
+            return _TBLModuloAPCSolicitudRepository.GetSolicitudById(id);
         }
 
         public TBL_ModuloAPC_Solicitud GetWithNavById(decimal id)

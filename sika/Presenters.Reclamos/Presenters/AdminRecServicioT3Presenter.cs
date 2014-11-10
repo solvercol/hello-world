@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using Applcations.MainModule.DocumentLibrary.IServices;
 using Application.Core;
 using Application.MainModule.Reclamos.IServices;
 using Application.MainModule.SqlServices.IServices;
@@ -21,15 +22,19 @@ namespace Presenters.Reclamos.Presenters
         readonly ISfTBL_ModuloReclamos_CategoriasReclamoManagementServices _categoriasReclamoService;
         readonly IReclamosAdoService _reclamosAdoService;
         readonly ISfTBL_ModuloReclamos_LogReclamosManagementServices _logReclamoService;
+        private readonly ISfTBL_ModuloDocumentosAnexos_CarpetasManagementServices _carpetasServices;
+
 
         public AdminRecServicioT3Presenter(ISfTBL_Admin_UsuariosManagementServices usuariosService,
                                             ISfTBL_Admin_OptionListManagementServices optionListService,
                                             ISfTBL_ModuloReclamos_ReclamoManagementServices reclamoService,
                                             ISfTBL_ModuloReclamos_CategoriasReclamoManagementServices categoriasReclamoService,
                                             IReclamosAdoService reclamosAdoService,
-                                            ISfTBL_ModuloReclamos_LogReclamosManagementServices logReclamoService)
+                                            ISfTBL_ModuloReclamos_LogReclamosManagementServices logReclamoService, 
+                                            ISfTBL_ModuloDocumentosAnexos_CarpetasManagementServices carpetasServices)
         {
             _usuariosService = usuariosService;
+            _carpetasServices = carpetasServices;
             _optionListService = optionListService;
             _reclamoService = reclamoService;
             _categoriasReclamoService = categoriasReclamoService;
@@ -215,6 +220,10 @@ namespace Presenters.Reclamos.Presenters
 
                 _reclamoService.Add(model);
                 IncrementConsecutivoReclamo();
+
+                //Creando l carpeta Documentacion para el reclamo actual
+                _carpetasServices.SaveFolder(string.Empty, string.Empty, "Documentación", model.IdReclamo.ToString(), View.UserSession.IdUser.ToString());
+
                 InvokeMessageBox(new MessageBoxEventArgs(string.Format("Datos Guardados Con Exito."), TypeError.Ok));
 
                 var log = new TBL_ModuloReclamos_LogReclamos();

@@ -191,6 +191,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Applcations.MainModule.DocumentLibrary\Applcations.MainModule.DocumentLibrary.csproj">
+      <Project>{3554A009-FC91-4231-AA06-9C218053B40C}</Project>
+      <Name>Applcations.MainModule.DocumentLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Application.Core\Application.Core.csproj">
       <Project>{43E44D76-4378-4A99-9100-7C5CDFB9DAC0}</Project>
       <Name>Application.Core</Name>

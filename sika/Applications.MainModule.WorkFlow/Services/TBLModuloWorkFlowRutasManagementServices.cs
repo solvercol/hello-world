@@ -311,6 +311,7 @@ namespace Applications.MainModule.WorkFlow.Services
 
                  oDocument.IdCurrentResponsibe = responsable.IdUser.ToString();
                  oDocument.EmailCurrentResponsibe = responsable.Email;
+                 oDocument.NextResponsibe = responsable.Nombres;
 
                  var txSettings = new TransactionOptions
                  {
@@ -335,6 +336,8 @@ namespace Applications.MainModule.WorkFlow.Services
                      oSolicitud.ModifiedBy = _autenticationService.GetUserFromSession.IdUser;
 
                      _solicitudesRepository.Modify(oSolicitud);
+
+                     GenerarEntradatrackingSolicitud(oDocument);
 
                      //Crea un nuevo registro en el log del reclamo.
                      var mensaje =
@@ -379,7 +382,7 @@ namespace Applications.MainModule.WorkFlow.Services
 
                  try
                  {
-                     var dt = _sqlSolicitudesServices.ListadoActividadesPorSolicitudApc(oDocument.IdDocument);
+                     var dt = _sqlSolicitudesServices.ListadoActividadesProgramadasPorSolicitudApc(oDocument.IdDocument, "Programada");
                      if (dt.Rows.Count > 0)
                      {
                          _sendMailNotificationServices.SendEmailActividadesSolicitud(oDocument,
@@ -434,6 +437,8 @@ namespace Applications.MainModule.WorkFlow.Services
                      oSolicitud.ModifiedBy = _autenticationService.GetUserFromSession.IdUser;
 
                      _solicitudesRepository.Modify(oSolicitud);
+
+                     GenerarEntradatrackingSolicitud(oDocument);
 
                      //Crea un nuevo registro en el log del reclamo.
                      var mensaje =
@@ -493,8 +498,8 @@ namespace Applications.MainModule.WorkFlow.Services
                      strEficazAdecuada = adecuada;
 
 
-                 
-                 var oSolicitud = _solicitudesRepository.GetSolicitudById(Convert.ToInt32(oDocument.IdDocument));
+
+                 var oSolicitud = _solicitudesRepository.GetSolicitudCierreWf(Convert.ToInt32(oDocument.IdDocument));
 
                  if (oSolicitud == null)
                  {
@@ -540,6 +545,8 @@ namespace Applications.MainModule.WorkFlow.Services
 
                      _solicitudesRepository.Modify(oSolicitud);
 
+                     GenerarEntradatrackingSolicitud(oDocument);
+
                      //Crea un nuevo registro en el log del reclamo.
                      var mensaje =
                          string.Format(
@@ -550,6 +557,17 @@ namespace Applications.MainModule.WorkFlow.Services
                      unitOfWork.CommitAndRefreshChanges();
 
                      scope.Complete();
+                 }
+
+                 try
+                 {
+                     _sendMailNotificationServices.SendEmailSolicitudCerrada(oDocument,
+                                                                             _autenticationService.GetUserFromSession,
+                                                                             oSolicitud, ModulosAplicacion.AccionesPc);
+                 }
+                 catch (Exception ex)
+                 {
+                     _traceManager.LogInfo(ex.Message,LogType.Notify);
                  }
              }
              catch (Exception ex)
@@ -1453,7 +1471,10 @@ namespace Applications.MainModule.WorkFlow.Services
                     if (oDocument.IsNextGroupResponsible)
                     {
                         if (!string.IsNullOrEmpty(oDocument.IdNextResponsibe))
+                        {
                             oDoc.idGrupo = Convert.ToInt32(oDocument.IdNextResponsibe);
+                            oDoc.IdResponsableActual = null;
+                        }
                         else
                             oDoc.idGrupo = null;
                     }
@@ -1912,6 +1933,8 @@ namespace Applications.MainModule.WorkFlow.Services
 
             return true;
         }
+
+
 
         /// <summary>
         /// Crea un nuevo registro en la tabla de notificaciones para el usuario responsable del documento.
