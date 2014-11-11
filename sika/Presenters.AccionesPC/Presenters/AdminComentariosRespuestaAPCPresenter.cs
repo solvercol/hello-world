@@ -3,6 +3,7 @@ using System.Linq;
 using System.Reflection;
 using Application.Core;
 using Application.MainModule.AccionesPC.IServices;
+using Application.MainModule.AccionesPC.Util;
 using Applications.MainModule.Admin.IServices;
 using Domain.MainModules.Entities;
 using Infrastructure.CrossCutting.NetFramework.Enums;
@@ -20,14 +21,16 @@ namespace Presenters.AccionesPC.Presenters
         readonly ISfTBL_Admin_UsuariosManagementServices _usuariosService;
         readonly ISfTBL_ModuloAPC_AnexosComentarioRespuestaManagementServices _anexosService;
         readonly ISolicitudAdoService _solicitudAdoService;
+        private readonly ISendEmail _sendMail;
 
         public AdminComentariosRespuestaAPCPresenter(ISfTBL_ModuloAPC_ComentariosRespuestaManagementServices comentariosRespuestaService,
                                                          ISfTBL_ModuloAPC_SolicitudManagementServices solicitudService,
                                                          ISfTBL_Admin_UsuariosManagementServices usuariosService,
                                                          ISfTBL_ModuloAPC_AnexosComentarioRespuestaManagementServices anexosService,
-                                                         ISolicitudAdoService solicitudAdoService)
+                                                         ISolicitudAdoService solicitudAdoService, ISendEmail sendMail)
         {
             _comentariosRespuestaService = comentariosRespuestaService;
+            _sendMail = sendMail;
             _solicitudService = solicitudService;
             _usuariosService = usuariosService;
             _anexosService = anexosService;
@@ -139,6 +142,15 @@ namespace Presenters.AccionesPC.Presenters
 
                         _anexosService.Add(anexo);
                     }
+                }
+
+                try
+                {
+                    _sendMail.EnviarCorreoelectronicoComentarios(model.IdComentario, View.UserSession);
+                }
+                catch (Exception ex)
+                {
+                    CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
                 }
 
                 LoadComentariosSolicitud();

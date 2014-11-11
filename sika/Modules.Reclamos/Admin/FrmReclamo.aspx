@@ -112,7 +112,7 @@
                             <ContentTemplate>
                                  <div style="padding:3px; text-align:right;">
                                     <asp:Button ID="btnRegresar" runat="server" Text="Regresar" OnClick="BtnRegresarClick" />
-                                    <asp:Button ID="btnActualizarIndicadores" runat="server" Text="Creacion Acciones" OnClick="BtnCreacionAccionesClick" Visible="false" />
+                                    <asp:Button ID="btnActualizarIndicadores" runat="server" Text="Crear Plan Acción" OnClick="BtnCreacionAccionesClick" Visible="false" />
                                     <asp:Button ID="btnEdit" runat="server" Text="Editar" OnClick="BtnEditReclamoClick" Visible="false" />
                                     <asp:Button ID="btnDeclinar" runat="server" Text="Devolver" OnClick="BtnDevolverReclamoClick" Visible="false" />
                                     <asp:Button ID="btnRechazar" runat="server" Text="Rechazar Reclamo" OnClick="BtnCancelarReclamoClick" Visible="false" />

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reflection;
 using Application.Core;
+using Application.MainModule.AccionesPC.IServices;
 using Application.MainModule.Reclamos.IServices;
 using Applications.MainModule.Admin.IServices;
 using Domain.MainModules.Entities;
@@ -16,13 +17,19 @@ namespace Presenters.Reclamos.Presenters
         readonly ISfTBL_Admin_SeccionesManagementServices _seccionesServices;
         readonly ISfTBL_Admin_OptionListManagementServices _optionListService;
         private ISfTBL_ModuloReclamos_LogReclamosManagementServices _logServices;
+        private readonly ISfTBL_Admin_EstadosProcesoManagementServices _estados;
+        readonly ISfTBL_ModuloAPC_SolicitudManagementServices _solicitudService;
 
         public ReclamoPresenter(ISfTBL_ModuloReclamos_ReclamoManagementServices reclamoService,
                                 ISfTBL_Admin_SeccionesManagementServices seccionesServices,
                                 ISfTBL_Admin_OptionListManagementServices optionListService,
-                                ISfTBL_ModuloReclamos_LogReclamosManagementServices logServices)
+                                ISfTBL_ModuloReclamos_LogReclamosManagementServices logServices, 
+                                ISfTBL_Admin_EstadosProcesoManagementServices estados, 
+                                ISfTBL_ModuloAPC_SolicitudManagementServices solicitudService)
         {
             _reclamoService = reclamoService;
+            _solicitudService = solicitudService;
+            _estados = estados;
             _logServices = logServices;
             _seccionesServices = seccionesServices;
             _optionListService = optionListService;
@@ -234,7 +241,7 @@ namespace Presenters.Reclamos.Presenters
             if (oReclamo == null) return;
             if (oReclamo.TBL_Admin_EstadosProceso == null) return;
 
-            View.VerBotonCambiarIngeniero = oReclamo.TBL_Admin_EstadosProceso.Estado == "3" && View.UserSession.IsInRole("Administrador");
+            View.VerBotonCambiarIngeniero = oReclamo.TBL_Admin_EstadosProceso.Estado == "3" && View.UserSession.IsInRole("Administrador") && oReclamo.IdTipoReclamo == 1;
         }
 
         /// <summary>
@@ -250,10 +257,21 @@ namespace Presenters.Reclamos.Presenters
 
                 if(oReclamo == null)return;
 
-                oReclamo.IndicadorAlt = true;
-                oReclamo.IndicadorAPC = true;
-                oReclamo.IndicadorSol = true;
+                if(oReclamo.IdAccionApc.HasValue)
+                {
+                    InvokeMessageBox(new MessageBoxEventArgs(string.Format("El reclamo ya tiene asignado un plan de acción."), TypeError.Error));
+                    return;
+                }
 
+                var oSolicitud = GetModel();
+
+                _solicitudService.Add(oSolicitud);
+
+                if (oSolicitud.IdSolucitudAPC > 0)
+                {
+                    oReclamo.IndicadorAPC = true;
+                    oReclamo.IdAccionApc = oSolicitud.IdSolucitudAPC;
+                }
 
                 _reclamoService.Modify(oReclamo);
 
@@ -268,11 +286,44 @@ namespace Presenters.Reclamos.Presenters
                                          IsActive = true,
                                          Descripcion = texto
                                      });
+                InvokeMessageBox(new MessageBoxEventArgs(Message.ProcessOk,TypeError.Ok));
             }
             catch (Exception ex)
             {
                 CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
             }
+        }
+
+
+        TBL_ModuloAPC_Solicitud GetModel()
+        {
+            var estadoRegistrado = _estados.EstadoPorTipoModuloNombreEstado(ModulosAplicacion.AccionesPc,
+                                                                            EstadosAplicacion.Registro);
+
+            var model = _solicitudService.NewEntity();
+
+
+            var op = _optionListService.ObtenerOpcionBykeyModuleId("ConsecitvoAPC", Convert.ToInt32(View.IdModule));
+            if (op != null)
+                model.Consecutivo = Convert.ToInt32(op.Value) + 1;
+
+            model.IdSolicitante = View.UserSession.IdUser;
+            model.IdResponsableActual = View.UserSession.IdUser;
+            model.IdResponsableEjecucion = View.UserSession.IdUser;
+            model.IdResponsableSeguimiento = View.UserSession.IdUser;
+            model.FechaSolicitud = DateTime.Now;
+            
+            if (!string.IsNullOrEmpty(View.IdReclamo))
+                model.IdReclamoCreacion = Convert.ToDecimal(View.IdReclamo);
+            
+            model.IdEstado = estadoRegistrado == null ? 11 : estadoRegistrado.IdEstado;
+            model.IsActive = true;
+            model.CreateBy = View.UserSession.IdUser;
+            model.CreateOn = DateTime.Now;
+            model.ModifiedBy = View.UserSession.IdUser;
+            model.ModifiedOn = DateTime.Now;
+
+            return model;
         }
 
     }

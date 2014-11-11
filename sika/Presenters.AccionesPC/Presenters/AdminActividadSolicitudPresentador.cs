@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using Application.Core;
 using Application.MainModule.AccionesPC.IServices;
+using Application.MainModule.AccionesPC.Util;
 using Domain.MainModules.Entities;
 using Infrastructure.CrossCutting.NetFramework.Enums;
 using Presenters.AccionesPC.IViews;
@@ -18,13 +19,16 @@ namespace Presenters.AccionesPC.Presenters
         readonly ISfTBL_ModuloAPC_ActividadesManagementServices _actividadesService;
         readonly ISfTBL_ModuloReclamos_ReclamoManagementServices _reclamoService;
         readonly ISfTBL_ModuloAPC_AnexosActividadesManagementServices _anexosService;
+        private readonly ISendEmail _sendmailSercices;
 
         public AdminActividadSolicitudPresentador(ISfTBL_ModuloAPC_SolicitudManagementServices solicitudService,
                                                 ISfTBL_ModuloAPC_ActividadesManagementServices actividadesService,
                                                 ISfTBL_ModuloReclamos_ReclamoManagementServices reclamoService,
-                                                ISfTBL_ModuloAPC_AnexosActividadesManagementServices anexosService)
+                                                ISfTBL_ModuloAPC_AnexosActividadesManagementServices anexosService, 
+                                                ISendEmail sendmailSercices)
         {
             _solicitudService = solicitudService;
+            _sendmailSercices = sendmailSercices;
             _actividadesService = actividadesService;
             _reclamoService = reclamoService;
             _anexosService = anexosService;
@@ -85,8 +89,15 @@ namespace Presenters.AccionesPC.Presenters
                     }
                     else
                         View.ShowObservaciones(false);
+
                     View.EnableEdit(false);
-                    View.CanRegister = View.UserSession.IdUser == model.CreateBy && (model.EstadoActividad == "Registrada" || model.EstadoActividad == "Programada");
+                    View.CanRegister = (model.EstadoActividad == "Registrada" || model.EstadoActividad == "Programada") &&
+                                       (View.UserSession.IdUser == model.CreateBy ||
+                                        View.UserSession.IdUser == model.IdResponsableEjecucion ||
+                                        View.UserSession.IdUser == model.IdResponsableSeguimiento ||
+                                        View.UserSession.IsInRole("AdministradoresAPC"));
+
+
                     LoadArchivosAdjuntos();
                 }
             }
@@ -169,6 +180,8 @@ namespace Presenters.AccionesPC.Presenters
                     model.ModifiedOn = DateTime.Now;
                     _actividadesService.Modify(model);
 
+                    _sendmailSercices.EnviarCorreoelectronicoActividadApcRealizada(model.IdActividad, View.UserSession);
+
                     LoadActividadSolicitud();
                 }
             }
@@ -193,6 +206,9 @@ namespace Presenters.AccionesPC.Presenters
                     model.ModifiedBy = View.UserSession.IdUser;
                     model.ModifiedOn = DateTime.Now;
                     _actividadesService.Modify(model);
+
+                    _sendmailSercices.EnviarCorreoelectronicoActividadApcCancelada(model.IdActividad, View.UserSession,
+                                                                                   View.ObservacionesCancelacion);
 
                     LoadActividadSolicitud();
                 }

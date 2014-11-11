@@ -202,6 +202,15 @@ namespace Modules.AccionesPC.Admin {
         protected global::System.Web.UI.WebControls.Button btnRegresar;
         
         /// <summary>
+        /// btncerrar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btncerrar;
+        
+        /// <summary>
         /// btnEdit control.
         /// </summary>
         /// <remarks>

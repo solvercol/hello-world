@@ -191,6 +191,15 @@ namespace Infrastructure.CrossCutting.NetFramework.Util
             return "<a href=\"" + url + "\"> De click aquí para abrir el documento.\"</a>";
         }
 
+
+        public static string GetUrlPreViewCommentApc(string idComentario)
+        {
+            var appRot = GetSiteUrl();
+            var idModule = HttpContext.Current.Request.QueryString["ModuleId"];
+            var idSolicitud = HttpContext.Current.Request.QueryString["IdSolicitud"];
+            var url = string.Format("{0}/Pages/Modules/AccionesPC/Admin/FrmAdminComentarioRespuestaAPC.aspx?ModuleId={1}&IdSolicitud={2}&&IdComentario={3}&from=solicitud&fromaux=misolestados", appRot, idModule, idSolicitud, idComentario);
+            return "<a href=\"" + url + "\"> De click aquí para abrir el documento.\"</a>";
+        }
         #region Solicitudes
 
         public static string GetUrlPreViewDocumentSolicitudforEmail()

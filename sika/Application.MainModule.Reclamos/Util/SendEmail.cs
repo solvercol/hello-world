@@ -396,6 +396,134 @@ namespace Application.MainModule.Reclamos.Util
             return result;
         }
 
+
+
+        public bool EnviarCorreoelectronicoActividadRealizada(decimal idActividad, TBL_Admin_Usuarios userSession)
+        {
+
+            var oActividad = _actividadesRepository.GetActividadById(idActividad);
+
+            if (oActividad == null)
+            {
+                _traceManager.LogInfo(string.Format("El objeto Actividad es null. Clase:{0} ", System.Reflection.MethodBase.GetCurrentMethod().Name), LogType.Notify);
+                return false;
+            }
+
+            //Si el usuario de sesion es el autor de la actividad, no se envie el Email.
+            if (oActividad.CreateBy == userSession.IdUser) return true;
+
+            var template = ObtenerPlantilla("ActividadRealizadaReclamo", "Colombia");
+
+            if (string.IsNullOrEmpty(template))
+            {
+                _traceManager.LogInfo(string.Format("Error al obtener el objeto Template desde la BD. Código:[{0}]  - Clase:[{1}] ", "ActividadRealizadaReclamo", System.Reflection.MethodBase.GetCurrentMethod().Name), LogType.Notify);
+                return false;
+            }
+
+            var subjectParams = new Dictionary<string, string>
+                                    {
+                                        {"$NumeroReclamo",oActividad.TBL_ModuloReclamos_Reclamo.NumeroReclamo},
+                                        {"$Accion",oActividad.Descripcion}
+                                    };
+
+            var strFrom = string.Format("Gestión de Reclamos. Enviado por: {0}<{1}>", userSession.Nombres, GetFromEmail());
+
+            var bodyParams = new Dictionary<string, string>
+                                 {
+                                     {"$Solicitante",oActividad.TBL_Admin_Usuarios.Nombres},
+                                     {"$Url",UrlHelper.GetUrlPreViewActividad(idActividad.ToString())}
+                                 };
+
+            var cc = new string[oActividad.TBL_Admin_Usuarios3.Count];
+            var i = 0;
+            if (oActividad.TBL_Admin_Usuarios3.Count > 0)
+            {
+                foreach (var usu in oActividad.TBL_Admin_Usuarios3)
+                {
+                    cc[i] = usu.Email;
+                    i++;
+                }
+            }
+
+            bool result;
+            try
+            {
+                _iEmailService.ProcessEmail(strFrom, oActividad.TBL_Admin_Usuarios.Email, template, subjectParams, bodyParams, cc, null);
+                result = true;
+            }
+            catch
+            {
+                result = false;
+            }
+
+            return result;
+        }
+
+
+        public bool EnviarCorreoelectronicoActividadCancelada(decimal idActividad, TBL_Admin_Usuarios userSession, string motivo)
+        {
+
+            var oActividad = _actividadesRepository.GetActividadById(idActividad);
+
+            if (oActividad == null)
+            {
+                _traceManager.LogInfo(string.Format("El objeto Actividad es null. Clase:{0} ", System.Reflection.MethodBase.GetCurrentMethod().Name), LogType.Notify);
+                return false;
+            }
+
+            //Si el usuario de sesion es el autor de la actividad, no se envie el Email.
+            if (oActividad.CreateBy == userSession.IdUser) return true;
+
+            var template = ObtenerPlantilla("ActividadCanceladaReclamo", "Colombia");
+
+            if (string.IsNullOrEmpty(template))
+            {
+                _traceManager.LogInfo(string.Format("Error al obtener el objeto Template desde la BD. Código:[{0}]  - Clase:[{1}] ", "ActividadCanceladaReclamo", System.Reflection.MethodBase.GetCurrentMethod().Name), LogType.Notify);
+                return false;
+            }
+
+            var subjectParams = new Dictionary<string, string>
+                                    {
+                                        {"$NumeroReclamo",oActividad.TBL_ModuloReclamos_Reclamo.NumeroReclamo},
+                                        {"$Accion",oActividad.Descripcion}
+                                    };
+
+            var strFrom = string.Format("Gestión de Calidad. Enviado por: {0}<{1}>", userSession.Nombres, GetFromEmail());
+
+            var bodyParams = new Dictionary<string, string>
+                                 {
+                                     {"$Solicitante",oActividad.TBL_Admin_Usuarios.Nombres},
+                                     {"$Motivo",motivo},
+                                     {"$Url",UrlHelper.GetUrlPreViewActividad(idActividad.ToString())}
+                                 };
+
+            var cc = new string[oActividad.TBL_Admin_Usuarios3.Count];
+            var i = 0;
+            if (oActividad.TBL_Admin_Usuarios3.Count > 0)
+            {
+                foreach (var usu in oActividad.TBL_Admin_Usuarios3)
+                {
+                    cc[i] = usu.Email;
+                    i++;
+                }
+            }
+
+            bool result;
+            try
+            {
+                _iEmailService.ProcessEmail(strFrom, oActividad.TBL_Admin_Usuarios.Email, template, subjectParams, bodyParams, cc, null);
+                result = true;
+            }
+            catch
+            {
+                result = false;
+            }
+
+            return result;
+        }
+
+
+
         /// <summary>
         /// 
         /// </summary>
@@ -404,7 +532,7 @@ namespace Application.MainModule.Reclamos.Util
         /// <returns></returns>
         private string ObtenerPlantilla(string codigoPlantilla, string pais)
         {
-            const ModulosAplicacion idModule = ModulosAplicacion.Reclamos;
+            const int idModule = (int) ModulosAplicacion.Reclamos;
             var plantilla = _plantillasrepository.GetPlantillaByIdPaisByCodigo(codigoPlantilla, pais, idModule.ToString());
 
             if (plantilla == null) return string.Empty;

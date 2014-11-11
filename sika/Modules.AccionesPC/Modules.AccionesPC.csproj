@@ -92,6 +92,7 @@
     <Content Include="UserControls\WucEnviarActividades.ascx" />
     <Content Include="UserControls\WucLogSolicitudesApc.ascx" />
     <Content Include="UserControls\WucPanelEstado.ascx" />
+    <Content Include="UserControls\WucRenderMessagesError.ascx" />
     <Content Include="UserControls\WucSeguimiento.ascx" />
     <Content Include="Views\FrmMisSolicitudesPendientes.aspx" />
     <Content Include="Views\FrmMisSolicitudesPorEstado.aspx" />
@@ -231,6 +232,13 @@
     </Compile>
     <Compile Include="UserControls\WucPanelEstado.ascx.designer.cs">
       <DependentUpon>WucPanelEstado.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WucRenderMessagesError.ascx.cs">
+      <DependentUpon>WucRenderMessagesError.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WucRenderMessagesError.ascx.designer.cs">
+      <DependentUpon>WucRenderMessagesError.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\WucSeguimiento.ascx.cs">
       <DependentUpon>WucSeguimiento.ascx</DependentUpon>

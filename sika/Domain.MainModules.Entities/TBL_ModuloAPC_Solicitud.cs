@@ -131,7 +131,7 @@ namespace Domain.MainModules.Entities
         private int _idSolicitante;
     
         [DataMember]
-        public int IdResponsableEjecucion
+        public Nullable<int> IdResponsableEjecucion
         {
             get { return _idResponsableEjecucion; }
             set
@@ -151,10 +151,10 @@ namespace Domain.MainModules.Entities
                 }
             }
         }
-        private int _idResponsableEjecucion;
+        private Nullable<int> _idResponsableEjecucion;
     
         [DataMember]
-        public int IdResponsableSeguimiento
+        public Nullable<int> IdResponsableSeguimiento
         {
             get { return _idResponsableSeguimiento; }
             set
@@ -174,7 +174,7 @@ namespace Domain.MainModules.Entities
                 }
             }
         }
-        private int _idResponsableSeguimiento;
+        private Nullable<int> _idResponsableSeguimiento;
     
         [DataMember]
         public string TipoAccion
@@ -245,7 +245,7 @@ namespace Domain.MainModules.Entities
         private Nullable<decimal> _idReclamoCreacion;
     
         [DataMember]
-        public int IdAreaAccion
+        public Nullable<int> IdAreaAccion
         {
             get { return _idAreaAccion; }
             set
@@ -265,7 +265,7 @@ namespace Domain.MainModules.Entities
                 }
             }
         }
-        private int _idAreaAccion;
+        private Nullable<int> _idAreaAccion;
     
         [DataMember]
         public string Proceso
@@ -283,7 +283,7 @@ namespace Domain.MainModules.Entities
         private string _proceso;
     
         [DataMember]
-        public int IdGerente
+        public Nullable<int> IdGerente
         {
             get { return _idGerente; }
             set
@@ -303,7 +303,7 @@ namespace Domain.MainModules.Entities
                 }
             }
         }
-        private int _idGerente;
+        private Nullable<int> _idGerente;
     
         [DataMember]
         public string DescripcionAccion
@@ -321,7 +321,7 @@ namespace Domain.MainModules.Entities
         private string _descripcionAccion;
     
         [DataMember]
-        public System.DateTime FechaDesde
+        public Nullable<System.DateTime> FechaDesde
         {
             get { return _fechaDesde; }
             set
@@ -333,10 +333,10 @@ namespace Domain.MainModules.Entities
                 }
             }
         }
-        private System.DateTime _fechaDesde;
+        private Nullable<System.DateTime> _fechaDesde;
     
         [DataMember]
-        public System.DateTime FechaHasta
+        public Nullable<System.DateTime> FechaHasta
         {
             get { return _fechaHasta; }
             set
@@ -348,7 +348,7 @@ namespace Domain.MainModules.Entities
                 }
             }
         }
-        private System.DateTime _fechaHasta;
+        private Nullable<System.DateTime> _fechaHasta;
     
         [DataMember]
         public Nullable<int> IdAdministrador
@@ -518,7 +518,7 @@ namespace Domain.MainModules.Entities
         private bool _isActive;
     
         [DataMember]
-        public int CreateBy
+        public Nullable<int> CreateBy
         {
             get { return _createBy; }
             set
@@ -538,10 +538,10 @@ namespace Domain.MainModules.Entities
                 }
             }
         }
-        private int _createBy;
+        private Nullable<int> _createBy;
     
         [DataMember]
-        public System.DateTime CreateOn
+        public Nullable<System.DateTime> CreateOn
         {
             get { return _createOn; }
             set
@@ -553,10 +553,10 @@ namespace Domain.MainModules.Entities
                 }
             }
         }
-        private System.DateTime _createOn;
+        private Nullable<System.DateTime> _createOn;
     
         [DataMember]
-        public int ModifiedBy
+        public Nullable<int> ModifiedBy
         {
             get { return _modifiedBy; }
             set
@@ -576,10 +576,10 @@ namespace Domain.MainModules.Entities
                 }
             }
         }
-        private int _modifiedBy;
+        private Nullable<int> _modifiedBy;
     
         [DataMember]
-        public System.DateTime ModifiedOn
+        public Nullable<System.DateTime> ModifiedOn
         {
             get { return _modifiedOn; }
             set
@@ -591,7 +591,7 @@ namespace Domain.MainModules.Entities
                 }
             }
         }
-        private System.DateTime _modifiedOn;
+        private Nullable<System.DateTime> _modifiedOn;
     
         [DataMember]
         public Nullable<int> idGrupo
@@ -1041,6 +1041,41 @@ namespace Domain.MainModules.Entities
             }
         }
         private TrackableCollection<TBL_ModuloAPC_Tracking> _tBL_ModuloAPC_Tracking;
+    
+        [DataMember]
+        public TrackableCollection<TBL_ModuloReclamos_Reclamo> TBL_ModuloReclamos_Reclamo1
+        {
+            get
+            {
+                if (_tBL_ModuloReclamos_Reclamo1 == null)
+                {
+                    _tBL_ModuloReclamos_Reclamo1 = new TrackableCollection<TBL_ModuloReclamos_Reclamo>();
+                    _tBL_ModuloReclamos_Reclamo1.CollectionChanged += FixupTBL_ModuloReclamos_Reclamo1;
+                }
+                return _tBL_ModuloReclamos_Reclamo1;
+            }
+            set
+            {
+                if (!ReferenceEquals(_tBL_ModuloReclamos_Reclamo1, value))
+                {
+                    if (ChangeTracker.ChangeTrackingEnabled)
+                    {
+                        throw new InvalidOperationException("Cannot set the FixupChangeTrackingCollection when ChangeTracking is enabled");
+                    }
+                    if (_tBL_ModuloReclamos_Reclamo1 != null)
+                    {
+                        _tBL_ModuloReclamos_Reclamo1.CollectionChanged -= FixupTBL_ModuloReclamos_Reclamo1;
+                    }
+                    _tBL_ModuloReclamos_Reclamo1 = value;
+                    if (_tBL_ModuloReclamos_Reclamo1 != null)
+                    {
+                        _tBL_ModuloReclamos_Reclamo1.CollectionChanged += FixupTBL_ModuloReclamos_Reclamo1;
+                    }
+                    OnNavigationPropertyChanged("TBL_ModuloReclamos_Reclamo1");
+                }
+            }
+        }
+        private TrackableCollection<TBL_ModuloReclamos_Reclamo> _tBL_ModuloReclamos_Reclamo1;
 
         #endregion
         #region ChangeTracking
@@ -1139,6 +1174,7 @@ namespace Domain.MainModules.Entities
             TBL_ModuloAPC_LogSolicitud.Clear();
             TBL_ModuloReclamos_Reclamo = null;
             TBL_ModuloAPC_Tracking.Clear();
+            TBL_ModuloReclamos_Reclamo1.Clear();
         }
 
         #endregion
@@ -1315,7 +1351,7 @@ namespace Domain.MainModules.Entities
             }
         }
     
-        private void FixupTBL_Admin_Usuarios3(TBL_Admin_Usuarios previousValue)
+        private void FixupTBL_Admin_Usuarios3(TBL_Admin_Usuarios previousValue, bool skipKeys = false)
         {
             if (IsDeserializing)
             {
@@ -1336,6 +1372,11 @@ namespace Domain.MainModules.Entities
     
                 CreateBy = TBL_Admin_Usuarios3.IdUser;
             }
+            else if (!skipKeys)
+            {
+                CreateBy = null;
+            }
+    
             if (ChangeTracker.ChangeTrackingEnabled)
             {
                 if (ChangeTracker.OriginalValues.ContainsKey("TBL_Admin_Usuarios3")
@@ -1354,7 +1395,7 @@ namespace Domain.MainModules.Entities
             }
         }
     
-        private void FixupTBL_Admin_Usuarios4(TBL_Admin_Usuarios previousValue)
+        private void FixupTBL_Admin_Usuarios4(TBL_Admin_Usuarios previousValue, bool skipKeys = false)
         {
             if (IsDeserializing)
             {
@@ -1375,6 +1416,11 @@ namespace Domain.MainModules.Entities
     
                 IdGerente = TBL_Admin_Usuarios4.IdUser;
             }
+            else if (!skipKeys)
+            {
+                IdGerente = null;
+            }
+    
             if (ChangeTracker.ChangeTrackingEnabled)
             {
                 if (ChangeTracker.OriginalValues.ContainsKey("TBL_Admin_Usuarios4")
@@ -1393,7 +1439,7 @@ namespace Domain.MainModules.Entities
             }
         }
     
-        private void FixupTBL_Admin_Usuarios5(TBL_Admin_Usuarios previousValue)
+        private void FixupTBL_Admin_Usuarios5(TBL_Admin_Usuarios previousValue, bool skipKeys = false)
         {
             if (IsDeserializing)
             {
@@ -1414,6 +1460,11 @@ namespace Domain.MainModules.Entities
     
                 ModifiedBy = TBL_Admin_Usuarios5.IdUser;
             }
+            else if (!skipKeys)
+            {
+                ModifiedBy = null;
+            }
+    
             if (ChangeTracker.ChangeTrackingEnabled)
             {
                 if (ChangeTracker.OriginalValues.ContainsKey("TBL_Admin_Usuarios5")
@@ -1476,7 +1527,7 @@ namespace Domain.MainModules.Entities
             }
         }
     
-        private void FixupTBL_Admin_Usuarios7(TBL_Admin_Usuarios previousValue)
+        private void FixupTBL_Admin_Usuarios7(TBL_Admin_Usuarios previousValue, bool skipKeys = false)
         {
             if (IsDeserializing)
             {
@@ -1497,6 +1548,11 @@ namespace Domain.MainModules.Entities
     
                 IdResponsableEjecucion = TBL_Admin_Usuarios7.IdUser;
             }
+            else if (!skipKeys)
+            {
+                IdResponsableEjecucion = null;
+            }
+    
             if (ChangeTracker.ChangeTrackingEnabled)
             {
                 if (ChangeTracker.OriginalValues.ContainsKey("TBL_Admin_Usuarios7")
@@ -1515,7 +1571,7 @@ namespace Domain.MainModules.Entities
             }
         }
     
-        private void FixupTBL_Admin_Usuarios8(TBL_Admin_Usuarios previousValue)
+        private void FixupTBL_Admin_Usuarios8(TBL_Admin_Usuarios previousValue, bool skipKeys = false)
         {
             if (IsDeserializing)
             {
@@ -1536,6 +1592,11 @@ namespace Domain.MainModules.Entities
     
                 IdResponsableSeguimiento = TBL_Admin_Usuarios8.IdUser;
             }
+            else if (!skipKeys)
+            {
+                IdResponsableSeguimiento = null;
+            }
+    
             if (ChangeTracker.ChangeTrackingEnabled)
             {
                 if (ChangeTracker.OriginalValues.ContainsKey("TBL_Admin_Usuarios8")
@@ -1593,7 +1654,7 @@ namespace Domain.MainModules.Entities
             }
         }
     
-        private void FixupTBL_ModuloAPC_Areas(TBL_ModuloAPC_Areas previousValue)
+        private void FixupTBL_ModuloAPC_Areas(TBL_ModuloAPC_Areas previousValue, bool skipKeys = false)
         {
             if (IsDeserializing)
             {
@@ -1614,6 +1675,11 @@ namespace Domain.MainModules.Entities
     
                 IdAreaAccion = TBL_ModuloAPC_Areas.IdArea;
             }
+            else if (!skipKeys)
+            {
+                IdAreaAccion = null;
+            }
+    
             if (ChangeTracker.ChangeTrackingEnabled)
             {
                 if (ChangeTracker.OriginalValues.ContainsKey("TBL_ModuloAPC_Areas")
@@ -1905,6 +1971,45 @@ namespace Domain.MainModules.Entities
                     if (ChangeTracker.ChangeTrackingEnabled)
                     {
                         ChangeTracker.RecordRemovalFromCollectionProperties("TBL_ModuloAPC_Tracking", item);
+                    }
+                }
+            }
+        }
+    
+        private void FixupTBL_ModuloReclamos_Reclamo1(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            if (IsDeserializing)
+            {
+                return;
+            }
+    
+            if (e.NewItems != null)
+            {
+                foreach (TBL_ModuloReclamos_Reclamo item in e.NewItems)
+                {
+                    item.TBL_ModuloAPC_Solicitud1 = this;
+                    if (ChangeTracker.ChangeTrackingEnabled)
+                    {
+                        if (!item.ChangeTracker.ChangeTrackingEnabled)
+                        {
+                            item.StartTracking();
+                        }
+                        ChangeTracker.RecordAdditionToCollectionProperties("TBL_ModuloReclamos_Reclamo1", item);
+                    }
+                }
+            }
+    
+            if (e.OldItems != null)
+            {
+                foreach (TBL_ModuloReclamos_Reclamo item in e.OldItems)
+                {
+                    if (ReferenceEquals(item.TBL_ModuloAPC_Solicitud1, this))
+                    {
+                        item.TBL_ModuloAPC_Solicitud1 = null;
+                    }
+                    if (ChangeTracker.ChangeTrackingEnabled)
+                    {
+                        ChangeTracker.RecordRemovalFromCollectionProperties("TBL_ModuloReclamos_Reclamo1", item);
                     }
                 }
             }

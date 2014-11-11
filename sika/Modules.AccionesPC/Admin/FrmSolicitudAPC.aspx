@@ -148,6 +148,7 @@
                             <ContentTemplate>
                                  <div style="padding:3px; text-align:right;">
                                     <asp:Button ID="btnRegresar" runat="server" Text="Regresar" OnClick="BtnRegresarClick" />
+                                    <asp:Button ID="btncerrar" runat="server" Text="Cerrar Acción" OnClick="BtnCerrarAccionClick" />
                                     <asp:Button ID="btnEdit" runat="server" Text="Editar" OnClick="BtnEditSolicitudClick" />
                                     <asp:PlaceHolder ID="plhWf" runat="server"></asp:PlaceHolder>
                                 </div>
