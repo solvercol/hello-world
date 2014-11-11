@@ -161,6 +161,14 @@ namespace Modules.AccionesPC.Admin
 
         protected void BtnRegresarClick(object sender, EventArgs e)
         {
+
+            if( !string.IsNullOrEmpty(Request.QueryString["IdReclamo"]))
+            {
+                Response.Redirect(string.Format("../../Reclamos/Admin/FrmReclamo.aspx?ModuleId={0}&IdReclamo={1}&from=pendientes", IdModuleReclamo, Request.QueryString["IdReclamo"]));
+            }
+
+
+
             //if (string.IsNullOrEmpty(FromPage))
             //{
             //    Response.Redirect(string.Format("../Views/FrmMisPendientes.aspx?ModuleId={0}", ModuleId));
@@ -222,7 +230,7 @@ namespace Modules.AccionesPC.Admin
 
         protected void BtnViewReclamoClick(object sender, EventArgs e)
         {
-            Response.Redirect(string.Format("../../Reclamos/Admin/FrmReclamo.aspx?ModuleId={0}&IdReclamo={1}&from=admactividad&idfrom={2}", ModuleId, IdReclamo, IdSolicitud));
+            Response.Redirect(string.Format("../../Reclamos/Admin/FrmReclamo.aspx?ModuleId={0}&IdReclamo={1}&from=admactividad&idfrom={2}", IdModuleReclamo, Request.QueryString["IdReclamo"], IdSolicitud));
         }
 
         protected void BtnAceptarInputClick(object sender, EventArgs e)
@@ -473,8 +481,12 @@ namespace Modules.AccionesPC.Admin
             //phInfoReclamo.Controls.Add(uc);
         }
 
+        public string IdModuleReclamo
+        {
+            get { return ViewState["IdModuleReclamo"] == null ? string.Empty : ViewState["IdModuleReclamo"].ToString(); }
+            set { ViewState["IdModuleReclamo"] = value; }
+        }
 
-       
         #endregion
 
         #region Properties

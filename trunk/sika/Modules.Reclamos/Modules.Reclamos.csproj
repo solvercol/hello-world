@@ -135,6 +135,7 @@
     <Content Include="UserControls\WUCFilterClient.ascx" />
     <Content Include="UserControls\WUCFilterProduct.ascx" />
     <Content Include="UserControls\WucIngresarIngenieroResponsable.ascx" />
+    <Content Include="UserControls\WucListadoAccionesApc.ascx" />
     <Content Include="UserControls\WUCLogReclamoView.ascx" />
     <Content Include="UserControls\WucPanelEstado.ascx" />
     <Content Include="UserControls\WUCReadingReclamoProducto.ascx" />
@@ -511,6 +512,13 @@
     <Compile Include="UserControls\WucIngresarIngenieroResponsable.ascx.designer.cs">
       <DependentUpon>WucIngresarIngenieroResponsable.ascx</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\WucListadoAccionesApc.ascx.cs">
+      <DependentUpon>WucListadoAccionesApc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WucListadoAccionesApc.ascx.designer.cs">
+      <DependentUpon>WucListadoAccionesApc.ascx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\WUCLogReclamoView.ascx.cs">
       <DependentUpon>WUCLogReclamoView.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -729,6 +737,10 @@
     <ProjectReference Include="..\Application.Core\Application.Core.csproj">
       <Project>{43E44D76-4378-4A99-9100-7C5CDFB9DAC0}</Project>
       <Name>Application.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Application.MainModule.AccionesPC\Application.MainModule.AccionesPC.csproj">
+      <Project>{F08F4BCB-00C4-4626-B7EA-5A245ADEDF36}</Project>
+      <Name>Application.MainModule.AccionesPC</Name>
     </ProjectReference>
     <ProjectReference Include="..\Application.MainModule.Reclamos\Application.MainModule.Reclamos.csproj">
       <Project>{C9837181-2A13-4F70-8132-570940C442C0}</Project>

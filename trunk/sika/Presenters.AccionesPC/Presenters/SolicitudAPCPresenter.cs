@@ -17,13 +17,16 @@ namespace Presenters.AccionesPC.Presenters
         readonly ISfTBL_Admin_SeccionesManagementServices _seccionesServices;
         readonly ISfTBL_Admin_OptionListManagementServices _optionListService;
         readonly ISfTBL_ModuloReclamos_ReclamoManagementServices _reclamoService;
+        private readonly ISfTBL_Admin_ModulosManagementServices _modulosServices;
 
         public SolicitudAPCPresenter(ISfTBL_ModuloAPC_SolicitudManagementServices solicitudService,
                                 ISfTBL_Admin_SeccionesManagementServices seccionesServices,
                                 ISfTBL_Admin_OptionListManagementServices optionListService,
-                                ISfTBL_ModuloReclamos_ReclamoManagementServices reclamoService)
+                                ISfTBL_ModuloReclamos_ReclamoManagementServices reclamoService, 
+                                ISfTBL_Admin_ModulosManagementServices modulosServices)
         {
             _solicitudService = solicitudService;
+            _modulosServices = modulosServices;
             _seccionesServices = seccionesServices;
             _optionListService = optionListService;
             _reclamoService = reclamoService;
@@ -47,6 +50,7 @@ namespace Presenters.AccionesPC.Presenters
         void ViewLoad(object sender, EventArgs e)
         {
             if (View.IsPostBack) return;
+            GetModuleReclamo();
             LoadSolicitud();
             CargarSecciones();
         }
@@ -158,6 +162,21 @@ namespace Presenters.AccionesPC.Presenters
         {
             View.MostrarBotonCierreSolicitud = View.UserSession.IsInRole("AdministradoresAPC") &&
                                                oSolicitud.TBL_Admin_EstadosProceso.Descripcion != "Registro";
+        }
+
+
+        private void GetModuleReclamo()
+        {
+            try
+            {
+                var oModule = _modulosServices.GetModuleByName("Reclamos");
+                if (oModule == null) return;
+                View.IdModuleReclamo = oModule.IdModulo.ToString();
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
         }
 
     }

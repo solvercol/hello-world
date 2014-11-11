@@ -46,7 +46,8 @@ namespace Infrastructure.Data.MainModule.Reclamos.Repositories
                                     .Include(x => x.TBL_Admin_EstadosProceso)
                                     .Include(x => x.TBL_ModuloReclamos_CategoriasReclamo)
                                     .Include(x => x.TBL_ModuloReclamos_CategoriasReclamo.TBL_Admin_Usuarios)
-                                    .Include(x => x.TBL_ModuloReclamos_TipoReclamo)                                    
+                                    .Include(x => x.TBL_ModuloReclamos_TipoReclamo)
+                                    .Include(x => x.TBL_ModuloAPC_Solicitud1)
                                     .Where(specific)
                                     .SingleOrDefault();
             }
@@ -78,6 +79,7 @@ namespace Infrastructure.Data.MainModule.Reclamos.Repositories
                                     .Include(x => x.TBL_Admin_Usuarios6)    // Usuario Cierre
                                     .Include(x => x.TBL_ModuloReclamos_CategoriasReclamo)
                                     .Include(x => x.TBL_ModuloReclamos_TipoReclamo)
+                                    .Include(x => x.TBL_ModuloAPC_Solicitud1)
                                     .Where(specific)
                                     .ToList();
             }

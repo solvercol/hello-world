@@ -18,6 +18,7 @@ namespace Application.MainModule.Reclamos.IServices
     {
         TBL_ModuloReclamos_Reclamo GetReclamoWithNavById(decimal id);
         TBL_ModuloReclamos_Reclamo GetReclamoById(decimal id);
+        bool AsociarReclamoConSolicitudApc(decimal idSolicitudApc, decimal idReclamo, int idUserSession);
     }
 }
     

@@ -19,15 +19,18 @@ namespace Presenters.Reclamos.Presenters
         private ISfTBL_ModuloReclamos_LogReclamosManagementServices _logServices;
         private readonly ISfTBL_Admin_EstadosProcesoManagementServices _estados;
         readonly ISfTBL_ModuloAPC_SolicitudManagementServices _solicitudService;
+        private readonly ISfTBL_Admin_ModulosManagementServices _modulosServices;
 
         public ReclamoPresenter(ISfTBL_ModuloReclamos_ReclamoManagementServices reclamoService,
                                 ISfTBL_Admin_SeccionesManagementServices seccionesServices,
                                 ISfTBL_Admin_OptionListManagementServices optionListService,
                                 ISfTBL_ModuloReclamos_LogReclamosManagementServices logServices, 
                                 ISfTBL_Admin_EstadosProcesoManagementServices estados, 
-                                ISfTBL_ModuloAPC_SolicitudManagementServices solicitudService)
+                                ISfTBL_ModuloAPC_SolicitudManagementServices solicitudService, 
+                                ISfTBL_Admin_ModulosManagementServices modulosServices)
         {
             _reclamoService = reclamoService;
+            _modulosServices = modulosServices;
             _solicitudService = solicitudService;
             _estados = estados;
             _logServices = logServices;
@@ -55,6 +58,7 @@ namespace Presenters.Reclamos.Presenters
         void ViewLoad(object sender, EventArgs e)
         {
             if (View.IsPostBack) return;
+            GetModuleApc();
             LoadOptionListValue();
             LoadReclamo();
             CargarSecciones();
@@ -144,6 +148,11 @@ namespace Presenters.Reclamos.Presenters
                     TextoBotonDevolverEsatdo(reclamo);
                     ValidarBotonCancelar(reclamo);
                     ValidarBotonCambiarIngeniero(reclamo);
+                    ValidarBotonAsociarPlanAccion(reclamo);
+                    View.ConfigurarHiperlinkAcciones = reclamo.IdAccionApc.HasValue? reclamo.IdAccionApc.ToString() : string.Empty;
+                    View.TextHyperlinkAcciones = reclamo.IdAccionApc.HasValue
+                        ? (string.IsNullOrEmpty(reclamo.TBL_ModuloAPC_Solicitud1.Codigo) ? "Acción Correctiva Preventiva" : reclamo.TBL_ModuloAPC_Solicitud1.Codigo)
+                                                     : string.Empty;
                 }
             }
             catch (Exception ex)
@@ -151,6 +160,8 @@ namespace Presenters.Reclamos.Presenters
                 CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
             }
         }
+
+      
 
         /// <summary>
         /// 
@@ -244,6 +255,12 @@ namespace Presenters.Reclamos.Presenters
             View.VerBotonCambiarIngeniero = oReclamo.TBL_Admin_EstadosProceso.Estado == "3" && View.UserSession.IsInRole("Administrador") && oReclamo.IdTipoReclamo == 1;
         }
 
+        private void ValidarBotonAsociarPlanAccion(TBL_ModuloReclamos_Reclamo reclamo)
+        {
+            View.MostrarBotonAsociacinPlanAccion = !reclamo.IdAccionApc.HasValue &&
+                                                   View.UserSession.IdUser == reclamo.IdResponsableActual &&
+                                                   reclamo.TBL_Admin_EstadosProceso.Descripcion == "En Proceso";
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -287,6 +304,8 @@ namespace Presenters.Reclamos.Presenters
                                          Descripcion = texto
                                      });
                 InvokeMessageBox(new MessageBoxEventArgs(Message.ProcessOk,TypeError.Ok));
+
+                LoadReclamo();
             }
             catch (Exception ex)
             {
@@ -303,9 +322,15 @@ namespace Presenters.Reclamos.Presenters
             var model = _solicitudService.NewEntity();
 
 
-            var op = _optionListService.ObtenerOpcionBykeyModuleId("ConsecitvoAPC", Convert.ToInt32(View.IdModule));
+            var op = _optionListService.ObtenerOpcionBykey("ConsecitvoAPC");
             if (op != null)
+            {
                 model.Consecutivo = Convert.ToInt32(op.Value) + 1;
+
+                op.Value = (Convert.ToInt32(op.Value) + 1).ToString();
+
+                _optionListService.Modify(op);
+            }
 
             model.IdSolicitante = View.UserSession.IdUser;
             model.IdResponsableActual = View.UserSession.IdUser;
@@ -324,6 +349,20 @@ namespace Presenters.Reclamos.Presenters
             model.ModifiedOn = DateTime.Now;
 
             return model;
+        }
+
+        private void GetModuleApc()
+        {
+            try
+            {
+                var oModule = _modulosServices.GetModuleByName("AccionesPC");
+                if(oModule == null)return;
+                View.IdModuloApc = oModule.IdModulo.ToString();
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
         }
 
     }

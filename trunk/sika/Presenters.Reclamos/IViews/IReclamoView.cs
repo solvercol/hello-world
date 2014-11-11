@@ -34,7 +34,10 @@ namespace Presenters.Reclamos.IViews
         bool VerBotonRechazarReclamo { set; }
         bool VerBotonCambiarIngeniero {set; }
         int? IdIngenieroResponsable { get; set; }
-
+        bool MostrarBotonAsociacinPlanAccion {  set; }
+        string ConfigurarHiperlinkAcciones { set; }
+        string TextHyperlinkAcciones {  set; }
+        string IdModuloApc { get; set; }
         // Load
         void LoadSecciones(IEnumerable<TBL_Admin_Secciones> secciones);
         void LoadInitReclamoControl();

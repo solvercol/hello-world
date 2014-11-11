@@ -102,6 +102,14 @@
                                             <asp:Label ID="lblTotalCostoReclamo" runat="server" ForeColor="Red" />
                                         </td>
                                     </tr>
+                                     <tr id="trAcciones" runat="server" visible="false">
+                                        <td class="SeccionesH3">
+                                            Acciones Correctivas:
+                                        </td>
+                                        <td class="SeccionesH4">
+                                           <asp:LinkButton ID="lnkAcciones" runat="server" OnClick="LnkAccionesClick"></asp:LinkButton>
+                                        </td>
+                                    </tr>
                                 </table>
                             </ContentTemplate>
                         </asp:UpdatePanel>
@@ -113,6 +121,7 @@
                                  <div style="padding:3px; text-align:right;">
                                     <asp:Button ID="btnRegresar" runat="server" Text="Regresar" OnClick="BtnRegresarClick" />
                                     <asp:Button ID="btnActualizarIndicadores" runat="server" Text="Crear Plan Acción" OnClick="BtnCreacionAccionesClick" Visible="false" />
+                                    <asp:Button ID="btnAsociarPlanAccion" runat="server" Text="Relacionar Plan Acción" OnClick="BtnRelacionarplanAccionClick" Visible="true" />
                                     <asp:Button ID="btnEdit" runat="server" Text="Editar" OnClick="BtnEditReclamoClick" Visible="false" />
                                     <asp:Button ID="btnDeclinar" runat="server" Text="Devolver" OnClick="BtnDevolverReclamoClick" Visible="false" />
                                     <asp:Button ID="btnRechazar" runat="server" Text="Rechazar Reclamo" OnClick="BtnCancelarReclamoClick" Visible="false" />

@@ -109,6 +109,10 @@
       <Project>{94FCB1C4-2C52-4D9D-A07B-F01AC38CF88E}</Project>
       <Name>Domain.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Domain.MainModule.AccionesPC\Domain.MainModule.AccionesPC.csproj">
+      <Project>{28C94AC4-37B5-40C2-984D-725B536DF460}</Project>
+      <Name>Domain.MainModule.AccionesPC</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Domain.MainModule.Reclamos\Domain.MainModule.Reclamos.csproj">
       <Project>{50D7DFA7-2314-41D2-A9BF-9630ADA55B98}</Project>
       <Name>Domain.MainModule.Reclamos</Name>

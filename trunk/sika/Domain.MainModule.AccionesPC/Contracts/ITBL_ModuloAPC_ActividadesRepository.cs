@@ -22,6 +22,8 @@ namespace Domain.MainModule.AccionesPC.Contracts
         List<TBL_ModuloAPC_Actividades> GetCompleteListBySpec(ISpecification<TBL_ModuloAPC_Actividades> specification);
         bool VerificarActividadesPorEstadoPorsolicitud(string estado, decimal idSolicitud);
         TBL_ModuloAPC_Actividades GetActividadById(decimal id);
+        bool VerificarActividadesPorEstadoPorReclamo(string estado, decimal idReclamo);
+
     }
 }
     

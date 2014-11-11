@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Domain.MainModule.AccionesPC.Contracts;
 using Domain.MainModules.Entities;
 using Domain.Core.Specification;
 using Domain.MainModule.Reclamos.Contracts;
@@ -13,20 +14,25 @@ namespace Application.MainModule.Reclamos.Services
     {
 
          #region Fields
-         readonly ITBL_ModuloReclamos_ReclamoRepository _TBLModuloReclamosReclamoRepository;
+         readonly ITBL_ModuloReclamos_ReclamoRepository _tblModuloReclamosReclamoRepository;
          readonly IReclamosExternalInterfacesService _reclamosExternarInterfaceService;
+        private readonly ITBL_ModuloAPC_SolicitudRepository _solicitudApcRepository;
          #endregion
 
          #region Constructor
          /// <summary>
          /// Constructor de la Calse 
          /// </summary>
-         public SfTBL_ModuloReclamos_ReclamoManagementServices(ITBL_ModuloReclamos_ReclamoRepository TBLModuloReclamosReclamoRepository, IReclamosExternalInterfacesService reclamosExternarInterfaceService)
+         public SfTBL_ModuloReclamos_ReclamoManagementServices(
+             ITBL_ModuloReclamos_ReclamoRepository tblModuloReclamosReclamoRepository, 
+             IReclamosExternalInterfacesService reclamosExternarInterfaceService, 
+             ITBL_ModuloAPC_SolicitudRepository solicitudApcRepository)
          {
-            if (TBLModuloReclamosReclamoRepository == null)
-                throw new ArgumentNullException("TBLModuloReclamosReclamoRepository");
-            _TBLModuloReclamosReclamoRepository = TBLModuloReclamosReclamoRepository;
-            _reclamosExternarInterfaceService = reclamosExternarInterfaceService;
+            if (tblModuloReclamosReclamoRepository == null)
+                throw new ArgumentNullException("tblModuloReclamosReclamoRepository");
+            _tblModuloReclamosReclamoRepository = tblModuloReclamosReclamoRepository;
+             _solicitudApcRepository = solicitudApcRepository;
+             _reclamosExternarInterfaceService = reclamosExternarInterfaceService;
          }
          #endregion
 
@@ -45,8 +51,8 @@ namespace Application.MainModule.Reclamos.Services
          public void Add(TBL_ModuloReclamos_Reclamo entity)
          {
             //Begin unit of work ( if Transaction is required init here a new TransactionScope element
-            var unitOfWork = _TBLModuloReclamosReclamoRepository.UnitOfWork;
-            _TBLModuloReclamosReclamoRepository.Add(entity);
+            var unitOfWork = _tblModuloReclamosReclamoRepository.UnitOfWork;
+            _tblModuloReclamosReclamoRepository.Add(entity);
             //Complete changes in this unit of work
             unitOfWork.Commit();
          }
@@ -59,8 +65,8 @@ namespace Application.MainModule.Reclamos.Services
             if (entity == null)
                 throw new ArgumentNullException(string.Format("Modificar : El objeto esta nulo."));
 
-            var unitOfWork = _TBLModuloReclamosReclamoRepository.UnitOfWork;
-            _TBLModuloReclamosReclamoRepository.Modify(entity);
+            var unitOfWork = _tblModuloReclamosReclamoRepository.UnitOfWork;
+            _tblModuloReclamosReclamoRepository.Modify(entity);
             unitOfWork.CommitAndRefreshChanges();
          }
 
@@ -73,9 +79,9 @@ namespace Application.MainModule.Reclamos.Services
                 throw new ArgumentNullException(string.Format("Eliminar : El objeto esta nulo."));
 
             //Begin unit of work ( if Transaction is required init here a new TransactionScope element
-            var unitOfWork = _TBLModuloReclamosReclamoRepository.UnitOfWork;
+            var unitOfWork = _tblModuloReclamosReclamoRepository.UnitOfWork;
 
-            _TBLModuloReclamosReclamoRepository.Remove(entity);
+            _tblModuloReclamosReclamoRepository.Remove(entity);
 
             //Complete changes in this unit of work
             unitOfWork.CommitAndRefreshChanges();
@@ -91,7 +97,7 @@ namespace Application.MainModule.Reclamos.Services
 
             Specification<TBL_ModuloReclamos_Reclamo> specification = new DirectSpecification<TBL_ModuloReclamos_Reclamo>(u => u.IdReclamo == id);
 
-            return _TBLModuloReclamosReclamoRepository.GetEntityBySpec(specification);
+            return _tblModuloReclamosReclamoRepository.GetEntityBySpec(specification);
            
          }
 
@@ -115,7 +121,7 @@ namespace Application.MainModule.Reclamos.Services
          public List<TBL_ModuloReclamos_Reclamo> FindBySpec(bool isActive)
          {
             Specification<TBL_ModuloReclamos_Reclamo> specification = new DirectSpecification<TBL_ModuloReclamos_Reclamo>(u => u.IsActive == isActive);
-            return _TBLModuloReclamosReclamoRepository.GetBySpec(specification).ToList();
+            return _tblModuloReclamosReclamoRepository.GetBySpec(specification).ToList();
          }
 
           /// <summary>
@@ -132,11 +138,84 @@ namespace Application.MainModule.Reclamos.Services
 
             Specification<TBL_ModuloReclamos_Reclamo> onlyEnabledSpec = new DirectSpecification<TBL_ModuloReclamos_Reclamo>(u => u.IsActive);
 
-            return _TBLModuloReclamosReclamoRepository.GetPagedElements(pageIndex, pageCount, u => u.CreateOn, onlyEnabledSpec, true).ToList();
+            return _tblModuloReclamosReclamoRepository.GetPagedElements(pageIndex, pageCount, u => u.CreateOn, onlyEnabledSpec, true).ToList();
          }
 
 
-       
+         public TBL_ModuloReclamos_Reclamo GetReclamoWithNavById(decimal id)
+         {
+             Specification<TBL_ModuloReclamos_Reclamo> onlyEnabledSpec = new DirectSpecification<TBL_ModuloReclamos_Reclamo>(u => u.IdReclamo == id);
+             var oReturn = _tblModuloReclamosReclamoRepository.GetCompleteEntity(onlyEnabledSpec);
+
+             if (oReturn != null)
+             {
+                 if (!string.IsNullOrEmpty(oReturn.CodigoProducto))
+                 {
+                     oReturn.DtoProducto = _reclamosExternarInterfaceService.GetProductByCodigoProducto(oReturn.CodigoProducto);
+                 }
+
+                 if (!string.IsNullOrEmpty(oReturn.CodigoCliente))
+                 {
+                     oReturn.DtoCliente = _reclamosExternarInterfaceService.GetClientByCodigoCliente(oReturn.CodigoCliente);
+                 }
+             }
+
+             return oReturn;
+         }
+
+         public TBL_ModuloReclamos_Reclamo GetReclamoById(decimal id)
+         {
+             //Specification<TBL_ModuloReclamos_Reclamo> onlyEnabledSpec = new DirectSpecification<TBL_ModuloReclamos_Reclamo>(u => u.IdReclamo == id);
+
+             var oReturn = _tblModuloReclamosReclamoRepository.GetEntityById(id);
+
+             if (oReturn != null)
+             {
+                 if (!string.IsNullOrEmpty(oReturn.CodigoProducto))
+                 {
+                     oReturn.DtoProducto = _reclamosExternarInterfaceService.GetProductByCodigoProducto(oReturn.CodigoProducto);
+                 }
+
+                 if (!string.IsNullOrEmpty(oReturn.CodigoCliente))
+                 {
+                     oReturn.DtoCliente = _reclamosExternarInterfaceService.GetClientByCodigoCliente(oReturn.CodigoCliente);
+                 }
+             }
+
+             return oReturn;
+         }
+
+
+        public bool AsociarReclamoConSolicitudApc(decimal idSolicitudApc, decimal idReclamo,int idUserSession)
+        {
+            var oSolicitud = _solicitudApcRepository.GetSolicitudById(idSolicitudApc);
+            if (oSolicitud == null) return false;
+
+            if(!oSolicitud.IdReclamoCreacion.HasValue)
+            {
+                var unitOfWork = _solicitudApcRepository.UnitOfWork;
+                oSolicitud.IdReclamoCreacion = idReclamo;
+                oSolicitud.ModifiedBy = idUserSession;
+                oSolicitud.ModifiedOn = DateTime.Now;
+                _solicitudApcRepository.Modify(oSolicitud);
+                unitOfWork.CommitAndRefreshChanges();
+            }
+
+            var oReclamo = _tblModuloReclamosReclamoRepository.GetEntityById(idReclamo);
+            if (oReclamo != null)
+            {
+                var unitOfWork = _tblModuloReclamosReclamoRepository.UnitOfWork;
+                oReclamo.IdAccionApc = idSolicitudApc;
+                oReclamo.ModifiedBy = idUserSession;
+                oReclamo.ModifiedOn = DateTime.Now;
+                _tblModuloReclamosReclamoRepository.Modify(oReclamo);
+                unitOfWork.CommitAndRefreshChanges();
+            }
+
+            return true;
+        }
+
+
 
          #endregion
 
@@ -151,56 +230,15 @@ namespace Application.MainModule.Reclamos.Services
             //if you have many repositories but  lifetime is per resolve only need
             //dispose one
 
-            if (_TBLModuloReclamosReclamoRepository != null)
+            if (_tblModuloReclamosReclamoRepository != null)
             {
-                _TBLModuloReclamosReclamoRepository.UnitOfWork.Dispose();
+                _tblModuloReclamosReclamoRepository.UnitOfWork.Dispose();
             }
         }
 
         #endregion
 
-        public TBL_ModuloReclamos_Reclamo GetReclamoWithNavById(decimal id)
-        {
-            Specification<TBL_ModuloReclamos_Reclamo> onlyEnabledSpec = new DirectSpecification<TBL_ModuloReclamos_Reclamo>(u => u.IdReclamo == id);
-            var oReturn = _TBLModuloReclamosReclamoRepository.GetCompleteEntity(onlyEnabledSpec);
-
-            if (oReturn != null)
-            {
-                if (!string.IsNullOrEmpty(oReturn.CodigoProducto))
-                {
-                    oReturn.DtoProducto = _reclamosExternarInterfaceService.GetProductByCodigoProducto(oReturn.CodigoProducto);
-                }
-
-                if (!string.IsNullOrEmpty(oReturn.CodigoCliente))
-                {
-                    oReturn.DtoCliente = _reclamosExternarInterfaceService.GetClientByCodigoCliente(oReturn.CodigoCliente);
-                }
-            }
-
-            return oReturn;
-        }
-
-        public TBL_ModuloReclamos_Reclamo GetReclamoById(decimal id)
-        {
-            //Specification<TBL_ModuloReclamos_Reclamo> onlyEnabledSpec = new DirectSpecification<TBL_ModuloReclamos_Reclamo>(u => u.IdReclamo == id);
-
-            var oReturn = _TBLModuloReclamosReclamoRepository.GetEntityById(id);
-
-            if (oReturn != null)
-            {
-                if (!string.IsNullOrEmpty(oReturn.CodigoProducto))
-                {
-                    oReturn.DtoProducto = _reclamosExternarInterfaceService.GetProductByCodigoProducto(oReturn.CodigoProducto);
-                }
-
-                if (!string.IsNullOrEmpty(oReturn.CodigoCliente))
-                {
-                    oReturn.DtoCliente = _reclamosExternarInterfaceService.GetClientByCodigoCliente(oReturn.CodigoCliente);
-                }
-            }
-
-            return oReturn;
-        }
+      
     }
 }
     
