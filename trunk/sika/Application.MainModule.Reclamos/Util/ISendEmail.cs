@@ -11,5 +11,10 @@ namespace Application.MainModule.Reclamos.Util
         bool EnviarCorreoelectronicoAlternativaSolucion(decimal idAlternativa, TBL_Admin_Usuarios userSession);
 
         bool EnviarCorreoelectronicoActividades(decimal idActividad, TBL_Admin_Usuarios userSession);
+
+        bool EnviarCorreoelectronicoActividadRealizada(decimal idActividad, TBL_Admin_Usuarios userSession);
+
+        bool EnviarCorreoelectronicoActividadCancelada(decimal idActividad, TBL_Admin_Usuarios userSession,
+                                                          string motivo);
     }
 }

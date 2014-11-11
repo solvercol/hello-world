@@ -159,7 +159,7 @@ namespace Applcations.MainModule.DocumentLibrary.Services
                  oDoc.Adjunto = adjunto;
                  oDoc.contentTypeC = contentType;
                  oDoc.Comentarios = comentarios;
-                 oDoc.Tipo = tipo;
+                 oDoc.tipo = tipo;
                  //oDoc.TBL_ModuloDocumentosAnexos_Contenido.Add(AddContentDocument(adjunto, comentarios, contentType, user.Nombres,
                  //                                                           nameFile));
 

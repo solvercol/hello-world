@@ -137,7 +137,6 @@ namespace Infrastructure.CrossCutting.IoC
             container.RegisterType<IExportToExcel, ExportToExcel>(new TransientLifetimeManager());
             //container.RegisterType<IExportDataTableToHtml, ExportDataTableToHtml>(new TransientLifetimeManager());
             #endregion
-
           
             #region Servicios Transversales
             container.RegisterType<IAutentication, AutenticationServices>(new TransientLifetimeManager());

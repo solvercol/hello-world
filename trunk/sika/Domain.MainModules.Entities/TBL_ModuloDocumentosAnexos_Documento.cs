@@ -249,7 +249,7 @@ namespace Domain.MainModules.Entities
         private Nullable<System.DateTime> _modifiedOn;
     
         [DataMember]
-        public string Tipo
+        public string tipo
         {
             get { return _tipo; }
             set
@@ -257,7 +257,7 @@ namespace Domain.MainModules.Entities
                 if (_tipo != value)
                 {
                     _tipo = value;
-                    OnPropertyChanged("Tipo");
+                    OnPropertyChanged("tipo");
                 }
             }
         }

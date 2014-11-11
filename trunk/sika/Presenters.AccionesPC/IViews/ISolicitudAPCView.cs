@@ -29,6 +29,7 @@ namespace Presenters.AccionesPC.IViews
         string FechaReclamo { get; set; }
         string Asesor { get; set; }
         bool ShowInfoReclamo { get; set; }
+        bool MostrarBotonCierreSolicitud {  set; }
 
         // Load
         void LoadSecciones(IEnumerable<TBL_Admin_Secciones> secciones);

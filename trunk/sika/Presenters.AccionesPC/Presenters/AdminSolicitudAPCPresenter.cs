@@ -135,13 +135,15 @@ namespace Presenters.AccionesPC.Presenters
 
                 if (item != null)
                 {
-                    View.IdAreaAccion = item.IdAreaAccion;
+                    View.IdAreaAccion = item.IdAreaAccion.GetValueOrDefault();
                     LoadProcesos();
                     View.Proceso = item.Proceso;
                     View.TipoAccion = item.TipoAccion;
                     View.DescripcionAccion = item.DescripcionAccion;
-                    View.FechaDesde = item.FechaDesde;
-                    View.FechaHasta = item.FechaHasta;
+                    if (item.FechaDesde.HasValue)
+                        View.FechaDesde = Convert.ToDateTime(item.FechaDesde);
+                    if (item.FechaHasta.HasValue)
+                        View.FechaHasta = Convert.ToDateTime(item.FechaHasta);
 
                     if (item.IdReclamoCreacion.HasValue)
                         LoadReclamo(item.IdReclamoCreacion.GetValueOrDefault());

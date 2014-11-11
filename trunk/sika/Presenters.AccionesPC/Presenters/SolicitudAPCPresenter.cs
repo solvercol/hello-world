@@ -3,6 +3,7 @@ using System.Reflection;
 using Application.Core;
 using Application.MainModule.AccionesPC.IServices;
 using Applications.MainModule.Admin.IServices;
+using Domain.MainModules.Entities;
 using Infrastructure.CrossCutting.NetFramework.Enums;
 using Presenters.AccionesPC.IViews;
 using Application.MainModule.Reclamos.IServices;
@@ -78,6 +79,8 @@ namespace Presenters.AccionesPC.Presenters
 
                     if (item.IdReclamoCreacion.HasValue)
                         LoadReclamo(item.IdReclamoCreacion.GetValueOrDefault());
+
+                    ShowbuttonCierreSolicitud(item);
                 }
             }
             catch (Exception ex)
@@ -126,6 +129,7 @@ namespace Presenters.AccionesPC.Presenters
                     }
 
                     View.ShowInfoReclamo = true;
+                    
                 }
             }
             catch (Exception ex)
@@ -149,5 +153,12 @@ namespace Presenters.AccionesPC.Presenters
                 CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
             }
         }
+
+        private void ShowbuttonCierreSolicitud(TBL_ModuloAPC_Solicitud oSolicitud)
+        {
+            View.MostrarBotonCierreSolicitud = View.UserSession.IsInRole("AdministradoresAPC") &&
+                                               oSolicitud.TBL_Admin_EstadosProceso.Descripcion != "Registro";
+        }
+
     }
 }

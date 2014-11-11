@@ -199,6 +199,10 @@
       <Project>{43E44D76-4378-4A99-9100-7C5CDFB9DAC0}</Project>
       <Name>Application.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Application.MainModule.AccionesPC\Application.MainModule.AccionesPC.csproj">
+      <Project>{F08F4BCB-00C4-4626-B7EA-5A245ADEDF36}</Project>
+      <Name>Application.MainModule.AccionesPC</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Application.MainModule.Reclamos\Application.MainModule.Reclamos.csproj">
       <Project>{C9837181-2A13-4F70-8132-570940C442C0}</Project>
       <Name>Application.MainModule.Reclamos</Name>

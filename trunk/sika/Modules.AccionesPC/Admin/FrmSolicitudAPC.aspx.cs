@@ -72,6 +72,7 @@ namespace Modules.AccionesPC.Admin
             ImprimirTituloVentana(string.Format("Acciones Preventivas Correctivas."));
             LoadUserControl();
             LoadUserControlVentanaMensajes(null);
+
         }
 
         protected override void OnInit(EventArgs e)
@@ -90,7 +91,8 @@ namespace Modules.AccionesPC.Admin
                 //todo: Bloque de código que se encargará de actuaizar el panel de resumen cuando el WF termine el paso..
                 WucPanelEstado1.ActualizarPanelResumen();
                 ActualizarControlUsuarioActivo();
-                //wucLogReclamo.CargarLog();
+                WucLogSolicitudesApc1.RefreshInfo();
+                
                 //if (FilterEvent != null)
                 //    FilterEvent(null, EventArgs.Empty);
 
@@ -102,12 +104,12 @@ namespace Modules.AccionesPC.Admin
 
                 if (oDocument.MessagesError.Count > 0)
                 {
-                    //LastLoadedControlMessages = string.Format("{0}WucRenderMessagesError.ascx", ROOTUC);
-                    //LoadUserControlVentanaMensajes(oDocument.MessagesError);
-                    //pnlVentanaEmergente.Width = 550;
-                    //pnlVentanaEmergente.Height = 200;
-                    //litTitulo.Text = @"Resultado del proceso de validación.";
-                    //mpeVentanaEmergente.Show();
+                    LastLoadedControlMessages = string.Format("{0}WucRenderMessagesError.ascx", ROOTUC);
+                    LoadUserControlVentanaMensajes(oDocument.MessagesError);
+                    pnlVentanaEmergente.Width = 550;
+                    pnlVentanaEmergente.Height = 200;
+                    litTitulo.Text = @"Resultado del proceso de validación.";
+                    mpeVentanaEmergente.Show();
                 }
                 else if (oDocument.OutputParameters.Count > 0)
                 {
@@ -220,7 +222,7 @@ namespace Modules.AccionesPC.Admin
 
         protected void BtnViewReclamoClick(object sender, EventArgs e)
         {
-            //Response.Redirect(string.Format("FrmReclamo.aspx?ModuleId={0}&IdReclamo={1}&from=admactividad&idfrom={2}", ModuleId, IdReclamo, IdActividad));
+            Response.Redirect(string.Format("../../Reclamos/Admin/FrmReclamo.aspx?ModuleId={0}&IdReclamo={1}&from=admactividad&idfrom={2}", ModuleId, IdReclamo, IdSolicitud));
         }
 
         protected void BtnAceptarInputClick(object sender, EventArgs e)
@@ -261,7 +263,7 @@ namespace Modules.AccionesPC.Admin
                     {
                         var uc = this.GetUserControl<WucCierreSolicitud>("UcRender", "phlVentanaMensajes");
                         if (uc == null) return;
-                        if (string.IsNullOrEmpty(uc.Adecuada) || string.IsNullOrEmpty(uc.Eficaz)) return;
+                        if (string.IsNullOrEmpty(uc.Adecuada) && string.IsNullOrEmpty(uc.Eficaz)) return;
                         if(string.IsNullOrEmpty(uc.ConformidadEliminada))return;
 
 
@@ -386,7 +388,6 @@ namespace Modules.AccionesPC.Admin
 
             if (string.IsNullOrEmpty(controlPath))
             {
-                //controlPath = "WucFechaEntrega.ascx";
                 return;
             }
             if (string.IsNullOrEmpty(controlPath)) return;
@@ -396,17 +397,17 @@ namespace Modules.AccionesPC.Admin
             ConfigurarUserControl(uc);
             phlVentanaMensajes.Controls.Add(uc);
 
-            //if (items != null)
-            //{
-            //    if (controlPath.Contains("WucRenderMessagesError"))
-            //    {
-            //        var bl = this.GetUserControl<WucRenderMessagesError>("UcRender", "phlVentanaMensajes");
-            //        if (bl != null)
-            //        {
-            //            bl.RenderMessages(items);
-            //        }
-            //    }
-            //}
+            if (items != null)
+            {
+                if (controlPath.Contains("WucRenderMessagesError"))
+                {
+                    var bl = this.GetUserControl<WucRenderMessagesError>("UcRender", "phlVentanaMensajes");
+                    if (bl != null)
+                    {
+                        bl.RenderMessages(items);
+                    }
+                }
+            }
         }
 
         private void ConfigurarUserControl(Control oControl)
@@ -418,7 +419,16 @@ namespace Modules.AccionesPC.Admin
             //    uc.IdResponsable = IdIngenieroResponsable.ToString();
         }
 
-       
+        protected void BtnCerrarAccionClick(object sender, EventArgs e)
+        {
+            litTitulo.Text = @"Cierre de la acción";
+            InputWindow = "CerrarSolicitud";
+            pnlVentanaEmergente.Width = 600;
+            pnlVentanaEmergente.Height = 250;
+            LastLoadedControlMessages = "../UserControls/WucCierreSolicitud.ascx";
+            LoadUserControlVentanaMensajes(null);
+            mpeVentanaEmergente.Show();
+        }
         #endregion
 
         #region View Members
@@ -430,6 +440,7 @@ namespace Modules.AccionesPC.Admin
             Presenter.LoadSolicitud();
         }
 
+       
         public void LoadSecciones(IEnumerable<TBL_Admin_Secciones> secciones)
         {
             mnuSecciones.Items.Clear();
@@ -462,11 +473,17 @@ namespace Modules.AccionesPC.Admin
             //phInfoReclamo.Controls.Add(uc);
         }
 
+
+       
         #endregion
 
         #region Properties
 
-       
+        public bool MostrarBotonCierreSolicitud
+        {
+            set { btncerrar.Visible = value; }
+        }
+
 
         private string LastLoadedControlMessages
         {
@@ -489,9 +506,7 @@ namespace Modules.AccionesPC.Admin
         {
             get { return ModuleId; }
         }
-
-
-
+        
         public string IdSolicitud
         {
             get

@@ -107,6 +107,11 @@ namespace Infrastructure.CrossCutting.NetFramework.Util
               return UrlUtil.GetUrlPreViewActividad(idActividad);
         }
 
+        public static string GetUrlPreViewCommentApc(string idComentario)
+        {
+            return UrlUtil.GetUrlPreViewCommentApc(idComentario);
+        }
+
         #region Solicitudes
 
         public static string GetUrlPreViewDocumentSolicitudforEmail()
