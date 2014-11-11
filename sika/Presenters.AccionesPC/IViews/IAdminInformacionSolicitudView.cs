@@ -16,5 +16,6 @@ namespace Presenters.AccionesPC.IViews
         string ResultadoCierre { get; set; }
         string ObservacionesCierre { get; set; }
         bool ShowInfoCierre { get; set; }
+        string ReclamosRelacionados { set; }
     }
 }

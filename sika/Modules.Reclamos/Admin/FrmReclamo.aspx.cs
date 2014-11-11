@@ -368,6 +368,7 @@ namespace Modules.Reclamos.Admin
                         EjecutarWorkFlow(parameters, InputWindow);
                     }
                     break;
+
             }
         }
 
@@ -402,6 +403,25 @@ namespace Modules.Reclamos.Admin
             LastLoadedControlMessages = "../UserControls/WucCambiarIngenieroResponsable.ascx";
             LoadUserControlVentanaMensajes(null);
             mpeVentanaEmergente.Show();
+        }
+
+        protected void BtnRelacionarplanAccionClick(object sender, EventArgs e)
+        {
+            InputWindow = "RelacioarPlanAccion";
+            litTitulo.Text = @"Seleccione el Plan de Acción.";
+            LastLoadedControlMessages = "../UserControls/WucListadoAccionesApc.ascx";
+            LoadUserControlVentanaMensajes(null);
+            btnAceptarInput.Visible = false;
+            pnlVentanaEmergente.Width = 700;
+            pnlVentanaEmergente.Height = 300;
+            mpeVentanaEmergente.Show();
+        }
+
+        protected void LnkAccionesClick(object sender, EventArgs e)
+        {
+            if (ViewState["IdAccionPc"] == null) return;
+
+            Response.Redirect(string.Format("../../AccionesPC/Admin/FrmSolicitudAPC.aspx?ModuleId={0}&IdSolicitud={1}&from=misolestados&IdReclamo={2}", IdModuloApc, ViewState["IdAccionPc"], IdReclamo));
         }
         #endregion
 
@@ -495,6 +515,14 @@ namespace Modules.Reclamos.Admin
             uc.IdDocument = IdCategoria;
             if (IdIngenieroResponsable > 0)
             uc.IdResponsable = IdIngenieroResponsable.ToString();
+            uc.ActualizarEvent += uc_ActualizarEvent;
+        }
+
+        void uc_ActualizarEvent(object sender, ViewResulteventArgs e)
+        {
+            ShowMessageOk("Proceso realizado satisfactoriamente.");
+            if (FilterEvent != null)
+                FilterEvent(null, EventArgs.Empty);
         }
 
         #endregion
@@ -506,6 +534,34 @@ namespace Modules.Reclamos.Admin
         void RefreshReclamoInfo()
         {
             Presenter.LoadReclamo();
+        }
+
+        public bool MostrarBotonAsociacinPlanAccion
+        {
+            set
+            {
+                btnAsociarPlanAccion.Visible = value;
+                btnActualizarIndicadores.Visible = value;
+            }
+        }
+
+        public string ConfigurarHiperlinkAcciones
+        {
+            set { 
+                ViewState["IdAccionPc"] = value;
+                trAcciones.Visible = !string.IsNullOrEmpty(value);
+            }
+        }
+
+        public string TextHyperlinkAcciones
+        {
+            set { lnkAcciones.Text = value; }
+        }
+
+        public string IdModuloApc
+        {
+            get { return ViewState["IdModuleApc"] == null ? string.Empty : ViewState["IdModuleApc"].ToString(); }
+            set { ViewState["IdModuleApc"] = value; }
         }
 
         public void LoadSecciones(IEnumerable<TBL_Admin_Secciones> secciones)
@@ -733,6 +789,6 @@ namespace Modules.Reclamos.Admin
 
         #endregion
 
-       
+     
     }
 }

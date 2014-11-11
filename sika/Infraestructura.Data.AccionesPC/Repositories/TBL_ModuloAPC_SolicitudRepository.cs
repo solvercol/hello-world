@@ -101,6 +101,7 @@ namespace Infrastructure.Data.MainModule.AccionesPC.Repositories
                                     .Include(x => x.TBL_Admin_Usuarios9) // IdSolicitante
                                     .Include(x => x.TBL_ModuloAPC_Areas) // Areas
                                     .Include(x => x.TBL_Admin_EstadosProceso)
+                                    .Include(x => x.TBL_ModuloReclamos_Reclamo1)
                           .Select(c => c)
                           .SingleOrDefault();
             }

@@ -119,6 +119,21 @@ namespace Infrastructure.Data.MainModule.AccionesPC.Repositories
             }
             return null;
         }
+
+
+        public bool VerificarActividadesPorEstadoPorReclamo(string estado, decimal idReclamo)
+        {
+
+            var set = _currentUnitOfWork.CreateSet<TBL_ModuloAPC_Actividades>();
+
+            var list = set.Where(c => c.EstadoActividad == estado && c.TBL_ModuloAPC_Solicitud.TBL_ModuloReclamos_Reclamo.IdReclamo == idReclamo)
+                          .Select(c => c)
+                          .ToList();
+
+            return list.Count > 0;
+
+        }
+
     }
 }
     

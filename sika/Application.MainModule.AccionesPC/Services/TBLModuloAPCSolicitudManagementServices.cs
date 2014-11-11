@@ -132,6 +132,22 @@ namespace Application.MainModule.AccionesPC.Services
             return _TBLModuloAPCSolicitudRepository.GetPagedElements(pageIndex, pageCount, u => u.IdSolucitudAPC, onlyEnabledSpec, true).ToList();
          }
 
+         public TBL_ModuloAPC_Solicitud GetById(decimal id)
+         {
+             //Specification<TBL_ModuloAPC_Solicitud> onlyEnabledSpec = new DirectSpecification<TBL_ModuloAPC_Solicitud>(u => u.IsActive && u.IdSolucitudAPC == id);
+
+             return _TBLModuloAPCSolicitudRepository.GetSolicitudById(id);
+         }
+
+         public TBL_ModuloAPC_Solicitud GetWithNavById(decimal id)
+         {
+             Specification<TBL_ModuloAPC_Solicitud> onlyEnabledSpec = new DirectSpecification<TBL_ModuloAPC_Solicitud>(u => u.IsActive && u.IdSolucitudAPC == id);
+
+             return _TBLModuloAPCSolicitudRepository.GetCompleteEntity(onlyEnabledSpec);
+         }
+
+        
+
          #endregion
 
          #region IDisposable Members
@@ -153,19 +169,7 @@ namespace Application.MainModule.AccionesPC.Services
 
         #endregion
 
-        public TBL_ModuloAPC_Solicitud GetById(decimal id)
-        {
-            //Specification<TBL_ModuloAPC_Solicitud> onlyEnabledSpec = new DirectSpecification<TBL_ModuloAPC_Solicitud>(u => u.IsActive && u.IdSolucitudAPC == id);
-
-            return _TBLModuloAPCSolicitudRepository.GetSolicitudById(id);
-        }
-
-        public TBL_ModuloAPC_Solicitud GetWithNavById(decimal id)
-        {
-            Specification<TBL_ModuloAPC_Solicitud> onlyEnabledSpec = new DirectSpecification<TBL_ModuloAPC_Solicitud>(u => u.IsActive && u.IdSolucitudAPC == id);
-
-            return _TBLModuloAPCSolicitudRepository.GetCompleteEntity(onlyEnabledSpec);
-        }
+       
     }
 }
     

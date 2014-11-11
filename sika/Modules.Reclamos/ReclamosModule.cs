@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Data;
 using Application.Core;
+using Application.MainModule.AccionesPC.IServices;
 using Application.MainModule.Reclamos.IServices;
 using Application.MainModule.SqlServices.IServices;
 using Applications.MainModule.Admin.IServices;
@@ -14,13 +15,15 @@ namespace Modules.Reclamos
         private readonly IReclamosAdoService _sqlServices;
         private readonly ISfTBL_ModuloReclamos_CategoriasReclamoManagementServices _categoriasService;
         private readonly ISfTBL_Admin_OptionListManagementServices _optionServices;
-
-
+        private readonly ISfTBL_ModuloAPC_SolicitudManagementServices _solicitudesApcServices;
+        private readonly ISfTBL_ModuloReclamos_ReclamoManagementServices _reclamosServies;
         public ReclamosModule()
         {
             _sqlServices = IoC.Resolve<IReclamosAdoService>();
             _categoriasService = IoC.Resolve<ISfTBL_ModuloReclamos_CategoriasReclamoManagementServices>();
             _optionServices = IoC.Resolve<ISfTBL_Admin_OptionListManagementServices>();
+            _solicitudesApcServices = IoC.Resolve<ISfTBL_ModuloAPC_SolicitudManagementServices>();
+            _reclamosServies = IoC.Resolve<ISfTBL_ModuloReclamos_ReclamoManagementServices>();
         }
 
 
@@ -39,6 +42,16 @@ namespace Modules.Reclamos
         {
             var opcion = _optionServices.ObtenerOpcionBykey("Areas");
             return opcion == null ? null : opcion.Value.Split('|');
+        }
+
+        public List<TBL_ModuloAPC_Solicitud> ListadoSolicitudesApc()
+        {
+            return _solicitudesApcServices.FindBySpec(true);
+        }
+
+        public bool AsociarReclamoConSolicitudApc(decimal idSolicitud, decimal idreclamo, int idUserSession)
+        {
+            return _reclamosServies.AsociarReclamoConSolicitudApc(idSolicitud, idreclamo, idUserSession);
         }
     }
 }

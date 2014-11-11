@@ -140,6 +140,15 @@ namespace Applications.MainModule.Admin.Services
 
          }
 
+         public TBL_Admin_Modulos GetModuleByName(string name)
+         {
+            
+             Specification<TBL_Admin_Modulos> specification = new DirectSpecification<TBL_Admin_Modulos>(u => u.NombreModulo == name);
+
+             return _tblAdminModulosRepository.FindModuleBySpec(specification);
+
+         }
+
          #endregion
 
          #region IDisposable Members

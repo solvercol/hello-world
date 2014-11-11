@@ -34,5 +34,6 @@ namespace Presenters.AccionesPC.IViews
         // Load
         void LoadSecciones(IEnumerable<TBL_Admin_Secciones> secciones);
         void LoadInitSolicitudControl();
+        string IdModuleReclamo { get; set; }
     }
 }

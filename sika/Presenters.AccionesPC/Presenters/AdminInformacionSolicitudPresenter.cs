@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Reflection;
 using Application.Core;
 using Application.MainModule.AccionesPC.IServices;
@@ -63,6 +64,9 @@ namespace Presenters.AccionesPC.Presenters
 
                     // Verificando info de cierre
                     View.ShowInfoCierre = item.IdEstado == 4;
+                    var listadoReclamos = item.TBL_ModuloReclamos_Reclamo1.Aggregate(string.Empty, (current, reclamo) => current + string.Format("{0} - ", reclamo.NumeroReclamo));
+                    if (!string.IsNullOrEmpty(listadoReclamos))
+                        View.ReclamosRelacionados = listadoReclamos.Substring(0, listadoReclamos.TrimEnd().Length - 1);
                 }
             }
             catch (Exception ex)

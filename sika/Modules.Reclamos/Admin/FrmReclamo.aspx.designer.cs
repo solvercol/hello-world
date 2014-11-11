@@ -103,6 +103,24 @@ namespace Modules.Reclamos.Admin {
         protected global::System.Web.UI.WebControls.Label lblTotalCostoReclamo;
         
         /// <summary>
+        /// trAcciones control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow trAcciones;
+        
+        /// <summary>
+        /// lnkAcciones control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkAcciones;
+        
+        /// <summary>
         /// upMenuBar control.
         /// </summary>
         /// <remarks>
@@ -128,6 +146,15 @@ namespace Modules.Reclamos.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnActualizarIndicadores;
+        
+        /// <summary>
+        /// btnAsociarPlanAccion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAsociarPlanAccion;
         
         /// <summary>
         /// btnEdit control.

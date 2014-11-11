@@ -7,7 +7,7 @@
         </td>
     </tr>
     <tr>
-        <th style="width: 10%; text-align:left; vertical-align: top;">
+        <th style="width: 15%; text-align:left; vertical-align: top;">
             Proceso Asociado :
         </th>
 
@@ -21,7 +21,7 @@
 
     </tr>
     <tr>
-        <th style="width: 10%; text-align:left; vertical-align: top;">
+        <th style="width: 15%; text-align:left; vertical-align: top;">
             Posible Problema ó No Conformidad :
         </th>
 
@@ -29,6 +29,20 @@
 
         <td class="Line" style="width: 60%">
             <asp:Label ID="lblDescripcionAccion" runat="server" />
+        </td>
+
+        <td ></td>
+
+    </tr>
+    <tr id="trReclamorelacionado" runat="server" visible="false">
+        <th style="width: 15%; text-align:left; vertical-align: top;">
+            Reclamos Relacionados :
+        </th>
+
+        <td ></td>
+
+        <td class="Line" style="width: 60%">
+            <asp:Label ID="lblReclamosRelacionados" runat="server" />
         </td>
 
         <td ></td>

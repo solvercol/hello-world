@@ -17,6 +17,8 @@ namespace Applications.MainModule.Admin.IServices
     {
 
         TBL_Admin_Modulos GetModuleById(int id);
+
+        TBL_Admin_Modulos GetModuleByName(string name);
     }
 }
     

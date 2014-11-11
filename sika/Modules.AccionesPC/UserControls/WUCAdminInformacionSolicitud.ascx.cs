@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using Application.Core;
 using ASP.NETCLIENTE.UI;
 using Domain.MainModules.Entities;
 using Presenters.AccionesPC.IViews;
@@ -92,6 +87,15 @@ namespace Modules.AccionesPC.UserControls
             {
                 trCierreInfo.Visible = value;
                 trCierreTitle.Visible = value;
+            }
+        }
+
+        public string ReclamosRelacionados
+        {
+            set
+            { 
+                lblReclamosRelacionados.Text = value;
+                trReclamorelacionado.Visible = !string.IsNullOrEmpty(value);
             }
         }
 
