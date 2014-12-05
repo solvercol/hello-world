@@ -125,8 +125,6 @@ namespace Presenters.AccionesPC.Presenters
             }
         }
 
-    
-
         public void AddComentarioRelacionado()
         {
             if (string.IsNullOrEmpty(View.IdComentario)) return;

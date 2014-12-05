@@ -95,10 +95,8 @@ from	TBL_ModuloReclamos_Reclamo reclamo with(nolock)
 			on reclamo.CodigoProducto = producto.CODIGOPRODUCTO
 		left join Sika_SolverNET..Clientes cliente with(nolock)
 			on reclamo.CodigoCliente = cliente.CODIGOCLIENTE
-where	year(reclamo.FechaReclamo) >= year(@dateFrom)
-		and year(reclamo.FechaReclamo) <= year(@dateEnd)
-		and month(reclamo.FechaReclamo) >= month(@dateFrom)
-		and month(reclamo.FechaReclamo) <= month(@dateEnd)
+where	reclamo.FechaReclamo >= @dateFrom
+		and reclamo.FechaReclamo <= @dateEnd
 		and reclamo.NumeroReclamo like '%' + case @NoReclamo when '' then reclamo.NumeroReclamo else @NoReclamo end + '%'
 		and reclamo.IdTipoReclamo = 1
 		and (

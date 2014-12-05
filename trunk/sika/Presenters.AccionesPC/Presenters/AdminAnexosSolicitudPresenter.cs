@@ -45,7 +45,29 @@ namespace Presenters.AccionesPC.Presenters
 
         public void LoadInitData()
         {
+            LoadSolicitud();
             LoadArhchivosAdjuntos();
+        }
+
+        void LoadSolicitud()
+        {
+            if (string.IsNullOrEmpty(View.IdSolicitud)) return;
+
+            try
+            {
+                var solicitud = _solicitudService.GetById(Convert.ToDecimal(View.IdSolicitud));
+
+                if (solicitud != null)
+                {
+                    View.CanAddAnexos = ((solicitud.IdEstado == 14) && solicitud.IdResponsableActual == View.UserSession.IdUser)
+                     || View.UserSession.IsInRole("Administrador");
+
+                }
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
         }
 
         public void AddArchivoAdjunto()

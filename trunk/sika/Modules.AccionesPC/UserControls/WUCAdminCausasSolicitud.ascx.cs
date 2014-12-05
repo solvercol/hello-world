@@ -48,7 +48,8 @@ namespace Modules.AccionesPC.UserControls
 
         protected void BtnAddCausa_Click(object sender, EventArgs e)
         {
-            InitAdminActividad();
+            InitAdminCausa();
+            IsNew = true;
             ShowAdminCausaWindow(true);
         }
 
@@ -66,16 +67,20 @@ namespace Modules.AccionesPC.UserControls
                 return;
             }
 
-            Presenter.AddCausaSolicitud();
+            if (IsNew)
+                Presenter.AddCausaSolicitud();
+            else
+                Presenter.UpdateCausa();
         }
 
-        protected void BtnSelectActividad_Click(object sender, EventArgs e)
+        protected void BtnSelectCausa_Click(object sender, EventArgs e)
         {
             var btn = (ImageButton)sender;
 
             var IdSelectedCausa = btn.CommandArgument;
+            SelectedId = Convert.ToDecimal(IdSelectedCausa);
 
-            Response.Redirect(string.Format("../Admin/FrmAdminActividadSolicitud.aspx?ModuleId={0}&IdActividad={1}&from=solicitud&IdSolicitud={2}&fromaux={3}&idfromaux={4}", IdModule, IdSelectedCausa, IdSolicitud, FromPage, IdFrom));
+            Presenter.LoadCausa();
         }
 
         #endregion
@@ -100,9 +105,9 @@ namespace Modules.AccionesPC.UserControls
 
                 var lblAutor = e.Item.FindControl("lblAutor") as Label;
                 if (lblAutor != null) lblAutor.Text = string.Format("{0}", item.TBL_Admin_Usuarios.Nombres);
-              
-                var imgSelectActividad = e.Item.FindControl("imgSelectActividad") as ImageButton;
-                if (imgSelectActividad != null) imgSelectActividad.CommandArgument = string.Format("{0}", item.IdSolicitudAPC);
+
+                var imgSelectCausa = e.Item.FindControl("imgSelectCausa") as ImageButton;
+                if (imgSelectCausa != null) imgSelectCausa.CommandArgument = string.Format("{0}", item.IdCausa);
             }
         }
 
@@ -129,9 +134,10 @@ namespace Modules.AccionesPC.UserControls
             }
         }
 
-        void InitAdminActividad()
+        void InitAdminCausa()
         {
-            Descripcion = string.Empty;            
+            Descripcion = string.Empty;
+            Comentarios = string.Empty;
         }
 
 
@@ -210,8 +216,44 @@ namespace Modules.AccionesPC.UserControls
             }
         }
 
+        public bool IsNew
+        {
+            get
+            {
+                return Convert.ToBoolean(ViewState["AdminCausasSolicitud_IsNew"]);
+            }
+            set
+            {
+                ViewState["AdminCausasSolicitud_IsNew"] = value;
+            }
+        }
+
+        public decimal SelectedId
+        {
+            get
+            {
+                return Convert.ToDecimal(ViewState["AdminCausasSolicitud_SelectedId"]);
+            }
+            set
+            {
+                ViewState["AdminCausasSolicitud_SelectedId"] = value;
+            }
+        }
+
+        public bool CanAddCausas
+        {
+            get
+            {
+                return btnAddCausa.Visible;
+            }
+            set
+            {
+                btnAddCausa.Visible = value;
+            }
+        }
+
         #endregion
 
-        #endregion        
+        #endregion
     }
 }

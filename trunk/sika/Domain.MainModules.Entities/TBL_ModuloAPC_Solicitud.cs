@@ -321,6 +321,21 @@ namespace Domain.MainModules.Entities
         private string _descripcionAccion;
     
         [DataMember]
+        public string Observaciones
+        {
+            get { return _observaciones; }
+            set
+            {
+                if (_observaciones != value)
+                {
+                    _observaciones = value;
+                    OnPropertyChanged("Observaciones");
+                }
+            }
+        }
+        private string _observaciones;
+    
+        [DataMember]
         public Nullable<System.DateTime> FechaDesde
         {
             get { return _fechaDesde; }

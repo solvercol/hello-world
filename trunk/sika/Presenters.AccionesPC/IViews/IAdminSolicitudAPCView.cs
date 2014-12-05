@@ -29,6 +29,7 @@ namespace Presenters.AccionesPC.IViews
         int IdGerente { get; set; }
         string Gerente { get; set; }
         string DescripcionAccion { get; set; }
+        string Observaciones { get; set; }
         DateTime FechaDesde { get; set; }
         DateTime FechaHasta { get; set; }
         string LogInfoMessage { set; }

@@ -152,6 +152,8 @@ namespace Presenters.AccionesPC.Presenters
                                                         item.TBL_Admin_Usuarios3.Nombres, item.CreateOn,
                                                         item.TBL_Admin_Usuarios5.Nombres, item.ModifiedOn);
 
+                    View.Observaciones = item.Observaciones;
+
                     View.ShowArchivosAdjuntos = false;
                     //LoadArhchivosAdjuntos();
                 }
@@ -412,10 +414,9 @@ namespace Presenters.AccionesPC.Presenters
             model.IdSolicitante = View.UserSession.IdUser;
             model.IdResponsableActual = View.UserSession.IdUser;
             model.IdResponsableEjecucion = View.UserSession.IdUser;
-            model.IdResponsableSeguimiento = View.UserSession.IdUser;
             model.TipoAccion = View.TipoAccion;
             model.FechaSolicitud = DateTime.Now;
-            model.Codigo = string.Format("APC{0}{1}", DateTime.Now.Year, model.Consecutivo.ToString().PadLeft(5, '0'));
+            model.Codigo = string.Format("A{0}{1}{2}", View.TipoAccion.Substring(0, 1), DateTime.Now.Year, model.Consecutivo.ToString().PadLeft(5, '0'));
             
             if (!string.IsNullOrEmpty(View.IdReclamo))
                 model.IdReclamoCreacion = Convert.ToDecimal(View.IdReclamo);
@@ -424,6 +425,7 @@ namespace Presenters.AccionesPC.Presenters
             model.Proceso = View.Proceso;
             model.IdGerente = View.IdGerente;
             model.DescripcionAccion = View.DescripcionAccion;
+            model.Observaciones = View.Observaciones;
             model.FechaDesde = View.FechaDesde;
             model.FechaHasta = View.FechaHasta;
             model.IdEstado = estadoRegistrado == null ? 11 : estadoRegistrado.IdEstado;

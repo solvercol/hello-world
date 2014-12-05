@@ -34,6 +34,20 @@
         <td ></td>
 
     </tr>
+    <tr>
+        <th style="width: 15%; text-align:left; vertical-align: top;">
+            Observaciones :
+        </th>
+
+        <td ></td>
+
+        <td class="Line" style="width: 60%">
+            <asp:Label ID="lblObservaciones" runat="server" />
+        </td>
+
+        <td ></td>
+
+    </tr>
     <tr id="trReclamorelacionado" runat="server" visible="false">
         <th style="width: 15%; text-align:left; vertical-align: top;">
             Reclamos Relacionados :
@@ -54,13 +68,13 @@
         </td>
     </tr>
     <tr id="trCierreInfo" runat="server">
-        <td colspan="4" class="Line" style="padding:8px;">
+        <td colspan="4" class="Line" style="padding:8px; ">
             <table width="100%">
                <tr>
-                    <th style="width:50%; text-align:left;" rowspan="4">
-                        Según los resultados obtenidos en la ejecución e implementación de la acción correctiva/preventiva descrita en el presente documento, determine si la acción fue: *
+                    <th style="width:50%; text-align:left;vertical-align:top;" rowspan="4">
+                        Según los resultados obtenidos en la ejecución e implementación de la acción correctiva/preventiva descrita en el presente documento, determine si la acción fue:
                         <br />
-                        <asp:RadioButtonList ID="rblResultadoCierreSolicitud" runat="server" RepeatLayout="Table" RepeatColumns="2" >
+                        <asp:RadioButtonList ID="rblResultadoCierreSolicitud" runat="server" RepeatLayout="Table" RepeatColumns="2" Enabled="false" >
                             <asp:ListItem Text="Adecuada" Value="Adecuada" Selected="True" />
                             <asp:ListItem Text="Eficáz" Value="Eficáz" />
                         </asp:RadioButtonList>
@@ -73,9 +87,9 @@
                 </tr>
                 <tr>
                     <th >
-                        <asp:RadioButtonList ID="rblConformidadEliminada" runat="server" RepeatLayout="Table" RepeatColumns="2" >
+                        <asp:RadioButtonList ID="rblConformidadEliminada" runat="server" RepeatLayout="Table" RepeatColumns="2" Enabled="false" >
                             <asp:ListItem Text="SI" Value="SI" Selected="True" />
-                            <asp:ListItem Text="NO" Value="NO" />
+                            <asp:ListItem Text="NO" Value="False" />
                         </asp:RadioButtonList>
                     </th>
                 </tr>

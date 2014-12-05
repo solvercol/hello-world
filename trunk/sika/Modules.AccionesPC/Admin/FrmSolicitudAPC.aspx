@@ -52,7 +52,7 @@
                         <asp:UpdatePanel ID="upInfoReclamo" runat="server">
                             <ContentTemplate>
                                 <table width="100%" >
-                                    <tr id="trInfoReclamo" runat="server">
+                                    <tr id="trInfoReclamo" runat="server" visible="false">
                                         <td valign="top" colspan="2">
                                             <table width="100%" >
                                                 <tr>
@@ -121,21 +121,11 @@
                                         <td class="SeccionesH4">
                                             <asp:Label ID="lblResponsableAccion" runat="server" />
                                         </td>
-                                    </tr>                                    
+                                    </tr>  
                                     <tr>
-                                        <td class="SeccionesH3">
-                                            Fecha Inicio:
-                                        </td>
-                                        <td class="SeccionesH4">
-                                            <asp:Label ID="lblFechaInicio" runat="server" ForeColor="Red" />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="SeccionesH3">
-                                            Fecha Final:
-                                        </td>
-                                        <td class="SeccionesH4">
-                                            <asp:Label ID="lblFechaFin" runat="server" ForeColor="Red" />
+                                        <td colspan="2" class="SeccionesH3">
+                                            Fecha Inicio: <asp:Label ID="lblFechaInicio" runat="server" ForeColor="Red" />
+                                            - Fecha Final: <asp:Label ID="lblFechaFin" runat="server" ForeColor="Red" />
                                         </td>
                                     </tr>
                                 </table>
@@ -265,7 +255,7 @@
      <table width="100%">
         <tr >
             <td style="text-align:left; vertical-align:top; padding-left: 10px; background-color:#e0e0e0" 
-                class="style1" >
+                >
                 <asp:Label ID="lblLogInfo" runat="server" ForeColor="#808080" Font-Size="8pt" />
                
             </td>

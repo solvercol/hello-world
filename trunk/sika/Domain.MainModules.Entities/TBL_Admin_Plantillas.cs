@@ -114,6 +114,21 @@ namespace Domain.MainModules.Entities
         private byte[] _contenido;
     
         [DataMember]
+        public string IdModulo
+        {
+            get { return _idModulo; }
+            set
+            {
+                if (_idModulo != value)
+                {
+                    _idModulo = value;
+                    OnPropertyChanged("IdModulo");
+                }
+            }
+        }
+        private string _idModulo;
+    
+        [DataMember]
         public bool IsActive
         {
             get { return _isActive; }
@@ -187,21 +202,6 @@ namespace Domain.MainModules.Entities
             }
         }
         private Nullable<System.DateTime> _modifiedOn;
-    
-        [DataMember]
-        public string IdModulo
-        {
-            get { return _idModulo; }
-            set
-            {
-                if (_idModulo != value)
-                {
-                    _idModulo = value;
-                    OnPropertyChanged("IdModulo");
-                }
-            }
-        }
-        private string _idModulo;
 
         #endregion
         #region Navigation Properties

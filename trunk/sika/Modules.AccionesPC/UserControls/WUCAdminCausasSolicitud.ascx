@@ -44,7 +44,7 @@
                                             CausesValidation="false"
                                             BorderStyle="None"
                                             ImageUrl="~/Resources/Images/select.png"
-                                            OnClick="BtnSelectActividad_Click" />
+                                            OnClick="BtnSelectCausa_Click" />
                             </td>                                    
                             <td style="text-align:left">
                                 <asp:Label ID="lblDescripcion" runat="server" />
@@ -68,7 +68,7 @@
         <script type="text/javascript" language="javascript">
             Sys.Application.add_load(RebindScripts);
         </script>
-        <asp:Panel ID="pnlAdminCausa"  runat="server" CssClass="popup_Container" Width="500" Height="500" style="display:none;">  
+        <asp:Panel ID="pnlAdminCausa"  runat="server" CssClass="popup_Container" Width="500" Height="250" style="display:none;">  
 
             <div class="popup_Titlebar" id="PopupHeader">
                 <div class="TitlebarLeft">

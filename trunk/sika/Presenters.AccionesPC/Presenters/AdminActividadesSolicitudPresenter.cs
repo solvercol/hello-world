@@ -64,7 +64,7 @@ namespace Presenters.AccionesPC.Presenters
 
                 if (solicitud != null)
                 {
-                    View.CanAddActividades = ((solicitud.TBL_Admin_EstadosProceso.Descripcion == "En Proceso") && solicitud.IdResponsableActual == View.UserSession.IdUser)
+                    View.CanAddActividades = ((solicitud.IdEstado == 14) && solicitud.IdResponsableActual == View.UserSession.IdUser)
                      || View.UserSession.IsInRole("Administrador");
 
                 }

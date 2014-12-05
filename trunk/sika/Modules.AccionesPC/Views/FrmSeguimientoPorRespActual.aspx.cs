@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace Modules.AccionesPC.Views
 {
-    public partial class FrmSeguimientoPorRespActual : ViewPage<SeguimientoPorFechaPresenter, ISeguimientoPorFechaView>, ISeguimientoPorFechaView
+    public partial class FrmSeguimientoPorRespActual : ViewPage<SeguimientoPorRespActualPresenter, ISeguimientoPorRespActualView>, ISeguimientoPorRespActualView
     {
         #region Page Events
 

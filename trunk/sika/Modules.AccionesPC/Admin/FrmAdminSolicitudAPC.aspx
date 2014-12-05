@@ -161,6 +161,19 @@
                             </tr>
                             <tr>
                                 <th style="text-align:left; vertical-align:top">
+                                    * Observaciones :
+                                </th>
+
+                                <td class="Separador"></td>
+
+                                <td class="Line" >
+                                    <asp:TextBox ID="txtObservaciones" runat="server" TextMode="MultiLine" Width="97%" Rows="4" MaxLength="512" />
+                                </td>
+
+                                <td class="Separador"></td>
+                            </tr>
+                            <tr>
+                                <th style="text-align:left; vertical-align:top">
                                     * Fechas :
                                 </th>
 

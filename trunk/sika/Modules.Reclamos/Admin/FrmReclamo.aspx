@@ -120,6 +120,7 @@
                             <ContentTemplate>
                                  <div style="padding:3px; text-align:right;">
                                     <asp:Button ID="btnRegresar" runat="server" Text="Regresar" OnClick="BtnRegresarClick" />
+                                    <asp:Button ID="btnCopiarReclamo" runat="server" Text="Copiar Reclamo" OnClick="BtnCopiarReclamoClick" />
                                     <asp:Button ID="btnActualizarIndicadores" runat="server" Text="Crear Plan Acción" OnClick="BtnCreacionAccionesClick" Visible="false" />
                                     <asp:Button ID="btnAsociarPlanAccion" runat="server" Text="Relacionar Plan Acción" OnClick="BtnRelacionarplanAccionClick" Visible="true" />
                                     <asp:Button ID="btnEdit" runat="server" Text="Editar" OnClick="BtnEditReclamoClick" Visible="false" />
@@ -237,6 +238,60 @@
         </ContentTemplate>
     </asp:UpdatePanel>
 
+    <asp:UpdatePanel ID="upPopUpCopiarReclamo" runat="server">
+        <ContentTemplate>
+            
+
+        <asp:Panel ID="pnlVentanaEmergenteCopiarReclamo"  runat="server" CssClass="popup_Container" Width="400" Height="160" style="display:none;">  
+
+            <div class="popup_Titlebar" id="PopupHeaderCopiarReclamo">
+                <div class="TitlebarLeft">
+                  Copiar Reclamo
+                </div>
+                <div class="TitlebarRight" id="divCloseMensajesCopiarReclamo">
+                </div>
+            </div>
+
+            <div style="padding:3px; text-align:right;">
+                <asp:Button ID="btnCancelarCopiar" runat="server" Text="Regresar"  />
+                <asp:Button ID="btnSaveCopiar" runat="server" Text="Copiar Reclamo" OnClick="BtnSaveCopiarClick" OnClientClick="return ShowSplashModalLoading;"  />
+            </div>
+
+            <div class="popup_Body">      
+                <table width="100%" class="tblSecciones">
+                    <tr>
+                        <th style="text-align:left; width: 30%; vertical-align:top">
+                            Numero Asociación :
+                        </th>
+
+                        <td class="Separador"></td>
+
+                        <td class="Line" style="width:70%">
+                            <asp:TextBox ID="txtCampoRelacionado" runat="server" Width="90%" MaxLength="50" />
+                        </td>
+
+                        <td class="Separador"></td>
+                    </tr>
+                </table>
+                          
+            </div>
+        </asp:Panel>
+    
+        <asp:Button ID="btnTargetControlCoapiarReclamo" runat="server" style="display:none; "/>    
+
+        <ajaxToolkit:ModalPopupExtender 
+        ID="mpeCopiarReclamo" 
+        runat="server" 
+        TargetControlID="btnTargetControlCoapiarReclamo" 
+        PopupControlID="pnlVentanaEmergenteCopiarReclamo" 
+        BackgroundCssClass="ModalPopupBG" 
+        cancelcontrolid="divCloseMensajesCopiarReclamo"> 
+        </ajaxToolkit:ModalPopupExtender>   
+
+
+        </ContentTemplate>
+    </asp:UpdatePanel>
+
 </asp:Content>
 
 
@@ -244,4 +299,12 @@
 <asp:Content ID="footerContent" runat="server" ContentPlaceHolderID="Footer">
     <!-- Aca va el Log -->
     <ucLogReclamo:WucLogReclamo ID="wucLogReclamo" runat="server" />
+    <table width="100%">
+        <tr >
+            <td style="text-align:left; vertical-align:top; padding-left: 10px; background-color:#e0e0e0" 
+                >
+                <asp:Label ID="lblLogInfo" runat="server" ForeColor="#808080" Font-Size="8pt" />               
+            </td>
+        </tr>
+    </table>
 </asp:Content>

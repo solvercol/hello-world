@@ -12,6 +12,13 @@ namespace Presenters.AccionesPC.IViews
         string Descripcion { get; set; }
         string Comentarios { get; set; }
 
+        bool IsNew { get; set; }
+        decimal SelectedId { get; set; }
+
+        void ShowAdminCausaWindow(bool visible);
+
         void LoadCausasSolicitud(List<TBL_ModuloAPC_Causas> items);
+
+        bool CanAddCausas { get; set; }
     }
 }

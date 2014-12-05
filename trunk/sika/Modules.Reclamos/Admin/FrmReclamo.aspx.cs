@@ -252,6 +252,17 @@ namespace Modules.Reclamos.Admin
             }
         }
 
+        protected void BtnCopiarReclamoClick(object sender, EventArgs e)
+        {
+            CampoRelacionado = string.Empty;
+            mpeCopiarReclamo.Show();
+        }
+
+        protected void BtnSaveCopiarClick(object sender, EventArgs e)
+        {
+            Presenter.CopiarReclamo();
+        }
+
         protected void BtnEditReclamoClick(object sender, EventArgs e)
         {
             if (TipoReclamo == "Producto")
@@ -785,10 +796,25 @@ namespace Modules.Reclamos.Admin
             }
         }
 
-        #endregion
+        public string LogInfoMessage
+        {
+            set { lblLogInfo.Text = value; }
+        }
+
+        public string CampoRelacionado
+        {
+            get
+            {
+                return txtCampoRelacionado.Text;
+            }
+            set
+            {
+                txtCampoRelacionado.Text = value;
+            }
+        }
 
         #endregion
 
-     
+        #endregion       
     }
 }

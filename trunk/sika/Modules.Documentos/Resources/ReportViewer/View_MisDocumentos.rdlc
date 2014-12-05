@@ -69,22 +69,22 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.41334in</Width>
+              <Width>1.38053in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.50709in</Width>
+              <Width>3.47428in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.90294in</Width>
+              <Width>0.87013in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.33001in</Width>
+              <Width>1.2972in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.49668in</Width>
+              <Width>1.46387in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.79876in</Width>
+              <Width>0.76595in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -1192,7 +1192,7 @@
                           </Group>
                           <SortExpressions>
                             <SortExpression>
-                              <Value>=Fields!IdDocumento.Value</Value>
+                              <Value>=Fields!TituloDocumento.Value</Value>
                             </SortExpression>
                           </SortExpressions>
                           <TablixMembers>
@@ -1222,7 +1222,7 @@
         </TablixRowHierarchy>
         <DataSetName>DS_Report</DataSetName>
         <Height>2.99999cm</Height>
-        <Width>24.00001cm</Width>
+        <Width>23.5cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1233,7 +1233,7 @@
     <Height>1.1811in</Height>
     <Style />
   </Body>
-  <Width>9.44882in</Width>
+  <Width>9.25197in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
