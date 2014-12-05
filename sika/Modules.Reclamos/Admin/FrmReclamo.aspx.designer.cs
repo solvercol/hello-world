@@ -139,6 +139,15 @@ namespace Modules.Reclamos.Admin {
         protected global::System.Web.UI.WebControls.Button btnRegresar;
         
         /// <summary>
+        /// btnCopiarReclamo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCopiarReclamo;
+        
+        /// <summary>
         /// btnActualizarIndicadores control.
         /// </summary>
         /// <remarks>
@@ -319,6 +328,69 @@ namespace Modules.Reclamos.Admin {
         protected global::AjaxControlToolkit.ModalPopupExtender mpeVentanaEmergente;
         
         /// <summary>
+        /// upPopUpCopiarReclamo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upPopUpCopiarReclamo;
+        
+        /// <summary>
+        /// pnlVentanaEmergenteCopiarReclamo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlVentanaEmergenteCopiarReclamo;
+        
+        /// <summary>
+        /// btnCancelarCopiar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancelarCopiar;
+        
+        /// <summary>
+        /// btnSaveCopiar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSaveCopiar;
+        
+        /// <summary>
+        /// txtCampoRelacionado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCampoRelacionado;
+        
+        /// <summary>
+        /// btnTargetControlCoapiarReclamo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnTargetControlCoapiarReclamo;
+        
+        /// <summary>
+        /// mpeCopiarReclamo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ModalPopupExtender mpeCopiarReclamo;
+        
+        /// <summary>
         /// wucLogReclamo control.
         /// </summary>
         /// <remarks>
@@ -326,5 +398,14 @@ namespace Modules.Reclamos.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Modules.Reclamos.UserControls.WUCLogReclamoView wucLogReclamo;
+        
+        /// <summary>
+        /// lblLogInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLogInfo;
     }
 }

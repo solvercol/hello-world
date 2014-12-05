@@ -41,5 +41,9 @@ namespace Presenters.Reclamos.IViews
         // Load
         void LoadSecciones(IEnumerable<TBL_Admin_Secciones> secciones);
         void LoadInitReclamoControl();
+
+        string LogInfoMessage { set; }
+
+        string CampoRelacionado { get; set; }
     }
 }

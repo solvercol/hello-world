@@ -21,9 +21,9 @@ namespace Domain.MainModules.Entities
 {
     [DataContract(IsReference = true)]
     [KnownType(typeof(TBL_ModuloWorkFlow_Rutas))]
+    [KnownType(typeof(TBL_ModuloAPC_Solicitud))]
     [KnownType(typeof(TBL_ModuloReclamos_Reclamo))]
     [KnownType(typeof(TBL_ModuloWorkFlow_CamposValidacion))]
-    [KnownType(typeof(TBL_ModuloAPC_Solicitud))]
     
     public partial class TBL_Admin_EstadosProceso: IObjectWithChangeTracker, INotifyPropertyChanged
     {
@@ -297,6 +297,41 @@ namespace Domain.MainModules.Entities
         private TrackableCollection<TBL_ModuloWorkFlow_Rutas> _tBL_ModuloWorkFlow_Rutas;
     
         [DataMember]
+        public TrackableCollection<TBL_ModuloAPC_Solicitud> TBL_ModuloAPC_Solicitud
+        {
+            get
+            {
+                if (_tBL_ModuloAPC_Solicitud == null)
+                {
+                    _tBL_ModuloAPC_Solicitud = new TrackableCollection<TBL_ModuloAPC_Solicitud>();
+                    _tBL_ModuloAPC_Solicitud.CollectionChanged += FixupTBL_ModuloAPC_Solicitud;
+                }
+                return _tBL_ModuloAPC_Solicitud;
+            }
+            set
+            {
+                if (!ReferenceEquals(_tBL_ModuloAPC_Solicitud, value))
+                {
+                    if (ChangeTracker.ChangeTrackingEnabled)
+                    {
+                        throw new InvalidOperationException("Cannot set the FixupChangeTrackingCollection when ChangeTracking is enabled");
+                    }
+                    if (_tBL_ModuloAPC_Solicitud != null)
+                    {
+                        _tBL_ModuloAPC_Solicitud.CollectionChanged -= FixupTBL_ModuloAPC_Solicitud;
+                    }
+                    _tBL_ModuloAPC_Solicitud = value;
+                    if (_tBL_ModuloAPC_Solicitud != null)
+                    {
+                        _tBL_ModuloAPC_Solicitud.CollectionChanged += FixupTBL_ModuloAPC_Solicitud;
+                    }
+                    OnNavigationPropertyChanged("TBL_ModuloAPC_Solicitud");
+                }
+            }
+        }
+        private TrackableCollection<TBL_ModuloAPC_Solicitud> _tBL_ModuloAPC_Solicitud;
+    
+        [DataMember]
         public TrackableCollection<TBL_ModuloReclamos_Reclamo> TBL_ModuloReclamos_Reclamo
         {
             get
@@ -400,41 +435,6 @@ namespace Domain.MainModules.Entities
             }
         }
         private TrackableCollection<TBL_ModuloWorkFlow_Rutas> _tBL_ModuloWorkFlow_Rutas1;
-    
-        [DataMember]
-        public TrackableCollection<TBL_ModuloAPC_Solicitud> TBL_ModuloAPC_Solicitud
-        {
-            get
-            {
-                if (_tBL_ModuloAPC_Solicitud == null)
-                {
-                    _tBL_ModuloAPC_Solicitud = new TrackableCollection<TBL_ModuloAPC_Solicitud>();
-                    _tBL_ModuloAPC_Solicitud.CollectionChanged += FixupTBL_ModuloAPC_Solicitud;
-                }
-                return _tBL_ModuloAPC_Solicitud;
-            }
-            set
-            {
-                if (!ReferenceEquals(_tBL_ModuloAPC_Solicitud, value))
-                {
-                    if (ChangeTracker.ChangeTrackingEnabled)
-                    {
-                        throw new InvalidOperationException("Cannot set the FixupChangeTrackingCollection when ChangeTracking is enabled");
-                    }
-                    if (_tBL_ModuloAPC_Solicitud != null)
-                    {
-                        _tBL_ModuloAPC_Solicitud.CollectionChanged -= FixupTBL_ModuloAPC_Solicitud;
-                    }
-                    _tBL_ModuloAPC_Solicitud = value;
-                    if (_tBL_ModuloAPC_Solicitud != null)
-                    {
-                        _tBL_ModuloAPC_Solicitud.CollectionChanged += FixupTBL_ModuloAPC_Solicitud;
-                    }
-                    OnNavigationPropertyChanged("TBL_ModuloAPC_Solicitud");
-                }
-            }
-        }
-        private TrackableCollection<TBL_ModuloAPC_Solicitud> _tBL_ModuloAPC_Solicitud;
 
         #endregion
         #region ChangeTracking
@@ -515,10 +515,10 @@ namespace Domain.MainModules.Entities
         protected virtual void ClearNavigationProperties()
         {
             TBL_ModuloWorkFlow_Rutas.Clear();
+            TBL_ModuloAPC_Solicitud.Clear();
             TBL_ModuloReclamos_Reclamo.Clear();
             TBL_ModuloWorkFlow_CamposValidacion.Clear();
             TBL_ModuloWorkFlow_Rutas1.Clear();
-            TBL_ModuloAPC_Solicitud.Clear();
         }
 
         #endregion
@@ -558,6 +558,45 @@ namespace Domain.MainModules.Entities
                     if (ChangeTracker.ChangeTrackingEnabled)
                     {
                         ChangeTracker.RecordRemovalFromCollectionProperties("TBL_ModuloWorkFlow_Rutas", item);
+                    }
+                }
+            }
+        }
+    
+        private void FixupTBL_ModuloAPC_Solicitud(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            if (IsDeserializing)
+            {
+                return;
+            }
+    
+            if (e.NewItems != null)
+            {
+                foreach (TBL_ModuloAPC_Solicitud item in e.NewItems)
+                {
+                    item.TBL_Admin_EstadosProceso = this;
+                    if (ChangeTracker.ChangeTrackingEnabled)
+                    {
+                        if (!item.ChangeTracker.ChangeTrackingEnabled)
+                        {
+                            item.StartTracking();
+                        }
+                        ChangeTracker.RecordAdditionToCollectionProperties("TBL_ModuloAPC_Solicitud", item);
+                    }
+                }
+            }
+    
+            if (e.OldItems != null)
+            {
+                foreach (TBL_ModuloAPC_Solicitud item in e.OldItems)
+                {
+                    if (ReferenceEquals(item.TBL_Admin_EstadosProceso, this))
+                    {
+                        item.TBL_Admin_EstadosProceso = null;
+                    }
+                    if (ChangeTracker.ChangeTrackingEnabled)
+                    {
+                        ChangeTracker.RecordRemovalFromCollectionProperties("TBL_ModuloAPC_Solicitud", item);
                     }
                 }
             }
@@ -675,45 +714,6 @@ namespace Domain.MainModules.Entities
                     if (ChangeTracker.ChangeTrackingEnabled)
                     {
                         ChangeTracker.RecordRemovalFromCollectionProperties("TBL_ModuloWorkFlow_Rutas1", item);
-                    }
-                }
-            }
-        }
-    
-        private void FixupTBL_ModuloAPC_Solicitud(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            if (IsDeserializing)
-            {
-                return;
-            }
-    
-            if (e.NewItems != null)
-            {
-                foreach (TBL_ModuloAPC_Solicitud item in e.NewItems)
-                {
-                    item.TBL_Admin_EstadosProceso = this;
-                    if (ChangeTracker.ChangeTrackingEnabled)
-                    {
-                        if (!item.ChangeTracker.ChangeTrackingEnabled)
-                        {
-                            item.StartTracking();
-                        }
-                        ChangeTracker.RecordAdditionToCollectionProperties("TBL_ModuloAPC_Solicitud", item);
-                    }
-                }
-            }
-    
-            if (e.OldItems != null)
-            {
-                foreach (TBL_ModuloAPC_Solicitud item in e.OldItems)
-                {
-                    if (ReferenceEquals(item.TBL_Admin_EstadosProceso, this))
-                    {
-                        item.TBL_Admin_EstadosProceso = null;
-                    }
-                    if (ChangeTracker.ChangeTrackingEnabled)
-                    {
-                        ChangeTracker.RecordRemovalFromCollectionProperties("TBL_ModuloAPC_Solicitud", item);
                     }
                 }
             }

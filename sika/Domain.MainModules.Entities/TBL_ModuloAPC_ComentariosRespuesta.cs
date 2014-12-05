@@ -380,6 +380,23 @@ namespace Domain.MainModules.Entities
         private TBL_ModuloAPC_ComentariosRespuesta _tBL_ModuloAPC_ComentariosRespuesta2;
     
         [DataMember]
+        public TBL_ModuloAPC_Solicitud TBL_ModuloAPC_Solicitud
+        {
+            get { return _tBL_ModuloAPC_Solicitud; }
+            set
+            {
+                if (!ReferenceEquals(_tBL_ModuloAPC_Solicitud, value))
+                {
+                    var previousValue = _tBL_ModuloAPC_Solicitud;
+                    _tBL_ModuloAPC_Solicitud = value;
+                    FixupTBL_ModuloAPC_Solicitud(previousValue);
+                    OnNavigationPropertyChanged("TBL_ModuloAPC_Solicitud");
+                }
+            }
+        }
+        private TBL_ModuloAPC_Solicitud _tBL_ModuloAPC_Solicitud;
+    
+        [DataMember]
         public TrackableCollection<TBL_Admin_Usuarios> TBL_Admin_Usuarios3
         {
             get
@@ -413,23 +430,6 @@ namespace Domain.MainModules.Entities
             }
         }
         private TrackableCollection<TBL_Admin_Usuarios> _tBL_Admin_Usuarios3;
-    
-        [DataMember]
-        public TBL_ModuloAPC_Solicitud TBL_ModuloAPC_Solicitud
-        {
-            get { return _tBL_ModuloAPC_Solicitud; }
-            set
-            {
-                if (!ReferenceEquals(_tBL_ModuloAPC_Solicitud, value))
-                {
-                    var previousValue = _tBL_ModuloAPC_Solicitud;
-                    _tBL_ModuloAPC_Solicitud = value;
-                    FixupTBL_ModuloAPC_Solicitud(previousValue);
-                    OnNavigationPropertyChanged("TBL_ModuloAPC_Solicitud");
-                }
-            }
-        }
-        private TBL_ModuloAPC_Solicitud _tBL_ModuloAPC_Solicitud;
 
         #endregion
         #region ChangeTracking
@@ -515,8 +515,8 @@ namespace Domain.MainModules.Entities
             TBL_ModuloAPC_AnexosComentarioRespuesta.Clear();
             TBL_ModuloAPC_ComentariosRespuesta1.Clear();
             TBL_ModuloAPC_ComentariosRespuesta2 = null;
-            TBL_Admin_Usuarios3.Clear();
             TBL_ModuloAPC_Solicitud = null;
+            TBL_Admin_Usuarios3.Clear();
         }
 
         #endregion

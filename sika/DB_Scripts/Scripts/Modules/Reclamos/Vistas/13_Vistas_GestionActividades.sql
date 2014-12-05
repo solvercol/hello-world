@@ -144,10 +144,8 @@ from	TBL_ModuloReclamos_Actividades actividad with(nolock)
 			on reclamo.CodigoCliente = cliente.CODIGOCLIENTE
 		left join TBL_ModuloReclamos_CategoriasReclamo categorias with(nolock)
 			on reclamo.IdCategoriaReclamo = categorias.IdCategoriaReclamo
-where	year(actividad.Fecha) >= year(@dateFrom)
-		and year(actividad.Fecha) <= year(@dateEnd)
-		and month(actividad.Fecha) >= month(@dateFrom)
-		and month(actividad.Fecha) <= month(@dateEnd)
+where	actividad.Fecha >= @dateFrom
+		and actividad.Fecha <= @dateEnd
 		and reclamo.NumeroReclamo like '%' + case @NoReclamo when '' then reclamo.NumeroReclamo else @NoReclamo end + '%'
 		and (
 				isnull(cliente.CLIENTE,'') like '%' + case @Cliente when '' then isnull(cliente.CLIENTE,'') else @Cliente end + '%'

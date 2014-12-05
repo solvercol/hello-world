@@ -8,6 +8,7 @@ using Domain.MainModules.Entities;
 using Infrastructure.CrossCutting.NetFramework.Enums;
 using Presenters.Reclamos.IViews;
 using Domain.MainModule.Reclamos.DTO;
+using Presenters.Reclamos.Resources;
 
 namespace Presenters.Reclamos.Presenters
 {
@@ -153,6 +154,10 @@ namespace Presenters.Reclamos.Presenters
                     View.TextHyperlinkAcciones = reclamo.IdAccionApc.HasValue
                         ? (string.IsNullOrEmpty(reclamo.TBL_ModuloAPC_Solicitud1.Codigo) ? "Acción Correctiva Preventiva" : reclamo.TBL_ModuloAPC_Solicitud1.Codigo)
                                                      : string.Empty;
+
+                    View.LogInfoMessage = string.Format("Creado por {0} en {1:dd/MM/yyyy hh:mm ss tt}. Modificado por {2} en {3:dd/MM/yyyy hh:mm ss tt}.",
+                                                      reclamo.TBL_Admin_Usuarios3.Nombres, reclamo.CreateOn,
+                                                      reclamo.TBL_Admin_Usuarios5.Nombres, reclamo.ModifiedOn);
                 }
             }
             catch (Exception ex)
@@ -177,6 +182,160 @@ namespace Presenters.Reclamos.Presenters
             {
                 CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
             }
+        }
+
+        public void CopiarReclamo()
+        {
+            if (string.IsNullOrEmpty(View.IdReclamo)) return;
+
+            try
+            {
+                var reclamo = _reclamoService.GetReclamoById(Convert.ToDecimal(View.IdReclamo));
+
+                if (reclamo != null)
+                {
+                    var clone = GetClone(reclamo);
+
+                    reclamo.ModifiedBy = View.UserSession.IdUser;
+                    reclamo.ModifiedOn = DateTime.Now;
+                    reclamo.CampoRelacion = View.CampoRelacionado;
+
+                    _reclamoService.Add(clone);
+                    IncrementConsecutivoReclamo();
+
+                    var log = new TBL_ModuloReclamos_LogReclamos();
+                    log.IdLog = Guid.NewGuid();
+                    log.IdReclamo = clone.IdReclamo;
+                    log.Descripcion = string.Format(Messages.SaveReclamo, View.UserSession.Nombres, DateTime.Now);
+                    log.IsActive = true;
+                    log.CreateBy = View.UserSession.IdUser;
+                    log.CreateOn = DateTime.Now;
+
+                    _logServices.Add(log);
+
+                    _reclamoService.Modify(reclamo);
+
+                    log = new TBL_ModuloReclamos_LogReclamos();
+                    log.IdLog = Guid.NewGuid();
+                    log.IdReclamo = reclamo.IdReclamo;
+                    log.Descripcion = string.Format("EL usuario {0}, ha copiado el reclamo a las {1:dd/MM/yyyy hh:mm ss tt}", View.UserSession.Nombres, DateTime.Now);
+                    log.IsActive = true;
+                    log.CreateBy = View.UserSession.IdUser;
+                    log.CreateOn = DateTime.Now;
+
+                    _logServices.Add(log);
+
+                    LoadReclamo();
+
+                    InvokeMessageBox(new MessageBoxEventArgs(string.Format("Se ha copiado el reclamo satisfactoriamente."), TypeError.Ok));
+                }
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
+        }
+
+        void IncrementConsecutivoReclamo()
+        {
+            try
+            {
+                var op = _optionListService.ObtenerOpcionBykeyModuleId("ConsecutivoReclamo", Convert.ToInt32(View.IdModule));
+                var consecutivo = string.Empty;
+
+                if (op != null)
+                {
+                    consecutivo = op.Value;
+                    op.Value = (Convert.ToInt32(consecutivo) + 1).ToString();
+                    _optionListService.Modify(op);
+                }
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
+        }
+
+        TBL_ModuloReclamos_Reclamo GetClone(TBL_ModuloReclamos_Reclamo reclamo)
+        {
+            var op = _optionListService.ObtenerOpcionBykeyModuleId("ConsecutivoReclamo", Convert.ToInt32(View.IdModule));
+            var consecutivo = string.Empty;
+
+            if (op != null)
+            {
+                consecutivo = op.Value;
+            }
+
+            var clone = new TBL_ModuloReclamos_Reclamo();
+            clone.IdDocumentoLotus = reclamo.IdDocumentoLotus;
+            clone.IdDocumentoLotusRelacionado = reclamo.IdDocumentoLotusRelacionado;
+            clone.Consecutivo = Convert.ToInt32(consecutivo);
+            clone.IdSolicitante = View.UserSession.IdUser;
+            clone.IdTipoReclamo = reclamo.IdTipoReclamo;
+            clone.FechaReclamo = DateTime.Now;
+            clone.IdReclamoRelacionado = reclamo.IdReclamo;
+            clone.CampoRelacion = View.CampoRelacionado;
+            reclamo.CampoRelacion = View.CampoRelacionado;
+            clone.NumeroReclamo = string.Format("{0}-{1}", DateTime.Now.Year, clone.Consecutivo.ToString().PadLeft(5, '0'));
+            clone.IdAsesoradoPor = reclamo.IdAsesoradoPor;
+            clone.Planta = reclamo.Planta;
+            clone.CodigoProducto = reclamo.CodigoProducto;
+            clone.CantidadVendida = reclamo.CantidadVendida;
+            clone.CantidadReclamada = reclamo.CantidadReclamada;
+            clone.Aplicado = reclamo.Aplicado;
+            clone.FechaAplicacion = reclamo.FechaAplicacion;
+            clone.FechaVenta = reclamo.FechaVenta;
+            clone.IdAtendidoPor = reclamo.IdAtendidoPor;
+            clone.TipoContacto = reclamo.TipoContacto;
+            clone.CodigoCliente = reclamo.CodigoCliente;
+            clone.UnidadZona = reclamo.UnidadZona;
+            clone.Contacto = reclamo.Contacto;
+            clone.EmailContacto = reclamo.EmailContacto;
+            clone.NombreObra = reclamo.NombreObra;
+            clone.AplicadoPor = reclamo.AplicadoPor;
+            clone.EmailQuienAplica = reclamo.EmailQuienAplica;
+            clone.PropietarioObra = reclamo.PropietarioObra;
+            clone.EmailPropietarioObra = reclamo.EmailPropietarioObra;
+            clone.Contratista = reclamo.Contratista;
+            clone.EmailContratista = reclamo.EmailContratista;
+            clone.AspectoEnvase = reclamo.AspectoEnvase;
+            clone.AspectoProducto = reclamo.AspectoProducto;
+            clone.DescripcionAspectoEnvase = reclamo.DescripcionAspectoEnvase;
+            clone.DescripcionAspectoProducto = reclamo.DescripcionAspectoProducto;
+            clone.Lote = reclamo.Lote;
+            clone.Lote2 = reclamo.Lote2;
+            clone.Lote3 = reclamo.Lote3;
+            clone.MuestraDisponible = reclamo.MuestraDisponible;
+            clone.IdCategoriaReclamo = reclamo.IdCategoriaReclamo;
+            clone.Area = reclamo.Area;
+            clone.SubCategoria = reclamo.SubCategoria;
+            clone.NumPFR = reclamo.NumPFR;
+            clone.NumDiarioInventario = reclamo.NumDiarioInventario;
+            clone.FechaPedido = reclamo.FechaPedido;
+            clone.FechaCompromiso = reclamo.FechaCompromiso;
+            clone.FechaRealEntrega = reclamo.FechaRealEntrega;
+            clone.DiasDiferencia = reclamo.DiasDiferencia;
+            clone.NombreReclama = reclamo.NombreReclama;
+            clone.AreaIncumple = reclamo.AreaIncumple;
+            clone.ProcedimientoInternoAfectado = reclamo.ProcedimientoInternoAfectado;
+            clone.DescripcionProblema = reclamo.DescripcionProblema;
+            clone.DiagnosticoPrevio = reclamo.DiagnosticoPrevio;
+            clone.ConclusionesPrevias = reclamo.ConclusionesPrevias;
+            clone.ProblemaSolucionado = reclamo.ProblemaSolucionado;
+            clone.ObservacionesSolucion = reclamo.ObservacionesSolucion;
+            clone.IdResponsableActual = View.UserSession.IdUser;
+            clone.IdCategoriaProducto = reclamo.IdCategoriaProducto;
+            clone.NombreCliente = reclamo.NombreCliente;
+            clone.NombreProducto = reclamo.NombreProducto;
+            clone.IdAccionApc = reclamo.IdAccionApc;
+            clone.IdEstado = 1; // Registrado
+            clone.IsActive = true;
+            clone.CreateBy = View.UserSession.IdUser;
+            clone.CreateOn = DateTime.Now;
+            clone.ModifiedBy = View.UserSession.IdUser;
+            clone.ModifiedOn = DateTime.Now;
+
+            return clone;
         }
 
         /// <summary>

@@ -59,11 +59,13 @@ namespace Presenters.AccionesPC.Presenters
                 {
                     View.ProcesoAsociado = item.Proceso;
                     View.DescripcionAccion = item.DescripcionAccion;
+                    View.Observaciones = item.Observaciones;
                     View.ResultadoCierre = item.Resultado;
                     View.ObservacionesCierre = item.ObservacionesCierre;
+                    View.ConformidadEliminada = item.Cerrada;
 
                     // Verificando info de cierre
-                    View.ShowInfoCierre = item.IdEstado == 4;
+                    View.ShowInfoCierre = item.IdEstado == 16;
                     var listadoReclamos = item.TBL_ModuloReclamos_Reclamo1.Aggregate(string.Empty, (current, reclamo) => current + string.Format("{0} - ", reclamo.NumeroReclamo));
                     if (!string.IsNullOrEmpty(listadoReclamos))
                         View.ReclamosRelacionados = listadoReclamos.Substring(0, listadoReclamos.TrimEnd().Length - 1);

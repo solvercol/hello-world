@@ -69,25 +69,25 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.75608in</Width>
+              <Width>1.72796in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.25608in</Width>
+              <Width>1.22796in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.44358in</Width>
+              <Width>1.41546in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.48525in</Width>
+              <Width>1.45713in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.8915in</Width>
+              <Width>0.86338in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.16233in</Width>
+              <Width>1.13421in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.454in</Width>
+              <Width>1.42588in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -374,7 +374,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -723,8 +722,13 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DS_Report</DataSetName>
+        <SortExpressions>
+          <SortExpression>
+            <Value>=Fields!TituloDocumento.Value</Value>
+          </SortExpression>
+        </SortExpressions>
         <Height>1.2cm</Height>
-        <Width>24cm</Width>
+        <Width>23.5cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -735,7 +739,7 @@
     <Height>0.47244in</Height>
     <Style />
   </Body>
-  <Width>9.44882in</Width>
+  <Width>9.25197in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>

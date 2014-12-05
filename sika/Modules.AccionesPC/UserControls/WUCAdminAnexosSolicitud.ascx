@@ -3,14 +3,14 @@
 <asp:UpdatePanel ID="upAdminAnexosSololicitud" runat="server">
     <ContentTemplate>
         <table width="100%" cellpadding="0" cellspacing="0" class="tblSecciones">
-            <tr>
+            <tr id="trAddAnexos" runat="server">
                 <th style="text-align:left; vertical-align:top">
                     Anexos :
                 </th>
 
                 <td class="Separador"></td>
 
-                <td class="Line">
+                <td class="Line" id>
                     <asp:FileUpload ID="fupAnexoArchivoSolicitud" runat="server" />
 
                     <asp:Button ID="btnAddArchivoAdjuntoSolicitud" runat="server" Text="Agregar" OnClick="BtnAddArchivoAdjunto_Click" OnClientClick="return ShowSplashModalLoading();" />
@@ -18,11 +18,8 @@
 
                 <td class="Separador"></td>
             </tr>
-            <tr id="trAnexos" runat="server">
-                <td></td>
-                <td class="Separador"></td>
-
-                <td class="Line">
+            <tr id="trAnexos" runat="server">               
+                <td class="Line" colspan="3">
                     <table class="tbl" width="100%">
                         <tr>
                             <th style="width:100%">Archivo</th>

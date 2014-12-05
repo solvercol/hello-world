@@ -124,6 +124,21 @@ namespace Modules.AccionesPC.UserControls
             }
         }
 
+        public bool CanAddAnexos
+        {
+            get
+            {
+                return trAddAnexos.Visible;
+            }
+            set
+            {
+                trAddAnexos.Visible = value;
+            }
+        }
+
         #endregion
+
+
+        
     }
 }

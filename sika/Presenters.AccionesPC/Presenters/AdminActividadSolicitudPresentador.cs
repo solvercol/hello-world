@@ -119,9 +119,13 @@ namespace Presenters.AccionesPC.Presenters
                 {
                     View.TipoAccion = item.TipoAccion;
                     View.CodSolicitud = item.Codigo;
-                    View.Area = item.TBL_ModuloAPC_Areas.Nombre;
-                    View.GerenteArea = item.TBL_Admin_Usuarios4.Nombres;
-                    View.ResponsableAccion = item.TBL_Admin_Usuarios8.Nombres;
+                    if (item.IdAreaAccion.HasValue)
+                        View.Area = item.TBL_ModuloAPC_Areas.Nombre;
+                    if (item.IdGerente.HasValue)
+                        View.GerenteArea = item.TBL_Admin_Usuarios4.Nombres;
+                    if (item.IdResponsableSeguimiento.HasValue)
+                        View.ResponsableAccion = item.TBL_Admin_Usuarios8.Nombres;
+
                     View.FechaInicio = string.Format("{0:dd/MM/yyyy}", item.FechaDesde);
                     View.FechaFinal = string.Format("{0:dd/MM/yyyy}", item.FechaHasta);
 

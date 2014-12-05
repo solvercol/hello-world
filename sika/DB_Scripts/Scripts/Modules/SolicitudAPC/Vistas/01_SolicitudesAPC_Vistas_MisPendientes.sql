@@ -127,9 +127,9 @@ from	TBL_ModuloAPC_Solicitud solicitud with(nolock)
 			on solicitud.CreateBy = autor.IdUser
 		inner join TBL_Admin_Usuarios responsableActual with(nolock)
 			on solicitud.IdResponsableActual = responsableActual.IdUser
-		inner join TBL_Admin_Usuarios responsableSeguimiento with(nolock)
+		left join TBL_Admin_Usuarios responsableSeguimiento with(nolock)
 			on solicitud.IdResponsableSeguimiento = responsableSeguimiento.IdUser
-		inner join TBL_Admin_Usuarios responsableEjecucion with(nolock)
+		left join TBL_Admin_Usuarios responsableEjecucion with(nolock)
 			on solicitud.IdResponsableEjecucion = responsableEjecucion.IdUser
 where	solicitud.FechaSolicitud >= @dateFrom
 		and solicitud.FechaSolicitud <= @dateEnd

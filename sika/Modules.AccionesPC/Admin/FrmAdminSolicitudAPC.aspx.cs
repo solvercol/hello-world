@@ -483,6 +483,18 @@ namespace Modules.AccionesPC.Admin
             }
         }
 
+        public string Observaciones
+        {
+            get
+            {
+                return txtObservaciones.Text;
+            }
+            set
+            {
+                txtObservaciones.Text = value;
+            }
+        }
+
         public DateTime FechaDesde
         {
             get

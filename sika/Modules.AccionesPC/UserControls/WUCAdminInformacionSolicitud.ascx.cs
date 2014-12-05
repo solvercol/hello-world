@@ -53,6 +53,18 @@ namespace Modules.AccionesPC.UserControls
             }
         }
 
+        public string Observaciones
+        {
+            get
+            {
+                return lblObservaciones.Text;
+            }
+            set
+            {
+                lblObservaciones.Text = value;
+            }
+        }
+
         public string ResultadoCierre
         {
             get
@@ -96,6 +108,14 @@ namespace Modules.AccionesPC.UserControls
             { 
                 lblReclamosRelacionados.Text = value;
                 trReclamorelacionado.Visible = !string.IsNullOrEmpty(value);
+            }
+        }
+
+        public bool ConformidadEliminada
+        {
+            set
+            {
+                rblConformidadEliminada.SelectedValue = value.ToString();
             }
         }
 

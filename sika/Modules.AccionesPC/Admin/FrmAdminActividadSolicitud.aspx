@@ -33,7 +33,7 @@
             </tr>
             <tr>
                 <td>
-                        <tr id="trInfoReclamo" runat="server">
+                        <tr id="trInfoReclamo" runat="server" visible="false">
                             <td valign="top">
                             <table width="100%" >
                                 <tr >
@@ -132,27 +132,11 @@
                             </td>
                         </tr>                                    
                         <tr>
-                            <td class="SeccionesH3">
-                                Fecha Inicio:
-                            </td>
-                            <td class="Separador"></td>
-                            <td class="SeccionesH4">
-                                <asp:Label ID="lblFechaInicio" runat="server" ForeColor="Red" />
-                            </td>
-                            <td class="Separador">
+                            <td class="SeccionesH3" colspan="4">
+                                Fecha Inicio: <asp:Label ID="lblFechaInicio" runat="server" ForeColor="Red" />
+                                - Fecha Final: <asp:Label ID="lblFechaFin" runat="server" ForeColor="Red" />
                             </td>
                         </tr>
-                        <tr>
-                            <td class="SeccionesH3">
-                                Fecha Final:
-                            </td>
-                            <td class="Separador"></td>
-                            <td class="SeccionesH4">
-                                <asp:Label ID="lblFechaFin" runat="server" ForeColor="Red" />
-                            </td>
-                            <td class="Separador">
-                            </td>
-            </tr>
                     </td> 
             </tr>
                 <tr>

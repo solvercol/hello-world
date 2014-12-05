@@ -167,58 +167,42 @@ namespace Modules.AccionesPC.Admin
                 Response.Redirect(string.Format("../../Reclamos/Admin/FrmReclamo.aspx?ModuleId={0}&IdReclamo={1}&from=pendientes", IdModuleReclamo, Request.QueryString["IdReclamo"]));
             }
 
-
-
-            //if (string.IsNullOrEmpty(FromPage))
-            //{
-            //    Response.Redirect(string.Format("../Views/FrmMisPendientes.aspx?ModuleId={0}", ModuleId));
-            //}
-
-            //switch (FromPage)
-            //{
-            //    case "pendientes":
-            //        Response.Redirect(string.Format("../Views/FrmMisPendientes.aspx?ModuleId={0}", ModuleId));
-            //        break;
-            //    case "misfecha":
-            //        Response.Redirect(string.Format("../Views/FrmMisReclamosPorFecha.aspx?ModuleId={0}", ModuleId));
-            //        break;
-            //    case "misestado":
-            //        Response.Redirect(string.Format("../Views/FrmMisReclamosPorEstado.aspx?ModuleId={0}", ModuleId));
-            //        break;
-            //    case "rectipo":
-            //        Response.Redirect(string.Format("../Views/FrmReclamosPorTipo.aspx?ModuleId={0}", ModuleId));
-            //        break;
-            //    case "recestado":
-            //        Response.Redirect(string.Format("../Views/FrmReclamosPorEstado.aspx?ModuleId={0}", ModuleId));
-            //        break;
-            //    case "recnumero":
-            //        Response.Redirect(string.Format("../Views/FrmReclamosPorNumero.aspx?ModuleId={0}", ModuleId));
-            //        break;
-            //    case "rectargetmarket":
-            //        Response.Redirect(string.Format("../Views/FrmReclamosPorTargetMarket.aspx?ModuleId={0}", ModuleId));
-            //        break;
-            //    case "rectautor":
-            //        Response.Redirect(string.Format("../Views/FrmReclamosPorAutor.aspx?ModuleId={0}", ModuleId));
-            //        break;
-            //    case "reccliente":
-            //        Response.Redirect(string.Format("../Views/FrmReclamosPorCliente.aspx?ModuleId={0}", ModuleId));
-            //        break;
-            //    case "recfecha":
-            //        Response.Redirect(string.Format("../Views/FrmReclamosPorFecha.aspx?ModuleId={0}", ModuleId));
-            //        break;
-            //    case "recproducto":
-            //        Response.Redirect(string.Format("../Views/FrmReclamosPorProducto.aspx?ModuleId={0}", ModuleId));
-            //        break;
-            //    case "recresponsable":
-            //        Response.Redirect(string.Format("../Views/FrmReclamosPorResponsable.aspx?ModuleId={0}", ModuleId));
-            //        break;
-            //    case "admactividad":
-            //        Response.Redirect(string.Format("FrmAdminActividadReclamo.aspx?ModuleId={0}&IdActividad={1}", ModuleId, IdFrom));
-            //        break;
-            //    case "admalternativa":
-            //        Response.Redirect(string.Format("FrmAdminAlternativaReclamo.aspx?ModuleId={0}&IdAlternativa={1}", ModuleId, IdFrom));
-            //        break;
-            //}
+            switch (FromPage)
+            {
+                case "mispendientes":
+                    Response.Redirect(string.Format("../Views/FrmMisSolicitudesPendientes.aspx?ModuleId={0}", ModuleId));
+                    break;
+                case "misolestados":
+                    Response.Redirect(string.Format("../Views/FrmMisSolicitudesPorEstado.aspx?ModuleId={0}", ModuleId));
+                    break;
+                case "misolfecha":
+                    Response.Redirect(string.Format("../Views/FrmMisSolicitudesPorFecha.aspx?ModuleId={0}", ModuleId));
+                    break;
+                case "segarea":
+                    Response.Redirect(string.Format("../Views/FrmSeguimientoPorArea.aspx?ModuleId={0}", ModuleId));
+                    break;
+                case "segautor":
+                    Response.Redirect(string.Format("../Views/FrmSeguimientoPorAutor.aspx?ModuleId={0}", ModuleId));
+                    break;
+                case "segestado":
+                    Response.Redirect(string.Format("../Views/FrmSeguimientoPorEstado.aspx?ModuleId={0}", ModuleId));
+                    break;
+                case "segfecha":
+                    Response.Redirect(string.Format("../Views/FrmSeguimientoPorFecha.aspx?ModuleId={0}", ModuleId));
+                    break;
+                case "segrespact":
+                    Response.Redirect(string.Format("../Views/FrmSeguimientoPorRespActual.aspx?ModuleId={0}", ModuleId));
+                    break;
+                case "segtipo":
+                    Response.Redirect(string.Format("../Views/FrmSeguimientoPorTipo.aspx?ModuleId={0}", ModuleId));
+                    break;
+                case "segtotal":
+                    Response.Redirect(string.Format("../Views/FrmSeguimientoTotalSolicitudes.aspx?ModuleId={0}", ModuleId));
+                    break;
+                default:
+                    Response.Redirect(string.Format("../Views/FrmMisSolicitudesPendientes.aspx?ModuleId={0}", ModuleId));
+                    break;
+            }
         }
 
         protected void BtnEditSolicitudClick(object sender, EventArgs e)

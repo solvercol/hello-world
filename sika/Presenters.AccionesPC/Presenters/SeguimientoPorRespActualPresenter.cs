@@ -94,7 +94,7 @@ namespace Presenters.AccionesPC.Presenters
         {
             try
             {
-                var dt = _solicitudesAdoService.GetVistaSolicitudesMisPendientes(View.FechaFilterFrom, View.FechaFilterTo, View.ServerHostPath, View.IdModule, "misolestados"
+                var dt = _solicitudesAdoService.GetVistaSolicitudesMisPendientes(View.FechaFilterFrom, View.FechaFilterTo, View.ServerHostPath, View.IdModule, "segrespact"
                                                                          , View.FilterNoSolicitud, View.FilterTipo, View.FilterArea, View.FilterProceso, View.UserSession.IdUser);
                 View.LoadView(dt);
             }

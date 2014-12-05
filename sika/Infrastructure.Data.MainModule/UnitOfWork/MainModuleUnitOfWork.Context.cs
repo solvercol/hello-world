@@ -352,11 +352,23 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
         }
         private ObjectSet<TBL_ModuloAPC_ComentariosRespuesta> _tBL_ModuloAPC_ComentariosRespuesta;
     
+        public IObjectSet<TBL_ModuloAPC_LogSolicitud> TBL_ModuloAPC_LogSolicitud
+        {
+            get { return _tBL_ModuloAPC_LogSolicitud  ?? (_tBL_ModuloAPC_LogSolicitud = CreateObjectSet<TBL_ModuloAPC_LogSolicitud>("TBL_ModuloAPC_LogSolicitud")); }
+        }
+        private ObjectSet<TBL_ModuloAPC_LogSolicitud> _tBL_ModuloAPC_LogSolicitud;
+    
         public IObjectSet<TBL_ModuloAPC_Solicitud> TBL_ModuloAPC_Solicitud
         {
             get { return _tBL_ModuloAPC_Solicitud  ?? (_tBL_ModuloAPC_Solicitud = CreateObjectSet<TBL_ModuloAPC_Solicitud>("TBL_ModuloAPC_Solicitud")); }
         }
         private ObjectSet<TBL_ModuloAPC_Solicitud> _tBL_ModuloAPC_Solicitud;
+    
+        public IObjectSet<TBL_ModuloAPC_Tracking> TBL_ModuloAPC_Tracking
+        {
+            get { return _tBL_ModuloAPC_Tracking  ?? (_tBL_ModuloAPC_Tracking = CreateObjectSet<TBL_ModuloAPC_Tracking>("TBL_ModuloAPC_Tracking")); }
+        }
+        private ObjectSet<TBL_ModuloAPC_Tracking> _tBL_ModuloAPC_Tracking;
     
         public IObjectSet<TBL_ModuloDocumentos_Categorias> TBL_ModuloDocumentos_Categorias
         {

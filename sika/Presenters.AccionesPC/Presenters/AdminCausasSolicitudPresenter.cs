@@ -48,8 +48,14 @@ namespace Presenters.AccionesPC.Presenters
 
             try
             {
-                //var solicitud = _solicitudService.GetById(Convert.ToDecimal(View.IdSolicitud));
+                var solicitud = _solicitudService.GetById(Convert.ToDecimal(View.IdSolicitud));
 
+                if (solicitud != null)
+                {
+                    View.CanAddCausas = ((solicitud.IdEstado == 14) && solicitud.IdResponsableActual == View.UserSession.IdUser)
+                     || View.UserSession.IsInRole("Administrador");
+
+                }
             }
             catch (Exception ex)
             {
@@ -57,6 +63,25 @@ namespace Presenters.AccionesPC.Presenters
             }
         }
 
+        public void LoadCausa()
+        {
+            try
+            {
+                var causa = _causasService.GetById(View.SelectedId);
+
+                View.Descripcion = causa.Descripcion;
+                View.Comentarios = causa.Comentarios;
+
+                View.IsNew = false;
+
+                View.ShowAdminCausaWindow(true);
+
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
+        }
 
         void LoadCausasSolicitud()
         {
@@ -84,6 +109,27 @@ namespace Presenters.AccionesPC.Presenters
 
                 _causasService.Add(model);
               
+                LoadCausasSolicitud();
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
+        }
+
+        public void UpdateCausa()
+        {
+            try
+            {
+                var causa = _causasService.GetById(View.SelectedId);
+
+                causa.Descripcion = View.Descripcion;
+                causa.Comentarios = View.Comentarios;
+                causa.ModifiedBy = View.UserSession.IdUser;
+                causa.ModifiedOn = DateTime.Now;
+
+                _causasService.Modify(causa);
+
                 LoadCausasSolicitud();
             }
             catch (Exception ex)

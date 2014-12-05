@@ -111,7 +111,13 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
         IObjectSet<TBL_ModuloAPC_ComentariosRespuesta> TBL_ModuloAPC_ComentariosRespuesta{get;}
         
     
+        IObjectSet<TBL_ModuloAPC_LogSolicitud> TBL_ModuloAPC_LogSolicitud{get;}
+        
+    
         IObjectSet<TBL_ModuloAPC_Solicitud> TBL_ModuloAPC_Solicitud{get;}
+        
+    
+        IObjectSet<TBL_ModuloAPC_Tracking> TBL_ModuloAPC_Tracking{get;}
         
     
         IObjectSet<TBL_ModuloDocumentos_Categorias> TBL_ModuloDocumentos_Categorias{get;}
