@@ -10,7 +10,7 @@
 
                 <td class="Separador"></td>
 
-                <td class="Line" id>
+                <td class="Line" >
                     <asp:FileUpload ID="fupAnexoArchivoSolicitud" runat="server" />
 
                     <asp:Button ID="btnAddArchivoAdjuntoSolicitud" runat="server" Text="Agregar" OnClick="BtnAddArchivoAdjunto_Click" OnClientClick="return ShowSplashModalLoading();" />

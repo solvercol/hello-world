@@ -41,8 +41,8 @@ namespace Presenters.Reclamos.Presenters
 
         void LoadInitView()
         {
-            View.FechaFilterFrom = DateTime.Now.AddMonths(-1);
-            View.FechaFilterTo = DateTime.Now.AddMonths(1);
+            View.FechaFilterFrom = new DateTime(DateTime.Now.Year, 1, 1);
+            View.FechaFilterTo = new DateTime(DateTime.Now.Year, 12, 31);
             CheckRegiterReclamo();
         }
 

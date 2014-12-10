@@ -374,7 +374,6 @@ namespace Modules.Reclamos.UserControls
 
             btnNuevoGasto.Visible = enable;
             btnSaveCostos.Visible = enable;
-            btnEditar.Visible = !enable;
         }
 
         #endregion

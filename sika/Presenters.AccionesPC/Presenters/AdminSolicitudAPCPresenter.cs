@@ -238,6 +238,9 @@ namespace Presenters.AccionesPC.Presenters
             {
                 var model = _solicitudService.GetById(Convert.ToDecimal(View.IdSolicitud));
 
+                if(string.IsNullOrEmpty(model.Codigo))
+                    model.Codigo = string.Format("A{0}{1}{2}", View.TipoAccion.Substring(0, 1), DateTime.Now.Year, model.Consecutivo.ToString().PadLeft(5, '0'));
+
                 model.TipoAccion = View.TipoAccion;
                 model.IdAreaAccion = View.IdAreaAccion;
                 model.Proceso = View.Proceso;

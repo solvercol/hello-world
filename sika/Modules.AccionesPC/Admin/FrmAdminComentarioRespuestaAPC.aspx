@@ -45,10 +45,15 @@
             </tr>
              <tr>
                 <td>
-                        <tr id="trInfoReclamo" runat="server">             
+                        <tr id="trInfoReclamo" runat="server" visible="false">             
 
                             <td valign="top">
                           <table width="100%" >
+                          <tr>
+                                <td class="SeccionesH1" colspan="2">
+                                    Información Reclamo
+                                </td>
+                            </tr>
                            <tr >
                                 <td class="SeccionesH1" colspan="2">
                                     <asp:Label ID="lblTitleReclamo" runat="server" />
@@ -84,7 +89,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="SeccionesH3" style="width:120px;">
+                            <td class="SeccionesH3" style="width:150px;">
                                 Tipo Acción:
                             </td>
                             <td class="Separador"></td>
@@ -105,19 +110,20 @@
                             <td class="Separador"></td>
                             <td class="SeccionesH4">
                                 <asp:Label ID="lblArea" runat="server" />
+                                - <asp:Label ID="lblGerenteArea" runat="server" />
                             </td>
                             <td class="Separador"></td>
                         </tr>
-                        <tr>
+                       <%-- <tr>
                             <td class="SeccionesH3">
                                 Gerente del Area:
                             </td>
                             <td class="Separador"></td>
                             <td class="SeccionesH4">
-                                <asp:Label ID="lblGerenteArea" runat="server" />
+                                
                             </td>
                             <td class="Separador"></td>
-                        </tr>
+                        </tr>--%>
                         <tr>
                             <td class="SeccionesH3">
                                 Responsable Acción:
@@ -128,26 +134,18 @@
                             </td>
                             <td class="Separador"></td>
                         </tr>                                    
-                        <tr>
+                         <tr>
                             <td class="SeccionesH3">
-                                Fecha Inicio:
+                                Fecha Inicio - Fecha Final
                             </td>
                             <td class="Separador"></td>
                             <td class="SeccionesH4">
-                                <asp:Label ID="lblFechaInicio" runat="server" ForeColor="Red" />
+                                 <asp:Label ID="lblFechaInicio" runat="server"  />
+                                - <asp:Label ID="lblFechaFin" runat="server" />
                             </td>
-                            <td class="Separador"></td>
-                        </tr>
-                        <tr>
-                            <td class="SeccionesH3">
-                                Fecha Final:
+                            <td class="Separador">
                             </td>
-                              <td class="Separador"></td>
-                            <td class="SeccionesH4">
-                                <asp:Label ID="lblFechaFin" runat="server" ForeColor="Red" />
-                            </td>
-                              <td class="Separador"></td>
-                        </tr>    
+                        </tr>   
                 </td>
             </tr>
             <tr>

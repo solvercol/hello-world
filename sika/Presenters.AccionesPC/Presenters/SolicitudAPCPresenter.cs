@@ -68,6 +68,7 @@ namespace Presenters.AccionesPC.Presenters
 
                 if (item != null)
                 {
+                    View.NumeroAPC = item.Codigo;
                     View.TipoAccion = item.TipoAccion;
                     if (item.IdAreaAccion.HasValue)
                         View.Area = item.TBL_ModuloAPC_Areas.Nombre;
@@ -84,6 +85,8 @@ namespace Presenters.AccionesPC.Presenters
                                                        item.TBL_Admin_Usuarios5.Nombres, item.ModifiedOn);
 
                     View.ShowInfoReclamo = false;
+
+                    View.CanEdit = item.IdEstado != 16;
 
                     if (item.IdReclamoCreacion.HasValue)
                         LoadReclamo(item.IdReclamoCreacion.GetValueOrDefault());

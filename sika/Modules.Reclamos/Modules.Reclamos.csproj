@@ -166,6 +166,7 @@
     <Content Include="Views\FrmReclamosPorResponsable.aspx" />
     <Content Include="Views\FrmReclamosPorTargetMarket.aspx" />
     <Content Include="Views\FrmReclamosPorTipo.aspx" />
+    <Content Include="Views\FrmTotalReclamos.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -728,6 +729,13 @@
     </Compile>
     <Compile Include="Views\FrmReclamosPorTipo.aspx.designer.cs">
       <DependentUpon>FrmReclamosPorTipo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmTotalReclamos.aspx.cs">
+      <DependentUpon>FrmTotalReclamos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FrmTotalReclamos.aspx.designer.cs">
+      <DependentUpon>FrmTotalReclamos.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

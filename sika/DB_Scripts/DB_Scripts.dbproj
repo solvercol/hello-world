@@ -176,5 +176,14 @@
     <NotInBuild Include="Scripts\Modules\SolicitudAPC\Vistas\01_SolicitudesAPC_Vistas_MisPendientes.sql">
       <SubType>NotInBuild</SubType>
     </NotInBuild>
+    <NotInBuild Include="Scripts\Modules\SolicitudAPC\Vistas\02_SolicitudesAPC_Vistas_MisSolicitudes.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Scripts\Modules\SolicitudAPC\Vistas\03_SolicitudesAPC_Vistas_Seguimiento.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Scripts\Modules\Reclamos\Vistas\16_Vistas_TotalReclamos.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
   </ItemGroup>
 </Project>

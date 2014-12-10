@@ -1,12 +1,12 @@
-﻿IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'SolicitudesAPC_Vistas_MisPendientes') AND type in (N'P', N'PC'))
-DROP PROCEDURE SolicitudesAPC_Vistas_MisPendientes
+﻿IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'SolicitudesAPC_Vistas_Seguimiento') AND type in (N'P', N'PC'))
+DROP PROCEDURE SolicitudesAPC_Vistas_Seguimiento
 GO
 -- =============================================
 -- Author:		Solver
 -- Create date: 01-07-2013
 -- Description:
 -- =============================================
-CREATE PROCEDURE SolicitudesAPC_Vistas_MisPendientes
+CREATE PROCEDURE SolicitudesAPC_Vistas_Seguimiento
 (
 	@dateFrom datetime
 	,@dateEnd datetime
@@ -136,16 +136,7 @@ where	solicitud.FechaSolicitud >= @dateFrom
 		and isnull(solicitud.Codigo,'') like '%' + case @NoAccion when '' then isnull(solicitud.Codigo,'') else @NoAccion end + '%'
 		and isnull(solicitud.TipoAccion,'') like '%' + case @Tipo when '' then isnull(solicitud.TipoAccion,'') else @Tipo end + '%'
 		and isnull(solicitud.IdAreaAccion,'') = case @Area when 0 then isnull(solicitud.IdAreaAccion,'') else @Area end
-		and isnull(solicitud.Proceso,'') like '%' +  case @Proceso when '' then isnull(solicitud.Proceso,'') else @Proceso end + '%'		
-		and (
-			solicitud.IdResponsableActual = case @IdResponsable when 0 then solicitud.IdResponsableActual else @IdResponsable end
-			or exists (
-						select	1
-						from	TBL_Admin_UsuariosByRol ur with(nolock)
-						where	ur.IdRol = solicitud.idGrupo
-								and ur.IdUser = @IdResponsable
-						)								
-			)
+		and isnull(solicitud.Proceso,'') like '%' +  case @Proceso when '' then isnull(solicitud.Proceso,'') else @Proceso end + '%'				
 		
 -- Result View
 select	distinct

@@ -110,6 +110,7 @@
     <Compile Include="IViews\IReclamosPorTipoView.cs" />
     <Compile Include="IViews\IReclamoView.cs" />
     <Compile Include="IViews\ISeguimientoView.cs" />
+    <Compile Include="IViews\ITotalReclamosView.cs" />
     <Compile Include="IViews\IUnidadesZonasListView.cs" />
     <Compile Include="Message.Designer.cs" />
     <Compile Include="Presenters\ActividadesPorPersonaPresenter.cs" />
@@ -182,6 +183,7 @@
     <Compile Include="Presenters\ReclamosPorResponsablePresenter.cs" />
     <Compile Include="Presenters\ReclamosPorTargetMarketPresenter.cs" />
     <Compile Include="Presenters\ReclamosPorTipoPresenter.cs" />
+    <Compile Include="Presenters\TotalReclamosPresenter.cs" />
     <Compile Include="Presenters\UnidadesZonasListPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Messages.Designer.cs">
