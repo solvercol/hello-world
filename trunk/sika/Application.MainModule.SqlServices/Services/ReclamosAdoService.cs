@@ -510,6 +510,32 @@ namespace Application.MainModule.SqlServices.Services
             }
         }
 
+        public DataTable GetVistaTotalReclamos(string serverHost, string moduleId, int idUser, DateTime from, DateTime end, string noReclamo, string noRelacion, string cliente, string producto, string servicio, string fromView)
+        {
+            try
+            {
+                string strSql = "Vistas_TotalReclamos";
+                var result = _sql.ExecuteDataTable(strSql, CommandType.StoredProcedure
+                                       , new SqlParameter("@ServerHostPath", serverHost)
+                                       , new SqlParameter("@ModuleId", moduleId)
+                                       , new SqlParameter("@UsuarioCreacion", idUser)
+                                       , new SqlParameter("@dateFrom", from)
+                                       , new SqlParameter("@dateEnd", end)
+                                       , new SqlParameter("@NoReclamo", noReclamo)
+                                       , new SqlParameter("@NoRelacion", noRelacion)
+                                       , new SqlParameter("@Cliente", cliente)
+                                       , new SqlParameter("@Producto", producto)
+                                       , new SqlParameter("@Servicio", servicio)
+                                       , new SqlParameter("@FromView", fromView));
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new SqlExecutionException("Vistas_TotalReclamos", ex);
+            }
+        }
+
 
         public DataTable ListadoIngenierosResponsablesPorcategoría(string  idCategoria)
         {
