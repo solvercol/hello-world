@@ -11,7 +11,7 @@
     <tr>
         <td >
             <div style="padding:3px; text-align:right;">
-                <asp:Button ID="btnNuevoActividad" runat="server" Text="Registrar Plan de Acción" OnClick="BtnAddActividad_Click" />
+                <asp:Button ID="btnNuevoActividad" runat="server" Text="Registrar Actividad" OnClick="BtnAddActividad_Click" />
             </div>
         </td>
     </tr>

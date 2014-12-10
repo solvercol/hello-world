@@ -59,8 +59,7 @@ namespace Presenters.AccionesPC.Presenters
 
                 if (solicitud != null)
                 {
-                    View.CanAddAnexos = ((solicitud.IdEstado == 14) && solicitud.IdResponsableActual == View.UserSession.IdUser)
-                     || View.UserSession.IsInRole("Administrador");
+                    View.CanAddAnexos = ((solicitud.IdEstado == 14) && solicitud.IdResponsableActual == View.UserSession.IdUser);
 
                 }
             }

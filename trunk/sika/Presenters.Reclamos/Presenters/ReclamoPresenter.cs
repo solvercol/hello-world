@@ -327,7 +327,6 @@ namespace Presenters.Reclamos.Presenters
             clone.IdCategoriaProducto = reclamo.IdCategoriaProducto;
             clone.NombreCliente = reclamo.NombreCliente;
             clone.NombreProducto = reclamo.NombreProducto;
-            clone.IdAccionApc = reclamo.IdAccionApc;
             clone.IdEstado = 1; // Registrado
             clone.IsActive = true;
             clone.CreateBy = View.UserSession.IdUser;
@@ -494,7 +493,6 @@ namespace Presenters.Reclamos.Presenters
             model.IdSolicitante = View.UserSession.IdUser;
             model.IdResponsableActual = View.UserSession.IdUser;
             model.IdResponsableEjecucion = View.UserSession.IdUser;
-            model.IdResponsableSeguimiento = View.UserSession.IdUser;
             model.FechaSolicitud = DateTime.Now;
             
             if (!string.IsNullOrEmpty(View.IdReclamo))

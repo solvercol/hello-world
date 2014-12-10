@@ -61,7 +61,7 @@
                     <div id="padding" class="cleanpad8">
                         <div id="pad" class="min550">
                           <div style="display:block;" class="TituloVentana">
-                            <asp:Literal ID="PageTitleLabel" runat="server"  />
+                            <asp:Literal ID="PageTitleLabel" runat="server"  />                            
                           </div>               
                             <asp:UpdatePanel ID="upMessages" runat="server">
                                 <ContentTemplate>

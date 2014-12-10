@@ -52,8 +52,7 @@ namespace Presenters.AccionesPC.Presenters
 
                 if (solicitud != null)
                 {
-                    View.CanAddCausas = ((solicitud.IdEstado == 14) && solicitud.IdResponsableActual == View.UserSession.IdUser)
-                     || View.UserSession.IsInRole("Administrador");
+                    View.CanAddCausas = ((solicitud.IdEstado == 14) && solicitud.IdResponsableActual == View.UserSession.IdUser);
 
                 }
             }

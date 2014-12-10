@@ -38,6 +38,12 @@
                             <table width="100%" >
                                 <tr >
                                 <td class="SeccionesH1" colspan="2">
+                                    Infomración Reclamo
+                                </td>
+                            </tr>
+                            <table width="100%" >
+                                <tr >
+                                <td class="SeccionesH1" colspan="2">
                                     <asp:Label ID="lblTitleReclamo" runat="server" />
                                     <asp:ImageButton 
                                         ID="ImgSearch" 
@@ -105,21 +111,22 @@
                             <td class="Separador"></td>
                             <td class="SeccionesH4">
                                 <asp:Label ID="lblArea" runat="server" />
+                                - <asp:Label ID="lblGerenteArea" runat="server" />
                             </td>
                             <td class="Separador">
                             </td>
                         </tr>
-                        <tr>
+                       <%-- <tr>
                             <td class="SeccionesH3">
                                 Gerente del Area:
                             </td>
                             <td class="Separador"></td>
                             <td class="SeccionesH4">
-                                <asp:Label ID="lblGerenteArea" runat="server" />
+                                
                             </td>
                             <td class="Separador">
                             </td>
-                        </tr>
+                        </tr>--%>
                         <tr>
                             <td class="SeccionesH3">
                                 Responsable Acción:
@@ -130,11 +137,17 @@
                             </td>
                             <td class="Separador">
                             </td>
-                        </tr>                                    
+                        </tr> 
                         <tr>
-                            <td class="SeccionesH3" colspan="4">
-                                Fecha Inicio: <asp:Label ID="lblFechaInicio" runat="server" ForeColor="Red" />
-                                - Fecha Final: <asp:Label ID="lblFechaFin" runat="server" ForeColor="Red" />
+                            <td class="SeccionesH3">
+                                Fecha Inicio - Fecha Final
+                            </td>
+                            <td class="Separador"></td>
+                            <td class="SeccionesH4">
+                                 <asp:Label ID="lblFechaInicio" runat="server"  />
+                                - <asp:Label ID="lblFechaFin" runat="server" />
+                            </td>
+                            <td class="Separador">
                             </td>
                         </tr>
                     </td> 

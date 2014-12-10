@@ -133,6 +133,12 @@ namespace Modules.AccionesPC.UserControls
             set
             {
                 trAddAnexos.Visible = value;
+
+                //if (value)
+                //{
+                //    ScriptManager scriptManager = ScriptManager.GetCurrent(this.Page);
+                //    scriptManager.RegisterPostBackControl(btnAddArchivoAdjuntoSolicitud);
+                //}
             }
         }
 

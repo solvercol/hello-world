@@ -124,7 +124,7 @@
     <value>Se ha adicionado una alternativa por {0}, con fecha {1:dd/MM/yyyy hh:mm ss tt}</value>
   </data>
   <data name="SaveReclamo" xml:space="preserve">
-    <value>El reclamo ha sido guardo por {0}, con fecha {1:dd/MM/yyyy hh:mm ss tt}</value>
+    <value>El reclamo ha sido guardado por {0}, con fecha {1:dd/MM/yyyy hh:mm ss tt}</value>
   </data>
   <data name="UpdateReclamo" xml:space="preserve">
     <value>El reclamo ha sido actualizado por {0}, con fecha {1:dd/MM/yyyy hh:mm ss tt}</value>

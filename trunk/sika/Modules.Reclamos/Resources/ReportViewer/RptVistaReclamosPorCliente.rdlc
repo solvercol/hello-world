@@ -1483,7 +1483,11 @@
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
           <TablixMembers>
-            <TablixMember />
+            <TablixMember>
+              <FixedData>true</FixedData>
+              <KeepWithGroup>After</KeepWithGroup>
+              <RepeatOnNewPage>true</RepeatOnNewPage>
+            </TablixMember>
             <TablixMember>
               <Group Name="Cliente">
                 <GroupExpressions>
@@ -1540,7 +1544,10 @@
                 </TablixMember>
               </TablixMembers>
             </TablixMember>
-            <TablixMember />
+            <TablixMember>
+              <KeepWithGroup>Before</KeepWithGroup>
+              <RepeatOnNewPage>true</RepeatOnNewPage>
+            </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DS_Report</DataSetName>

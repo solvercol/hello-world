@@ -972,7 +972,9 @@
         <TablixRowHierarchy>
           <TablixMembers>
             <TablixMember>
+              <FixedData>true</FixedData>
               <KeepWithGroup>After</KeepWithGroup>
+              <RepeatOnNewPage>true</RepeatOnNewPage>
             </TablixMember>
             <TablixMember>
               <Group Name="Details" />
@@ -981,7 +983,7 @@
         </TablixRowHierarchy>
         <DataSetName>DS_Report</DataSetName>
         <Height>1cm</Height>
-        <Width>24.23cm</Width>
+        <Width>24.22998cm</Width>
         <Style>
           <Border>
             <Style>None</Style>

@@ -9,7 +9,7 @@ using Presenters.Reclamos.Presenters;
 
 namespace Modules.Reclamos.Views
 {
-    public partial class FrmReclamosPorTargetMarket : ViewPage<ReclamosPorTargetMarketPresenter, IReclamosPorTargetMarketView>, IReclamosPorTargetMarketView
+    public partial class FrmTotalReclamos : ViewPage<TotalReclamosPresenter, ITotalReclamosView>, ITotalReclamosView
     {
         #region Page Events
 
@@ -17,7 +17,7 @@ namespace Modules.Reclamos.Views
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ImprimirTituloVentana("Reclamos Por Target Market");
+            ImprimirTituloVentana("Total Reclamos");
         }
 
         #endregion
@@ -34,11 +34,11 @@ namespace Modules.Reclamos.Views
         {
             if (TipoReclamo == "Producto")
             {
-                Response.Redirect(string.Format("../Admin/FrmAddReclamo.aspx?ModuleId={0}&tr={1}&from=rectargetmarket", ModuleId, TipoReclamo));
+                Response.Redirect(string.Format("../Admin/FrmAddReclamo.aspx?ModuleId={0}&tr={1}&from=recnumero", ModuleId, TipoReclamo));
             }
             else
             {
-                Response.Redirect(string.Format("../Admin/FrmAddReclamo.aspx?ModuleId={0}&tr={1}&cat={2}&gruinf={3}&from=rectargetmarket",
+                Response.Redirect(string.Format("../Admin/FrmAddReclamo.aspx?ModuleId={0}&tr={1}&cat={2}&gruinf={3}&from=recnumero",
                                                 ModuleId, TipoReclamo, IdCategoriaReclamo, IdGrupoInformacion
                                                 ));
             }
@@ -102,7 +102,7 @@ namespace Modules.Reclamos.Views
             rptReclamos.Reset();
             rptReclamos.LocalReport.DataSources.Clear();
             rptReclamos.ProcessingMode = ProcessingMode.Local;
-            rptReclamos.LocalReport.ReportPath = Server.MapPath(@"~/Pages/Modules/Reclamos/Resources/ReportViewer/RptVistaReclamosPorTargetMarket.rdlc");
+            rptReclamos.LocalReport.ReportPath = Server.MapPath(@"~/Pages/Modules/Reclamos/Resources/ReportViewer/RptVistaReclamosPorNumero.rdlc");
             rptReclamos.LocalReport.EnableHyperlinks = true;
             rptReclamos.LocalReport.DataSources.Add(new ReportDataSource("DS_Report", dt));
             rptReclamos.DataBind();
@@ -187,6 +187,18 @@ namespace Modules.Reclamos.Views
             set
             {
                 txtNoReclamo.Text = value;
+            }
+        }
+
+        public string FilterNoRelacion
+        {
+            get
+            {
+                return txtNoRelacion.Text;
+            }
+            set
+            {
+                txtNoRelacion.Text = value;
             }
         }
 

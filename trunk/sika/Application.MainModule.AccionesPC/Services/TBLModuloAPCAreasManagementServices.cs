@@ -146,6 +146,14 @@ namespace Application.MainModule.AccionesPC.Services
              return _TBLModuloAPCAreasRepository.GetEntityListWithGerente(onlyEnabledSpec);
          }
 
+         public List<TBL_ModuloAPC_Areas> GetAreasConSolicitudes()
+         {
+             Specification<TBL_ModuloAPC_Areas> onlyEnabledSpec = new DirectSpecification<TBL_ModuloAPC_Areas>(u => u.IsActive
+                                                                                                              && u.TBL_ModuloAPC_Solicitud.Any());
+
+             return _TBLModuloAPCAreasRepository.GetEntityListWithGerente(onlyEnabledSpec);
+         }
+
          #endregion
 
          #region IDisposable Members

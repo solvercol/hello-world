@@ -140,7 +140,7 @@ namespace Modules.AccionesPC.Views
             get
             {
                 var sDate = wdpFiltroDateTo.Text.Split('-');
-                return new DateTime(Convert.ToInt32(sDate[0]), Convert.ToInt32(sDate[1]), 1);
+                return new DateTime(Convert.ToInt32(sDate[0]), Convert.ToInt32(sDate[1]), 1).AddMonths(1).AddDays(-1);
             }
             set
             {

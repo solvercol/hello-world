@@ -36,8 +36,8 @@ namespace Presenters.AccionesPC.Presenters
 
         void InitViewValues()
         {
-            View.FechaFilterFrom = DateTime.Now.AddMonths(-6);
-            View.FechaFilterTo = DateTime.Now.AddMonths(6);
+            View.FechaFilterFrom = new DateTime(DateTime.Now.Year, 1, 1);
+            View.FechaFilterTo = new DateTime(DateTime.Now.Year, 12, 31);
             View.FilterNoSolicitud = string.Empty;
         }
 
@@ -45,7 +45,7 @@ namespace Presenters.AccionesPC.Presenters
         {
             try
             {
-                var items = _areasService.GetEntitiesWithGerente();
+                var items = _areasService.GetAreasConSolicitudes();
 
                 if (items.Any())
                     items = items.OrderBy(x => x.Nombre).ToList();
@@ -94,7 +94,7 @@ namespace Presenters.AccionesPC.Presenters
         {
             try
             {
-                var dt = _solicitudesAdoService.GetVistaSolicitudesMisPendientes(View.FechaFilterFrom, View.FechaFilterTo, View.ServerHostPath, View.IdModule, "misolfecha"
+                var dt = _solicitudesAdoService.GetVistaMisSolicitudes(View.FechaFilterFrom, View.FechaFilterTo, View.ServerHostPath, View.IdModule, "misolfecha"
                                                                          , View.FilterNoSolicitud, View.FilterTipo, View.FilterArea, View.FilterProceso, View.UserSession.IdUser);
                 View.LoadView(dt);
             }

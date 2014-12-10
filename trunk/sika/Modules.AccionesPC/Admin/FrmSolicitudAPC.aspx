@@ -55,6 +55,11 @@
                                     <tr id="trInfoReclamo" runat="server" visible="false">
                                         <td valign="top" colspan="2">
                                             <table width="100%" >
+                                                 <tr>
+                                                    <td class="SeccionesH1" colspan="2">
+                                                        Información Reclamo
+                                                    </td>
+                                                </tr>
                                                 <tr>
                                                     <td class="SeccionesH1" colspan="2">
                                                         <asp:Label ID="lblTitleReclamo" runat="server" />
@@ -91,7 +96,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="SeccionesH3" style="width:120px;">
+                                        <td class="SeccionesH3" style="width:150px;">
                                             Tipo Acción:
                                         </td>
                                         <td class="SeccionesH4">
@@ -121,11 +126,14 @@
                                         <td class="SeccionesH4">
                                             <asp:Label ID="lblResponsableAccion" runat="server" />
                                         </td>
-                                    </tr>  
+                                    </tr> 
                                     <tr>
-                                        <td colspan="2" class="SeccionesH3">
-                                            Fecha Inicio: <asp:Label ID="lblFechaInicio" runat="server" ForeColor="Red" />
-                                            - Fecha Final: <asp:Label ID="lblFechaFin" runat="server" ForeColor="Red" />
+                                        <td class="SeccionesH3">
+                                            Fecha Inicio - Fecha Final
+                                        </td>
+                                        <td class="SeccionesH4">
+                                            <asp:Label ID="lblFechaInicio" runat="server"  />
+                                            - <asp:Label ID="lblFechaFin" runat="server"  />
                                         </td>
                                     </tr>
                                 </table>
@@ -137,10 +145,10 @@
                         <asp:UpdatePanel ID="upMenuBar" runat="server">
                             <ContentTemplate>
                                  <div style="padding:3px; text-align:right;">
-                                    <asp:Button ID="btnRegresar" runat="server" Text="Regresar" OnClick="BtnRegresarClick" />
-                                    <asp:Button ID="btncerrar" runat="server" Text="Cerrar Acción" OnClick="BtnCerrarAccionClick" />
+                                    <asp:Button ID="btnRegresar" runat="server" Text="Regresar" OnClick="BtnRegresarClick" />                                    
                                     <asp:Button ID="btnEdit" runat="server" Text="Editar" OnClick="BtnEditSolicitudClick" />
                                     <asp:PlaceHolder ID="plhWf" runat="server"></asp:PlaceHolder>
+                                    <asp:Button ID="btncerrar" runat="server" Text="Cerrar Acción Admin" OnClick="BtnCerrarAccionClick" />
                                 </div>
                             </ContentTemplate>
                         </asp:UpdatePanel>

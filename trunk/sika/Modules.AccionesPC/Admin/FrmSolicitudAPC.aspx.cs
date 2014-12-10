@@ -69,7 +69,7 @@ namespace Modules.AccionesPC.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ImprimirTituloVentana(string.Format("Acciones Preventivas Correctivas."));
+            ImprimirTituloVentana(string.Format("Acciones Preventivas Correctivas - {0}", NumeroAPC));
             LoadUserControl();
             LoadUserControlVentanaMensajes(null);
 
@@ -696,10 +696,32 @@ namespace Modules.AccionesPC.Admin
             }
         }
 
-        #endregion
+        public string NumeroAPC
+        {
+            get
+            {
+                return string.Format("{0}", ViewState["SolicitudAPC_NumeroAPC"]);
+            }
+            set
+            {
+                ViewState["SolicitudAPC_NumeroAPC"] = value;
+            }
+        }
+
+        public bool CanEdit
+        {
+            get
+            {
+                return btnEdit.Visible;
+            }
+            set
+            {
+                btnEdit.Visible = value;
+            }
+        }
 
         #endregion
 
-       
+        #endregion
     }
 }

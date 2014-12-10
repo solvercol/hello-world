@@ -11,6 +11,7 @@ namespace Presenters.AccionesPC.IViews
         string IdSolicitud { get; }
 
         // Seccion Info Solicitud
+        string NumeroAPC { get; set; }
         string TipoAccion { get; set; }
         string Area { get; set; }
         string GerenteArea { get; set; }
@@ -30,6 +31,8 @@ namespace Presenters.AccionesPC.IViews
         string Asesor { get; set; }
         bool ShowInfoReclamo { get; set; }
         bool MostrarBotonCierreSolicitud {  set; }
+
+        bool CanEdit { get; set; }
 
         // Load
         void LoadSecciones(IEnumerable<TBL_Admin_Secciones> secciones);

@@ -711,7 +711,9 @@
         <TablixRowHierarchy>
           <TablixMembers>
             <TablixMember>
+              <FixedData>true</FixedData>
               <KeepWithGroup>After</KeepWithGroup>
+              <RepeatOnNewPage>true</RepeatOnNewPage>
             </TablixMember>
             <TablixMember>
               <Group Name="Details" />
@@ -728,7 +730,7 @@
           </SortExpression>
         </SortExpressions>
         <Height>1.2cm</Height>
-        <Width>23.5cm</Width>
+        <Width>23.50003cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -739,7 +741,7 @@
     <Height>0.47244in</Height>
     <Style />
   </Body>
-  <Width>9.25197in</Width>
+  <Width>9.25198in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>

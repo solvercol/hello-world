@@ -10,13 +10,13 @@ using Applications.MainModule.Admin.IServices;
 
 namespace Presenters.Reclamos.Presenters
 {
-    public class ReclamosPorTargetMarketPresenter : Presenter<IReclamosPorTargetMarketView>
+    public class TotalReclamosPresenter : Presenter<ITotalReclamosView>
     {
         readonly ISfTBL_ModuloReclamos_CategoriasReclamoManagementServices _categoriasReclamoService;
         readonly IReclamosAdoService _recladoAdoService;
         readonly ISfTBL_Admin_OptionListManagementServices _optionListService;
 
-        public ReclamosPorTargetMarketPresenter(ISfTBL_ModuloReclamos_CategoriasReclamoManagementServices categoriasReclamoService
+        public TotalReclamosPresenter(ISfTBL_ModuloReclamos_CategoriasReclamoManagementServices categoriasReclamoService
                                             , IReclamosAdoService recladoAdoService, ISfTBL_Admin_OptionListManagementServices optionListService)
         {
             _categoriasReclamoService = categoriasReclamoService;
@@ -69,8 +69,8 @@ namespace Presenters.Reclamos.Presenters
         {
             try
             {
-                var dt = _recladoAdoService.GetVistaReclamosPorTargetMarket(View.FechaFilterFrom, View.FechaFilterTo, View.ServerHostPath, View.IdModule
-                                                                            , View.FilterNoReclamo, View.FilterCliente, View.FilterProducto);
+                var dt = _recladoAdoService.GetVistaReclamosPorNumero(View.FechaFilterFrom, View.FechaFilterTo, View.ServerHostPath, View.IdModule
+                                                                      , View.FilterNoReclamo, View.FilterCliente, View.FilterProducto, View.FilterServicio);
                 View.LoadViewReclamos(dt);
             }
             catch (Exception ex)
