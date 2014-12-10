@@ -78,6 +78,10 @@ namespace Application.MainModule.SqlServices.IServices
                                               DateTime from, DateTime end, string noReclamo,
                                               string cliente, string producto, string servicio, string fromView);
 
+        DataTable GetVistaTotalReclamos(string serverHost, string moduleId, int idUser,
+                                            DateTime from, DateTime end, string noReclamo, string noRelacion,
+                                            string cliente, string producto, string servicio, string fromView);
+
         #endregion
     }
 }

@@ -69,8 +69,8 @@ namespace Presenters.Reclamos.Presenters
         {
             try
             {
-                var dt = _recladoAdoService.GetVistaReclamosPorNumero(View.FechaFilterFrom, View.FechaFilterTo, View.ServerHostPath, View.IdModule
-                                                                      , View.FilterNoReclamo, View.FilterCliente, View.FilterProducto, View.FilterServicio);
+                var dt = _recladoAdoService.GetVistaTotalReclamos(View.ServerHostPath, View.IdModule, View.UserSession.IdUser, View.FechaFilterFrom, View.FechaFilterTo
+                                                                    , View.FilterNoReclamo, View.FilterNoRelacion, View.FilterCliente, View.FilterProducto, View.FilterServicio, "rectotal");
                 View.LoadViewReclamos(dt);
             }
             catch (Exception ex)
