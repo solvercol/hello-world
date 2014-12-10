@@ -64,13 +64,17 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Catalogos\FrmAddUser.aspx" />
     <Content Include="Catalogos\FrmAdminEmailTemplate.aspx" />
     <Content Include="Catalogos\FrmAdminModules.aspx" />
     <Content Include="Catalogos\FrmAdminOptionsList.aspx" />
+    <Content Include="Catalogos\FrmAdminUsers.aspx" />
     <Content Include="Catalogos\FrmEditEmailTemplate.aspx" />
     <Content Include="Catalogos\FrmEditModule.aspx" />
     <Content Include="Catalogos\FrmEditOptionItem.aspx" />
+    <Content Include="Catalogos\FrmEditUser.aspx" />
     <Content Include="Catalogos\FrmViewOptionList.aspx" />
+    <Content Include="Catalogos\FrmViewUser.aspx" />
     <Content Include="Install\DataBase\mssql2000\1.0.0.sql" />
     <Content Include="Install\DataBase\mssql2000\Install.sql" />
     <Content Include="Web.config" />
@@ -83,6 +87,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminModule.cs" />
+    <Compile Include="Catalogos\FrmAddUser.aspx.cs">
+      <DependentUpon>FrmAddUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\FrmAddUser.aspx.designer.cs">
+      <DependentUpon>FrmAddUser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Catalogos\FrmAdminEmailTemplate.aspx.cs">
       <DependentUpon>FrmAdminEmailTemplate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -103,6 +113,12 @@
     </Compile>
     <Compile Include="Catalogos\FrmAdminOptionsList.aspx.designer.cs">
       <DependentUpon>FrmAdminOptionsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\FrmAdminUsers.aspx.cs">
+      <DependentUpon>FrmAdminUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\FrmAdminUsers.aspx.designer.cs">
+      <DependentUpon>FrmAdminUsers.aspx</DependentUpon>
     </Compile>
     <Compile Include="Catalogos\FrmEditEmailTemplate.aspx.cs">
       <DependentUpon>FrmEditEmailTemplate.aspx</DependentUpon>
@@ -125,12 +141,24 @@
     <Compile Include="Catalogos\FrmEditOptionItem.aspx.designer.cs">
       <DependentUpon>FrmEditOptionItem.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Catalogos\FrmEditUser.aspx.cs">
+      <DependentUpon>FrmEditUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\FrmEditUser.aspx.designer.cs">
+      <DependentUpon>FrmEditUser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Catalogos\FrmViewOptionList.aspx.cs">
       <DependentUpon>FrmViewOptionList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Catalogos\FrmViewOptionList.aspx.designer.cs">
       <DependentUpon>FrmViewOptionList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\FrmViewUser.aspx.cs">
+      <DependentUpon>FrmViewUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\FrmViewUser.aspx.designer.cs">
+      <DependentUpon>FrmViewUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

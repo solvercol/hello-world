@@ -45,14 +45,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IViews\IAddUserView.cs" />
     <Compile Include="IViews\IAdminOptionList.cs" />
     <Compile Include="IViews\IDetailOptionListView.cs" />
+    <Compile Include="IViews\IDetailUserView.cs" />
     <Compile Include="IViews\IEditEmailTemplateView.cs" />
     <Compile Include="IViews\IEditModulesView.cs" />
     <Compile Include="IViews\IEditOptionListView.cs" />
     <Compile Include="IViews\IEditRoleView.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="IViews\IEditUserView.cs" />
     <Compile Include="IViews\ILogout.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -64,19 +67,23 @@
     <Compile Include="IViews\IRoleView.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="IViews\IUsersListView.cs" />
     <Compile Include="Message.Designer.cs">
       <DependentUpon>Message.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Presenters\AddUserPresenter.cs" />
     <Compile Include="Presenters\AdminOptionsListPresenters.cs" />
     <Compile Include="Presenters\DetailOptionListPresenter.cs" />
+    <Compile Include="Presenters\DetailUserPresenter.cs" />
     <Compile Include="Presenters\EditEmailTemplatePresenter.cs" />
     <Compile Include="Presenters\EditModulePresenter.cs" />
     <Compile Include="Presenters\EditOptionListPresenter.cs" />
     <Compile Include="Presenters\EditRolePresenter.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Presenters\EditUserPresenter.cs" />
     <Compile Include="Presenters\LogoutPresenter.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -88,6 +95,7 @@
     <Compile Include="Presenters\RolePresenter.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Presenters\UserListPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
