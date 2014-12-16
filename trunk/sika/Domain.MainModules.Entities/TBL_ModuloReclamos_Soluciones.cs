@@ -190,6 +190,21 @@ namespace Domain.MainModules.Entities
             }
         }
         private System.DateTime _modifiedOn;
+    
+        [DataMember]
+        public string Referencia
+        {
+            get { return _referencia; }
+            set
+            {
+                if (_referencia != value)
+                {
+                    _referencia = value;
+                    OnPropertyChanged("Referencia");
+                }
+            }
+        }
+        private string _referencia;
 
         #endregion
         #region Navigation Properties

@@ -155,7 +155,7 @@ from	TBL_ModuloReclamos_Reclamo reclamo with(nolock)
 			on reclamo.IdEstado = estado.IdEstado
 		inner join TBL_Admin_Usuarios asesor with(nolock)
 			on reclamo.IdAsesoradoPor = asesor.IdUser
-		inner join TBL_Admin_Usuarios responsable with(nolock)
+		left join TBL_Admin_Usuarios responsable with(nolock)
 			on reclamo.IdResponsableActual = responsable.IdUser
 		inner join TBL_Admin_Usuarios autor with(nolock)
 			on reclamo.CreateBy = autor.IdUser

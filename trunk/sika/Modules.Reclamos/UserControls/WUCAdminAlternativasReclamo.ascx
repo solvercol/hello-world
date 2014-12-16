@@ -82,7 +82,7 @@
         <script type="text/javascript" language="javascript">
             Sys.Application.add_load(RebindScripts);
         </script>
-        <asp:Panel ID="pnlAdminAlternativa"  runat="server" CssClass="popup_Container" Width="500" Height="580" style="display:none;">  
+        <asp:Panel ID="pnlAdminAlternativa"  runat="server" CssClass="popup_Container" Width="520" Height="580" style="display:none;">  
 
             <div class="popup_Titlebar" id="PopupHeader">
                 <div class="TitlebarLeft">
@@ -102,7 +102,7 @@
             <div class="popup_Body">                                                    
                 <table width="100%" class="tblSecciones">
                     <tr>
-                        <th style="text-align:left; width: 30%; vertical-align:top">
+                        <th style="text-align:left; width: 31%; vertical-align:top">
                             Causas :
                         </th>
 

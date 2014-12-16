@@ -48,6 +48,10 @@
           <DataField>AreaAccion</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="IdEstado">
+          <DataField>IdEstado</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
         <Field Name="Estado">
           <DataField>Estado</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -1460,12 +1464,12 @@
             <TablixMember>
               <Group Name="Estado">
                 <GroupExpressions>
-                  <GroupExpression>=Fields!Estado.Value</GroupExpression>
+                  <GroupExpression>=Fields!Mes.Value</GroupExpression>
                 </GroupExpressions>
               </Group>
               <SortExpressions>
                 <SortExpression>
-                  <Value>=Fields!Estado.Value</Value>
+                  <Value>=Fields!IdMes.Value</Value>
                 </SortExpression>
               </SortExpressions>
               <TablixMembers>
@@ -1480,7 +1484,7 @@
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!IdSolicitudAPC.Value</Value>
+                      <Value>=Fields!Codigo.Value</Value>
                     </SortExpression>
                   </SortExpressions>
                   <TablixMembers>

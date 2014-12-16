@@ -44,8 +44,8 @@ namespace Application.MainModule.SqlServices.Services
                     producto.PesoNeto = string.IsNullOrEmpty(string.Format("{0}", dt.Rows[i]["PESONETO"])) ? 0 : Convert.ToDecimal(string.Format("{0}", dt.Rows[i]["PESONETO"]));
                     producto.PrecioLista = string.IsNullOrEmpty(string.Format("{0}", dt.Rows[i]["PRECIOLISTA"])) ? 0 : Convert.ToDecimal(string.Format("{0}", dt.Rows[i]["PRECIOLISTA"]));
                     producto.GrupoCompradores = string.Format("{0}", dt.Rows[i]["GRUPOCOMPRADORES"]);
-                    producto.CampoApl = string.Format("{0}", dt.Rows[i]["CAMPOAPL"]);
-                    producto.Categoria = string.Format("{0}", dt.Rows[i]["CATEGORIA"]);
+                    producto.CampoApl = string.Format("{0}", dt.Rows[i]["CATEGORIA"]);
+                    producto.Categoria = string.Format("{0}", dt.Rows[i]["CAMPOAPL"]);
                     producto.SubCategoria = string.Format("{0}", dt.Rows[i]["SUBCATEGORIA"]);
 
                     items.Add(producto);
@@ -79,8 +79,8 @@ namespace Application.MainModule.SqlServices.Services
                 producto.PesoNeto = string.IsNullOrEmpty(string.Format("{0}", dt.Rows[i]["PESONETO"])) ? 0 : Convert.ToDecimal(string.Format("{0}", dt.Rows[i]["PESONETO"]));
                 producto.PrecioLista = string.IsNullOrEmpty(string.Format("{0}", dt.Rows[i]["PRECIOLISTA"])) ? 0 : Convert.ToDecimal(string.Format("{0}", dt.Rows[i]["PRECIOLISTA"]));
                 producto.GrupoCompradores = string.Format("{0}", dt.Rows[i]["GRUPOCOMPRADORES"]);
-                producto.CampoApl = string.Format("{0}", dt.Rows[i]["CAMPOAPL"]);
-                producto.Categoria = string.Format("{0}", dt.Rows[i]["CATEGORIA"]);
+                producto.CampoApl = string.Format("{0}", dt.Rows[i]["CATEGORIA"]);
+                producto.Categoria = string.Format("{0}", dt.Rows[i]["CAMPOAPL"]);
                 producto.SubCategoria = string.Format("{0}", dt.Rows[i]["SUBCATEGORIA"]);
                 if (dt.Rows[i]["IdCategoria"] != null && !string.IsNullOrEmpty(dt.Rows[i]["IdCategoria"].ToString()))
                 {
@@ -120,8 +120,8 @@ namespace Application.MainModule.SqlServices.Services
                     producto.PesoNeto = string.IsNullOrEmpty(string.Format("{0}", dt.Rows[i]["PESONETO"])) ? 0 : Convert.ToDecimal(string.Format("{0}", dt.Rows[i]["PESONETO"]));
                     producto.PrecioLista = string.IsNullOrEmpty(string.Format("{0}", dt.Rows[i]["PRECIOLISTA"])) ? 0 : Convert.ToDecimal(string.Format("{0}", dt.Rows[i]["PRECIOLISTA"]));
                     producto.GrupoCompradores = string.Format("{0}", dt.Rows[i]["GRUPOCOMPRADORES"]);
-                    producto.CampoApl = string.Format("{0}", dt.Rows[i]["CAMPOAPL"]);
-                    producto.Categoria = string.Format("{0}", dt.Rows[i]["CATEGORIA"]);
+                    producto.CampoApl = string.Format("{0}", dt.Rows[i]["CATEGORIA"]);
+                    producto.Categoria = string.Format("{0}", dt.Rows[i]["CAMPOAPL"]);
                     producto.SubCategoria = string.Format("{0}", dt.Rows[i]["SUBCATEGORIA"]);
 
                     items.Add(producto);

@@ -44,6 +44,7 @@ declare	@View table
 			,Accion						varchar(512)
 			,Proceso					varchar(512)
 			,AreaAccion					varchar(512)
+			,IdEstado					int
 			,Estado						varchar(512)
 			,Autor						varchar(512)
 			,GerenteArea				varchar(512)
@@ -66,6 +67,7 @@ insert	into
 			,Accion
 			,Proceso
 			,AreaAccion
+			,IdEstado
 			,Estado
 			,Autor
 			,GerenteArea
@@ -109,6 +111,7 @@ select	distinct
 		,solicitud.DescripcionAccion		as Accion
 		,solicitud.Proceso					as Proceso
 		,area.Nombre						as AreaAccion
+		,estado.IdEstado					as IdEstado
 		,estado.Descripcion					as Estado
 		,autor.Nombres						as Autor
 		,gerenteArea.Nombres				as GerenteArea
@@ -149,6 +152,7 @@ select	distinct
 		,Accion
 		,Proceso
 		,AreaAccion
+		,IdEstado
 		,Estado
 		,Autor
 		,GerenteArea

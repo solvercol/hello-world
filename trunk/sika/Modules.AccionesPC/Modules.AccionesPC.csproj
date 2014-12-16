@@ -94,6 +94,8 @@
     <Content Include="UserControls\WucPanelEstado.ascx" />
     <Content Include="UserControls\WucRenderMessagesError.ascx" />
     <Content Include="UserControls\WucSeguimiento.ascx" />
+    <Content Include="Views\FrmActividadesPorPersona.aspx" />
+    <Content Include="Views\FrmMisActividadesPendientes.aspx" />
     <Content Include="Views\FrmMisSolicitudesPendientes.aspx" />
     <Content Include="Views\FrmMisSolicitudesPorEstado.aspx" />
     <Content Include="Views\FrmMisSolicitudesPorFecha.aspx" />
@@ -247,6 +249,20 @@
     <Compile Include="UserControls\WucSeguimiento.ascx.designer.cs">
       <DependentUpon>WucSeguimiento.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Views\FrmActividadesPorPersona.aspx.cs">
+      <DependentUpon>FrmActividadesPorPersona.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FrmActividadesPorPersona.aspx.designer.cs">
+      <DependentUpon>FrmActividadesPorPersona.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmMisActividadesPendientes.aspx.cs">
+      <DependentUpon>FrmMisActividadesPendientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FrmMisActividadesPendientes.aspx.designer.cs">
+      <DependentUpon>FrmMisActividadesPendientes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\FrmMisSolicitudesPendientes.aspx.cs">
       <DependentUpon>FrmMisSolicitudesPendientes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -390,6 +406,8 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Resources\ReportViewer\RptActividadesPorPersona.rdlc" />
+    <EmbeddedResource Include="Resources\ReportViewer\RptMisActividadesPendientes.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\RptSeguimientoTotalSolicitudes.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\RptSeguimientoPorTipo.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\RptSeguimientoPorAutor.rdlc" />

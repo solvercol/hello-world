@@ -48,6 +48,10 @@
           <DataField>AreaAccion</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="IdEstado">
+          <DataField>IdEstado</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
         <Field Name="Estado">
           <DataField>Estado</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -1587,7 +1591,7 @@
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!Estado.Value</Value>
+                      <Value>=Fields!IdEstado.Value</Value>
                     </SortExpression>
                   </SortExpressions>
                   <TablixMembers>

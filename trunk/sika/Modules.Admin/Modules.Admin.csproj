@@ -89,6 +89,7 @@
     <Compile Include="AdminModule.cs" />
     <Compile Include="Catalogos\FrmAddUser.aspx.cs">
       <DependentUpon>FrmAddUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Catalogos\FrmAddUser.aspx.designer.cs">
       <DependentUpon>FrmAddUser.aspx</DependentUpon>
@@ -116,6 +117,7 @@
     </Compile>
     <Compile Include="Catalogos\FrmAdminUsers.aspx.cs">
       <DependentUpon>FrmAdminUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Catalogos\FrmAdminUsers.aspx.designer.cs">
       <DependentUpon>FrmAdminUsers.aspx</DependentUpon>
@@ -143,6 +145,7 @@
     </Compile>
     <Compile Include="Catalogos\FrmEditUser.aspx.cs">
       <DependentUpon>FrmEditUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Catalogos\FrmEditUser.aspx.designer.cs">
       <DependentUpon>FrmEditUser.aspx</DependentUpon>
@@ -156,6 +159,7 @@
     </Compile>
     <Compile Include="Catalogos\FrmViewUser.aspx.cs">
       <DependentUpon>FrmViewUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Catalogos\FrmViewUser.aspx.designer.cs">
       <DependentUpon>FrmViewUser.aspx</DependentUpon>
