@@ -48,6 +48,10 @@
           <DataField>AreaAccion</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="IdEstado">
+          <DataField>IdEstado</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
         <Field Name="Estado">
           <DataField>Estado</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -164,6 +168,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>

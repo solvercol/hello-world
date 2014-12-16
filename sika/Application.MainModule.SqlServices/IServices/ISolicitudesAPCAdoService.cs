@@ -16,6 +16,9 @@ namespace Application.MainModule.SqlServices.IServices
         DataTable GetVistaSeguimiento(DateTime from, DateTime end, string serverHost, string moduleId, string fromview,
                                                   string noSolicitud, string tipo, int area, string proceso, int idUsuario);
 
+        DataTable GetVistaActividades(DateTime from, DateTime end, string serverHost, string moduleId, string fromview,
+                                                  string noSolicitud, string tipo, int area, string proceso, string estado, int idUsuario);
+
         DataTable ResumenSolicitudesApcPanelWorkFlow(string idSolicitud);
 
         #endregion

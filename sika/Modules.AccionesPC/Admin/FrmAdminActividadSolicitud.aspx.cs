@@ -84,7 +84,7 @@ namespace Modules.AccionesPC.Admin
         {
             ImprimirTituloVentana(string.Format("Plan de Acción - {0} Solicitud No. {1}", TipoAccion, CodSolicitud));
 
-            ImgSearch.Visible = string.IsNullOrEmpty(FromPageAux);
+            //ImgSearch.Visible = string.IsNullOrEmpty(FromPageAux);
         }
 
         protected override void OnInit(EventArgs e)
@@ -108,6 +108,12 @@ namespace Modules.AccionesPC.Admin
                 {
                     case "solicitud":
                         Response.Redirect(string.Format("FrmSolicitudAPC.aspx?ModuleId={0}&IdSolicitud={1}&from={2}", ModuleId, IdSolicitudQS, FromPageAux));
+                        break;
+                    case "misactpend":
+                        Response.Redirect(string.Format("../Views/FrmMisActividadesPendientes.aspx?ModuleId={0}", ModuleId));
+                        break;
+                    case "actpersona":
+                        Response.Redirect(string.Format("../Views/FrmActividadesPorPersona.aspx?ModuleId={0}", ModuleId));
                         break;
                 }
             }

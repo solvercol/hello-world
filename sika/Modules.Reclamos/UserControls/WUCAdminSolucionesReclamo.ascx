@@ -30,7 +30,7 @@
                                 Fecha
                             </th>
                             <th style="width:33%; text-align:left;">
-                                Descripción Solución
+                                Referencia
                             </th>
                             <th style="width:30%;text-align:left;">
                                 Departamento
@@ -86,7 +86,7 @@
         <script type="text/javascript" language="javascript">
             Sys.Application.add_load(RebindScripts);
         </script>  
-        <asp:Panel ID="pnlAdminSolucion"  runat="server" CssClass="popup_Container" Width="500" Height="315" style="display:none;">  
+        <asp:Panel ID="pnlAdminSolucion"  runat="server" CssClass="popup_Container" Width="510" Height="360" style="display:none;">  
 
             <div class="popup_Titlebar" id="PopupHeader">
                 <div class="TitlebarLeft">
@@ -106,7 +106,7 @@
             <div class="popup_Body">                                                    
                 <table width="100%" class="tblSecciones">
                     <tr>
-                        <th style="text-align:left; width: 25%">
+                        <th style="text-align:left; width: 26%">
                             Respuesta de :
                         </th>
 
@@ -120,13 +120,26 @@
                     </tr>
                     <tr>
                         <th style="text-align:left">
+                            Referencia :
+                        </th>
+
+                        <td class="Separador"></td>
+
+                        <td class="Line">
+                            <asp:TextBox ID="txtReferencia" runat="server" Width="90%" MaxLength="512" />
+                        </td>
+
+                        <td class="Separador"></td>
+                    </tr>
+                    <tr>
+                        <th style="text-align:left">
                             Descripción Solucion :
                         </th>
 
                         <td class="Separador"></td>
 
                         <td class="Line">
-                            <asp:TextBox ID="txtObservaciones" runat="server" Width="90%" TextMode="MultiLine" Rows="3" />
+                            <asp:TextBox ID="txtObservaciones" runat="server" Width="90%" TextMode="MultiLine" Rows="3"  MaxLength="512"/>
                         </td>
 
                         <td class="Separador"></td>

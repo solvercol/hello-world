@@ -24,6 +24,25 @@
                 </div>
             </div>
         </div>
+        <div style="padding:3px; text-align:right;">
+            <asp:Button ID="btnRegresar" runat="server" OnClick="BtnRegresarClick" 
+                                Text="Regresar" />
+            <asp:Button ID="btnEdit" runat="server" OnClick="BtnEditActividadClick" 
+                OnClientClick="return ShowSplashModalLoading();" Text="Editar" />
+            <asp:Button ID="btnCancel" runat="server" OnClick="BtnCancelActividadClick" 
+                OnClientClick="return ShowSplashModalLoading();" Text="Salir" Visible="false" />
+            <asp:Button ID="btnSave" runat="server" OnClick="BtnSaveActividadClick" 
+                OnClientClick="return ShowSplashModalLoading();" Text="Guardar" 
+                Visible="false" />
+            <asp:Button ID="btnSaveRealizada" runat="server" 
+                OnClick="BtnSaveRealizadaClick" 
+                OnClientClick="return ShowSplashModalLoading();" Text="Marcar Realizada" 
+                Visible="false" />
+            <asp:Button ID="btnCancelActividad" runat="server" 
+                OnClick="BtnCancelarActividadClick" 
+                OnClientClick="return ShowSplashModalLoading();" Text="Cancelar" 
+                Visible="false" />        
+        </div>
         <table class="tblSecciones" width="100%" cellpadding="0" cellspacing="0">
     
             <tr>
@@ -34,7 +53,7 @@
             <tr>
                 <td>
                         <tr id="trInfoReclamo" runat="server" visible="false">
-                            <td valign="top">
+                            <td valign="top" colspan="4">
                             <table width="100%" >
                                 <tr >
                                 <td class="SeccionesH1" colspan="2">
@@ -45,7 +64,7 @@
                                 <tr >
                                 <td class="SeccionesH1" colspan="2">
                                     <asp:Label ID="lblTitleReclamo" runat="server" />
-                                    <asp:ImageButton 
+                                   <%-- <asp:ImageButton 
                                         ID="ImgSearch" 
                                         BorderWidth="0" 
                                         BorderStyle="None" 
@@ -53,7 +72,7 @@
                                         runat="server" 
                                         ToolTip="Ver información de reclamo"
                                         ImageUrl="~/Resources/Images/LupaNegra.png"
-                                    />
+                                    />--%>
                                 </td>
                             </tr>
                             <tr>
@@ -84,24 +103,7 @@
                             <td class="SeccionesH4">
                                 <asp:Label ID="lblTipoAccion" runat="server" ForeColor="#800000" Font-Bold="true" />
                             </td>
-                              <td align="right" style="width:45%" valign="top">
-                            <asp:Button ID="btnRegresar" runat="server" OnClick="BtnRegresarClick" 
-                                Text="Regresar" />
-                            <asp:Button ID="btnEdit" runat="server" OnClick="BtnEditActividadClick" 
-                                OnClientClick="return ShowSplashModalLoading();" Text="Editar" />
-                            <asp:Button ID="btnCancel" runat="server" OnClick="BtnCancelActividadClick" 
-                                OnClientClick="return ShowSplashModalLoading();" Text="Salir" Visible="false" />
-                            <asp:Button ID="btnSave" runat="server" OnClick="BtnSaveActividadClick" 
-                                OnClientClick="return ShowSplashModalLoading();" Text="Guardar" 
-                                Visible="false" />
-                            <asp:Button ID="btnSaveRealizada" runat="server" 
-                                OnClick="BtnSaveRealizadaClick" 
-                                OnClientClick="return ShowSplashModalLoading();" Text="Marcar Realizada" 
-                                Visible="false" />
-                            <asp:Button ID="btnCancelActividad" runat="server" 
-                                OnClick="BtnCancelarActividadClick" 
-                                OnClientClick="return ShowSplashModalLoading();" Text="Cancelar" 
-                                Visible="false" />
+                              <td align="right" style="width:45%" valign="top">                           
                     </td>
                         </tr>
                         <tr>

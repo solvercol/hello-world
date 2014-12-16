@@ -177,6 +177,7 @@ namespace Presenters.Reclamos.Presenters
                 if (model != null)
                 {
                     model.Departamento = View.Departamento;
+                    model.Referencia = View.Referencia;
                     model.Observaciones = View.Observaciones;
                     model.ModifiedBy = View.UserSession.IdUser;
                     model.ModifiedOn = DateTime.Now;
@@ -203,6 +204,7 @@ namespace Presenters.Reclamos.Presenters
                 if (model != null)
                 {
                     View.Departamento = model.Departamento;
+                    View.Referencia = model.Referencia;
                     View.Observaciones = model.Observaciones;
                     View.ArchivosAdjuntos = new List<DTO_ValueKey>();
                     if (model.TBL_ModuloReclamos_AnexosSolucion.Any())
@@ -254,6 +256,7 @@ namespace Presenters.Reclamos.Presenters
 
             model.IdReclamo = Convert.ToInt32(View.IdReclamo);
             model.Departamento = View.Departamento;
+            model.Referencia = View.Referencia;
             model.Observaciones = View.Observaciones;
             model.IsActive = true;
             model.CreateBy = View.UserSession.IdUser;

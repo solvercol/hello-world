@@ -65,9 +65,6 @@ namespace Modules.Reclamos.UserControls
             if (string.IsNullOrEmpty(Alternativa))
                 messages.Add("Es necesario ingresar una alternativa de solución.");
 
-            if (string.IsNullOrEmpty(Seguimiento))
-                messages.Add("Es necesario ingresar el campo seguimiento.");
-
             if (messages.Any())
             {
                 AddErrorMessages(messages);

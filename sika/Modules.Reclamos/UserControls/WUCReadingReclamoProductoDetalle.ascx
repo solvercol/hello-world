@@ -347,22 +347,21 @@
 
         <td class="Separador"></td>
 
-        <td class="Line">
+        <td class="Line" colspan="5">
             <asp:Label ID="lblDescripcionAspectoEnvase" runat="server" />
         </td>
 
-        <td class="Separador"></td>
-
+    </tr>
+    <tr>
         <th style="text-align:left">   
             Descripción Aspecto Producto:             
         </th>
 
         <td class="Separador"></td>
 
-        <td class="Line">
+        <td class="Line" colspan="5">
             <asp:Label ID="lblDescripcionAspectoProducto" runat="server" />
         </td>
-
     </tr>
     <tr>
         <th style="text-align:left">

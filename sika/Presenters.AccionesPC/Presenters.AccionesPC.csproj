@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IViews\IActividadesPorPersonaView.cs" />
     <Compile Include="IViews\IAdminActividadesSolicitudView.cs" />
     <Compile Include="IViews\IAdminActividadSolicitudView.cs" />
     <Compile Include="IViews\IAdminAnexosSolicitudView.cs" />
@@ -48,6 +49,7 @@
     <Compile Include="IViews\IAdminInformacionSolicitudView.cs" />
     <Compile Include="IViews\IAdminSolicitudAPCView.cs" />
     <Compile Include="IViews\ILogSolicitudesView.cs" />
+    <Compile Include="IViews\IMisActividadesPendientesView.cs" />
     <Compile Include="IViews\IMisSolicitudesPendientesView.cs" />
     <Compile Include="IViews\IMisSolicitudesPorEstadoView.cs" />
     <Compile Include="IViews\IMisSolicitudesPorFechaView.cs" />
@@ -61,6 +63,7 @@
     <Compile Include="IViews\ISeguimientoTotalSolicitudesView.cs" />
     <Compile Include="IViews\ISeguimientoView.cs" />
     <Compile Include="IViews\ISolicitudAPCView.cs" />
+    <Compile Include="Presenters\ActividadesPorPersonaPresenter.cs" />
     <Compile Include="Presenters\AdminActividadesSolicitudPresenter.cs" />
     <Compile Include="Presenters\AdminActividadSolicitudPresentador.cs" />
     <Compile Include="Presenters\AdminAnexosSolicitudPresenter.cs" />
@@ -73,6 +76,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Presenters\LogSolicitudPresenter.cs" />
+    <Compile Include="Presenters\MisActividadesPendientesPresenter.cs" />
     <Compile Include="Presenters\MisSolicitudesPendientesPresenter.cs" />
     <Compile Include="Presenters\MisSolicitudesPorEstadoPresenter.cs" />
     <Compile Include="Presenters\MisSolicitudesPorFechaPresenter.cs" />
