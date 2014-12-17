@@ -36,11 +36,11 @@ namespace Presenters.Admin.Presenters
         {
             try
             {
-                var total = 9;// _usuarios.CountByPaged(); // Pendiente implementacion sobre servicio
+                var total = _usuarios.GetTotalUsers(View.SearchText);
 
                 View.TotalRegistrosPaginador = total == 0 ? 1 : total;
 
-                var listado = _usuarios.FindPaged(currentPage, View.PageZise);
+                var listado = _usuarios.GetUsers(View.SearchText, currentPage, View.PageZise);
 
                 View.GetUsers(listado);
             }

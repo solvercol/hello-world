@@ -35,6 +35,12 @@
                 </div>
             </div>
         </div>
+        <div style="padding:3px; text-align:right;">
+            <asp:Button ID="btnRegresar" runat="server" Text="Regresar" OnClick="BtnRegresarClick"  />
+            <asp:Button ID="btnEdit" runat="server" Text="Comentar" OnClick="BtnEditComentarioClick" OnClientClick="return ShowSplashModalLoading();" />
+            <asp:Button ID="btnCancel" runat="server" Text="Salir" Visible="false" OnClick="BtnCancelComentarioClick" OnClientClick="return ShowSplashModalLoading();" />
+            <asp:Button ID="btnSave" runat="server" Text="Enviar" Visible="false" OnClick="BtnSaveComentarioClick" OnClientClick="return ShowSplashModalLoading();" />
+        </div>
 
          <table class="tblSecciones" width="100%" cellpadding="0" cellspacing="0">
     
@@ -47,7 +53,7 @@
                 <td>
                         <tr id="trInfoReclamo" runat="server" visible="false">             
 
-                            <td valign="top">
+                        <td valign="top" colspan="4">
                           <table width="100%" >
                           <tr>
                                 <td class="SeccionesH1" colspan="2">
@@ -96,11 +102,7 @@
                             <td class="SeccionesH4">
                                 <asp:Label ID="lblTipoAccion" runat="server" ForeColor="#800000" Font-Bold="true" />
                             </td>
-                            <td align="right" style="width:45%" valign="top">   
-                                    <asp:Button ID="btnRegresar" runat="server" Text="Regresar" OnClick="BtnRegresarClick"  />
-                                    <asp:Button ID="btnEdit" runat="server" Text="Comentar" OnClick="BtnEditComentarioClick" OnClientClick="return ShowSplashModalLoading();" />
-                                    <asp:Button ID="btnCancel" runat="server" Text="Salir" Visible="false" OnClick="BtnCancelComentarioClick" OnClientClick="return ShowSplashModalLoading();" />
-                                    <asp:Button ID="btnSave" runat="server" Text="Enviar" Visible="false" OnClick="BtnSaveComentarioClick" OnClientClick="return ShowSplashModalLoading();" />
+                            <td align="right" style="width:45%" valign="top">                                       
                             </td>  
                         </tr>
                         <tr>

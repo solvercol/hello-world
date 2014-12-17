@@ -16,5 +16,7 @@ namespace Presenters.Admin.IViews
         int PageZise { get; }
 
         string ModuleSetupId { get; set; }
+
+        string SearchText { get; set; }
     }
 }

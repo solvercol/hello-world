@@ -58,6 +58,24 @@ namespace Modules.Reclamos.UserControls {
         protected global::System.Web.UI.WebControls.Button btnFiltrar;
         
         /// <summary>
+        /// lblMsgSelectItem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMsgSelectItem;
+        
+        /// <summary>
+        /// imgSelectItem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgSelectItem;
+        
+        /// <summary>
         /// pnlContainerClientList control.
         /// </summary>
         /// <remarks>

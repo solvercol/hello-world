@@ -95,8 +95,9 @@
                     <asp:Button ID="btnFiltrar" runat="server" CausesValidation="false" Text="Filtrar" OnClick="BtnFiltrarClick" />                                  
                 </td>
             </tr>
-        </table>
-
+        </table>        
+        <asp:Label ID="lblMsgSelectItem" runat="server" Text="Para seleccionar el registro haga click en el icono." ForeColor="Red" Font-Italic="true" Font-Bold="false" Font-Size="8pt"/>
+        (<asp:Image ID="imgSelectItem" runat="server" ImageUrl="~/Resources/Images/select2.png" Width="10px" Height="10px"  />)
         <asp:Panel ID="pnlContainerProductList" runat="server" Width="100%" Height="250px" ScrollBars="Vertical" >
             <table id="tblListado" class="tbl" width="100%">
 		        <asp:repeater   id="rptListado" 
@@ -125,7 +126,7 @@
                                 ToolTip="Select"
                                 runat="server" 
                                 OnClick="BtnSelect_Click"
-                                ImageUrl="~/Resources/Images/select.png" />
+                                ImageUrl="~/Resources/Images/select2.png" Width="16px" Height="16px" />
 					        </td>
 						    <td align="center">
                                 <asp:Literal ID="litCodProducto" runat="server"></asp:Literal>

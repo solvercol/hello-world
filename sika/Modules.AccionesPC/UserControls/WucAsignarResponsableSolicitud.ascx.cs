@@ -20,6 +20,10 @@ namespace Modules.AccionesPC.UserControls
 
             var oAcciones = new AccionesPCModule();
             var dt = oAcciones.ListadoUsuarios();
+            if (dt.Any())
+            {
+                dt = dt.OrderBy(x => x.Nombres).ToList();
+            }
             ddlResponsable.DataSource = dt;
             ddlResponsable.DataValueField = "IdUser";
             ddlResponsable.DataTextField = "Nombres";

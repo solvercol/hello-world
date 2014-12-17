@@ -18,6 +18,9 @@ namespace Applications.MainModule.Admin.IServices
     {
         TBL_Admin_Usuarios GetUserByCredential(string trim, string s);
         List<TBL_Admin_Usuarios> FindBySpecWithRols(bool isActive);
+
+        int GetTotalUsers(string searchtext);
+        List<TBL_Admin_Usuarios> GetUsers(string searchtext, int page, int size);
     }
 }
     

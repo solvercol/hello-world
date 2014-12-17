@@ -168,6 +168,38 @@ namespace Applications.MainModule.Admin.Services
         }
 
         #endregion
+
+
+        public int GetTotalUsers(string searchtext)
+        {
+            Specification<TBL_Admin_Usuarios> onlyEnabledSpec = new DirectSpecification<TBL_Admin_Usuarios>(u => u.IdUser != 0);
+
+            if (!string.IsNullOrEmpty(searchtext))
+            {
+                onlyEnabledSpec &= new DirectSpecification<TBL_Admin_Usuarios>(u => u.Nombres.Contains(searchtext)
+                                                                                    || u.UserName.Contains(searchtext));
+            }
+
+            var items = _tblAdminUsuariosRepository.GetBySpec(onlyEnabledSpec);
+
+            if (items.Any())
+                return items.Count();
+            else
+                return 0;
+        }
+
+        public List<TBL_Admin_Usuarios> GetUsers(string searchtext, int page, int size)
+        {
+            Specification<TBL_Admin_Usuarios> onlyEnabledSpec = new DirectSpecification<TBL_Admin_Usuarios>(u => u.IdUser != 0);
+
+            if (!string.IsNullOrEmpty(searchtext))
+            {
+                onlyEnabledSpec &= new DirectSpecification<TBL_Admin_Usuarios>(u => u.Nombres.Contains(searchtext)
+                                                                                    || u.UserName.Contains(searchtext));
+            }
+
+            return _tblAdminUsuariosRepository.GetPagedElements(page, size, u => u.IdUser, onlyEnabledSpec, true).ToList();
+        }
     }
 }
     

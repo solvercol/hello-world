@@ -161,7 +161,7 @@
                             </tr>
                             <tr>
                                 <th style="text-align:left; vertical-align:top">
-                                    * Observaciones :
+                                    Observaciones :
                                 </th>
 
                                 <td class="Separador"></td>
