@@ -2,8 +2,25 @@
 <%@ Register TagPrefix="csc" Namespace="ServerControls" Assembly="ServerControls" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-<div style="padding:3px; text-align:right;">
-  <asp:button id="btnNew" runat="server" Visible="true" OnClick="BtnNewClick" text="Nuevo Usuario"></asp:button>
+
+ <table width="100%" class="tblBuscador" cellpadding="0" cellspacing="0">            
+    <tr>
+        <td style="width:10%;" class="Etiquetas">
+            Buscar:
+        </td>
+        <td style="width:5px;"></td>
+        <td valign="middle" style="width:60%;" class="Line">
+            <asp:TextBox ID="txtFilter" runat="server" Width="90%" MaxLength="100"></asp:TextBox>       
+            <asp:Button ID="btnFiltrar" runat="server" CausesValidation="false" Text="Filtrar" OnClick="BtnFiltrarClick" />           
+        </td>
+        <td align="right" style="width:30%;">   
+            
+            <asp:button id="btnNew" runat="server" Visible="true" OnClick="BtnNewClick" text="Nuevo Usuario"></asp:button>
+        </td>
+    </tr>
+</table>
+
+<div style="padding:3px; text-align:right;">  
 </div>
 
 <table style="width:100%" cellpadding="0" cellspacing="0">

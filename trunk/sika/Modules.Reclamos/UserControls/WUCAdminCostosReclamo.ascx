@@ -439,17 +439,17 @@ cancelcontrolid="divCloseAdminCosto">
                 <td style="width:10%;" class="Etiquetas">
                     Valor
                 </td>
-                <td class="Separador15"></td>
-                <td valign="middle" style="width:70%;" class="Line">
+                <td valign="middle" style="width:50%;" class="Line">
                     <asp:TextBox ID="txtFilterProduct" runat="server" Width="90%" MaxLength="100" ></asp:TextBox>                  
                 </td>
-                <td align="right" style="width:10%;">   
+                <td align="right" style="width:30%;">   
                     <asp:Button ID="btnFiltrar" runat="server" CausesValidation="false" Text="Filtrar" OnClick="BtnFiltrarClick" />                                  
                     <asp:Button ID="btnCancel" runat="server" CausesValidation="false" Text="Cancelar" OnClick="BtnCancelFiltrarClick" />   
                 </td>
             </tr>
         </table>
-
+        <asp:Label ID="lblMsgSelectItem" runat="server" Text="Para seleccionar el registro haga click en el icono." ForeColor="Red" Font-Italic="true" Font-Bold="false" Font-Size="8pt"/>
+        ( <asp:Image ID="imgSelectItem" runat="server" ImageUrl="~/Resources/Images/select2.png" Width="10px" Height="10px"  /> )
         <asp:Panel ID="pnlContainerProductList" runat="server" Width="100%" Height="250px" ScrollBars="Vertical" >
             <table id="tblListado" class="tbl" width="100%">
 		        <asp:repeater   id="rptListadoProducto" 
@@ -478,7 +478,7 @@ cancelcontrolid="divCloseAdminCosto">
                                 ToolTip="Select"
                                 runat="server" 
                                 OnClick="BtnSelect_Click"
-                                ImageUrl="~/Resources/Images/select.png" />
+                                ImageUrl="~/Resources/Images/select2.png" />
 					        </td>
 						    <td align="center">
                                 <asp:Literal ID="litCodProducto" runat="server"></asp:Literal>

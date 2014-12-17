@@ -25,6 +25,12 @@ namespace Modules.Admin.Catalogos
             Response.Redirect(string.Format("FrmAddUser.aspx{0}", GetBaseQueryString()));
         }
 
+        protected void BtnFiltrarClick(object sender, EventArgs e)
+        {
+            if (FilterEvent != null)
+                FilterEvent(0, EventArgs.Empty);
+        }
+
         public void GetUsers(List<TBL_Admin_Usuarios> items)
         {
             rptListado.DataSource = items;
@@ -112,6 +118,19 @@ namespace Modules.Admin.Catalogos
         public string IdModule
         {
             get { return ModuleId; }
+        }
+
+
+        public string SearchText
+        {
+            get
+            {
+                return txtFilter.Text;
+            }
+            set
+            {
+                txtFilter.Text = value;
+            }
         }
     }
 }

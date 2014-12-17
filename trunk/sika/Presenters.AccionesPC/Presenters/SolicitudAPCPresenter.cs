@@ -86,7 +86,7 @@ namespace Presenters.AccionesPC.Presenters
 
                     View.ShowInfoReclamo = false;
 
-                    View.CanEdit = item.IdEstado != 16;
+                    View.CanEdit = item.IdEstado == 11;
 
                     if (item.IdReclamoCreacion.HasValue)
                         LoadReclamo(item.IdReclamoCreacion.GetValueOrDefault());

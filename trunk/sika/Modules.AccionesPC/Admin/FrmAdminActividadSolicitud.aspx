@@ -57,7 +57,7 @@
                             <table width="100%" >
                                 <tr >
                                 <td class="SeccionesH1" colspan="2">
-                                    Infomración Reclamo
+                                    Información Reclamo
                                 </td>
                             </tr>
                             <table width="100%" >
