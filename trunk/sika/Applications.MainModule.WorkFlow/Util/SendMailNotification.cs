@@ -96,7 +96,7 @@ namespace Applications.MainModule.WorkFlow.Util
             bodyParams.Add("$Responsable", oReclamo.TBL_Admin_Usuarios == null ? oDocument.CurrentResponsibe : oReclamo.TBL_Admin_Usuarios.Nombres);
             bodyParams.Add("$Url", UrlHelper.GetUrlPreViewDocumentforEmail());
 
-            _iEmailService.ProcessEmail(strFrom, oDocument.EmailCurrentResponsibe, plantilla, subjectParams, bodyParams, null, null);
+            _iEmailService.ProcessEmail(strFrom, oDocument.EmailNextResponsibe, plantilla, subjectParams, bodyParams, null, null);
             return true;
         }
 
@@ -136,7 +136,7 @@ namespace Applications.MainModule.WorkFlow.Util
             bodyParams.Add("$Url", UrlHelper.GetUrlPreViewDocumentSolicitudforEmail());
 
             if(!oDocument.IsNextGroupResponsible)
-                _iEmailService.ProcessEmail(strFrom, oDocument.EmailCurrentResponsibe, plantilla, subjectParams, bodyParams, null, null);
+                _iEmailService.ProcessEmail(strFrom, oDocument.EmailNextResponsibe, plantilla, subjectParams, bodyParams, null, null);
             else
             {
                 var m = DefinedRegexEvaluation.Grupo.Match(oDocument.FormulaNextresponsible);
