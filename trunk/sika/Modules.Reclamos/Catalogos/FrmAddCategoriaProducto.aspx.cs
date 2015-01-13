@@ -64,6 +64,7 @@ namespace Modules.Reclamos.Catalogos
                 UsuariosCopia.Add(usuarioCopia);
 
             LoadUsuariosCopia(UsuariosCopia);
+            lstUsuariosCopia.SelectedIndex = lstUsuariosCopia.Items.Count > 0 ? lstUsuariosCopia.Items.Count - 1 : 0;
         }
 
         protected void BtnRemoveUsuarioCopia_Click(object sender, EventArgs e)

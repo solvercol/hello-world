@@ -154,7 +154,57 @@ namespace Application.MainModule.AccionesPC.Services
              return _TBLModuloAPCAreasRepository.GetEntityListWithGerente(onlyEnabledSpec);
          }
 
-         #endregion
+         public List<TBL_ModuloAPC_Areas> FindPaged(int pageIndex, int pageCount, string search)
+        {
+            if (pageIndex < 0)
+                throw new ArgumentException(Resources.Messages.exception_InvalidPageIndex, "pageIndex");
+
+            if (pageCount <= 0)
+                throw new ArgumentException(Resources.Messages.exception_InvalidPageCount, "pageCount");
+
+
+            if (!string.IsNullOrEmpty(search))
+            {
+                Specification<TBL_ModuloAPC_Areas> onlyEnabledSpec = new DirectSpecification<TBL_ModuloAPC_Areas>
+                       (u => (u.Nombre.Contains(search) ||
+                       u.TBL_Admin_Usuarios1.Nombres.Contains(search) ||
+                       u.Nombre.Contains(search) ||
+                       u.Procesos.Contains(search) ||
+                       u.TBL_Admin_Usuarios.Nombres.Contains(search)));
+
+
+                return _TBLModuloAPCAreasRepository.GetPagedElements(pageIndex, pageCount, u => u.CreateOn, onlyEnabledSpec, true).ToList();
+            }
+            else
+            {
+                Specification<TBL_ModuloAPC_Areas> onlyEnabledSpec = new DirectSpecification<TBL_ModuloAPC_Areas>(u => true);
+
+                return _TBLModuloAPCAreasRepository.GetPagedElements(pageIndex, pageCount, u => u.CreateOn, onlyEnabledSpec, true).ToList();
+            }
+        }
+
+        public int CountByPaged(string search)
+        {
+            if (!string.IsNullOrEmpty(search))
+            {
+
+                Specification<TBL_ModuloAPC_Areas> onlyEnabledSpec = new DirectSpecification<TBL_ModuloAPC_Areas>
+                       (u => (u.Nombre.Contains(search) ||
+                       u.TBL_Admin_Usuarios1.Nombres.Contains(search) ||
+                       u.Nombre.Contains(search) ||
+                       u.Procesos.Contains(search) ||
+                       u.TBL_Admin_Usuarios.Nombres.Contains(search)));
+                return _TBLModuloAPCAreasRepository.GetBySpec(onlyEnabledSpec).Count();
+            }
+            else
+            {
+                Specification<TBL_ModuloAPC_Areas> onlyEnabledSpec = new DirectSpecification<TBL_ModuloAPC_Areas>(u => true);
+
+                return _TBLModuloAPCAreasRepository.GetBySpec(onlyEnabledSpec).Count();
+            }
+        }
+
+        #endregion
 
          #region IDisposable Members
 

@@ -123,5 +123,6 @@ namespace Infrastructure.Data.MainModule.AccionesPC.Repositories
                 Messages.exception_InvalidStoreContext,
                 GetType().Name));
         }
+
     }
 }

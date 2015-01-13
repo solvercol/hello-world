@@ -15,10 +15,13 @@ namespace Presenters.Admin.Presenters
     public class DetailOptionListPresenter: Presenter<IDetailOptionListView>
     {
         private readonly ISfTBL_Admin_OptionListManagementServices _optionList;
+        private readonly ISfTBL_Admin_UsuariosManagementServices _usuarios;
 
-        public DetailOptionListPresenter(ISfTBL_Admin_OptionListManagementServices optionList)
+        public DetailOptionListPresenter(ISfTBL_Admin_OptionListManagementServices optionList,
+            ISfTBL_Admin_UsuariosManagementServices usuarios)
         {
             _optionList = optionList;
+            _usuarios = usuarios;
         }
 
         public override void SubscribeViewToEvents()
@@ -45,14 +48,16 @@ namespace Presenters.Admin.Presenters
                 if (string.IsNullOrEmpty(View.IdOpcion)) return;
                 var op = _optionList.FindById(Convert.ToInt32(View.IdOpcion));
                 if (op == null) return;
+                var createdBy = _usuarios.FindById(Convert.ToInt32(op.CreateBy));
+                var modifiedBy = _usuarios.FindById(Convert.ToInt32(op.ModifiedBy));
                 View.IdModulo = op.IdModule.ToString();
                 View.key = op.Key;
                 View.value = op.Value;
                 View.descripcion = op.Descripcion;
                 View.Activo = op.IsActive;
-                View.CreateBy = op.CreateBy;
+                View.CreateBy = createdBy.Nombres;
                 View.CreateOn = op.CreateOn != null ? op.CreateOn.GetValueOrDefault().ToShortDateString() : string.Empty;
-                View.ModifiedBy = op.ModifiedBy;
+                View.ModifiedBy = modifiedBy.Nombres;
                 View.ModifiedOn = op.ModifiedOn != null ? op.ModifiedOn.GetValueOrDefault().ToShortDateString() : string.Empty;
            
             }

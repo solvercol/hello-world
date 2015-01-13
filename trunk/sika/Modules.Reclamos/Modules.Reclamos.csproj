@@ -115,6 +115,9 @@
     <Content Include="Catalogos\FrmViewCategoriaProducto.aspx" />
     <Content Include="Catalogos\FrmViewCategoriaReclamo.aspx" />
     <Content Include="Catalogos\FrmViewUnidadZona.aspx" />
+    <Content Include="Catalogos\FrmViewAreas.aspx" />
+    <Content Include="Catalogos\FrmAddAreas.aspx" />
+    <Content Include="Catalogos\FrmEditAreas.aspx" />
     <Content Include="UserControls\WUCAddUnidad.ascx" />
     <Content Include="UserControls\WUCAddZona.ascx" />
     <Content Include="UserControls\WUCAdminActividadesReclamo.ascx" />
@@ -357,6 +360,27 @@
     </Compile>
     <Compile Include="Catalogos\FrmViewUnidadZona.aspx.designer.cs">
       <DependentUpon>FrmViewUnidadZona.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\FrmViewAreas.aspx.cs">
+      <DependentUpon>FrmViewAreas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\FrmViewAreas.aspx.designer.cs">
+      <DependentUpon>FrmViewAreas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\FrmAddAreas.aspx.cs">
+      <DependentUpon>FrmAddAreas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\FrmAddAreas.aspx.designer.cs">
+      <DependentUpon>FrmAddAreas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\FrmEditAreas.aspx.cs">
+      <DependentUpon>FrmEditAreas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\FrmEditAreas.aspx.designer.cs">
+      <DependentUpon>FrmEditAreas.aspx</DependentUpon>
     </Compile>
     <Compile Include="DataSets\DS_Report.Designer.cs">
       <AutoGen>True</AutoGen>

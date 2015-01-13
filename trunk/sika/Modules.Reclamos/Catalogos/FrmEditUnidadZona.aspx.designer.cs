@@ -67,15 +67,6 @@ namespace Modules.Reclamos.Catalogos {
         protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
         
         /// <summary>
-        /// rfvDescripcion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDescripcion;
-        
-        /// <summary>
         /// txtUnidad control.
         /// </summary>
         /// <remarks>
@@ -85,15 +76,6 @@ namespace Modules.Reclamos.Catalogos {
         protected global::System.Web.UI.WebControls.Literal txtUnidad;
         
         /// <summary>
-        /// ImgUnidad control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImgUnidad;
-        
-        /// <summary>
         /// txtZona control.
         /// </summary>
         /// <remarks>
@@ -101,15 +83,6 @@ namespace Modules.Reclamos.Catalogos {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal txtZona;
-        
-        /// <summary>
-        /// ImgZona control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImgZona;
         
         /// <summary>
         /// txtGerente control.
