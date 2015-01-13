@@ -10,6 +10,8 @@ namespace Application.MainModule.AccionesPC.IServices
         TBL_ModuloAPC_Areas GetById(int id);
         List<TBL_ModuloAPC_Areas> GetEntitiesWithGerente();
         List<TBL_ModuloAPC_Areas> GetAreasConSolicitudes();
+        List<TBL_ModuloAPC_Areas> FindPaged(int pageIndex, int pageCount, string search);
+        int CountByPaged(string search);
     }
 }
     

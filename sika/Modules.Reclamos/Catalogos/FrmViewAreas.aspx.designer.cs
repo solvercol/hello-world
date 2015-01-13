@@ -10,105 +10,96 @@
 namespace Modules.Reclamos.Catalogos {
     
     
-    public partial class FrmAddActividadCategoria {
+    public partial class FrmViewAreas {
         
         /// <summary>
-        /// vsGeneral control.
+        /// ShowHide control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary vsGeneral;
+        protected global::System.Web.UI.WebControls.ImageButton ShowHide;
         
         /// <summary>
-        /// btnReturn control.
+        /// lbFiltro control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnReturn;
+        protected global::System.Web.UI.WebControls.Label lbFiltro;
         
         /// <summary>
-        /// btnSave control.
+        /// btnNew control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSave;
+        protected global::System.Web.UI.WebControls.Button btnNew;
         
         /// <summary>
-        /// wddReclamo control.
+        /// PanelFiltro control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList wddReclamo;
+        protected global::System.Web.UI.WebControls.Panel PanelFiltro;
         
         /// <summary>
-        /// RFVReclamo control.
+        /// txtSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVReclamo;
+        protected global::System.Web.UI.WebControls.TextBox txtSearch;
         
         /// <summary>
-        /// txtNombre control.
+        /// btnFiltrar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombre;
+        protected global::System.Web.UI.WebControls.Button btnFiltrar;
         
         /// <summary>
-        /// rfvNombre control.
+        /// cpeFiltroCategoriaReclamos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombre;
+        protected global::AjaxControlToolkit.CollapsiblePanelExtender cpeFiltroCategoriaReclamos;
         
         /// <summary>
-        /// txtDescripcion control.
+        /// upPrincipal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
+        protected global::System.Web.UI.UpdatePanel upPrincipal;
         
         /// <summary>
-        /// chkActive control.
+        /// rptListado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkActive;
+        protected global::System.Web.UI.WebControls.Repeater rptListado;
         
         /// <summary>
-        /// lblCreateBy control.
+        /// pgrListado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCreateBy;
-        
-        /// <summary>
-        /// lblCreateOn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCreateOn;
+        protected global::ServerControls.PagerLinq pgrListado;
     }
 }

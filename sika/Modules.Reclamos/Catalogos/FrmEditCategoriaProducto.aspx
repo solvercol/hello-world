@@ -36,18 +36,10 @@
 						    <td align="left">
 						        <asp:textbox id="txtDescripcion" runat="server" TextMode="MultiLine" width="400px" MaxLength="512">
 						        </asp:textbox>
-						        <asp:requiredfieldvalidator id="rfvDescripcion" 
-						        runat="server" 
-						        errormessage="El campo [Descripción] es requerido!!." 
-						        cssclass="validator"
-								display="Dynamic" 
-								enableclientscript="true" 
-								controltovalidate="txtDescripcion">
-								</asp:requiredfieldvalidator>
 						    </td>
 					    </tr>
                         <tr>
-						    <th style="text-align:left;vertical-align:top">Responsable:</th>
+						    <th style="text-align:left;vertical-align:top">Ingenieros Responsables:</th>
 						    <td align="left">
                                 <asp:Panel id="PanelUsuariosCopia" runat="server" >
                                     <table class="tblSecciones" width="100%">
@@ -65,6 +57,16 @@
                                         <tr>
                                             <td>
                                                 <asp:ListBox ID="lstUsuariosCopia" runat="server" SelectionMode="Single" Width="300px" Height="100%" />
+                                                 <asp:requiredfieldvalidator 
+                                                    controltovalidate="lstUsuariosCopia" 
+                                                    cssclass="validator" 
+                                                    display="Dynamic" 
+                                                    enableclientscript="true" 
+                                                    errormessage="El campo [Ingenieros Responsables] es requerido!!." 
+                                                    id="rfvResponsables" 
+                                                    runat="server"
+                                                    ValidateEmptyText="true">
+								                </asp:requiredfieldvalidator>
                                             </td>
                                         </tr>
                                         <tr>

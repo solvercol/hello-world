@@ -66,17 +66,17 @@
 						    <td align="left">
 						        <asp:textbox id="txtDescripcion" runat="server" TextMode="MultiLine" width="400px" MaxLength="512">
 						        </asp:textbox>
-						        <asp:requiredfieldvalidator id="rfvDescripcion" 
+<%--						        <asp:requiredfieldvalidator id="rfvDescripcion" 
 						        runat="server" 
 						        errormessage="El campo [Descripción] es requerido!!." 
 						        cssclass="validator"
 								display="Dynamic" 
 								enableclientscript="true" 
 								controltovalidate="txtDescripcion">
-								</asp:requiredfieldvalidator>
+								</asp:requiredfieldvalidator>--%>
 						    </td>
 					    </tr>
-                        <tr>
+                        <tr id="trArea" runat="server" visible="false">
 						    <th style="text-align:left;vertical-align:top">Área:</th>
 						    <td align="left">
 						        <asp:textbox id="txtArea" runat="server" width="400px" MaxLength="512">
@@ -91,7 +91,7 @@
 								</asp:requiredfieldvalidator>
 						    </td>
 					    </tr>
-                        <tr>
+                        <tr id="trResponsable" runat="server" visible="false">
 						    <th style="text-align:left;vertical-align:top">Ingeniero Responsable:</th>
 						    <td align="left">
                                 <asp:DropDownList ID="wddResponsables" class="chzn-select" runat="server" Width="50%" />

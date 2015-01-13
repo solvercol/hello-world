@@ -58,9 +58,9 @@ namespace Modules.Reclamos.Catalogos
 
         protected void BtnSaveClick(object sender, EventArgs e)
         {
-            rfvDescripcion.Validate();
+            //rfvDescripcion.Validate();
             rfvTarifa.Validate();
-            if (rfvDescripcion.IsValid &&  rfvTarifa.IsValid)
+            if (rfvTarifa.IsValid)
              {
                  if (SaveEvent != null)
                  {

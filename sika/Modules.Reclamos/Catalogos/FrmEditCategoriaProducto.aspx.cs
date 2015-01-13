@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Web.UI.WebControls;
 using ASP.NETCLIENTE.UI;
 using Domain.MainModules.Entities;
 using Presenters.Reclamos.IViews;
 using Presenters.Reclamos.Presenters;
-using System.Collections;
 using System.Linq;
 using Application.Core;
 
@@ -27,6 +25,11 @@ namespace Modules.Reclamos.Catalogos
         {
             ImprimirTituloVentana("Editar categoría producto");
             btnSave.Visible = true;
+            if (lstUsuariosCopia.Items.Count > 1)
+            {
+                lstUsuariosCopia.SelectedIndex = 0;
+
+            }
         }
 
         protected override void OnInit(EventArgs e)
@@ -65,6 +68,7 @@ namespace Modules.Reclamos.Catalogos
                 UsuariosCopia.Add(usuarioCopia);
 
             LoadUsuariosCopia(UsuariosCopia);
+            lstUsuariosCopia.SelectedIndex = lstUsuariosCopia.Items.Count > 0 ? lstUsuariosCopia.Items.Count - 1 : 0;
         }
 
         protected void BtnRemoveUsuarioCopia_Click(object sender, EventArgs e)

@@ -43,6 +43,7 @@
     <Compile Include="IViews\IActividadesPorPersonaView.cs" />
     <Compile Include="IViews\IActividadesReclamosListView.cs" />
     <Compile Include="IViews\IAddActividadReclamosView.cs" />
+    <Compile Include="IViews\IAddAreasView.cs" />
     <Compile Include="IViews\IAddAsesorView.cs" />
     <Compile Include="IViews\IAddCategoriaProductoView.cs" />
     <Compile Include="IViews\IAddCategoriasReclamosView.cs" />
@@ -59,10 +60,12 @@
     <Compile Include="IViews\IDetailCategoriaReclamosView.cs" />
     <Compile Include="IViews\IDetailUnidadZonaView.cs.cs" />
     <Compile Include="IViews\IEditActividadReclamosView.cs" />
+    <Compile Include="IViews\IEditAreasView.cs" />
     <Compile Include="IViews\IEditAsesoresView.cs" />
     <Compile Include="IViews\IEditCategoriaProductoView.cs" />
     <Compile Include="IViews\IEditCategoriaReclamosView.cs" />
     <Compile Include="IViews\IEditUnidadZonaView.cs" />
+    <Compile Include="IViews\IFrmViewAreasView.cs" />
     <Compile Include="IViews\IMisActividadesView.cs" />
     <Compile Include="IViews\IAdminActividadReclamoView.cs" />
     <Compile Include="IViews\IAdminAlternativaReclamoView.cs" />
@@ -116,6 +119,7 @@
     <Compile Include="Presenters\ActividadesPorPersonaPresenter.cs" />
     <Compile Include="Presenters\ActividadesReclamosListPresenter.cs" />
     <Compile Include="Presenters\AddActividadReclamosPresenter.cs" />
+    <Compile Include="Presenters\AddAreaPresenter.cs" />
     <Compile Include="Presenters\AddAsesorPresenter.cs" />
     <Compile Include="Presenters\AddCategoriaProductoPresenter.cs" />
     <Compile Include="Presenters\AddCategoriaReclamosPresenter.cs" />
@@ -148,10 +152,12 @@
     <Compile Include="Presenters\DetailCategoriaReclamosPresenter.cs" />
     <Compile Include="Presenters\DetailUnidadZonaPresenter.cs" />
     <Compile Include="Presenters\EditActividadReclamosPresenter.cs" />
+    <Compile Include="Presenters\EditAreasPresenter.cs" />
     <Compile Include="Presenters\EditAsesoresPresenter.cs" />
     <Compile Include="Presenters\EditCategoriaProductoPresenter.cs" />
     <Compile Include="Presenters\EditCategoriaReclamosPresenter.cs" />
     <Compile Include="Presenters\EditUnidadZonaPresenter.cs" />
+    <Compile Include="Presenters\FrmViewAreasPresenter.cs" />
     <Compile Include="Presenters\SeguimientoPresenter.cs" />
     <Compile Include="Presenters\MisActividadesPresenter.cs" />
     <Compile Include="Presenters\FilterClientPresenter.cs" />

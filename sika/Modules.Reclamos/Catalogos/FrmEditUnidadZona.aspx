@@ -25,14 +25,14 @@
 						    <td align="left" style="width:310px;">
 						        <asp:textbox id="txtDescripcion" runat="server" TextMode="MultiLine" width="300px" MaxLength="512">
 						        </asp:textbox>
-						        <asp:requiredfieldvalidator id="rfvDescripcion" 
+<%--						        <asp:requiredfieldvalidator id="rfvDescripcion" 
 						        runat="server" 
 						        errormessage="El campo [Descripción] es requerido!!." 
 						        cssclass="validator"
 								display="Dynamic" 
 								enableclientscript="true" 
 								controltovalidate="txtDescripcion">
-								</asp:requiredfieldvalidator>
+								</asp:requiredfieldvalidator>--%>
 						    </td>
                             <td>&nbsp;</td>
 					    </tr>
@@ -42,7 +42,7 @@
 						        <asp:Literal runat="server" ID="txtUnidad"></asp:Literal>
 						    </td>
                             <td align="left">
-                                    <asp:ImageButton 
+<%--                                    <asp:ImageButton 
                                         ID="ImgUnidad"
                                         BorderWidth="0" 
                                         BorderStyle="None" 
@@ -50,7 +50,7 @@
                                         runat="server" 
                                         ImageUrl="~/Resources/Images/round_plus.png" 
                                         OnClick="BtnAddUnidad_Click" ToolTip="Adicionar Nueva Unidad"
-                                        />
+                                        />--%>
                             </td>
 					    </tr>
                         <tr>
@@ -59,7 +59,7 @@
                              <asp:Literal runat="server" ID="txtZona"></asp:Literal>
 						    </td>
                              <td align="left">
-                                <asp:ImageButton 
+<%--                                <asp:ImageButton 
                                         ID="ImgZona"
                                         BorderWidth="0" 
                                         BorderStyle="None" 
@@ -67,7 +67,7 @@
                                         runat="server" 
                                         ImageUrl="~/Resources/Images/round_plus.png" 
                                         OnClick="BtnAddZona_Click" ToolTip="Adicionar Nueva Zona"
-                                        />
+                                        />--%>
                             </td>
 					    </tr>
                         <tr>

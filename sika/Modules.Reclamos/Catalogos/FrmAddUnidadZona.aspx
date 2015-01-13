@@ -27,14 +27,14 @@
 						    <td align="left" style="width:310px;">
 						        <asp:textbox id="txtDescripcion" runat="server" TextMode="MultiLine" width="300px" MaxLength="512">
 						        </asp:textbox>
-						        <asp:requiredfieldvalidator id="rfvDescripcion" 
+<%--						        <asp:requiredfieldvalidator id="rfvDescripcion" 
 						        runat="server" 
 						        errormessage="El campo [Descripción] es requerido!!." 
 						        cssclass="validator"
 								display="Dynamic" 
 								enableclientscript="true" 
 								controltovalidate="txtDescripcion">
-								</asp:requiredfieldvalidator>
+								</asp:requiredfieldvalidator>--%>
 						    </td>
                             <td>&nbsp;</td>
 					    </tr>

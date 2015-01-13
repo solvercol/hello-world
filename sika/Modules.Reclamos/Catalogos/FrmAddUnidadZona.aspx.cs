@@ -48,12 +48,12 @@ namespace Modules.Reclamos.Catalogos
 
         protected void BtnSaveClick(object sender, EventArgs e)
         {
-            rfvDescripcion.Validate();
+            //rfvDescripcion.Validate();
             rfvgerente.Validate();
             rfvTarifa.Validate();
             rfvUnidad.Validate();
             rfvZona.Validate();
-            if (rfvDescripcion.IsValid && rfvgerente.IsValid &&rfvTarifa.IsValid&& rfvUnidad.IsValid&&rfvZona.IsValid)
+            if (rfvgerente.IsValid &&rfvTarifa.IsValid&& rfvUnidad.IsValid&&rfvZona.IsValid)
             {
                 if (SaveEvent != null)
                 {

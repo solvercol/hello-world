@@ -62,10 +62,14 @@ namespace Modules.Reclamos.Catalogos
         {
             if (this.wddReclamo.SelectedItem.ToString().ToUpper().Contains("SERVICIO"))
             {
+                trArea.Visible = true;
+                trResponsable.Visible = true;
                 trGrupoInformacion.Visible = true;
             }
             else
             {
+                trArea.Visible = false;
+                trResponsable.Visible = false;
                 trGrupoInformacion.Visible = false;
             }
         }

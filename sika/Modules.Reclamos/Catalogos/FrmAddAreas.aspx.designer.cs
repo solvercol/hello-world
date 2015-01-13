@@ -10,7 +10,7 @@
 namespace Modules.Reclamos.Catalogos {
     
     
-    public partial class FrmAddActividadCategoria {
+    public partial class FrmAddAreas {
         
         /// <summary>
         /// vsGeneral control.
@@ -40,24 +40,6 @@ namespace Modules.Reclamos.Catalogos {
         protected global::System.Web.UI.WebControls.Button btnSave;
         
         /// <summary>
-        /// wddReclamo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList wddReclamo;
-        
-        /// <summary>
-        /// RFVReclamo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVReclamo;
-        
-        /// <summary>
         /// txtNombre control.
         /// </summary>
         /// <remarks>
@@ -76,13 +58,40 @@ namespace Modules.Reclamos.Catalogos {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombre;
         
         /// <summary>
-        /// txtDescripcion control.
+        /// txtProceso control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
+        protected global::System.Web.UI.WebControls.TextBox txtProceso;
+        
+        /// <summary>
+        /// rfvProceso control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvProceso;
+        
+        /// <summary>
+        /// ddlGerentes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlGerentes;
+        
+        /// <summary>
+        /// rfvgerentes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvgerentes;
         
         /// <summary>
         /// chkActive control.

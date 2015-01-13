@@ -1,60 +1,70 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FrmAddActividadReclamo.aspx.cs" Inherits="Modules.Reclamos.Catalogos.FrmAddActividadCategoria" %>
-<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FrmAddAreas.aspx.cs" Inherits="Modules.Reclamos.Catalogos.FrmAddAreas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
 <asp:ValidationSummary ID="vsGeneral" runat="server" DisplayMode="BulletList" ShowMessageBox="true" CssClass="validator" ShowSummary="true" ValidationGroup="vgGeneral"/>
  <div style="padding:3px; text-align:right;">
     <asp:button id="btnReturn" runat="server" OnClick="BtnBackClick" text="Regresar" causesvalidation="False"></asp:button>
 	<asp:button id="btnSave" runat="server" OnClick="BtnSaveClick" text="Guardar"></asp:button>
 </div>
+
 <table width="100%" class="tblSecciones">
         <tr>
           
             <td>
 				    <table id="userdetails" width="100%">
+					    
 					    <tr>
 						    <td>&nbsp;</td>
 						    <td>&nbsp;</td>
 					    </tr>
-                        <tr>
-						    <th style="text-align:left;vertical-align:top">Tipo Reclamo:</th>
-						    <td align="left">
-						 <asp:RadioButtonList ID="wddReclamo" RepeatDirection="Horizontal" CssClass="radioButtonList" runat="server"></asp:RadioButtonList>
-						        <asp:requiredfieldvalidator id="RFVReclamo" 
-						        runat="server" 
-						        errormessage="El campo [Tipo Reclamo] es requerido!!." 
-						        cssclass="validator"
-								display="Dynamic" 
-								enableclientscript="true" 
-								controltovalidate="wddReclamo">
-								</asp:requiredfieldvalidator>
-						    </td>
-					    </tr>
 					    <tr>
-						    <th style="text-align:left;vertical-align:top">Actividad:</th>
+						    <th style="text-align:left;vertical-align:top">Nombre:</th>
 						    <td align="left">
 						        <asp:textbox id="txtNombre" runat="server" width="400px" MaxLength="512">
 						        </asp:textbox>
 						        <asp:requiredfieldvalidator id="rfvNombre" 
-						        runat="server" 
-						        errormessage="El campo [Nombre] es requerido!!." 
-						        cssclass="validator"
-								display="Dynamic" 
-								enableclientscript="true" 
-								controltovalidate="txtNombre">
+						            runat="server" 
+						            errormessage="El campo [Nombre] es requerido!!." 
+						            cssclass="validator"
+								    display="Dynamic" 
+								    enableclientscript="true" 
+								    controltovalidate="txtNombre">
 								</asp:requiredfieldvalidator>
                             </td>
 					    </tr>
-                         <tr>
-						    <th style="text-align:left;vertical-align:top">Descripción:</th>
+					    <tr>
+						    <th style="text-align:left;vertical-align:top">Proceso:</th>
 						    <td align="left">
-						        <asp:textbox id="txtDescripcion" runat="server" TextMode="MultiLine" width="400px" MaxLength="512">
+						        <asp:textbox id="txtProceso" runat="server" TextMode="MultiLine" width="400px" MaxLength="512">
 						        </asp:textbox>
+                                <asp:requiredfieldvalidator id="rfvProceso" 
+						            runat="server" 
+						            errormessage="El campo [Proceso] es requerido!!." 
+						            cssclass="validator"
+								    display="Dynamic" 
+								    enableclientscript="true" 
+								    controltovalidate="txtProceso">
+								</asp:requiredfieldvalidator>
+						    </td>
+					    </tr>
+                        <tr>
+						    <th style="text-align:left;vertical-align:top">Gerente::</th>
+						    <td align="left">
+                                <asp:DropDownList ID="ddlGerentes" class="chzn-select" runat="server" Width="50%" />
+						        <asp:requiredfieldvalidator id="rfvgerentes" 
+						            runat="server" 
+						            errormessage="El campo [Gerente] es requerido!!." 
+						            cssclass="validator"
+								    display="Dynamic" 
+								    enableclientscript="true" 
+								    controltovalidate="ddlGerentes">
+								</asp:requiredfieldvalidator>
 						    </td>
 					    </tr>
 					    <tr>
 						    <th style="text-align:left;vertical-align:top">Activo:</th>
 						    <td align="left"><asp:checkbox id="chkActive" runat="server" Checked="true"></asp:checkbox></td>
-					    </tr>	
+					    </tr>
 					    <tr>
 						    <td align="left"></td>
 						    <td align="left"></td>
@@ -62,10 +72,16 @@
 				    </table>
             </td>
         </tr>
-    
+     <script type="text/javascript">
+         $(".chzn-select").chosen({ allow_single_deselect: true });
+
+         $(".chzn-select-deselect").chosen({ allow_single_deselect: true });
+    </script>
     </table>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Footer" runat="server">
+
     <table width="100%">
         <tr >
             <td  style="text-align:left; vertical-align:top; padding-left: 10px; background-color:#e0e0e0; font-size:8pt; color:#808080;">
@@ -73,4 +89,5 @@
             </td>
         </tr>
     </table>
+
 </asp:Content>
