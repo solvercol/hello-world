@@ -15,8 +15,11 @@
        
 </script>
 
-
-
+<asp:UpdatePanel ID="upGeneral" runat="server">
+    <ContentTemplate>  
+    <script type="text/javascript" language="javascript">
+        Sys.Application.add_load(RebindScripts);
+    </script>  
 <table width="100%" cellpadding="0" cellspacing="0" >
     
     <tr>
@@ -179,7 +182,7 @@
                                                             </td>
 							                                <td style="width:20%" align="center">
                                                                 <asp:ImageButton ID="ImgBtnEliminar" runat="server" ImageUrl="~/Resources/Images/RemoveGrid.png"                                                                    
-                                                                    OnClientClick="return confirm('¿Confirma que desea eliminar el archivo?');" 
+                                                                    OnClientClick="return confirm('¿Confirma que desea eliminar el archivo?');"  CausesValidation="false"
                                                                     onclick="ImgBtnEliminarClick"/>                                        
                                                             </td>
 						                                </tr>
@@ -191,7 +194,7 @@
                                                             </td>
 							                                <td style="width:20%" align="center">
                                                                 <asp:ImageButton ID="ImgBtnEliminar" runat="server" ImageUrl="~/Resources/Images/RemoveGrid.png"                                                                    
-                                                                    OnClientClick="return confirm('¿Confirma que desea eliminar el archivo?');" 
+                                                                    OnClientClick="return confirm('¿Confirma que desea eliminar el archivo?');" CausesValidation="false"
                                                                     onclick="ImgBtnEliminarClick"/>                                        
                                                             </td>
 						                                </tr>
@@ -254,14 +257,11 @@
     </asp:ModalPopupExtender>
 </div>
 
-
-<script type="text/javascript">
-
-        $(".chzn-select").chosen({ allow_single_deselect: true });
-
-        $(".chzn-select-deselect").chosen({ allow_single_deselect: true });
- 
-</script>
+    </ContentTemplate>
+    <Triggers>
+        <asp:PostBackTrigger ControlID="btnAdjuntar" />
+    </Triggers>
+</asp:UpdatePanel>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Footer" runat="server">
