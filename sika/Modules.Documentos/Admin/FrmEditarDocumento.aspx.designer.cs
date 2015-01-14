@@ -13,6 +13,15 @@ namespace Modules.Documentos.Admin {
     public partial class FrmEditarDocumento {
         
         /// <summary>
+        /// upGeneral control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upGeneral;
+        
+        /// <summary>
         /// btnRegresar control.
         /// </summary>
         /// <remarks>
