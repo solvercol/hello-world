@@ -22,7 +22,7 @@
 					    </tr>
 					    <tr>
 						    <th align="left">Código Usuario</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
 						        <asp:textbox id="txtUserCode" runat="server" width="400px" MaxLength="15">
 						        </asp:textbox>
 						        <asp:requiredfieldvalidator id="rfvUserCode" 
@@ -37,7 +37,7 @@
 					    </tr>
 					    <tr>
 						    <th align="left">Nombres</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
 						        <asp:textbox id="txtNames" runat="server" width="400px" MaxLength="60">
 						        </asp:textbox>
 						        <asp:requiredfieldvalidator id="rfvName" 
@@ -52,7 +52,7 @@
 					    </tr>
                         <tr>
 						    <th align="left">Fecha Ingreso</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
 						        <asp:textbox id="txtIncomeDate" runat="server" width="100px" MaxLength="12">
 						        </asp:textbox>
                                 <asp:ImageButton ID="imgbtnCalendar" causesvalidation="False"  runat="server" ImageUrl="~/Resources/images/calendar.png" />
@@ -71,7 +71,7 @@
 					    </tr>
                         <tr>
 						    <th align="left">Nombre Usuario</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
 						        <asp:textbox id="txtUserName" runat="server" width="400px" MaxLength="50">
 						        </asp:textbox>
 						        <asp:requiredfieldvalidator id="rfvUserName" 
@@ -86,7 +86,7 @@
 					    </tr>
                         <tr>
 						    <th align="left">Password</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
 						        <asp:textbox id="txtPassword" runat="server" width="400px" MaxLength="50" TextMode="Password">
 						        </asp:textbox>
 						        <asp:requiredfieldvalidator id="rfvPassword" 
@@ -101,7 +101,7 @@
 					    </tr>
                         <tr>
 						    <th align="left">Email</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
 						        <asp:textbox id="txtEmail" runat="server" width="400px" MaxLength="50">
 						        </asp:textbox>
 						        <asp:requiredfieldvalidator id="rfvEmail" 
@@ -125,11 +125,12 @@
 					    </tr>
 					    <tr>
 						    <th align="left">Activo</th>
-						    <td align="left"><asp:checkbox id="chkActive" runat="server" Checked="true"></asp:checkbox></td>
+						    <td align="left" class="bordeTabla">
+                            <asp:checkbox id="chkActive" runat="server" Checked="true"></asp:checkbox></td>
 					    </tr>
                         <tr>
                             <th align="left">Roles disponibles</th>
-                            <td align="left">
+                            <td align="left" class="bordeTabla">
                                 <table id="roles" width="30%">
                                     <asp:repeater id="rptRoles" OnItemDataBound="RptRolesItemDataBound" runat="server">
                                         <headertemplate>
@@ -164,6 +165,8 @@
         </tr>
     
     </table>
+
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Footer" runat="server">
 </asp:Content>

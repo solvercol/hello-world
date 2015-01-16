@@ -148,7 +148,7 @@
                 </tr>
                 <tr>
                     <td style="text-align:left" >
-                        Costo Discopsición
+                        Costo Disposición
                     </td>
                     <td style="text-align:right; color:#25960f;">
                         <asp:Label ID="lblCostoDisposicion" runat="server" />

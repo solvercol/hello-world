@@ -19,40 +19,41 @@
 						    <td>&nbsp;</td>
 						    <td>&nbsp;</td>
 					    </tr>
-                         <tr>
-						    <th style="text-align:left;vertical-align:top">Descripción:</th>
-						    <td align="left">
-                            <asp:Literal runat="server" ID="txtDescripcion"></asp:Literal>
-						    </td>
-					    </tr>
                         <tr>
 						    <th style="text-align:left;vertical-align:top">Unidad:</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
 						        <asp:Literal runat="server" ID="txtUnidad"></asp:Literal>
 						    </td>
 					    </tr>
                         <tr>
 						    <th style="text-align:left;vertical-align:top">Zona:</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
                              <asp:Literal runat="server" ID="txtZona"></asp:Literal>
 						    </td>
 					    </tr>
                         <tr>
+						    <th style="text-align:left;vertical-align:top">Descripción:</th>
+						    <td align="left" class="bordeTabla">
+                            <asp:Literal runat="server" ID="txtDescripcion"></asp:Literal>
+						    </td>
+					    </tr>
+                        <tr>
 						<th style="text-align:left;vertical-align:top">Gerente:</th>
-						<td align="left">
+						<td align="left" class="bordeTabla">
                                 <asp:Literal runat="server" ID="txtGerente"></asp:Literal>
 						    </td>
 					    </tr>
                         <tr>
 						    <th style="text-align:left;vertical-align:top">Tarifa Flete:</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
 						        <asp:Literal runat="server" ID="txtTarifa"></asp:Literal>
 						    </td>
 					    </tr>
        
 					    <tr>
 						    <th style="text-align:left;vertical-align:top">Activo:</th>
-						    <td align="left"><asp:checkbox id="chkActive" runat="server" Enabled="false"></asp:checkbox></td>
+						    <td align="left" class="bordeTabla">
+                            <asp:checkbox id="chkActive" runat="server" Enabled="false"></asp:checkbox></td>
 					    </tr>	
                        <%-- <tr>
 						    <th style="text-align:left;vertical-align:top">Creado por:</th>

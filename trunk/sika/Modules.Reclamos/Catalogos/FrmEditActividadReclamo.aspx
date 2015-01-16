@@ -19,7 +19,7 @@
 					    </tr>
                         <tr>
 						    <th style="text-align:left;vertical-align:top">Tipo Reclamo:</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
                                 <asp:RadioButtonList ID="wddReclamo" RepeatDirection="Horizontal" CssClass="radioButtonList" runat="server"></asp:RadioButtonList>
 						        <asp:requiredfieldvalidator id="RFVReclamo" 
 						        runat="server" 
@@ -33,7 +33,7 @@
 					    </tr>
 					    <tr>
 						    <th style="text-align:left;vertical-align:top">Actividad:</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
 						        <asp:textbox id="txtNombre" runat="server" width="400px" MaxLength="512">
 						        </asp:textbox>
 						        <asp:requiredfieldvalidator id="rfvNombre" 
@@ -48,7 +48,7 @@
 					    </tr>
                         <tr>
 						    <th style="text-align:left;vertical-align:top">Descripción:</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
 						        <asp:textbox id="txtDescripcion" runat="server" TextMode="MultiLine" width="400px" MaxLength="512">
 						        </asp:textbox>
 						        <asp:requiredfieldvalidator id="rfvDescripcion" 
@@ -63,7 +63,8 @@
 					    </tr>
 					    <tr>
 						    <th style="text-align:left;vertical-align:top">Activo:</th>
-						    <td align="left"><asp:checkbox id="chkActive" runat="server" Checked="true"></asp:checkbox></td>
+						    <td align="left" class="bordeTabla">
+                            <asp:checkbox id="chkActive" runat="server" Checked="true"></asp:checkbox></td>
 					    </tr>
 					    <tr>
 						    <td align="left"></td>

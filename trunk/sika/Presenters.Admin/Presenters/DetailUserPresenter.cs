@@ -41,15 +41,17 @@ namespace Presenters.Admin.Presenters
             var user = _user.FindById(Convert.ToInt32(View.IdUser));
 
             if (user == null) return;
+            var createdBy = _user.FindById(Convert.ToInt32(user.CreateBy));
+            var modifiedBy = _user.FindById(Convert.ToInt32(user.ModifiedBy));
             View.UserCode = user.CodigoUser;
             View.Names = user.Nombres;
             View.IncomeDate = user.FechaIngreso != null ? user.FechaIngreso.ToShortDateString() : string.Empty;
             View.UserName = user.UserName;
             View.Email = user.Email;
             View.Activo = user.IsActive;
-            View.CreateBy = user.CreateBy;
+            View.CreateBy = createdBy.Nombres;
             View.CreateOn = user.CreateOn.Value != null ? user.CreateOn.GetValueOrDefault().ToShortDateString() : string.Empty;
-            View.ModifiedBy = user.ModifiedBy;
+            View.ModifiedBy = modifiedBy.Nombres;
             View.ModifiedOn = user.ModifiedOn != null ? user.ModifiedOn.GetValueOrDefault().ToShortDateString() : string.Empty;
 
         }

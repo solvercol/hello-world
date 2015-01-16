@@ -65,6 +65,10 @@ namespace Presenters.Admin.Presenters
                 View.CreateOn = op.CreateOn != null ? op.CreateOn.GetValueOrDefault().ToShortDateString() : string.Empty;
                 View.ModifiedBy = modifiedBy.Nombres;
                 View.ModifiedOn = op.ModifiedOn != null ? op.ModifiedOn.GetValueOrDefault().ToShortDateString() : string.Empty;
+
+                var mensajeMultivalor = _optionList.ObtenerOpcionBykey("MensajeCamposMultivalor");
+                if (mensajeMultivalor == null) return;
+                View.MensajeMultivalor = mensajeMultivalor.Value;
            
             }
             catch (Exception ex)

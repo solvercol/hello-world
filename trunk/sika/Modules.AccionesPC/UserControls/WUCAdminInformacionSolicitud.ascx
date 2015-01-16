@@ -85,7 +85,7 @@
                         La no conformidad fue eliminada?
                     </th>
                 </tr>
-                <tr>
+               <tr>
                     <th >
                         <asp:RadioButtonList ID="rblConformidadEliminada" runat="server" RepeatLayout="Table" RepeatColumns="2" Enabled="false" >
                             <asp:ListItem Text="SI" Value="SI" Selected="True" />
@@ -93,13 +93,15 @@
                         </asp:RadioButtonList>
                     </th>
                 </tr>
-                <tr>
+                <tr><td></td></tr>
+                <tr><td></td></tr>
+               <tr>
                     <th style="text-align:left;">
                         Observaciones:
                     </th>
                 </tr>
-                <tr>
-                    <td class="Line" style="text-align:justify;">
+               <tr>
+                    <td class="Line" style="text-align:justify; padding-left:11px">
                         <asp:Label ID="lblObservacionesCierre" runat="server" />                        
                     </td>
                 </tr>

@@ -20,7 +20,7 @@
 					    </tr>
                         <tr>
 						    <th style="text-align:left;vertical-align:top">Asesor:</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
                                 <asp:DropDownList ID="wddAsesor" class="chzn-select" runat="server" Width="50%" />
 						        <asp:requiredfieldvalidator id="rfvAsesor" 
 						        runat="server" 
@@ -34,7 +34,7 @@
 					    </tr>	
                         <tr>
 						    <th style="text-align:left;vertical-align:top">Unidad:</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
                                 <asp:DropDownList ID="wddUnidad" class="chzn-select" runat="server" Width="50%" />
 						        <asp:requiredfieldvalidator id="rfvUnidad" 
 						        runat="server" 
@@ -48,7 +48,7 @@
 					    </tr>
                         <tr>
 						    <th style="text-align:left;vertical-align:top">Zona:</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
                                 <asp:DropDownList ID="wddZona" class="chzn-select" runat="server" Width="50%" />
 						        <asp:requiredfieldvalidator id="rfvZona" 
 						        runat="server" 
@@ -62,7 +62,7 @@
 					    </tr>
                         <tr>
 						    <th style="text-align:left;vertical-align:top">Jefe(s) Inmediato(s):</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
                                 <asp:Panel id="PanelUsuariosCopia" runat="server" >
                                     <table class="tblSecciones" width="100%">
                                         <tr>
@@ -89,7 +89,8 @@
 					    </tr>
                         <tr>
 						    <th style="text-align:left;vertical-align:top">Activo:</th>
-						    <td align="left"><asp:checkbox id="chkActive" runat="server" Checked="true"></asp:checkbox></td>
+						    <td align="left" class="bordeTabla">
+                            <asp:checkbox id="chkActive" runat="server" Checked="true"></asp:checkbox></td>
 					    </tr>
 					    <tr>
 						    <td align="left"></td>

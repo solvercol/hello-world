@@ -76,6 +76,11 @@ namespace Modules.Reclamos.Catalogos
             get { return ModuleId; }
         }
 
+        public string MensajeMultivalor
+        {
+            set { litMensajeMultivalor.Text = value; }
+        }
+
 
         public void GetGerentes(IList<TBL_Admin_Usuarios> items)
         {

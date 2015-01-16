@@ -165,7 +165,7 @@ input, select, textarea, .igte_Edit
 {
     border: 1px solid #c2c2c2;
     color: #333;
-    font-family: 'klavika_lightplain_basic', Calibri;
+    font-family: Arial,Helvetica,sans-serif;
     font-size: 8pt;
     margin-left: 1px;
     margin-right: 1px;
@@ -180,7 +180,7 @@ input, select, textarea, .igte_Edit
 p, div
 {
     color: #333;
-    font-family: 'klavika_lightplain_basic', Calibri;
+    font-family: Arial,Helvetica,sans-serif;
     font-size: small;
 }
 
@@ -191,7 +191,7 @@ h1
     border-bottom-style: solid;
     border-bottom-width: 4px;
     color: #366;
-    font-family: 'klavika_lightplain_basic', Calibri;
+    font-family: Arial,Helvetica,sans-serif;
     font-size: large;
     font-weight: 700;
     padding-bottom: 4px;
@@ -322,7 +322,7 @@ a
 {
     color:White;
     font-weight:bold;
-    font-family:'klavika_lightplain_basic', Calibri;
+    font-family:Arial,Helvetica,sans-serif;
 }
 
 .wrap-header
@@ -346,6 +346,7 @@ a
     padding-left: 20px;    
     vertical-align:middle;    
     padding-top: 20px;
+    font-family: 'klavika_lightplain_basic', Calibri;
 }
 
 .logo
@@ -443,7 +444,7 @@ a
     height:20px;
     color:#060000;
     text-align:center;
-    font-family:'klavika_lightplain_basic', Calibri;
+    font-family:Arial,Helvetica,sans-serif;
     margin:auto;
     vertical-align:middle;
 }
@@ -455,7 +456,7 @@ a
     height:20px;
     color:#060000;
     text-align:center;
-    font-family:'klavika_lightplain_basic', Calibri;
+    font-family:Arial,Helvetica,sans-serif;
     margin:auto;
     vertical-align:middle;
 }
@@ -528,7 +529,7 @@ a
 {
     display: block;
     float: left;
-    font-family: 'klavika_lightplain_basic', Calibri;
+    font-family: Arial,Helvetica,sans-serif;
     font-size: small;
     padding-left: 32px;
     position: relative;
@@ -550,7 +551,7 @@ a
     color: #666;
     display: block;
     float: left;
-    font-family: 'klavika_lightplain_basic', Calibri;
+    font-family: Arial,Helvetica,sans-serif;
     font-size: small;
     font-weight: 700;
     height: 26px;
@@ -565,7 +566,7 @@ a
     color: red;
     display: block;
     float: left;
-    font-family: 'klavika_lightplain_basic', Calibri;
+    font-family: Arial,Helvetica,sans-serif;
     font-size: small;
     height: 30px;
     padding-left: 32px;
@@ -580,7 +581,7 @@ a
     -webkit-border-radius: 8px;
     border: 1px solid #999;
     color: #666;
-    font-family: 'klavika_lightplain_basic', Calibri;
+    font-family: Arial,Helvetica,sans-serif;
     font-size: small;
     height: 20px;
     line-height: 24px;
@@ -706,7 +707,7 @@ input[type*="submit"][name*="Delete"]:hover, input[type*="submit"][name*="Rebuil
     border: 1px solid #F2F2F2;
     color: #545A68;
     background-color: #F2F2F2;
-	font-family:'klavika_lightplain_basic', Calibri;
+	font-family:Arial,Helvetica,sans-serif;
 	font-size: 12px;
 	font-weight: bold;
     padding: 5px;
@@ -732,7 +733,7 @@ input[type*="submit"][name*="Delete"]:hover, input[type*="submit"][name*="Rebuil
     border: 1px solid #CECECE;
     color: #545A68;
     background-color: #CECECE;
-	font-family: 'klavika_lightplain_basic', Calibri;
+	font-family: Arial,Helvetica,sans-serif;
 	font-size: 12px;
 	font-weight: bold;
     padding: 5px;
@@ -776,7 +777,7 @@ table.tblPreView th
 color:#9A9A9A;
 padding: 4px 8px;
 font-size:0.95em;
-font-family: 'klavika_lightplain_basic', Calibri;
+font-family: Arial,Helvetica,sans-serif;
 font-weight: normal;
 text-align:center;
 background-color:#F6F7F8;
@@ -785,7 +786,7 @@ background-color:#F6F7F8;
 table.tblPreView .line {
 color:#000;
 font-size:0.9em;
-font-family: 'klavika_lightplain_basic', Calibri;
+font-family: Arial,Helvetica,sans-serif;
 font-weight: normal;
 border-bottom:1px solid #F4F4F3; 
 }
@@ -794,7 +795,7 @@ table.tblPreView .ContentDiv {
 color:#526C8C;
 padding: 4px 8px;
 font-size:0.9em;
-font-family: 'klavika_lightplain_basic', Calibri;
+font-family: Arial,Helvetica,sans-serif;
 font-weight: normal;
 text-align:right;
 }
@@ -803,7 +804,7 @@ table.tblPreView .ContentPanelResumen {
 color:#526C8C;
 padding: 4px 8px;
 font-size:0.88em;
-font-family: 'klavika_lightplain_basic', Calibri;
+font-family: Arial,Helvetica,sans-serif;
 font-weight: normal;
 text-align:right;
 border:1px solid #808080; 
@@ -814,7 +815,7 @@ background-color:#F6F7F8;
 color:#526C8C;
 padding: 4px 8px;
 font-size:0.88em;
-font-family: 'klavika_lightplain_basic', Calibri;
+font-family: Arial,Helvetica,sans-serif;
 font-weight: normal;
 text-align:right;
 border:1px solid #808080; 
@@ -838,7 +839,7 @@ font-size: 0.88em;
 /*line-height: 18px;*/
 vertical-align:middle;    
 text-decoration: none;
-font-family:'klavika_lightplain_basic', Calibri;
+font-family:Arial,Helvetica,sans-serif;
 font-weight: normal;
 }
 
@@ -847,7 +848,7 @@ font-size: 0.94em;
 line-height: 18px;
 vertical-align:middle;    
 text-decoration: none;
-font-family:'klavika_lightplain_basic', Calibri;
+font-family:Arial,Helvetica,sans-serif;
 font-weight: bold;
 padding-left:2px;
 color:#38379C;
@@ -869,7 +870,7 @@ border-bottom:1px solid #6362B1;
 table.tblPreView .Noline {
 color:#9A9A9A;
 font-size:0.9em;
-font-family: 'klavika_lightplain_basic', Calibri;
+font-family: Arial,Helvetica,sans-serif;
 font-weight: normal;
 }
 
@@ -892,7 +893,7 @@ table.tblSecciones th {
 color:#808080;
 padding: 4px 10px;
 font-size:0.95em;
-font-family: 'klavika_lightplain_basic', Calibri;
+font-family: Arial,Helvetica,sans-serif;
 font-weight: normal;
 text-align:right;
 width:16%;
@@ -901,7 +902,7 @@ width:16%;
 table.tblSecciones .Line {
 color:#000;
 font-size:0.9em;
-font-family: 'klavika_lightplain_basic', Calibri;
+font-family: Arial,Helvetica,sans-serif;
 font-weight: normal;
 border-bottom:1px solid #F4F4F3; 
 
@@ -918,7 +919,7 @@ table.tblSecciones td {
 line-height: 15px;
 vertical-align:middle;    
 text-decoration: none;
-font-family:'klavika_lightplain_basic', Calibri;
+font-family: Arial,Helvetica,sans-serif;
 /*font-weight: normal;*/
 
 }
@@ -943,19 +944,20 @@ border-right:solid 1px #CCC;
 color:#38379C;
 font-size:0.95em;
 font-weight:bold;
-font-family: 'klavika_lightplain_basic', Calibri;
+font-family: Arial,Helvetica,sans-serif;
 text-align:center;
 }
 
 
 table.tbl td {
-border-bottom:1px solid #C0C0C0;
-border-top:solid 1px #C0C0C0;
-border-right:solid 1px #C0C0C0;
+border-bottom: 1px solid #F2F1F1;
+border-top: solid 1px #F2F1F1;
+border-right: solid 1px #F2F1F1;
+border-left: solid 1px #F2F1F1;
 font-size: 0.9em;
 line-height: 13px;  
 text-decoration: none;
-font-family: 'klavika_lightplain_basic', Calibri;
+font-family: Arial,Helvetica,sans-serif;
 font-weight: normal;
 
 }
@@ -975,7 +977,7 @@ color:#38379C;
 padding:4px 10px;
 font-size:0.9em;
 font-weight:bold;
-font-family: 'klavika_lightplain_basic', Calibri;
+font-family: Arial,Helvetica,sans-serif;
 text-align:left;
 border-bottom:1px solid #F4F4F3;
 }
@@ -998,6 +1000,7 @@ table.tblBuscador .Separador15
 .TextMenuStatic
 {
     margin-top:2px;
+    margin-left:14px;
 }
 
 .TituloVentana
@@ -1006,7 +1009,7 @@ table.tblBuscador .Separador15
     color:#808080;
     border-bottom: 2px solid #808080;
     font-weight:bold;
-    font-family:'klavika_lightplain_basic', Calibri;
+    font-family:Arial,Helvetica,sans-serif;
 }
 
 .SectionMainTitle
@@ -1014,7 +1017,7 @@ table.tblBuscador .Separador15
     border: 1px solid #CECECE;
     color: #545A68;
     background-color: #CECECE;
-	font-family: 'klavika_lightplain_basic', Calibri;
+	font-family: Arial,Helvetica,sans-serif;
 	font-size: 12px;
 	font-weight: bolder;
     padding: 5px;
@@ -1030,7 +1033,7 @@ background-color: #DEF1F4;
 border:solid 1px #77D5F7;
 width:190px;
 font-size:9pt;
-font-family:'klavika_lightplain_basic', Calibri;
+font-family:Arial,Helvetica,sans-serif;
 }
 
 .cal_Theme1 .ajax__calendar_header  {
@@ -1049,7 +1052,7 @@ padding-top: 3px;
 background-color: #ffffff;
 border: solid 1px #77D5F7;
 font-size:9pt;
-font-family:'klavika_lightplain_basic', Calibri;
+font-family:Arial,Helvetica,sans-serif;
 }
 
 .cal_Theme1 .ajax__calendar_dayname {
@@ -1109,7 +1112,7 @@ color: #bbbbbb;
 	float:left;
 	padding-left:5px;
 	padding-top:5px;
-	font-family:'klavika_lightplain_basic', Calibri;
+	font-family:Arial,Helvetica,sans-serif;
 	font-weight:bold;
 	font-size:12px;
 	color:#FFFFFF;
@@ -1211,7 +1214,7 @@ font-size:0.85em;
     line-height: 18px;
     vertical-align:middle;    
     text-decoration: none;
-    font-family: 'klavika_lightplain_basic', Calibri;
+    font-family: Arial,Helvetica,sans-serif;
     font-weight: normal;
     
 }
@@ -1227,7 +1230,7 @@ font-size:0.85em;
     line-height: 18px;
     vertical-align:middle;    
     text-decoration: none;
-    font-family: 'klavika_lightplain_basic', Calibri;
+    font-family: Arial,Helvetica,sans-serif;
     font-weight: normal;
 }
 
@@ -1235,7 +1238,7 @@ font-size:0.85em;
 {
 	background: #DFE8AF;
 	border:1px dotted #A3BAE9;
-	font-family:'klavika_lightplain_basic', Calibri;
+	font-family:Arial,Helvetica,sans-serif;
 }
 
 .HeaderGridStyle
@@ -1247,7 +1250,7 @@ font-size:0.85em;
 
 .LinkGrid
 {
-    font-family:'klavika_lightplain_basic', Calibri;
+    font-family:Arial,Helvetica,sans-serif;
     color:#4A4A4C;
     font-weight:bold;
     cursor:pointer;   
@@ -1307,7 +1310,7 @@ text-transform:uppercase;
 .treeNode
 {
     color:Black;
-    font:14px 'klavika_lightplain_basic', Calibri;
+    font:14px Arial,Helvetica,sans-serif;
 }
 .rootNode
 {
@@ -1327,7 +1330,7 @@ text-transform:uppercase;
 .HeaderdetailView
 {
     font-size:10pt;
-    font-family:'klavika_lightplain_basic', Calibri;
+    font-family:Arial,Helvetica,sans-serif;
     background-color:#DBDBDC;
     color:Black;
     font-weight:bold;
@@ -1344,7 +1347,7 @@ text-transform:uppercase;
     line-height: 18px;
     vertical-align:middle;    
     text-decoration: none;
-    font-family: 'klavika_lightplain_basic', Calibri;
+    font-family: Arial,Helvetica,sans-serif;
     font-weight: normal;
     
 }
@@ -1353,7 +1356,7 @@ text-transform:uppercase;
 {
     border: 1px solid #A8A8A8;
     color: #333;
-    font-family: 'klavika_lightplain_basic', Calibri;
+    font-family: Arial,Helvetica,sans-serif;
     font-size: 8pt;
     margin-left: 1px;
     margin-right: 1px;
@@ -1390,7 +1393,7 @@ text-transform:uppercase;
 .TituloSeccion
 {
     color: #808080;
-	font-family: 'klavika_lightplain_basic', Calibri;
+	font-family: Arial,Helvetica,sans-serif;
 	font-size: 10pt;
 	font-weight: bold;
     padding: 5px;
@@ -1401,7 +1404,7 @@ text-transform:uppercase;
 .SeccionesH1
 {
     color: #002060;
-	font-family: 'klavika_lightplain_basic', Calibri;
+	font-family: Arial,Helvetica,sans-serif;
 	font-size: 10pt;
 	font-weight: bold;
     margin-top: 5px;
@@ -1412,7 +1415,7 @@ text-transform:uppercase;
 .SeccionesH2
 {
     color: #808080;
-	font-family: 'klavika_lightplain_basic', Calibri;
+	font-family: Arial,Helvetica,sans-serif;
 	font-size: 10pt;
 	font-weight: bold;
     margin-top: 5px;
@@ -1423,7 +1426,7 @@ text-transform:uppercase;
 .SeccionesH3
 {
     color: #808080;
-    font-family: 'klavika_lightplain_basic', Calibri;
+    font-family: Arial,Helvetica,sans-serif;
     font-size: 9pt;
     margin-top: 2px;
     cursor: pointer;
@@ -1432,7 +1435,7 @@ text-transform:uppercase;
 .SeccionesH4
 {
     color: #808080;
-	font-family: 'klavika_lightplain_basic', Calibri;
+	font-family: Arial,Helvetica,sans-serif;
 	font-size: 9pt;
     margin-top: 2px;
     cursor: pointer;    
@@ -1443,7 +1446,7 @@ text-transform:uppercase;
 .FooterDiv
 {
     background-color: #9b9d9e;
-    font-family: 'klavika_lightplain_basic', Calibri;
+    font-family: Arial,Helvetica,sans-serif;
     font-size: 8pt;
     cursor: pointer;    
     color:#ffffff;
@@ -1453,7 +1456,7 @@ text-transform:uppercase;
 
 .TitleLoginMensaje
 {
-    font-family: 'klavika_lightplain_basic', Calibri;
+    font-family: Arial,Helvetica,sans-serif;
     font-size: 20pt;
     font-weight:bold;
     margin-top: 2px;    
@@ -1462,7 +1465,7 @@ text-transform:uppercase;
 
 .LoginMensaje
 {
-    font-family: 'klavika_lightplain_basic', Calibri;
+    font-family: Arial,Helvetica,sans-serif;
     font-size: 10pt;
     font-weight:bold;
     margin-top: 2px;    
@@ -1496,4 +1499,16 @@ background-color: #ffc0c0;
 .radioButtonList
 { 
     list-style:none; margin: 0; padding: 0; display: inline; border:none;
+}
+
+.bordeTabla
+{
+    border-bottom: 1px solid #F2F1F1;
+}
+
+.mensajeMultivalor
+{
+    font-size:9pt;
+    color: rgba(128, 128, 128, 1);   
+    padding-top: 3px;
 }

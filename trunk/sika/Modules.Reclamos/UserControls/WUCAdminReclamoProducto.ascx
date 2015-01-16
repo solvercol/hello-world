@@ -59,7 +59,7 @@
                             TransitionDuration="250"
                             FramesPerSecond="40"
                             RequireOpenedPane="false"
-                            SuppressHeaderPostbacks="true">
+                            SuppressHeaderPostbacks="true" Height="712px">
         <Panes>                
             <ajaxToolkit:AccordionPane  runat="server" ID="PaneInfoGeneral"
                                         HeaderCssClass="accordionHeader"
@@ -415,26 +415,27 @@
                             </td>
 
                         </tr>
-                        <tr>
+                        <tr >
                             <th style="text-align:left; vertical-align:top">
                                 Descripción Aspecto Envase:
                             </th>
 
                             <td class="Separador"></td>
 
-                            <td class="Line">
+                            <td class="Line" colspan=5>
                                 <asp:TextBox ID="txtDescripcionAspectoEnvase" Width="100%" runat="server" MaxLength="512" />
                             </td>
 
                             <td class="Separador"></td>
-
+                        </tr>
+                        <tr>
                             <th style="text-align:left">  
                                 Descripción Aspecto Producto:              
                             </th>
 
                             <td class="Separador"></td>
 
-                            <td class="Line">
+                            <td class="Line" colspan=5>
                                 <asp:TextBox ID="txtDescripcionAspectoProducto" Width="100%" runat="server" MaxLength="512" />
                             </td>
 

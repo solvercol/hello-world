@@ -49,15 +49,6 @@ namespace Modules.Reclamos.Catalogos {
         protected global::System.Web.UI.UpdatePanel test;
         
         /// <summary>
-        /// txtDescripcion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
-        
-        /// <summary>
         /// wddUnidad control.
         /// </summary>
         /// <remarks>
@@ -65,15 +56,6 @@ namespace Modules.Reclamos.Catalogos {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList wddUnidad;
-        
-        /// <summary>
-        /// rfvUnidad control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvUnidad;
         
         /// <summary>
         /// ImgUnidad control.
@@ -85,6 +67,15 @@ namespace Modules.Reclamos.Catalogos {
         protected global::System.Web.UI.WebControls.ImageButton ImgUnidad;
         
         /// <summary>
+        /// rfvUnidad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvUnidad;
+        
+        /// <summary>
         /// wddZona control.
         /// </summary>
         /// <remarks>
@@ -92,6 +83,15 @@ namespace Modules.Reclamos.Catalogos {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList wddZona;
+        
+        /// <summary>
+        /// ImgZona control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ImgZona;
         
         /// <summary>
         /// rfvZona control.
@@ -103,13 +103,13 @@ namespace Modules.Reclamos.Catalogos {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvZona;
         
         /// <summary>
-        /// ImgZona control.
+        /// txtDescripcion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImgZona;
+        protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
         
         /// <summary>
         /// wddGerente control.

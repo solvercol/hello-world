@@ -19,7 +19,7 @@
 					    </tr>
                         <tr>
 						    <th style="text-align:left;vertical-align:top">Tipo Reclamo:</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
                             <asp:RadioButtonList ID="wddReclamo" runat="server" RepeatDirection="Horizontal" CssClass="radioButtonList" onselectedindexchanged="wddReclamo_SelectedIndexChanged" AutoPostBack="true" ></asp:RadioButtonList>
 						        <asp:requiredfieldvalidator id="RFVReclamo" 
 						        runat="server" 
@@ -33,7 +33,7 @@
 					    </tr>
 					    <tr>
 						    <th style="text-align:left;vertical-align:top">Categoría:</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
 						        <asp:textbox id="txtNombre" runat="server" width="400px" MaxLength="512">
 						        </asp:textbox>
 						        <asp:requiredfieldvalidator id="rfvNombre" 
@@ -48,7 +48,7 @@
 					    </tr>
 					    <tr>
 						    <th style="text-align:left;vertical-align:top">SubCategoría:</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
 						        <asp:textbox id="txtSubcategoria" runat="server" width="400px" MaxLength="512">
 						        </asp:textbox>
 				<%--		        <asp:requiredfieldvalidator id="rfvSubcategoria" 
@@ -59,11 +59,16 @@
 								enableclientscript="true" 
 								controltovalidate="txtSubcategoria">
 								</asp:requiredfieldvalidator>--%>
+                                <br />
+                                <div class="mensajeMultivalor">
+                                    <asp:Literal ID="litMensajeMultivalor" runat="server"></asp:Literal>
+                                </div>
 						    </td>
+                            
 					    </tr>
                          <tr>
 						    <th style="text-align:left;vertical-align:top">Descripción:</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
 						        <asp:textbox id="txtDescripcion" runat="server" TextMode="MultiLine" width="400px" MaxLength="512">
 						        </asp:textbox>
 <%--						        <asp:requiredfieldvalidator id="rfvDescripcion" 
@@ -78,7 +83,7 @@
 					    </tr>
                         <tr id="trArea" runat="server" visible="false">
 						    <th style="text-align:left;vertical-align:top">Área:</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
 						        <asp:textbox id="txtArea" runat="server" width="400px" MaxLength="512">
 						        </asp:textbox>
 						        <asp:requiredfieldvalidator id="RFVArea" 
@@ -93,7 +98,7 @@
 					    </tr>
                         <tr id="trResponsable" runat="server" visible="false">
 						    <th style="text-align:left;vertical-align:top">Ingeniero Responsable:</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
                                 <asp:DropDownList ID="wddResponsables" class="chzn-select" runat="server" Width="50%" />
 						        <asp:requiredfieldvalidator id="rfvesponsables" 
 						        runat="server" 
@@ -107,7 +112,7 @@
 					    </tr>
                         <tr id="trGrupoInformacion" runat="server" visible="false">
 						    <th style="text-align:left;vertical-align:top">Grupo Información:</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
                               <asp:DropDownList ID="WddGrupoInformacion" class="chzn-select" runat="server" Width="50%" >
                                   <asp:ListItem Selected="False" Text="1" Value="1"/>
                                   <asp:ListItem Selected="False" Text="2" Value="2"/>
@@ -127,7 +132,8 @@
 					    </tr>
 					    <tr>
 						    <th style="text-align:left;vertical-align:top">Activo:</th>
-						    <td align="left"><asp:checkbox id="chkActive" runat="server" Checked="true"></asp:checkbox></td>
+						    <td align="left" class="bordeTabla">
+                            <asp:checkbox id="chkActive" runat="server" Checked="true"></asp:checkbox></td>
 					    </tr>
 					    <tr>
 						    <td align="left"></td>

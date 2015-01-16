@@ -21,8 +21,20 @@
 						    <td>&nbsp;</td>
 					    </tr>
                         <tr>
+						    <th style="text-align:left;vertical-align:top">Unidad:</th>
+						    <td align="left" class="bordeTabla">
+						        <asp:Literal runat="server" ID="txtUnidad"></asp:Literal>
+						    </td>
+					    </tr>
+                        <tr>
+						    <th style="text-align:left;vertical-align:top">Zona:</th>
+						    <td align="left" class="bordeTabla">
+                             <asp:Literal runat="server" ID="txtZona"></asp:Literal>
+						    </td>
+					    </tr>
+                        <tr>
 						    <th style="text-align:left;vertical-align:top">Descripción:</th>
-						    <td align="left" style="width:310px;">
+						    <td align="left" class="bordeTabla">
 						        <asp:textbox id="txtDescripcion" runat="server" TextMode="MultiLine" width="300px" MaxLength="512">
 						        </asp:textbox>
 <%--						        <asp:requiredfieldvalidator id="rfvDescripcion" 
@@ -37,49 +49,15 @@
                             <td>&nbsp;</td>
 					    </tr>
                         <tr>
-						    <th style="text-align:left;vertical-align:top">Unidad:</th>
-						    <td align="left">
-						        <asp:Literal runat="server" ID="txtUnidad"></asp:Literal>
-						    </td>
-                            <td align="left">
-<%--                                    <asp:ImageButton 
-                                        ID="ImgUnidad"
-                                        BorderWidth="0" 
-                                        BorderStyle="None" 
-                                        CausesValidation="false" 
-                                        runat="server" 
-                                        ImageUrl="~/Resources/Images/round_plus.png" 
-                                        OnClick="BtnAddUnidad_Click" ToolTip="Adicionar Nueva Unidad"
-                                        />--%>
-                            </td>
-					    </tr>
-                        <tr>
-						    <th style="text-align:left;vertical-align:top">Zona:</th>
-						    <td align="left">
-                             <asp:Literal runat="server" ID="txtZona"></asp:Literal>
-						    </td>
-                             <td align="left">
-<%--                                <asp:ImageButton 
-                                        ID="ImgZona"
-                                        BorderWidth="0" 
-                                        BorderStyle="None" 
-                                        CausesValidation="false" 
-                                        runat="server" 
-                                        ImageUrl="~/Resources/Images/round_plus.png" 
-                                        OnClick="BtnAddZona_Click" ToolTip="Adicionar Nueva Zona"
-                                        />--%>
-                            </td>
-					    </tr>
-                        <tr>
 						    <th style="text-align:left;vertical-align:top">Gerente:</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
                                 <asp:Literal runat="server" ID="txtGerente"></asp:Literal>
 						    </td>
                             <td>&nbsp;</td>
 					    </tr>
                                 <tr>
                          <th style="text-align:left;vertical-align:top">Tarifa Flete:</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
 						        <asp:textbox id="txtTarifa" runat="server"  width="300px" MaxLength="24">
 						        </asp:textbox>
 						        <asp:requiredfieldvalidator id="rfvTarifa" 
@@ -100,7 +78,8 @@
                         </tr>
 					    <tr>
 						    <th style="text-align:left;vertical-align:top">Activo:</th>
-						    <td align="left"><asp:checkbox id="chkActive" runat="server"></asp:checkbox></td>
+						    <td align="left" class="bordeTabla">
+                            <asp:checkbox id="chkActive" runat="server"></asp:checkbox></td>
                             <td>&nbsp;</td>
 					    </tr>	
                  <%--       <tr>

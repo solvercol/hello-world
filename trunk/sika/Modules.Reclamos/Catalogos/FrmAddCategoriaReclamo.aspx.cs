@@ -182,6 +182,11 @@ namespace Modules.Reclamos.Catalogos
             get { return ModuleId; }
         }
 
+        public string MensajeMultivalor
+        {
+            set { litMensajeMultivalor.Text = value; }
+        }
+
         #endregion
 
 

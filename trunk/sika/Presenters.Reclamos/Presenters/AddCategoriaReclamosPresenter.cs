@@ -20,11 +20,14 @@ namespace Presenters.Reclamos.Presenters
 
         private readonly ISfTBL_ModuloReclamos_TipoReclamoManagementServices _tipoReclamo;
 
-        public AddCategoriaReclamosPresenter(ISfTBL_ModuloReclamos_CategoriasReclamoManagementServices catReclamos, ISfTBL_Admin_UsuariosManagementServices responsable, ISfTBL_ModuloReclamos_TipoReclamoManagementServices tipoReclamo)
+        private readonly ISfTBL_Admin_OptionListManagementServices _optionList;
+
+        public AddCategoriaReclamosPresenter(ISfTBL_ModuloReclamos_CategoriasReclamoManagementServices catReclamos, ISfTBL_Admin_UsuariosManagementServices responsable, ISfTBL_ModuloReclamos_TipoReclamoManagementServices tipoReclamo, ISfTBL_Admin_OptionListManagementServices optionList)
         {
             _responsable = responsable;
             _tipoReclamo = tipoReclamo;
             _catReclamos = catReclamos;
+            _optionList = optionList;
         }
 
         public override void SubscribeViewToEvents()
@@ -56,6 +59,10 @@ namespace Presenters.Reclamos.Presenters
             View.Activo = false;
             View.CreateBy = View.UserSession.Nombres;
             View.CreateOn = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString();
+
+            var mensajeMultivalor = _optionList.ObtenerOpcionBykey("MensajeCamposMultivalor");
+            if (mensajeMultivalor == null) return;
+            View.MensajeMultivalor = mensajeMultivalor.Value;
         }
 
         /// <summary>

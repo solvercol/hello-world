@@ -23,8 +23,54 @@
                             <td>&nbsp;</td>
 					    </tr>
                         <tr>
+						    <th style="text-align:left;vertical-align:top">Unidad:</th>
+						    <td align="left" class="bordeTabla">
+                            <asp:DropDownList ID="wddUnidad" class="chzn-select" runat="server" Width="310px" />
+                            <asp:ImageButton 
+                                        ID="ImgUnidad"
+                                        BorderWidth="0" 
+                                        BorderStyle="None" 
+                                        CausesValidation="false" 
+                                        runat="server" 
+                                        ImageUrl="~/Resources/Images/round_plus.png" 
+                                        OnClick="BtnAddUnidad_Click" ToolTip="Adicionar Nueva Unidad"
+                            />
+						        <asp:requiredfieldvalidator id="rfvUnidad" 
+						        runat="server" 
+						        errormessage="El campo [Unidad] es requerido!!." 
+						        cssclass="validator"
+								display="Dynamic" 
+								enableclientscript="true" 
+								controltovalidate="wddUnidad">
+								</asp:requiredfieldvalidator>
+                                </td>
+					    </tr>
+                        <tr>
+						    <th style="text-align:left;vertical-align:top">Zona:</th>
+						    <td align="left" class="bordeTabla">
+                            <asp:DropDownList ID="wddZona" class="chzn-select" runat="server" Width="310px" />
+                                <asp:ImageButton 
+                                        ID="ImgZona"
+                                        BorderWidth="0" 
+                                        BorderStyle="None" 
+                                        CausesValidation="false" 
+                                        runat="server" 
+                                        ImageUrl="~/Resources/Images/round_plus.png" 
+                                        OnClick="BtnAddZona_Click" ToolTip="Adicionar Nueva Zona"
+                                />
+						        <asp:requiredfieldvalidator id="rfvZona" 
+						        runat="server" 
+						        errormessage="El campo [Zona] es requerido!!." 
+						        cssclass="validator"
+								display="Dynamic" 
+								enableclientscript="true" 
+								controltovalidate="wddZona">
+								</asp:requiredfieldvalidator>
+                                </td>
+					    </tr>
+                        <tr>
 						    <th style="text-align:left;vertical-align:top">Descripción:</th>
-						    <td align="left" style="width:310px;">
+						    <td align="left" class="bordeTabla">
 						        <asp:textbox id="txtDescripcion" runat="server" TextMode="MultiLine" width="300px" MaxLength="512">
 						        </asp:textbox>
 <%--						        <asp:requiredfieldvalidator id="rfvDescripcion" 
@@ -39,59 +85,9 @@
                             <td>&nbsp;</td>
 					    </tr>
                         <tr>
-						    <th style="text-align:left;vertical-align:top">Unidad:</th>
-						    <td align="left">
-                            <asp:DropDownList ID="wddUnidad" class="chzn-select" runat="server" Width="100%" />
-						        <asp:requiredfieldvalidator id="rfvUnidad" 
-						        runat="server" 
-						        errormessage="El campo [Unidad] es requerido!!." 
-						        cssclass="validator"
-								display="Dynamic" 
-								enableclientscript="true" 
-								controltovalidate="wddUnidad">
-								</asp:requiredfieldvalidator>
-                                </td>
-						        <td align="left">
-                                      <asp:ImageButton 
-                                        ID="ImgUnidad"
-                                        BorderWidth="0" 
-                                        BorderStyle="None" 
-                                        CausesValidation="false" 
-                                        runat="server" 
-                                        ImageUrl="~/Resources/Images/round_plus.png" 
-                                        OnClick="BtnAddUnidad_Click" ToolTip="Adicionar Nueva Unidad"
-                                        />
-                                </td>
-					    </tr>
-                        <tr>
-						    <th style="text-align:left;vertical-align:top">Zona:</th>
-						    <td align="left">
-                             <asp:DropDownList ID="wddZona" class="chzn-select" runat="server" Width="100%" />
-						        <asp:requiredfieldvalidator id="rfvZona" 
-						        runat="server" 
-						        errormessage="El campo [Zona] es requerido!!." 
-						        cssclass="validator"
-								display="Dynamic" 
-								enableclientscript="true" 
-								controltovalidate="wddZona">
-								</asp:requiredfieldvalidator>
-                                </td>
-						        <td align="left">
-                                     <asp:ImageButton 
-                                        ID="ImgZona"
-                                        BorderWidth="0" 
-                                        BorderStyle="None" 
-                                        CausesValidation="false" 
-                                        runat="server" 
-                                        ImageUrl="~/Resources/Images/round_plus.png" 
-                                        OnClick="BtnAddZona_Click" ToolTip="Adicionar Nueva Zona"
-                                        />
-                                </td>
-					    </tr>
-                        <tr>
 						    <th style="text-align:left;vertical-align:top">Gerente:</th>
-						    <td align="left">
-                            <asp:DropDownList ID="wddGerente" class="chzn-select" runat="server" Width="100%" />
+						    <td align="left" class="bordeTabla">
+                            <asp:DropDownList ID="wddGerente" class="chzn-select" runat="server" Width="310px" />
 						        <asp:requiredfieldvalidator id="rfvgerente" 
 						        runat="server" 
 						        errormessage="El campo [Gerente] es requerido!!." 
@@ -105,7 +101,7 @@
 					    </tr>
                         <tr>
                          <th style="text-align:left;vertical-align:top">Tarifa Flete:</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
 						        <asp:textbox id="txtTarifa" runat="server"  width="300px" MaxLength="24">
 						        </asp:textbox>
 						        <asp:requiredfieldvalidator id="rfvTarifa" 
@@ -126,7 +122,8 @@
                         </tr>
 					    <tr>
 						    <th style="text-align:left;vertical-align:top">Activo:</th>
-						    <td align="left"><asp:checkbox id="chkActive" runat="server" Checked="true"></asp:checkbox></td>
+						    <td align="left" class="bordeTabla">
+                            <asp:checkbox id="chkActive" runat="server" Checked="true"></asp:checkbox></td>
                             <td>&nbsp;</td>
 					    </tr>
 					    <tr>
