@@ -85,6 +85,15 @@ namespace Modules.Reclamos.Catalogos {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvProceso;
         
         /// <summary>
+        /// litMensajeMultivalor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litMensajeMultivalor;
+        
+        /// <summary>
         /// ddlGerentes control.
         /// </summary>
         /// <remarks>

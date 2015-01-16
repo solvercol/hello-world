@@ -21,31 +21,32 @@
 					    </tr>
                          <tr>
 						    <th style="text-align:left;vertical-align:top">Asesor:</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
                             <asp:Literal runat="server" ID="txtAsesor"></asp:Literal>
 						    </td>
 					    </tr>
                         <tr>
 						    <th style="text-align:left;vertical-align:top">Unidad:</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
 						        <asp:Literal runat="server" ID="txtUnidad"></asp:Literal>
 						    </td>
 					    </tr>
                         <tr>
 						    <th style="text-align:left;vertical-align:top">Zona:</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
                              <asp:Literal runat="server" ID="txtZona"></asp:Literal>
 						    </td>
 					    </tr>
                         <tr>
 						<th style="text-align:left;vertical-align:top">Jefe(s) Inmediato(s):</th>
-						<td align="left">
+						<td align="left" class="bordeTabla">
                                 <asp:Literal runat="server" ID="txtJefe"></asp:Literal>
 						    </td>
 					    </tr>
                         <tr>
 						    <th style="text-align:left;vertical-align:top">Activo:</th>
-						    <td align="left"><asp:checkbox id="chkActive" runat="server" Enabled="false"></asp:checkbox></td>
+						    <td align="left" class="bordeTabla">
+                            <asp:checkbox id="chkActive" runat="server" Enabled="false"></asp:checkbox></td>
 					    </tr>	
 					    <tr>
 						    <td align="left"></td>

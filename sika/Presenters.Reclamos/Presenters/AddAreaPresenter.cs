@@ -12,12 +12,15 @@ namespace Presenters.Reclamos.Presenters
     {
         private readonly ISfTBL_ModuloAPC_AreasManagementServices _areas;
         private readonly ISfTBL_Admin_UsuariosManagementServices _gerentes;
+        private readonly ISfTBL_Admin_OptionListManagementServices _optionList;
 
         public AddAreaPresenter(ISfTBL_Admin_UsuariosManagementServices gerentes,
-            ISfTBL_ModuloAPC_AreasManagementServices areas)
+            ISfTBL_ModuloAPC_AreasManagementServices areas,
+            ISfTBL_Admin_OptionListManagementServices optionList)
         {
             _gerentes = gerentes;
             _areas = areas;
+            _optionList = optionList;
         }
 
         public override void SubscribeViewToEvents()
@@ -46,6 +49,10 @@ namespace Presenters.Reclamos.Presenters
             View.Activo = false;
             View.CreateBy = View.UserSession.Nombres;
             View.CreateOn = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString();
+
+            var mensajeMultivalor = _optionList.ObtenerOpcionBykey("MensajeCamposMultivalor");
+            if (mensajeMultivalor == null) return;
+            View.MensajeMultivalor = mensajeMultivalor.Value;
         }
 
         private void GuardarArea()

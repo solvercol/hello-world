@@ -20,25 +20,26 @@
 					    </tr>
 					    <tr>
 						    <th style="text-align:left;vertical-align:top">Categoría:</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
                                 <asp:Literal runat="server" ID="txtNombre"></asp:Literal>
                             </td>
 					    </tr>
                          <tr>
 						    <th style="text-align:left;vertical-align:top">Descripción:</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
                             <asp:Literal runat="server" ID="txtDescripcion"></asp:Literal>
 						    </td>
 					    </tr>
                         <tr>
 						    <th style="text-align:left;vertical-align:top">Ingenieros Responsables:</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
                             <asp:Literal runat="server" ID="txtResponsables"></asp:Literal>
 						    </td>
 					    </tr>
 					    <tr>
 						    <th style="text-align:left;vertical-align:top">Activo:</th>
-						    <td align="left"><asp:checkbox id="chkActive" runat="server" Enabled="false"></asp:checkbox></td>
+						    <td align="left" class="bordeTabla">
+                            <asp:checkbox id="chkActive" runat="server" Enabled="false"></asp:checkbox></td>
 					    </tr>	
                      <%--   <tr>
 						    <th style="text-align:left;vertical-align:top">Creado por:</th>

@@ -33,6 +33,7 @@ namespace Presenters.Reclamos.IViews
         string ModifiedBy { set; }
         string ModifiedOn { set; }
         string IdModule { get;}
+        string MensajeMultivalor { set; }
         #endregion
     }
 }

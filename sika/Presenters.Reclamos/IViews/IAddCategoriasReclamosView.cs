@@ -29,6 +29,7 @@ namespace Presenters.Reclamos.IViews
         string CreateBy { set; }
         string CreateOn { set; }
         string IdModule { get; }
+        string MensajeMultivalor{ set; }
         #endregion
     }
 }

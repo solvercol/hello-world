@@ -20,37 +20,37 @@
 					    </tr>
                         <tr>
 						<th style="text-align:left;vertical-align:top">Tipo Reclamo:</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
                                 <asp:Literal runat="server" ID="txtReclamo"></asp:Literal>
 						    </td>
 					    </tr>
 					    <tr>
 						    <th style="text-align:left;vertical-align:top">Categoría:</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
                                 <asp:Literal runat="server" ID="txtNombre"></asp:Literal>
                             </td>
 					    </tr>
 					    <tr>
 						    <th style="text-align:left;vertical-align:top">SubCategoría:</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
 						        <asp:Literal runat="server" ID="txtSubcategoria"></asp:Literal>
 						    </td>
 					    </tr>
                          <tr>
 						    <th style="text-align:left;vertical-align:top">Descripción:</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
                             <asp:Literal runat="server" ID="txtDescripcion"></asp:Literal>
 						    </td>
 					    </tr>
                         <tr>
 						    <th style="text-align:left;vertical-align:top">Área:</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
 						        <asp:Literal runat="server" ID="txtArea"></asp:Literal>
 						    </td>
 					    </tr>
                         <tr>
 						    <th style="text-align:left;vertical-align:top">Ingeniero Responsable:</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
                              <asp:Literal runat="server" ID="txtResponsables"></asp:Literal>
 				<%--		        <ig:WebDropDown ID="wddResponsables"
                                             runat="server" 
@@ -67,14 +67,15 @@
 					    </tr>
                         <tr id="trGrupoInformacion" runat="server" visible="false">
 						    <th style="text-align:left;vertical-align:top">Grupo Información:</th>
-						    <td align="left">
+						    <td align="left" class="bordeTabla">
 						        <asp:Literal runat="server" ID="txtGrupoInformacion"></asp:Literal>
 						    </td>
 					    </tr>
        
 					    <tr>
 						    <th style="text-align:left;vertical-align:top">Activo:</th>
-						    <td align="left"><asp:checkbox id="chkActive" runat="server" Enabled="false"></asp:checkbox></td>
+						    <td align="left" class="bordeTabla">
+                            <asp:checkbox id="chkActive" runat="server" Enabled="false"></asp:checkbox></td>
 					    </tr>	
                        <%-- <tr>
 						    <th style="text-align:left;vertical-align:top">Creado por:</th>
