@@ -11,6 +11,7 @@ using Infrastructure.CrossCutting.NetFramework.Enums;
 using Presenters.Reclamos.IViews;
 using Presenters.Reclamos.Resources;
 using Domain.MainModule.Reclamos.Enum;
+using System.IO;
 
 namespace Presenters.Reclamos.Presenters
 {
@@ -141,7 +142,8 @@ namespace Presenters.Reclamos.Presenters
                         var anexo = new TBL_ModuloReclamos_AnexosAlternativa();
                         anexo.IdAlternativa = model.IdAlternativa;
                         anexo.NombreArchivo = archivo.Value;
-                        anexo.Archivo = (byte[])archivo.ComplexValue;
+                        var filePath = View.GetLocalUserTmpFile(archivo.Value);
+                        anexo.Archivo = File.ReadAllBytes(filePath);
                         anexo.IsActive = true;
                         anexo.CreateBy = View.UserSession.IdUser;
                         anexo.CreateOn = DateTime.Now;
@@ -149,6 +151,8 @@ namespace Presenters.Reclamos.Presenters
                         anexo.ModifiedOn = DateTime.Now;
 
                         _anexosService.Add(anexo);
+
+                        File.Delete(filePath);
                     }
                 }
 
@@ -163,7 +167,6 @@ namespace Presenters.Reclamos.Presenters
                 _logReclamoService.Add(log);
 
                 LoadAlternativasReclamo();
-
 
                 try
                 {

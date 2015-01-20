@@ -708,6 +708,7 @@
     <Folder Include="Pages\Globals\" />
     <Folder Include="Pages\WebServices\" />
     <Folder Include="Template\WPC\Scripts\" />
+    <Folder Include="TmpUserFiles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Site.Master" />

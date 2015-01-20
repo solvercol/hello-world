@@ -9,6 +9,7 @@ using Modules.Reclamos.UI;
 using Presenters.Reclamos.IViews;
 using Presenters.Reclamos.Presenters;
 using System.Web.UI;
+using System.IO;
 
 namespace Modules.Reclamos.UserControls
 {
@@ -110,9 +111,14 @@ namespace Modules.Reclamos.UserControls
             var archivoAdjunto = new DTO_ValueKey();
             archivoAdjunto.Id = (ArchivosAdjuntos.Count + 1).ToString();
             archivoAdjunto.Value = fupAnexoArchivo.FileName;
-            archivoAdjunto.ComplexValue = fupAnexoArchivo.FileBytes;
+            //archivoAdjunto.ComplexValue = fupAnexoArchivo.FileBytes;
+
+            var pathFile = GetLocalUserTmpFile(fupAnexoArchivo.FileName);
+
+            fupAnexoArchivo.SaveAs(pathFile);
 
             ArchivosAdjuntos.Add(archivoAdjunto);
+
             LoadArchivosAdjuntos(ArchivosAdjuntos);
 
             ShowAdminAlternativaWindow(true);
@@ -129,6 +135,7 @@ namespace Modules.Reclamos.UserControls
             if (archivo != null)
             {
                 ArchivosAdjuntos.Remove(archivo);
+                File.Delete(GetLocalUserTmpFile(archivo.Value));
                 LoadArchivosAdjuntos(ArchivosAdjuntos);
             }
 
@@ -143,7 +150,12 @@ namespace Modules.Reclamos.UserControls
 
             var archivo = ArchivosAdjuntos.Where(x => x.Id == IdArchivo).SingleOrDefault();
 
-            DownloadDocument((byte[])archivo.ComplexValue, archivo.Value, "application/octet-stream");
+            var pathFile = GetLocalUserTmpFile(archivo.Value);
+
+            var fileBytes = File.ReadAllBytes(pathFile);
+
+            //DownloadDocument((byte[])archivo.ComplexValue, archivo.Value, "application/octet-stream");
+            DownloadDocument(fileBytes, archivo.Value, "application/octet-stream");
 
             ShowAdminAlternativaWindow(true);
         }

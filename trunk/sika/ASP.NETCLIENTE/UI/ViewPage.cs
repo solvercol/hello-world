@@ -14,6 +14,7 @@ using Infrastructure.CrossCutting.NetFramework.Structures;
 using Microsoft.Practices.Unity;
 using Infrastructure.CrossCutting.NetFramework.Util;
 using Domain.MainModules.Entities;
+using System.Text.RegularExpressions;
 
 namespace ASP.NETCLIENTE.UI
 {
@@ -559,7 +560,60 @@ namespace ASP.NETCLIENTE.UI
 
         }
 
+        public bool IsValidEmail(string email)
+        {
+            Regex regex = new Regex(@"^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$");
+            Match match = regex.Match(email);
+            return match.Success;
+        }
 
+        public string ServerHostPathUri
+        {
+            get
+            {
+                string port = System.Web.HttpContext.Current.Request.ServerVariables["SERVER_PORT"];
+                if (port == null || port == "80" || port == "443")
+                    port = "";
+                else
+                    port = ":" + port;
+
+                string protocol = System.Web.HttpContext.Current.Request.ServerVariables["SERVER_PORT_SECURE"];
+                if (protocol == null || protocol == "0")
+                    protocol = "http://";
+                else
+                    protocol = "https://";
+
+                string sOut = protocol + System.Web.HttpContext.Current.Request.ServerVariables["SERVER_NAME"] + port + System.Web.HttpContext.Current.Request.ApplicationPath;
+
+                if (sOut.EndsWith("/"))
+                {
+                    sOut = sOut.Substring(0, sOut.Length - 1);
+                }
+
+                return sOut;
+            }
+        }
+
+        public string ServerHostLocalPath
+        {
+            get
+            {
+                return HttpRuntime.AppDomainAppPath;
+            }
+        }
+
+        public string TmUserFilesFolder
+        {
+            get
+            {
+                return ConfigurationManager.AppSettings.Get("tmpUserFiles");
+            }
+        }
+
+        public string GetLocalUserTmpFile(string fileName)
+        {
+            return string.Format(@"{0}\{1}\{2}", ServerHostLocalPath, TmUserFilesFolder, fileName);
+        }
 
         #endregion
 

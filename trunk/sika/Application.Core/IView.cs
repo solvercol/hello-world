@@ -32,5 +32,13 @@ namespace Application.Core
         TBL_Admin_Usuarios UserSession { get; }
 
         string IdModule { get; }
+
+        string ServerHostPathUri { get; }
+
+        string ServerHostLocalPath { get; }
+
+        string TmUserFilesFolder { get; }
+
+        string GetLocalUserTmpFile(string fileName);
     }
 }
