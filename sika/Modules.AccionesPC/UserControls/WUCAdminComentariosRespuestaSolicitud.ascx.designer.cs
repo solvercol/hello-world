@@ -49,6 +49,15 @@ namespace Modules.AccionesPC.UserControls {
         protected global::System.Web.UI.UpdatePanel upModal;
         
         /// <summary>
+        /// wdwSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Infragistics.Web.UI.LayoutControls.WebDialogWindow wdwSearch;
+        
+        /// <summary>
         /// pnlAdminComentarioRespuesta control.
         /// </summary>
         /// <remarks>
@@ -281,23 +290,5 @@ namespace Modules.AccionesPC.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptArchivosAdjuntos;
-        
-        /// <summary>
-        /// btnPopUpAdminComentarioRespuestaTargetControl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPopUpAdminComentarioRespuestaTargetControl;
-        
-        /// <summary>
-        /// mpeAdminSolucion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.ModalPopupExtender mpeAdminSolucion;
     }
 }

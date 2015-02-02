@@ -53,6 +53,11 @@ namespace Modules.Reclamos.UserControls
             ShowAdminAlternativaWindow(true);
         }
 
+        protected void BtnRegresar_Click(object sender, EventArgs e)
+        {
+            ShowAdminAlternativaWindow(false);
+        }
+
         protected void BtnSaveAlternativa_Click(object sender, EventArgs e)
         {
             var messages = new List<string>();
@@ -102,26 +107,40 @@ namespace Modules.Reclamos.UserControls
         
         protected void BtnAddArchivoAdjunto_Click(object sender, EventArgs e)
         {
-            if (!fupAnexoArchivo.HasFile)
+            try
             {
+                //var exep = new Exception(string.Format("Prueba de carga de archivo: {0}",fupAnexoArchivo.PostedFile.FileName));
+
+                //Presenter.InsertarLog(exep);
+
+                if (string.IsNullOrEmpty(fupAnexoArchivo.Value))
+                {
+                    ShowAdminAlternativaWindow(true);
+                    return;
+                }
+
+                var archivoAdjunto = new DTO_ValueKey();
+                archivoAdjunto.Id = (ArchivosAdjuntos.Count + 1).ToString();
+                archivoAdjunto.Value = fupAnexoArchivo.PostedFile.FileName;
+                //archivoAdjunto.ComplexValue = fupAnexoArchivo.FileBytes;
+
+                var pathFile = GetLocalUserTmpFile(fupAnexoArchivo.PostedFile.FileName);
+
+                fupAnexoArchivo.PostedFile.SaveAs(pathFile);
+
+                ArchivosAdjuntos.Add(archivoAdjunto);
+
+                LoadArchivosAdjuntos(ArchivosAdjuntos);
+
                 ShowAdminAlternativaWindow(true);
-                return;
             }
+            catch (Exception ex)
+            {
+                var msgEx = ex.InnerException == null ? ex.Message : ex.InnerException.Message;
+                var exep = new Exception(string.Format("Error al cargar archivo: {0}", msgEx));
 
-            var archivoAdjunto = new DTO_ValueKey();
-            archivoAdjunto.Id = (ArchivosAdjuntos.Count + 1).ToString();
-            archivoAdjunto.Value = fupAnexoArchivo.FileName;
-            //archivoAdjunto.ComplexValue = fupAnexoArchivo.FileBytes;
-
-            var pathFile = GetLocalUserTmpFile(fupAnexoArchivo.FileName);
-
-            fupAnexoArchivo.SaveAs(pathFile);
-
-            ArchivosAdjuntos.Add(archivoAdjunto);
-
-            LoadArchivosAdjuntos(ArchivosAdjuntos);
-
-            ShowAdminAlternativaWindow(true);
+                Presenter.InsertarLog(exep);
+            }            
         }
 
         protected void BtnRemoveArchivoAdjunto_Click(object sender, EventArgs e)
@@ -178,7 +197,7 @@ namespace Modules.Reclamos.UserControls
                 if (lblAlternativa != null) lblAlternativa.Text = string.Format("{0}", item.Alternativa);
 
                 var lblFechaAlternativa = e.Item.FindControl("lblFechaAlternativa") as Label;
-                if (lblFechaAlternativa != null) lblFechaAlternativa.Text = string.Format("{0:dd/MM/yyyy hh:mm:ss tt}", item.FechaAlternativa);
+                if (lblFechaAlternativa != null) lblFechaAlternativa.Text = string.Format("{0:dd/MM/yyyy}", item.FechaAlternativa);
 
                 var lblResponable = e.Item.FindControl("lblResponable") as Label;
                 if (lblResponable != null) lblResponable.Text = string.Format("{0}", item.TBL_Admin_Usuarios2.Nombres);
@@ -270,6 +289,9 @@ namespace Modules.Reclamos.UserControls
 
         public void LoadControlData()
         {
+            ScriptManager scriptManager = ScriptManager.GetCurrent(this.Page);
+            scriptManager.RegisterPostBackControl(btnAddArchivoAdjunto);
+
             Presenter.LoadInitData();
         }
 
@@ -282,9 +304,9 @@ namespace Modules.Reclamos.UserControls
         public void ShowAdminAlternativaWindow(bool visible)
         {
             if (visible)
-                mpeAdminAlternativa.Show();
+                wdwSearch.WindowState = Infragistics.Web.UI.LayoutControls.DialogWindowState.Normal;
             else
-                mpeAdminAlternativa.Hide();
+                wdwSearch.WindowState = Infragistics.Web.UI.LayoutControls.DialogWindowState.Hidden;
         }
 
         public void EnableEdit(bool enable)

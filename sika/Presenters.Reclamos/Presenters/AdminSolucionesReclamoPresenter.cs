@@ -159,6 +159,8 @@ namespace Presenters.Reclamos.Presenters
                 }
 
                 LoadSolucionesReclamo();
+
+                View.ShowAdminSolucionWindow(false);
             }
             catch (Exception ex)
             {
@@ -185,6 +187,8 @@ namespace Presenters.Reclamos.Presenters
                     _solucionesReclamo.Modify(model);
 
                     LoadSolucionesReclamo();
+
+                    View.ShowAdminSolucionWindow(false);
                 }
             }
             catch (Exception ex)

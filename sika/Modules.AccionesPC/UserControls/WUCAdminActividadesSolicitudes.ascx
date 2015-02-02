@@ -1,6 +1,8 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WUCAdminActividadesSolicitudes.ascx.cs" Inherits="Modules.AccionesPC.UserControls.WUCAdminActividadesSolicitudes" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+<%@ Register Assembly="Infragistics4.Web.v11.1, Version=11.1.20111.2238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb"
+    Namespace="Infragistics.Web.UI.LayoutControls" TagPrefix="ig" %>
 
 <table width="100%">
     <tr class="SectionMainTitle">
@@ -25,13 +27,13 @@
                             </th>
                             <%--<th style="width:3%;">                        
                             </th>--%>
-                            <th style="width:33%;text-align:left;vertical-align:top">
+                            <th style="width:25%;text-align:left;vertical-align:top">
                                 Descripción
                             </th>
                             <th style="width:15%; text-align:left;;vertical-align:top">
                                 Fecha
                             </th>
-                            <th style="width:9%;text-align:left; color:#a31717;vertical-align:top">
+                            <th style="width:5%;text-align:left; color:#a31717;vertical-align:top">
                                 Estado
                             </th>
                             <th style="width:20%;text-align:left;vertical-align:top">
@@ -88,18 +90,37 @@
         <script type="text/javascript" language="javascript">
             Sys.Application.add_load(RebindScripts);
         </script>
-        <asp:Panel ID="pnlAdminActividad"  runat="server" CssClass="popup_Container" Width="500" Height="500" style="display:none;">  
+
+         <ig:WebDialogWindow 
+            ID="wdwSearch" 
+            runat="server" 
+            CssClass="WebDialogWindowStyle" 
+            Height="550px"
+            Width="530px" 
+            InitialLocation="Centered" 
+            MaintainLocationOnScroll="True" 
+            Modal="True" 
+            Moveable="true"
+            Left="0px"
+            Top="0px" 
+            ModalBackgroundCssClass="ModalWebDialogWindowStyle" 
+            WindowState="Hidden">
+            <Header>
+                <CloseBox Visible="true" />
+            </Header>
+            <ContentPane>
+                <Template>   
+
+        <asp:Panel ID="pnlAdminActividad"  runat="server" CssClass="popup_Container" Width="97%" >
 
             <div class="popup_Titlebar" id="PopupHeader">
                 <div class="TitlebarLeft">
                     Administrar Plan de Acción
                 </div>
-                <div class="TitlebarRight" id="divCloseAdminActividad">
-                </div>
             </div>
 
             <div style="padding:3px; text-align:right;">
-                <asp:Button ID="btnRegresar" runat="server" Text="Regresar"  />
+                <asp:Button ID="btnRegresar" runat="server" Text="Regresar" OnClick="BtnRegresar_Click"  />
                 <asp:Button ID="btnGuardar" runat="server" Text="Programar Actividad" OnClick="BtnSaveActividad_Click"  />
             </div>
 
@@ -238,19 +259,12 @@
                 </table>
             </div>
         </asp:Panel>
-    
-        <asp:Button ID="btnPopUpAdminActividadTargetControl" runat="server" style="display:none; "/>    
+      
+       </Template>
+            </ContentPane>
+        </ig:WebDialogWindow>
 
-        <ajaxToolkit:ModalPopupExtender 
-        ID="mpeAdminActividad" 
-        runat="server" 
-        TargetControlID="btnPopUpAdminActividadTargetControl" 
-        PopupControlID="pnlAdminActividad" 
-        BackgroundCssClass="ModalPopupBG" DropShadow="true" 
-        cancelcontrolid="divCloseAdminActividad"> 
-        </ajaxToolkit:ModalPopupExtender>   
     </ContentTemplate>
     <Triggers>
-        <asp:PostBackTrigger ControlID="btnAddArchivoAdjunto" />
     </Triggers>
 </asp:UpdatePanel>

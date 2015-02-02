@@ -243,6 +243,12 @@ namespace Modules.Reclamos.Admin
                 case "recresponsable":
                     Response.Redirect(string.Format("../Views/FrmReclamosPorResponsable.aspx?ModuleId={0}", ModuleId));
                     break;
+                case "rectotal":
+                    Response.Redirect(string.Format("../Views/FrmTotalReclamos.aspx?ModuleId={0}", ModuleId));                
+                    break;
+                case "recexport":
+                    Response.Redirect(string.Format("../Views/FrmReclamosExport.aspx?ModuleId={0}", ModuleId));
+                    break;
                 case "admactividad":
                     Response.Redirect(string.Format("FrmAdminActividadReclamo.aspx?ModuleId={0}&IdActividad={1}", ModuleId, IdFrom));
                     break;

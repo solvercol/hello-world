@@ -24,12 +24,17 @@ namespace Modules.Reclamos.UserControls
 
         #endregion
 
-        #region Buttons
+        #region Buttons 
 
         protected void BtnAddSolucion_Click(object sender, EventArgs e)
         {
             InitAdminSolucion();
             ShowAdminSolucionWindow(true);
+        }
+
+        protected void BtnRegresar_Click(object sender, EventArgs e)
+        {
+            ShowAdminSolucionWindow(false);
         }
 
         protected void BtnSaveSolucion_Click(object sender, EventArgs e)
@@ -223,6 +228,9 @@ namespace Modules.Reclamos.UserControls
 
         public void LoadControlData()
         {
+            ScriptManager scriptManager = ScriptManager.GetCurrent(this.Page);
+            scriptManager.RegisterPostBackControl(btnAddArchivoAdjunto);
+
             Presenter.LoadInitData();
         }
 
@@ -235,9 +243,11 @@ namespace Modules.Reclamos.UserControls
         public void ShowAdminSolucionWindow(bool visible)
         {
             if (visible)
-                mpeAdminSolucion.Show();
+            {
+                wdwAdminSolucion.WindowState = Infragistics.Web.UI.LayoutControls.DialogWindowState.Normal;
+            }
             else
-                mpeAdminSolucion.Hide();
+                wdwAdminSolucion.WindowState = Infragistics.Web.UI.LayoutControls.DialogWindowState.Hidden;
         }
 
         public void LoadSolucionesReclamo(List<TBL_ModuloReclamos_Soluciones> items)

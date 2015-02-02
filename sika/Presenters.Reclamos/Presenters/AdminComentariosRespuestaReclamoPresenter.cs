@@ -181,6 +181,7 @@ namespace Presenters.Reclamos.Presenters
                 }
 
                 LoadComentariosReclamo();
+                View.ShowAdminComentarioWindow(false);
             }
             catch (Exception ex)
             {
@@ -247,6 +248,8 @@ namespace Presenters.Reclamos.Presenters
                 }
 
                 LoadComentariosReclamo();
+
+                View.ShowAdminComentarioWindow(false);
             }
             catch (Exception ex)
             {
@@ -273,6 +276,8 @@ namespace Presenters.Reclamos.Presenters
                     _comentariosRespuestaService.Modify(model);
 
                     LoadComentariosReclamo();
+
+                    View.ShowAdminComentarioWindow(false);
                 }
             }
             catch (Exception ex)

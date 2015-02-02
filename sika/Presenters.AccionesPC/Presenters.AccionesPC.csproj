@@ -53,6 +53,7 @@
     <Compile Include="IViews\IMisSolicitudesPendientesView.cs" />
     <Compile Include="IViews\IMisSolicitudesPorEstadoView.cs" />
     <Compile Include="IViews\IMisSolicitudesPorFechaView.cs" />
+    <Compile Include="IViews\IMisSolicitudesView.cs" />
     <Compile Include="IViews\IPanelResumenWfView.cs" />
     <Compile Include="IViews\ISeguimientoPorAreaView.cs" />
     <Compile Include="IViews\ISeguimientoPorAutorView.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="Presenters\MisSolicitudesPendientesPresenter.cs" />
     <Compile Include="Presenters\MisSolicitudesPorEstadoPresenter.cs" />
     <Compile Include="Presenters\MisSolicitudesPorFechaPresenter.cs" />
+    <Compile Include="Presenters\MisSolicitudesPresenter.cs" />
     <Compile Include="Presenters\PanelResumenWf.cs" />
     <Compile Include="Presenters\SeguimientoPorAreaPresenter.cs" />
     <Compile Include="Presenters\SeguimientoPorAutorPresenter.cs" />

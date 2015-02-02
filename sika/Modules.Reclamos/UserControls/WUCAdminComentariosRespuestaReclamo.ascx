@@ -1,6 +1,8 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WUCAdminComentariosRespuestaReclamo.ascx.cs" Inherits="Modules.Reclamos.UserControls.WUCAdminComentariosRespuestaReclamo" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+<%@ Register Assembly="Infragistics4.Web.v11.1, Version=11.1.20111.2238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb"
+    Namespace="Infragistics.Web.UI.LayoutControls" TagPrefix="ig" %>
 
 <table width="100%">
     <tr class="SectionMainTitle">
@@ -26,16 +28,16 @@
                             <tr>
                                 <th style="width:5%;">                        
                                 </th>
-                                <th style="width:30%;text-align:left;">
+                                <th style="width:29%;text-align:left;">
                                     Asunto
                                 </th>
-                                <th style="width:36%;text-align:left;">
+                                <th style="width:29%;text-align:left;">
                                     Mensaje
                                 </th>
-                                <th style="width:15%; text-align:left;">
+                                <th style="width:18%; text-align:left;">
                                     Fecha
                                 </th>
-                                <th style="width:15%;text-align:left;">
+                                <th style="width:20%;text-align:left;">
                                     Autor
                                 </th>
                             </tr>
@@ -79,16 +81,16 @@
                                                                 BorderStyle="None"
                                                                 ImageUrl="~/Resources/Images/respuesta-comentario.png"/>
                                                     </td>
-                                                    <td style="text-align:left;width:30%;vertical-align:top;border:none;">
+                                                    <td style="text-align:left;width:29%;vertical-align:top;border:none;">
                                                         <asp:Label ID="lblAsunto" runat="server" />
                                                     </td>
-                                                    <td style="text-align:left;width:36%;vertical-align:top;border:none;">
+                                                    <td style="text-align:left;width:29%;vertical-align:top;border:none;">
                                                         <asp:Label ID="lblMensjae" runat="server" />
                                                     </td>                  
-                                                    <td style="text-align:left;width:15%;vertical-align:top;border:none;">
+                                                    <td style="text-align:left;width:18%;vertical-align:top;border:none;">
                                                         <asp:Label ID="lblFechaComentario" runat="server" />
                                                     </td>
-                                                    <td style="text-align:left;width:15%;vertical-align:top;border:none;">
+                                                    <td style="text-align:left;width:20%;vertical-align:top;border:none;">
                                                         <asp:Label ID="lblAutor" runat="server" />
                                                     </td> 
                                                 </tr>
@@ -112,18 +114,37 @@
         <script type="text/javascript" language="javascript">
             Sys.Application.add_load(RebindScripts);
         </script>
-        <asp:Panel ID="pnlAdminComentarioRespuesta"  runat="server" CssClass="popup_Container" Width="500" Height="470" style="display:none;">  
+
+        <ig:WebDialogWindow 
+            ID="wdwAdminComentarios" 
+            runat="server" 
+            CssClass="WebDialogWindowStyle" 
+            Height="470px"
+            Width="530px" 
+            InitialLocation="Centered" 
+            MaintainLocationOnScroll="True" 
+            Modal="True" 
+            Moveable="true"
+            Left="0px"
+            Top="0px" 
+            ModalBackgroundCssClass="ModalWebDialogWindowStyle" 
+            WindowState="Hidden">
+            <Header>
+                <CloseBox Visible="true" />
+            </Header>
+            <ContentPane>
+                <Template> 
+
+        <asp:Panel ID="pnlAdminComentarioRespuesta"  runat="server" CssClass="popup_Container" Width="97%" >
 
             <div class="popup_Titlebar" id="PopupHeader">
                 <div class="TitlebarLeft">
                     Administrar Comentario / Respuesta
                 </div>
-                <div class="TitlebarRight" id="divCloseAdminComentario">
-                </div>
             </div>
 
             <div style="padding:3px; text-align:right;">
-                <asp:Button ID="btnRegresar" runat="server" Text="Regresar"  />
+                <asp:Button ID="btnRegresar" runat="server" Text="Regresar" OnClick="BtnRegresar_Click" />
                 <asp:Button ID="btnGuardar" runat="server" Text="Enviar" OnClick="BtnSaveComentario_Click"  />
                 <asp:Button ID="btnGuardarCliente" runat="server" Text="Enviar" OnClick="BtnSaveComentarioCliente_Click"  />
             </div>
@@ -320,19 +341,12 @@
                 </table>
             </div>
         </asp:Panel>
-    
-        <asp:Button ID="btnPopUpAdminComentarioRespuestaTargetControl" runat="server" style="display:none; "/>    
+                        
+        </Template>
+            </ContentPane>
+        </ig:WebDialogWindow>
 
-        <ajaxToolkit:ModalPopupExtender 
-                    ID="mpeAdminSolucion" 
-                    runat="server" 
-                    TargetControlID="btnPopUpAdminComentarioRespuestaTargetControl" 
-                    PopupControlID="pnlAdminComentarioRespuesta" 
-                    BackgroundCssClass="ModalPopupBG" DropShadow="true"
-                    cancelcontrolid="divCloseAdminComentario"> 
-        </ajaxToolkit:ModalPopupExtender>
     </ContentTemplate>
     <Triggers>
-        <asp:PostBackTrigger ControlID="btnAddArchivoAdjunto" />
     </Triggers>
 </asp:UpdatePanel>

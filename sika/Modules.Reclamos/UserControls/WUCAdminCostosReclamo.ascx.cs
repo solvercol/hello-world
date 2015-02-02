@@ -173,22 +173,22 @@ namespace Modules.Reclamos.UserControls
                 if (lblProducto != null) lblProducto.Text = string.Format("{0}", item.NombreProducto);
 
                 var lblPesoNeto = e.Item.FindControl("lblPesoNeto") as Label;
-                if (lblPesoNeto != null) lblPesoNeto.Text = string.Format("{0:0,0.0}", item.PesoNeto);
+                if (lblPesoNeto != null) lblPesoNeto.Text = string.Format("{0:0.0}", item.PesoNeto);
 
                 var lblPrecioLista = e.Item.FindControl("lblPrecioLista") as Label;
                 if (lblPrecioLista != null) lblPrecioLista.Text = string.Format("{0:0,0.0}", item.PrecioLista);
 
                 var lblUnidades = e.Item.FindControl("lblUnidades") as Label;
-                if (lblUnidades != null) lblUnidades.Text = string.Format("{0:0,0.0}", item.Unidades);
+                if (lblUnidades != null) lblUnidades.Text = string.Format("{0:0.0}", item.Unidades);
 
                 var lblCostoProducto = e.Item.FindControl("lblCostoProducto") as Label;
                 if (lblCostoProducto != null) lblCostoProducto.Text = string.Format("{0:0,0.0}", item.CostoProducto);
 
                 var lblKilos = e.Item.FindControl("lblKilos") as Label;
-                if (lblKilos != null) lblKilos.Text = string.Format("{0:0,0.0}", item.Kilos);
+                if (lblKilos != null) lblKilos.Text = string.Format("{0:0.0}", item.Kilos);
 
                 var lblUnidadesDisponibles = e.Item.FindControl("lblUnidadesDisponibles") as Label;
-                if (lblUnidadesDisponibles != null) lblUnidadesDisponibles.Text = string.Format("{0:0,0.0}", item.UnidadesDisponibles);
+                if (lblUnidadesDisponibles != null) lblUnidadesDisponibles.Text = string.Format("{0:0.0}", item.UnidadesDisponibles);
 
                 var lblCostoDisponible = e.Item.FindControl("lblCostoDisponible") as Label;
                 if (lblCostoDisponible != null) lblCostoDisponible.Text = string.Format("{0:0,0.0}", item.CostoDisponible);
