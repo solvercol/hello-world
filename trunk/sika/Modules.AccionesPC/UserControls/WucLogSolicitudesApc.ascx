@@ -24,10 +24,10 @@
                             
                             <table class="tbl" cellpadding="0" cellspacing="0" width="100%" style="height:15px">
                                <tr>
-                                    <th  style="width:13%" align="left" >
+                                    <th  style="width:18%" align="left" >
                                             Fecha
                                     </th>
-                                    <th  style="width:87%" align="left">
+                                    <th  style="width:82%" align="left">
                                             Descripción
                                     </th>
                                 </tr>
@@ -40,25 +40,25 @@
                                     runat="server">			                                               
 					                    <itemtemplate>
 						                <tr>
-							                <td style="width:13%" align="left">
+							                <td style="width:18%" align="left">
                                                 <asp:Literal ID="litDate" runat="server" />
                                             </td>
-							                <td style="width:85%" align="left">
+							                <td style="width:80%" align="left">
                                                 <asp:Literal ID="litDescripcion" runat="server" />
                                             </td>
-							                <td style="width:2%" align="left">
+							                <td style="width:1%" align="left">
                                             </td>
 						                </tr>
 					                    </itemtemplate> 
                                         <AlternatingItemTemplate>
                                          <tr class="AlternateGridStyle">                                           
-							                <td style="width:13%" align="left">
+							                <td style="width:18%" align="left">
                                                 <asp:Literal ID="litDate" runat="server" />
                                             </td>
-							                <td style="width:85%" align="left">
+							                <td style="width:80%" align="left">
                                                 <asp:Literal ID="litDescripcion" runat="server" />
                                             </td>
-							                <td style="width:2%" align="left">
+							                <td style="width:1%" align="left">
                                             </td>
 						                 </tr>
                                        </AlternatingItemTemplate>

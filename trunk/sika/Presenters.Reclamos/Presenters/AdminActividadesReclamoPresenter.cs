@@ -195,6 +195,8 @@ namespace Presenters.Reclamos.Presenters
 
                 LoadActividadesReclamo();
 
+                View.ShowAdminActividadWindow(false);
+
                 try
                 {
                     _senMailServices.EnviarCorreoelectronicoActividades(model.IdActividad, View.UserSession);
@@ -229,7 +231,8 @@ namespace Presenters.Reclamos.Presenters
 
                     _actividadesService.Modify(model);
 
-                    LoadActividadesReclamo();                    
+                    LoadActividadesReclamo();
+                    View.ShowAdminActividadWindow(false);
                 }
             }
             catch (Exception ex)

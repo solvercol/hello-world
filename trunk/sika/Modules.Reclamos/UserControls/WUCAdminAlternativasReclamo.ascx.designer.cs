@@ -40,6 +40,15 @@ namespace Modules.Reclamos.UserControls {
         protected global::System.Web.UI.UpdatePanel upModal;
         
         /// <summary>
+        /// wdwSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Infragistics.Web.UI.LayoutControls.WebDialogWindow wdwSearch;
+        
+        /// <summary>
         /// pnlAdminAlternativa control.
         /// </summary>
         /// <remarks>
@@ -199,7 +208,7 @@ namespace Modules.Reclamos.UserControls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fupAnexoArchivo;
+        protected global::System.Web.UI.HtmlControls.HtmlInputFile fupAnexoArchivo;
         
         /// <summary>
         /// btnAddArchivoAdjunto control.
@@ -227,23 +236,5 @@ namespace Modules.Reclamos.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptArchivosAdjuntos;
-        
-        /// <summary>
-        /// btnPopUpAdminAlternativaTargetControl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPopUpAdminAlternativaTargetControl;
-        
-        /// <summary>
-        /// mpeAdminAlternativa control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.ModalPopupExtender mpeAdminAlternativa;
     }
 }

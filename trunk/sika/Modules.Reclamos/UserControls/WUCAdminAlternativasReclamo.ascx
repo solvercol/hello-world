@@ -1,6 +1,8 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WUCAdminAlternativasReclamo.ascx.cs" Inherits="Modules.Reclamos.UserControls.WUCAdminAlternativasReclamo" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+<%@ Register Assembly="Infragistics4.Web.v11.1, Version=11.1.20111.2238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb"
+    Namespace="Infragistics.Web.UI.LayoutControls" TagPrefix="ig" %>
 
 <table width="100%">
     <tr class="SectionMainTitle">
@@ -23,12 +25,10 @@
                         <tr>
                             <th style="width:3%;">                        
                             </th>
-                            <%--<th style="width:3%;">                        
-                            </th>--%>
-                            <th style="width:30%;text-align:left;">
+                            <th style="width:28%;text-align:left;">
                                 Alternativa
                             </th>
-                            <th style="width:15%; text-align:left;">
+                            <th style="width:12%; text-align:left;">
                                 Fecha
                             </th>
                             <th style="width:20%;text-align:left;">
@@ -37,7 +37,7 @@
                             <th style="width:10%;text-align:left; color:#a31717">
                                 Estado
                             </th>
-                            <th style="width:23%;text-align:left;">
+                            <th style="width:28%;text-align:left;">
                                 Seguimiento
                             </th>
                         </tr>
@@ -82,18 +82,37 @@
         <script type="text/javascript" language="javascript">
             Sys.Application.add_load(RebindScripts);
         </script>
-        <asp:Panel ID="pnlAdminAlternativa"  runat="server" CssClass="popup_Container" Width="520" Height="580" style="display:none;">  
+
+        <ig:WebDialogWindow 
+            ID="wdwSearch" 
+            runat="server" 
+            CssClass="WebDialogWindowStyle" 
+            Height="570px"
+            Width="600px" 
+            InitialLocation="Centered" 
+            MaintainLocationOnScroll="True" 
+            Modal="True" 
+            Moveable="true"
+            Left="0px"
+            Top="0px" 
+            ModalBackgroundCssClass="ModalWebDialogWindowStyle" 
+            WindowState="Hidden">
+            <Header>
+                <CloseBox Visible="true" />
+            </Header>
+            <ContentPane>
+                <Template>            
+
+        <asp:Panel ID="pnlAdminAlternativa"  runat="server" CssClass="popup_Container" Width="97%" >          
 
             <div class="popup_Titlebar" id="PopupHeader">
                 <div class="TitlebarLeft">
                     Administrar Alternativa
                 </div>
-                <div class="TitlebarRight" id="divCloseAdminAlternativa">
-                </div>
             </div>
 
             <div style="padding:3px; text-align:right;">
-                <asp:Button ID="btnRegresar" runat="server" Text="Regresar"  />
+                <asp:Button ID="btnRegresar" runat="server" Text="Regresar" OnClick="BtnRegresar_Click" />
                 <asp:Button ID="btnGuardar" runat="server" Text="Enviar" OnClick="BtnSaveAlternativa_Click"  />
             </div>
 
@@ -201,7 +220,9 @@
                         <td class="Separador"></td>
 
                         <td class="Line">
-                            <asp:FileUpload ID="fupAnexoArchivo" runat="server" />
+                            <%--<asp:FileUpload ID="fupAnexoArchivo" runat="server" />--%>
+
+                            <input id="fupAnexoArchivo" type="file" runat="server" />
 
                             <asp:Button ID="btnAddArchivoAdjunto" runat="server" Text="Agregar" OnClick="BtnAddArchivoAdjunto_Click" />
                         </td>
@@ -249,19 +270,12 @@
                 </table>
             </div>
         </asp:Panel>
-    
-        <asp:Button ID="btnPopUpAdminAlternativaTargetControl" runat="server" style="display:none; "/>    
 
-        <ajaxToolkit:ModalPopupExtender 
-        ID="mpeAdminAlternativa" 
-        runat="server" 
-        TargetControlID="btnPopUpAdminAlternativaTargetControl" 
-        PopupControlID="pnlAdminAlternativa" 
-        BackgroundCssClass="ModalPopupBG" DropShadow="true" 
-        cancelcontrolid="divCloseAdminAlternativa"> 
-        </ajaxToolkit:ModalPopupExtender>   
+        </Template>
+            </ContentPane>
+        </ig:WebDialogWindow>
+    
 </ContentTemplate>
     <Triggers>
-        <asp:PostBackTrigger ControlID="btnAddArchivoAdjunto" />
     </Triggers>
 </asp:UpdatePanel>

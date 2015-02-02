@@ -58,6 +58,11 @@ namespace Modules.Reclamos.UserControls
             ShowAdminComentarioWindow(true);
         }
 
+        protected void BtnRegresar_Click(object sender, EventArgs e)
+        {
+            ShowAdminComentarioWindow(false);
+        }
+
         protected void BtnAddRespuestaCliente_Click(object sender, EventArgs e)
         {
             InitAdminComentario();
@@ -376,6 +381,9 @@ namespace Modules.Reclamos.UserControls
 
         public void LoadControlData()
         {
+            ScriptManager scriptManager = ScriptManager.GetCurrent(this.Page);
+            scriptManager.RegisterPostBackControl(btnAddArchivoAdjunto);
+
             Presenter.LoadInitData();
         }
 
@@ -388,9 +396,9 @@ namespace Modules.Reclamos.UserControls
         public void ShowAdminComentarioWindow(bool visible)
         {
             if (visible)
-                mpeAdminSolucion.Show();
+                wdwAdminComentarios.WindowState = Infragistics.Web.UI.LayoutControls.DialogWindowState.Normal;
             else
-                mpeAdminSolucion.Hide();
+                wdwAdminComentarios.WindowState = Infragistics.Web.UI.LayoutControls.DialogWindowState.Hidden;
         }
 
         public void LoadComentariosReclamo(List<TBL_ModuloReclamos_ComentariosRespuesta> items)

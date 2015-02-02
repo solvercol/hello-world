@@ -154,6 +154,8 @@ namespace Presenters.AccionesPC.Presenters
                 }
 
                 LoadComentariosSolicitud();
+
+                View.ShowAdminComentarioWindow(false);
             }
             catch (Exception ex)
             {
@@ -180,6 +182,8 @@ namespace Presenters.AccionesPC.Presenters
                     _comentariosRespuestaService.Modify(model);
 
                     LoadComentariosSolicitud();
+
+                    View.ShowAdminComentarioWindow(false);
                 }
             }
             catch (Exception ex)

@@ -168,6 +168,8 @@ namespace Presenters.Reclamos.Presenters
 
                 LoadAlternativasReclamo();
 
+                View.ShowAdminAlternativaWindow(false);
+
                 try
                 {
                     _senMailServices.EnviarCorreoelectronicoAlternativaSolucion(model.IdAlternativa, View.UserSession);
@@ -182,6 +184,11 @@ namespace Presenters.Reclamos.Presenters
             {
                 CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
             }
+        }
+
+        public void InsertarLog(Exception ex)
+        {
+            CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
         }
 
         public void UpdateAlternativaReclamo()
@@ -206,6 +213,8 @@ namespace Presenters.Reclamos.Presenters
                     _alternativaReclamoService.Modify(model);
 
                     LoadAlternativasReclamo();
+
+                    View.ShowAdminAlternativaWindow(false);
                 }
             }
             catch (Exception ex)

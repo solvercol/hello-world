@@ -58,6 +58,11 @@ namespace Modules.AccionesPC.UserControls
             ShowAdminComentarioWindow(true);
         }
 
+        protected void BtnRegresar_Click(object sender, EventArgs e)
+        {
+            ShowAdminComentarioWindow(false);
+        }
+
         protected void BtnAddRespuestaCliente_Click(object sender, EventArgs e)
         {
             InitAdminComentario();
@@ -376,6 +381,9 @@ namespace Modules.AccionesPC.UserControls
 
         public void LoadControlData()
         {
+            ScriptManager scriptManager = ScriptManager.GetCurrent(this.Page);
+            scriptManager.RegisterPostBackControl(btnAddArchivoAdjunto);
+
             Presenter.LoadInitData();
         }
 
@@ -388,9 +396,9 @@ namespace Modules.AccionesPC.UserControls
         public void ShowAdminComentarioWindow(bool visible)
         {
             if (visible)
-                mpeAdminSolucion.Show();
+                wdwSearch.WindowState = Infragistics.Web.UI.LayoutControls.DialogWindowState.Normal;
             else
-                mpeAdminSolucion.Hide();
+                wdwSearch.WindowState = Infragistics.Web.UI.LayoutControls.DialogWindowState.Hidden;
         }
 
         public void LoadComentariosSolicitud(List<TBL_ModuloAPC_ComentariosRespuesta> items)

@@ -160,6 +160,7 @@
     <Content Include="Views\FrmMisPendientes.aspx" />
     <Content Include="Views\FrmMisReclamosPorEstado.aspx" />
     <Content Include="Views\FrmMisReclamosPorFecha.aspx" />
+    <Content Include="Views\FrmReclamosExport.aspx" />
     <Content Include="Views\FrmReclamosPorAutor.aspx" />
     <Content Include="Views\FrmReclamosPorCliente.aspx" />
     <Content Include="Views\FrmReclamosPorEstado.aspx" />
@@ -691,6 +692,13 @@
     <Compile Include="Views\FrmMisReclamosPorFecha.aspx.designer.cs">
       <DependentUpon>FrmMisReclamosPorFecha.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\FrmReclamosExport.aspx.cs">
+      <DependentUpon>FrmReclamosExport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FrmReclamosExport.aspx.designer.cs">
+      <DependentUpon>FrmReclamosExport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\FrmReclamosPorAutor.aspx.cs">
       <DependentUpon>FrmReclamosPorAutor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -833,6 +841,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Resources\ReportViewer\RptVistaReclamosExport.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\RptVistaTotalReclamos.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\RptVistaReclamosPorResponsable.rdlc" />
     <EmbeddedResource Include="Resources\ReportViewer\RptVistaActividadesPorPersona.rdlc" />

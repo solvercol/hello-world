@@ -96,6 +96,7 @@
     <Content Include="UserControls\WucSeguimiento.ascx" />
     <Content Include="Views\FrmActividadesPorPersona.aspx" />
     <Content Include="Views\FrmMisActividadesPendientes.aspx" />
+    <Content Include="Views\FrmMisSolicitudes.aspx" />
     <Content Include="Views\FrmMisSolicitudesPendientes.aspx" />
     <Content Include="Views\FrmMisSolicitudesPorEstado.aspx" />
     <Content Include="Views\FrmMisSolicitudesPorFecha.aspx" />
@@ -262,6 +263,13 @@
     </Compile>
     <Compile Include="Views\FrmMisActividadesPendientes.aspx.designer.cs">
       <DependentUpon>FrmMisActividadesPendientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmMisSolicitudes.aspx.cs">
+      <DependentUpon>FrmMisSolicitudes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\FrmMisSolicitudes.aspx.designer.cs">
+      <DependentUpon>FrmMisSolicitudes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\FrmMisSolicitudesPendientes.aspx.cs">
       <DependentUpon>FrmMisSolicitudesPendientes.aspx</DependentUpon>

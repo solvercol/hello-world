@@ -52,9 +52,10 @@ namespace Modules.AccionesPC.UserControls
             ShowAdminActividadWindow(true);
         }
 
-
-
-
+        protected void BtnRegresar_Click(object sender, EventArgs e)
+        {
+            ShowAdminActividadWindow(false);
+        }
 
         protected void BtnSaveActividad_Click(object sender, EventArgs e)
         {
@@ -82,8 +83,6 @@ namespace Modules.AccionesPC.UserControls
                 return;
             }
 
-
-
             if (IsNewActividad)
                 Presenter.AddActividadSolicitud();
             else
@@ -106,8 +105,6 @@ namespace Modules.AccionesPC.UserControls
             IdSelectedActividad = btn.CommandArgument;
 
             Response.Redirect(string.Format("../Admin/FrmAdminActividadSolicitud.aspx?ModuleId={0}&IdActividad={1}&from=solicitud&IdSolicitud={2}&fromaux={3}&idfromaux={4}", IdModule, IdSelectedActividad, IdSolicitud, FromPage, IdFrom));
-
-            //Presenter.LoadActividadReclamo();
         }
 
         protected void BtnAddArchivoAdjunto_Click(object sender, EventArgs e)
@@ -274,6 +271,9 @@ namespace Modules.AccionesPC.UserControls
 
         public void LoadControlData()
         {
+            ScriptManager scriptManager = ScriptManager.GetCurrent(this.Page);
+            scriptManager.RegisterPostBackControl(btnAddArchivoAdjunto);
+
             Presenter.LoadInitData();
         }
 
@@ -286,9 +286,9 @@ namespace Modules.AccionesPC.UserControls
         public void ShowAdminActividadWindow(bool visible)
         {
             if (visible)
-                mpeAdminActividad.Show();
+                wdwSearch.WindowState = Infragistics.Web.UI.LayoutControls.DialogWindowState.Normal;
             else
-                mpeAdminActividad.Hide();
+                wdwSearch.WindowState = Infragistics.Web.UI.LayoutControls.DialogWindowState.Hidden;
         }
 
         public void LoadActividadesSolicitud(List<TBL_ModuloAPC_Actividades> items)

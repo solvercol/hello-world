@@ -175,6 +175,9 @@ namespace Modules.AccionesPC.Admin
                 case "misolestados":
                     Response.Redirect(string.Format("../Views/FrmMisSolicitudesPorEstado.aspx?ModuleId={0}", ModuleId));
                     break;
+                case "missolicitudes":
+                    Response.Redirect(string.Format("../Views/FrmMisSolicitudes.aspx?ModuleId={0}", ModuleId));
+                    break;
                 case "misolfecha":
                     Response.Redirect(string.Format("../Views/FrmMisSolicitudesPorFecha.aspx?ModuleId={0}", ModuleId));
                     break;

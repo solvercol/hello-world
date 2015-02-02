@@ -65,7 +65,6 @@ namespace Presenters.AccionesPC.Presenters
                 if (solicitud != null)
                 {
                     View.CanAddActividades = ((solicitud.IdEstado == 14) && solicitud.IdResponsableActual == View.UserSession.IdUser);
-
                 }
             }
             catch (Exception ex)
@@ -146,6 +145,8 @@ namespace Presenters.AccionesPC.Presenters
                 }
                 LoadActividadesSolicitud();
 
+                View.ShowAdminActividadWindow(false);
+
                 try
                 {
                    // _senMailServices.EnviarCorreoelectronicoActividades(model.IdActividad, View.UserSession); Pendiente Envio de Correo
@@ -177,6 +178,8 @@ namespace Presenters.AccionesPC.Presenters
                     _actividadesService.Modify(model);
 
                     LoadActividadesSolicitud();
+
+                    View.ShowAdminActividadWindow(false);
                 }
             }
             catch (Exception ex)

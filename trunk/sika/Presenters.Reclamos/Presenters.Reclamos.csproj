@@ -102,6 +102,7 @@
     <Compile Include="IViews\IReadingReclamoServicioT4DetalleView.cs" />
     <Compile Include="IViews\IReadingReclamoServicioT5DetalleView.cs" />
     <Compile Include="IViews\IReadingReclamoServicioView.cs" />
+    <Compile Include="IViews\IReclamosExportView.cs" />
     <Compile Include="IViews\IReclamosPorAutorView.cs" />
     <Compile Include="IViews\IReclamosPorClienteView.cs" />
     <Compile Include="IViews\IReclamosPorEstadoView.cs" />
@@ -158,6 +159,7 @@
     <Compile Include="Presenters\EditCategoriaReclamosPresenter.cs" />
     <Compile Include="Presenters\EditUnidadZonaPresenter.cs" />
     <Compile Include="Presenters\FrmViewAreasPresenter.cs" />
+    <Compile Include="Presenters\ReclamosExportPresenter.cs" />
     <Compile Include="Presenters\SeguimientoPresenter.cs" />
     <Compile Include="Presenters\MisActividadesPresenter.cs" />
     <Compile Include="Presenters\FilterClientPresenter.cs" />

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FrmTotalReclamos.aspx.cs" Inherits="Modules.Reclamos.Views.FrmTotalReclamos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FrmReclamosExport.aspx.cs" Inherits="Modules.Reclamos.Views.FrmReclamosExport" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 <%@ Register TagPrefix="csc" Namespace="ServerControls" Assembly="ServerControls" %>

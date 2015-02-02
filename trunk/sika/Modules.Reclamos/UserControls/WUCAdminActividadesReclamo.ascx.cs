@@ -52,6 +52,11 @@ namespace Modules.Reclamos.UserControls
             ShowAdminActividadWindow(true);
         }
 
+        protected void BtnRegresar_Click(object sender, EventArgs e)
+        {
+            ShowAdminActividadWindow(false);
+        }
+
         protected void BtnAddUsuarioCopia_Click(object sender, EventArgs e)
         {
             var usuarioCopia = new DTO_ValueKey() { Id = IdUsuarioCopia, Value = wddUsuarioCopia.SelectedItem.Text };
@@ -97,8 +102,6 @@ namespace Modules.Reclamos.UserControls
                 ShowAdminActividadWindow(true);
                 return;
             }
-
-          
 
             if (IsNewActividad)
                 Presenter.AddActividadReclamo();
@@ -300,6 +303,9 @@ namespace Modules.Reclamos.UserControls
 
         public void LoadControlData()
         {
+            ScriptManager scriptManager = ScriptManager.GetCurrent(this.Page);
+            scriptManager.RegisterPostBackControl(btnAddArchivoAdjunto);
+
             Presenter.LoadInitData();
         }
 
@@ -312,9 +318,9 @@ namespace Modules.Reclamos.UserControls
         public void ShowAdminActividadWindow(bool visible)
         {
             if (visible)
-                mpeAdminActividad.Show();
+                mpeAdminActividad.WindowState = Infragistics.Web.UI.LayoutControls.DialogWindowState.Normal;
             else
-                mpeAdminActividad.Hide();
+                mpeAdminActividad.WindowState = Infragistics.Web.UI.LayoutControls.DialogWindowState.Hidden;
         }
 
         public void LoadActividadesReclamo(List<TBL_ModuloReclamos_Actividades> items)

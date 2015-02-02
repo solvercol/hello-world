@@ -7,297 +7,252 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Modules.Reclamos.UserControls {
+namespace Modules.Reclamos.Views {
     
     
-    public partial class WUCAdminComentariosRespuestaReclamo {
+    public partial class FrmReclamosExport {
         
         /// <summary>
-        /// btnNuevoComentarioRespuesta control.
+        /// Img1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNuevoComentarioRespuesta;
+        protected global::System.Web.UI.HtmlControls.HtmlImage Img1;
         
         /// <summary>
-        /// btnNuevoRespuestaCliente control.
+        /// pnlHeader control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNuevoRespuestaCliente;
+        protected global::System.Web.UI.WebControls.Panel pnlHeader;
         
         /// <summary>
-        /// upContainer control.
+        /// ShowHide control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upContainer;
+        protected global::System.Web.UI.WebControls.ImageButton ShowHide;
         
         /// <summary>
-        /// rptComentariosList control.
+        /// lbFiltro control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptComentariosList;
+        protected global::System.Web.UI.WebControls.Label lbFiltro;
         
         /// <summary>
-        /// upModal control.
+        /// btnNuevo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upModal;
+        protected global::System.Web.UI.WebControls.Button btnNuevo;
         
         /// <summary>
-        /// wdwAdminComentarios control.
+        /// PanelFiltro control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Infragistics.Web.UI.LayoutControls.WebDialogWindow wdwAdminComentarios;
+        protected global::System.Web.UI.WebControls.Panel PanelFiltro;
         
         /// <summary>
-        /// pnlAdminComentarioRespuesta control.
+        /// txtNoReclamo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlAdminComentarioRespuesta;
+        protected global::System.Web.UI.WebControls.TextBox txtNoReclamo;
         
         /// <summary>
-        /// btnRegresar control.
+        /// txtNoRelacion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegresar;
+        protected global::System.Web.UI.WebControls.TextBox txtNoRelacion;
         
         /// <summary>
-        /// btnGuardar control.
+        /// txtCliente control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuardar;
+        protected global::System.Web.UI.WebControls.TextBox txtCliente;
         
         /// <summary>
-        /// btnGuardarCliente control.
+        /// txtProducto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuardarCliente;
+        protected global::System.Web.UI.WebControls.TextBox txtProducto;
         
         /// <summary>
-        /// vsComentarios control.
+        /// txtServicio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary vsComentarios;
+        protected global::System.Web.UI.WebControls.TextBox txtServicio;
         
         /// <summary>
-        /// txtAsunto control.
+        /// wdpFiltroDateFrom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAsunto;
+        protected global::System.Web.UI.WebControls.TextBox wdpFiltroDateFrom;
         
         /// <summary>
-        /// lblAsunto control.
+        /// CalendarExtender2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAsunto;
+        protected global::AjaxControlToolkit.CalendarExtender CalendarExtender2;
         
         /// <summary>
-        /// txtObservaciones control.
+        /// wdpFiltroDateTo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtObservaciones;
+        protected global::System.Web.UI.WebControls.TextBox wdpFiltroDateTo;
         
         /// <summary>
-        /// lblObservaciones control.
+        /// CalendarExtender1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblObservaciones;
+        protected global::AjaxControlToolkit.CalendarExtender CalendarExtender1;
         
         /// <summary>
-        /// trInfoDestinatario control.
+        /// btnFiltrar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableRow trInfoDestinatario;
+        protected global::System.Web.UI.WebControls.Button btnFiltrar;
         
         /// <summary>
-        /// wddDestinatarios control.
+        /// CollapsiblePanelExtender1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList wddDestinatarios;
+        protected global::AjaxControlToolkit.CollapsiblePanelExtender CollapsiblePanelExtender1;
         
         /// <summary>
-        /// lblDestinatarios control.
+        /// upgeneral control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDestinatarios;
+        protected global::System.Web.UI.UpdatePanel upgeneral;
         
         /// <summary>
-        /// trInfoContacto control.
+        /// pnlNewReclamo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableRow trInfoContacto;
+        protected global::System.Web.UI.WebControls.Panel pnlNewReclamo;
         
         /// <summary>
-        /// txtMailContacto control.
+        /// rblReclamoType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMailContacto;
+        protected global::System.Web.UI.WebControls.RadioButtonList rblReclamoType;
         
         /// <summary>
-        /// lblUsuariosCopiaTitle control.
+        /// trCategoriaReclamo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUsuariosCopiaTitle;
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow trCategoriaReclamo;
         
         /// <summary>
-        /// ShowHideUsuariosCopia control.
+        /// ddlCategoriaReclamo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ShowHideUsuariosCopia;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCategoriaReclamo;
         
         /// <summary>
-        /// PanelUsuariosCopia control.
+        /// btnConfirmNewReclamo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelUsuariosCopia;
+        protected global::System.Web.UI.WebControls.Button btnConfirmNewReclamo;
         
         /// <summary>
-        /// wddUsuarioCopia control.
+        /// btnPopNewReclamoTargetControl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList wddUsuarioCopia;
+        protected global::System.Web.UI.WebControls.Button btnPopNewReclamoTargetControl;
         
         /// <summary>
-        /// btnAddCopia control.
+        /// mpeNewReclamo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddCopia;
+        protected global::AjaxControlToolkit.ModalPopupExtender mpeNewReclamo;
         
         /// <summary>
-        /// lstUsuariosCopia control.
+        /// pReporte control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lstUsuariosCopia;
+        protected global::System.Web.UI.WebControls.Panel pReporte;
         
         /// <summary>
-        /// btnRemoveCopia control.
+        /// rptReclamos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRemoveCopia;
-        
-        /// <summary>
-        /// cpeCopiarUsuarios control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.CollapsiblePanelExtender cpeCopiarUsuarios;
-        
-        /// <summary>
-        /// fupAnexoArchivo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fupAnexoArchivo;
-        
-        /// <summary>
-        /// btnAddArchivoAdjunto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddArchivoAdjunto;
-        
-        /// <summary>
-        /// pnlArchivosAdjuntos control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlArchivosAdjuntos;
-        
-        /// <summary>
-        /// rptArchivosAdjuntos control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptArchivosAdjuntos;
+        protected global::Microsoft.Reporting.WebForms.ReportViewer rptReclamos;
     }
 }
