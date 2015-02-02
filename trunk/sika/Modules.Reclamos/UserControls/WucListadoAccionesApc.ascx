@@ -8,7 +8,7 @@
               
                    
                             
-                            <asp:Panel id="pnlContainer" style="width:100%;float: left; " ScrollBars="Auto" runat="server" >
+                            <asp:Panel id="pnlContainer" style="width:100%;float: left; " ScrollBars="Auto" runat="server" Height="250px">
                                 <table width="100%" cellpadding="0" cellspacing="0" class="tbl" >
 				                    <asp:repeater 
                                     id="rptListado" 
@@ -53,7 +53,8 @@
 						                </tr>
 					                    </itemtemplate> 
 				                    </asp:repeater>
-			                      </table>                      
+			                      </table>      
+                                          
                             </asp:Panel>                          
 
                         

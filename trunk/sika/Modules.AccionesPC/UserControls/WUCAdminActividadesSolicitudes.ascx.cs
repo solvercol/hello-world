@@ -344,6 +344,12 @@ namespace Modules.AccionesPC.UserControls
             rptArchivosAdjuntos.DataBind();
         }
 
+
+        public void ReloadWuc()
+        {
+            if (FilterEvent != null)
+                FilterEvent(null, EventArgs.Empty);
+        }
         #endregion
 
         #region Properties
@@ -359,6 +365,8 @@ namespace Modules.AccionesPC.UserControls
         {
             get { return ModuleId; }
         }
+
+        public event EventHandler FilterEvent;
 
         public string IdSolicitud
         {

@@ -4,6 +4,7 @@ using System.Web.UI.WebControls;
 using Application.Core;
 using ASP.NETCLIENTE.UI;
 using Domain.MainModules.Entities;
+using ServerControls;
 
 namespace Modules.Reclamos.UserControls
 {
@@ -56,5 +57,9 @@ namespace Modules.Reclamos.UserControls
             rptListado.DataBind();
         }
 
+        protected void PgrListadoPageChanged(object sender, PageChangedEventArgs e)
+        {
+            GetListadoSolicitudesApc();
+        }
     }
 }

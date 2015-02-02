@@ -228,9 +228,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Default.aspx" />
     <Content Include="FrmError.aspx" />
     <Content Include="Login.aspx" />
-    <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Pages\UserControls\wucHeader.ascx" />
     <Content Include="Pages\UserControls\wucMenuBar.ascx" />

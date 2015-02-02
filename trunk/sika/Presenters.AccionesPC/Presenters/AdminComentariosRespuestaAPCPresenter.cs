@@ -39,10 +39,16 @@ namespace Presenters.AccionesPC.Presenters
 
         public override void SubscribeViewToEvents()
         {
-            View.Load += View_Load;
+            View.Load += ViewLoad;
+            View.FilterEvent += ViewFilterEvent;
         }
 
-        void View_Load(object sender, EventArgs e)
+        void ViewFilterEvent(object sender, EventArgs e)
+        {
+            LoadInitData();
+        }
+
+        void ViewLoad(object sender, EventArgs e)
         {
             if (View.IsPostBack) return;
             LoadInitData();

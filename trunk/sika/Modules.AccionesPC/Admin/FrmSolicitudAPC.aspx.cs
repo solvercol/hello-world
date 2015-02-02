@@ -92,9 +92,9 @@ namespace Modules.AccionesPC.Admin
                 WucPanelEstado1.ActualizarPanelResumen();
                 ActualizarControlUsuarioActivo();
                 WucLogSolicitudesApc1.RefreshInfo();
-                
-                //if (FilterEvent != null)
-                //    FilterEvent(null, EventArgs.Empty);
+
+                if (FilterEvent != null)
+                    FilterEvent(null, EventArgs.Empty);
 
                 ShowMessageOk("Proceso realizado satisfactoriamente.");
             }
@@ -154,6 +154,42 @@ namespace Modules.AccionesPC.Admin
                 uc.Actualizarlistado();
                 return;
             }
+
+            var ucInfo = this.GetUserControl<WUCAdminInformacionSolicitud>("WUCAdminInformacionSolicitud", "phlContent");
+            if (ucInfo != null)
+            {
+                ucInfo.ReloadWuc();
+                return;
+            }
+
+            var ucCausas = this.GetUserControl<WUCAdminCausasSolicitud>("WUCAdminCausasSolicitud", "phlContent");
+            if (ucCausas != null)
+            {
+                ucCausas.ReloadWuc();
+                return;
+            }
+
+            var ucActionPlan = this.GetUserControl<WUCAdminActividadesSolicitudes>("WUCAdminActividadesSolicitudes", "phlContent");
+            if (ucActionPlan != null)
+            {
+                ucActionPlan.ReloadWuc();
+                return;
+            }
+
+            var ucComment = this.GetUserControl<WUCAdminComentariosRespuestaSolicitud>("WUCAdminComentariosRespuestaSolicitud", "phlContent");
+            if (ucComment != null)
+            {
+                ucComment.ReloadWuc();
+                return;
+            }
+
+            var ucAnexos = this.GetUserControl<WUCAdminAnexosSolicitud>("WUCAdminAnexosSolicitud", "phlContent");
+            if (ucAnexos != null)
+            {
+                ucAnexos.ReloadWuc();
+                return;
+            }
+
         }
         #endregion
 
@@ -258,8 +294,17 @@ namespace Modules.AccionesPC.Admin
                     {
                         var uc = this.GetUserControl<WucCierreSolicitud>("UcRender", "phlVentanaMensajes");
                         if (uc == null) return;
-                        if (string.IsNullOrEmpty(uc.Adecuada) && string.IsNullOrEmpty(uc.Eficaz)) return;
-                        if(string.IsNullOrEmpty(uc.ConformidadEliminada))return;
+                        if (string.IsNullOrEmpty(uc.Adecuada) && string.IsNullOrEmpty(uc.Eficaz))
+                        {
+                            ShowError("Debe seleccionar por lo menos una de las opciones de la ventana (Adecuada, eficáz) para continuar con el proceso de cierre..");
+                            return;
+                        }
+
+                        if(string.IsNullOrEmpty(uc.ConformidadEliminada))
+                        {
+                            ShowError("Debe indicar si la no conformidad fue eliminada o no para continuar con el proceso de cierre..");
+                            return;
+                        }
 
 
                         var parameters = new InputParameter
@@ -278,43 +323,7 @@ namespace Modules.AccionesPC.Admin
 
                     break;
 
-                //case "Rechazo":
-                //    {
-                //        var uc = this.GetUserControl<WucComentariosDevolverReclamo>("UcRender", "phlVentanaMensajes");
-                //        if (uc == null) return;
-                //        if (string.IsNullOrEmpty(uc.RetornarComentario)) return;
-
-                //        var parameters = new InputParameter
-                //        {
-                //            Inputs = new Dictionary<string, string>
-                //                                              {
-                //                                                  {"Comentario", uc.RetornarComentario}
-                //                                              }
-                //        };
-
-                //        EjecutarWorkFlow(parameters, InputWindow);
-                //    }
-                //    break;
-
-                //case "CambiarIngeniero":
-                //    {
-                //        var uc = this.GetUserControl<WucCambiarIngenieroResponsable>("UcRender", "phlVentanaMensajes");
-                //        if (uc == null) return;
-                //        if (string.IsNullOrEmpty(uc.Comentarios) || string.IsNullOrEmpty(uc.IngenieroSeleccionado)) return;
-
-                //        var parameters = new InputParameter
-                //        {
-                //            Inputs = new Dictionary<string, string>
-                //                                              {
-                //                                                  {"IdIngeniero", uc.IngenieroSeleccionado},
-                //                                                  {"NombreIngeniero", uc.NombreIngenieroSeleccionado},
-                //                                                  {"Comentario", uc.Comentarios}
-                //                                              }
-                //        };
-
-                //        EjecutarWorkFlow(parameters, InputWindow);
-                //    }
-                //    break;
+              
             }
         }
 
@@ -505,7 +514,9 @@ namespace Modules.AccionesPC.Admin
         {
             get { return ModuleId; }
         }
-        
+
+        public event EventHandler FilterEvent;
+
         public string IdSolicitud
         {
             get

@@ -35,6 +35,7 @@ namespace Presenters.AccionesPC.Presenters
         public override void SubscribeViewToEvents()
         {
             View.Load += ViewLoad;
+            View.FilterEvent += ViewFilterEvent;
         }
 
         void ViewFilterEvent(object sender, EventArgs e)
@@ -42,6 +43,7 @@ namespace Presenters.AccionesPC.Presenters
             LoadSolicitud();
         }
 
+       
         /// <summary>
         /// 
         /// </summary>

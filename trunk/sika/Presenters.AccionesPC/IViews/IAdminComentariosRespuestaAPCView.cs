@@ -7,6 +7,8 @@ namespace Presenters.AccionesPC.IViews
 {
     public interface IAdminComentariosRespuestaAPCView : IView
     {
+
+        event EventHandler FilterEvent;
         #region  Admin Comentario
 
         string IdSolicitud { get; }
