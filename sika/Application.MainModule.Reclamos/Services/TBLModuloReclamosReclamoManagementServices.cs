@@ -208,6 +208,7 @@ namespace Application.MainModule.Reclamos.Services
                 oReclamo.IdAccionApc = idSolicitudApc;
                 oReclamo.ModifiedBy = idUserSession;
                 oReclamo.ModifiedOn = DateTime.Now;
+                oReclamo.IndicadorAPC = true;
                 _tblModuloReclamosReclamoRepository.Modify(oReclamo);
                 unitOfWork.CommitAndRefreshChanges();
             }

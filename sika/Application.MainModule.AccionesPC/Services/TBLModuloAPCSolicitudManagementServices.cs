@@ -132,10 +132,15 @@ namespace Application.MainModule.AccionesPC.Services
             return _TBLModuloAPCSolicitudRepository.GetPagedElements(pageIndex, pageCount, u => u.IdSolucitudAPC, onlyEnabledSpec, true).ToList();
          }
 
+         public int ReturnStatusBySolicitudId(decimal id)
+         {
+            
+             return _TBLModuloAPCSolicitudRepository.ReturnStatusBySolicitudId(id);
+         }
+
          public TBL_ModuloAPC_Solicitud GetById(decimal id)
          {
-             //Specification<TBL_ModuloAPC_Solicitud> onlyEnabledSpec = new DirectSpecification<TBL_ModuloAPC_Solicitud>(u => u.IsActive && u.IdSolucitudAPC == id);
-
+             
              return _TBLModuloAPCSolicitudRepository.GetSolicitudById(id);
          }
 

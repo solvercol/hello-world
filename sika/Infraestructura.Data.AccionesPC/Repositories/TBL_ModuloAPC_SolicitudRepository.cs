@@ -108,6 +108,20 @@ namespace Infrastructure.Data.MainModule.AccionesPC.Repositories
             return null;
         }
 
+        public int ReturnStatusBySolicitudId(decimal id)
+        {
+            if (id > 0)
+            {
+
+                var result = (from s in _currentUnitOfWork.TBL_ModuloAPC_Solicitud
+                              join e in _currentUnitOfWork.TBL_Admin_EstadosProceso on s.IdEstado equals e.IdEstado
+                              where s.IdSolucitudAPC == id
+                              select e).SingleOrDefault();
+
+                return result.IdEstado;
+            }
+            return 0;
+        }
 
         public TBL_ModuloAPC_Solicitud GetSolicitudCierreWf(decimal id)
         {

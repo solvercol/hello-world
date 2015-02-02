@@ -8,6 +8,7 @@ namespace Application.MainModule.AccionesPC.IServices
     {
         TBL_ModuloAPC_Solicitud GetById(decimal id);
         TBL_ModuloAPC_Solicitud GetWithNavById(decimal id);
+        int ReturnStatusBySolicitudId(decimal id);
     }
 }
     

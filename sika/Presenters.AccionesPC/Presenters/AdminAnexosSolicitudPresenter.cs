@@ -25,12 +25,15 @@ namespace Presenters.AccionesPC.Presenters
         public override void SubscribeViewToEvents()
         {
             View.Load += ViewLoad;
+            View.FilterEvent += ViewFilterEvent;
         }
 
         void ViewFilterEvent(object sender, EventArgs e)
         {
-            LoadArhchivosAdjuntos();
+            LoadInitData();
         }
+
+        
 
         /// <summary>
         /// 

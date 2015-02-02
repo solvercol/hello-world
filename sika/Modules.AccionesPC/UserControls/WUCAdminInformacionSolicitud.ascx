@@ -88,7 +88,7 @@
                <tr>
                     <th >
                         <asp:RadioButtonList ID="rblConformidadEliminada" runat="server" RepeatLayout="Table" RepeatColumns="2" Enabled="false" >
-                            <asp:ListItem Text="SI" Value="SI" Selected="True" />
+                            <asp:ListItem Text="SI" Value="True" Selected="True" />
                             <asp:ListItem Text="NO" Value="False" />
                         </asp:RadioButtonList>
                     </th>

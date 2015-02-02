@@ -7,6 +7,8 @@ namespace Presenters.AccionesPC.IViews
 {
     public interface ISolicitudAPCView : IView
     {
+        event EventHandler FilterEvent;
+
         // Properties
         string IdSolicitud { get; }
 

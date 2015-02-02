@@ -21,6 +21,7 @@ namespace Presenters.AccionesPC.Presenters
         public override void SubscribeViewToEvents()
         {
             View.Load += ViewLoad;
+            View.FilterEvent += ViewFilterEvent;
         }
 
         void ViewFilterEvent(object sender, EventArgs e)
@@ -65,7 +66,8 @@ namespace Presenters.AccionesPC.Presenters
                     View.ConformidadEliminada = item.Cerrada;
 
                     // Verificando info de cierre
-                    View.ShowInfoCierre = item.IdEstado == 16;
+                    var status = _solicitudService.ReturnStatusBySolicitudId(Convert.ToDecimal(View.IdSolicitud));
+                    View.ShowInfoCierre = status == 16;
                     var listadoReclamos = item.TBL_ModuloReclamos_Reclamo1.Aggregate(string.Empty, (current, reclamo) => current + string.Format("{0} - ", reclamo.NumeroReclamo));
                     if (!string.IsNullOrEmpty(listadoReclamos))
                         View.ReclamosRelacionados = listadoReclamos.Substring(0, listadoReclamos.TrimEnd().Length - 1);

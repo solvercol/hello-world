@@ -11,5 +11,6 @@ namespace Domain.MainModule.AccionesPC.Contracts
         List<TBL_ModuloAPC_Solicitud> GetCompleteEntityList(ISpecification<TBL_ModuloAPC_Solicitud> specification);
         TBL_ModuloAPC_Solicitud GetSolicitudById(decimal id);
         TBL_ModuloAPC_Solicitud GetSolicitudCierreWf(decimal id);
+        int ReturnStatusBySolicitudId(decimal id);
     }
 }

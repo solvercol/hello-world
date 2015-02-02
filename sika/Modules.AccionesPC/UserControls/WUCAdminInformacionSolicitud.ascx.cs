@@ -14,6 +14,8 @@ namespace Modules.AccionesPC.UserControls
 
         }
 
+        public event EventHandler FilterEvent;
+
         public string IdSolicitud
         {
             get { return Request.QueryString.Get("IdSolicitud"); }
@@ -125,5 +127,11 @@ namespace Modules.AccionesPC.UserControls
         }
 
         public event Action RiseFatherPostback;
+
+        public void ReloadWuc()
+        {
+            if (FilterEvent != null)
+                FilterEvent(null, EventArgs.Empty);
+        }
     }
 }

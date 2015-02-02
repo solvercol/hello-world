@@ -19,6 +19,8 @@ namespace Modules.AccionesPC.UserControls
 
         }
 
+        public event EventHandler FilterEvent;
+
         public string IdSolicitud
         {
             get { return Request.QueryString.Get("IdSolicitud"); }
@@ -140,6 +142,12 @@ namespace Modules.AccionesPC.UserControls
                 //    scriptManager.RegisterPostBackControl(btnAddArchivoAdjuntoSolicitud);
                 //}
             }
+        }
+
+        public void ReloadWuc()
+        {
+            if (FilterEvent != null)
+                FilterEvent(null, EventArgs.Empty);
         }
 
         #endregion

@@ -7,6 +7,8 @@ namespace Presenters.AccionesPC.IViews
 {
     public interface IAdminCausasSolicitudView : IView
     {
+
+        event EventHandler FilterEvent;
         // Admin Causa
         string IdSolicitud { get; }
         string Descripcion { get; set; }
