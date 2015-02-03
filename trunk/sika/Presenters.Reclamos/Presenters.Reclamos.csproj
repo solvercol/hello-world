@@ -93,6 +93,7 @@
     <Compile Include="IViews\IMisPendientesView.cs" />
     <Compile Include="IViews\IMisReclamosPorEstadoView.cs" />
     <Compile Include="IViews\IMisReclamosPorFechaView.cs" />
+    <Compile Include="IViews\INewReclamoView.cs" />
     <Compile Include="IViews\IPanelEstadosView.cs" />
     <Compile Include="IViews\IReadingReclamoProductoDetalleView.cs" />
     <Compile Include="IViews\IReadingReclamoProductoView.cs" />
@@ -159,6 +160,7 @@
     <Compile Include="Presenters\EditCategoriaReclamosPresenter.cs" />
     <Compile Include="Presenters\EditUnidadZonaPresenter.cs" />
     <Compile Include="Presenters\FrmViewAreasPresenter.cs" />
+    <Compile Include="Presenters\NewReclamoPresenter.cs" />
     <Compile Include="Presenters\ReclamosExportPresenter.cs" />
     <Compile Include="Presenters\SeguimientoPresenter.cs" />
     <Compile Include="Presenters\MisActividadesPresenter.cs" />

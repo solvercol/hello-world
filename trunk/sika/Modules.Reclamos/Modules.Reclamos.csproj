@@ -94,6 +94,7 @@
     <Content Include="Admin\FrmAdminAlternativaReclamo.aspx" />
     <Content Include="Admin\FrmAdminComentarioRespuestaReclamo.aspx" />
     <Content Include="Admin\FrmListaGeneralReclamos.aspx" />
+    <Content Include="Admin\FrmNewReclamo.aspx" />
     <Content Include="Admin\FrmReclamo.aspx" />
     <Content Include="Catalogos\FrmAddActividadReclamo.aspx" />
     <Content Include="Catalogos\FrmAddAsesor.aspx" />
@@ -214,6 +215,13 @@
     </Compile>
     <Compile Include="Admin\FrmListaGeneralReclamos.aspx.designer.cs">
       <DependentUpon>FrmListaGeneralReclamos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FrmNewReclamo.aspx.cs">
+      <DependentUpon>FrmNewReclamo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FrmNewReclamo.aspx.designer.cs">
+      <DependentUpon>FrmNewReclamo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\FrmReclamo.aspx.cs">
       <DependentUpon>FrmReclamo.aspx</DependentUpon>

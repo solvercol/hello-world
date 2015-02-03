@@ -892,7 +892,7 @@ table.tblSecciones th {
 /*color:#526C8C;*/
 color:#808080;
 padding: 4px 10px;
-font-size:0.95em;
+font-size:0.85em;
 font-family: Arial,Helvetica,sans-serif;
 font-weight: normal;
 text-align:right;
@@ -1394,7 +1394,7 @@ text-transform:uppercase;
 {
     color: #808080;
 	font-family: Arial,Helvetica,sans-serif;
-	font-size: 10pt;
+	font-size: 9pt;
 	font-weight: bold;
     padding: 5px;
     margin-top: 5px;
@@ -1405,7 +1405,7 @@ text-transform:uppercase;
 {
     color: #002060;
 	font-family: Arial,Helvetica,sans-serif;
-	font-size: 10pt;
+	font-size: 9pt;
 	font-weight: bold;
     margin-top: 5px;
     cursor: pointer;
@@ -1416,7 +1416,7 @@ text-transform:uppercase;
 {
     color: #808080;
 	font-family: Arial,Helvetica,sans-serif;
-	font-size: 10pt;
+	font-size: 9pt;
 	font-weight: bold;
     margin-top: 5px;
     cursor: pointer;
@@ -1427,7 +1427,7 @@ text-transform:uppercase;
 {
     color: #808080;
     font-family: Arial,Helvetica,sans-serif;
-    font-size: 9pt;
+    font-size: 8pt;
     margin-top: 2px;
     cursor: pointer;
 }
@@ -1436,7 +1436,7 @@ text-transform:uppercase;
 {
     color: #808080;
 	font-family: Arial,Helvetica,sans-serif;
-	font-size: 9pt;
+	font-size: 8pt;
     margin-top: 2px;
     cursor: pointer;    
     color:#000000;
@@ -1447,7 +1447,7 @@ text-transform:uppercase;
 {
     background-color: #9b9d9e;
     font-family: Arial,Helvetica,sans-serif;
-    font-size: 8pt;
+    font-size: 7pt;
     cursor: pointer;    
     color:#ffffff;
     height:25px;

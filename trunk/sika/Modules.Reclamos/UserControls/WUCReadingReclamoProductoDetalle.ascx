@@ -7,7 +7,7 @@
         </td>
     </tr>
     <tr>
-        <th style="width: 10%; text-align:left">
+        <th style="width: 12%; text-align:left">
             Asesor :
         </th>
 
