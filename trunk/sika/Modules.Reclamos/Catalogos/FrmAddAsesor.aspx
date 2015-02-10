@@ -17,8 +17,10 @@
 					    <tr>
 						    <td>&nbsp;</td>
 						    <td>&nbsp;</td>
+                            <td>&nbsp;</td>
 					    </tr>
                         <tr>
+                            <td>*</td>
 						    <th style="text-align:left;vertical-align:top">Asesor:</th>
 						    <td align="left" class="bordeTabla">
                                 <asp:DropDownList ID="wddAsesor" class="chzn-select" runat="server" Width="50%" />
@@ -33,6 +35,7 @@
 						    </td>
 					    </tr>	
                         <tr>
+                            <td>*</td>
 						    <th style="text-align:left;vertical-align:top">Unidad:</th>
 						    <td align="left" class="bordeTabla">
                                 <asp:DropDownList ID="wddUnidad" class="chzn-select" runat="server" Width="50%" />
@@ -47,6 +50,7 @@
 						    </td>
 					    </tr>
                         <tr>
+                            <td>*</td>
 						    <th style="text-align:left;vertical-align:top">Zona:</th>
 						    <td align="left" class="bordeTabla">
                                 <asp:DropDownList ID="wddZona" class="chzn-select" runat="server" Width="50%" />
@@ -61,6 +65,7 @@
 						    </td>
 					    </tr>
                         <tr>
+                            <td>&nbsp;</td>
 						    <th style="text-align:left;vertical-align:top">Jefe(s) Inmediato(s):</th>
 						    <td align="left" class="bordeTabla">
                                 <asp:Panel id="PanelUsuariosCopia" runat="server" >
@@ -88,6 +93,7 @@
 						    </td>
 					    </tr>
                         <tr>
+                            <td>&nbsp;</td>
 						    <th style="text-align:left;vertical-align:top">Activo:</th>
 						    <td align="left" class="bordeTabla">
                             <asp:checkbox id="chkActive" runat="server" Checked="true"></asp:checkbox></td>

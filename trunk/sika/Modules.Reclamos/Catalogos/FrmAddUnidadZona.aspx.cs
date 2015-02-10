@@ -246,16 +246,6 @@ namespace Modules.Reclamos.Catalogos
             set { chbActiveUnidad.Checked = value; }
         }
 
-        public string CreateByUnidad
-        {
-            set { lblCreateByUnidad.Text = value; }
-        }
-
-        public string CreateOnUnidad
-        {
-            set { lblCreateOnUnidad.Text = value; }
-        }
-
 
         #endregion
 
@@ -272,17 +262,6 @@ namespace Modules.Reclamos.Catalogos
             get { return chbActiveZona.Checked; }
             set { chbActiveZona.Checked = value; }
         }
-
-        public string CreateByZona
-        {
-            set { lblCreateByZona.Text = value; }
-        }
-
-        public string CreateOnZona
-        {
-            set { lblCreateOnZona.Text = value; }
-        }
-
 
         #endregion
 

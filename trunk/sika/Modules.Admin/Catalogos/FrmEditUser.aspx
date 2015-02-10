@@ -18,8 +18,10 @@
 					    <tr>
 						    <td>&nbsp;</td>
 						    <td>&nbsp;</td>
+                            <td>&nbsp;</td>
 					    </tr>
 					    <tr>
+                            <td>*</td>
 						    <th align="left">Código Usuario</th>
 						    <td align="left" class="bordeTabla">
 						        <asp:textbox id="txtUserCode" runat="server" width="400px" MaxLength="15">
@@ -35,6 +37,7 @@
                             </td>
 					    </tr>
 					    <tr>
+                            <td>*</td>
 						    <th align="left">Nombres</th>
 						    <td align="left" class="bordeTabla">
 						        <asp:textbox id="txtNames" runat="server" width="400px" MaxLength="60">
@@ -50,6 +53,7 @@
 						    </td>
 					    </tr>
                         <tr>
+                            <td>*</td>
 						    <th align="left">Fecha Ingreso</th>
 						    <td align="left" class="bordeTabla">
 						        <asp:textbox id="txtIncomeDate" runat="server" width="100px" MaxLength="12">
@@ -69,6 +73,7 @@
 						    </td>
 					    </tr>
                         <tr>
+                            <td>*</td>
 						    <th align="left">Nombre Usuario</th>
 						    <td align="left" class="bordeTabla">
 						        <asp:textbox id="txtUserName" runat="server" width="400px" MaxLength="50">
@@ -84,6 +89,7 @@
 						    </td>
 					    </tr>
                         <tr>
+                            <td>*</td>
 						    <th align="left">Password</th>
 						    <td align="left" class="bordeTabla">
 						        <asp:textbox id="txtPassword" runat="server" width="400px" MaxLength="50" TextMode="Password">
@@ -99,6 +105,7 @@
 						    </td>
 					    </tr>
                         <tr>
+                            <td>*</td>
 						    <th align="left">Email</th>
 						    <td align="left" class="bordeTabla">
 						        <asp:textbox id="txtEmail" runat="server" width="400px" MaxLength="50">
@@ -124,11 +131,13 @@
 						    </td>
 					    </tr>
 					    <tr>
+                            <td>&nbsp;</td>
 						    <th align="left">Activo</th>
 						    <td align="left" class="bordeTabla">
                             <asp:checkbox id="chkActive" runat="server" Checked="true"></asp:checkbox></td>
 					    </tr>	
                         <tr>
+                            <td>&nbsp;</td>
                             <th align="left">Roles disponibles</th>
                             <td align="left" class="bordeTabla">
                                 <table id="roles" width="30%">

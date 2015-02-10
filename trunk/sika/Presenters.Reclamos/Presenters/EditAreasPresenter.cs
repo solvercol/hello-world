@@ -60,7 +60,7 @@ namespace Presenters.Reclamos.Presenters
             View.Procesos = cr.Procesos;
             View.IdGerente = cr.IdGerente.ToString();
             View.Activo = cr.IsActive;
-            View.CreateBy = cr.TBL_Admin_Usuarios1.Nombres;
+            View.CreateBy = cr.TBL_Admin_Usuarios.Nombres;
             View.CreateOn = cr.CreateOn.ToShortDateString() + " " + cr.CreateOn.ToShortTimeString();
             View.ModifiedBy = cr.TBL_Admin_Usuarios2.Nombres;
             View.ModifiedOn = cr.ModifiedOn.ToShortDateString() + " " + cr.ModifiedOn.ToShortTimeString();

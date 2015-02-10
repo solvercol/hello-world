@@ -75,18 +75,18 @@
                     OnItemDataBound="RptListadoItemDataBound">
 	                    <headertemplate>
 		                    <tr>
-                                <th style="width:20px;">Id</th>
 		                        <th style="width:190px;">Nombre</th>
-			                    <th style="width:390px;">Proceso</th>
+			                    <th style="width:290px;">Proceso</th>
+                                <th style="width:90px;">Gerente</th>
                                 <th style="width:30px;">Activo</th>
 			                    <th style="width:30px;"></th>
 		                    </tr>
 	                    </headertemplate>
 	                    <itemtemplate>
 		                    <tr>
-                                <td align="center"><%# DataBinder.Eval(Container.DataItem, "IdArea")%></td>
 		                        <td align="left"><%# DataBinder.Eval(Container.DataItem, "Nombre")%></td>
                                 <td align="left"><%# DataBinder.Eval(Container.DataItem, "Procesos")%></td>
+                                <td align="left"><asp:Literal ID="LitGerente" runat="server"></asp:Literal></td>
 		                        <td align="center"><asp:CheckBox id="chkActivo" runat="server" Enabled="false"></asp:CheckBox></td>
 			                    <td align="center">
 				                    <asp:LinkButton ID="CmdEditar" CausesValidation="false" Text="Edit" runat="server" />
@@ -95,9 +95,9 @@
 	                    </itemtemplate>
                         <AlternatingItemTemplate>
                             <tr class="AlternateGridStyle">
-                                <td align="center"><%# DataBinder.Eval(Container.DataItem, "IdArea")%></td>
 		                        <td align="left"><%# DataBinder.Eval(Container.DataItem, "Nombre")%></td>
                                 <td align="left"><%# DataBinder.Eval(Container.DataItem, "Procesos")%></td>
+                                <td align="left"><asp:Literal ID="LitGerente" runat="server"></asp:Literal></td>
 		                        <td align="center"><asp:CheckBox id="chkActivo" runat="server" Enabled="false"></asp:CheckBox></td>
 			                    <td align="center">
 				                    <asp:LinkButton ID="CmdEditar" CausesValidation="false" Text="Edit" runat="server" />

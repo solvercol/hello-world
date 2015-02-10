@@ -16,8 +16,10 @@
 					    <tr>
 						    <td>&nbsp;</td>
 						    <td>&nbsp;</td>
+                            <td>&nbsp;</td>
 					    </tr>
 					    <tr>
+                            <td>*</td>
 						    <th style="text-align:left;vertical-align:top">Nombre:</th>
 						    <td align="left" class="bordeTabla">
 						        <asp:textbox id="txtNombre" runat="server" width="400px" MaxLength="512">
@@ -33,9 +35,10 @@
                             </td>
 					    </tr>
 					    <tr>
+                            <td>*</td>
 						    <th style="text-align:left;vertical-align:top">Proceso:</th>
 						    <td align="left" class="bordeTabla">
-						        <asp:textbox id="txtProceso" runat="server" TextMode="MultiLine" width="400px" MaxLength="512">
+						        <asp:textbox id="txtProceso" runat="server" TextMode="MultiLine" width="100%">
 						        </asp:textbox>
                                 <asp:requiredfieldvalidator id="rfvProceso" 
 						            runat="server" 
@@ -52,6 +55,7 @@
 						    </td>
 					    </tr>
                         <tr>
+                            <td>*</td>
 						    <th style="text-align:left;vertical-align:top">Gerente:</th>
 						    <td align="left" class="bordeTabla">
                                 <asp:DropDownList ID="ddlGerentes" class="chzn-select" runat="server" Width="50%" />
@@ -66,6 +70,7 @@
 						    </td>
 					    </tr>
 					    <tr>
+                            <td>&nbsp;</td>
 						    <th style="text-align:left;vertical-align:top">Activo:</th>
 						    <td align="left" class="bordeTabla">
                             <asp:checkbox id="chkActive" runat="server" Checked="true"></asp:checkbox></td>

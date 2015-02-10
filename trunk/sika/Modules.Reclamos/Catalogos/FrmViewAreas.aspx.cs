@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Web.UI.WebControls;
 using Application.Core;
+using Applications.MainModule.Admin.IServices;
 using ASP.NETCLIENTE.UI;
 using Domain.MainModules.Entities;
 using Presenters.Reclamos.IViews;
@@ -101,6 +102,14 @@ namespace Modules.Reclamos.Catalogos
             if (chkActivo != null)
             {
                 chkActivo.Checked = categoria.IsActive;
+            }
+
+            var litGerente = e.Item.FindControl("LitGerente") as Literal;
+
+            if (litGerente != null)
+            {
+                if(categoria.TBL_Admin_Usuarios1 == null)return;
+                litGerente.Text = categoria.TBL_Admin_Usuarios1.Nombres;
             }
 
         }
