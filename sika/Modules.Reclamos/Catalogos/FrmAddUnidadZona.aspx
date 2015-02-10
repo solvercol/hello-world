@@ -21,8 +21,10 @@
 						    <td>&nbsp;</td>
 						    <td>&nbsp;</td>
                             <td>&nbsp;</td>
+                            <td>&nbsp;</td>
 					    </tr>
                         <tr>
+                            <td>*</td>
 						    <th style="text-align:left;vertical-align:top">Unidad:</th>
 						    <td align="left" class="bordeTabla">
                             <asp:DropDownList ID="wddUnidad" class="chzn-select" runat="server" Width="310px" />
@@ -46,6 +48,7 @@
                                 </td>
 					    </tr>
                         <tr>
+                            <td>*</td>
 						    <th style="text-align:left;vertical-align:top">Zona:</th>
 						    <td align="left" class="bordeTabla">
                             <asp:DropDownList ID="wddZona" class="chzn-select" runat="server" Width="310px" />
@@ -69,6 +72,7 @@
                                 </td>
 					    </tr>
                         <tr>
+                            <td>&nbsp;</td>
 						    <th style="text-align:left;vertical-align:top">Descripción:</th>
 						    <td align="left" class="bordeTabla">
 						        <asp:textbox id="txtDescripcion" runat="server" TextMode="MultiLine" width="300px" MaxLength="512">
@@ -85,6 +89,7 @@
                             <td>&nbsp;</td>
 					    </tr>
                         <tr>
+                            <td>*</td>
 						    <th style="text-align:left;vertical-align:top">Gerente:</th>
 						    <td align="left" class="bordeTabla">
                             <asp:DropDownList ID="wddGerente" class="chzn-select" runat="server" Width="310px" />
@@ -100,7 +105,8 @@
                             <td>&nbsp;</td>
 					    </tr>
                         <tr>
-                         <th style="text-align:left;vertical-align:top">Tarifa Flete:</th>
+                            <td>*</td>
+                            <th style="text-align:left;vertical-align:top">Tarifa Flete:</th>
 						    <td align="left" class="bordeTabla">
 						        <asp:textbox id="txtTarifa" runat="server"  width="300px" MaxLength="24">
 						        </asp:textbox>
@@ -121,6 +127,7 @@
                             <td>&nbsp;</td>
                         </tr>
 					    <tr>
+                            <td>&nbsp;</td>
 						    <th style="text-align:left;vertical-align:top">Activo:</th>
 						    <td align="left" class="bordeTabla">
                             <asp:checkbox id="chkActive" runat="server" Checked="true"></asp:checkbox></td>
@@ -147,7 +154,7 @@
 
 <asp:UpdatePanel ID="UPFormUnidad" runat="server">
  <ContentTemplate>
-<asp:Panel ID="pnlUnidades"  runat="server" CssClass="popup_Container" Width="500" Height="200" style="display:none;">
+<asp:Panel ID="pnlUnidades"  runat="server" CssClass="popup_Container" Width="500" Height="150" style="display:none;">
  <div class="popup_Titlebar" id="PopupHeader">
         <div class="TitlebarLeft">
             Adicionar Unidad
@@ -194,19 +201,17 @@
 						    <th style="text-align:left;vertical-align:top">Activo:</th>
 						    <td align="left"><asp:checkbox id="chbActiveUnidad" runat="server" Checked="true"></asp:checkbox></td>
 					    </tr>	
-                        <tr>
-						    <th style="text-align:left;vertical-align:top">Creado por:</th>
-						    <td align="left"><asp:Label ID="lblCreateByUnidad" runat="server"></asp:Label></td>
-					    </tr>
-                        <tr>
-						    <th style="text-align:left;vertical-align:top">Fecha creación:</th>
-						    <td align="left"><asp:Label ID="lblCreateOnUnidad" runat="server"></asp:Label></td>
-					    </tr>
 					    <tr>
-						    <td align="left"></td>
-						    <td align="left"></td>
-					    </tr>
-				    </table>
+						    <td>&nbsp;</td>
+						    <td>&nbsp;</td>
+                            <table width="100%">
+                                <tr >
+                                    <td>
+                                        
+                                    </td>
+					            </tr>
+				          </table>
+                          </tr>
                 </td>
         </tr>
     
@@ -230,7 +235,7 @@ cancelcontrolid="divCloseUnidad"
 </asp:UpdatePanel>
  <asp:UpdatePanel ID="upFormZonas" runat="server">
     <ContentTemplate> 
-<asp:Panel ID="PanelZonas"  runat="server" CssClass="popup_Container" Width="500" Height="200" style="display:none;">
+<asp:Panel ID="PanelZonas"  runat="server" CssClass="popup_Container" Width="500" Height="150" style="display:none;">
  <div class="popup_Titlebar" id="Div1">
         <div class="TitlebarLeft">
             Adicionar Zona
@@ -277,18 +282,6 @@ cancelcontrolid="divCloseUnidad"
 						    <th style="text-align:left;vertical-align:top">Activo:</th>
 						    <td align="left"><asp:checkbox id="chbActiveZona" runat="server" Checked="true"></asp:checkbox></td>
 					    </tr>	
-                        <tr>
-						    <th style="text-align:left;vertical-align:top">Creado por:</th>
-						    <td align="left"><asp:Label ID="lblCreateByZona" runat="server"></asp:Label></td>
-					    </tr>
-                        <tr>
-						    <th style="text-align:left;vertical-align:top">Fecha creación:</th>
-						    <td align="left"><asp:Label ID="lblCreateOnZona" runat="server"></asp:Label></td>
-					    </tr>
-					    <tr>
-						    <td align="left"></td>
-						    <td align="left"></td>
-					    </tr>
 				    </table>
                 </td>
         </tr>

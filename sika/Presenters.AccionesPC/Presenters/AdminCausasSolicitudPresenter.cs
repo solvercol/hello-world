@@ -59,7 +59,6 @@ namespace Presenters.AccionesPC.Presenters
                 if (solicitud != null)
                 {
                     View.CanAddCausas = ((solicitud.IdEstado == 14) && solicitud.IdResponsableActual == View.UserSession.IdUser);
-
                 }
             }
             catch (Exception ex)

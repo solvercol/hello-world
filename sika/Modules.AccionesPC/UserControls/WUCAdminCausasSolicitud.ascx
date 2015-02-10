@@ -100,7 +100,7 @@
                     </tr>
                     <tr>
                         <th style="text-align:left; vertical-align:top">
-                            Descripción :
+                            Descripción.. :
                         </th>
 
                         <td class="Separador"></td>

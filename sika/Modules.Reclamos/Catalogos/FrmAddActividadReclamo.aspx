@@ -14,8 +14,10 @@
 					    <tr>
 						    <td>&nbsp;</td>
 						    <td>&nbsp;</td>
+                            <td>&nbsp;</td>
 					    </tr>
                         <tr>
+                            <td>*</td>
 						    <th style="text-align:left;vertical-align:top">Tipo Reclamo:</th>
 						    <td align="left" class="bordeTabla">
 						 <asp:RadioButtonList ID="wddReclamo" RepeatDirection="Horizontal" CssClass="radioButtonList" runat="server"></asp:RadioButtonList>
@@ -30,6 +32,7 @@
 						    </td>
 					    </tr>
 					    <tr>
+                            <td>*</td>
 						    <th style="text-align:left;vertical-align:top">Actividad:</th>
 						    <td align="left" class="bordeTabla">
 						        <asp:textbox id="txtNombre" runat="server" width="400px" MaxLength="512">
@@ -45,6 +48,7 @@
                             </td>
 					    </tr>
                          <tr>
+                            <td>&nbsp;</td>
 						    <th style="text-align:left;vertical-align:top">Descripción:</th>
 						    <td align="left" class="bordeTabla">
 						        <asp:textbox id="txtDescripcion" runat="server" TextMode="MultiLine" width="400px" MaxLength="512">
@@ -52,6 +56,7 @@
 						    </td>
 					    </tr>
 					    <tr>
+                            <td>&nbsp;</td>
 						    <th style="text-align:left;vertical-align:top">Activo:</th>
 						    <td align="left" class="bordeTabla">
                             <asp:checkbox id="chkActive" runat="server" Checked="true"></asp:checkbox></td>

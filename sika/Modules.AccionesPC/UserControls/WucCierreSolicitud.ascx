@@ -29,14 +29,10 @@
                                     </asp:RadioButtonList>
                                 </td>
                             </tr>
-                        </table>
-                    
+                        </table>                    
                     </td>
                 </tr>
-            </table>
-
-          
-           
+            </table>           
         </td>
     </tr>
     <tr>
@@ -74,16 +70,15 @@
                 </td>
             </tr>
          </table>
-
          
         </td>
-        <td></td>
-        <td class="Etiquetas">
-            Observaciones:
-           <asp:TextBox ID="txtObservaciones" runat="server" TextMode="MultiLine" Width="95%" Height="50"></asp:TextBox>
-        </td>
     </tr>
-   
+    <tr>
+        <td class="Etiquetas" colspan="3">
+            Observaciones:
+            <asp:TextBox ID="txtObservaciones" runat="server" TextMode="MultiLine" Width="100%"></asp:TextBox>
+         </td>
+    </tr> 
     <tr>
             <td colspan="3" class="validator">
                 <asp:Label ID="litError" runat="server" Visible="false"></asp:Label>

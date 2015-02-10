@@ -15,8 +15,10 @@
 					    <tr>
 						    <td>&nbsp;</td>
 						    <td>&nbsp;</td>
+                            <td>&nbsp;</td>
 					    </tr>
 					    <tr>
+                            <td>*</td>
 						    <th style="text-align:left;vertical-align:top">Categoría:</th>
 						    <td align="left" class="bordeTabla">
 						        <asp:textbox id="txtNombre" runat="server" width="400px" MaxLength="512">
@@ -32,6 +34,7 @@
                             </td>
 					    </tr>
                          <tr>
+                             <td>&nbsp;</td>
 						    <th style="text-align:left;vertical-align:top">Descripción:</th>
 						    <td align="left" class="bordeTabla">
 						        <asp:textbox id="txtDescripcion" runat="server" TextMode="MultiLine" width="400px" MaxLength="512">
@@ -39,6 +42,7 @@
 						    </td>
 					    </tr>
                         <tr>
+                            <td style="text-align:left;vertical-align:top">*</td>
 						    <th style="text-align:left;vertical-align:top">Ingenieros Responsables:</th>
 						    <td align="left" class="bordeTabla">
                                 <asp:Panel id="PanelUsuariosCopia" runat="server" >
@@ -85,6 +89,7 @@
 						    </td>
 					    </tr>
 					    <tr>
+                             <td>&nbsp;</td>
 						    <th style="text-align:left;vertical-align:top">Activo:</th>
 						    <td align="left" class="bordeTabla">
                             <asp:checkbox id="chkActive" runat="server" Checked="true"></asp:checkbox></td>

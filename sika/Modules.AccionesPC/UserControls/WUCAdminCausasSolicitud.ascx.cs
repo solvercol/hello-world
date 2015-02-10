@@ -40,6 +40,7 @@ namespace Modules.AccionesPC.UserControls
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
         }
 
         #endregion
@@ -176,7 +177,7 @@ namespace Modules.AccionesPC.UserControls
             if (FilterEvent != null)
                 FilterEvent(null, EventArgs.Empty);
         }
-
+        
         #endregion
 
         #region Properties
@@ -198,6 +199,12 @@ namespace Modules.AccionesPC.UserControls
         public string IdSolicitud
         {
             get { return Request.QueryString.Get("IdSolicitud"); }
+        }
+
+        public string IdEstado
+        {
+            get { return IdEstado; }
+            set {}
         }
 
         public string Descripcion

@@ -99,7 +99,7 @@
                                 <td class="Separador"></td>
 
                                 <td class="Line" style="width: 90%">
-                                    <asp:DropDownList ID="wddArea" runat="server" Width="350px"  class="chzn-select" OnSelectedIndexChanged="WddArea_ValueChanged" AutoPostBack="true" />
+                                    <asp:DropDownList ID="wddArea" runat="server" Width="98%"  class="chzn-select" OnSelectedIndexChanged="WddArea_ValueChanged" AutoPostBack="true" />
                                 </td>
 
                                 <td class="Separador"></td>
@@ -112,7 +112,7 @@
                                 <td class="Separador"></td>
 
                                 <td class="Line" >
-                                    <asp:DropDownList ID="wddProceso" runat="server" Width="350px"  class="chzn-select" />
+                                    <asp:DropDownList ID="wddProceso" runat="server" Width="98%"  class="chzn-select" />
                                 </td>
 
                                 <td class="Separador"></td>

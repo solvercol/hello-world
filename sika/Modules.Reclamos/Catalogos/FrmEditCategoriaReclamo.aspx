@@ -17,8 +17,10 @@
 					    <tr>
 						    <td>&nbsp;</td>
 						    <td>&nbsp;</td>
+                            <td>&nbsp;</td>
 					    </tr>
                         <tr>
+                            <td>*</td>
 						    <th style="text-align:left;vertical-align:top">Tipo Reclamo:</th>
 						    <td align="left" class="bordeTabla">
                              <asp:RadioButtonList ID="wddReclamo" RepeatDirection="Horizontal" CssClass="radioButtonList" runat="server" onselectedindexchanged="wddReclamo_SelectedIndexChanged" AutoPostBack="true" ></asp:RadioButtonList>
@@ -44,6 +46,7 @@
 						    </td>
 					    </tr>
 					    <tr>
+                            <td>*</td>
 						    <th style="text-align:left;vertical-align:top">Categoría:</th>
 						    <td align="left" class="bordeTabla">
 						        <asp:textbox id="txtNombre" runat="server" width="400px" MaxLength="512">
@@ -59,9 +62,10 @@
                             </td>
 					    </tr>
 					    <tr>
+                            <td>&nbsp;</td>
 						    <th style="text-align:left;vertical-align:top">SubCategoría:</th>
 						    <td align="left" class="bordeTabla">
-						        <asp:textbox id="txtSubcategoria" runat="server" width="400px" MaxLength="512">
+						        <asp:textbox id="txtSubcategoria" runat="server" TextMode="MultiLine" width="100%">
 						        </asp:textbox>
 			<%--			        <asp:requiredfieldvalidator id="rfvSubcategoria" 
 						        runat="server" 
@@ -78,6 +82,7 @@
 						    </td>
 					    </tr>
                          <tr>
+                            <td>&nbsp;</td>
 						    <th style="text-align:left;vertical-align:top">Descripción:</th>
 						    <td align="left" class="bordeTabla">
 						        <asp:textbox id="txtDescripcion" runat="server" TextMode="MultiLine" width="400px" MaxLength="512">
@@ -93,6 +98,7 @@
 						    </td>
 					    </tr>
                         <tr>
+                            <td>&nbsp;</td>
 						    <th style="text-align:left;vertical-align:top">Área:</th>
 						    <td align="left" class="bordeTabla">
 						        <asp:textbox id="txtArea" runat="server" width="400px" MaxLength="512">
@@ -108,6 +114,7 @@
 						    </td>
 					    </tr>
                         <tr>
+                            <td>&nbsp;</td>
 						    <th style="text-align:left;vertical-align:top">Ingeniero Responsable:</th>
 						    <td align="left" class="bordeTabla">
 				                <asp:DropDownList ID="wddResponsables" class="chzn-select" runat="server" Width="50%" />
@@ -122,6 +129,7 @@
 						    </td>
 					    </tr>
                         <tr id="trGrupoInformacion" runat="server" visible="false">
+                            <td>&nbsp;</td>
 						    <th style="text-align:left;vertical-align:top">Grupo Información:</th>
 						    <td align="left" class="bordeTabla">
 						         <asp:DropDownList ID="WddGrupoInformacion" class="chzn-select" runat="server" Width="50%" >
@@ -142,6 +150,7 @@
 						    </td>
 					    </tr>
 					    <tr>
+                            <td>&nbsp;</td>
 						    <th style="text-align:left;vertical-align:top">Activo:</th>
 						    <td align="left" class="bordeTabla">
                             <asp:checkbox id="chkActive" runat="server" Checked="true"></asp:checkbox></td>

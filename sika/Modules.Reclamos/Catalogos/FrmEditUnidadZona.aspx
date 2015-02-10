@@ -19,20 +19,24 @@
 					    <tr>
 						    <td>&nbsp;</td>
 						    <td>&nbsp;</td>
+                            <td>&nbsp;</td>
 					    </tr>
                         <tr>
+                            <td>&nbsp;</td>
 						    <th style="text-align:left;vertical-align:top">Unidad:</th>
 						    <td align="left" class="bordeTabla">
 						        <asp:Literal runat="server" ID="txtUnidad"></asp:Literal>
 						    </td>
 					    </tr>
                         <tr>
+                            <td>&nbsp;</td>
 						    <th style="text-align:left;vertical-align:top">Zona:</th>
 						    <td align="left" class="bordeTabla">
                              <asp:Literal runat="server" ID="txtZona"></asp:Literal>
 						    </td>
 					    </tr>
                         <tr>
+                            <td>&nbsp;</td>
 						    <th style="text-align:left;vertical-align:top">Descripción:</th>
 						    <td align="left" class="bordeTabla">
 						        <asp:textbox id="txtDescripcion" runat="server" TextMode="MultiLine" width="300px" MaxLength="512">
@@ -49,6 +53,7 @@
                             <td>&nbsp;</td>
 					    </tr>
                         <tr>
+                            <td>&nbsp;</td>
 						    <th style="text-align:left;vertical-align:top">Gerente:</th>
 						    <td align="left" class="bordeTabla">
                                 <asp:Literal runat="server" ID="txtGerente"></asp:Literal>
@@ -56,7 +61,8 @@
                             <td>&nbsp;</td>
 					    </tr>
                                 <tr>
-                         <th style="text-align:left;vertical-align:top">Tarifa Flete:</th>
+                            <td>*</td>
+                            <th style="text-align:left;vertical-align:top">Tarifa Flete:</th>
 						    <td align="left" class="bordeTabla">
 						        <asp:textbox id="txtTarifa" runat="server"  width="300px" MaxLength="24">
 						        </asp:textbox>
@@ -77,6 +83,7 @@
                             <td>&nbsp;</td>
                         </tr>
 					    <tr>
+                            <td>&nbsp;</td>
 						    <th style="text-align:left;vertical-align:top">Activo:</th>
 						    <td align="left" class="bordeTabla">
                             <asp:checkbox id="chkActive" runat="server"></asp:checkbox></td>
