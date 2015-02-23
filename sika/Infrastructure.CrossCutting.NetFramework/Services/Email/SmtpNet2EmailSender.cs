@@ -17,6 +17,7 @@ namespace Infrastructure.CrossCutting.NetFramework.Services.Email
         private string _smtpUsername;
         private string _smtpPassword;
         private Encoding _encoding;
+        private bool _enableSSL;
 
         /// <summary>
         /// SMTP port (default 25).
@@ -59,6 +60,7 @@ namespace Infrastructure.CrossCutting.NetFramework.Services.Email
        
         public SmtpNet2EmailSender()
         {
+            _enableSSL = Convert.ToBoolean(ConfigurationManager.AppSettings.Get("enableSSL"));
             _host = string.IsNullOrEmpty(ConfigurationManager.AppSettings.Get("host")) ? string.Empty : ConfigurationManager.AppSettings.Get("host");
             _smtpPassword = string.IsNullOrEmpty(ConfigurationManager.AppSettings.Get("smtpPassword")) ? string.Empty : ConfigurationManager.AppSettings.Get("smtpPassword");
             _smtpUsername = string.IsNullOrEmpty(ConfigurationManager.AppSettings.Get("smtpUsername")) ? string.Empty : ConfigurationManager.AppSettings.Get("smtpUsername");
@@ -109,10 +111,14 @@ namespace Infrastructure.CrossCutting.NetFramework.Services.Email
 
             // Send email
             var client = new SmtpClient(_host, _port);
+            
             if (!String.IsNullOrEmpty(_smtpUsername) && !String.IsNullOrEmpty(_smtpPassword))
             {
                 client.Credentials = new NetworkCredential(_smtpUsername, _smtpPassword);
             }
+
+            client.EnableSsl = _enableSSL;
+
             client.Send(message);
         }
 

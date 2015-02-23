@@ -12,6 +12,8 @@ using Domain.MainModules.Entities;
 using Infrastructure.CrossCutting.IoC;
 using System.Web.UI.WebControls;
 using System.Text.RegularExpressions;
+using ASP.NETCLIENTE.HTTPModules;
+using log4net;
 
 namespace ASP.NETCLIENTE.UI
 {
@@ -19,6 +21,8 @@ namespace ASP.NETCLIENTE.UI
         where TPresenter : Presenter<TView>
         where TView : class
     {
+        private const string ApplicationName = "Sika";
+        private static readonly ILog Logger = LogManager.GetLogger(ApplicationName);
 
         private Literal TitulosVentana
         {
@@ -39,6 +43,54 @@ namespace ASP.NETCLIENTE.UI
             Presenter.LogProcesamientoEvent += PresenterLogProcesamientoEvent;
         }
 
+        protected override void OnInit(EventArgs e)
+        {
+            try
+            {
+                //AuthenticateUser();
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(string.Format("Error Al autenticar usuario"), ex.InnerException ?? ex);
+                throw ex;
+            }            
+        }
+
+        void AuthenticateUser()
+        {
+            if (AuthenticatedUser != null) return;        
+
+            var am = (AuthenticationModule)Context.ApplicationInstance.Modules["AuthenticationModule"];
+            var userApplication = "";
+
+            var userWc = ConfigurationManager.AppSettings.Get("UsuarioAplicacion");
+            var tipoAutenticacion = ConfigurationManager.AppSettings.Get("tipoAutenticacion");
+            if (tipoAutenticacion.Equals("1"))
+            {
+                if (Context.User.Identity.Name.Contains(@"\"))
+                {
+                    userApplication = !string.IsNullOrEmpty(userWc) ? userWc : Context.User.Identity.Name.Split('\\')[1];
+                }
+                else
+                {
+                    userApplication = !string.IsNullOrEmpty(userWc) ? userWc : Context.User.Identity.Name;
+                }
+            }
+            else
+            {
+                if (System.Security.Principal.WindowsIdentity.GetCurrent().Name.Contains(@"\"))
+                {
+                    userApplication = !string.IsNullOrEmpty(userWc) ? userWc : System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\')[1];
+                }
+                else
+                {
+                    userApplication = !string.IsNullOrEmpty(userWc) ? userWc : System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+                }
+            }
+
+            am.AuthenticateUser(userApplication);
+        }
+
         void PresenterLogProcesamientoEvent(object sender, LogProcesamientoEventArgs e)
         {
             LogError(e.NombreMetodo, AuthenticatedUser.Nombres, new Uri(GetUrl, UriKind.RelativeOrAbsolute), e.Error);
@@ -54,7 +106,9 @@ namespace ASP.NETCLIENTE.UI
 
         protected bool VerificarPermisos(IEnumerable<TBL_Admin_Roles> roles)
         {
-            return roles.Any(rol => Context.User.IsInRole(rol.NombreRol));
+            if (AuthenticatedUser == null) return false;
+
+            return roles.Any(rol => AuthenticatedUser.IsInRole(rol.NombreRol));
         }
 
 
@@ -300,6 +354,4 @@ namespace ASP.NETCLIENTE.UI
             return scriptBlocks.Any(rs => rs.Key == key);
         }
     }
-
-   
 }

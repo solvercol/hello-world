@@ -23,7 +23,6 @@ namespace Presenters.Documentos.IViews
 
         int IdDocumento { get; }
         string Titulo { get; set; }
-        string Observaciones { get; set; }
         byte[] Archivo { get; }
         string NombreArchivo { get; }
         double TamanioMaxArchivoACargar { get; }
@@ -31,15 +30,15 @@ namespace Presenters.Documentos.IViews
         int IdDocCreado { get; set; }
         int IdCategoria { get; set; }
         int IdSubCategoria { get; set; }
-        int IdTipoDocumento { get; set; }        
-        int IdUsuarioResponsable { get; set; }
+        int IdTipoDocumento { get; set; }
+        string CargoResponsable { get; set; }
         bool Activo { get; set; }
         string LogInfo { set; }
         string Estado { set; }
         int IdNivelCategoria { get; set; }
         string NuevaCategoria { get; set; }
 
-        void Responsables(IEnumerable<TBL_Admin_Usuarios> responsables);
+        void Responsables(List<DTO_ValueKey> responsables);
         void DescargarArchivo(TBL_ModuloDocumentos_DocumentoAdjunto documento);
 
         void LoadCategorias(List<TBL_ModuloDocumentos_Categorias> items);

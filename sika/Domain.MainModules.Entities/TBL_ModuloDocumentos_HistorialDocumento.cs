@@ -89,21 +89,6 @@ namespace Domain.MainModules.Entities
         private string _titulo;
     
         [DataMember]
-        public string Observaciones
-        {
-            get { return _observaciones; }
-            set
-            {
-                if (_observaciones != value)
-                {
-                    _observaciones = value;
-                    OnPropertyChanged("Observaciones");
-                }
-            }
-        }
-        private string _observaciones;
-    
-        [DataMember]
         public string Version
         {
             get { return _version; }
@@ -211,29 +196,6 @@ namespace Domain.MainModules.Entities
         private int _idTipo;
     
         [DataMember]
-        public int IdUsuarioResposable
-        {
-            get { return _idUsuarioResposable; }
-            set
-            {
-                if (_idUsuarioResposable != value)
-                {
-                    ChangeTracker.RecordOriginalValue("IdUsuarioResposable", _idUsuarioResposable);
-                    if (!IsDeserializing)
-                    {
-                        if (TBL_Admin_Usuarios != null && TBL_Admin_Usuarios.IdUser != value)
-                        {
-                            TBL_Admin_Usuarios = null;
-                        }
-                    }
-                    _idUsuarioResposable = value;
-                    OnPropertyChanged("IdUsuarioResposable");
-                }
-            }
-        }
-        private int _idUsuarioResposable;
-    
-        [DataMember]
         public int IdUsuarioCreacion
         {
             get { return _idUsuarioCreacion; }
@@ -244,9 +206,9 @@ namespace Domain.MainModules.Entities
                     ChangeTracker.RecordOriginalValue("IdUsuarioCreacion", _idUsuarioCreacion);
                     if (!IsDeserializing)
                     {
-                        if (TBL_Admin_Usuarios1 != null && TBL_Admin_Usuarios1.IdUser != value)
+                        if (TBL_Admin_Usuarios != null && TBL_Admin_Usuarios.IdUser != value)
                         {
-                            TBL_Admin_Usuarios1 = null;
+                            TBL_Admin_Usuarios = null;
                         }
                     }
                     _idUsuarioCreacion = value;
@@ -267,9 +229,9 @@ namespace Domain.MainModules.Entities
                     ChangeTracker.RecordOriginalValue("IdUsuarioModificacion", _idUsuarioModificacion);
                     if (!IsDeserializing)
                     {
-                        if (TBL_Admin_Usuarios2 != null && TBL_Admin_Usuarios2.IdUser != value)
+                        if (TBL_Admin_Usuarios1 != null && TBL_Admin_Usuarios1.IdUser != value)
                         {
-                            TBL_Admin_Usuarios2 = null;
+                            TBL_Admin_Usuarios1 = null;
                         }
                     }
                     _idUsuarioModificacion = value;
@@ -368,6 +330,21 @@ namespace Domain.MainModules.Entities
             }
         }
         private System.DateTime _modifiedOn;
+    
+        [DataMember]
+        public string CargoResponsable
+        {
+            get { return _cargoResponsable; }
+            set
+            {
+                if (_cargoResponsable != value)
+                {
+                    _cargoResponsable = value;
+                    OnPropertyChanged("CargoResponsable");
+                }
+            }
+        }
+        private string _cargoResponsable;
 
         #endregion
         #region Navigation Properties
@@ -405,23 +382,6 @@ namespace Domain.MainModules.Entities
             }
         }
         private TBL_Admin_Usuarios _tBL_Admin_Usuarios1;
-    
-        [DataMember]
-        public TBL_Admin_Usuarios TBL_Admin_Usuarios2
-        {
-            get { return _tBL_Admin_Usuarios2; }
-            set
-            {
-                if (!ReferenceEquals(_tBL_Admin_Usuarios2, value))
-                {
-                    var previousValue = _tBL_Admin_Usuarios2;
-                    _tBL_Admin_Usuarios2 = value;
-                    FixupTBL_Admin_Usuarios2(previousValue);
-                    OnNavigationPropertyChanged("TBL_Admin_Usuarios2");
-                }
-            }
-        }
-        private TBL_Admin_Usuarios _tBL_Admin_Usuarios2;
     
         [DataMember]
         public TBL_ModuloDocumentos_Categorias TBL_ModuloDocumentos_Categorias
@@ -658,7 +618,6 @@ namespace Domain.MainModules.Entities
         {
             TBL_Admin_Usuarios = null;
             TBL_Admin_Usuarios1 = null;
-            TBL_Admin_Usuarios2 = null;
             TBL_ModuloDocumentos_Categorias = null;
             TBL_ModuloDocumentos_Categorias1 = null;
             TBL_ModuloDocumentos_Categorias2 = null;
@@ -690,7 +649,7 @@ namespace Domain.MainModules.Entities
                     TBL_Admin_Usuarios.TBL_ModuloDocumentos_HistorialDocumento.Add(this);
                 }
     
-                IdUsuarioResposable = TBL_Admin_Usuarios.IdUser;
+                IdUsuarioCreacion = TBL_Admin_Usuarios.IdUser;
             }
             if (ChangeTracker.ChangeTrackingEnabled)
             {
@@ -729,7 +688,7 @@ namespace Domain.MainModules.Entities
                     TBL_Admin_Usuarios1.TBL_ModuloDocumentos_HistorialDocumento1.Add(this);
                 }
     
-                IdUsuarioCreacion = TBL_Admin_Usuarios1.IdUser;
+                IdUsuarioModificacion = TBL_Admin_Usuarios1.IdUser;
             }
             if (ChangeTracker.ChangeTrackingEnabled)
             {
@@ -745,45 +704,6 @@ namespace Domain.MainModules.Entities
                 if (TBL_Admin_Usuarios1 != null && !TBL_Admin_Usuarios1.ChangeTracker.ChangeTrackingEnabled)
                 {
                     TBL_Admin_Usuarios1.StartTracking();
-                }
-            }
-        }
-    
-        private void FixupTBL_Admin_Usuarios2(TBL_Admin_Usuarios previousValue)
-        {
-            if (IsDeserializing)
-            {
-                return;
-            }
-    
-            if (previousValue != null && previousValue.TBL_ModuloDocumentos_HistorialDocumento2.Contains(this))
-            {
-                previousValue.TBL_ModuloDocumentos_HistorialDocumento2.Remove(this);
-            }
-    
-            if (TBL_Admin_Usuarios2 != null)
-            {
-                if (!TBL_Admin_Usuarios2.TBL_ModuloDocumentos_HistorialDocumento2.Contains(this))
-                {
-                    TBL_Admin_Usuarios2.TBL_ModuloDocumentos_HistorialDocumento2.Add(this);
-                }
-    
-                IdUsuarioModificacion = TBL_Admin_Usuarios2.IdUser;
-            }
-            if (ChangeTracker.ChangeTrackingEnabled)
-            {
-                if (ChangeTracker.OriginalValues.ContainsKey("TBL_Admin_Usuarios2")
-                    && (ChangeTracker.OriginalValues["TBL_Admin_Usuarios2"] == TBL_Admin_Usuarios2))
-                {
-                    ChangeTracker.OriginalValues.Remove("TBL_Admin_Usuarios2");
-                }
-                else
-                {
-                    ChangeTracker.RecordOriginalValue("TBL_Admin_Usuarios2", previousValue);
-                }
-                if (TBL_Admin_Usuarios2 != null && !TBL_Admin_Usuarios2.ChangeTracker.ChangeTrackingEnabled)
-                {
-                    TBL_Admin_Usuarios2.StartTracking();
                 }
             }
         }

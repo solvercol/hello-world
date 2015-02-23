@@ -21,7 +21,6 @@ namespace Presenters.Documentos.IViews
         int IdDocumento { get; }
         string Titulo { set; }
         string Version { set; }
-        string Observaciones { set; }
         string Categoria { set; }
         string SubCategoria { set; }
         string TipoDocumento { set; }

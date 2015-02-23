@@ -106,10 +106,7 @@ namespace Modules.Documentos.Admin
 
             if (string.IsNullOrEmpty(Titulo))
                 messages.Add("El campo Titulo es requerido.");
-
-            if (string.IsNullOrEmpty(Observaciones))
-                messages.Add("El campo Observaciones es requerido.");
-
+            
             if (messages.Any())
             {
                 AddErrorMessages(messages);
@@ -273,19 +270,7 @@ namespace Modules.Documentos.Admin
                 txtTitulo.Text = value;
             }
         }
-
-        public string Observaciones
-        {
-            get
-            {
-                return txtObservaciones.Text;
-            }
-            set
-            {
-                txtObservaciones.Text = value;
-            }
-        }
-
+        
         public byte[] Archivo 
         {
             get
@@ -358,17 +343,17 @@ namespace Modules.Documentos.Admin
             {
                 ddlTipoDocumento.SelectedValue = value.ToString();
             }
-        }       
+        }
 
-        public int IdUsuarioResponsable
+        public string CargoResponsable
         {
             get
             {
-                return Convert.ToInt32(ddlResponsableDoc.SelectedValue);
+                return ddlResponsableDoc.SelectedValue;
             }
             set
             {
-                ddlResponsableDoc.SelectedValue = value.ToString();
+                ddlResponsableDoc.SelectedValue = value;
             }
         }
 
@@ -399,11 +384,14 @@ namespace Modules.Documentos.Admin
             }
         }
         
-        public void Responsables(IEnumerable<TBL_Admin_Usuarios> responsables)
+        public void Responsables(List<DTO_ValueKey> responsables)
         {
+            if (responsables.Any())
+                responsables = responsables.OrderBy(x => x.Value).ToList();
+
             ddlResponsableDoc.DataSource = responsables;
-            ddlResponsableDoc.DataTextField = "Nombres";
-            ddlResponsableDoc.DataValueField = "IdUser";
+            ddlResponsableDoc.DataTextField = "Value";
+            ddlResponsableDoc.DataValueField = "Value";
             ddlResponsableDoc.DataBind();
         }
 

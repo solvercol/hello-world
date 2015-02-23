@@ -198,6 +198,9 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
         IObjectSet<TBL_ModuloReclamos_CostosProducto> TBL_ModuloReclamos_CostosProducto{get;}
         
     
+        IObjectSet<TBL_ModuloReclamos_DocumentosAnexoReclamo> TBL_ModuloReclamos_DocumentosAnexoReclamo{get;}
+        
+    
         IObjectSet<TBL_ModuloReclamos_LogReclamos> TBL_ModuloReclamos_LogReclamos{get;}
         
     

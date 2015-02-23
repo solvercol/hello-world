@@ -124,6 +124,7 @@
     <Content Include="UserControls\WUCAdminActividadesReclamo.ascx" />
     <Content Include="UserControls\WUCAdminAlternativasReclamo.ascx" />
     <Content Include="UserControls\WUCAdminComentariosRespuestaReclamo.ascx" />
+    <Content Include="UserControls\WuCAdminDocumentosAnexoReclamo.ascx" />
     <Content Include="UserControls\WUCAdminInformacionReclamo.ascx" />
     <Content Include="UserControls\WUCAdminReclamoProducto.ascx" />
     <Content Include="UserControls\WUCAdminRecServicioT1.ascx" />
@@ -440,6 +441,13 @@
     </Compile>
     <Compile Include="UserControls\WUCAdminComentariosRespuestaReclamo.ascx.designer.cs">
       <DependentUpon>WUCAdminComentariosRespuestaReclamo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WuCAdminDocumentosAnexoReclamo.ascx.cs">
+      <DependentUpon>WuCAdminDocumentosAnexoReclamo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WuCAdminDocumentosAnexoReclamo.ascx.designer.cs">
+      <DependentUpon>WuCAdminDocumentosAnexoReclamo.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\WUCAdminInformacionReclamo.ascx.cs">
       <DependentUpon>WUCAdminInformacionReclamo.ascx</DependentUpon>
@@ -893,7 +901,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>16845</DevelopmentServerPort>
+          <DevelopmentServerPort>16846</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

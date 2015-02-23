@@ -54,6 +54,7 @@
     <Compile Include="Repositories\TBL_ModuloReclamos_CategoriasReclamoRepository.cs" />
     <Compile Include="Repositories\TBL_ModuloReclamos_ComentariosRespuestaRepository.cs" />
     <Compile Include="Repositories\TBL_ModuloReclamos_CostosProductoRepository.cs" />
+    <Compile Include="Repositories\TBL_ModuloReclamos_DocumentosAnexoReclamoRepository.cs" />
     <Compile Include="Repositories\TBL_ModuloReclamos_LogReclamosRepository.cs" />
     <Compile Include="Repositories\TBL_ModuloReclamos_ReclamoRepository.cs" />
     <Compile Include="Repositories\TBL_ModuloReclamos_SolucionesRepository.cs" />

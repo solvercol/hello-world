@@ -50,6 +50,7 @@
     <Compile Include="IViews\IAddUnidadView.cs" />
     <Compile Include="IViews\IAddUnidadZonaView.cs" />
     <Compile Include="IViews\IAddZonaView.cs" />
+    <Compile Include="IViews\IAdminDocumentosAnexoReclamoView.cs" />
     <Compile Include="IViews\IAlternativasPorPersonaView.cs" />
     <Compile Include="IViews\IAsesoresListView.cs" />
     <Compile Include="IViews\ICategoriaProductoListView.cs" />
@@ -136,6 +137,7 @@
     <Compile Include="Presenters\AdminComentarioRespuestaReclamoPresenter.cs" />
     <Compile Include="Presenters\AdminComentariosRespuestaReclamoPresenter.cs" />
     <Compile Include="Presenters\AdminCostosReclamoPresenter.cs" />
+    <Compile Include="Presenters\AdminDocumentosAnexoReclamoPresenter.cs" />
     <Compile Include="Presenters\AdminInformacionReclamoPresenter.cs" />
     <Compile Include="Presenters\AdminReclamoProductoPresenter.cs" />
     <Compile Include="Presenters\AdminRecServicioT1Presenter.cs" />

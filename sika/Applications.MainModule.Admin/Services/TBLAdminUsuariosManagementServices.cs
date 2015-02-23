@@ -129,6 +129,13 @@ namespace Applications.MainModule.Admin.Services
             return _tblAdminUsuariosRepository.RetornarUsuarioConRoles(specification);
         }
 
+        public TBL_Admin_Usuarios GetUserByCredential(string username)
+        {
+            Specification<TBL_Admin_Usuarios> specification = new DirectSpecification<TBL_Admin_Usuarios>(u => u.UserName.Equals(username));
+
+            return _tblAdminUsuariosRepository.RetornarUsuarioConRoles(specification);
+        }
+
         /// <summary>
           /// Obtiene el listado de entidades activas y paginadas.
           /// </summary>
@@ -200,6 +207,8 @@ namespace Applications.MainModule.Admin.Services
 
             return _tblAdminUsuariosRepository.GetPagedElements(page, size, u => u.IdUser, onlyEnabledSpec, true).ToList();
         }
+
+        
     }
 }
     

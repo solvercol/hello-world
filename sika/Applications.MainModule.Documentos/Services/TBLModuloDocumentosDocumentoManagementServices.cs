@@ -155,8 +155,6 @@ namespace Application.MainModule.Documentos.Services
              
              if (filtroIdEstado != 0)
                  specification &= new DirectSpecification<TBL_ModuloDocumentos_Documento>(doc => doc.IdEstado == filtroIdEstado);
-             if (filtroIdResponsable != 0)
-                 specification &= new DirectSpecification<TBL_ModuloDocumentos_Documento>(doc => doc.IdUsuarioResponsable == filtroIdResponsable);
 
              return _tblModuloDocumentosDocumentoRepository.GetDocumentsWithCategories(specification).ToList();
          }

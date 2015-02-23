@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IServices\IReclamoMailService.cs" />
     <Compile Include="IServices\ITBLModuloDocumentosCategoriasManagementServices.cs" />
     <Compile Include="IServices\ITBLModuloDocumentosDocumentoAdjuntoHistorialManagementServices.cs" />
     <Compile Include="IServices\ITBLModuloDocumentosDocumentoAdjuntoManagementServices.cs" />
@@ -57,6 +59,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Services\ReclamoMailService.cs" />
     <Compile Include="Services\TBLModuloDocumentosCategoriasManagementServices.cs" />
     <Compile Include="Services\TBLModuloDocumentosDocumentoAdjuntoHistorialManagementServices.cs" />
     <Compile Include="Services\TBLModuloDocumentosDocumentoAdjuntoManagementServices.cs" />
@@ -88,6 +91,18 @@
     <ProjectReference Include="..\Domain.MainModules.Entities\Domain.MainModules.Entities.csproj">
       <Project>{6FA9FF63-4F79-4A9F-882C-7A7AE27C7332}</Project>
       <Name>Domain.MainModules.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.MainModule\Domain.MainModule.csproj">
+      <Project>{2B568262-DA63-44FC-97F3-B2C717CEF5A3}</Project>
+      <Name>Domain.MainModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infraestructure.CrossCutting.NetCommunication\Infraestructure.CrossCutting.NetCommunication.csproj">
+      <Project>{CADA6ADB-F63A-4C29-97E0-B8CB097B1F27}</Project>
+      <Name>Infraestructure.CrossCutting.NetCommunication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure.CrossCutting\Infrastructure.CrossCutting.csproj">
+      <Project>{1063AE74-49D5-4D8A-B6A3-2C38349F55BF}</Project>
+      <Name>Infrastructure.CrossCutting</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

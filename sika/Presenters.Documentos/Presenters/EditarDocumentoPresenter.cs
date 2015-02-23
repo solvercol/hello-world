@@ -8,6 +8,7 @@ using Applications.MainModule.Admin.IServices;
 using Domain.MainModules.Entities;
 using Infrastructure.CrossCutting.NetFramework.Enums;
 using Presenters.Documentos.IViews;
+using System.Threading;
 
 namespace Presenters.Documentos.Presenters
 {
@@ -24,6 +25,8 @@ namespace Presenters.Documentos.Presenters
         private readonly ISfTBL_ModuloDocumentos_LogCambiosManagementServices _logCambiosServices;
         private readonly ISfTBL_ModuloDocumentos_HistorialDocumentoManagementServices _historialDocumentoServices;
         private readonly ISfTBL_Admin_UsuariosManagementServices _usuariosServices;
+        private readonly ISfTBL_Admin_OptionListManagementServices _opServices;
+        private readonly IReclamoMailService _reclamoMailService;
 
         public EditarDocumentoPresenter
             (
@@ -35,6 +38,8 @@ namespace Presenters.Documentos.Presenters
                 ,ISfTBL_ModuloDocumentos_HistorialDocumentoManagementServices historialDocumentoManagementServices 
                 ,ISfTBL_ModuloDocumentos_DocumentoAdjuntoManagementServices docAdjuntoServices
                 ,ISfTBL_ModuloDocumentos_DocumentoAdjuntoHistorialManagementServices docAdjuntoHistServices
+                ,ISfTBL_Admin_OptionListManagementServices opServices
+                ,IReclamoMailService reclamoMailService
             )
         {
             this._documentoServices = documentoManagementServices;
@@ -45,6 +50,8 @@ namespace Presenters.Documentos.Presenters
             this._historialDocumentoServices = historialDocumentoManagementServices;
             this._docAdjuntoServices = docAdjuntoServices;
             this._docAdjuntoHistServices = docAdjuntoHistServices;
+            this._opServices = opServices;
+            this._reclamoMailService = reclamoMailService;
 
             Estados = _estadosServices.FindBySpec(true);
         }
@@ -113,7 +120,6 @@ namespace Presenters.Documentos.Presenters
 
             View.ArchivosAdjuntos = new List<DTO_ValueKey>();
             View.Titulo = string.Empty;
-            View.Observaciones = string.Empty;
 
             View.LogInfo = string.Format("Creado por: {0} en {1:dd/MM/yyyy hh:mm tt}, Modificado por: {2} en {3:dd/MM/yyyy hh:mm tt}",
                                             View.UserSession.Nombres, DateTime.Now,
@@ -126,8 +132,19 @@ namespace Presenters.Documentos.Presenters
         {
             try
             {
-                var responsables = _usuariosServices.FindBySpec(true);
-                if (responsables == null) return;
+                var op = _opServices.ObtenerOpcionBykeyModuleId("CargosResponsableDocumentos", Convert.ToInt32(View.IdModule));
+                var responsables = new List<DTO_ValueKey>();
+
+                if (op != null)
+                {
+                    var split = op.Value.Split('|');
+
+                    foreach (var s in split)
+                    {
+                        responsables.Add(new DTO_ValueKey() { Id = s, Value = s });
+                    }
+                }
+
                 View.Responsables(responsables);
             }
             catch (Exception ex)
@@ -200,7 +217,6 @@ namespace Presenters.Documentos.Presenters
                 }
 
                 View.Titulo = oDocumento.Titulo;
-                View.Observaciones = oDocumento.Observaciones;
 
                 View.IdCategoria = oDocumento.IdCategoria;
                 View.IdSubCategoria = oDocumento.IdSubCategoria;
@@ -211,11 +227,11 @@ namespace Presenters.Documentos.Presenters
                 View.IdSubCategoria = oDocumento.IdSubCategoria;
                 View.IdTipoDocumento = oDocumento.IdTipo;
 
-                View.IdUsuarioResponsable = oDocumento.IdUsuarioResponsable;
+                View.CargoResponsable = oDocumento.CargoResponsable;
 
                 View.LogInfo = string.Format("Creado por: {0} en {1:dd/MM/yyyy hh:mm tt}, Modificado por: {2} en {3:dd/MM/yyyy hh:mm tt}",
-                                            oDocumento.TBL_Admin_Usuarios1.Nombres, oDocumento.FechaCreacion,
-                                            oDocumento.TBL_Admin_Usuarios2.Nombres, oDocumento.FechaModificacion);
+                                            oDocumento.TBL_Admin_Usuarios.Nombres, oDocumento.FechaCreacion,
+                                            oDocumento.TBL_Admin_Usuarios1.Nombres, oDocumento.FechaModificacion);
 
                 LoadArchivosAdjuntos();
 
@@ -266,7 +282,6 @@ namespace Presenters.Documentos.Presenters
                 DateTime fechaAhora = DateTime.Now;
                 var oDocumento = new TBL_ModuloDocumentos_Documento();
                 oDocumento.Titulo = View.Titulo.ToUpper();
-                oDocumento.Observaciones = View.Observaciones.ToUpper();
                 oDocumento.Version = "001";
                 oDocumento.IdEstado = Estados.Find(est => est.Codigo.Equals("EN_EDICION")).IdEstado;
 
@@ -274,7 +289,7 @@ namespace Presenters.Documentos.Presenters
                 oDocumento.IdSubCategoria = View.IdSubCategoria;
                 oDocumento.IdTipo = View.IdTipoDocumento;
 
-                oDocumento.IdUsuarioResponsable = View.IdUsuarioResponsable;
+                oDocumento.CargoResponsable = View.CargoResponsable;
                 oDocumento.IdUsuarioCreacion = View.UserSession.IdUser;
                 oDocumento.IdUsuarioModificacion = View.UserSession.IdUser;
                 oDocumento.FechaCreacion = fechaAhora;
@@ -451,17 +466,19 @@ namespace Presenters.Documentos.Presenters
                 DateTime fechaAhora = DateTime.Now;
                 
                 oDocumento.Titulo = View.Titulo;
-                oDocumento.Observaciones = View.Observaciones;
                 oDocumento.Version = GetNextVersion(oDocumento.Version, oDocumento.IdEstado.GetValueOrDefault());
                 oDocumento.IdCategoria = View.IdCategoria;
                 oDocumento.IdSubCategoria = View.IdSubCategoria;
                 oDocumento.IdTipo = View.IdTipoDocumento;
-                oDocumento.IdUsuarioResponsable = View.IdUsuarioResponsable;
+                oDocumento.CargoResponsable = View.CargoResponsable;
                 oDocumento.IdUsuarioModificacion = View.UserSession.IdUser;
                 oDocumento.FechaModificacion = fechaAhora;
                 oDocumento.ModifiedBy = View.UserSession.IdUser;
                 oDocumento.ModifiedOn = DateTime.Now;
                 _documentoServices.Modify(oDocumento);
+
+                if (estado.Codigo.Equals("PUBLICADO"))
+                    EnviarMailPublicacion(oDocumento);
 
                 View.GoToViewDocument(oDocumento.IdDocumento);
             }
@@ -494,6 +511,8 @@ namespace Presenters.Documentos.Presenters
                 ///LOG DE DOCUMENTO
                 GuardarLog(oDocumento, null, string.Format("El Documento ha sido publicado por: {0}", View.UserSession.Nombres));
 
+                EnviarMailPublicacion(oDocumento);
+
                 View.GoToViewDocument(oDocumento.IdDocumento);
             }
             catch (Exception ex)
@@ -502,6 +521,17 @@ namespace Presenters.Documentos.Presenters
                 InvokeMessageBox(new MessageBoxEventArgs(string.Format(Message.DeleteError, "Actividad"), TypeError.Error));
             }
 
+        }
+
+        void EnviarMailPublicacion(TBL_ModuloDocumentos_Documento documento)
+        {
+            object[] parameters = new object[3];
+            parameters[0] = documento.IdDocumento;
+            parameters[1] = Convert.ToInt32(View.IdModule);
+            parameters[2] = View.ServerHostPathUri;
+
+            Thread mailThread = new Thread(_reclamoMailService.SendDocumentoPublicacionMailNotification);
+            mailThread.Start(parameters);
         }
 
         private string GetNextVersion(string actualVersion, int idEstadoActual)
@@ -584,7 +614,6 @@ namespace Presenters.Documentos.Presenters
         private void LimpiarVista()
         {
             View.Titulo = string.Empty;
-            View.Observaciones = string.Empty;
         }
 
         private decimal GuardarHistorico(TBL_ModuloDocumentos_Documento oDocumento)
@@ -595,13 +624,12 @@ namespace Presenters.Documentos.Presenters
                 var historial = _historialDocumentoServices.NewEntity();
                 historial.IdDocumento = oDocumento.IdDocumento;
                 historial.Titulo = oDocumento.Titulo;
-                historial.Observaciones = oDocumento.Observaciones;
+                historial.CargoResponsable = oDocumento.CargoResponsable;
                 historial.Version = oDocumento.Version;
                 historial.IdCategoria = oDocumento.IdCategoria;
                 historial.IdEstado = oDocumento.IdEstado.GetValueOrDefault();
                 historial.IdSubCategoria = oDocumento.IdSubCategoria;
                 historial.IdTipo = oDocumento.IdTipo;
-                historial.IdUsuarioResposable = oDocumento.IdUsuarioResponsable;
                 historial.IdUsuarioCreacion = oDocumento.IdUsuarioCreacion;
                 historial.IdUsuarioModificacion = oDocumento.IdUsuarioModificacion;
                 historial.FechaCreacion = oDocumento.FechaCreacion;

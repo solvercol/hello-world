@@ -72,18 +72,17 @@ namespace Presenters.Documentos.Presenters
                 View.Titulo = oHistDocumento.Titulo;
                 View.Version = oHistDocumento.Version;
                 View.IdDocumento = oHistDocumento.IdDocumento;
-                View.Observaciones = oHistDocumento.Observaciones;
                 View.Estado = oHistDocumento.TBL_ModuloDocumentos_Estados.Nombre;
 
                 View.Categoria = oHistDocumento.TBL_ModuloDocumentos_Categorias.Nombre;
                 View.SubCategoria = oHistDocumento.TBL_ModuloDocumentos_Categorias1.Nombre;
                 View.TipoDocumento = oHistDocumento.TBL_ModuloDocumentos_Categorias2.Nombre;
 
-                View.UsuarioResponsable = oHistDocumento.TBL_Admin_Usuarios.Nombres;
+                View.UsuarioResponsable = oHistDocumento.CargoResponsable;
 
                 View.LogInfo = string.Format("Creado por: {0} en {1:dd/MM/yyyy hh:mm tt}, Modificado por: {2} en {3:dd/MM/yyyy hh:mm tt}",
-                                            oHistDocumento.TBL_Admin_Usuarios1.Nombres, oHistDocumento.FechaCreacion,
-                                            oHistDocumento.TBL_Admin_Usuarios2.Nombres, oHistDocumento.CreateOn);
+                                            oHistDocumento.TBL_Admin_Usuarios.Nombres, oHistDocumento.FechaCreacion,
+                                            oHistDocumento.TBL_Admin_Usuarios1.Nombres, oHistDocumento.CreateOn);
 
                 View.Adjuntos(oHistDocumento.TBL_ModuloDocumentos_DocumentoAdjuntoHistorial);
             }

@@ -85,17 +85,7 @@
                     <td class="SeccionesH4" >
                         <asp:Label ID="txtResponsableDoc" runat="server" />
                     </td>
-                </tr>
-                <!--Observaciones-->
-                <tr>
-                    <td class="SeccionesH3" style="text-align:left">
-                        Observaciones:
-                    </td>
-                    <td class="Separador" style="width:1%" />
-                    <td class="SeccionesH4" >
-                        <asp:Label ID="txtObservaciones" runat="server" />
-                    </td>
-                </tr>           
+                </tr>          
            
                 <tr>
                     <td class="SeccionesH3" style="text-align:left; vertical-align:top">

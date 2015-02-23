@@ -93,21 +93,19 @@ namespace Presenters.Documentos.Presenters
                 View.Titulo = oDocumento.Titulo;
                 View.Version = oDocumento.Version;
                 View.Estado = oDocumento.TBL_ModuloDocumentos_Estados.Nombre;
-                View.Observaciones = oDocumento.Observaciones;
 
                 View.Categoria = oDocumento.TBL_ModuloDocumentos_Categorias.Nombre;
                 View.SubCategoria = oDocumento.TBL_ModuloDocumentos_Categorias1.Nombre;
                 View.TipoDocumento = oDocumento.TBL_ModuloDocumentos_Categorias2.Nombre;
 
-                View.UsuarioResponsable = oDocumento.TBL_Admin_Usuarios.Nombres;
+                View.UsuarioResponsable = oDocumento.CargoResponsable;
 
-                View.CanEdit = oDocumento.IdUsuarioResponsable == View.UserSession.IdUser
-                                || oDocumento.IdUsuarioCreacion == View.UserSession.IdUser
+                View.CanEdit = oDocumento.IdUsuarioCreacion == View.UserSession.IdUser
                                 || View.UserSession.IsInRoleId(View.IdRolAdministradorDocumentos);
 
                 View.LogInfo = string.Format("Creado por: {0} en {1:dd/MM/yyyy hh:mm tt}, Modificado por: {2} en {3:dd/MM/yyyy hh:mm tt}" ,
-                                            oDocumento.TBL_Admin_Usuarios1.Nombres, oDocumento.FechaCreacion,
-                                            oDocumento.TBL_Admin_Usuarios2.Nombres, oDocumento.FechaModificacion);
+                                            oDocumento.TBL_Admin_Usuarios.Nombres, oDocumento.FechaCreacion,
+                                            oDocumento.TBL_Admin_Usuarios1.Nombres, oDocumento.FechaModificacion);
 
                 View.Adjuntos(oDocumento.TBL_ModuloDocumentos_DocumentoAdjunto);
             }

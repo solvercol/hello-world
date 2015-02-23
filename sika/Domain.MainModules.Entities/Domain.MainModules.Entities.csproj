@@ -241,6 +241,9 @@
     <Compile Include="TBL_ModuloReclamos_CostosProducto.cs">
       <DependentUpon>MainModuleContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="TBL_ModuloReclamos_DocumentosAnexoReclamo.cs">
+      <DependentUpon>MainModuleContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="TBL_ModuloReclamos_LogReclamos.cs">
       <DependentUpon>MainModuleContext.tt</DependentUpon>
     </Compile>
