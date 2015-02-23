@@ -119,19 +119,6 @@
                     <td class="Line" >
                         <asp:DropDownList ID="ddlResponsableDoc" class="chzn-select" runat="server" Width="60%" />
                     </td>
-                </tr>                
-                <!--Observaciones-->
-                <tr>
-                    <td class="validator" style="vertical-align:top">
-                        *
-                    </td>
-                    <th style="text-align:left; vertical-align:top">
-                        Observaciones:
-                    </th>
-                    <td class="Separador" />
-                    <td class="Line" >
-                        <asp:TextBox ID="txtObservaciones" Rows="3" runat="server" Width="60%" CssClass="TextUpperCase" MaxLength="512" TextMode="MultiLine" />
-                    </td>
                 </tr>
                 <!--Archivo-->
                 <tr id="filaAdjuntar" runat="server">

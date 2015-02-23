@@ -63,7 +63,7 @@ select	distinct
 		,documento.Titulo			as TituloDocumento
 		,estado.Nombre				as Estado
 		,userCreacion.Nombres		as UsuarioCreacion
-		,userResponsable.Nombres	as UsuarioResponsable	
+		,documento.CargoResponsable	as UsuarioResponsable	
 		,@ServerHostPath + '/Pages/Modules/Documentos/Consulta/FrmVerDocumento.aspx?ModuleId=' + @ModuleId + '&IdDocumento=' + cast(documento.IdDocumento as varchar(18)) + '&from=' + @FromView
 from	TBL_ModuloDocumentos_Documento documento with(nolock)
 		inner join TBL_ModuloDocumentos_Categorias categorias with(nolock)
@@ -76,12 +76,7 @@ from	TBL_ModuloDocumentos_Documento documento with(nolock)
 			on documento.IdEstado = estado.IdEstado
 		inner join TBL_Admin_Usuarios userCreacion with(nolock)
 			on documento.IdUsuarioCreacion = userCreacion.IdUser
-		inner join TBL_Admin_Usuarios userResponsable with(nolock)
-			on documento.IdUsuarioResponsable = userResponsable.IdUser
-where	(
-			documento.IdUsuarioCreacion = case @IdUser when 0 then documento.IdUsuarioCreacion else @IdUser end
-			or documento.IdUsuarioResponsable = case @IdUser when 0 then documento.IdUsuarioResponsable else @IdUser end
-		)
+where	documento.IdUsuarioCreacion = case @IdUser when 0 then documento.IdUsuarioCreacion else @IdUser end		
 		and
 		(
 			documento.Titulo like '%' + @SearchText + '%'

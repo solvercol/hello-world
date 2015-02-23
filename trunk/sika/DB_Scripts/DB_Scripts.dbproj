@@ -191,5 +191,8 @@
     <NotInBuild Include="Scripts\Modules\Reclamos\Vistas\17_Vistas_ReclamosExport.sql">
       <SubType>NotInBuild</SubType>
     </NotInBuild>
+    <NotInBuild Include="Scripts\Functions\01_Fun_SplitString.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
   </ItemGroup>
 </Project>

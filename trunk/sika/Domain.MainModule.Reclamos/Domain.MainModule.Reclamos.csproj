@@ -52,6 +52,7 @@
     <Compile Include="Contracts\ITBL_ModuloReclamos_CategoriasReclamoRepository.cs" />
     <Compile Include="Contracts\ITBL_ModuloReclamos_ComentariosRespuestaRepository.cs" />
     <Compile Include="Contracts\ITBL_ModuloReclamos_CostosProductoRepository.cs" />
+    <Compile Include="Contracts\ITBL_ModuloReclamos_DocumentosAnexoReclamoRepository.cs" />
     <Compile Include="Contracts\ITBL_ModuloReclamos_LogReclamosRepository.cs" />
     <Compile Include="Contracts\ITBL_ModuloReclamos_ReclamoRepository.cs" />
     <Compile Include="Contracts\ITBL_ModuloReclamos_SolucionesRepository.cs" />

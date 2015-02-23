@@ -111,15 +111,7 @@ namespace Modules.Documentos.Consulta
                 lblVersion.Text = value;
             }
         }
-
-        public string Observaciones
-        {
-            set
-            {
-                txtObservaciones.Text = value;
-            }
-        }
-
+        
         public string Categoria
         {
             set

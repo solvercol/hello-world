@@ -627,6 +627,9 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Handlers\MantenerSesion.ashx.cs">
+      <DependentUpon>MantenerSesion.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\UserControls\wucHeader.ascx.cs">
       <DependentUpon>wucHeader.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -779,6 +782,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Log\Tracking.log" />
+    <Content Include="Pages\Handlers\MantenerSesion.ashx" />
     <None Include="Resources\Styles\fonts\klavikalight-plain-webfont-basic.eot" />
     <None Include="Resources\Styles\fonts\klavikalight-plain-webfont-basic.woff" />
   </ItemGroup>

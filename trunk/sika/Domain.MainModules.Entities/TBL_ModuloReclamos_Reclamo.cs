@@ -30,6 +30,7 @@ namespace Domain.MainModules.Entities
     [KnownType(typeof(TBL_ModuloReclamos_CategoriasReclamo))]
     [KnownType(typeof(TBL_ModuloReclamos_ComentariosRespuesta))]
     [KnownType(typeof(TBL_ModuloReclamos_CostosProducto))]
+    [KnownType(typeof(TBL_ModuloReclamos_DocumentosAnexoReclamo))]
     [KnownType(typeof(TBL_ModuloReclamos_LogReclamos))]
     [KnownType(typeof(TBL_ModuloReclamos_Reclamo))]
     [KnownType(typeof(TBL_ModuloReclamos_TipoReclamo))]
@@ -1849,6 +1850,41 @@ namespace Domain.MainModules.Entities
         private TrackableCollection<TBL_ModuloReclamos_CostosProducto> _tBL_ModuloReclamos_CostosProducto;
     
         [DataMember]
+        public TrackableCollection<TBL_ModuloReclamos_DocumentosAnexoReclamo> TBL_ModuloReclamos_DocumentosAnexoReclamo
+        {
+            get
+            {
+                if (_tBL_ModuloReclamos_DocumentosAnexoReclamo == null)
+                {
+                    _tBL_ModuloReclamos_DocumentosAnexoReclamo = new TrackableCollection<TBL_ModuloReclamos_DocumentosAnexoReclamo>();
+                    _tBL_ModuloReclamos_DocumentosAnexoReclamo.CollectionChanged += FixupTBL_ModuloReclamos_DocumentosAnexoReclamo;
+                }
+                return _tBL_ModuloReclamos_DocumentosAnexoReclamo;
+            }
+            set
+            {
+                if (!ReferenceEquals(_tBL_ModuloReclamos_DocumentosAnexoReclamo, value))
+                {
+                    if (ChangeTracker.ChangeTrackingEnabled)
+                    {
+                        throw new InvalidOperationException("Cannot set the FixupChangeTrackingCollection when ChangeTracking is enabled");
+                    }
+                    if (_tBL_ModuloReclamos_DocumentosAnexoReclamo != null)
+                    {
+                        _tBL_ModuloReclamos_DocumentosAnexoReclamo.CollectionChanged -= FixupTBL_ModuloReclamos_DocumentosAnexoReclamo;
+                    }
+                    _tBL_ModuloReclamos_DocumentosAnexoReclamo = value;
+                    if (_tBL_ModuloReclamos_DocumentosAnexoReclamo != null)
+                    {
+                        _tBL_ModuloReclamos_DocumentosAnexoReclamo.CollectionChanged += FixupTBL_ModuloReclamos_DocumentosAnexoReclamo;
+                    }
+                    OnNavigationPropertyChanged("TBL_ModuloReclamos_DocumentosAnexoReclamo");
+                }
+            }
+        }
+        private TrackableCollection<TBL_ModuloReclamos_DocumentosAnexoReclamo> _tBL_ModuloReclamos_DocumentosAnexoReclamo;
+    
+        [DataMember]
         public TrackableCollection<TBL_ModuloReclamos_LogReclamos> TBL_ModuloReclamos_LogReclamos
         {
             get
@@ -2153,6 +2189,7 @@ namespace Domain.MainModules.Entities
             TBL_ModuloReclamos_CategoriasReclamo = null;
             TBL_ModuloReclamos_ComentariosRespuesta.Clear();
             TBL_ModuloReclamos_CostosProducto.Clear();
+            TBL_ModuloReclamos_DocumentosAnexoReclamo.Clear();
             TBL_ModuloReclamos_LogReclamos.Clear();
             TBL_ModuloReclamos_Reclamo1.Clear();
             TBL_ModuloReclamos_Reclamo2 = null;
@@ -2990,6 +3027,45 @@ namespace Domain.MainModules.Entities
                     if (ChangeTracker.ChangeTrackingEnabled)
                     {
                         ChangeTracker.RecordRemovalFromCollectionProperties("TBL_ModuloReclamos_CostosProducto", item);
+                    }
+                }
+            }
+        }
+    
+        private void FixupTBL_ModuloReclamos_DocumentosAnexoReclamo(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            if (IsDeserializing)
+            {
+                return;
+            }
+    
+            if (e.NewItems != null)
+            {
+                foreach (TBL_ModuloReclamos_DocumentosAnexoReclamo item in e.NewItems)
+                {
+                    item.TBL_ModuloReclamos_Reclamo = this;
+                    if (ChangeTracker.ChangeTrackingEnabled)
+                    {
+                        if (!item.ChangeTracker.ChangeTrackingEnabled)
+                        {
+                            item.StartTracking();
+                        }
+                        ChangeTracker.RecordAdditionToCollectionProperties("TBL_ModuloReclamos_DocumentosAnexoReclamo", item);
+                    }
+                }
+            }
+    
+            if (e.OldItems != null)
+            {
+                foreach (TBL_ModuloReclamos_DocumentosAnexoReclamo item in e.OldItems)
+                {
+                    if (ReferenceEquals(item.TBL_ModuloReclamos_Reclamo, this))
+                    {
+                        item.TBL_ModuloReclamos_Reclamo = null;
+                    }
+                    if (ChangeTracker.ChangeTrackingEnabled)
+                    {
+                        ChangeTracker.RecordRemovalFromCollectionProperties("TBL_ModuloReclamos_DocumentosAnexoReclamo", item);
                     }
                 }
             }

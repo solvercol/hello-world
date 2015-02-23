@@ -119,11 +119,13 @@ namespace ASP.NETCLIENTE.HTTPModules
                     _iAutentication.Modify(user);
                     // Create the authentication ticket
                     HttpContext.Current.User = new SolutionFrameworkPrincipal(user);
-                    FormsAuthentication.SetAuthCookie(user.IdUser.ToString(), false);
+                    HttpContext.Current.Session["Main_AuthenticatedUser"] = user;
+                    FormsAuthentication.SetAuthCookie(user.UserName, false);
 
                     return true;
                 }
                 _traceManager.LogInfo(String.Format("Nombre de Usuario no válido: {0}.", username), LogType.Notify);
+                HttpContext.Current.Server.Transfer("~/FrmError.aspx?error=402");
                 return false;
             }
             catch (Exception ex)
@@ -140,31 +142,33 @@ namespace ASP.NETCLIENTE.HTTPModules
 
             try
             {
-                //var userService = IoC.Resolve<ISfTBL_Maestra_StaffManagementServices>();
-                //var user = userService.GetUserByIdStaff(codigo);
-                //if (user != null)
-                //{
-                //    if (!user.IsActive)
-                //    {
-                //        _traceManager.LogInfo(string.Format(CultureInfo.InvariantCulture,
-                //                        "El usuario {0} intento ingresar estando inactivo.",
-                //                        user.Nombres),
-                //                        LogType.Notify);
-                //        HttpContext.Current.Server.Transfer("~/FrmError.aspx?error=402");
-                //    }
-                //    user.IsAuthenticated = true;
-                //    var currentIp = HttpContext.Current.Request.UserHostAddress;
-                //    user.lastlogin = DateTime.Now;
-                //    user.lastip = currentIp;
-                //    // Save login date and IP
-                //    userService.Modify(user);
-                //    // Create the authentication ticket
-                //    HttpContext.Current.User = new SolutionFrameworkPrincipal(user);
-                //    FormsAuthentication.SetAuthCookie(user.CodigoStaff, false);
+                var user = _iAutentication.GetUserByCredential(codigo);
+                if (user != null)
+                {
+                    if (!user.IsActive)
+                    {
+                        _traceManager.LogInfo(string.Format(CultureInfo.InvariantCulture,
+                                        "El usuario {0} intento ingresar estando inactivo.",
+                                        user.Nombres),
+                                        LogType.Notify);
+                        HttpContext.Current.Server.Transfer("~/FrmError.aspx?error=402");
+                    }
+                    user.IsAuthenticated = true;
+                    var currentIp = HttpContext.Current.Request.UserHostAddress;
+                    user.lastlogin = DateTime.Now;
+                    user.lastip = currentIp;
+                    // Save login date and IP
+                    _iAutentication.Modify(user);
+                    // Create the authentication ticket
+                    HttpContext.Current.User = new SolutionFrameworkPrincipal(user);
+                    HttpContext.Current.Session["Main_AuthenticatedUser"] = user;
+                    FormsAuthentication.SetAuthCookie(user.UserName, false);
+
                     return true;
-                //}
-                //_traceManager.LogInfo(String.Format("Código de Usuario no válido: {0}.", codigo), LogType.Notify);
-                //return false;
+                }
+                _traceManager.LogInfo(String.Format("Código de Usuario no válido: {0}.", codigo), LogType.Notify);
+                HttpContext.Current.Server.Transfer("~/FrmError.aspx?error=402");
+                return false;
             }
             catch (Exception ex)
             {

@@ -526,6 +526,12 @@ namespace Infrastructure.Data.MainModule.UnitOfWork
         }
         private ObjectSet<TBL_ModuloReclamos_CostosProducto> _tBL_ModuloReclamos_CostosProducto;
     
+        public IObjectSet<TBL_ModuloReclamos_DocumentosAnexoReclamo> TBL_ModuloReclamos_DocumentosAnexoReclamo
+        {
+            get { return _tBL_ModuloReclamos_DocumentosAnexoReclamo  ?? (_tBL_ModuloReclamos_DocumentosAnexoReclamo = CreateObjectSet<TBL_ModuloReclamos_DocumentosAnexoReclamo>("TBL_ModuloReclamos_DocumentosAnexoReclamo")); }
+        }
+        private ObjectSet<TBL_ModuloReclamos_DocumentosAnexoReclamo> _tBL_ModuloReclamos_DocumentosAnexoReclamo;
+    
         public IObjectSet<TBL_ModuloReclamos_LogReclamos> TBL_ModuloReclamos_LogReclamos
         {
             get { return _tBL_ModuloReclamos_LogReclamos  ?? (_tBL_ModuloReclamos_LogReclamos = CreateObjectSet<TBL_ModuloReclamos_LogReclamos>("TBL_ModuloReclamos_LogReclamos")); }

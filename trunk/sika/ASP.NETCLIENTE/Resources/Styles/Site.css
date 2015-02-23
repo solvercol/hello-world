@@ -496,6 +496,22 @@ a
     margin-top:60px;
 }
 
+#errorarea
+{
+    -moz-border-radius: 16px;
+    -webkit-border-radius: 16px;
+    background-color: #fff;
+    border: 0px solid #999;    
+    
+   /* -moz-box-shadow: 0px 16px 64px #ccc;
+	-webkit-box-shadow: 0px 16px 64px #ccc;
+	box-shadow: 0px 16px 64px #ccc;*/
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=180, Color='#666666')";
+	/* For IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=180, Color='#666666');
+}
+
 #loginarea
 {
     -moz-border-radius: 16px;

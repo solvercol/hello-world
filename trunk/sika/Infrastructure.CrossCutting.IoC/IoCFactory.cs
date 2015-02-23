@@ -27,6 +27,8 @@ using Infrastructure.Data.MainModule.UnitOfWork;
 using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.InterceptionExtension;
 using Infraestructure.CrossCutting.NetCommunication;
+using Application.MainModule.Documentos.IServices;
+using Application.MainModule.Documentos.Services;
 
 namespace Infrastructure.CrossCutting.IoC
 {
@@ -139,6 +141,7 @@ namespace Infrastructure.CrossCutting.IoC
             #endregion
           
             #region Servicios Transversales
+            container.RegisterType<IReclamoMailService, ReclamoMailService>(new TransientLifetimeManager());
             container.RegisterType<IAutentication, AutenticationServices>(new TransientLifetimeManager());
             container.RegisterType<IEmailService, DefaultEmailService>(new TransientLifetimeManager());
             container.RegisterType<IEmailTemplateEngine, SimpleEmailTemplateEngine>(new TransientLifetimeManager());

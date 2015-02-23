@@ -7,46 +7,91 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Modules.Documentos.Consulta {
+namespace Modules.Reclamos.UserControls {
     
     
-    public partial class FrmVerHistDocumento {
+    public partial class WuCAdminDocumentosAnexoReclamo {
         
         /// <summary>
-        /// btnRegresar control.
+        /// ddlCategoria control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegresar;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCategoria;
         
         /// <summary>
-        /// LblTitulo control.
+        /// btnAddDocumento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblTitulo;
+        protected global::System.Web.UI.WebControls.Button btnAddDocumento;
         
         /// <summary>
-        /// lblVersionTitle control.
+        /// pnlContainerAnexosList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblVersionTitle;
+        protected global::System.Web.UI.WebControls.Panel pnlContainerAnexosList;
         
         /// <summary>
-        /// lblVersion control.
+        /// rptAnexosList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblVersion;
+        protected global::System.Web.UI.WebControls.Repeater rptAnexosList;
+        
+        /// <summary>
+        /// upModal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upModal;
+        
+        /// <summary>
+        /// pnlAdminAnexos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlAdminAnexos;
+        
+        /// <summary>
+        /// btnCancelarAnexo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancelarAnexo;
+        
+        /// <summary>
+        /// btnSaveAnexo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSaveAnexo;
+        
+        /// <summary>
+        /// vsAnexos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary vsAnexos;
         
         /// <summary>
         /// txtTitulo control.
@@ -55,96 +100,51 @@ namespace Modules.Documentos.Consulta {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtTitulo;
+        protected global::System.Web.UI.WebControls.TextBox txtTitulo;
         
         /// <summary>
-        /// lblEstado control.
+        /// txtDescripcion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEstado;
+        protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
         
         /// <summary>
-        /// txtCategoria control.
+        /// ddlCategoriaDocumento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtCategoria;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCategoriaDocumento;
         
         /// <summary>
-        /// txtSubCategoria control.
+        /// fupAnexoArchivo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtSubCategoria;
+        protected global::System.Web.UI.WebControls.FileUpload fupAnexoArchivo;
         
         /// <summary>
-        /// txtTipoDocumento control.
+        /// btnPopUpAdminAnexosTargetControl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtTipoDocumento;
+        protected global::System.Web.UI.WebControls.Button btnPopUpAdminAnexosTargetControl;
         
         /// <summary>
-        /// txtResponsableDoc control.
+        /// mpeAdminAnexos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtResponsableDoc;
-        
-        /// <summary>
-        /// pnlDetalle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlDetalle;
-        
-        /// <summary>
-        /// pnlContainer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlContainer;
-        
-        /// <summary>
-        /// rptAdjuntos control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptAdjuntos;
-        
-        /// <summary>
-        /// HdfIdDocumento control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HdfIdDocumento;
-        
-        /// <summary>
-        /// lblLogInfo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLogInfo;
+        protected global::AjaxControlToolkit.ModalPopupExtender mpeAdminAnexos;
     }
 }

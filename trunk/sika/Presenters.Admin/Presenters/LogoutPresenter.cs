@@ -20,6 +20,8 @@ namespace Presenters.Admin.Presenters
 
         private void LoadData()
         {
+            if (View.UserSession == null) return;
+
             View.User = View.UserSession.Nombres;
             View.Role = View.UserSession.TBL_Admin_Roles.Select(x => x.NombreRol).FirstOrDefault();
         }

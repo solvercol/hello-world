@@ -20,6 +20,24 @@
     <asp:Literal ID="JavaScripts" runat="server" />
    <script language="javascript" type="text/javascript">
        javascript: window.history.forward(1);      
+    </script>
+
+    <script language="javascript" type="text/javascript">
+        //El nombre del controlador que mantiene la sesión
+        var rootPath = 'http://localhost:8081/sikadev/';
+        var CONTROLADOR = rootPath + "Pages/Handlers/MantenerSesion.ashx";
+
+         //Ejecuta el script en segundo plano evitando así que caduque la sesión de esta página
+         function MantenSesion() {
+             var head = document.getElementsByTagName('head').item(0);
+             script = document.createElement('script');
+             script.src = CONTROLADOR;
+             script.setAttribute('type', 'text/javascript');
+             script.defer = true;
+             head.appendChild(script);
+         } 
+
+         setInterval("MantenSesion()", 360000);
     </script> 
         
 </head>
@@ -44,7 +62,7 @@
                         <div class="logo">
                         </div>
                         <div class="PageAppTitle">
-                            SISTEMA DE GESTIÓN DE CALIDAD
+                            SISTEMA DE GESTIÓN INTEGRAL
                         </div>
                         
                     </div>                    

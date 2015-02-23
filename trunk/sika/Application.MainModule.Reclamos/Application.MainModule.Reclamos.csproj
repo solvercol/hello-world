@@ -52,6 +52,7 @@
     <Compile Include="IServices\ITBLModuloReclamosCategoriasReclamoManagementServices.cs" />
     <Compile Include="IServices\ITBLModuloReclamosComentariosRespuestaManagementServices.cs" />
     <Compile Include="IServices\ITBLModuloReclamosCostosProductoManagementServices.cs" />
+    <Compile Include="IServices\ITBLModuloReclamosDocumentosAnexoReclamoManagementServices.cs" />
     <Compile Include="IServices\ITBLModuloReclamosLogReclamosManagementServices.cs" />
     <Compile Include="IServices\ITBLModuloReclamosReclamoManagementServices.cs" />
     <Compile Include="IServices\ITBLModuloReclamosSolucionesManagementServices.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Services\TBLModuloReclamosCategoriasReclamoManagementServices.cs" />
     <Compile Include="Services\TBLModuloReclamosComentariosRespuestaManagementServices.cs" />
     <Compile Include="Services\TBLModuloReclamosCostosProductoManagementServices.cs" />
+    <Compile Include="Services\TBLModuloReclamosDocumentosAnexoReclamoManagementServices.cs" />
     <Compile Include="Services\TBLModuloReclamosLogReclamosManagementServices.cs" />
     <Compile Include="Services\TBLModuloReclamosReclamoManagementServices.cs" />
     <Compile Include="Services\TBLModuloReclamosSolucionesManagementServices.cs" />
