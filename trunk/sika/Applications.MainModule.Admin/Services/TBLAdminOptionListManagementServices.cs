@@ -146,13 +146,13 @@ namespace Applications.MainModule.Admin.Services
                         u.Value.Contains(search) ||
                         u.Descripcion.Contains(search)));
 
-
+                 onlyEnabledSpec &= new DirectSpecification<TBL_Admin_OptionList>(u => u.IsActive);
                  return _tblAdminOptionListRepository.GetPagedElements(pageIndex, pageCount, u => u.IdOpcion, onlyEnabledSpec, true).ToList();
              }
              else
              {
                  Specification<TBL_Admin_OptionList> onlyEnabledSpec = new DirectSpecification<TBL_Admin_OptionList>(u => u.IdOpcion != null);
-
+                 onlyEnabledSpec &= new DirectSpecification<TBL_Admin_OptionList>(u => u.IsActive);
                  return _tblAdminOptionListRepository.GetPagedElements(pageIndex, pageCount, u => u.IdOpcion,onlyEnabledSpec, true).ToList();
              }
          }
@@ -167,11 +167,14 @@ namespace Applications.MainModule.Admin.Services
                                (u.Key.Contains(search) ||
                                u.Value.Contains(search) ||
                                u.Descripcion.Contains(search)));
+                 onlyEnabledSpec &= new DirectSpecification<TBL_Admin_OptionList>(u => u.IsActive);
+
                  return _tblAdminOptionListRepository.GetBySpec(onlyEnabledSpec).Count();
              }
              else
              {
                  Specification<TBL_Admin_OptionList> onlyEnabledSpec = new DirectSpecification<TBL_Admin_OptionList>(u => u.IdOpcion != null);
+                 onlyEnabledSpec &= new DirectSpecification<TBL_Admin_OptionList>(u => u.IsActive);
 
                  return _tblAdminOptionListRepository.GetBySpec(onlyEnabledSpec).Count();
              }

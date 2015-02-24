@@ -206,7 +206,11 @@ namespace ASP.NETCLIENTE.UI
 
         protected TBL_Admin_Usuarios AuthenticatedUser
         {
-            get { return ((TBL_Admin_Usuarios)HttpContext.Current.User.Identity); }
+            get
+            {
+                return ((TBL_Admin_Usuarios)HttpContext.Current.User.Identity);
+                //return ((TBL_Admin_Usuarios)HttpContext.Current.Session["Main_AuthenticatedUser"]);
+            }
         }
 
         protected string GetBaseQueryString()
