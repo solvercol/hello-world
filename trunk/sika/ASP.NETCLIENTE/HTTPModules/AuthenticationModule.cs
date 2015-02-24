@@ -7,11 +7,18 @@ using Infraestructure.CrossCutting.Security.Security;
 using Infrastructure.CrossCutting;
 using Infrastructure.CrossCutting.IoC;
 using Infrastructure.CrossCutting.Logging;
+using System.Configuration;
 
 namespace ASP.NETCLIENTE.HTTPModules
 {
     public class AuthenticationModule : IHttpModule
     {
+        #region Members
+
+        string AutenticationType = ConfigurationManager.AppSettings.Get("tipoAutenticacion");
+
+        #endregion
+
         private ITraceManager _traceManager;
         private ISfTBL_Admin_UsuariosManagementServices _iAutentication;
 
@@ -59,25 +66,44 @@ namespace ASP.NETCLIENTE.HTTPModules
 
             if (app.Context.User != null && app.Context.User.Identity.IsAuthenticated)
             {
-                //_traceManager.LogInfo("ContextAuthenticateRequest : " + app.Context.User.Identity.Name,
-                //                        LogType.Notify);
-                if (string.IsNullOrEmpty(app.Context.User.Identity.Name)) return;
-                if (IsNumeric(app.Context.User.Identity.Name))
+                if (AutenticationType == "1")
                 {
-                    var userId = app.Context.User.Identity.Name;
-                    //var userId = app.Context.User.Identity.Name;
-                    var solutionFrameworkUser = _iAutentication.FindById(Convert.ToInt32(userId));
-                    if (solutionFrameworkUser != null)
+                    //_traceManager.LogInfo("ContextAuthenticateRequest : " + app.Context.User.Identity.Name,
+                    //                        LogType.Notify);
+                    if (string.IsNullOrEmpty(app.Context.User.Identity.Name)) return;
+                    if (IsNumeric(app.Context.User.Identity.Name))
                     {
-                        solutionFrameworkUser.IsAuthenticated = true;
-                        app.Context.User = new SolutionFrameworkPrincipal(solutionFrameworkUser);
-                    }
-                    else
-                    {
-                        FormsAuthentication.SignOut();
-                        HttpContext.Current.Server.Transfer("~/FrmError.aspx?error=402");
+                        var userId = app.Context.User.Identity.Name;
+                        //var userId = app.Context.User.Identity.Name;
+                        var solutionFrameworkUser = _iAutentication.FindById(Convert.ToInt32(userId));
+                        if (solutionFrameworkUser != null)
+                        {
+                            solutionFrameworkUser.IsAuthenticated = true;
+                            app.Context.User = new SolutionFrameworkPrincipal(solutionFrameworkUser);
+                        }
+                        else
+                        {
+                            FormsAuthentication.SignOut();
+                            HttpContext.Current.Server.Transfer("~/FrmError.aspx?error=402");
+                        }
                     }
                 }
+            }
+
+            if (AutenticationType == "0")
+            {
+                var userWc = ConfigurationManager.AppSettings.Get("UsuarioAplicacion");
+                var userApplication = "";
+                if (System.Security.Principal.WindowsIdentity.GetCurrent().Name.Contains(@"\"))
+                {
+                    userApplication = !string.IsNullOrEmpty(userWc) ? userWc : System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\')[1];
+                }
+                else
+                {
+                    userApplication = !string.IsNullOrEmpty(userWc) ? userWc : System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+                }
+
+                AuthenticateUser(userApplication);
             }
         }
 
@@ -99,7 +125,6 @@ namespace ASP.NETCLIENTE.HTTPModules
 
             try
             {
-
                 var user = _iAutentication.GetUserByCredential(username.Trim(), password.Trim());
                 if (user != null)
                 {
@@ -119,8 +144,15 @@ namespace ASP.NETCLIENTE.HTTPModules
                     _iAutentication.Modify(user);
                     // Create the authentication ticket
                     HttpContext.Current.User = new SolutionFrameworkPrincipal(user);
+<<<<<<< .mine
+                    
+                    if (HttpContext.Current.Session != null)
+                        HttpContext.Current.Session["Main_AuthenticatedUser"] = user;
+                    FormsAuthentication.SetAuthCookie(user.IdUser.ToString(), true);
+=======
                     HttpContext.Current.Session["Main_AuthenticatedUser"] = user;
                     FormsAuthentication.SetAuthCookie(user.UserName, false);
+>>>>>>> .r251
 
                     return true;
                 }
@@ -142,6 +174,30 @@ namespace ASP.NETCLIENTE.HTTPModules
 
             try
             {
+<<<<<<< .mine
+                var user = _iAutentication.GetUserByCredential(codigo);
+                if (user != null)
+                {
+                    if (!user.IsActive)
+                    {
+                        _traceManager.LogInfo(string.Format(CultureInfo.InvariantCulture,
+                                        "El usuario {0} intento ingresar estando inactivo.",
+                                        user.Nombres),
+                                        LogType.Notify);
+                        HttpContext.Current.Server.Transfer("~/FrmError.aspx?error=402");
+                    }
+                    user.IsAuthenticated = true;
+                    var currentIp = HttpContext.Current.Request.UserHostAddress;
+                    user.lastlogin = DateTime.Now;
+                    user.lastip = currentIp;
+                    // Save login date and IP
+                    _iAutentication.Modify(user);
+                    // Create the authentication ticket
+                    HttpContext.Current.User = new SolutionFrameworkPrincipal(user);
+                    if (HttpContext.Current.Session != null)
+                        HttpContext.Current.Session["Main_AuthenticatedUser"] = user;
+                    FormsAuthentication.SetAuthCookie(user.IdUser.ToString(), true);
+=======
                 var user = _iAutentication.GetUserByCredential(codigo);
                 if (user != null)
                 {
@@ -164,11 +220,19 @@ namespace ASP.NETCLIENTE.HTTPModules
                     HttpContext.Current.Session["Main_AuthenticatedUser"] = user;
                     FormsAuthentication.SetAuthCookie(user.UserName, false);
 
+>>>>>>> .r251
                     return true;
+<<<<<<< .mine
+                }
+                else
+                _traceManager.LogInfo(String.Format("Código de Usuario no válido: {0}.", codigo), LogType.Notify);
+                HttpContext.Current.Server.Transfer("~/FrmError.aspx?error=402");                
+=======
                 }
                 _traceManager.LogInfo(String.Format("Código de Usuario no válido: {0}.", codigo), LogType.Notify);
                 HttpContext.Current.Server.Transfer("~/FrmError.aspx?error=402");
                 return false;
+>>>>>>> .r251
             }
             catch (Exception ex)
             {
@@ -176,7 +240,7 @@ namespace ASP.NETCLIENTE.HTTPModules
                 return false;
             }
 
-            //return true;
+            return false;
         }
 
         /// <summary>
