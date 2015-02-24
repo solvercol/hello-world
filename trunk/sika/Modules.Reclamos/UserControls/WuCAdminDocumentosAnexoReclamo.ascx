@@ -47,6 +47,7 @@
                         <ItemTemplate>
                             <tr class="Normal">
                                 <td style="text-align:center;width:3%;vertical-align:top ">
+                                    <asp:ImageButton ID="btnImgeAnexoReclamo" runat="server" Width="15px" Height="15px" OnClick="BtnImgeAnexoReclamo_Click" />
                                 </td>                                    
                                 <td style="text-align:left;width:12%;vertical-align:top">
                                     <asp:Label ID="lblTitulo" runat="server" />
@@ -70,7 +71,8 @@
                         </ItemTemplate>
                         <AlternatingItemTemplate>
                             <tr class="Alternative">
-                               <td style="text-align:center;width:3%;vertical-align:top ">
+                                <td style="text-align:center;width:3%;vertical-align:top ">
+                                    <asp:ImageButton ID="btnImgeAnexoReclamo" runat="server" Width="15px" Height="15px" OnClick="BtnImgeAnexoReclamo_Click" />
                                 </td>                                    
                                 <td style="text-align:left;width:12%;vertical-align:top">
                                     <asp:Label ID="lblTitulo" runat="server" />
