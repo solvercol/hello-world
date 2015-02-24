@@ -15,6 +15,7 @@ using Microsoft.Practices.Unity;
 using Infrastructure.CrossCutting.NetFramework.Util;
 using Domain.MainModules.Entities;
 using System.Text.RegularExpressions;
+using ASP.NETCLIENTE.HTTPModules;
 
 namespace ASP.NETCLIENTE.UI
 {
@@ -22,6 +23,11 @@ namespace ASP.NETCLIENTE.UI
         where TPresenter : Presenter<TView>
         where TView : class
     {
+        #region Members
+
+        string AutenticationType = ConfigurationManager.AppSettings.Get("tipoAutenticacion");
+
+        #endregion
 
         #region Eventos
 
@@ -63,6 +69,9 @@ namespace ASP.NETCLIENTE.UI
         {
             base.OnInit(e);
             LoadModule();
+
+            if (AuthenticatedUser == null && AutenticationType.Equals("0"))
+                AutenticarUsuarioWinIdentity();
         }
 
         private void LoadModule()
@@ -208,8 +217,11 @@ namespace ASP.NETCLIENTE.UI
         {
             get
             {
-                return ((TBL_Admin_Usuarios)HttpContext.Current.User.Identity);
-                //return ((TBL_Admin_Usuarios)HttpContext.Current.Session["Main_AuthenticatedUser"]);
+                if (AutenticationType == "0")
+                    return ((TBL_Admin_Usuarios)HttpContext.Current.Session["Main_AuthenticatedUser"]);
+                else
+                    return ((TBL_Admin_Usuarios)HttpContext.Current.User.Identity);
+                
             }
         }
 
@@ -237,6 +249,39 @@ namespace ASP.NETCLIENTE.UI
         #endregion
 
         #region Metodos
+
+        void AutenticarUsuarioWinIdentity()
+        {
+
+            var am = (AuthenticationModule)Context.ApplicationInstance.Modules["AuthenticationModule"];
+            var userApplication = "";
+            var userWc = ConfigurationManager.AppSettings.Get("UsuarioAplicacion");
+
+            if (AutenticationType.Equals("1"))
+            {
+                if (Context.User.Identity.Name.Contains(@"\"))
+                {
+                    userApplication = !string.IsNullOrEmpty(userWc) ? userWc : Context.User.Identity.Name.Split('\\')[1];
+                }
+                else
+                {
+                    userApplication = !string.IsNullOrEmpty(userWc) ? userWc : Context.User.Identity.Name;
+                }
+            }
+            else
+            {
+                if (System.Security.Principal.WindowsIdentity.GetCurrent().Name.Contains(@"\"))
+                {
+                    userApplication = !string.IsNullOrEmpty(userWc) ? userWc : System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\')[1];
+                }
+                else
+                {
+                    userApplication = !string.IsNullOrEmpty(userWc) ? userWc : System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+                }
+            }
+
+            am.AuthenticateUser(userApplication);
+        }
 
 
         /// <summary>
