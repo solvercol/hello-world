@@ -79,6 +79,17 @@ namespace Modules.Reclamos.UserControls
             DownloadDocument(archivo.Archivo, archivo.NombreArchivo, "application/octet-stream");
         }
 
+        protected void BtnImgeAnexoReclamo_Click(object sender, EventArgs e)
+        {
+            var btn = (ImageButton)sender;
+
+            var IdArchivo = btn.CommandArgument;
+
+            var archivo = Presenter.GetAnexoDoumento(Guid.Parse(IdArchivo));
+
+            DownloadDocument(archivo.Archivo, archivo.NombreArchivo, "application/octet-stream");
+        }
+
         #endregion
 
         #region DropDownList
@@ -123,6 +134,17 @@ namespace Modules.Reclamos.UserControls
 
                     ScriptManager scriptManager = ScriptManager.GetCurrent(this.Page);
                     scriptManager.RegisterPostBackControl(btnDownLoadFile);
+                }
+
+                var btnImgeAnexoReclamo = e.Item.FindControl("btnImgeAnexoReclamo") as ImageButton;
+                if (btnImgeAnexoReclamo != null)
+                {
+                    btnImgeAnexoReclamo.ToolTip = string.Format("{0}", item.NombreArchivo);
+                    btnImgeAnexoReclamo.ImageUrl = IconoPlantilla(item.NombreArchivo);
+                    btnImgeAnexoReclamo.CommandArgument = string.Format("{0}", item.IdDocumentoReclamo);
+
+                    ScriptManager scriptManager = ScriptManager.GetCurrent(this.Page);
+                    scriptManager.RegisterPostBackControl(btnImgeAnexoReclamo);
                 }
             }
         }

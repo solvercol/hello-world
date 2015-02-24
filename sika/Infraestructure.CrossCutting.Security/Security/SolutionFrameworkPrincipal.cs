@@ -14,12 +14,12 @@ namespace Infraestructure.CrossCutting.Security.Security
         {
             if (user != null && user.IsAuthenticated)
             {
-                _user = user;
+                _user = user;                
             }
             else
             {
                 throw new SecurityException("No se puede crear un usuario Valido.");
-            }
+            }            
         }
 
         public TBL_Admin_Usuarios GetUser
