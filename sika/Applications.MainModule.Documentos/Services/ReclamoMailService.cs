@@ -86,7 +86,7 @@ namespace Application.MainModule.Documentos.Services
             _iMailHelper.SMTP_From = ConfigurationManager.AppSettings.Get("mailFrom");
             _iMailHelper.SMTP_Subject = string.Format("{0}", opSubject.Value);
             _iMailHelper.SMTP_Body = body;
-            _iMailHelper.SMTP_To = new string[] { opMailTo.Value };
+            _iMailHelper.SMTP_To = opMailTo.Value.Split('|');
 
             try
             {
