@@ -11,6 +11,11 @@ namespace ASP.NETCLIENTE
 {
     public partial class Login : Page
     {
+        #region Members
+
+        string AutenticationType = ConfigurationManager.AppSettings.Get("tipoAutenticacion");
+
+        #endregion
        
         private ITraceManager _traceManager;
 
@@ -23,7 +28,8 @@ namespace ASP.NETCLIENTE
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Test();
+            if (AutenticationType == "0")
+                Test();
         }
 
         private void AutenticarUsuario()
@@ -85,11 +91,11 @@ namespace ASP.NETCLIENTE
                     userApplication = !string.IsNullOrEmpty(userWc) ? userWc : System.Security.Principal.WindowsIdentity.GetCurrent().Name;
                 }
             }
-
-            Response.Write(userApplication);
+            
+            AutenticarUsuarioWinIdentity();
         }
 
-        private void AutenticarUsuarioWinIDentity()
+        private void AutenticarUsuarioWinIdentity()
         {
 
             var am = (AuthenticationModule)Context.ApplicationInstance.Modules["AuthenticationModule"];
