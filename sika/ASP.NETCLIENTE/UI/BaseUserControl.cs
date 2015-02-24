@@ -5,11 +5,17 @@ using Application.Core;
 using Domain.MainModules.Entities;
 using Infrastructure.CrossCutting;
 using log4net;
+using System.Configuration;
 
 namespace ASP.NETCLIENTE.UI
 {
     public class BaseUserControl : UserControl, IBaseUserControl
     {
+        #region Members
+
+        string AutenticationType = ConfigurationManager.AppSettings.Get("tipoAutenticacion");
+
+        #endregion
 
         private ModuleBase _module;
 
@@ -51,7 +57,7 @@ namespace ASP.NETCLIENTE.UI
 
         #region Log
 
-        private const string ApplicationName = "Empacor";
+        private const string ApplicationName = "SIKA";
 
         private static readonly ILog Logger = LogManager.GetLogger(ApplicationName);
 
@@ -119,12 +125,14 @@ namespace ASP.NETCLIENTE.UI
             get { return Request.QueryString["ModuleId"]; }
         }
 
-        protected static TBL_Admin_Usuarios AuthenticatedUser
+        protected TBL_Admin_Usuarios AuthenticatedUser
         {
             get
             {
-                return ((TBL_Admin_Usuarios)HttpContext.Current.User.Identity);
-                //return ((TBL_Admin_Usuarios)HttpContext.Current.Session["Main_AuthenticatedUser"]);
+                if (AutenticationType == "0")
+                    return ((TBL_Admin_Usuarios)HttpContext.Current.Session["Main_AuthenticatedUser"]);
+                else
+                    return ((TBL_Admin_Usuarios)HttpContext.Current.User.Identity);
             }
         }
 

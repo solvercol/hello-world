@@ -24,6 +24,8 @@ namespace ASP.NETCLIENTE.UI
         private const string ApplicationName = "Sika";
         private static readonly ILog Logger = LogManager.GetLogger(ApplicationName);
 
+        string AutenticationType = ConfigurationManager.AppSettings.Get("tipoAutenticacion");
+
         private Literal TitulosVentana
         {
             get { return Page.Master != null ? Page.Master.FindControl("PageTitleLabel") as Literal : null; }
@@ -47,7 +49,8 @@ namespace ASP.NETCLIENTE.UI
         {
             try
             {
-                //AuthenticateUser();
+                if (AuthenticatedUser == null && AutenticationType.Equals("0"))
+                    AuthenticateUser();
             }
             catch (Exception ex)
             {
