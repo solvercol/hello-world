@@ -128,6 +128,16 @@ namespace Presenters.Documentos.Presenters
             View.Estado = "BORRADOR";
         }
 
+        bool ContainsResponsable(List<DTO_ValueKey> list, string key)
+        {
+            foreach (var itm in list)
+            {
+                if (itm.Id == key)
+                    return true;
+            }
+            return false;
+        }
+
         private void Responsables()
         {
             try
@@ -137,10 +147,12 @@ namespace Presenters.Documentos.Presenters
 
                 if (op != null)
                 {
-                    var split = op.Value.Split('|');
+                    var split = op.Value.Split('|').Distinct();
 
                     foreach (var s in split)
                     {
+                        //if (!ContainsResponsable(responsables, s))
+                        //    responsables.Add(new DTO_ValueKey() { Id = s, Value = s });
                         responsables.Add(new DTO_ValueKey() { Id = s, Value = s });
                     }
                 }
