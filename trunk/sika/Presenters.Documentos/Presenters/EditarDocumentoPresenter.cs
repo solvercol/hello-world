@@ -403,13 +403,15 @@ namespace Presenters.Documentos.Presenters
 
                 GuardarLog(oDocumento, null, string.Format("El usuario: {0}, agregó archivo adjunto", View.UserSession.Nombres));
 
-                LoadArchivosAdjuntos();
+                
             }
             catch (Exception ex)
             {
                 CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
                 InvokeMessageBox(new MessageBoxEventArgs(Message.SaveError, TypeError.Error));
             }
+
+            LoadArchivosAdjuntos();
         }
 
         private int GuardarCategoria(int nivel,string nombre)
@@ -621,6 +623,8 @@ namespace Presenters.Documentos.Presenters
                 CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
                 InvokeMessageBox(new MessageBoxEventArgs(string.Format(Message.DeleteError, "Actividad"), TypeError.Error));
             }
+
+            LoadArchivosAdjuntos();
         }
 
         private void LimpiarVista()

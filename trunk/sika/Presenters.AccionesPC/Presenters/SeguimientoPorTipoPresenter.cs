@@ -7,6 +7,7 @@ using Application.MainModule.AccionesPC.IServices;
 using Application.MainModule.SqlServices.IServices;
 using Infrastructure.CrossCutting.NetFramework.Enums;
 using Presenters.AccionesPC.IViews;
+using Applications.MainModule.Admin.IServices;
 
 namespace Presenters.AccionesPC.Presenters
 {
@@ -14,11 +15,13 @@ namespace Presenters.AccionesPC.Presenters
     {
         readonly ISfTBL_ModuloAPC_AreasManagementServices _areasService;
         readonly ISolicitudesAPCAdoService _solicitudesAdoService;
+        readonly ISfTBL_Admin_OptionListManagementServices _optionListService;
 
-        public SeguimientoPorTipoPresenter(ISfTBL_ModuloAPC_AreasManagementServices areasService, ISolicitudesAPCAdoService solicitudesAdoService)
+        public SeguimientoPorTipoPresenter(ISfTBL_ModuloAPC_AreasManagementServices areasService, ISolicitudesAPCAdoService solicitudesAdoService, ISfTBL_Admin_OptionListManagementServices optionListService)
         {
             _areasService = areasService;
             _solicitudesAdoService = solicitudesAdoService;
+            _optionListService = optionListService;
         }
 
         public override void SubscribeViewToEvents()
@@ -30,15 +33,32 @@ namespace Presenters.AccionesPC.Presenters
         {
             if (View.IsPostBack) return;
             InitViewValues();
+            LoadInitDate();
             LoadAreasAccion();
             LoadView();
         }
 
         void InitViewValues()
         {
-            View.FechaFilterFrom = new DateTime(DateTime.Now.Year, 1, 1);
             View.FechaFilterTo = new DateTime(DateTime.Now.Year, 12, 31);
             View.FilterNoSolicitud = string.Empty;
+        }
+
+        void LoadInitDate()
+        {
+            try
+            {
+                var op = _optionListService.ObtenerOpcionBykeyModuleId("FechaInitVistas", Convert.ToInt32(View.IdModule));
+
+                if (op != null)
+                {
+                    View.FechaFilterFrom = Convert.ToDateTime(op.Value);
+                }
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
         }
 
         void LoadAreasAccion()

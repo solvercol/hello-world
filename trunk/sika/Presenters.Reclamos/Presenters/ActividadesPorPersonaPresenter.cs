@@ -4,16 +4,19 @@ using Application.Core;
 using Application.MainModule.SqlServices.IServices;
 using Infrastructure.CrossCutting.NetFramework.Enums;
 using Presenters.Reclamos.IViews;
+using Applications.MainModule.Admin.IServices;
 
 namespace Presenters.Reclamos.Presenters
 {
     public class ActividadesPorPersonaPresenter : Presenter<IActividadesPorPersonaView>
     {
         readonly IReclamosAdoService _recladoAdoService;
+        readonly ISfTBL_Admin_OptionListManagementServices _optionListService;
 
-        public ActividadesPorPersonaPresenter(IReclamosAdoService recladoAdoService)
+        public ActividadesPorPersonaPresenter(IReclamosAdoService recladoAdoService, ISfTBL_Admin_OptionListManagementServices optionListService)
         {
             _recladoAdoService = recladoAdoService;
+            _optionListService = optionListService;
         }
 
         public override void SubscribeViewToEvents()
@@ -25,6 +28,7 @@ namespace Presenters.Reclamos.Presenters
         {
             if (View.IsPostBack) return;
             LoadInitView();
+            LoadInitDate();
             LoadReport();
         }
 
@@ -32,8 +36,24 @@ namespace Presenters.Reclamos.Presenters
 
         void LoadInitView()
         {
-            View.FechaFilterFrom = new DateTime(DateTime.Now.Year, 1, 1);
             View.FechaFilterTo = new DateTime(DateTime.Now.Year, 12, 31);
+        }
+
+        void LoadInitDate()
+        {
+            try
+            {
+                var op = _optionListService.ObtenerOpcionBykeyModuleId("FechaInitVistas", Convert.ToInt32(View.IdModule));
+
+                if (op != null)
+                {
+                    View.FechaFilterFrom = Convert.ToDateTime(op.Value);
+                }
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
         }
 
         public void LoadReport()

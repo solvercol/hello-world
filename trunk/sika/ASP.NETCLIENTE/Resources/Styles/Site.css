@@ -1011,6 +1011,7 @@ table.tblBuscador .Separador15
     color:#717581;
     height:23px;
     padding-left:18px;
+    z-index:90000;
 }
 
 .TextMenuStatic
