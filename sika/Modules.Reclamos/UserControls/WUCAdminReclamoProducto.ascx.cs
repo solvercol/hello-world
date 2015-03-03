@@ -101,6 +101,9 @@ namespace Modules.Reclamos.UserControls
                 return;
             }
 
+            if (string.IsNullOrEmpty(Planta))
+                messages.Add("Es necesario ingresar una planta.");
+
             if (string.IsNullOrEmpty(UnidadZona))
                 messages.Add("La unidad y zona del cliente son necesarios.");
 
@@ -226,6 +229,8 @@ namespace Modules.Reclamos.UserControls
             wddPlanta.DataTextField = "Id";
             wddPlanta.DataValueField = "Value";
             wddPlanta.DataBind();
+
+            wddPlanta.Items.Insert(0, new System.Web.UI.WebControls.ListItem(" ", ""));
         }
 
         public void SetSelectedProduct(Dto_Producto producto)

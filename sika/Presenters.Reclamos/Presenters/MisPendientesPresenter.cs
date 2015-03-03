@@ -35,6 +35,7 @@ namespace Presenters.Reclamos.Presenters
             if (View.IsPostBack) return;
             LoadCategoriasReclamo();
             LoadInitView();
+            LoadInitDate();
             LoadReport();
         }
 
@@ -42,9 +43,25 @@ namespace Presenters.Reclamos.Presenters
 
         void LoadInitView()
         {
-            View.FechaFilterFrom = new DateTime(DateTime.Now.Year, 1, 1);
             View.FechaFilterTo = new DateTime(DateTime.Now.Year, 12, 31);
             CheckRegiterReclamo();
+        }
+
+        void LoadInitDate()
+        {
+            try
+            {
+                var op = _optionListService.ObtenerOpcionBykeyModuleId("FechaInitVistas", Convert.ToInt32(View.IdModule));
+
+                if (op != null)
+                {
+                    View.FechaFilterFrom = Convert.ToDateTime(op.Value);
+                }
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
         }
 
         void CheckRegiterReclamo()
