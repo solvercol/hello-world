@@ -58,6 +58,15 @@ namespace Modules.Reclamos.UserControls {
         protected global::System.Web.UI.UpdatePanel upModal;
         
         /// <summary>
+        /// wdwAdminDocumentoAnexoReclamo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Infragistics.Web.UI.LayoutControls.WebDialogWindow wdwAdminDocumentoAnexoReclamo;
+        
+        /// <summary>
         /// pnlAdminAnexos control.
         /// </summary>
         /// <remarks>
@@ -128,23 +137,5 @@ namespace Modules.Reclamos.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload fupAnexoArchivo;
-        
-        /// <summary>
-        /// btnPopUpAdminAnexosTargetControl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPopUpAdminAnexosTargetControl;
-        
-        /// <summary>
-        /// mpeAdminAnexos control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.ModalPopupExtender mpeAdminAnexos;
     }
 }

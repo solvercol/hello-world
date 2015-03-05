@@ -16,6 +16,7 @@ using Infrastructure.CrossCutting.NetFramework.Util;
 using Domain.MainModules.Entities;
 using System.Text.RegularExpressions;
 using ASP.NETCLIENTE.HTTPModules;
+using Applications.MainModule.Admin.IServices;
 
 namespace ASP.NETCLIENTE.UI
 {
@@ -69,9 +70,33 @@ namespace ASP.NETCLIENTE.UI
         {
             base.OnInit(e);
             LoadModule();
+            SetMainAppTitle();
 
             if (AuthenticatedUser == null && AutenticationType.Equals("0"))
                 AutenticarUsuarioWinIdentity();
+        }
+
+        void SetMainAppTitle()
+        {
+            var opService = Container.Resolve<ISfTBL_Admin_OptionListManagementServices>();
+            var opMain = opService.ObtenerOpcionBykey("MainAppTitle");
+
+            if (opMain != null)
+            {
+                MainAppTitle.Text = opMain.Value;
+            }
+
+            if (!string.IsNullOrEmpty(ModuleId))
+            {
+                var title = string.Format("ModuleTitle_{0}", ModuleId);
+
+                opMain = opService.ObtenerOpcionBykey(title);
+
+                if (opMain != null)
+                {
+                    MainAppTitle.Text = opMain.Value;
+                }
+            }
         }
 
         private void LoadModule()
@@ -231,6 +256,11 @@ namespace ASP.NETCLIENTE.UI
         }
 
         protected static TPresenter Presenter { get; set; }
+
+        private Label MainAppTitle
+        {
+            get { return Master != null ? Master.FindControl("lblMainAppTitle") as Label : null; }
+        }
 
         private Literal TitulosVentana
         {

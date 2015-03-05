@@ -105,6 +105,24 @@ namespace Presenters.Reclamos.Presenters
             return null;
         }
 
+        public void LoadAnexoDocumento()
+        {
+            try
+            {
+                var documento = GetAnexoDoumento(Guid.Parse(View.IdDocumentoSelected));
+
+                View.Titulo = string.Format("{0}", documento.Titulo);
+                View.Descripcion = string.Format("{0}", documento.Descripcion);
+                View.CategoriaDocumento = string.Format("{0}", documento.Categoria);
+                View.IsNew = false;
+                View.ShowAdminDoc(true);
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
+        }
+
         public void SaveDocumento()
         {
             if (string.IsNullOrEmpty(View.IdReclamo)) return;
@@ -129,6 +147,39 @@ namespace Presenters.Reclamos.Presenters
                 _reclamoService.Modify(contrato);
 
                 LoadAnexos();
+
+                View.ShowAdminDoc(false);
+            }
+            catch (Exception ex)
+            {
+                CrearEntradaLogProcesamiento(new LogProcesamientoEventArgs(ex, MethodBase.GetCurrentMethod().Name, Logtype.Archivo));
+            }
+        }
+
+        public void UpdateDocumento()
+        {
+            if (string.IsNullOrEmpty(View.IdDocumentoSelected)) return;
+
+            try
+            {
+                var model = _anexosService.GetById(Guid.Parse(View.IdDocumentoSelected));
+
+                model.Titulo = View.Titulo;
+                model.Descripcion = View.Descripcion;
+                model.Categoria = View.CategoriaDocumento;
+                if (!string.IsNullOrEmpty(View.NombreArchivo))
+                {
+                    model.NombreArchivo = View.NombreArchivo;
+                    model.Archivo = View.ArchivoAnexo;
+                }
+                model.ModifiedBy = View.UserSession.IdUser;
+                model.ModifiedOn = DateTime.Now;
+                
+                _anexosService.Modify(model);
+                
+                LoadAnexos();
+
+                View.ShowAdminDoc(false);
             }
             catch (Exception ex)
             {

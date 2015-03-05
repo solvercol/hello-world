@@ -9,6 +9,10 @@ namespace Presenters.Reclamos.IViews
     {
         string IdReclamo { get; }
 
+        bool IsNew { get; set; }
+
+        string IdDocumentoSelected { get; set; }
+
         string Categoria { get; set; }
         string CategoriaDocumento { get; set; }
         string Titulo { get; set; }
@@ -17,5 +21,6 @@ namespace Presenters.Reclamos.IViews
         byte[] ArchivoAnexo { get; }
         void LoadCategorias(List<DTO_ValueKey> items);
         void LoadAnexos(List<TBL_ModuloReclamos_DocumentosAnexoReclamo> items);
+        void ShowAdminDoc(bool visible);
     }
 }
