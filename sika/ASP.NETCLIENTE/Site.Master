@@ -62,7 +62,7 @@
                         <div class="logo">
                         </div>
                         <div class="PageAppTitle">
-                            SISTEMA DE GESTIÓN INTEGRAL
+                            <asp:Label ID="lblMainAppTitle" runat="server" Text="SISTEMA DE GESTIÓN INTEGRAL" />                            
                         </div>
                         
                     </div>                    

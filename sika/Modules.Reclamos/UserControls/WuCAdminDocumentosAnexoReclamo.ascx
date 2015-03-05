@@ -1,6 +1,8 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WuCAdminDocumentosAnexoReclamo.ascx.cs" Inherits="Modules.Reclamos.UserControls.WuCAdminDocumentosAnexoReclamo" %>
 
 <%@ Register    Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+<%@ Register Assembly="Infragistics4.Web.v11.1, Version=11.1.20111.2238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb"
+    Namespace="Infragistics.Web.UI.LayoutControls" TagPrefix="ig" %>
 
 <table width="100%">
     <tr>
@@ -106,7 +108,28 @@
         <script type="text/javascript" language="javascript">
             Sys.Application.add_load(RebindScripts);
         </script>
-        <asp:Panel ID="pnlAdminAnexos"  runat="server" CssClass="popup_Container" Width="530" Height="470" style="display:none;">  
+
+         <ig:WebDialogWindow 
+            ID="wdwAdminDocumentoAnexoReclamo" 
+            runat="server" 
+            CssClass="WebDialogWindowStyle" 
+            Height="470px"
+            Width="530px" 
+            InitialLocation="Centered" 
+            MaintainLocationOnScroll="True" 
+            Modal="True" 
+            Moveable="true"
+            Left="0px"
+            Top="0px" 
+            ModalBackgroundCssClass="ModalWebDialogWindowStyle" 
+            WindowState="Hidden">
+            <Header>
+                <CloseBox Visible="true" />
+            </Header>
+            <ContentPane>
+                <Template> 
+
+        <asp:Panel ID="pnlAdminAnexos"  runat="server" CssClass="popup_Container"  Width="97%">  
 
             <div class="popup_Titlebar" id="PopupHeader">
                 <div class="TitlebarLeft">
@@ -117,7 +140,7 @@
             </div>
 
             <div style="padding:3px; text-align:right;">
-                <asp:Button ID="btnCancelarAnexo" runat="server" Text="Regresar"  />
+                <asp:Button ID="btnCancelarAnexo" runat="server" Text="Regresar" OnClick="BtnCancelarAnexo_Click" />
                 <asp:Button ID="btnSaveAnexo" runat="server" Text="Guardar Documento" OnClick="BtnSaveDocumento_Click"  />
             </div>
 
@@ -181,19 +204,11 @@
                 </table>
             </div>
         </asp:Panel>
-    
-        <asp:Button ID="btnPopUpAdminAnexosTargetControl" runat="server" style="display:none; "/>    
 
-        <ajaxToolkit:ModalPopupExtender 
-                    ID="mpeAdminAnexos" 
-                    runat="server" 
-                    TargetControlID="btnPopUpAdminAnexosTargetControl" 
-                    PopupControlID="pnlAdminAnexos" 
-                    BackgroundCssClass="ModalPopupBG" DropShadow="true"
-                    cancelcontrolid="divCloseAdminAnexos"> 
-        </ajaxToolkit:ModalPopupExtender>
+        </Template>
+            </ContentPane>
+        </ig:WebDialogWindow>    
     </ContentTemplate>
     <Triggers>
-        <asp:PostBackTrigger ControlID="btnSaveAnexo" />
     </Triggers>
 </asp:UpdatePanel>

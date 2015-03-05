@@ -9,6 +9,7 @@ using Presenters.Reclamos.IViews;
 using Presenters.Reclamos.Presenters;
 using Application.Core;
 using System.Web.UI;
+using Infragistics.Web.UI.LayoutControls;
 
 namespace Modules.Reclamos.UserControls
 {
@@ -35,10 +36,17 @@ namespace Modules.Reclamos.UserControls
 
         #region Buttons
 
+        protected void BtnCancelarAnexo_Click(object sender, EventArgs e)
+        {
+            ShowAdminDoc(false);
+        }
+
         protected void BtnAddAnexo_Click(object sender, EventArgs e)
         {
             InitDocumento();
-            mpeAdminAnexos.Show();
+            ScriptManager scriptManager = ScriptManager.GetCurrent(this.Page);
+            scriptManager.RegisterPostBackControl(btnSaveAnexo);
+            ShowAdminDoc(true);
         }
 
         protected void BtnSaveDocumento_Click(object sender, EventArgs e)
@@ -49,11 +57,8 @@ namespace Modules.Reclamos.UserControls
 
             if (string.IsNullOrEmpty(Titulo))
                 messages.Add("Es necesario ingresar un titulo para el documento.");
-
-            if (string.IsNullOrEmpty(Descripcion))
-                messages.Add("Es necesario ingresar una descripción del documento.");
-
-            if (!fupAnexoArchivo.HasFile)
+            
+            if (!fupAnexoArchivo.HasFile && IsNew)
             {
                 messages.Add("Es necesario ingresar un archivo para cargar.");
             }
@@ -61,11 +66,15 @@ namespace Modules.Reclamos.UserControls
             if (messages.Any())
             {
                 AddErrorMessages(messages);
-                mpeAdminAnexos.Show();
+                ScriptManager scriptManager = ScriptManager.GetCurrent(this.Page);
+                scriptManager.RegisterPostBackControl(btnSaveAnexo);
                 return;
             }
 
-            Presenter.SaveDocumento();
+            if (IsNew)
+                Presenter.SaveDocumento();
+            else
+                Presenter.UpdateDocumento();
         }
 
         protected void BtnDownLoadAnexo_Click(object sender, EventArgs e)
@@ -83,11 +92,12 @@ namespace Modules.Reclamos.UserControls
         {
             var btn = (ImageButton)sender;
 
-            var IdArchivo = btn.CommandArgument;
+            IdDocumentoSelected = btn.CommandArgument;
 
-            var archivo = Presenter.GetAnexoDoumento(Guid.Parse(IdArchivo));
+            Presenter.LoadAnexoDocumento();
 
-            DownloadDocument(archivo.Archivo, archivo.NombreArchivo, "application/octet-stream");
+            ScriptManager scriptManager = ScriptManager.GetCurrent(this.Page);
+            scriptManager.RegisterPostBackControl(btnSaveAnexo);
         }
 
         #endregion
@@ -177,6 +187,7 @@ namespace Modules.Reclamos.UserControls
             Titulo = string.Empty;
             Descripcion = string.Empty;
             ddlCategoriaDocumento.SelectedIndex = 0;
+            IsNew = true;
         }
 
         public void LoadControlData()
@@ -189,6 +200,14 @@ namespace Modules.Reclamos.UserControls
         #region View Members
 
         #region Methods
+
+        public void ShowAdminDoc(bool visible)
+        {
+            if (visible)
+                wdwAdminDocumentoAnexoReclamo.WindowState = DialogWindowState.Normal;
+            else
+                wdwAdminDocumentoAnexoReclamo.WindowState = DialogWindowState.Hidden;
+        }
 
         public void LoadCategorias(List<DTO_ValueKey> items)
         {
@@ -295,6 +314,33 @@ namespace Modules.Reclamos.UserControls
                 return fupAnexoArchivo.FileBytes;
             }
         }
+
+        public bool IsNew
+        {
+            get
+            {
+                if (ViewState["AdminDocumentoAnexoReclamo_IsNew"] == null)
+                    ViewState["AdminDocumentoAnexoReclamo_IsNew"] = true;
+
+                return Convert.ToBoolean(ViewState["AdminDocumentoAnexoReclamo_IsNew"]);
+            }
+            set
+            {
+                ViewState["AdminDocumentoAnexoReclamo_IsNew"] = value;
+            }
+        }
+
+        public string IdDocumentoSelected
+        {
+            get
+            {
+                return string.Format("{0}", ViewState["AdminDocumentoAnexoReclamo_IdDocumentoSelected"]);
+            }
+            set
+            {
+                ViewState["AdminDocumentoAnexoReclamo_IdDocumentoSelected"] = value;
+            }
+        }       
 
         #endregion
 
